@@ -51,7 +51,7 @@ const SignUp = () => {
         } else {
           try {
             const response = await axios.post(
-              "https://codesaarthi.com//register",
+              "http://localhost:8081/register",
               formData
             );
             const { name, email, status, message } = response.data;
