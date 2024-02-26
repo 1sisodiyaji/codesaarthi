@@ -51,7 +51,7 @@ const SignUp = () => {
         } else {
           try {
             const response = await axios.post(
-              "http://localhost:8081/register",
+              "https://server-zepw.onrender.com/register",
               formData
             );
             const { name, email, status, message } = response.data;
@@ -102,7 +102,7 @@ console.log(response.data)
         const userData = response.data;
         // Send user data to the backend
       console.log(userData);
-      axios.post('http://localhost:8081/saveUserData', userData)
+      axios.post('https://server-zepw.onrender.com/saveUserData', userData)
       .then((response) => {
         if (response.data.status === 'success') {
           localStorage.setItem('user_name', userData.name);
