@@ -152,7 +152,7 @@ console.log(response.data)
           <form onSubmit={handleSubmit}>
             <div className=" text-center">
               <img
-                src="@public/img/logo.png"
+                src="../img/logo.png"
                 width={95}
                 alt=""
               />
@@ -275,7 +275,7 @@ console.log(response.data)
                     className="btn  bg-light w-100 "
                     onClick={login}
                   >
-                    <img src="@public/img/search 1.png" style={ {height: "26px"}} alt="" />
+                    <img src="../img/search 1.png" style={ {height: "26px"}} alt="" />
                     <span className="text-dark text-capitalize ms-2 ">
                       Sign Up With Google
                     </span>
@@ -284,7 +284,7 @@ console.log(response.data)
                 <div className="col-12  mt-2">
                   
                     <button type="button" className="btn  bg-light w-100 "  onClick={linkedInLogin} >
-                        <img src="@public/img/linkedin.png" style={{height: "26px"}} alt=""  />
+                        <img src="../img/linkedin.png" style={{height: "26px"}} alt=""  />
                       <span className="text-dark text-capitalize ms-2 ">
                         Sign Up With Linkedin
                       </span>
