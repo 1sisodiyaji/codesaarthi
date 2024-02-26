@@ -17,6 +17,29 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+@media only screen and (max-width: 420px) {
+  .DashImageView{
+    height: 200px !important;
+  }
+    .navbar{
+        background-color: white !important;
+    }
+    .sidebar {
+        position: fixed;
+        top: 50px;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        color: 'black';
+        background-color: #FFFFFF;
+        transition: right 0.3s ease;
+    }
+
+    .sidebar.show {
+        right: 0; 
+    }
+}
+
 /* Form Styling */
 .selected {
   border: 1px solid #79b4e2;

@@ -6,12 +6,12 @@ const AboutUs = () => {
         <>
 
 
-            <div className="container-fluid container-lg text-light my-lg-4 py-lg-4 my-2 py-2 text-center">
+            <div className="container-fluid container-lg text-light my-lg-4 py-lg-4 mt-5 pt-4 text-center">
                 <h1 className="heading text-dark" >
                     Why we<span style={{ color: '#79b4e2' }} > Exist?</span>
                 </h1>
 
-                <h3 className="px-lg-4 px-1 py-2 heading2" style={{ color: 'black' }}>At <span style={{ color: '#79b4e2' }} >
+                <h3 className="px-lg-4 px-1 py-2 heading" style={{ color: 'black' }}>At <span style={{ color: '#79b4e2' }} >
                     Codesaarthi</span> , where the world of coding and computer science unfolds with simplicity and empowerment. We are passionate about guiding individuals on their journey through the intricacies of data structures, algorithms, and fundamental computer science concepts..</h3>
 
             </div>
@@ -39,7 +39,7 @@ const AboutUs = () => {
                         </div>
 
                     </div>
-                    <div className="col-lg-2 col-0">
+                    <div className="col-lg-2 d-lg-block d-md-block d-none">
                         <img src="../img/boy1.webp" className='img-fluid pt-5 mt-5 ' style={{ height: '50vh', width: '60vw' }} alt="" />
                     </div>
                 </div>
