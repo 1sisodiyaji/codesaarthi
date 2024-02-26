@@ -139,7 +139,7 @@ console.log(response.data)
   return (
     <>
       <div
-        className="container-fluid m-0 p-0 g-0  d-flex justify-content-center align-items-center position-relative design"
+        className="container-fluid  d-flex justify-content-center align-items-center "
         style={{
           backgroundColor: "white",
           overflowX: "hidden",
@@ -148,7 +148,7 @@ console.log(response.data)
           overflowY: "scroll ",
         }}
       >
-        <div className="container" style={{ maxWidth: "420px" }}>
+        <div className="container  m-lg-0 p-lg-0" style={{ maxWidth: "420px" }}>
           <form onSubmit={handleSubmit}>
             <div className=" text-center">
               <img
