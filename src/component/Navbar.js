@@ -125,6 +125,16 @@ export const Navbar = () => {
                   Whiteboard
                 </Link>
               </li>
+              <li className="nav-items">
+                <Link
+                  className={`nav-link ${isNavLinkActive("/roadMap") ? "active" : ""
+                    }`}
+                  style={{ color: "black" }}
+                  to="/roadMap"
+                >
+                  RoadMaps
+                </Link>
+              </li>
             </ul>
             {/* Left links */}
           </div>

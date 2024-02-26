@@ -44,7 +44,6 @@ body::-webkit-scrollbar {
   scrollbar-width: none !important;
 }
 
-
 @media only screen and (min-width: 300px) and (max-width: 480px) {
   .heading {
     font-size: 1.2rem;
@@ -57,11 +56,9 @@ body::-webkit-scrollbar {
   }
 }
 
-
 .active {
   color: #79b4e2 !important;
 }
-
 
 /* footer */
 .SocialLinks :hover {

@@ -18,6 +18,7 @@ import Whiteboard from "../pages/Whiteboard";
 import { Navbar } from "../component/Navbar";
 import { Footer } from "../component/Footer";
 import Problems from "../pages/Problems";
+import { Roadmap } from "../pages/Roadmap";
 
 const Routess = () => {
 
@@ -55,6 +56,7 @@ const Routess = () => {
           <Route path="/preparation" element={<Preparation />} />
           <Route path="/theory" element={<Theory />} />
           <Route path="/whiteboard" element={<Whiteboard />} />
+          <Route path="/roadMap" element={<Roadmap />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 
