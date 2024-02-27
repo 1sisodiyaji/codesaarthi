@@ -59,7 +59,7 @@ const Login = () => {
             let name = response.data.name;
             localStorage.setItem("user_name", name);
             localStorage.setItem("user_email", email);
-            navigate("/PortfolioBuilder");
+            navigate("/Problems");
           } else {
             emailError.textContent = response.data.message;
           }
@@ -91,7 +91,7 @@ const Login = () => {
                 localStorage.setItem('user_name', userData.name);
                 localStorage.setItem('user_email', userData.email);
                 localStorage.setItem('user_ProfilePic' , userData.picture);
-                 navigate("/PortfolioBuilder");
+                 navigate("/Problems");
               } else {
                 console.error('Account Does not exist:', response.data.message);
               }

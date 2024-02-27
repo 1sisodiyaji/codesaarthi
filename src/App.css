@@ -28,7 +28,7 @@ body::-webkit-scrollbar {
         position: fixed;
         top: 50px;
         right: -250px;
-        width: 250px;
+        width: 220px;
         height: 100%;
         color: 'black';
         background-color: #FFFFFF;

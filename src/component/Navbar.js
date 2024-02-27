@@ -80,7 +80,7 @@ export const Navbar = () => {
                 style={{ color: "black" }}
                 to="/signup"
               >
-                <i class="fi fi-rs-rocket-lunch pe-2"></i>
+                <i className="fi fi-rs-rocket-lunch pe-2"></i>
                 Get Started
               </Link>
                 </li>
@@ -91,7 +91,7 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "black" }}
                 to="/Login"
-              ><i class="fi fi-br-sign-in-alt pe-2"></i>
+              ><i className="fi fi-br-sign-in-alt pe-2"></i>
                 Log in
               </Link>
                 </li>
@@ -105,7 +105,7 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "black" }}
                 to="/AboutUs"
-              > <i class="fi fi-sr-info pe-2"></i>
+              > <i className="fi fi-sr-info pe-2"></i>
                 About Us
               </Link>
             </li>
@@ -116,7 +116,7 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "black" }}
                 to="/theory"
-              > <i class="fi fi-rs-books pe-2"></i>
+              > <i className="fi fi-rs-books pe-2"></i>
                 Theory
               </Link>
             </li>
@@ -127,7 +127,7 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "black" }}
                 to="/Problems"
-              >   <i class="fi fi-sr-interrogation pe-2"></i>
+              >   <i className="fi fi-sr-interrogation pe-2"></i>
                 Problems
               </Link>
             </li>
@@ -138,7 +138,7 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "black" }}
                 to="/contest"
-              > <i class="fi fi-sr-trophy-star pe-2"></i>
+              > <i className="fi fi-sr-trophy-star pe-2"></i>
                 Contests
               </Link>
             </li>
@@ -149,7 +149,7 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "black" }}
                 to="/store"
-              > <i class="fi fi-sr-store-alt pe-2"></i>
+              > <i className="fi fi-sr-store-alt pe-2"></i>
                 Store
               </Link>
             </li>
@@ -160,7 +160,7 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "black" }}
                 to="/preparation"
-              > <i class="fi fi-rr-tools pe-2"></i>
+              > <i className="fi fi-rr-tools pe-2"></i>
                 Preparation
               </Link>
             </li>
@@ -171,7 +171,7 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "black" }}
                 to="/whiteboard"
-              > <i class="fi fi-rr-computer pe-2"></i>
+              > <i className="fi fi-rr-computer pe-2"></i>
                 Whiteboard
               </Link>
             </li>
@@ -182,7 +182,7 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "black" }}
                 to="/roadMap"
-              ><i class="fi fi-ss-road pe-2"></i>
+              ><i className="fi fi-ss-road pe-2"></i>
                 RoadMaps
               </Link>
             </li>
@@ -194,7 +194,7 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "black" }}
                 to="/"
-              ><i class="fi fi-ts-insert-alt pe-2"></i>
+              ><i className="fi fi-br-sign-in-alt pe-2"></i>
                 logout
               </Link>
             </li>
@@ -360,7 +360,7 @@ export const Navbar = () => {
                         </>
                       ) : (
                         <>
-                          <i class="fi fi-ss-user"></i>
+                          <i className="fi fi-ss-user"></i>
                         </>
                       )}
                     </a>
