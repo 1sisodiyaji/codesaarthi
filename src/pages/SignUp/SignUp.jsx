@@ -50,6 +50,7 @@ const SignUp = () => {
             "Please enter your password to Create account";
         } else {
           try {
+            console.log(formData);
             const response = await axios.post(
               "https://server-zepw.onrender.com/register",
               formData
