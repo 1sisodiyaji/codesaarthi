@@ -1,75 +1,31 @@
 import React from 'react';
-import './Roadmap.css';
-
-const StepperSection = ({ title, items }) => (
-  <section>
-    <h3 className='text-success '>{title}</h3>
-    <ul className='text-light'>
-      {items.map((item, index) => (
-        <li key={index}>{item}
-        </li>
-      ))}
-    </ul>
-  </section>
-);
+import { Link } from 'react-router-dom';
 
 const Roadmap = () => {
   return (
     <>
-      <div className="container-fluid design py-5" style={{backgroundColor:'#031A33'}}>
-        <h1 style={{color: '#FFE164'}}>Data Structures and Algorithms Roadmap</h1>
-        <div className="row py-3">
-          <div className="col-12">
-            <div className="stepper">
-              <StepperSection title="Arrays" items={['Dynamic Arrays (std::vector)', 'Static Arrays (std::array)']} />
-            </div>
-            <div className="stepper">
-              <StepperSection title="Strings" items={['String Operations', 'String Searching and Manipulation']} />
-            </div>
-            <div className="stepper">
-              <StepperSection
-                title="Introduction to Data Structures"
-                items={['Singly Linked List', 'Doubly Linked List', 'Circular Linked List', 'Stacks', 'Queues', 'Hash Tables']}
-              />
-            </div>
-            <div className="stepper">
-              <StepperSection
-                title="Advanced Data Structures"
-                items={['Binary Trees', 'Binary Search Trees', 'AVL Trees', 'B-trees', 'Heaps', 'Graphs']}
-              />
-            </div>
-            <div className="stepper">
-              <StepperSection
-                title="Sorting and Searching Algorithms"
-                items={['Bubble Sort', 'Selection Sort', 'Insertion Sort', 'Merge Sort', 'Quick Sort', 'Heap Sort']}
-              />
-            </div>
-            <div className="stepper">
-              <StepperSection title="Searching Algorithms" items={['Linear Search', 'Binary Search']} />
-            </div>
-            <div className="stepper">
-              <StepperSection
-                title="STL (Standard Template Library) of C++"
-                items={[
-                  'Array',
-                  'Vectors',
-                  'Lists',
-                  'Stacks',
-                  'Queues',
-                  'Sets',
-                  'Maps',
-                  'Priority Queues',
-                  'Algorithms (e.g., sorting, searching)',
-                  'Graphs',
-                ]}
-              />
 
+      <div className="container-fluid my-5 py-5" style={{minHeight: '100vh'}}>
+        
+          <div class="card border p-3" style={{ backgroundColor: '#6aa1b4' }}>
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <div className="row">
+                <div className="col-4">
+                  <img src="../img/logo.png" class="img-fluid" />
+                </div>
+                <div className="col-8 ">
+                  <h5 class="card-title text-light">DSA Roadmap</h5>
+                  <Link to="/dsa">
+                  <div className="btn text-warning text-capitalize bg-dark">Check it Out</div>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+       
+
       </div>
 
-      
     </>
   );
 };

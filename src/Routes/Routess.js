@@ -19,6 +19,7 @@ import { Navbar } from "../component/Navbar";
 import { Footer } from "../component/Footer";
 import Problems from "../pages/Problems";
 import Roadmap from "../pages/Roadmap";
+import Dsa from "../pages/Roadmap/Dsa";
 
 const Routess = () => {
 
@@ -57,6 +58,7 @@ const Routess = () => {
           <Route path="/theory" element={<Theory />} />
           <Route path="/whiteboard" element={<Whiteboard />} />
           <Route path="/roadMap" element={<Roadmap />} />
+          <Route path="/dsa" element={<Dsa/>} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 
