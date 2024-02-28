@@ -20,6 +20,7 @@ import { Footer } from "../component/Footer";
 import Problems from "../pages/Problems";
 import Roadmap from "../pages/Roadmap";
 import Dsa from "../pages/Roadmap/Dsa";
+import Array from "../pages/Theory/Array";
 
 const Routess = () => {
 
@@ -59,6 +60,7 @@ const Routess = () => {
           <Route path="/whiteboard" element={<Whiteboard />} />
           <Route path="/roadMap" element={<Roadmap />} />
           <Route path="/dsa" element={<Dsa/>} />
+          <Route path="/array" element={<Array />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 

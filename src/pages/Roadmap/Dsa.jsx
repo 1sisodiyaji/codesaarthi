@@ -1,5 +1,6 @@
 import React from 'react';
 import './Roadmap.css';
+import { Link } from 'react-router-dom';
 
 const StepperSection = ({ title, items }) => (
   <section>
@@ -16,12 +17,16 @@ const StepperSection = ({ title, items }) => (
 const Dsa = () => {
   return (
     <>
-      <div className="container-fluid design py-5" style={{ backgroundColor: '#031A33' }}>
+      <div className="container-fluid design  py-5" style={{ backgroundColor: '#031A33' }}>
         <h1 style={{ color: '#FFE164' }}>Data Structures and Algorithms Roadmap</h1>
         <div className="row py-3">
           <div className="col-12">
             <div className="stepper">
-              <StepperSection title="Arrays" items={['Dynamic Arrays (std::vector)', 'Static Arrays (std::array)']} />
+                <Link to= "/array">
+              <StepperSection 
+              title="Arrays" 
+              items={['Dynamic Arrays (std::vector)', 'Static Arrays (std::array)']} />
+              </Link>
             </div>
             <div className="stepper">
               <StepperSection title="Strings" items={['String Operations', 'String Searching and Manipulation']} />
