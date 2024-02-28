@@ -18,7 +18,7 @@ import Whiteboard from "../pages/Whiteboard";
 import { Navbar } from "../component/Navbar";
 import { Footer } from "../component/Footer";
 import Problems from "../pages/Problems";
-import { Roadmap } from "../pages/Roadmap";
+import Roadmap from "../pages/Roadmap";
 
 const Routess = () => {
 

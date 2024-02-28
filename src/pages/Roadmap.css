@@ -40,8 +40,7 @@ a:hover {
 }
 
 .design {
-  margin-top: 10vh;
-  margin-bottom: 40vh;
+  margin-top: 8vh;
 }
 
 .stepper {
@@ -73,4 +72,7 @@ a:hover {
   left: -35px;
   top: 50%;
   transform: translateY(-50%);
-}
+} 
+
+
+
