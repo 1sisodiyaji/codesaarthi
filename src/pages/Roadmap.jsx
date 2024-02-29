@@ -7,7 +7,7 @@ const Roadmap = () => {
 
       <div className="container-fluid my-5 py-5" style={{ minHeight: '100vh' }}>
         <div className="row">
-          <div className="col-4">
+          <div className="col-lg-4 col-12">
             <div class="card border p-3" style={{ backgroundColor: '#6aa1b4' }}>
               <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
@@ -27,8 +27,8 @@ const Roadmap = () => {
               </div>
             </div>
           </div>
-          <div className="col-4"></div>
-          <div className="col-4"></div>
+          <div className="col-lg-4 col-12"></div>
+          <div className="col-lg-4 col-12"></div>
         </div>
 
 

@@ -30,13 +30,10 @@ export default function TextForm() {
     setissymbol(!issymbol);
   };
 
-
   const handleToClear = () => {
     let newText = "";
     setText(newText);
   };
-
-
 
   const handleCopyToClipboard = () => {
     navigator.clipboard
@@ -64,7 +61,6 @@ export default function TextForm() {
   return (
     <>
       <div className="container">
-       
         <div className="row mb-2 ">
           <div className="col-12 d-flex justify-content-evenly align-items-center">
             <div className="col-3">
@@ -123,9 +119,7 @@ export default function TextForm() {
                 style={{ cursor: "pointer" }}
               ></i>
             </div>
-            
           </div>
-         
         </div>
         <div className="mb-3" style={{ position: "relative" }}>
           <textarea
@@ -135,38 +129,44 @@ export default function TextForm() {
               isitalic ? "fst-italic" : ""
             } ${isunderline ? "text-decoration-underline" : ""}
             ${isleft ? "text-start" : ""}  ${iscenter ? "text-center" : ""}   ${
-              issymbol ? "text-end" : "" }`}
+              issymbol ? "text-end" : ""
+            }`}
             value={text}
             onChange={handleOnChange}
-            style= {{ fontSize: fontSize } }
+            style={{ fontSize: fontSize }}
             id="myBox"
             rows="8"
           ></textarea>
-          <i class="fi fi-ss-duplicate"
-           icon={copied ? "check" : "paste"}
-           style={{
-             position: "absolute",
-             top: "0",
-             right: "0",
-             cursor: "pointer",
-             padding: "5px",
-             color: copied ? "green" : "white"}}
-             onClick={handleCopyToClipboard}
+          <i
+            class="fi fi-ss-duplicate"
+            icon={copied ? "check" : "paste"}
+            style={{
+              position: "absolute",
+              top: "0",
+              right: "0",
+              cursor: "pointer",
+              padding: "5px",
+              color: copied ? "green" : "white",
+            }}
+            onClick={handleCopyToClipboard}
           ></i>
-        
+
           {copied && (
             <div style={{ color: "green", marginTop: "5px" }}>Copied!</div>
           )}
 
           <div>
             <div className="d-flex justify-content-evenly align-items-center flex-wrap my-2">
-            <button
-  className="btn text-light border border-success shadow-6 text-capitalize"
-  onClick={handleToClear}
->
-  Save
-</button>
-              <button className="btn text-danger text-capitalize border border-danger" onClick={handleToClear}>
+              <button
+                className="btn text-light border border-success shadow-6 text-capitalize"
+                onClick={handleToClear}
+              >
+                Save
+              </button>
+              <button
+                className="btn text-danger text-capitalize border border-danger"
+                onClick={handleToClear}
+              >
                 Clear
               </button>
             </div>
