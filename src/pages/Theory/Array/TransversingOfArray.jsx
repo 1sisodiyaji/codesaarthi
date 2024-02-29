@@ -10,79 +10,85 @@ const TransversingOfArray = () => {
         <div className="col-2 d-lg-block d-none"><SideTheory /></div>
 
         <div className="col-lg-7  col-12">
-          <div className="conatiner-fluid design p-1  py-5">
+          <div className="container-fluid design p-1 py-5">
             <h2 style={{ color: '#FFE164' }}> Array Traversal: In-depth Exploration </h2>
 
             <h3 className='text-light pt-2'> Array Traversal Ka Matlab:</h3>
             <p style={{ color: 'whitesmoke' }}>
-              Array traversal ka matlab hai systematically har ek array element ko dekhna aur use karne ka tareeka.
-              Isme har ek item ko access karna aur usme koi kaam karna shamil hai, aksar ek kramik tareeke se.
-              Array Traversal Kyon Mahatva Purna Hai:
+              Array traversal ka matlab hai har ek array element ko systematic taur par dekhna aur uska istemal karna.
+              Yahan har item ka access karna aur usme kuch work karna shaamil hai, jyadatar ek systematic tareeke se.
             </p>
-            
-            Array traversal kaam karna ke liye basic hai kyun ki isse array ke elements ko check aur change kiya ja sakta hai.
-            Ye algorithm design aur programming tasks mein bahut important hai.
-            Traversal Mein Prayukt Tareeke:
 
-            Arrays ko ghoomne ke liye loops ka upayog karna (for example, for ya while loops).
-            Traversal ke liye khaas tareekon ka istemal karna.
-            2. Prakriya:
+            <h3 className='text-light pt-2'> Array Traversal Kyon Important  Hai:</h3>
+            <p style={{ color: 'whitesmoke' }}>
+              Array traversal kaam karne ke liye important hai kyun ki isse array ke elements ko check aur modify kiya ja sakta hai.
+              Ye algorithm design aur programming tasks mein kafi important hai.
+            </p>
+            <p style={{ color: 'whitesmoke' }}>
+              Arrays ko traverse karne ke liye loops ka istemal karna (for example, <span className='text-warning'>for</span> ya <span className='text-warning'>while</span> loops).
+              Traversal ke liye khaas tareekon ka upayog karna.
+            </p>
 
-            Array Tatvon Mein Idhar-Udhar Ghumna:
+            <h3 className='text-light pt-2'> 2. Array Elements Mein Idhar-Udhar Ghumna:</h3>
+            <p style={{ color: 'whitesmoke' }}>
+              Samajhna ki systematically array ke elements ko kaise traverse karna hai.
+              Traverse karne ka direction (forward ya backward) aur step size ka dhyan rakhna.
+            </p>
+            <p style={{ color: 'whitesmoke' }}>
+              Traversal Ke Liye Loop Ka Prayog:    Efficient aur controlled traversal ke liye programming loops ka istemal karna (for example, for ya while loops).
+              Loop constructs likhna jo ensure kare ki har element ko ek baar visit kiya jaaye.
+              Elements Ko Prapt Karke Aur Unhe Modifying Karne Ki Process:
 
-            Samajhna ki kaise systematically array ke elements ko badhna hai.
-            Direction (forward ya backward) aur step size ka dhyan rakhna.
-            Traversal Ke Liye Loop Ka Prayog:
+              Techniques sikhna Elements tak pahunchne ke liye.
+              Dikhaana kaise traversal ke beech me Elements ko modify kiya ja sakta hai.
+            </p>
 
-            Programming loops ka upayog karna (for example, for ya while loops) efficient aur controlled traversal ke liye.
-            Loop constructs likhna jo ensure kare ki har element ko ek baar visit kiya jaaye.
-            Tatvon Ko Prapt Karke Aur Unhe Modifying Karne Ki Vidhiyan:
+            <h3 className='text-light pt-2'> 3. Sequence:</h3>
+            <p style={{ color: 'whitesmoke' }}>
+              Ye discuss karta hai ki array traversal ko kyun easy aur fundamental mana jata hai.
+              Examples ke saath dikhata hai kaise traversal data processing tasks ko simplify karta hai.
+            </p>
+            <p style={{ color: 'whitesmoke' }}>
+              Traversal Ke Dauran Aaya Jane Wala Data: Array traversal ke dauran kaun kaun se data milta hai, ye explore karna.
+              Real-world examples dikhana encountered data ka importance.
+            </p>
+            <h5 className='text-light'>Examples</h5>
+            <p style={{ color: 'whitesmoke' }}>
+              Different contexts mein array traversal ka practical examples dikhana.
+              Dikhlana ki array traversal algorithmic solutions ka kaise importance hai.
+            </p>
 
-            Techniques sikhna tatvon tak pahunchne ke liye.
-            Dikhaana kaise traversal ke dauran tatvon ko modify kiya ja sakta hai.
-            3. Sequence:
+            <h3 className='text-light pt-2'> 4. Common Mistakes and Best Practices:</h3>
+            <p style={{ color: 'whitesmoke' }}>
 
-            Array Traversal Mein Sahuliyat:
+              <span className='text-danger'>Common Errors in Array Traversal :</span>
 
-            Discuss karna ki kyun array traversal ko easy aur basic mana jata hai.
-            Examples ke saath dikhana kaise traversal data processing tasks ko simple banata hai.
-            Traversal Ke Dauran Aaya Jane Wala Data:
+              Identify karna typical mistakes jo array traversal mein hoti hain.
+              Discuss karna kaise ye errors program ki efficiency ko affect kar sakti hain.
+              Proper Traversal Ke Liye Conventions:
+            </p>
+            <p style={{ color: 'whitesmoke' }}>
+              Saaf aur error-free array traversal ke liye best practices sikhana.
+              Consistent aur padhne yogya traversal code ke liye coding conventions ko follow karna.
+              Real-world Applications and Examples:
+            </p>
 
-            Explore karna kaun kaun se data array traversal ke dauran aata hai.
-            Real-world examples dikhana encountered data ka importance.
-            Udaharan aur Vyavharan:
+            <h3 style={{ color: '#FFE164' }} className='pt-2'> 5. Guru mantra::</h3>
+            <p style={{ color: 'whitesmoke' }}>
 
-            Practical examples dikhana array traversal ke kaise alag alag context mein kiya ja sakta hai.
-            Scenarios dikhana where array traversal is a crucial part of algorithmic solutions.
-            4. Common Mistakes and Best Practices:
+              Reiterate karna ki array traversal programming aur data manipulation mein kaise ek important operation hai.
+              Highlight karna ki ye algorithm design aur implementation mein kyun important hai.
 
-            Common Errors in Array Traversal:
+              <br />
+              Traversal Ke Maddhyam Se Data Receving Aur Sending Ka Ek Stable Tareeka Hai: Emphasize karna ki array traversal ek structured method hai data elements ke saath kaam karne ka.
+              Discuss karna kaise ye help karta hai data ko efficiently retrieve, process, aur manage karne mein.
 
-            Identify karna typical mistakes jo array traversal mein hoti hain.
-            Discuss karna kaise ye errors program ki efficiency ko affect kar sakti hain.
-            Establishing Conventions for Proper Traversal:
-
-            Best practices sikhana saaf aur error-free array traversal ke liye.
-            Consistent aur padhne yogya traversal code ke liye coding conventions ko follow karna.
-            Real-world Applications and Examples:
-
-            Real-world applications dekhna jahan array traversal extensively use hota hai.
-            Examples dikhana from industry practices to highlight the importance of proper traversal.
-            5. Conclusion:
-
-            Array Traversal Ek Mahatva Purna Kary Vidhi Hai:
-
-            Reiterate karna ki array traversal programming aur data manipulation mein kaise fundamental operation hai.
-            Highlight karna ki ye algorithm design aur implementation mein kyun important hai.
-            Traversal Ke Maddhyam Se Data Prapti Aur Prabandhan Ka Ek Vyavasthit Tareeka Hai:
-
-            Emphasize karna ki array traversal ek structured method hai data elements ke saath kaam karne ka.
-            Discuss karna kaise ye help karta hai data ko efficiently retrieve, process, aur manage karne mein.
-            Excel in the Field of Array Traversal:
-
-            Encourage karna developers ko array traversal ko achhe se samajhne aur use karne ke liye.
-            Acknowledge karna ki acquired knowledge se programming skills mein improvement hoga.
+              <br />
+              Excel in the Field of Array Traversal:  Developers ko encourage karna ki woh array traversal ko achhe se samajhne aur istemal karne ke liye.
+              Acknowledge karna ki jo knowledge acquire hui hai, woh programming skills mein improvement layegi.
+            </p>
           </div>
+
         </div>
         <div className="col-3 py-5 d-lg-block d-none">
           <h2 style={{ color: '#FFE164' }}> Learn From Here :</h2>
