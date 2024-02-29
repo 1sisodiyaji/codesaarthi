@@ -2,8 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -ms-overflow-style: none; /* Internet Explorer and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 body {
@@ -18,31 +20,33 @@ body::-webkit-scrollbar {
 }
 
 @media only screen and (max-width: 420px) {
-  .DashImageView{
+  .DashImageView {
     height: 200px !important;
   }
-    .navbar{
-        background-color: white !important;
-    }
-    .sidebar {
-        position: fixed;
-        top: 50px;
-        right: -250px;
-        width: 220px;
-        height: 100%;
-        color: 'black';
-        background-color: #FFFFFF;
-        transition: right 0.3s ease;
-    }
 
-    .sidebar.show {
-        right: 0; 
-    }
-   
-      .design {
-        margin-top: 8vh;
-      }
-  
+  .navbar {
+    background-color: white !important;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 50px;
+    right: -250px;
+    width: 220px;
+    height: 100%;
+    color: 'black';
+    background-color: #FFFFFF;
+    transition: right 0.3s ease;
+  }
+
+  .sidebar.show {
+    right: 0;
+  }
+
+  .design {
+    margin-top: 8vh;
+  }
+
 }
 
 /* Form Styling */
@@ -76,9 +80,11 @@ body::-webkit-scrollbar {
   .heading {
     font-size: 1.2rem;
   }
+
   .heading2 {
     font-size: 0.9rem;
   }
+
   .heading3 {
     font-size: 0.6rem !important;
   }
@@ -93,4 +99,3 @@ body::-webkit-scrollbar {
   color: #f3f3f3 !important;
   background-color: #79b4e2 !important;
 }
-

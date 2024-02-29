@@ -1,6 +1,6 @@
 import React from 'react'
-import SideTheory from '../../component/SideTheory'
-import TextForm from '../../component/Textarea'
+import SideTheory from '../../../component/SideTheory'
+import TextForm from '../../../component/Textarea'
 
 const Array = () => {
     return (

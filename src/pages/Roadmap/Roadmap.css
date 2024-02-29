@@ -29,15 +29,6 @@ li {
   position: relative;
 }
 
-a {
-  text-decoration: none;
-  color: #000000;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #181717 !important;
-}
 
 
 

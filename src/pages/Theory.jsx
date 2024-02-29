@@ -29,9 +29,6 @@ const Theory = () => {
           <div className="col-lg-4 col-12"></div>
           <div className="col-lg-4 col-12"></div>
         </div>
-
-
-
       </div>
     </>
   )
