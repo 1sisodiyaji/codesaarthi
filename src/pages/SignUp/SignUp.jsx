@@ -102,9 +102,7 @@ console.log(response.data)
       })
       .then((response) => {
         const userData = response.data;
-        // Send user data to the backend
-      console.log(userData);
-      axios.post('https://server-zepw.onrender.com/saveUserData', userData)
+      axios.post('https://server-zepw.onrender.com/saveUserData', [userData])
       .then((response) => {
         if (response.data.status === 'success') {
           localStorage.setItem('user_name', userData.name);
