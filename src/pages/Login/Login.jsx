@@ -83,7 +83,6 @@ const Login = () => {
       })
         .then((response) => {
           const userData = response.data;
-          console.log(userData.email);
           // Send user data to the backend
           axios.post('https://server-zepw.onrender.com/saveUserData', userData)
             .then((response) => {

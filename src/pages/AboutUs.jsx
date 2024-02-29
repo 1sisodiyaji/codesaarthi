@@ -1,6 +1,11 @@
 import React from 'react'
 
 const AboutUs = () => {
+    function saveMessage(){
+        const email = document.getElementById('name').value;
+        const pas = document.getElementById('Email') ;
+
+    }
 
     return (
         <>
@@ -43,6 +48,44 @@ const AboutUs = () => {
                         <img src="../img/boy1.webp" className='img-fluid pt-5 mt-5 ' style={{ height: '50vh', width: '60vw' }} alt="" />
                     </div>
                 </div>
+            </div>
+
+            <div className="container-fluid container-lg text-light my-lg-4 py-lg-4 my-3 py-3">
+                <div className="row flex-md-row flex-column-reverse ">
+                    <div className="col-lg-6 col-12   py-lg-5 py-3 px-lg-5 px-3 card shadow-5-soft rounded-9 "
+                        style={{ backgroundColor: '#031A33', border: '1px solid #FFE164' }}>
+                        <div className="justify-content-center" style={{ maxWidth: '100%' }}>
+                            <div>
+                                <h1 style={{ color: '#FFE164',  fontWeight: 'lighter' }} className="text-start mb-4">
+                                    Contact Us</h1>
+
+                                <p className='text-danger' id="wrong_pass_text"></p>
+
+                                <div className="d-inline-block mb-4  w-100">
+                                    <label for="name" className="form-label" style={{ color: '#FFE164' }}>Name</label>
+                                    <input type="text" className="form-control p-lg-3 p-0 rounded-5 w-100 d-inline-block bg-transparent" style={{ color: '#FFE164' }} id="name" />
+                                </div>
+                                <div className="d-inline-block mb-4 w-100">
+                                    <label for="Email" className="form-label" style={{ color: '#FFE164' }} >Email</label>
+                                    <input type="text" className="form-control p-lg-3 p-0 rounded-5 w-100 d-inline-block bg-transparent" style={{ color: '#FFE164' }} id="Email" />
+                                </div>
+                                <div className="mb-2">
+                                    <label className="form-label" style={{ color: '#FFE164' }} htmlFor="message">Message</label>
+                                    <textarea className="form-control bg-transparent" style={{ color: '#FFE164' }} id="message" rows="4"></textarea>
+                                </div>
+                                <div className="text-danger" id="ErrorMsg"></div>
+                                <button id="send_message" onclick={saveMessage}
+                                    className="btn w-100 my-2 p-lg-3 p-2 rounded-5 shadow-0 text-capitalize"
+                                    style={{ backgroundColor: '#FFE164', fontSize: '16px', color: '#031A33' }}>Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center my-3">
+                        <img src="https://wooble.org/img/portfolio_light.png" className="img-fluid" />
+                    </div>
+                </div>
+
             </div>
 
 
