@@ -24,6 +24,11 @@ const TransversingOfArray = () => {
               Array traversal kaam karne ke liye important hai kyun ki isse array ke elements ko check aur modify kiya ja sakta hai.
               Ye algorithm design aur programming tasks mein kafi important hai.
             </p>
+
+            <div className='p-2 d-lg-none d-block'>
+            <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            
             <p style={{ color: 'whitesmoke' }}>
               Arrays ko traverse karne ke liye loops ka istemal karna (for example, <span className='text-warning'>for</span> ya <span className='text-warning'>while</span> loops).
               Traversal ke liye khaas tareekon ka upayog karna.
@@ -88,7 +93,10 @@ const TransversingOfArray = () => {
               Acknowledge karna ki jo knowledge acquire hui hai, woh programming skills mein improvement layegi.
             </p>
           </div>
-
+          <div class="d-lg-none d-block my-3">
+<h5 style={{color: '#FFE164'}} className='ps-2 py-2'> Save your Notes Here :</h5>
+    <TextForm/>
+    </div>
         </div>
         <div className="col-3 py-5 d-lg-block d-none">
           <h2 style={{ color: '#FFE164' }}> Learn From Here :</h2>
