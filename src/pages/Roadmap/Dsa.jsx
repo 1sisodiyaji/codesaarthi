@@ -17,7 +17,7 @@ const StepperSection = ({ title, items }) => (
 const Dsa = () => {
   return (
     <>
-      <div className="container-fluid design  py-5" style={{ backgroundColor: '#031A33' }}>
+      <div className="container-fluid design  py-3" style={{ backgroundColor: '#031A33' }}>
         <h1 style={{ color: '#FFE164' }}>Data Structures and Algorithms Roadmap</h1>
         <div className="row py-3">
           <div className="col-12">

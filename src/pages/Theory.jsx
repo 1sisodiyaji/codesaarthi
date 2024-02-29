@@ -1,8 +1,39 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Theory = () => {
   return (
-    <div>Theory</div>
+    <>
+      <div className="container-fluid my-5 py-5" style={{ minHeight: '100vh' }}>
+        <div className="row">
+          <div className="col-4">
+            <div class="card border p-3" style={{ backgroundColor: '#6aa1b4' }}>
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <div className="row">
+                  <div className="col-4">
+                    <img src="../img/logo.png" class="img-fluid" />
+                  </div>
+                  <div className="col-8 align-self-center">
+                    <div><h5 class="card-title text-light">Array in Short</h5></div>
+
+                    <div><Link to="/array">
+                      <div className="btn text-warning text-capitalize bg-dark">Read it..</div>
+                    </Link>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-4"></div>
+          <div className="col-4"></div>
+        </div>
+
+
+
+      </div>
+    </>
   )
 }
 

@@ -38,6 +38,11 @@ body::-webkit-scrollbar {
     .sidebar.show {
         right: 0; 
     }
+   
+      .design {
+        margin-top: 8vh;
+      }
+  
 }
 
 /* Form Styling */
