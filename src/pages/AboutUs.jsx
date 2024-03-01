@@ -8,22 +8,37 @@ const AboutUs = () => {
         const error = document.getElementById('ErrorMsg') ;
         if(!name || !email || !message){
             error.textContent = "please Fill all details";
-        }else{
+        }else {
             error.textContent = "";
             const data = {
                 name: name,
                 email: email,
                 message: message
-            }
-            fetch('https://server-zepw.onrender.com/sendemail', {
+            };
+        
+            fetch('https://server-zepw.onrender.com/submit-form', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
             })
-         .then(res => res.json())
+            .then(res => res.json())
+            .then(response => {
+                if (response.success) {
+                    // Handle success, show a success message, or redirect the user
+                    console.log(response.message);
+                } else {
+                    // Handle failure, show an error message
+                    console.error(response.error);
+                }
+            })
+            .catch(error => {
+                // Handle any unexpected errors during the fetch request
+                console.error('Error:', error);
+            });
         }
+        
     }
 
     return (
