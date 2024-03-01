@@ -2,9 +2,28 @@ import React from 'react'
 
 const AboutUs = () => {
     function saveMessage(){
-        const email = document.getElementById('name').value;
-        const pas = document.getElementById('Email') ;
-
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('Email') ;
+        const message = document.getElementById('message') ;
+        const error = document.getElementById('ErrorMsg') ;
+        if(!name || !email || !message){
+            error.textContent = "please Fill all details";
+        }else{
+            error.textContent = "";
+            const data = {
+                name: name,
+                email: email,
+                message: message
+            }
+            fetch('https://server-zepw.onrender.com/sendemail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+         .then(res => res.json())
+        }
     }
 
     return (
