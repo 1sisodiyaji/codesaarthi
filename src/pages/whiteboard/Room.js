@@ -117,7 +117,7 @@ const Room = ({ userNo, socket, setUsers, setUserNo }) => {
         <div className="col-md-2 my-2">
           <button
             type="button"
-            className="btn btn-outline-primary"
+            className="btn btn-outline-primary text-capitalize"
             disabled={elements.length === 0}
             onClick={() => undo()}
           >
@@ -126,7 +126,7 @@ const Room = ({ userNo, socket, setUsers, setUserNo }) => {
           &nbsp;&nbsp;
           <button
             type="button"
-            className="btn btn-outline-primary ml-1"
+            className="btn btn-outline-primary ml-1 text-capitalize"
             disabled={history.length < 1}
             onClick={() => redo()}
           >
@@ -137,7 +137,7 @@ const Room = ({ userNo, socket, setUsers, setUserNo }) => {
           <div className="color-picker d-flex align-items-center justify-content-center">
             <input
               type="button"
-              className="btn btn-danger"
+              className="btn btn-danger text-capitalize"
               value="clear canvas"
               onClick={clearCanvas}
             />

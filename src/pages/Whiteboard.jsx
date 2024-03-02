@@ -37,7 +37,7 @@ const Whiteboard = () => {
   }, [roomJoined, user]);
 
   return (
-    <div className="home">
+    <div className="home " style={{minHeight:'100vh'}}>
       <ToastContainer />
       {roomJoined ? (
         <>
