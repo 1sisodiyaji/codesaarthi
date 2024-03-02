@@ -40,24 +40,24 @@ const JoinCreateRoom = ({ uuid, setUser, setRoomJoined }) => {
       <div className="row">
         <div className="col-md-12">
           <h1 className="text-center my-5">
-            Welcome To Realtime Whiteboard Sharing App
+           Our <span className="text-success"> WhiteBoard</span> 
           </h1>
         </div>
       </div>
       <div className="row mx-5 mt-5">
         <div className="col-md-5 p-5 border mx-auto">
-          <h1 className="text-center text-primary mb-5">Create Room</h1>
+          <p className="text-center text-primary mb-5">Enter Your Name Start your White Board ! </p>
           <form onSubmit={handleCreateSubmit}>
             <div className="form-group my-2">
               <input
                 type="text"
                 placeholder="Name"
-                className="form-control"
+                className="form-control text-dark"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-            <div className="input-group my-2 border align-items-center">
+            <div className="input-group my-2 border align-items-center d-none">
               <input
                 type="text"
                 className="form-control border-0 outline-0"
@@ -69,7 +69,7 @@ const JoinCreateRoom = ({ uuid, setUser, setRoomJoined }) => {
                   fontsize: "0.89rem !important",
                 }}
               />
-              <div className="input-group-append">
+              <div className="input-group-append d-none">
                 <button
                   className="btn btn-outline-primary  border-0 btn-sm"
                   type="button"
@@ -92,13 +92,13 @@ const JoinCreateRoom = ({ uuid, setUser, setRoomJoined }) => {
               </div>
             </div>
             <div className="form-group mt-5">
-              <button type="submit" className="form-control btn btn-dark">
-                Create Room
+              <button type="submit" className="form-control btn btn-dark text-capitalize">
+                Start
               </button>
             </div>
           </form>
         </div>
-        <div className="col-md-5 p-5 border mx-auto">
+        <div className="col-md-5 p-5 border mx-auto d-none">
           <h1 className="text-center text-primary mb-5">Join Room</h1>
           <form onSubmit={handleJoinSubmit}>
             <div className="form-group my-2">
@@ -110,7 +110,7 @@ const JoinCreateRoom = ({ uuid, setUser, setRoomJoined }) => {
                 onChange={(e) => setJoinName(e.target.value)}
               />
             </div>
-            <div className="form-group my-2">
+            <div className="form-group my-2 d-none">
               <input
                 type="text"
                 className="form-control outline-0"

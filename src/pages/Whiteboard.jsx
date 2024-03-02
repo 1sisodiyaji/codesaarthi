@@ -41,7 +41,7 @@ const Whiteboard = () => {
       <ToastContainer />
       {roomJoined ? (
         <>
-          <Sidebar users={users} user={user} socket={socket} />
+          
           {user.presenter ? (
             <Room
               userNo={userNo}

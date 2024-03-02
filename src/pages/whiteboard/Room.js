@@ -51,11 +51,11 @@ const Room = ({ userNo, socket, setUsers, setUserNo }) => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <h1 className="display-5 pt-4 pb-3 text-center">
-          React Drawing App - users online:{userNo}
-        </h1>
+        <p className=" pt-4 pb-3 text-center">
+         Hey Welcome to the WhiteBoard try these feature..
+        </p>
       </div>
-      <div className="row justify-content-center align-items-center text-center py-2">
+      <div className="row justify-content-center align-items-center text-center">
         <div className="col-md-2">
           <div className="color-picker d-flex align-items-center justify-content-center">
             Color Picker : &nbsp;
@@ -67,7 +67,7 @@ const Room = ({ userNo, socket, setUsers, setUserNo }) => {
           </div>
         </div>
         <div className="col-md-3">
-          <div className="form-check form-check-inline">
+          <div className="form-check form-check-inline my-2">
             <input
               className="form-check-input"
               type="radio"
@@ -114,7 +114,7 @@ const Room = ({ userNo, socket, setUsers, setUserNo }) => {
           </div>
         </div>
 
-        <div className="col-md-2">
+        <div className="col-md-2 my-2">
           <button
             type="button"
             className="btn btn-outline-primary"
@@ -144,7 +144,7 @@ const Room = ({ userNo, socket, setUsers, setUserNo }) => {
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row p-1">
         <Canvas
           canvasRef={canvasRef}
           ctx={ctx}
