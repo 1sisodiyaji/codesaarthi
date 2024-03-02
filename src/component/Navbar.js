@@ -145,12 +145,12 @@ export const Navbar = () => {
             <li className="nav-item">
               <Link
                 className={`nav-link ${
-                  isNavLinkActive("/store") ? "active" : ""
+                  isNavLinkActive("/Projects") ? "active" : ""
                 }`}
                 style={{ color: "black" }}
-                to="/store"
-              > <i className="fi fi-sr-store-alt pe-2"></i>
-                Store
+                to="/Projects"
+              > <i className="fi fi-sr-workflow-setting-alt pe-2"></i>
+                Projects
               </Link>
             </li>
             <li className="nav-item">
@@ -281,12 +281,12 @@ export const Navbar = () => {
               <li className="nav-items">
                 <Link
                   className={`nav-link ${
-                    isNavLinkActive("/store") ? "active" : ""
+                    isNavLinkActive("/Projects") ? "active" : ""
                   }`}
                   style={{ color: "black" }}
-                  to="/store"
+                  to="/Projects"
                 >
-                  Store
+                  Projects
                 </Link>
               </li>
               <li className="nav-items">

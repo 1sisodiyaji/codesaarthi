@@ -11,7 +11,7 @@ import TermsCondition from "../pages/TermsAndConditions";
 import Cookie from "../pages/Cookie";
 import ErrorPage from '../pages/Error404Pgae';
 import Contest from "../pages/Contest";
-import Store from "../pages/Store";
+import Projects from "../pages/Projects";
 import Preparation from "../pages/Preparation";
 import Theory from "../pages/Theory";
 import Whiteboard from "../pages/Whiteboard";
@@ -22,6 +22,8 @@ import Roadmap from "../pages/Roadmap";
 import Dsa from "../pages/Roadmap/Dsa";
 import Array from "../pages/Theory/Array/Array";
 import TransversingOfArray from "../pages/Theory/Array/TransversingOfArray";
+import WebDevelopment from "../pages/Projects/WebDevelopment";
+import AmazonClone from "../pages/Projects/Amazon-clone";
 
 const Routess = () => {
 
@@ -49,7 +51,7 @@ const Routess = () => {
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Problems" element={<Problems/>} />
           <Route path="/contest" element={<Contest />} />
-          <Route path="/store" element={<Store />} />
+          <Route path="/Projects" element={<Projects />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/RecoverPassword" element={<RecoverPassword />} />
@@ -63,6 +65,8 @@ const Routess = () => {
           <Route path="/dsa" element={<Dsa/>} />
           <Route path="/array" element={<Array />} />
           <Route path="/transversing-of-array" element={<TransversingOfArray />} />
+          <Route path="/web-development" element={<WebDevelopment />} />
+          <Route path="/Amazon-clone" element={<AmazonClone />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 
