@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AboutUs = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const handleSubmission = (isSubmitted) => {
         if (isSubmitted === true) {
             toast.success('Submitted', {
-                position: 'top-right',
+                position: 'bottomRight',
                 autoClose: 3000, // Set the duration for the toast
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -16,7 +17,7 @@ const AboutUs = () => {
             });
         } else {
             toast.error('Not Submitted', {
-                position: 'top-right',
+                position: 'bottomRight',
                 autoClose: 3000, // Set the duration for the toast
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -50,6 +51,9 @@ const AboutUs = () => {
                     setIsSubmitted(true);
                     handleSubmission(true);
                 } else {
+                    name.textContent = "";
+                    email.textContent = "";
+                    message.textContent = "";
                     setIsSubmitted(false);
                     handleSubmission(false);
                 }
@@ -61,16 +65,7 @@ const AboutUs = () => {
 
     return (
         <>
-            <ToastContainer
-                position="bottom-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                closeOnClick
-                pauseOnHover
-                draggable
-                style={{ zIndex: '9999' ,height:'50px' ,width:'150px' }}
-            />
-
+           
             <div className="container-fluid container-lg text-light my-lg-4 py-lg-4 mt-5 pt-4 text-center">
                 <h1 className="heading text-dark" >
                     Why we<span style={{ color: '#79b4e2' }} > Exist?</span>
@@ -150,6 +145,15 @@ const AboutUs = () => {
                 </div>
 
             </div>
+            <ToastContainer
+                position="bottomRight"
+                autoClose={3000}
+                hideProgressBar={false}
+                closeOnClick
+                pauseOnHover
+                draggable
+                style={{ zIndex: '9999' ,height:'50px' ,width:'150px' ,position:'relative' }}
+            />
 
 
         </>
