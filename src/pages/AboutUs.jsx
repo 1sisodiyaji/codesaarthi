@@ -68,7 +68,7 @@ const AboutUs = () => {
                 closeOnClick
                 pauseOnHover
                 draggable
-                style={{ zIndex: 9999 }}
+                style={{ zIndex: '9999' ,height:'50px' ,width:'150px' }}
             />
 
             <div className="container-fluid container-lg text-light my-lg-4 py-lg-4 mt-5 pt-4 text-center">
