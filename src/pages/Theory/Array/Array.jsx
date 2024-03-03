@@ -9,16 +9,28 @@ const Array = () => {
     const [voices, setVoices] = useState([]);
 
     useEffect(() => {
-        // Fetch available voices when the component mounts
         const availableVoices = window.speechSynthesis.getVoices();
         setVoices(availableVoices);
 
-        // Update voices when they change
         window.speechSynthesis.onvoiceschanged = () => {
             const updatedVoices = window.speechSynthesis.getVoices();
             setVoices(updatedVoices);
         };
+        return () => {
+            speechSynthesis.cancel();
+          };
     }, []);
+
+    useEffect(() => {
+        const handleBeforeUnload = () => {
+          speechSynthesis.cancel();
+        };
+    
+        window.addEventListener('beforeunload', handleBeforeUnload);
+        return () => {
+          window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+      }, []);
 
     const speak = () => {
         const elementsToRead = document.querySelectorAll('.listen');
@@ -50,20 +62,6 @@ const Array = () => {
             elementsToRead.forEach(element => element.classList.remove('highlight'));
             index = 0; // Reset index when speech is paused
         };
-
-        // utterance.onboundary = (event) => {
-        //     elementsToRead.forEach(element => element.classList.remove('highlight'));
-
-        //     if (elementsToRead.length > 0) {
-        //         const currentElement = [...elementsToRead].find(element =>
-        //             event.charIndex >= element.textContent.length
-        //         );
-
-        //         if (currentElement) {
-        //             currentElement.classList.add('highlight');
-        //         }
-        //     }
-        // };
         utterance.onboundary = (event) => {
             elementsToRead.forEach(element => element.classList.remove('highlight'));
 
@@ -117,7 +115,7 @@ const Array = () => {
                             </div>
                             <div className="col-4">
                                 <div className="row g-0 ">
-                                    <div className="col-4">
+                                    <div className="col-4 text-center">
                                         {!isSpeaking ?
                                             <>
                                                 <div className=" btn btn-sm shadow-0 rounded-8 border border-warning" onClick={speak}>
@@ -132,8 +130,8 @@ const Array = () => {
                                             </>
                                         }
                                     </div>
-                                    <div className="col-8 ">
-                                        <select onChange={handleVoiceChange} value={selectedVoice ? selectedVoice.name : ''} className='w-75 ms-lg-0 ms-4' style={{
+                                    <div className="col-8">
+                                        <select onChange={handleVoiceChange} value={selectedVoice ? selectedVoice.name : ''} className='w-75 ms-4' style={{
                                             color: '#FFE164',
                                             backgroundColor: '#031A33'
                                         }}>
@@ -143,16 +141,8 @@ const Array = () => {
                                                 </option>
                                             ))}
                                         </select>
-                                        <div
-                                            class=""
-                                            data-mdb-ripple-init
-                                            data-mdb-tooltip-init
-                                            data-mdb-html="true"
-                                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>"
-                                        >
-                                            <i class="fi fi-rr-circle-i"></i>
-                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
