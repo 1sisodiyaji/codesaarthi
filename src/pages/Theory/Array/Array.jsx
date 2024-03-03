@@ -3,63 +3,105 @@ import SideTheory from '../../../component/SideTheory'
 import TextForm from '../../../component/Textarea'
 
 const Array = () => {
+    let index = 0;
     const [isSpeaking, setIsSpeaking] = useState(false);
     const [selectedVoice, setSelectedVoice] = useState(null);
     const [voices, setVoices] = useState([]);
-
-
+    
     useEffect(() => {
         // Fetch available voices when the component mounts
         const availableVoices = window.speechSynthesis.getVoices();
         setVoices(availableVoices);
-
+    
         // Update voices when they change
         window.speechSynthesis.onvoiceschanged = () => {
             const updatedVoices = window.speechSynthesis.getVoices();
             setVoices(updatedVoices);
         };
     }, []);
-
-
+    
     const speak = () => {
         const elementsToRead = document.querySelectorAll('.listen');
         const combinedContent = [...elementsToRead].map(element => element.textContent).join(' ');
-
+    
+        // Cancel the previous speech synthesis instance
+        speechSynthesis.cancel();
+    
         const utterance = new SpeechSynthesisUtterance(combinedContent);
-
+    
         // Set the desired voice
         utterance.voice = selectedVoice;
-
+    
         // Event listener for when speech starts
         utterance.onstart = () => {
-            console.log('Speech started');
             setIsSpeaking(true);
+            index = 0; // Initialize index when speech starts
         };
-
+    
         // Event listener for when speech ends
         utterance.onend = () => {
-            console.log('Speech ending');
             setIsSpeaking(false);
+            elementsToRead.forEach(element => element.classList.remove('highlight'));
         };
-
+    
+        // Event listener for when speech is paused
+        utterance.onpause = () => {
+            setIsSpeaking(false);
+            elementsToRead.forEach(element => element.classList.remove('highlight'));
+            index = 0; // Reset index when speech is paused
+        };
+    
+        // utterance.onboundary = (event) => {
+        //     elementsToRead.forEach(element => element.classList.remove('highlight'));
+    
+        //     if (elementsToRead.length > 0) {
+        //         const currentElement = [...elementsToRead].find(element =>
+        //             event.charIndex >= element.textContent.length
+        //         );
+    
+        //         if (currentElement) {
+        //             currentElement.classList.add('highlight');
+        //         }
+        //     }
+        // };
+        utterance.onboundary = (event) => {
+            elementsToRead.forEach(element => element.classList.remove('highlight'));
+        
+            let charIndex = event.charIndex;
+        
+            for (let i = 0; i < elementsToRead.length; i++) {
+                const element = elementsToRead[i];
+                const textLength = element.textContent.length;
+        
+                if (charIndex < textLength) {
+                    element.classList.add('highlight');
+                    break;
+                }
+        
+                charIndex -= textLength;
+            }
+        };
+        
+    
+        utterance.text = combinedContent;
+    
         speechSynthesis.speak(utterance);
     };
-
+    
+    
+    
     const pause = () => {
         speechSynthesis.pause();
         setIsSpeaking(false);
     };
-
+    
     const handleVoiceChange = (event) => {
         const selectedVoiceName = event.target.value;
         const selectedVoice = voices.find(voice => voice.name === selectedVoiceName);
         setSelectedVoice(selectedVoice);
     };
 
-    const resume = () => {
-        speechSynthesis.resume();
-        setIsSpeaking(true);
-    };
+  
 
     return (
         <>
@@ -84,17 +126,15 @@ const Array = () => {
                                         </>
                                         :
                                         <>
-                                            <div className=" btn btn-sm shadow-0 rounded-8 border border-warning my-2 " onClick={resume}>
-                                                <i class="fi fi-sr-play-circle text-success" style={{ fontSize: '1rem' }}></i>
-                                            </div>
                                             <div className="btn btn-sm shadow-0 rounded-8 border border-warning" onClick={pause}>
-                                                <i class="fi fi-rs-pause-circle text-success" style={{ fontSize: '1rem' }}></i>
+                                                <i className="fi fi-rs-pause-circle text-success" style={{ fontSize: '1rem' }}></i>
                                             </div>
                                         </>
                                     }
                                 </div>
                                 <div className="col-8 ">
-                                    <select onChange={handleVoiceChange} value={selectedVoice ? selectedVoice.name : ''} className='w-75 ms-lg-0 ms-4'>
+                                    <select onChange={handleVoiceChange} value={selectedVoice ? selectedVoice.name : ''} className='w-75 ms-lg-0 ms-4' style={{color:'#FFE164',
+                                backgroundColor:'#031A33'}}>
                                         {voices.map((voice, index) => (
                                             <option key={index} value={voice.name}>
                                                 {voice.name}

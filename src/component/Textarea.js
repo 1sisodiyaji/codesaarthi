@@ -82,14 +82,14 @@ export default function TextForm() {
             </div>
             <div className="col-1  d-flex align-items-center justify-content-center ">
               <i
-                class={`fi fi-sr-italic   ${isitalic ? "text-success" : ""}`}
+                className={`fi fi-sr-italic   ${isitalic ? "text-success" : ""}`}
                 onClick={handleToggleitalic}
                 style={{ cursor: "pointer" }}
               ></i>
             </div>
             <div className="col-1  d-flex align-items-center justify-content-center ">
               <i
-                class={`fi fi-sr-underline   ${
+                className={`fi fi-sr-underline   ${
                   isunderline ? "text-success" : ""
                 }`}
                 onClick={handleToggleunderline}
@@ -98,14 +98,14 @@ export default function TextForm() {
             </div>
             <div className="col-1  d-flex align-items-center justify-content-center ">
               <i
-                class={`fi fi-sr-align-left   ${isleft ? "text-success" : ""}`}
+                className={`fi fi-sr-align-left   ${isleft ? "text-success" : ""}`}
                 onClick={handleToggleleft}
                 style={{ cursor: "pointer" }}
               ></i>
             </div>
             <div className="col-1  d-flex align-items-center justify-content-center ">
               <i
-                class={`fi fi-sr-align-center   ${
+                className={`fi fi-sr-align-center   ${
                   iscenter ? "text-success" : ""
                 }`}
                 onClick={handleTogglecenter}
@@ -114,7 +114,7 @@ export default function TextForm() {
             </div>
             <div className="col-1  d-flex align-items-center justify-content-center ">
               <i
-                class={`fi fi-sr-symbol   ${issymbol ? "text-success" : ""}`}
+                className={`fi fi-sr-symbol   ${issymbol ? "text-success" : ""}`}
                 onClick={handleTogglesymbol}
                 style={{ cursor: "pointer" }}
               ></i>
@@ -138,7 +138,7 @@ export default function TextForm() {
             rows="8"
           ></textarea>
           <i
-            class="fi fi-ss-duplicate"
+            className="fi fi-ss-duplicate"
             icon={copied ? "check" : "paste"}
             style={{
               position: "absolute",

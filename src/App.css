@@ -116,3 +116,8 @@ body::-webkit-scrollbar {
 .tilt-effect2:hover {
   transform:  scale(1.1);
 }
+.highlight{
+  background-color: rgb(226, 122, 122) !important;
+  color: black !important;
+
+}
