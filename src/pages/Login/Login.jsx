@@ -264,7 +264,7 @@ const Login = () => {
                   </button>
                 </div>
 
-                <div className="col-12  mt-2">
+                <div className="col-12  mt-2 d-none">
                   <button type="button" className="btn  bg-light w-100 " onClick={linkedInLogin} >
                     <img src="../img/linkedin.png" height={26} alt="" />
                     <span className="text-dark text-capitalize ms-2 ">

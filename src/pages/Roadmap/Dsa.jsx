@@ -29,6 +29,15 @@ const Dsa = () => {
               </Link>
             </div>
             <div className="stepper">
+              <StepperSection title="Searching Algorithms" items={['Linear Search', 'Binary Search']} />
+            </div>
+            <div className="stepper">
+              <StepperSection
+                title="Sorting Algorithms"
+                items={['Bubble Sort', 'Selection Sort', 'Insertion Sort', 'Merge Sort', 'Quick Sort', 'Heap Sort']}
+              />
+            </div>
+            <div className="stepper">
               <StepperSection title="Strings" items={['String Operations', 'String Searching and Manipulation']} />
             </div>
             <div className="stepper">
@@ -43,15 +52,8 @@ const Dsa = () => {
                 items={['Binary Trees', 'Binary Search Trees', 'AVL Trees', 'B-trees', 'Heaps', 'Graphs']}
               />
             </div>
-            <div className="stepper">
-              <StepperSection
-                title="Sorting and Searching Algorithms"
-                items={['Bubble Sort', 'Selection Sort', 'Insertion Sort', 'Merge Sort', 'Quick Sort', 'Heap Sort']}
-              />
-            </div>
-            <div className="stepper">
-              <StepperSection title="Searching Algorithms" items={['Linear Search', 'Binary Search']} />
-            </div>
+            
+            
             <div className="stepper">
               <StepperSection
                 title="STL (Standard Template Library) of C++"

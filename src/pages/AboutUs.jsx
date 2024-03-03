@@ -152,7 +152,7 @@ const AboutUs = () => {
                 closeOnClick
                 pauseOnHover
                 draggable
-                style={{ zIndex: '9999' ,height:'50px' ,width:'250px' ,position:'relative' }}
+                style={{ zIndex: '9999' ,height:'50px' ,width:'250px' }}
             />
 
 
