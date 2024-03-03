@@ -61,8 +61,16 @@ const AboutUs = () => {
 
     return (
         <>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                closeOnClick
+                pauseOnHover
+                draggable
+                style={{ zIndex: 9999 }}
+            />
 
-            <ToastContainer />
             <div className="container-fluid container-lg text-light my-lg-4 py-lg-4 mt-5 pt-4 text-center">
                 <h1 className="heading text-dark" >
                     Why we<span style={{ color: '#79b4e2' }} > Exist?</span>
