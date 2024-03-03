@@ -2,13 +2,14 @@ import React from 'react';
 import axios from 'axios';
 
 const AboutUs = () => {
-    function saveMessage() {
+    const saveMessage = async () => {
         const name = document.getElementById('name').value;
-        const email = document.getElementById('Email');
-        const message = document.getElementById('message');
+        const email = document.getElementById('Email').value;
+        const message = document.getElementById('message').value;
         const error = document.getElementById('ErrorMsg');
+    
         if (!name || !email || !message) {
-            error.textContent = "please Fill all details";
+            error.textContent = "Please fill in all details";
         } else {
             error.textContent = "";
             const data = {
@@ -16,28 +17,23 @@ const AboutUs = () => {
                 email: email,
                 message: message
             };
-
-            axios.post('https://server-zepw.onrender.com/contactemail', data, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-                .then(response => {
-                    if (response.data.success) {
-                        // Handle success, show a success message, or redirect the user
-                        console.log(response.data.message);
-                    } else {
-                        // Handle failure, show an error message
-                        console.error(response.data.error);
-                    }
-                })
-                .catch(error => {
-                    // Handle any unexpected errors during the axios request
-                    console.error('Error:', error);
+    
+            try {
+                const response = await axios.post('https://server-zepw.onrender.com/contactemail', data, {
+                    timeout: 5000, 
                 });
-
+                console.log('Response:', response);
+                if (response.status === 200) {
+                    console.log('Your feedback has been sent');
+                } else {
+                    console.log('Your feedback has not been sent', response);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
         }
-    }
+    };
+    
         return (
             <>
 
@@ -96,19 +92,19 @@ const AboutUs = () => {
                                     <p className='text-danger' id="wrong_pass_text"></p>
 
                                     <div className="d-inline-block mb-4  w-100">
-                                        <label for="name" className="form-label" style={{ color: '#FFE164' }}>Name</label>
+                                        <label htmlFor="name" className="form-label" style={{ color: '#FFE164' }}>Name</label>
                                         <input type="text" className="form-control p-lg-3 p-0 rounded-5 w-100 d-inline-block bg-transparent" style={{ color: '#FFE164' }} id="name" />
                                     </div>
                                     <div className="d-inline-block mb-4 w-100">
-                                        <label for="Email" className="form-label" style={{ color: '#FFE164' }} >Email</label>
+                                        <label htmlFor="Email" className="form-label" style={{ color: '#FFE164' }} >Email</label>
                                         <input type="text" className="form-control p-lg-3 p-0 rounded-5 w-100 d-inline-block bg-transparent" style={{ color: '#FFE164' }} id="Email" />
                                     </div>
                                     <div className="mb-2">
                                         <label className="form-label" style={{ color: '#FFE164' }} htmlFor="message">Message</label>
                                         <textarea className="form-control bg-transparent" style={{ color: '#FFE164' }} id="message" rows="4"></textarea>
                                     </div>
-                                    <div className="text-danger" id="ErrorMsg"></div>
-                                    <button id="send_message" onclick={saveMessage}
+                                    <p className="text-danger" id="ErrorMsg"></p>
+                                    <button  onClick={saveMessage}
                                         className="btn w-100 my-2 p-lg-3 p-2 rounded-5 shadow-0 text-capitalize"
                                         style={{ backgroundColor: '#FFE164', fontSize: '16px', color: '#031A33' }}>Send
                                     </button>
