@@ -19,7 +19,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (min-width: 300px) and (max-width: 520px) {
   .DashImageView {
     height: 200px !important;
   }
@@ -76,7 +76,7 @@ body::-webkit-scrollbar {
   scrollbar-width: none !important;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 480px) {
+@media only screen and (min-width: 300px) and (max-width: 520px) {
   .heading {
     font-size: 1.2rem;
   }

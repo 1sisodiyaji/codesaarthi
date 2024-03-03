@@ -204,8 +204,7 @@ export const Navbar = () => {
       </div>
 
       {/* <!-- Navbar For big screen--> */}
-      <nav
-        className="navbar navbar-expand-lg sticky sticky-top p-0 d-lg-block d-md-block d-sm-none  shadow-0"
+      <nav className="navbar navbar-expand-lg sticky sticky-top p-0 d-lg-block  d-none  shadow-0"
         style={{ zIndex: "100000!important" }}
       >
         <div
