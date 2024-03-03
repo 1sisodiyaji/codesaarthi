@@ -16,7 +16,7 @@ const AboutUs = () => {
                 message: message
             };
         
-            fetch('https://server-zepw.onrender.com/submit-form', {
+            fetch('https://server-zepw.onrender.com/contactemail', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
