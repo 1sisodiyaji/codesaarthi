@@ -19,10 +19,8 @@ const AboutUs = () => {
             };
     
             try {
-                const response = await axios.post('https://server-zepw.onrender.com/contactemail', data, {
-                    timeout: 5000, 
-                });
-                console.log('Response:', response);
+                const response = await axios.post('https://server-zepw.onrender.com/contactemail', data);
+                
                 if (response.status === 200) {
                     console.log('Your feedback has been sent');
                 } else {
