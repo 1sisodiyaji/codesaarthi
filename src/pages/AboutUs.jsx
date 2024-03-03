@@ -46,6 +46,7 @@ const handleSubmission = (isSubmitted) => {
                 const response = await axios.post('https://server-zepw.onrender.com/contactemail', data);
                 
                 if (response.status === 200) {
+                    error.textContent = "";
                     setIsSubmitted(true);
                     handleSubmission(true);
                   } else {
