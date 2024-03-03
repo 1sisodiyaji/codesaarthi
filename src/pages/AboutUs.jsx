@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
 
 const AboutUs = () => {
+const[isSubmitted ,setIsSubmitted] =useState('false');
+const handleSubmission = (isSubmitted) => {
+        if (isSubmitted === true) {
+          toast.success('Submitted', {
+            position: 'top-right',
+            autoClose: 3000, // Set the duration for the toast
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
+        } else {
+          toast.error('Not Submitted', {
+            position: 'top-right',
+            autoClose: 3000, // Set the duration for the toast
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
+        }
+      };
+
     const saveMessage = async () => {
         const name = document.getElementById('name').value;
         const email = document.getElementById('Email').value;
@@ -22,10 +46,12 @@ const AboutUs = () => {
                 const response = await axios.post('https://server-zepw.onrender.com/contactemail', data);
                 
                 if (response.status === 200) {
-                    console.log('Your feedback has been sent');
-                } else {
-                    console.log('Your feedback has not been sent', response);
-                }
+                    setIsSubmitted(true);
+                    handleSubmission(true);
+                  } else {
+                    setIsSubmitted(false);
+                    handleSubmission(false);
+                  }
             } catch (error) {
                 console.error('Error:', error);
             }
@@ -35,7 +61,7 @@ const AboutUs = () => {
         return (
             <>
 
-
+<ToastContainer />
                 <div className="container-fluid container-lg text-light my-lg-4 py-lg-4 mt-5 pt-4 text-center">
                     <h1 className="heading text-dark" >
                         Why we<span style={{ color: '#79b4e2' }} > Exist?</span>
