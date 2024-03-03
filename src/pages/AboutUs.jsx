@@ -58,10 +58,10 @@ const AboutUs = () => {
             {/* <!--    Cards--> */}
             <div className="container-fluid  my-lg-4 py-lg-4">
                 <div className="row  p-lg-0 p-3">
-                    <div className="col-lg-2 col-md-0 col-sm-0">
+                    <div className="col-lg-2 col-md-0 col-sm-0 ">
                         <img src="../img/vision1.webp" className='img-fluid pt-5 mt-5 gt-5' style={{ height: '50vh', width: '60vw' }} alt="mission image" />
                     </div>
-                    <div className="col-lg-4 col-12 g-0 my-2 rounded-6" style={{ boxShadow: '5px 5px 20px black' }}>
+                    <div className="col-lg-4 col-12 g-0 my-2 rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black' }}>
                         <div className="card p-4" style={{ backgroundColor: '#79b4e2' }}>
                             <div className="d-flex justify-content-end">
                             </div>
@@ -70,7 +70,7 @@ const AboutUs = () => {
                         </div>
                     </div>
 
-                    <div className="col-lg-4 col-12 g-0 my-2  rounded-6" style={{ boxShadow: '5px 5px 20px black' }}   >
+                    <div className="col-lg-4 col-12 g-0 my-2  rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black' }}   >
                         <div className="card p-4 ms-lg-2 " style={{ backgroundColor: '#79b4e2' }}>
                             <strong><h1 className="text-white heading" style={{ fontWeight: 'bolder' }}>Our <span style={{ color: 'black' }}>Vision</span></h1></strong>
                             <h3 className="text-white heading2">We aspire to revolutionize the educational landscape, making learning accessible and free for all. As the student who have faith to learn they can grow here and each and every student could get learning free . our motive is to make it easy and available for all freely . We will help you atmost we can ....</h3>
@@ -84,10 +84,11 @@ const AboutUs = () => {
                 </div>
             </div>
 
-            <div className="container-fluid container-lg text-light my-lg-4 py-lg-4 my-3 py-3">
-                <div className="row flex-md-row flex-column-reverse ">
-                    <div className="col-lg-6 col-12   py-lg-5 py-3 px-lg-5 px-3 card shadow-5-soft rounded-9 "
-                        style={{ backgroundColor: '#031A33', border: '1px solid #FFE164' }}>
+            <div className="container-fluid  text-light my-lg-4 py-lg-4 my-3 py-3">
+                <div className="row flex-md-row flex-column-reverse g-0 ">
+                    <div className=" col-lg-2 col-0"></div>
+                    <div className="col-lg-4 col-12   py-lg-5 py-3 px-lg-3 px-3 card shadow-5-soft tilt-effect " style={{border: '1px solid #FFE164',
+                      borderTopLeftRadius: '20px', borderTopRightRadius: '20px', borderBottomLeftRadius: '0', borderBottomRightRadius: '0',backgroundColor: '#031A33'}}>
                         <div className="justify-content-center" style={{ maxWidth: '100%' }}>
                             <div>
                                 <h1 style={{ color: '#FFE164',  fontWeight: 'lighter' }} className="text-start mb-4">
@@ -115,8 +116,8 @@ const AboutUs = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center my-3">
-                        <img src="https://wooble.org/img/portfolio_light.png" className="img-fluid" />
+                    <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center">
+                        <img src="img/contactPage.png" className="img-fluid w-100" />
                     </div>
                 </div>
 

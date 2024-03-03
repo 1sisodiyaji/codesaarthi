@@ -99,3 +99,20 @@ body::-webkit-scrollbar {
   color: #f3f3f3 !important;
   background-color: #79b4e2 !important;
 }
+.textColor{
+  color: #358CCA;
+}
+.tilt-effect {
+  transition: transform 0.3s ease-in-out;
+}
+
+.tilt-effect:hover {
+  transform: rotate(2deg)  translateY(5px);
+}
+.tilt-effect2 {
+  transition: transform 0.3s ease-in-out;
+}
+
+.tilt-effect2:hover {
+  transform:  scale(1.1);
+}

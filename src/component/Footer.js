@@ -27,7 +27,7 @@ export const Footer = ({ onFooterClick }) => {
                     </Link>
  
                     {/* <!-- Instagram --> */}
-                    <Link className = "btn btn-sm ms-3" to="#" role="button"  style={{ borderRadius:"50%" , color:"#79b4e2" , fontSize:'0.9rem'}}  target="_blank" >
+                    <Link className = "btn btn-sm ms-3" to="https://www.instagram.com/codesaarthi/" role="button"  style={{ borderRadius:"50%" , color:"#79b4e2" , fontSize:'0.9rem'}}  target="_blank" >
                         <i className = "fi fi-brands-instagram  rounded-8"></i>
                     </Link>
                     {/* <!-- Youtube --> */}

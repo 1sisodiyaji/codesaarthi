@@ -8,7 +8,7 @@ const Problems = () => {
         <div className="row w-lg-75 w-100  g-0 my-3">
 
           <div className="col-lg-4 col-12 my-2 pe-lg-2">
-            <div class="card  " style={{ backgroundColor: '#6aa1b4' }}>
+            <div class=" card  tilt-effect2 " style={{ backgroundColor: '#6aa1b4' }}>
               <div class="card-body">
                 <h5 class="card-title">Solutions Of Top 50 Questions </h5>
                 <p class="card-text">
@@ -21,7 +21,7 @@ const Problems = () => {
           </div>
 
           <div className="col-lg-4 col-12 my-2">
-            <div class="card  " style={{ backgroundColor: '#6aa1b4' }}>
+            <div class=" card  tilt-effect2 " style={{ backgroundColor: '#6aa1b4' }}>
               <div class="card-body">
                 <h5 class="card-title">Top Notch Notes </h5>
                 <p class="card-text">
@@ -34,7 +34,7 @@ const Problems = () => {
           </div>
 
           <div className="col-lg-4 col-12 my-2 ps-lg-2">
-            <div class="card" style={{ backgroundColor: '#6aa1b4' }}>
+            <div class="card  tilt-effect2" style={{ backgroundColor: '#6aa1b4' }}>
               <div class="card-body">
                 <h5 class="card-title">DBMS Notes</h5>
                 <p class="card-text">
@@ -52,7 +52,7 @@ const Problems = () => {
         <div className="row w-lg-75 w-100  g-0  ">
 
           <div className="col-lg-4 col-12 my-2 pe-lg-3">
-            <div class="card  " style={{ backgroundColor: '#6aa1b4' }}>
+            <div class=" card  tilt-effect2 " style={{ backgroundColor: '#6aa1b4' }}>
               <div class="card-body">
                 <div className="row">
                   <div className="col-4">
@@ -75,7 +75,7 @@ const Problems = () => {
           </div>
 
           <div className="col-lg-4 col-12 my-2 ">
-            <div class="card" style={{ backgroundColor: '#6aa1b4' }}>
+            <div class="card  tilt-effect2" style={{ backgroundColor: '#6aa1b4' }}>
               <div class="card-body">
                 <div className="row">
                   <div className="col-4">
@@ -98,7 +98,7 @@ const Problems = () => {
           </div>
 
           <div className="col-lg-4 col-12 my-2 ps-lg-3">
-            <div class="card  " style={{ backgroundColor: '#6aa1b4' }}>
+            <div class=" card  tilt-effect2 " style={{ backgroundColor: '#6aa1b4' }}>
               <div class="card-body">
                 <div className="row">
                   <div className="col-4">
@@ -121,7 +121,7 @@ const Problems = () => {
           </div>
 
           <div className="col-lg-4 col-12 my-2 pe-lg-3">
-            <div class="card  " style={{ backgroundColor: '#6aa1b4' }}>
+            <div class=" card  tilt-effect2 " style={{ backgroundColor: '#6aa1b4' }}>
               <div class="card-body">
                 <div className="row">
                   <div className="col-4">
@@ -145,7 +145,7 @@ const Problems = () => {
 
 
           <div className="col-lg-4 col-12 my-2">
-            <div class="card  " style={{ backgroundColor: '#6aa1b4' }}>
+            <div class=" card  tilt-effect2 " style={{ backgroundColor: '#6aa1b4' }}>
               <div class="card-body">
                 <div className="row">
                   <div className="col-4">
@@ -168,7 +168,7 @@ const Problems = () => {
           </div>
 
           <div className="col-lg-4 col-12 my-2 ps-lg-3">
-            <div class="card  " style={{ backgroundColor: '#6aa1b4' }}>
+            <div class=" card  tilt-effect2 " style={{ backgroundColor: '#6aa1b4' }}>
               <div class="card-body">
                 <div className="row">
                   <div className="col-4">

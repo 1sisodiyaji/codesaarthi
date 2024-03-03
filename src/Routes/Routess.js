@@ -24,6 +24,7 @@ import Array from "../pages/Theory/Array/Array";
 import TransversingOfArray from "../pages/Theory/Array/TransversingOfArray";
 import WebDevelopment from "../pages/Projects/WebDevelopment";
 import AmazonClone from "../pages/Projects/Amazon-clone";
+import Discord from "../pages/Projects/Discord";
 
 const Routess = () => {
 
@@ -67,6 +68,7 @@ const Routess = () => {
           <Route path="/transversing-of-array" element={<TransversingOfArray />} />
           <Route path="/web-development" element={<WebDevelopment />} />
           <Route path="/Amazon-clone" element={<AmazonClone />} />
+          <Route path="/Discord" element={<Discord />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 
