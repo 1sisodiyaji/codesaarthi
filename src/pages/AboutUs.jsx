@@ -9,7 +9,7 @@ const AboutUs = () => {
         if (isSubmitted === true) {
             toast.success('Submitted', {
                 position: 'bottomRight',
-                autoClose: 3000, // Set the duration for the toast
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -18,7 +18,7 @@ const AboutUs = () => {
         } else {
             toast.error('Not Submitted', {
                 position: 'bottomRight',
-                autoClose: 3000, // Set the duration for the toast
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -152,7 +152,7 @@ const AboutUs = () => {
                 closeOnClick
                 pauseOnHover
                 draggable
-                style={{ zIndex: '9999' ,height:'50px' ,width:'150px' ,position:'relative' }}
+                style={{ zIndex: '9999' ,height:'50px' ,width:'250px' ,position:'relative' }}
             />
 
 
