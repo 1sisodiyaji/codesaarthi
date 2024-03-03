@@ -106,6 +106,15 @@ const AboutUs = () => {
             </div>
 
             <div className="container-fluid  text-light my-lg-4 py-lg-4 my-3 py-3">
+            <ToastContainer
+                position="bottomRight"
+                autoClose={3000}
+                hideProgressBar={false}
+                closeOnClick
+                pauseOnHover
+                draggable
+                style={{ zIndex: '9999' ,height:'50px' ,width:'250px' }}
+            />
                 <div className="row flex-md-row flex-column-reverse g-0 ">
                     <div className=" col-lg-2 col-0"></div>
                     <div className="col-lg-4 col-12   py-lg-5 py-3 px-lg-3 px-3 card shadow-5-soft tilt-effect " style={{
@@ -145,17 +154,6 @@ const AboutUs = () => {
                 </div>
 
             </div>
-            <ToastContainer
-                position="bottomRight"
-                autoClose={3000}
-                hideProgressBar={false}
-                closeOnClick
-                pauseOnHover
-                draggable
-                style={{ zIndex: '9999' ,height:'50px' ,width:'250px' }}
-            />
-
-
         </>
     )
 }
