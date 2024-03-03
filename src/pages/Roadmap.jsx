@@ -10,11 +10,11 @@ const Roadmap = () => {
         <div className="row g-6">
 
           <div className="col-lg-3 my-2 col-12">
-            <div class="card border p-3" style={{ backgroundColor: '#031A33' }}>
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <div className="card border p-3" style={{ backgroundColor: '#031A33' }}>
+              <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className='col-4'><img src="img/logo.png" className='img-fluid' alt="" /></div>
-                  <div className='col-8 align-self-center'><h5 class="card-title text-light">DSA Roadmap</h5></div>
+                  <div className='col-8 align-self-center'><h5 className="card-title text-light">DSA Roadmap</h5></div>
                 </div>
                 <div className="conatiner-fluid" style={{ overflowY: 'scroll', height: '400px ' }}>
                  <Dsa/>
@@ -27,11 +27,11 @@ const Roadmap = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div class="card border p-3" style={{ backgroundColor: '#6aa1b4' }}>
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <div className="card border p-3" style={{ backgroundColor: '#6aa1b4' }}>
+              <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className='col-4'><img src="img/logo.png" className='img-fluid' alt="" /></div>
-                  <div className='col-8 align-self-center'><h5 class="card-title text-light">OS Roadmap</h5></div>
+                  <div className='col-8 align-self-center'><h5 className="card-title text-light">OS Roadmap</h5></div>
                 </div>
                 <div className="conatiner-fluid" style={{ overflowY: 'scroll', height: '400px ' }}>
 
@@ -44,11 +44,11 @@ const Roadmap = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div class="card border p-3" style={{ backgroundColor: '#6aa1b4' }}>
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <div className="card border p-3" style={{ backgroundColor: '#6aa1b4' }}>
+              <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className='col-4'><img src="img/logo.png" className='img-fluid' alt="" /></div>
-                  <div className='col-8 align-self-center'><h5 class="card-title text-light">DBMS Roadmap</h5></div>
+                  <div className='col-8 align-self-center'><h5 className="card-title text-light">DBMS Roadmap</h5></div>
                 </div>
                 <div className="conatiner-fluid" style={{ overflowY: 'scroll', height: '400px ' }}>
 
@@ -62,11 +62,11 @@ const Roadmap = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div class="card border p-3" style={{ backgroundColor: '#6aa1b4' }}>
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <div className="card border p-3" style={{ backgroundColor: '#6aa1b4' }}>
+              <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className='col-4'><img src="img/logo.png" className='img-fluid' alt="" /></div>
-                  <div className='col-8 align-self-center'><h5 class="card-title text-light">CN Roadmap</h5></div>
+                  <div className='col-8 align-self-center'><h5 className="card-title text-light">CN Roadmap</h5></div>
                 </div>
                 <div className="conatiner-fluid" style={{ overflowY: 'scroll', height: '400px ' }}>
 
