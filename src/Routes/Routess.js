@@ -25,6 +25,14 @@ import TransversingOfArray from "../pages/Theory/Array/TransversingOfArray";
 import WebDevelopment from "../pages/Projects/WebDevelopment";
 import AmazonClone from "../pages/Projects/Amazon-clone";
 import Discord from "../pages/Projects/Discord";
+import ReverseOfArray from "../pages/Theory/Array/ReverseOf Array";
+import Challenges from "../pages/Theory/Array/Challenges";
+import PallindromeInArray from "../pages/Theory/Array/PallindromeInArray";
+import SortingArray from "../pages/Theory/Array/SortingArrays";
+import SearchingArray from "../pages/Theory/Array/SearchingArray";
+import MultiDimension from "../pages/Theory/Array/MultiDimensaionalArray";
+import DynamicArray from "../pages/Theory/Array/DynamicArray";
+import CommonMistakes from "../pages/Theory/Array/CommonMistakes";
 
 const Routess = () => {
 
@@ -66,6 +74,14 @@ const Routess = () => {
           <Route path="/dsa" element={<Dsa/>} />
           <Route path="/array" element={<Array />} />
           <Route path="/transversing-of-array" element={<TransversingOfArray />} />
+          <Route path="/reverse-of-array" element={<ReverseOfArray />} />
+          <Route path="/Challenges-And-Exercise" element={<Challenges />} />
+          <Route path="/Pallindrome-in-Array" element={<PallindromeInArray />} />
+          <Route path="/Sorting-Array" element={<SortingArray />} />
+          <Route path="/Searching-Array" element={<SearchingArray />} />
+          <Route path="/Dynamic-Arrays" element={<DynamicArray />} />
+          <Route path="/Common-Mistakes-in-Array" element={<CommonMistakes />} />
+          <Route path="/MultiDimensions-in-Array" element={<MultiDimension />} />
           <Route path="/web-development" element={<WebDevelopment />} />
           <Route path="/Amazon-clone" element={<AmazonClone />} />
           <Route path="/Discord" element={<Discord />} />

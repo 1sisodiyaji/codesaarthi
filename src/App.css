@@ -42,6 +42,21 @@ body::-webkit-scrollbar {
   .sidebar.show {
     right: 0;
   }
+  .sidebar2 {
+    position: fixed;
+    top: 95px;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    color: #FFE164;
+    background-color: #031A33;
+    transition: right 0.3s ease;
+    padding: 20px;
+  }
+
+  .sidebar2.show {
+    left: 0;
+  }
 
   .design {
     margin-top: 7vh;

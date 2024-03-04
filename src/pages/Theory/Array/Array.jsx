@@ -18,19 +18,19 @@ const Array = () => {
         };
         return () => {
             speechSynthesis.cancel();
-          };
+        };
     }, []);
 
     useEffect(() => {
         const handleBeforeUnload = () => {
-          speechSynthesis.cancel();
+            speechSynthesis.cancel();
         };
-    
+
         window.addEventListener('beforeunload', handleBeforeUnload);
         return () => {
-          window.removeEventListener('beforeunload', handleBeforeUnload);
+            window.removeEventListener('beforeunload', handleBeforeUnload);
         };
-      }, []);
+    }, []);
 
     const speak = () => {
         const elementsToRead = document.querySelectorAll('.listen');
@@ -103,17 +103,56 @@ const Array = () => {
 
     return (
         <>
-            <div className="row g-0" style={{ backgroundColor: '#031A33' }}>
+            <div className="row g-0 pt-lg-0 mt-lg-0   pt-5 mt-2 design" style={{ backgroundColor: '#031A33' }}>
+            <div className="col-2 d-lg-block d-none"><SideTheory/></div>
 
-                <div className="col-2 d-lg-block d-none"><SideTheory /></div>
+                <div className={`col-lg-2 col-12  d-lg-none d-block `}
+                    style={{ backgroundColor: '#031A33', zIndex: '1' }}>
+                    <div className="row g-0 position-fixed " >
+                        <div className="col-6 ps-2"><SideTheory /></div>
+
+                        <div className="col-6">
+                            <div className="row g-0 ">
+                                <div className="col-4 text-center">
+                                    {!isSpeaking ?
+                                        <>
+                                            <div className=" btn btn-sm shadow-0 rounded-8 border border-warning" onClick={speak}>
+                                                <i className="fi fi-sr-volume text-success"></i>
+                                            </div>
+                                        </>
+                                        :
+                                        <>
+                                            <div className="btn btn-sm shadow-0 rounded-8 border border-warning" onClick={pause}>
+                                                <i className="fi fi-rs-pause-circle text-success" style={{ fontSize: '1rem' }}></i>
+                                            </div>
+                                        </>
+                                    }
+                                </div>
+                                <div className="col-8">
+                                    <select onChange={handleVoiceChange} value={selectedVoice ? selectedVoice.name : ''} className='w-75 ms-4' style={{
+                                        color: '#FFE164',
+                                        backgroundColor: '#031A33'
+                                    }}>
+                                        {voices.map((voice, index) => (
+                                            <option key={index} value={voice.name}>
+                                                {voice.name}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div className="col-lg-7  col-12">
                     <div className="conatiner-fluid design p-1  py-5">
                         <div className="row g-0">
-                            <div className="col-8">
+                            <div className="col-lg-8 col-12">
                                 <h2 style={{ color: '#FFE164' }} className='listen'> Understanding Arrays in Data Structures</h2>
                             </div>
-                            <div className="col-4">
+                            <div className="col-4 d-lg-block d-none">
                                 <div className="row g-0 ">
                                     <div className="col-4 text-center">
                                         {!isSpeaking ?
