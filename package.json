@@ -25,6 +25,7 @@
     "react-qr-code": "^2.0.12",
     "react-router-dom": "^6.21.3",
     "react-scripts": "5.0.1",
+    "react-snap": "^1.23.0",
     "react-toastify": "^10.0.4",
     "react-webcam": "^7.2.0",
     "roughjs": "^4.6.6",
@@ -34,7 +35,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "dev": "index.js"
+    "dev": "index.js",
+    "postbuild":"react-snap"
   },
   "eslintConfig": {
     "extends": [

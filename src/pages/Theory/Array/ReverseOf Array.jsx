@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import TextForm from '../../../component/Textarea';
 import SideTheory from '../../../component/SideTheory';
 
@@ -146,122 +146,90 @@ const ReverseOfArray = () => {
 
                 <div className="col-lg-7 col-12">
                     <div className="container-fluid design p-1 py-lg-5 ">
-                    <div className="row g-0">
-              <div className="col-lg-8 col-12">
-                <h2 style={{ color: '#FFE164' }} className='listen'> Reverse in Array  </h2>
-              </div>
-              <div className="col-4 d-lg-block d-none">
-                <div className="row g-0 ">
-                  <div className="col-4 text-center">
-                    {!isSpeaking ?
-                      <>
-                        <div className=" btn btn-sm shadow-0 rounded-8 border border-warning" onClick={speak}>
-                          <i className="fi fi-sr-volume text-success"></i>
-                        </div>
-                      </>
-                      :
-                      <>
-                        <div className="btn btn-sm shadow-0 rounded-8 border border-warning" onClick={pause}>
-                          <i className="fi fi-rs-pause-circle text-success" style={{ fontSize: '1rem' }}></i>
-                        </div>
-                      </>
-                    }
-                  </div>
-                  <div className="col-8">
-                    <select onChange={handleVoiceChange} value={selectedVoice ? selectedVoice.name : ''} className='w-75 ms-4' style={{
-                      color: '#FFE164',
-                      backgroundColor: '#031A33'
-                    }}>
-                      {voices.map((voice, index) => (
-                        <option key={index} value={voice.name}>
-                          {voice.name}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                        <div className="row g-0">
+                            <div className="col-lg-8 col-12">
+                                <h2 style={{ color: '#FFE164' }} className='listen'> Reverse in Array  </h2>
+                            </div>
+                            <div className="col-4 d-lg-block d-none">
+                                <div className="row g-0 ">
+                                    <div className="col-4 text-center">
+                                        {!isSpeaking ?
+                                            <>
+                                                <div className=" btn btn-sm shadow-0 rounded-8 border border-warning" onClick={speak}>
+                                                    <i className="fi fi-sr-volume text-success"></i>
+                                                </div>
+                                            </>
+                                            :
+                                            <>
+                                                <div className="btn btn-sm shadow-0 rounded-8 border border-warning" onClick={pause}>
+                                                    <i className="fi fi-rs-pause-circle text-success" style={{ fontSize: '1rem' }}></i>
+                                                </div>
+                                            </>
+                                        }
+                                    </div>
+                                    <div className="col-8">
+                                        <select onChange={handleVoiceChange} value={selectedVoice ? selectedVoice.name : ''} className='w-75 ms-4' style={{
+                                            color: '#FFE164',
+                                            backgroundColor: '#031A33'
+                                        }}>
+                                            {voices.map((voice, index) => (
+                                                <option key={index} value={voice.name}>
+                                                    {voice.name}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
 
-                </div>
-              </div>
-            </div>
+                                </div>
+                            </div>
+                        </div>
 
-                        <h3 className='text-light pt-2 listen'> Array Traverse Ka Matlab:</h3>
+                        <h3 className='text-light pt-2 listen'> Reverse Operation Ka Matlab:</h3>
                         <p style={{ color: 'whitesmoke' }} className='listen'>
-                            Array traverse ka matlab hai har ek array element ko systematic taur par dekhna aur uska istemal karna.
-                            Yahan har item ka access karna aur usme kuch work karna shaamil hai, jyadatar ek systematic tareeke se.
+                        Array ko reverse karna ka matlab hai uske elements ko ulta kar dena, jaise hum ek line ko ulta kar lete hain. Yeh operation simple, par powerful hai.
                         </p>
 
-                        <h3 className='text-light pt-2 listen'> Array Traverse Kyon Important Hai:</h3>
-                        <p style={{ color: 'whitesmoke' }} className='listen'>
-                            Array traverse kaam karne ke liye important hai kyun ki isse array ke elements ko check aur modify kiya ja sakta hai.
-                            Ye algorithm design aur programming tasks mein kafi important hai.
-                        </p>
+                        <h3 className='text-light pt-2 listen'> Reverse Karne Ka Tareeka:</h3>
+                       
 
                         <div className='p-2 d-lg-none d-block'>
                             <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-
+                       
+                        <h3 className='text-light pt-2 listen'> Backward Loop:</h3>
                         <p style={{ color: 'whitesmoke' }} className='listen'>
-                            Arrays ko traverse karne ke liye loops ka istemal karna (for example, <span className='text-warning'>for</span> ya <span className='text-warning'>while</span> loops).
-                            Traversal ke liye khaas tareekon ka upayog karna.
+                        Array ko ulta karne ke liye hum backward loop ka use karte hain. Imagine karo ki aap ek purani tasveer ko rewind kar rahe hain, waise hi array ko bhi ulta karte hain.
                         </p>
 
-                        <h3 className='text-light pt-2 listen'> 2. Array Elements Mein Idhar-Udhar Ghumna:</h3>
+                        <h3 className='text-light pt-2 listen'>Partners Ko Swap Karna:</h3>
                         <p style={{ color: 'whitesmoke' }} className='listen'>
-                            Samajhna ki systematically array ke elements ko kaise traverse karna hai.
-                            Traverse karne ka direction (forward ya backward) aur step size ka dhyan rakhna.
+                        Jaise dance mein partners jagah badalte hain, waise hi array ke elements bhi apni jagah badalte hain. Har element apne saathi ke saath jagah exchange karta hai.
                         </p>
+                        <h3 className='text-light pt-2 listen'>Pivot Point:</h3>
                         <p style={{ color: 'whitesmoke' }} className='listen'>
-                            Traversal Ke Liye Loop Ka Prayog:    Efficient aur controlled traversal ke liye programming loops ka istemal karna (for example, for ya while loops).
-                            Loop constructs likhna jo ensure kare ki har element ko ek baar visit kiya jaaye.
-                            Elements Ko Prapt Karke Aur Unhe Modifying Karne Ki Process:
-
-                            Techniques sikhna Elements tak pahunchne ke liye.
-                            Dikhaana kaise traversal ke beech me Elements ko modify kiya ja sakta hai.
+                        Odd number of elements wale arrays mein, ek central element hota hai jo jagah nahi badalta – ise pivot kehte hain. Even number of elements wale arrays mein, sab smoothly jagah badal lete hain.
                         </p>
 
-                        <h3 className='text-light pt-2 listen'> 3. Sequence:</h3>
+                        <h3 className='text-light pt-2 listen'>Mirror Image Dikhta Hai: The Finale:</h3>
                         <p style={{ color: 'whitesmoke' }} className='listen'>
-                            Ye discuss karta hai ki array traversal ko kyun easy aur fundamental mana jata hai.
-                            Examples ke saath dikhata hai kaise traversal data processing tasks ko simplify karta hai.
+                        Jab aap array ko reverse karte hain, aapke saamne ek ulta arrangement aata hai, jise hum mirror image kehte hain. Yeh ek finale ki tarah hota hai, jisse aapka array ek interesting palindrome ban jata hai.
                         </p>
+                         <h3 className='text-light listen'>Examples Ke Bina Rehearsal:</h3> 
                         <p style={{ color: 'whitesmoke' }} className='listen'>
-                            Traversal Ke Dauran Aaya Jane Wala Data: Array traversal ke dauran kaun kaun se data milta hai, ye explore karna.
-                            Real-world examples dikhana encountered data ka importance.
+                        Array reversal ko samajhne ke liye koi bhi example dekhe bina bhi practice kar sakte hain. Yeh ek simple operation hai, jo alag-alag situations mein apply kiya ja sakta hai.
                         </p>
-                        <h5 className='text-light listen'>Examples</h5>
+                        <h5 className='text-danger listen'>Common Galtiyan:</h5>
                         <p style={{ color: 'whitesmoke' }} className='listen'>
-                            Different contexts mein array traversal ka practical examples dikhana.
-                            Dikhlana ki array traversal algorithmic solutions ka kaise importance hai.
+                        Kuch common mistakes hain jo array reverse karte waqt hoti hain. Inhe avoid karna important hai taki aapka code smooth rahe.
                         </p>
 
-                        <h3 className='text-light pt-2 listen'> 4. Common Mistakes and Best Practices:</h3>
+                        <h3 className='text-light pt-2 listen'>Real-world Mein Application:</h3>
                         <p style={{ color: 'whitesmoke' }} className='listen'>
-
-                            <span className='text-danger listen'>Common Errors in Array Traversal :</span>
-
-                            Identify karna typical mistakes jo array traversal mein hoti hain.
-                            Discuss karna kaise ye errors program ki efficiency ko affect kar sakti hain.
-                            Proper Traversal Ke Liye Conventions:
+                        Array reversal programming ke beyond bhi kaam aata hai. Iska use real-world scenarios mein bhi hota hai, jaise data manipulation ya pattern recognition mein.
                         </p>
+                         <h3 className='text-light pt-2 listen'>Developers Ke Liye Encore:</h3>
                         <p style={{ color: 'whitesmoke' }} className='listen'>
-                            Saaf aur error-free array traversal ke liye best practices sikhana.
-                            Consistent aur padhne yogya traversal code ke liye coding conventions ko follow karna.
-                            Real-world Applications and Examples:
-                        </p>
-
-                        <h3 style={{ color: '#FFE164' }} className='pt-2 listen'> 5. Guru mantra::</h3>
-                        <p style={{ color: 'whitesmoke' }} className='listen'>
-
-                            Reiterate karna ki array traversal programming aur data manipulation mein kaise ek important operation hai.
-                            Highlight karna ki ye algorithm design aur implementation mein kyun important hai.
-
-                            <br />
-                            Traversal Ke Maddhyam Se Data Receving Aur Sending Ka Ek Stable Tareeka Hai: Emphasize karna ki array traversal ek structured method hai data elements ke saath kaam karne ka.
-                            Discuss karna kaise ye help karta hai data ko efficiently retrieve, process, aur manage karne mein.
-
-                            <br />
-                            Excel in the Field of Array Traverse:  Developers ko encourage karna ki woh array traversal ko achhe se samajhne aur istemal karne ke liye.
-                            Acknowledge karna ki jo knowledge acquire hui hai, woh programming skills mein improvement layegi.
+                        Aapko yeh operation master karna chahiye, kyunki yeh sirf ek coding task nahi hai, balki ek skill hai jo aapko not just programming mein, balki apne life mein bhi empower karegi. Isse aap control nahi sirf code, balki apne goals aur challenges par bhi pa sakte hain.
                         </p>
                     </div>
                     <div className="d-lg-none d-block my-3">

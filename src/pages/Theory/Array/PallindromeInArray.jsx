@@ -147,7 +147,8 @@ const PallindromeInArray = () => {
 
             <div className="row g-0">
               <div className="col-lg-8 col-12">
-                <h2 style={{ color: '#FFE164' }}> Challeneges Facedd </h2>
+                <h2 style={{ color: '#FFE164' }} className='listen'>
+                  Array Mein Palindrome  </h2>
               </div>
               <div className="col-4 d-lg-block d-none">
                 <div className="row g-0 ">
@@ -182,14 +183,71 @@ const PallindromeInArray = () => {
                 </div>
               </div>
             </div>
+            <h3 className='text-light pt-2 listen'> Palindrome in Array - Samajhne Ka Asaan Guide:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Palindromic words jaise "radar" ko toh hum sab jante hain, par kya aapne kabhi socha hai ki hum coding mein bhi palindromes ka magic kar sakte hain? Aaiye samjhein kaise array mein palindrome ka jadoo karte hain, woh bhi ek simple guide ke through.
+            </p>
 
-            
+            <h3 className='text-light pt-2 listen'> Palindrome Ka Matlab:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Palindrome ka simple sa matlab hai ki koi bhi sequence ya word ulta-sidha padhne par bhi waisa hi dikhe. Jaise "madam" ya "level". Ab, isse array mein kaise apply karte hain, yeh jaane.
+            </p>
+            <div className='p-2 d-lg-none d-block'>
+              <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <h2 className='text-light pt-2 listen'>Palindromes Ki Pehechan:</h2>
+
+            <h3 className='text-light pt-2 listen'>Backward aur Forward Comparisons:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Palindrome check karne ke liye, hum array ke elements ko ulta aur seedha compare karte hain. Agar dono directions mein same hote hain, toh array palindrome hai.
+            </p>
+
+            <h3 className='text-light pt-2 listen'>Odd aur Even Palindromes:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Odd length wale arrays mein middle element hota hai, jo seedha aur ulta same rehta hai. Even length wale arrays mein bhi, saare elements ko compare karte waqt agar woh same hote hain, toh palindrome hai.
+            </p>
+            <h3 className='text-light pt-2 listen'>Code Banate Hain Palindrome:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Ab jab hume samajh aa gaya ki array mein palindrome kaise kaam karta hai, aaiye ek chhota sa code banayein:
+            </p>
+            <pre className='mb-3'><code className='text-warning'>
+              {`
+              def is_palindrome(arr):
+              n = len(arr)
+              for i in range(n // 2):
+              if arr[i] != arr[n - 1 - i]:
+              return False
+              return True
+
+              # Example Usage
+              my_array = [1, 2, 3, 2, 1]
+              result = is_palindrome(my_array)
+              print("Is Array Palindrome?", result)
+`}
+            </code></pre>
+
+
+            <h5 className='text-danger listen'>Common Galtiyan:</h5>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Palindromes check karte waqt kuch common mistakes hain jo avoid karni chahiye. Jaise ki sahi length ka check na karna ya comparison mein error hona.
+            </p>
+
+            <h3 className='text-light pt-2 listen'>Real-world Mein Application:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Palindromes ka concept not just coding mein, balki real-world mein bhi kaam aata hai. Jaise ki string manipulation ya data validation mein.
+            </p>
+            <h3 className=' pt-2 listen text-success'>Developers Ke Liye Magic:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Palindromes ki duniya mein kuch toh hai khaas. Inhe master karna aapke coding skills ko aur bhi interesting bana sakta hai. Isse aap not just ek code likh rahe hain, balki ek coding magic kar rahe hain.
+            </p>
+
           </div>
           <div class="d-lg-none d-block my-3">
             <h5 style={{ color: '#FFE164' }} className='ps-2 py-2'> Save your Notes Here :</h5>
             <TextForm />
           </div>
         </div>
+        
         <div className="col-3 py-5 d-lg-block d-none">
           <h2 style={{ color: '#FFE164' }}> Learn From Here :</h2>
           <div className='p-2'>
