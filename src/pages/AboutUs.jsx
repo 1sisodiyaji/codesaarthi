@@ -77,7 +77,7 @@ const AboutUs = () => {
                 <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
                 <meta property="og:url" content="https://codesaarthi.com/about-us" />
                 <meta property="og:type" content="Education-Website" />
-                <link rel="icon" type="image/png" to="img/favicon.ico" sizes="32x32" />
+                <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
 
 
