@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
 
 const AboutUs = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -65,7 +66,21 @@ const AboutUs = () => {
 
     return (
         <>
-           
+            <Helmet>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="CodeSaarthi" content="Codesaarthi" />
+                <meta name="theme-color" content="#ffffff" />
+                <meta name="robots" content="index, follow" />
+                <title>About us| Codesaarthi Free Learning Platform</title>
+                <meta property="og:title" content="About Us | Codesaarthi" />
+                <meta property="og:description" content="Learn about Codesaarthi and our mission to provide quality coding education." />
+                <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+                <meta property="og:url" content="https://codesaarthi.com/about-us" />
+                <meta property="og:type" content="Education-Website" />
+                <link rel="icon" type="image/png" to="img/favicon.ico" sizes="32x32" />
+            </Helmet>
+
+
             <div className="container-fluid container-lg text-light my-lg-4 py-lg-4 mt-5 pt-4 text-center">
                 <h1 className="heading text-dark" >
                     Why we<span style={{ color: '#79b4e2' }} > Exist?</span>
@@ -106,15 +121,15 @@ const AboutUs = () => {
             </div>
 
             <div className="container-fluid  text-light my-lg-4 py-lg-4 my-3 py-3">
-            <ToastContainer
-                position="bottomRight"
-                autoClose={3000}
-                hideProgressBar={false}
-                closeOnClick
-                pauseOnHover
-                draggable
-                style={{ zIndex: '9999' ,height:'50px' ,width:'250px' }}
-            />
+                <ToastContainer
+                    position="bottomRight"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    closeOnClick
+                    pauseOnHover
+                    draggable
+                    style={{ zIndex: '9999', height: '50px', width: '250px' }}
+                />
                 <div className="row flex-md-row flex-column-reverse g-0 ">
                     <div className=" col-lg-2 col-0"></div>
                     <div className="col-lg-4 col-12   py-lg-5 py-3 px-lg-3 px-3 card shadow-5-soft tilt-effect " style={{
