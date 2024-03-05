@@ -69,7 +69,6 @@ const AboutUs = () => {
             <Helmet>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="CodeSaarthi" content="Codesaarthi" />
-                <meta name="theme-color" content="#ffffff" />
                 <meta name="robots" content="index, follow" />
                 <title>About us| Codesaarthi Free Learning Platform</title>
                 <meta property="og:title" content="About Us | Codesaarthi" />
