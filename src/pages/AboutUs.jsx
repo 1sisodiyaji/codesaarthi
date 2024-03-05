@@ -70,6 +70,7 @@ const AboutUs = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="CodeSaarthi" content="Codesaarthi" />
                 <meta name="robots" content="index, follow" />
+                <meta name="description" content= "Learn about Codesaarthi and our mission to provide quality coding education." />
                 <title>About us| Codesaarthi Free Learning Platform</title>
                 <meta property="og:title" content="About Us | Codesaarthi" />
                 <meta property="og:description" content="Learn about Codesaarthi and our mission to provide quality coding education." />
