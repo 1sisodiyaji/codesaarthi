@@ -143,100 +143,100 @@ const MultiDimension = () => {
         <div className="col-2 d-lg-block d-none"><SideTheory /></div>
 
         <div className="col-lg-7 col-12">
-  <div className="container-fluid design p-1 py-5">
-    <div className="row g-0">
-      <div className="col-lg-8 col-12">
-        <h2 style={{ color: '#FFE164' }} className='listen'>
-          Multidimensional Arrays </h2>
-      </div>
-      <div className="col-4 d-lg-block d-none">
-        <div className="row g-0 ">
-          <div className="col-4 text-center">
-            {!isSpeaking ?
-              <>
-                <div className=" btn btn-sm shadow-0 rounded-8 border border-warning" onClick={speak}>
-                  <i className="fi fi-sr-volume text-success"></i>
+          <div className="container-fluid design p-1 py-5">
+            <div className="row g-0">
+              <div className="col-lg-8 col-12">
+                <h2 style={{ color: '#FFE164' }} className='listen'>
+                  Multidimensional Arrays </h2>
+              </div>
+              <div className="col-4 d-lg-block d-none">
+                <div className="row g-0 ">
+                  <div className="col-4 text-center">
+                    {!isSpeaking ?
+                      <>
+                        <div className=" btn btn-sm shadow-0 rounded-8 border border-warning" onClick={speak}>
+                          <i className="fi fi-sr-volume text-success"></i>
+                        </div>
+                      </>
+                      :
+                      <>
+                        <div className="btn btn-sm shadow-0 rounded-8 border border-warning" onClick={pause}>
+                          <i className="fi fi-rs-pause-circle text-success" style={{ fontSize: '1rem' }}></i>
+                        </div>
+                      </>
+                    }
+                  </div>
+                  <div className="col-8">
+                    <select onChange={handleVoiceChange} value={selectedVoice ? selectedVoice.name : ''} className='w-75 ms-4' style={{
+                      color: '#FFE164',
+                      backgroundColor: '#031A33'
+                    }}>
+                      {voices.map((voice, index) => (
+                        <option key={index} value={voice.name}>
+                          {voice.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
-              </>
-              :
-              <>
-                <div className="btn btn-sm shadow-0 rounded-8 border border-warning" onClick={pause}>
-                  <i className="fi fi-rs-pause-circle text-success" style={{ fontSize: '1rem' }}></i>
-                </div>
-              </>
-            }
+              </div>
+            </div>
+            <h3 className='text-light pt-2 listen'> Exploring Multidimensional Arrays - A Simple Guide:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Multidimensional arrays take us into the realm of structured data, where elements are organized in multiple dimensions. Let's dive into the world of multidimensional arrays and understand how they bring order to complex data structures.
+            </p>
+
+            <h3 className='text-light pt-2 listen'> What are Multidimensional Arrays:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              In simple terms, a multidimensional array is an array of arrays. It's like having tables within tables, where each element can be identified by its unique set of indices.
+            </p>
+
+            <div className='p-2 d-lg-none d-block'>
+              <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            <h2 className='text-light pt-2 listen'>Creating Multidimensional Arrays:</h2>
+
+            <h3 className='text-light pt-2 listen'>1. Two-Dimensional Arrays:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              A two-dimensional array is like a grid with rows and columns. It's often used to represent tables or matrices.
+            </p>
+
+            <h3 className='text-light pt-2 listen'>2. Three-Dimensional Arrays:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Adding another dimension introduces depth. Three-dimensional arrays are like a stack of matrices, forming a cuboid.
+            </p>
+
+            <h3 className='text-light pt-2 listen'>3. N-Dimensional Arrays:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              The concept extends to N-dimensions, where N can be any positive integer. Each dimension adds a layer of organization to the data.
+            </p>
+
+            <h3 className='text-light pt-2 listen'>Accessing Elements in Multidimensional Arrays:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Elements in a multidimensional array are accessed using multiple indices. For example, in a 2D array, you need both row and column indices to pinpoint an element.
+            </p>
+
+            <h3 className='text-light pt-2 listen'>Multidimensional Array Operations:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Performing operations on multidimensional arrays involves nested loops for traversal. It allows us to work systematically through the structured data.
+            </p>
+
+            <h3 className='text-light pt-2 listen'>Real-world Application:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Multidimensional arrays are extensively used in scientific computing, image processing, and simulations where data has multiple dimensions.
+            </p>
+
+            <h3 className='pt-2 listen text-success'>Developers' Toolkit:</h3>
+            <p style={{ color: 'whitesmoke' }} className='listen'>
+              Mastering multidimensional arrays adds a powerful tool to your programming toolkit. It's a structured way to handle complex data structures and solve real-world problems with efficiency.
+            </p>
           </div>
-          <div className="col-8">
-            <select onChange={handleVoiceChange} value={selectedVoice ? selectedVoice.name : ''} className='w-75 ms-4' style={{
-              color: '#FFE164',
-              backgroundColor: '#031A33'
-            }}>
-              {voices.map((voice, index) => (
-                <option key={index} value={voice.name}>
-                  {voice.name}
-                </option>
-              ))}
-            </select>
+          <div class="d-lg-none d-block my-3">
+            <h5 style={{ color: '#FFE164' }} className='ps-2 py-2'> Save your Notes Here :</h5>
+            <TextForm />
           </div>
         </div>
-      </div>
-    </div>
-    <h3 className='text-light pt-2 listen'> Exploring Multidimensional Arrays - A Simple Guide:</h3>
-    <p style={{ color: 'whitesmoke' }} className='listen'>
-      Multidimensional arrays take us into the realm of structured data, where elements are organized in multiple dimensions. Let's dive into the world of multidimensional arrays and understand how they bring order to complex data structures.
-    </p>
-
-    <h3 className='text-light pt-2 listen'> What are Multidimensional Arrays:</h3>
-    <p style={{ color: 'whitesmoke' }} className='listen'>
-      In simple terms, a multidimensional array is an array of arrays. It's like having tables within tables, where each element can be identified by its unique set of indices.
-    </p>
-
-    <div className='p-2 d-lg-none d-block'>
-      <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-
-    <h2 className='text-light pt-2 listen'>Creating Multidimensional Arrays:</h2>
-
-    <h3 className='text-light pt-2 listen'>1. Two-Dimensional Arrays:</h3>
-    <p style={{ color: 'whitesmoke' }} className='listen'>
-      A two-dimensional array is like a grid with rows and columns. It's often used to represent tables or matrices.
-    </p>
-
-    <h3 className='text-light pt-2 listen'>2. Three-Dimensional Arrays:</h3>
-    <p style={{ color: 'whitesmoke' }} className='listen'>
-      Adding another dimension introduces depth. Three-dimensional arrays are like a stack of matrices, forming a cuboid.
-    </p>
-
-    <h3 className='text-light pt-2 listen'>3. N-Dimensional Arrays:</h3>
-    <p style={{ color: 'whitesmoke' }} className='listen'>
-      The concept extends to N-dimensions, where N can be any positive integer. Each dimension adds a layer of organization to the data.
-    </p>
-
-    <h3 className='text-light pt-2 listen'>Accessing Elements in Multidimensional Arrays:</h3>
-    <p style={{ color: 'whitesmoke' }} className='listen'>
-      Elements in a multidimensional array are accessed using multiple indices. For example, in a 2D array, you need both row and column indices to pinpoint an element.
-    </p>
-
-    <h3 className='text-light pt-2 listen'>Multidimensional Array Operations:</h3>
-    <p style={{ color: 'whitesmoke' }} className='listen'>
-      Performing operations on multidimensional arrays involves nested loops for traversal. It allows us to work systematically through the structured data.
-    </p>
-
-    <h3 className='text-light pt-2 listen'>Real-world Application:</h3>
-    <p style={{ color: 'whitesmoke' }} className='listen'>
-      Multidimensional arrays are extensively used in scientific computing, image processing, and simulations where data has multiple dimensions.
-    </p>
-
-    <h3 className='pt-2 listen text-success'>Developers' Toolkit:</h3>
-    <p style={{ color: 'whitesmoke' }} className='listen'>
-      Mastering multidimensional arrays adds a powerful tool to your programming toolkit. It's a structured way to handle complex data structures and solve real-world problems with efficiency.
-    </p>
-  </div>
-  <div class="d-lg-none d-block my-3">
-    <h5 style={{ color: '#FFE164' }} className='ps-2 py-2'> Save your Notes Here :</h5>
-    <TextForm />
-  </div>
-</div>
 
 
         <div className="col-3 py-5 d-lg-block d-none">

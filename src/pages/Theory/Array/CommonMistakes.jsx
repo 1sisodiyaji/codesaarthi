@@ -142,54 +142,97 @@ const CommonMistakes = () => {
         </div>
         <div className="col-2 d-lg-block d-none"><SideTheory /></div>
 
-        <div className="col-lg-7  col-12">
-          <div className="container-fluid design p-1 py-5">
-
-            <div className="row g-0">
-              <div className="col-lg-8 col-12">
-                <h2 style={{ color: '#FFE164' }}> Challeneges Facedd </h2>
-              </div>
-              <div className="col-4 d-lg-block d-none">
-                <div className="row g-0 ">
-                  <div className="col-4 text-center">
-                    {!isSpeaking ?
-                      <>
-                        <div className=" btn btn-sm shadow-0 rounded-8 border border-warning" onClick={speak}>
-                          <i className="fi fi-sr-volume text-success"></i>
-                        </div>
-                      </>
-                      :
-                      <>
-                        <div className="btn btn-sm shadow-0 rounded-8 border border-warning" onClick={pause}>
-                          <i className="fi fi-rs-pause-circle text-success" style={{ fontSize: '1rem' }}></i>
-                        </div>
-                      </>
-                    }
-                  </div>
-                  <div className="col-8">
-                    <select onChange={handleVoiceChange} value={selectedVoice ? selectedVoice.name : ''} className='w-75 ms-4' style={{
-                      color: '#FFE164',
-                      backgroundColor: '#031A33'
-                    }}>
-                      {voices.map((voice, index) => (
-                        <option key={index} value={voice.name}>
-                          {voice.name}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
+        <div className="col-lg-7 col-12">
+  <div className="container-fluid design p-1 py-5">
+    <div className="row g-0">
+      <div className="col-lg-8 col-12">
+        <h2 style={{ color: '#FFE164' }} className='listen'>
+          Common Practices in Arrays</h2>
+      </div>
+      <div className="col-4 d-lg-block d-none">
+        <div className="row g-0 ">
+          <div className="col-4 text-center">
+            {!isSpeaking ?
+              <>
+                <div className=" btn btn-sm shadow-0 rounded-8 border border-warning" onClick={speak}>
+                  <i className="fi fi-sr-volume text-success"></i>
                 </div>
-              </div>
-            </div>
-
-            
+              </>
+              :
+              <>
+                <div className="btn btn-sm shadow-0 rounded-8 border border-warning" onClick={pause}>
+                  <i className="fi fi-rs-pause-circle text-success" style={{ fontSize: '1rem' }}></i>
+                </div>
+              </>
+            }
           </div>
-          <div class="d-lg-none d-block my-3">
-            <h5 style={{ color: '#FFE164' }} className='ps-2 py-2'> Save your Notes Here :</h5>
-            <TextForm />
+          <div className="col-8">
+            <select onChange={handleVoiceChange} value={selectedVoice ? selectedVoice.name : ''} className='w-75 ms-4' style={{
+              color: '#FFE164',
+              backgroundColor: '#031A33'
+            }}>
+              {voices.map((voice, index) => (
+                <option key={index} value={voice.name}>
+                  {voice.name}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
+      </div>
+    </div>
+    <h3 className='text-light pt-2 listen'> Exploring Common Practices in Arrays</h3>
+    <p style={{ color: 'whitesmoke' }} className='listen'>
+      Arrays are fundamental data structures in programming. Here, we'll explore common practices to follow when working with arrays, optimizing code readability, and ensuring efficient usage.
+    </p>
+
+    <h3 className='text-light pt-2 listen'> Array Declaration and Initialization:</h3>
+    <p style={{ color: 'whitesmoke' }} className='listen'>
+      Declare and initialize arrays with meaningful names. Clearly define the purpose of the array to enhance code understanding.
+    </p>
+
+    <h3 className='text-light pt-2 listen'> Consistent Coding Style:</h3>
+    <p style={{ color: 'whitesmoke' }} className='listen'>
+      Follow a consistent coding style for array-related operations. This includes indentation, spacing, and naming conventions for variables and functions.
+    </p>
+
+    <h3 className='text-light pt-2 listen'> Error Handling:</h3>
+    <p style={{ color: 'whitesmoke' }} className='listen'>
+      Implement robust error handling to address potential issues like index out of bounds, ensuring the stability of your array-based algorithms.
+    </p>
+
+    <h3 className='text-light pt-2 listen'> Commenting:</h3>
+    <p style={{ color: 'whitesmoke' }} className='listen'>
+      Use comments to explain complex algorithms, important logic, or any unconventional array operations. Make your code more understandable for others (and future you).
+    </p>
+
+    <h3 className='text-light pt-2 listen'> Avoid Magic Numbers:</h3>
+    <p style={{ color: 'whitesmoke' }} className='listen'>
+      Avoid using magic numbers in array indices or lengths. Define constants or variables with meaningful names to enhance code readability and maintenance.
+    </p>
+
+    <h3 className='text-light pt-2 listen'>Common Array Operations:</h3>
+    <p style={{ color: 'whitesmoke' }} className='listen'>
+      Familiarize yourself with common array operations like searching, sorting, and filtering. Choose the most efficient algorithm based on the specific use case.
+    </p>
+
+    <h3 className='text-light pt-2 listen'>Memory Management:</h3>
+    <p style={{ color: 'whitesmoke' }} className='listen'>
+      Be mindful of memory usage, especially in large-scale applications. Optimize array operations to reduce unnecessary memory allocation and deallocation.
+    </p>
+
+    <h3 className='pt-2 listen text-success'>Developers' Note:</h3>
+    <p style={{ color: 'whitesmoke' }} className='listen'>
+      Following these common practices ensures clean, maintainable, and efficient code when working with arrays. Apply these principles to enhance your skills in array manipulation.
+    </p>
+  </div>
+  <div class="d-lg-none d-block my-3">
+    <h5 style={{ color: '#FFE164' }} className='ps-2 py-2'> Save your Notes Here :</h5>
+    <TextForm />
+  </div>
+</div>
+
+
         <div className="col-3 py-5 d-lg-block d-none">
           <h2 style={{ color: '#FFE164' }}> Learn From Here :</h2>
           <div className='p-2'>
