@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@capacitor/android": "^5.7.0",
-    "@capacitor/core": "^5.7.0",
-    "@capacitor/ios": "^5.7.0",
     "@react-oauth/google": "^0.12.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -19,7 +16,7 @@
     "nodemon": "^3.0.3",
     "pod": "^0.9.0",
     "proxy": "^2.1.1",
-    "puppeteer": "^2.1.0",
+    "puppeteer": "^22.4.0",
     "react": "^18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
@@ -30,20 +27,19 @@
     "react-scripts": "5.0.1",
     "react-snap": "^1.23.0",
     "react-toastify": "^10.0.4",
-    "react-webcam": "^7.2.0",
-    "roughjs": "^4.6.6",
-    "socket.io-client": "^4.7.4",
     "web-vitals": "^2.1.4"
   },
   "puppeteer": {
-    "args": ["--no-sandbox"]
+    "args": [
+      "--no-sandbox"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "dev": "index.js"
+    "dev": "index.js",
+    "generate-sitemap": "node sitemap-generator.js"
   },
-
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -61,8 +57,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@capacitor/cli": "^5.7.0"
   }
 }
