@@ -2,75 +2,69 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
 const AboutUs = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [error, setError] = useState(false);
+
     const handleSubmission = (isSubmitted) => {
         if (isSubmitted === true) {
-            toast.success('Submitted', {
-                position: 'bottomRight',
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
+            toast.success('Submitted', { position: 'bottomRight', autoClose: 3000 });
         } else {
-            toast.error('Not Submitted', {
-                position: 'bottomRight',
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
+            toast.error('Not Submitted', { position: 'bottomRight', autoClose: 3000 });
         }
     };
 
     const saveMessage = async () => {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('Email').value;
-        const message = document.getElementById('message').value;
-        const error = document.getElementById('ErrorMsg');
+        if (!name ) {
+            setError('Please fill Your name');
+            return;
+        }else if(!email){
+            setError('Please fill email');
+            return;
+        }else if(!message) {
+            setError('Please address your issues');
+            return;
+        }
 
-        if (!name || !email || !message) {
-            error.textContent = "Please fill in all details";
-        } else {
-            error.textContent = "";
-            const data = {
-                name: name,
-                email: email,
-                message: message
-            };
+        const data = {
+            name: name,
+            email: email,
+            message: message,
+        };
 
-            try {
-                const response = await axios.post('https://codesaarthiserver.cyclic.app/contactemail', data);
+        try {
+            setIsLoading(true);
+            const response = await axios.post('https://codesaarthiserver.cyclic.app/contactemail', data);
 
-                if (response.status === 200) {
-                    error.textContent = "";
-                    setIsSubmitted(true);
-                    handleSubmission(true);
-                } else {
-                    name.textContent = "";
-                    email.textContent = "";
-                    message.textContent = "";
-                    setIsSubmitted(false);
-                    handleSubmission(false);
-                }
-            } catch (error) {
-                console.error('Error:', error);
+            if (response.data.status === 200) {
+                setError(" ");
+                setIsSubmitted(true);
+                handleSubmission(true);
+            } else {
+               
+                setIsSubmitted(false);
+                handleSubmission(false);
             }
+        } catch (error) {
+            console.error('Error:', error);
+        } finally {
+            setIsLoading(false);
+            setIsSubmitted(false);
         }
     };
-
     return (
         <>
             <Helmet>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="CodeSaarthi" content="Codesaarthi" />
                 <meta name="robots" content="index, follow" />
-                <meta name="description" content= "Learn about Codesaarthi and our mission to provide quality coding education." />
+                <meta name="description" content="Learn about Codesaarthi and our mission to provide quality coding education." />
                 <title>About us| Codesaarthi Free Learning Platform</title>
                 <meta property="og:title" content="About Us | Codesaarthi" />
                 <meta property="og:description" content="Learn about Codesaarthi and our mission to provide quality coding education." />
@@ -141,24 +135,59 @@ const AboutUs = () => {
                                 <h1 style={{ color: '#FFE164', fontWeight: 'lighter' }} className="text-start mb-4">
                                     Contact Us</h1>
 
-                                <p className='text-danger' id="wrong_pass_text"></p>
+                                <div className="mb-4 w-100">
+                                    <label htmlFor="name" className="form-label" style={{ color: '#FFE164' }}>
+                                        Your Name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder="Enter your name"
+                                        className="form-control p-lg-3 p-0 rounded-5 w-100 bg-transparent"
+                                        style={{ color: '#FFE164' }}
+                                        id="name"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
+                                </div>
 
-                                <div className="d-inline-block mb-4  w-100">
-                                    <label htmlFor="name" className="form-label" style={{ color: '#FFE164' }}>Name</label>
-                                    <input type="text" className="form-control p-lg-3 p-0 rounded-5 w-100 d-inline-block bg-transparent" style={{ color: '#FFE164' }} id="name" />
+                                <div className="mb-4 w-100">
+                                    <label htmlFor="Email" className="form-label" style={{ color: '#FFE164' }}>
+                                        Your Email
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder="Enter your email"
+                                        className="form-control p-lg-3 p-0 rounded-5 w-100 bg-transparent"
+                                        style={{ color: '#FFE164' }}
+                                        id="Email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
                                 </div>
-                                <div className="d-inline-block mb-4 w-100">
-                                    <label htmlFor="Email" className="form-label" style={{ color: '#FFE164' }} >Email</label>
-                                    <input type="text" className="form-control p-lg-3 p-0 rounded-5 w-100 d-inline-block bg-transparent" style={{ color: '#FFE164' }} id="Email" />
+
+                                <div className="mb-4">
+                                    <label className="form-label" style={{ color: '#FFE164' }} htmlFor="message">
+                                        Your Message
+                                    </label>
+                                    <textarea
+                                        placeholder="Type your message here..."
+                                        className="form-control bg-transparent"
+                                        style={{ color: '#FFE164' }}
+                                        id="message"
+                                        rows="4"
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
+                                    ></textarea>
                                 </div>
-                                <div className="mb-2">
-                                    <label className="form-label" style={{ color: '#FFE164' }} htmlFor="message">Message</label>
-                                    <textarea className="form-control bg-transparent" style={{ color: '#FFE164' }} id="message" rows="4"></textarea>
-                                </div>
-                                <p className="text-danger" id="ErrorMsg"></p>
-                                <button onClick={saveMessage}
+
+                                <p className="text-danger" id="ErrorMsg">  {error} </p>
+                                <button
+                                    onClick={saveMessage}
                                     className="btn w-100 my-2 p-lg-3 p-2 rounded-5 shadow-0 text-capitalize"
-                                    style={{ backgroundColor: '#FFE164', fontSize: '16px', color: '#031A33' }}>Send
+                                    style={{ backgroundColor: '#FFE164', fontSize: '16px', color: '#031A33' }}
+                                    disabled={isLoading}
+                                >
+                                    {isLoading ? 'Sending...' : 'Send'}
                                 </button>
                             </div>
                         </div>
@@ -168,7 +197,7 @@ const AboutUs = () => {
                     </div>
                 </div>
 
-            </div>
+            </div >
         </>
     )
 }
