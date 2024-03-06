@@ -45,7 +45,7 @@ const AboutUs = () => {
             };
 
             try {
-                const response = await axios.post('https://server-zepw.onrender.com/contactemail', data);
+                const response = await axios.post('https://codesaarthiserver.cyclic.app/contactemail', data);
 
                 if (response.status === 200) {
                     error.textContent = "";

@@ -53,7 +53,7 @@ const SignUp = () => {
           try {
             console.log(formData);
             const response = await axios.post(
-              "https://server-zepw.onrender.com/register",
+              "https://codesaarthiserver.cyclic.app/register",
               formData
             );
             const { name, email, status, message } = response.data;
@@ -102,7 +102,7 @@ console.log(response.data)
       })
       .then((response) => {
         const userData = response.data;
-      axios.post('https://server-zepw.onrender.com/saveUserData', userData)
+      axios.post('https://codesaarthiserver.cyclic.app/saveUserData', userData)
       .then((response) => {
         if (response.data.status === 'success') {
           localStorage.setItem('user_name', userData.name);

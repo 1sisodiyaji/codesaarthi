@@ -63,7 +63,7 @@ const RecoverPassword = () => {
   const sendOtp = async () => {
     console.log('Sending email...');
     try {
-      const response = await axios.post('http://localhost:8081/sendemail', {
+      const response = await axios.post('https://codesaarthiserver.cyclic.app/sendemail', {
         email: formData.email
       });
       if (response.status === 200) {
@@ -83,7 +83,7 @@ const RecoverPassword = () => {
       console.log("otp is ", FormData.otp);
       console.log("otp is ", formData.otp);
       console.log("email is ", FormData.email);
-      const response = axios.post('http://localhost:8081/verifyOtp', {
+      const response = axios.post('https://codesaarthiserver.cyclic.app/verifyOtp', {
         otp: formData.otp,
         email: formData.email
       });
