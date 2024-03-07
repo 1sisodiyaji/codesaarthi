@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import SideTheory from '../../../component/SideTheory'
 import TextForm from '../../../component/Textarea'
+import { Helmet } from 'react-helmet';
 
 const Array = () => {
     let index = 0;
@@ -103,6 +104,20 @@ const Array = () => {
 
     return (
         <>
+        <Helmet>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="keywords" content="Learn Array, Array basics, Array tutorials, Array examples, Array practice questions, Start learning Array" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href="https://codesaarthi.com/array" />
+                <meta name="description" content="Explore Array in easy words with examples and practice questions. Learn Array basics step by step on DSA Playlist." />
+                <title>Learn Arrays: Array Basics, Tutorials, and Practice Questions | DSA Playlist</title>
+                <meta property="og:title" content="Arrays | DSA playlist" />
+                <meta property="og:description" content="Explore Array in easy words with examples and practice questions. Learn Array basics step by step on DSA Playlist." />
+                 <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+                <meta property="og:url" content="https://codesaarthi.com/array" />
+                <meta property="og:type" content="Education-Website" />
+                <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+            </Helmet>
             <div className="row g-0 pt-lg-0 mt-lg-0   pt-5 mt-2 design" style={{ backgroundColor: '#031A33' }}>
             <div className="col-2 d-lg-block d-none"><SideTheory/></div>
 
