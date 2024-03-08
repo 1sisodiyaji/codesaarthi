@@ -57,7 +57,7 @@ const SignUp = () => {
             );
            
             const savedUser = response.data;
-            const { name, email,status } = savedUser;
+            const { name, email,status,message } = savedUser;
             console.log(`Name: ${name}, Email: ${email}`);
             if (status === "success") {
               name_error.textContent = "Account created successfully!";
