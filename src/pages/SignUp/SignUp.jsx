@@ -7,8 +7,8 @@ import { useLinkedIn } from 'react-linkedin-login-oauth2';
 const SignUp = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const navigate = useNavigate();
-  
-// password viewer at password section
+
+  // password viewer at password section
   const passwordView = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
@@ -50,18 +50,19 @@ const SignUp = () => {
             "Please enter your password to Create account";
         } else {
           try {
-            console.log(formData);  
+            console.log(formData);
             const response = await axios.post(
               "https://codesaarthiserver.cyclic.app/api/register",
               formData
             );
+            console.log(response.data);
             const { name, email, status, message } = response.data;
-
+            console.log(status);
             if (status === "success") {
               name_error.textContent = "Account created successfully!";
               localStorage.setItem("user_name", name);
               localStorage.setItem("user_email", email);
-             navigate('/Problems')
+              navigate('/Problems')
             } else {
               name_error.textContent =
                 message || "Error creating account. Please try again later.";
@@ -89,51 +90,51 @@ const SignUp = () => {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-// login through google function
-    const login = useGoogleLogin({
-      onSuccess: (tokenResponse) => {
-      
-        const accessToken = tokenResponse.access_token;
-        axios.get('https://www.googleapis.com/oauth2/v2/userinfo', {
+  // login through google function
+  const login = useGoogleLogin({
+    onSuccess: (tokenResponse) => {
+
+      const accessToken = tokenResponse.access_token;
+      axios.get('https://www.googleapis.com/oauth2/v2/userinfo', {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
       })
-      .then((response) => {
-        const userData = response.data;
-      axios.post('https://codesaarthiserver.cyclic.app/api/saveuserData', userData)
-      .then((response) => {
-        if (response.data.status === 'success') {
-          localStorage.setItem('user_name', userData.name);
-          localStorage.setItem('user_email', userData.email);
-          localStorage.setItem('user_ProfilePic' , userData.picture);
-         
-           navigate("/Problems");
-        } else {
-          console.error('Error saving user data:', response.data.message);
-        }
-      })
-      .catch((error) => {
-        console.error('Error sending user data to backend:', error);
-      });
-      })
-      .catch((error) => {
-        console.error('Error fetching user information:', error);
-      });
-      }
-    });
+        .then((response) => {
+          const userData = response.data;
+          axios.post('https://codesaarthiserver.cyclic.app/api/saveuserData', userData)
+            .then((response) => {
+              if (response.data.status === 'success') {
+                localStorage.setItem('user_name', userData.name);
+                localStorage.setItem('user_email', userData.email);
+                localStorage.setItem('user_ProfilePic', userData.picture);
 
-// login through linkedin function
-    const { linkedInLogin } = useLinkedIn({
-      clientId: '865ot8yrscixc8',
-      redirectUri: `${window.location.origin}/linkedin`, // for Next.js, you can use `${typeof window === 'object' && window.location.origin}/linkedin`
-      onSuccess: (code) => {
-        console.log(code);
-      },
-      onError: (error) => {
-        console.log(error);
-      },
-    });
+                navigate("/Problems");
+              } else {
+                console.error('Error saving user data:', response.data.message);
+              }
+            })
+            .catch((error) => {
+              console.error('Error sending user data to backend:', error);
+            });
+        })
+        .catch((error) => {
+          console.error('Error fetching user information:', error);
+        });
+    }
+  });
+
+  // login through linkedin function
+  const { linkedInLogin } = useLinkedIn({
+    clientId: '865ot8yrscixc8',
+    redirectUri: `${window.location.origin}/linkedin`, // for Next.js, you can use `${typeof window === 'object' && window.location.origin}/linkedin`
+    onSuccess: (code) => {
+      console.log(code);
+    },
+    onError: (error) => {
+      console.log(error);
+    },
+  });
 
   return (
     <>
@@ -155,7 +156,7 @@ const SignUp = () => {
                 width={95}
                 alt=""
               />
-              <h3 className="pt-3" style={{color:'#79b4e2'}}> Create Account</h3>
+              <h3 className="pt-3" style={{ color: '#79b4e2' }}> Create Account</h3>
               <br />
             </div>
 
@@ -260,7 +261,7 @@ const SignUp = () => {
 
             <h3
               className="text-center mb-3"
-              style={{ fontWeight: "light", fontSize: "1rem " , color: 'black'}}
+              style={{ fontWeight: "light", fontSize: "1rem ", color: 'black' }}
             >
               {" "}
               -OR-{" "}
@@ -274,21 +275,21 @@ const SignUp = () => {
                     className="btn  bg-light w-100 "
                     onClick={login}
                   >
-                    <img src="../img/search 1.png" style={ {height: "26px"}} alt="" />
+                    <img src="../img/search 1.png" style={{ height: "26px" }} alt="" />
                     <span className="text-dark text-capitalize ms-2 ">
                       Sign Up With Google
                     </span>
                   </button>
                 </div>
                 <div className="col-12  mt-2 d-none">
-                  
-                    <button type="button" className="btn  bg-light w-100 "  onClick={linkedInLogin} >
-                        <img src="../img/linkedin.png" style={{height: "26px"}} alt=""  />
-                      <span className="text-dark text-capitalize ms-2 ">
-                        Sign Up With Linkedin
-                      </span>
-                    </button>
-                 
+
+                  <button type="button" className="btn  bg-light w-100 " onClick={linkedInLogin} >
+                    <img src="../img/linkedin.png" style={{ height: "26px" }} alt="" />
+                    <span className="text-dark text-capitalize ms-2 ">
+                      Sign Up With Linkedin
+                    </span>
+                  </button>
+
                 </div>
               </div>
             </div>
