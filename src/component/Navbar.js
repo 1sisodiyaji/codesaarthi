@@ -36,8 +36,7 @@ export const Navbar = () => {
   return (
     <>
       {/* <!-- Navbar For small screen--> */}
-      <nav
-        className="navbar navbar-expand-lg navbar-dark fixed-top d-lg-none d-md-block d-sm-block  shadow-0"
+      <nav  className="navbar navbar-expand-lg navbar-dark fixed-top d-lg-none d-md-block d-sm-block  shadow-0"
         style={{ backgroundColor: "transparent" }}
       >
         {/* <!-- Container wrapper --> */}

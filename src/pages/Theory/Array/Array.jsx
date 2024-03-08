@@ -109,10 +109,10 @@ const Array = () => {
                 <div className={`col-lg-2 col-12  d-lg-none d-block `}
                     style={{ backgroundColor: '#031A33', zIndex: '1' }}>
                     <div className="row g-0 position-fixed " >
-                        <div className="col-6 ps-2"><SideTheory /></div>
+                        <div className="col-6 ps-2" style={{backgroundColor:'#031A33'}}><SideTheory /></div>
 
-                        <div className="col-6">
-                            <div className="row g-0 ">
+                        <div className="col-6 ">
+                            <div className="row g-0 " style={{backgroundColor:'#031A33'}}>
                                 <div className="col-4 text-center">
                                     {!isSpeaking ?
                                         <>
@@ -147,13 +147,13 @@ const Array = () => {
                 </div>
 
                 <div className="col-lg-7  col-12">
-                    <div className="conatiner-fluid design p-1  py-5">
+                    <div className="conatiner-fluid design p-1  py-4">
                         <div className="row g-0">
                             <div className="col-lg-8 col-12">
                                 <h2 style={{ color: '#FFE164' }} className='listen'> Understanding Arrays in Data Structures</h2>
                             </div>
                             <div className="col-4 d-lg-block d-none">
-                                <div className="row g-0 ">
+                                <div className="row g-0">
                                     <div className="col-4 text-center">
                                         {!isSpeaking ?
                                             <>
