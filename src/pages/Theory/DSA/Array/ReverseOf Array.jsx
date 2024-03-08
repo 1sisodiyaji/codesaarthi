@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import TextForm from '../../../component/Textarea';
-import SideTheory from '../../../component/SideTheory';
+import TextForm from '../../../../component/Textarea';
+import SideTheory from '../../../../component/SideTheory';
 import { Helmet } from 'react-helmet';
 const ReverseOfArray = () => {
     let index = 0;

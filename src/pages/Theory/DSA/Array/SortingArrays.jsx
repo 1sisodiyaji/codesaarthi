@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import SideTheory from '../../../component/SideTheory'
-import TextForm from '../../../component/Textarea'
+import SideTheory from '../../../../component/SideTheory'
+import TextForm from '../../../../component/Textarea'
 import { Helmet } from 'react-helmet';
-const SearchingArray = () => {
+const SortingArray = () => {
   let index = 0;
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [selectedVoice, setSelectedVoice] = useState(null);
@@ -103,15 +103,15 @@ const SearchingArray = () => {
    
 <Helmet>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Array searching, Searching algorithms, Best practices for array searching, Efficient array search, Optimal search techniques" />
+    <meta name="keywords" content="Array sorting, Sorting algorithms, Best practices for array sorting, Efficient array sort, Optimal sorting techniques" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://codesaarthi.com/Searching-Array" />
-    <meta name="description" content="Explore best practices in Array searching. Learn efficient searching algorithms and optimal techniques for searching arrays. Enhance your programming skills on DSA Playlist." />
-    <title>Array Searching | DSA Playlist , Best Practices in Array Searching</title>
-    <meta property="og:title" content="Best Practices in Array Searching | DSA playlist" />
-    <meta property="og:description" content="Explore best practices in Array searching. Learn efficient searching algorithms and optimal techniques for searching arrays. Enhance your programming skills on DSA Playlist." />
+    <link rel="canonical" href="https://codesaarthi.com/Sorting-Array" />
+    <meta name="description" content="Explore best practices in Array sorting. Learn efficient sorting algorithms and optimal techniques for sorting arrays. Enhance your programming skills on DSA Playlist." />
+    <title>Array Sorting | DSA Playlist ,Best Practices in Array Sorting</title>
+    <meta property="og:title" content="Best Practices in Array Sorting | DSA playlist" />
+    <meta property="og:description" content="Explore best practices in Array sorting. Learn efficient sorting algorithms and optimal techniques for sorting arrays. Enhance your programming skills on DSA Playlist." />
     <meta property="og:image" content="https://codesaarthi.com/img/Array.jpg" />
-    <meta property="og:url" content="https://codesaarthi.com/Searching-Array" />
+    <meta property="og:url" content="https://codesaarthi.com/Sorting-Array" />
     <meta property="og:type" content="Education-Website" />
     <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
@@ -161,10 +161,11 @@ const SearchingArray = () => {
 
         <div className="col-lg-7 col-12">
   <div className="container-fluid design p-1 py-5">
+
     <div className="row g-0">
       <div className="col-lg-8 col-12">
         <h2 style={{ color: '#FFE164' }} className='listen'>
-          Array Mein Searching </h2>
+          Array Mein Sorting </h2>
       </div>
       <div className="col-4 d-lg-block d-none">
         <div className="row g-0 ">
@@ -195,73 +196,79 @@ const SearchingArray = () => {
               ))}
             </select>
           </div>
+
         </div>
       </div>
     </div>
-    <h3 className='text-light pt-2 listen'> Searching in Arrays - Ek Simple Guide:</h3>
+    <h3 className='text-light pt-2 listen'> Array Mein Sorting - Samajhne Ka Asaan Guide:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Searching ka process humare code ke liye crucial hota hai. Array mein specific element ya value ko dhundhna aur uske position ko retrieve karna, yeh sab searching ke antar mein aata hai. Aaiye samjhein kaise hum array mein searching ka magic karte hain, ek simple guide ke through.
+      Sorting ka concept humare programming journey ka ek important part hai. Array mein elements ko arrange karna, unhe order mein laana - yeh sab sorting ke antar mein aata hai. Aaiye dekhein kaise array sorting humare code ki duniya ko organize karta hai, ek simple guide ke through.
     </p>
 
-    <h3 className='text-light pt-2 listen'> Searching Ka Arth:</h3>
+    <h3 className='text-light pt-2 listen'> Sorting Ka Matlab:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Searching ka matlab hai kisi specific value ko find karna humare data mein. Jaise ki hum apne phone mein kisi contact ko dhundhte hain, waise hi hum array mein kisi element ko dhundhte hain.
+      Sorting ka seedha sa matlab hai kisi bhi set of data ko systematic order mein arrange karna. Jaise ki hum apne books ko alag-alag genres ke hisab se arrange karte hain, waise hi hum array elements ko bhi arrange karte hain.
     </p>
 
     <div className='p-2 d-lg-none d-block'>
       <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
-    <h2 className='text-light pt-2 listen'>Searching Algorithms:</h2>
+    <h2 className='text-light pt-2 listen'>Sorting Algorithms:</h2>
 
-    <h3 className='text-light pt-2 listen'>1. Linear Search:</h3>
+    <h3 className='text-light pt-2 listen'>1. Bubble Sort:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Linear search ek simple searching algorithm hai jisme array ko ek ek element check kiya jata hai, aur jab target mil jata hai, toh uska position return kiya jata hai.
+      Bubble sort ek simple sorting algorithm hai, jisme adjacent elements ko compare kiya jata hai aur unhe swap kiya jata hai agar woh galat order mein hote hain.
     </p>
 
-    <h3 className='text-light pt-2 listen'>2. Binary Search:</h3>
+    <h3 className='text-light pt-2 listen'>2. Selection Sort:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Binary search ek efficient algorithm hai jisme array ko divide-and-conquer method se half mein divide kiya jata hai. Agar target element mil jata hai, toh uska position return kiya jata hai.
+      Selection sort mein array ko divide kiya jata hai, ek part sorted aur dusra unsorted. Sorted part mein se minimum element ko select karke unsorted part ke beginning mein swap kiya jata hai.
     </p>
 
-    <h3 className='text-light pt-2 listen'>3. Hashing:</h3>
+    <h3 className='text-light pt-2 listen'>3. Merge Sort:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Hashing ek aur tareeka hai searching ka, jisme array elements ko hash function se map kiya jata hai, aur fir target element ko retrieve kiya jata hai.
+      Merge sort ek divide-and-conquer algorithm hai. Isme array ko halves mein divide kiya jata hai, fir in halves ko sort kiya jata hai, aur phir combine kiya jata hai.
     </p>
 
-    <h3 className='text-light pt-2 listen'>Searching Ka Code:</h3>
+    <h3 className='text-light pt-2 listen'>4. Quick Sort:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Searching code likhna bhi kaafi simple hai. Aaiye ek example ke through samjhein kaise hum searching algorithm ka code likhte hain:
+      Quick sort bhi divide-and-conquer based sorting algorithm hai. Isme pivot element ko choose kiya jata hai, aur array ko uske left aur right mein divide kiya jata hai.
+    </p>
+
+    <h3 className='text-light pt-2 listen'>Sorting Ka Code:</h3>
+    <p style={{ color: 'whitesmoke' }} className='listen'>
+      Sorting code likhna simple hai. Aaiye ek example ke through samjhein kaise hum sorting algorithm ka code likhte hain:
     </p>
     <pre className='mb-3'><code className='text-warning'>
       {`
-      def linear_search(arr, target):
-        for i in range(len(arr)):
-          if arr[i] == target:
-            return i
-        return -1
-
-      # Example Usage
-      my_array = [10, 20, 30, 40, 50]
-      target_element = 30
-      result = linear_search(my_array, target_element)
-      print("Element found at index:", result)
+      def bubble_sort(arr):
+        n = len(arr)
+        for i in range(n):
+          for j in range(0, n-i-1):
+            if arr[j] > arr[j+1] :
+              arr[j], arr[j+1] = arr[j+1], arr[j]
+        
+        # Example Usage
+        my_array = [64, 25, 12, 22, 11]
+        bubble_sort(my_array)
+        print("Sorted Array:", my_array)
       `}
     </code></pre>
 
     <h5 className='text-danger listen'>Common Mistakes:</h5>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Searching mein kuch common mistakes hain jo avoid karni chahiye. Jaise ki loop conditions galat set karna ya target element ka comparison sahi se nahi karna.
+      Sorting mein kuch common mistakes hain jo avoid karni chahiye. Jaise ki loop conditions galat set karna ya swap mein error hona.
     </p>
 
     <h3 className='text-light pt-2 listen'>Real-world Mein Application:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Searching ka concept har jagah use hota hai, jaise databases, information retrieval systems, aur games mein.
+      Sorting ka concept har programming field mein use hota hai, jaise databases, searching algorithms, aur data analysis mein.
     </p>
 
     <h3 className='pt-2 listen text-success'>Developers Ke Liye Magic:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Searching algorithms ko master karna aapke code ko efficient aur fast banata hai. Yeh ek essential tool hai jo data ko find karne mein aur dynamic applications mein use hota hai.
+      Sorting algorithms ko master karna aapko efficient code likhne mein madad karega. Yeh ek powerful tool hai jo data ko organize karne mein aur complex problems ko solve karne mein aata hai.
     </p>
   </div>
   <div class="d-lg-none d-block my-3">
@@ -269,6 +276,7 @@ const SearchingArray = () => {
     <TextForm />
   </div>
 </div>
+
 
 
         <div className="col-3 py-5 d-lg-block d-none">
@@ -290,4 +298,4 @@ const SearchingArray = () => {
   )
 }
 
-export default SearchingArray
+export default SortingArray
