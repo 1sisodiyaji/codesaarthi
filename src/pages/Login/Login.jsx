@@ -55,7 +55,8 @@ const Login = () => {
             formData
           );
           const savedUser = response.data.data;
-          console.log(savedUser);
+          console.log("Response is",response);
+          console.log("Actual data is ",savedUser);
             const { name, email,status,message } = savedUser;
 
           if (status === "success") {
