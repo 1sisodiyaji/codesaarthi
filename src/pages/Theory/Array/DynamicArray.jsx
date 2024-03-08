@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import SideTheory from '../../../component/SideTheory'
 import TextForm from '../../../component/Textarea'
-
+import { Helmet } from 'react-helmet';
 const DynamicArray = () => {
   let index = 0;
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -100,6 +100,21 @@ const DynamicArray = () => {
   };
   return (
     <>
+    <Helmet>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Dynamic arrays, Understanding dynamic arrays, Implementation of dynamic arrays, Array programming" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://codesaarthi.com/Dynamic-Arrays" />
+    <meta name="description" content="Explore the concepts, understanding, and implementation of dynamic arrays in programming. Learn how dynamic arrays work and their practical applications. Enhance your programming skills on DSA Playlist." />
+    <title>Dynamic Arrays: Understanding and Implementation | DSA Playlist</title>
+    <meta property="og:title" content="Dynamic Arrays: Understanding and Implementation | DSA playlist" />
+    <meta property="og:description" content="Explore the concepts, understanding, and implementation of dynamic arrays in programming. Learn how dynamic arrays work and their practical applications. Enhance your programming skills on DSA Playlist." />
+    <meta property="og:image" content="https://codesaarthi.com/img/Array.jpg" />
+    <meta property="og:url" content="https://codesaarthi.com/Dynamic-Arrays" />
+    <meta property="og:type" content="Education-Website" />
+    <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+</Helmet>
+
       <div className="row g-0 pt-lg-0 mt-lg-0 F  pt-5 mt-2 design" style={{ backgroundColor: '#031A33' }}>
         <div className={`col-lg-2 col-12  d-lg-none d-block `}
           style={{ backgroundColor: '#031A33', zIndex: '1' }}>

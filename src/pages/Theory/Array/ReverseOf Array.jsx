@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TextForm from '../../../component/Textarea';
 import SideTheory from '../../../component/SideTheory';
-
+import { Helmet } from 'react-helmet';
 const ReverseOfArray = () => {
     let index = 0;
     const [isSpeaking, setIsSpeaking] = useState(false);
@@ -100,6 +100,21 @@ const ReverseOfArray = () => {
     };
     return (
         <>
+        <Helmet>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Array reversal, Reversing arrays, Best practices for array reversal, Efficient array reverse, Optimal reversing techniques" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://codesaarthi.com/reverse-of-array" />
+    <meta name="description" content="Explore best practices for reversing arrays. Learn efficient techniques and optimal approaches for reversing arrays in programming. Enhance your programming skills on DSA Playlist." />
+    <title> Reversing Arrays | DSA Playlist</title>
+    <meta property="og:title" content="Best Practices for Reversing Arrays | DSA playlist" />
+    <meta property="og:description" content="Explore best practices for reversing arrays. Learn efficient techniques and optimal approaches for reversing arrays in programming. Enhance your programming skills on DSA Playlist." />
+    <meta property="og:image" content="https://codesaarthi.com/img/Array.jpg" />
+    <meta property="og:url" content="https://codesaarthi.com/reverse-of-array" />
+    <meta property="og:type" content="Education-Website" />
+    <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+</Helmet>
+
             <div className="row g-0 pt-lg-0 mt-lg-0  pt-5 mt-2 design" style={{ backgroundColor: '#031A33' }}>
 
                 <div className={`col-lg-2 col-12  d-lg-none d-block `}

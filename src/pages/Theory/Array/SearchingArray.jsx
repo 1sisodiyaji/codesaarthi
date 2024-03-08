@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import SideTheory from '../../../component/SideTheory'
 import TextForm from '../../../component/Textarea'
-
+import { Helmet } from 'react-helmet';
 const SearchingArray = () => {
   let index = 0;
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -100,6 +100,23 @@ const SearchingArray = () => {
   };
   return (
     <>
+   
+<Helmet>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Array searching, Searching algorithms, Best practices for array searching, Efficient array search, Optimal search techniques" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://codesaarthi.com/Searching-Array" />
+    <meta name="description" content="Explore best practices in Array searching. Learn efficient searching algorithms and optimal techniques for searching arrays. Enhance your programming skills on DSA Playlist." />
+    <title>Array Searching | DSA Playlist , Best Practices in Array Searching</title>
+    <meta property="og:title" content="Best Practices in Array Searching | DSA playlist" />
+    <meta property="og:description" content="Explore best practices in Array searching. Learn efficient searching algorithms and optimal techniques for searching arrays. Enhance your programming skills on DSA Playlist." />
+    <meta property="og:image" content="https://codesaarthi.com/img/Array.jpg" />
+    <meta property="og:url" content="https://codesaarthi.com/Searching-Array" />
+    <meta property="og:type" content="Education-Website" />
+    <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+</Helmet>
+
+
       <div className="row g-0 pt-lg-0 mt-lg-0 F  pt-5 mt-2 design" style={{ backgroundColor: '#031A33' }}>
         <div className={`col-lg-2 col-12  d-lg-none d-block `}
           style={{ backgroundColor: '#031A33', zIndex: '1' }}>

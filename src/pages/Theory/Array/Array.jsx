@@ -113,7 +113,7 @@ const Array = () => {
                 <title>Learn Arrays: Array Basics, Tutorials, and Practice Questions | DSA Playlist</title>
                 <meta property="og:title" content="Arrays | DSA playlist" />
                 <meta property="og:description" content="Explore Array in easy words with examples and practice questions. Learn Array basics step by step on DSA Playlist." />
-                 <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+                 <meta property="og:image" content="https://codesaarthi.com/img/Array.jpg" />
                 <meta property="og:url" content="https://codesaarthi.com/array" />
                 <meta property="og:type" content="Education-Website" />
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />

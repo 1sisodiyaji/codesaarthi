@@ -106,10 +106,10 @@ const Challenges = () => {
         <title>Array Challenges: Coding Exercises for Learning Arrays | DSA Playlist</title>
         <meta name="description" content="Enhance your understanding of arrays with challenging coding exercises. Practice Array problems suitable for beginners and improve your problem-solving skills on DSA Playlist." />
         <meta property="og:description" content="Enhance your understanding of arrays with challenging coding exercises. Practice Array problems suitable for beginners and improve your problem-solving skills on DSA Playlist." />
-        <link rel="canonical" href="https://codesaarthi.com/array-challenges" />
+        <link rel="canonical" href="https://codesaarthi.com/Challenges-And-Exercise" />
         <meta property="og:title" content="Array Challenges: Coding Exercises for Learning Arrays | DSA Playlist" />
-        <meta property="og:image" content="https://codesaarthi.com/img/array-challenges-thumbnail.png" />
-        <meta property="og:url" content="https://codesaarthi.com/array-challenges" />
+        <meta property="og:image" content="https://codesaarthi.com/img/Array.jpg" />
+        <meta property="og:url" content="https://codesaarthi.com/Challenges-And-Exercise" />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>

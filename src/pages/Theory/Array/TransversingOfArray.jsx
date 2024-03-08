@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import SideTheory from '../../../component/SideTheory'
 import TextForm from '../../../component/Textarea'
+import { Helmet } from 'react-helmet';
 
 const TransversingOfArray = () => {
   let index = 0;
@@ -100,6 +101,21 @@ const TransversingOfArray = () => {
   };
   return (
     <>
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="Array traversal mistakes, Array iteration errors, Common pitfalls in Array traversal" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://codesaarthi.com/transversing-of-array" />
+        <meta name="description" content="Explore common mistakes in Array traversal. Avoid errors and pitfalls in Array iteration. Learn key concepts and improve your programming skills on DSA Playlist." />
+        <title>Array Traversal | DSA Playlist</title>
+        <meta property="og:title" content="Common Mistakes in Array Traversal | DSA playlist" />
+        <meta property="og:description" content="Explore common mistakes in Array traversal. Avoid errors and pitfalls in Array iteration. Learn key concepts and improve your programming skills on DSA Playlist." />
+        <meta property="og:image" content="https://codesaarthi.com/img/Array.jpg" />
+        <meta property="og:url" content="https://codesaarthi.com/transversing-of-array" />
+        <meta property="og:type" content="Education-Website" />
+        <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+      </Helmet>
+
       <div className="row g-0 pt-lg-0 mt-lg-0 F  pt-5 mt-2 design" style={{ backgroundColor: '#031A33' }}>
         <div className={`col-lg-2 col-12  d-lg-none d-block `}
           style={{ backgroundColor: '#031A33', zIndex: '1' }}>
