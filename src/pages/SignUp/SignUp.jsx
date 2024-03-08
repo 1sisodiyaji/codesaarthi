@@ -55,9 +55,10 @@ const SignUp = () => {
               "https://codesaarthiserver.cyclic.app/api/register",
               formData
             );
-            console.log("your response data is ".response.data);
-            const { name, email, status, message } = response.data;
-            console.log("status is ".status);
+           
+            const savedUser = data.data;
+            const { name, email } = savedUser;
+            console.log(`Name: ${name}, Email: ${email}`);
             if (status === "success") {
               name_error.textContent = "Account created successfully!";
               localStorage.setItem("user_name", name);
