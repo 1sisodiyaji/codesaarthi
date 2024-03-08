@@ -86,7 +86,8 @@ const Login = () => {
           // Send user data to the backend
           axios.post('https://codesaarthiserver.cyclic.app/api/saveuserData', userData)
             .then((response) => {
-              if (response.status === 'success') {
+              console.log(response);
+              if (response.data.status === 'success') {
                 localStorage.setItem('user_name', userData.name);
                 localStorage.setItem('user_email', userData.email);
                 localStorage.setItem('user_ProfilePic' , userData.picture);
