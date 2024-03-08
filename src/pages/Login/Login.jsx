@@ -50,12 +50,14 @@ const Login = () => {
         passError.textContent = "Please fill in the password.";
       } else {
         try {
+          console.log("entered1");
           const response = await axios.post(
             "https://codesaarthiserver.cyclic.app/api/signin",
             formData
           );
+          console.log("entered2");
           const savedUser = response.data.data;
-          console.log("Response is",response);
+          
           console.log("Actual data is ",savedUser);
             const { name, email,status,message } = savedUser;
 
