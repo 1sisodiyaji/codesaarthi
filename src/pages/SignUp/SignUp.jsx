@@ -55,9 +55,9 @@ const SignUp = () => {
               formData
             );
            
+            console.log("response is ",response);
+            console.log("Rdata is ",response.data);
             const savedUser = response.data;
-            console.log("data is ".savedUser);
-            console.log("Rdata is ".response);
             const { name, email,status,message } = savedUser;
             console.log(`Name: ${name}, Email: ${email}`);
             if (status === "success") {
