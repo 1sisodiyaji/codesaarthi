@@ -55,12 +55,12 @@ const Login = () => {
             formData
           );
           const savedUser = response.data.data;
+          console.log(savedUser);
             const { name, email,status,message } = savedUser;
 
           if (status === "success") {
             emailError.textContent = "Login successfully!";
-            let Uname = name;
-            localStorage.setItem("user_name", Uname);
+            localStorage.setItem("user_name", name);
             localStorage.setItem("user_email", email);
             navigate("/Problems");
           } else {
