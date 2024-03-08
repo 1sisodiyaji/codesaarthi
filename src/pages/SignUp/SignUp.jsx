@@ -57,6 +57,7 @@ const SignUp = () => {
             );
            
             const savedUser = response.data;
+            console.log(savedUser);
             const { name, email,status,message } = savedUser;
             console.log(`Name: ${name}, Email: ${email}`);
             if (status === "success") {
@@ -65,8 +66,7 @@ const SignUp = () => {
               localStorage.setItem("user_email", email);
               navigate('/Problems')
             } else {
-              name_error.textContent =
-                message || "Error creating account. Please try again later.";
+              name_error.textContent = message;
             }
           } catch (error) {
             console.error("Error registering user:", error);
