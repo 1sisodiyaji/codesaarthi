@@ -57,7 +57,9 @@ const SignUp = () => {
            
             console.log("response is ",response);
             console.log("Rdata is ",response.data);
-            const savedUser = response.data;
+            console.log("Actual data is ",response.data.data);
+          
+            const savedUser = response.data.data;
             const { name, email,status,message } = savedUser;
             console.log(`Name: ${name}, Email: ${email}`);
             if (status === "success") {
