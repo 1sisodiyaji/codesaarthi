@@ -8,7 +8,6 @@ const SignUp = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const navigate = useNavigate();
   
-
 // password viewer at password section
   const passwordView = () => {
     setIsPasswordVisible(!isPasswordVisible);
