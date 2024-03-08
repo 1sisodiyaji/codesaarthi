@@ -55,13 +55,8 @@ const SignUp = () => {
               formData
             );
            
-            console.log("response is ",response);
-            console.log("Rdata is ",response.data);
-            console.log("Actual data is ",response.data.data);
-          
             const savedUser = response.data.data;
             const { name, email,status,message } = savedUser;
-            console.log(`Name: ${name}, Email: ${email}`);
             if (status === "success") {
               name_error.textContent = "Account created successfully!";
               localStorage.setItem("user_name", name);

@@ -54,14 +54,17 @@ const Login = () => {
             "https://codesaarthiserver.cyclic.app/api/signin",
             formData
           );
-          if (response.data.status === "success") {
+          const savedUser = response.data.data;
+            const { name, email,status,message } = savedUser;
+
+          if (status === "success") {
             emailError.textContent = "Login successfully!";
-            let name = response.data.name;
-            localStorage.setItem("user_name", name);
+            let Uname = name;
+            localStorage.setItem("user_name", Uname);
             localStorage.setItem("user_email", email);
             navigate("/Problems");
           } else {
-            emailError.textContent = response.data.message;
+            emailError.textContent = message;
           }
         } catch (error) {
           console.error("Error loging user:", error);
