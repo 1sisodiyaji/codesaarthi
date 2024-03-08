@@ -51,7 +51,7 @@ const SignUp = () => {
             "Please enter your password to Create account";
         } else {
           try {
-            console.log(formData);
+            console.log(formData);  
             const response = await axios.post(
               "https://codesaarthiserver.cyclic.app/api/register",
               formData
@@ -102,7 +102,7 @@ console.log(response.data)
       })
       .then((response) => {
         const userData = response.data;
-      axios.post('https://codesaarthiserver.cyclic.app/api/saveUserData', userData)
+      axios.post('https://codesaarthiserver.cyclic.app/api/saveuserData', userData)
       .then((response) => {
         if (response.data.status === 'success') {
           localStorage.setItem('user_name', userData.name);
