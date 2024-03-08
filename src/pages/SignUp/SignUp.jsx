@@ -70,8 +70,11 @@ const SignUp = () => {
             }
           } catch (error) {
             console.error("Error registering user:", error);
-            name_error.textContent =
-              "Error creating account. Please try again later.";
+              if (error.response && error.response.status === 500) {
+                name_error.textContent = "User with this email already exists";
+              } else {
+                name_error.textContent = "Error creating account. Please try again later.";
+              }
           }
         }
       }
