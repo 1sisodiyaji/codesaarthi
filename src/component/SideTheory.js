@@ -26,9 +26,9 @@ const SideTheory = () => {
       <button
         onClick={toggleSidebar}
         className=" navbar-toggler  shadow-0 d-lg-none  d-block"
-        style={{ color: "#FFE164", fontSize: "2rem" }}
+        style={{ color: "#FFE164", fontSize: "1.8rem" }}
       >
-        <i className="fi fi-br-align-justify"></i>
+        <i className="fi fi-br-align-justify ps-2"></i>
       </button>
 
       <div className="container-fluid  g-0 d-lg-none d-block">
