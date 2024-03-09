@@ -40,7 +40,7 @@ const AboutUs = () => {
 
         try {
             setIsLoading(true);
-            const response = await axios.post('https://codesaarthiserver.cyclic.app/contactemail', data);
+            const response = await axios.post('https://codesaarthiserver.cyclic.app/api/contactemail', data);
 
             if (response.data.status === 200) {
                 setError(" ");
@@ -54,6 +54,9 @@ const AboutUs = () => {
         } catch (error) {
             console.error('Error:', error);
         } finally {
+            setName('');
+            setEmail('');
+            setMessage('');
             setIsLoading(false);
             setIsSubmitted(false);
         }
