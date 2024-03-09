@@ -115,11 +115,11 @@ const ReverseOfArray = () => {
     <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
 
-            <div className="row g-0 pt-lg-0 mt-lg-0  pt-5 mt-2 design" style={{ backgroundColor: '#031A33' }}>
+            <div className="row g-0 pt-lg-0 mt-lg-0  pt-5 mt-1 design" style={{ backgroundColor: '#031A33' }}>
 
                 <div className={`col-lg-2 col-12  d-lg-none d-block `}
-                    style={{ backgroundColor: '#031A33', zIndex: '1' }}>
-                    <div className="row g-0 position-fixed " >
+                    style={{ zIndex: '1' }}>
+                    <div className="row g-0 position-fixed " style={{backgroundColor: '#031A33'}} >
                         <div className="col-6 ps-2"><SideTheory /></div>
 
                         <div className="col-6">

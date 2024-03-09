@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import SideTheory from '../../../component/SideTheory'
-import TextForm from '../../../component/Textarea'
 import { Helmet } from 'react-helmet';
+import NewsApi from '../../../component/NewsApi';
+import { Link } from 'react-router-dom';
 
 const TransversingOfArray = () => {
   let index = 0;
@@ -103,7 +104,7 @@ const TransversingOfArray = () => {
     <>
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="Array traversal mistakes, Array iteration errors, Common pitfalls in Array traversal" />
+        <meta name="keywords" content="Array traversal,  array indexing , array use in real world , real time appilcation of Array " />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://codesaarthi.com/transversing-of-array" />
         <meta name="description" content="Explore common mistakes in Array traversal. Avoid errors and pitfalls in Array iteration. Learn key concepts and improve your programming skills on DSA Playlist." />
@@ -116,12 +117,11 @@ const TransversingOfArray = () => {
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
 
-      <div className="row g-0 pt-lg-0 mt-lg-0 F  pt-5 mt-2 design" style={{ backgroundColor: '#031A33' }}>
+      <div className="row g-0 pt-lg-0 mt-lg-0   pt-5 mt-1 design" style={{ backgroundColor: '#031A33' }}>
         <div className={`col-lg-2 col-12  d-lg-none d-block `}
-          style={{ backgroundColor: '#031A33', zIndex: '1' }}>
-          <div className="row g-0 position-fixed " >
+          style={{ zIndex: '1' }}>
+          <div className="row g-0 position-fixed " style={{ backgroundColor: '#031A33'}} >
             <div className="col-6 ps-2"><SideTheory /></div>
-
             <div className="col-6">
               <div className="row g-0 ">
                 <div className="col-4 text-center">
@@ -202,7 +202,8 @@ const TransversingOfArray = () => {
             <h3 className='text-light pt-2 listen'> Array Traversal Ka Matlab:</h3>
             <p style={{ color: 'whitesmoke' }} className='listen'>
               Array traversal ka matlab hai har ek array element ko systematic taur par dekhna aur uska istemal karna.
-              Yahan har item ka access karna aur usme kuch work karna shaamil hai, jyadatar ek systematic tareeke se.
+              Yahan har item ka access karna aur usme kuch work karna shaamil hai, jyadatar ek systematic tareeke se. <br />
+              <span className='bg-dark text-warning'>Baically transversing a array includes to go through each element in a array through thier index.</span>
             </p>
 
             <h3 className='text-light pt-2 listen'> Array Traversal Kyon Important  Hai:</h3>
@@ -211,89 +212,92 @@ const TransversingOfArray = () => {
               Ye algorithm design aur programming tasks mein kafi important hai.
             </p>
 
-            <div className='p-2 d-lg-none d-block'>
-              <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-
             <p style={{ color: 'whitesmoke' }} className='listen'>
-              Arrays ko traverse karne ke liye loops ka istemal karna (for example, <span className='text-warning'>for</span> ya <span className='text-warning'>while</span> loops).
+              Arrays ko traverse karne ke liye loops ka istemal Karte h  (for example, <span className='text-warning'>for</span> ya <span className='text-warning'>while</span> loops).
               Traversal ke liye khaas tareekon ka upayog karna.
             </p>
 
             <h3 className='text-light pt-2 listen'> 2. Array Elements Mein Idhar-Udhar Ghumna:</h3>
             <p style={{ color: 'whitesmoke' }} className='listen'>
               Samajhna ki systematically array ke elements ko kaise traverse karna hai.
-              Traverse karne ka direction (forward ya backward) aur step size ka dhyan rakhna.
+              Traverse karne ka direction <span className='text-warning'>(forward ya backward)</span> aur step size ka dhyan rakhna.
             </p>
             <p style={{ color: 'whitesmoke' }} className='listen'>
-              Traversal Ke Liye Loop Ka Prayog:    Efficient aur controlled traversal ke liye programming loops ka istemal karna (for example, for ya while loops).
+              Traversal Ke Liye Loop Ka use :  Efficient aur controlled traversal ke liye programming loops ka istemal karna (for example, for ya while loops).
               Loop constructs likhna jo ensure kare ki har element ko ek baar visit kiya jaaye.
-              Elements Ko Prapt Karke Aur Unhe Modifying Karne Ki Process:
-
-              Techniques sikhna Elements tak pahunchne ke liye.
+              Elements Ko Prapt Karke Aur Unhe Modifying Karne Ki Process h ye
               Dikhaana kaise traversal ke beech me Elements ko modify kiya ja sakta hai.
             </p>
+            <code> int arr[3] = [0,1,2,3,4]</code> <br />
+            <code> int arr[3] = {25}</code> <br />
+            <code> int arr[3] = [0,1,2,<span className='text-success'>25</span>,4]</code> <br />
 
             <h3 className='text-light pt-2 listen'> 3. Sequence:</h3>
             <p style={{ color: 'whitesmoke' }} className='listen'>
-              Ye discuss karta hai ki array traversal ko kyun easy aur fundamental mana jata hai.
-              Examples ke saath dikhata hai kaise traversal data processing tasks ko simplify karta hai.
+              Array me data ek sequence me store hota h ye sequence me store hone se usee agar sort kr diya jaaye to search easy jota h .
+
+              Traversal Ke time Aaya Jane Wala Data: Array ke elemnets hi hote h jo bit by bit indexing ke through milta h .
+
             </p>
             <p style={{ color: 'whitesmoke' }} className='listen'>
-              Traversal Ke Dauran Aaya Jane Wala Data: Array traversal ke dauran kaun kaun se data milta hai, ye explore karna.
-              Real-world examples dikhana encountered data ka importance.
-            </p>
-            <h5 className='text-light listen'>Examples</h5>
-            <p style={{ color: 'whitesmoke' }} className='listen'>
-              Different contexts mein array traversal ka practical examples dikhana.
-              Dikhlana ki array traversal algorithmic solutions ka kaise importance hai.
+              <span className='bg-dark text-warning'> Real World me Arrays data Storage me use aata h , matrices and image processing me use aata h , Game Developemnt , Audio Processing , Embedded Systems </span>
             </p>
 
             <h3 className='text-light pt-2 listen'> 4. Common Mistakes and Best Practices:</h3>
             <p style={{ color: 'whitesmoke' }} className='listen'>
 
               <span className='text-danger listen'>Common Errors in Array Traversal :</span>
+              Array transversal ke time pe hm adhiktar array ka end point decide krne me glti krte h hame phle ye pata hona chhaiye array kha se kha tak transverse kr rha h uska range kitna h . phir hme at the end uska iteration kitne pe ho rha h means i++ mtlb +1 aage ya i+=2 iska mean +2 from current index h .
+              <div className="card bg-dark text-warning">
 
-              Identify karna typical mistakes jo array traversal mein hoti hain.
-              Discuss karna kaise ye errors program ki efficiency ko affect kar sakti hain.
-              Proper Traversal Ke Liye Conventions:
-            </p>
+                <h6 className='p-1'>
+                  <pre>
+                    {`
+                     int i  = 0; // okay so we are starting from 0
+                     int length = arr.length: = 5 
+                     i++ = here i will increase as +1;
+                     int arr[3] = [0,1,2,3,4]
+                      for(int i = 0; i< length ;i++ ){
+                        System.out.println(arr[i);
+                      })
+
+                  Output Will be : -  0 1 2 3 4 
+                    `}
+                  </pre>
+                </h6>
+              </div>
+
+            </p> <br />
             <p style={{ color: 'whitesmoke' }} className='listen'>
-              Saaf aur error-free array traversal ke liye best practices sikhana.
-              Consistent aur padhne yogya traversal code ke liye coding conventions ko follow karna.
-              Real-world Applications and Examples:
+              <span className='text-success'>Best Practise: </span>Saaf aur error-free array traversal ke liye best practices yahi h ki aap comments likhte jaaye kayi baar brackets close n krne se bhi errors aata h semicolon k adhyan rakhe. Array start , end and iteration pe dhyan de . For Practise Pattern ke Question Bnnaye. 
             </p>
 
             <h3 style={{ color: '#FFE164' }} className='pt-2 listen'> 5. Guru mantra::</h3>
-            <p style={{ color: 'whitesmoke' }} className='listen'>
+            <p className='listen bg-dark text-warning p-1'>
 
-              Reiterate karna ki array traversal programming aur data manipulation mein kaise ek important operation hai.
-              Highlight karna ki ye algorithm design aur implementation mein kyun important hai.
-
-              <br />
-              Traversal Ke Maddhyam Se Data Receving Aur Sending Ka Ek Stable Tareeka Hai: Emphasize karna ki array traversal ek structured method hai data elements ke saath kaam karne ka.
-              Discuss karna kaise ye help karta hai data ko efficiently retrieve, process, aur manage karne mein.
+            if you were learning Array transversal then you must have to know  about time complexity as which type of loop will be used at what place . 
+            You should learn about memory insufficent issue that generate sometime so be careful from that . 
 
               <br />
-              Excel in the Field of Array Traversal:  Developers ko encourage karna ki woh array traversal ko achhe se samajhne aur istemal karne ke liye.
-              Acknowledge karna ki jo knowledge acquire hui hai, woh programming skills mein improvement layegi.
+   Transversal se data ka flow ko smjhana zarruri h <span className='text-success'> Git Version Control</span> kbhi n kbhi use kiya hoga ye bhi git version control bhi array indexing jaise aap smjh skte h .
+
+              <br />
+       As being a coder or developer writing clean and code precise documented is another important note i want to say you.
             </p>
           </div>
-          <div class="d-lg-none d-block my-3">
-            <h5 style={{ color: '#FFE164' }} className='ps-2 py-2'> Save your Notes Here :</h5>
-            <TextForm />
+          <div className="row py-2 g-0">
+            <div className="col-6 text-start">
+              <Link to = "/array" className='btn border text-capitalize text-warning'>Previous</Link>
+              
+            </div>
+            <div className="col-6 text-end ps-2 ">
+              <Link to = "/reverse-of-array" className='btn border text-warning text-capitalize'>Next</Link>
+              
+            </div>
           </div>
         </div>
         <div className="col-3 py-5 d-lg-block d-none">
-          <h2 style={{ color: '#FFE164' }}> Learn From Here :</h2>
-          <div className='p-2'>
-            <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-          <div className='my-3'>
-            <h5 style={{ color: '#FFE164' }} className='ps-2 py-2'> Save your Notes Here :</h5>
-            <TextForm />
-          </div>
-
+          <NewsApi />
         </div>
 
 
