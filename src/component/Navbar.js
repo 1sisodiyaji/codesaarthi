@@ -309,16 +309,16 @@ export const Navbar = () => {
               <>
                 <div className="d-flex align-items-center">
                   {/* <!-- Icon --> */}
-                  <a className="text-reset me-3" href="#">
+                  {/* <a className="text-reset me-3" href="#">
                     <i className="fi fi-ss-flame"></i>
-                  </a>
+                  </a> */}
 
                   {/* <!-- Notifications --> */}
 
-                  <i className="fi fi-br-envelope-dot px-2"></i>
+                  {/* <i className="fi fi-br-envelope-dot px-2"></i> */}
 
                   {/* <!-- Avatar --> */}
-                  <div className="nav-item dropdown px-2">
+                  <div className="nav-item dropdown px-2 border border-success">
                     <a
                       className="nav-link dropdown-toggle"
                       href="#"

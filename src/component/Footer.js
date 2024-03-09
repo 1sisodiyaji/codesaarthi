@@ -49,8 +49,7 @@ export const Footer = ({ onFooterClick }) => {
                     <Link to="/aboutUs" onClick={onFooterClick}  className = "text-body">About Us</Link> |
                     <Link to="/Problems" onClick={onFooterClick}  className = "text-body ms-1">Problems</Link> |
                     <Link to="/contest" onClick={onFooterClick}  className = "text-body ms-1">Contest</Link> |
-                    <Link to="/store" onClick={onFooterClick}  className = "text-body ms-1">Store </Link> 
-                       |
+                    <Link to="/theory" onClick={onFooterClick}  className = "text-body ms-1">Thoery</Link> |
                     <Link to="/preparation" onClick={onFooterClick}  className = "text-body ms-1">Preparation</Link>
                 </div>
             </div>
