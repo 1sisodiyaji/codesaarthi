@@ -80,7 +80,7 @@ export const Navbar = () => {
                 to="/signup"
               >
                 <i className="fi fi-rs-rocket-lunch pe-2"></i>
-                Get Started
+               Create Account
               </Link>
                 </li>
                 <li className="nav-item">
@@ -332,7 +332,7 @@ export const Navbar = () => {
                     className="btn rounded-9 text-dark"
                     style={{ backgroundColor: "#79b4e2" }}
                   >
-                    Get Started
+                    Create Account
                   </button>
                 </Link>
 

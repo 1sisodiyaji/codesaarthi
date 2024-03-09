@@ -35,7 +35,7 @@ const Projects = () => {
                   <div className="col-8 align-self-center">
                     <div>
                       <h5 className="card-title text-light">
-                        Web Development / clone Projects
+                       clone Projects
                       </h5>
                     </div>
 
@@ -176,7 +176,7 @@ const Projects = () => {
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
-                      <h5 className="card-title text-light">Html , Css Projects</h5>
+                      <h5 className="card-title text-light">Html , Css</h5>
                     </div>
 
                     <div>
@@ -205,7 +205,7 @@ const Projects = () => {
                   <div className="col-8 align-self-center">
                     <div>
                       <h5 className="card-title text-light">
-                        Html Css Js Projects
+                        Html Css Js
                       </h5>
                     </div>
 
