@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import SideTheory from '../../../../component/SideTheory'
-import TextForm from '../../../../component/Textarea'
+import SideTheory from '../../../component/SideTheory'
+import TextForm from '../../../component/Textarea'
 import { Helmet } from 'react-helmet';
-const DynamicArray = () => {
+const SortingArray = () => {
   let index = 0;
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [selectedVoice, setSelectedVoice] = useState(null);
@@ -100,20 +100,22 @@ const DynamicArray = () => {
   };
   return (
     <>
-    <Helmet>
+   
+<Helmet>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Dynamic arrays, Understanding dynamic arrays, Implementation of dynamic arrays, Array programming" />
+    <meta name="keywords" content="Array sorting, Sorting algorithms, Best practices for array sorting, Efficient array sort, Optimal sorting techniques" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://codesaarthi.com/Dynamic-Arrays" />
-    <meta name="description" content="Explore the concepts, understanding, and implementation of dynamic arrays in programming. Learn how dynamic arrays work and their practical applications. Enhance your programming skills on DSA Playlist." />
-    <title>Dynamic Arrays: Understanding and Implementation | DSA Playlist</title>
-    <meta property="og:title" content="Dynamic Arrays: Understanding and Implementation | DSA playlist" />
-    <meta property="og:description" content="Explore the concepts, understanding, and implementation of dynamic arrays in programming. Learn how dynamic arrays work and their practical applications. Enhance your programming skills on DSA Playlist." />
+    <link rel="canonical" href="https://codesaarthi.com/Sorting-Array" />
+    <meta name="description" content="Explore best practices in Array sorting. Learn efficient sorting algorithms and optimal techniques for sorting arrays. Enhance your programming skills on DSA Playlist." />
+    <title>Array Sorting | DSA Playlist ,Best Practices in Array Sorting</title>
+    <meta property="og:title" content="Best Practices in Array Sorting | DSA playlist" />
+    <meta property="og:description" content="Explore best practices in Array sorting. Learn efficient sorting algorithms and optimal techniques for sorting arrays. Enhance your programming skills on DSA Playlist." />
     <meta property="og:image" content="https://codesaarthi.com/img/Array.jpg" />
-    <meta property="og:url" content="https://codesaarthi.com/Dynamic-Arrays" />
+    <meta property="og:url" content="https://codesaarthi.com/Sorting-Array" />
     <meta property="og:type" content="Education-Website" />
     <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
+
 
       <div className="row g-0 pt-lg-0 mt-lg-0 F  pt-5 mt-2 design" style={{ backgroundColor: '#031A33' }}>
         <div className={`col-lg-2 col-12  d-lg-none d-block `}
@@ -159,10 +161,11 @@ const DynamicArray = () => {
 
         <div className="col-lg-7 col-12">
   <div className="container-fluid design p-1 py-5">
+
     <div className="row g-0">
       <div className="col-lg-8 col-12">
         <h2 style={{ color: '#FFE164' }} className='listen'>
-          Dynamic Arrays </h2>
+          Array Mein Sorting </h2>
       </div>
       <div className="col-4 d-lg-block d-none">
         <div className="row g-0 ">
@@ -193,53 +196,79 @@ const DynamicArray = () => {
               ))}
             </select>
           </div>
+
         </div>
       </div>
     </div>
-    <h3 className='text-light pt-2 listen'> Exploring Dynamic Arrays - A Flexible Guide:</h3>
+    <h3 className='text-light pt-2 listen'> Array Mein Sorting - Samajhne Ka Asaan Guide:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Dynamic arrays bring flexibility to data structures by allowing the size of the array to grow or shrink dynamically. Let's delve into dynamic arrays and explore best practices for efficient usage.
+      Sorting ka concept humare programming journey ka ek important part hai. Array mein elements ko arrange karna, unhe order mein laana - yeh sab sorting ke antar mein aata hai. Aaiye dekhein kaise array sorting humare code ki duniya ko organize karta hai, ek simple guide ke through.
     </p>
 
-    <h3 className='text-light pt-2 listen'> What are Dynamic Arrays:</h3>
+    <h3 className='text-light pt-2 listen'> Sorting Ka Matlab:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Unlike static arrays, dynamic arrays can change in size during runtime. They automatically resize themselves to accommodate varying amounts of data, making them versatile and memory-efficient.
+      Sorting ka seedha sa matlab hai kisi bhi set of data ko systematic order mein arrange karna. Jaise ki hum apne books ko alag-alag genres ke hisab se arrange karte hain, waise hi hum array elements ko bhi arrange karte hain.
     </p>
 
     <div className='p-2 d-lg-none d-block'>
       <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
-    <h2 className='text-light pt-2 listen'>Creating and Using Dynamic Arrays:</h2>
+    <h2 className='text-light pt-2 listen'>Sorting Algorithms:</h2>
 
-    <h3 className='text-light pt-2 listen'>1. Dynamic Array Basics:</h3>
+    <h3 className='text-light pt-2 listen'>1. Bubble Sort:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Dynamic arrays are initialized with a certain capacity and can be resized as needed. Elements can be easily added or removed without worrying about fixed sizes.
+      Bubble sort ek simple sorting algorithm hai, jisme adjacent elements ko compare kiya jata hai aur unhe swap kiya jata hai agar woh galat order mein hote hain.
     </p>
 
-    <h3 className='text-light pt-2 listen'>2. Resizing Strategy:</h3>
+    <h3 className='text-light pt-2 listen'>2. Selection Sort:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Implementing an efficient resizing strategy is crucial for performance. Common strategies include doubling the size or increasing by a certain percentage.
+      Selection sort mein array ko divide kiya jata hai, ek part sorted aur dusra unsorted. Sorted part mein se minimum element ko select karke unsorted part ke beginning mein swap kiya jata hai.
     </p>
 
-    <h3 className='text-light pt-2 listen'>3. Best Practices for Dynamic Arrays:</h3>
+    <h3 className='text-light pt-2 listen'>3. Merge Sort:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Use dynamic arrays when the size of the data is unknown or may change. Regularly monitor and optimize resizing strategies to balance memory usage and performance.
+      Merge sort ek divide-and-conquer algorithm hai. Isme array ko halves mein divide kiya jata hai, fir in halves ko sort kiya jata hai, aur phir combine kiya jata hai.
     </p>
 
-    <h3 className='text-light pt-2 listen'>Advantages of Dynamic Arrays:</h3>
+    <h3 className='text-light pt-2 listen'>4. Quick Sort:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Dynamic arrays offer efficient memory usage, adaptability to changing data sizes, and improved overall performance compared to static arrays.
+      Quick sort bhi divide-and-conquer based sorting algorithm hai. Isme pivot element ko choose kiya jata hai, aur array ko uske left aur right mein divide kiya jata hai.
     </p>
 
-    <h3 className='text-light pt-2 listen'>Real-world Application:</h3>
+    <h3 className='text-light pt-2 listen'>Sorting Ka Code:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Dynamic arrays are widely used in scenarios where the size of the dataset is unpredictable, such as managing lists, queues, or implementing dynamic data structures.
+      Sorting code likhna simple hai. Aaiye ek example ke through samjhein kaise hum sorting algorithm ka code likhte hain:
+    </p>
+    <pre className='mb-3'><code className='text-warning'>
+      {`
+      def bubble_sort(arr):
+        n = len(arr)
+        for i in range(n):
+          for j in range(0, n-i-1):
+            if arr[j] > arr[j+1] :
+              arr[j], arr[j+1] = arr[j+1], arr[j]
+        
+        # Example Usage
+        my_array = [64, 25, 12, 22, 11]
+        bubble_sort(my_array)
+        print("Sorted Array:", my_array)
+      `}
+    </code></pre>
+
+    <h5 className='text-danger listen'>Common Mistakes:</h5>
+    <p style={{ color: 'whitesmoke' }} className='listen'>
+      Sorting mein kuch common mistakes hain jo avoid karni chahiye. Jaise ki loop conditions galat set karna ya swap mein error hona.
     </p>
 
-    <h3 className='pt-2 listen text-success'>Developers' Toolkit:</h3>
+    <h3 className='text-light pt-2 listen'>Real-world Mein Application:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Mastering dynamic arrays is essential for optimizing memory usage and ensuring flexibility in handling varying amounts of data. Follow best practices to harness their full potential in your applications.
+      Sorting ka concept har programming field mein use hota hai, jaise databases, searching algorithms, aur data analysis mein.
+    </p>
+
+    <h3 className='pt-2 listen text-success'>Developers Ke Liye Magic:</h3>
+    <p style={{ color: 'whitesmoke' }} className='listen'>
+      Sorting algorithms ko master karna aapko efficient code likhne mein madad karega. Yeh ek powerful tool hai jo data ko organize karne mein aur complex problems ko solve karne mein aata hai.
     </p>
   </div>
   <div class="d-lg-none d-block my-3">
@@ -247,6 +276,7 @@ const DynamicArray = () => {
     <TextForm />
   </div>
 </div>
+
 
 
         <div className="col-3 py-5 d-lg-block d-none">
@@ -268,4 +298,4 @@ const DynamicArray = () => {
   )
 }
 
-export default DynamicArray
+export default SortingArray

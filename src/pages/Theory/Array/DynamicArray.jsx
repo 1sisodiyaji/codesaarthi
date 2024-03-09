@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import SideTheory from '../../../../component/SideTheory'
-import TextForm from '../../../../component/Textarea'
+import SideTheory from '../../../component/SideTheory'
+import TextForm from '../../../component/Textarea'
 import { Helmet } from 'react-helmet';
-
-const CommonMistakes = () => {
+const DynamicArray = () => {
   let index = 0;
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [selectedVoice, setSelectedVoice] = useState(null);
@@ -87,6 +86,8 @@ const CommonMistakes = () => {
     speechSynthesis.speak(utterance);
   };
 
+
+
   const pause = () => {
     speechSynthesis.pause();
     setIsSpeaking(false);
@@ -99,17 +100,17 @@ const CommonMistakes = () => {
   };
   return (
     <>
-<Helmet>
+    <Helmet>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Common mistakes in Array, Array errors, Array pitfalls, Array coding mistakes" />
+    <meta name="keywords" content="Dynamic arrays, Understanding dynamic arrays, Implementation of dynamic arrays, Array programming" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://codesaarthi.com/Common-Mistakes-in-Array" />
-    <meta name="description" content="Explore common mistakes in Array programming. Avoid pitfalls and errors in Array coding. Learn key concepts and improve your programming skills on DSA Playlist." />
-    <title>Common Mistakes in Arrays | DSA Playlist</title>
-    <meta property="og:title" content="Common Mistakes in Arrays | DSA playlist" />
-    <meta property="og:description" content="Explore common mistakes in Array programming. Avoid pitfalls and errors in Array coding. Learn key concepts and improve your programming skills on DSA Playlist." />
+    <link rel="canonical" href="https://codesaarthi.com/Dynamic-Arrays" />
+    <meta name="description" content="Explore the concepts, understanding, and implementation of dynamic arrays in programming. Learn how dynamic arrays work and their practical applications. Enhance your programming skills on DSA Playlist." />
+    <title>Dynamic Arrays: Understanding and Implementation | DSA Playlist</title>
+    <meta property="og:title" content="Dynamic Arrays: Understanding and Implementation | DSA playlist" />
+    <meta property="og:description" content="Explore the concepts, understanding, and implementation of dynamic arrays in programming. Learn how dynamic arrays work and their practical applications. Enhance your programming skills on DSA Playlist." />
     <meta property="og:image" content="https://codesaarthi.com/img/Array.jpg" />
-    <meta property="og:url" content="https://codesaarthi.com/Common-Mistakes-in-Array" />
+    <meta property="og:url" content="https://codesaarthi.com/Dynamic-Arrays" />
     <meta property="og:type" content="Education-Website" />
     <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
@@ -161,7 +162,7 @@ const CommonMistakes = () => {
     <div className="row g-0">
       <div className="col-lg-8 col-12">
         <h2 style={{ color: '#FFE164' }} className='listen'>
-          Common Practices in Arrays</h2>
+          Dynamic Arrays </h2>
       </div>
       <div className="col-4 d-lg-block d-none">
         <div className="row g-0 ">
@@ -195,49 +196,50 @@ const CommonMistakes = () => {
         </div>
       </div>
     </div>
-    <h3 className='text-light pt-2 listen'> Exploring Common Practices in Arrays</h3>
+    <h3 className='text-light pt-2 listen'> Exploring Dynamic Arrays - A Flexible Guide:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Arrays are fundamental data structures in programming. Here, we'll explore common practices to follow when working with arrays, optimizing code readability, and ensuring efficient usage.
+      Dynamic arrays bring flexibility to data structures by allowing the size of the array to grow or shrink dynamically. Let's delve into dynamic arrays and explore best practices for efficient usage.
     </p>
 
-    <h3 className='text-light pt-2 listen'> Array Declaration and Initialization:</h3>
+    <h3 className='text-light pt-2 listen'> What are Dynamic Arrays:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Declare and initialize arrays with meaningful names. Clearly define the purpose of the array to enhance code understanding.
+      Unlike static arrays, dynamic arrays can change in size during runtime. They automatically resize themselves to accommodate varying amounts of data, making them versatile and memory-efficient.
     </p>
 
-    <h3 className='text-light pt-2 listen'> Consistent Coding Style:</h3>
+    <div className='p-2 d-lg-none d-block'>
+      <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <h2 className='text-light pt-2 listen'>Creating and Using Dynamic Arrays:</h2>
+
+    <h3 className='text-light pt-2 listen'>1. Dynamic Array Basics:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Follow a consistent coding style for array-related operations. This includes indentation, spacing, and naming conventions for variables and functions.
+      Dynamic arrays are initialized with a certain capacity and can be resized as needed. Elements can be easily added or removed without worrying about fixed sizes.
     </p>
 
-    <h3 className='text-light pt-2 listen'> Error Handling:</h3>
+    <h3 className='text-light pt-2 listen'>2. Resizing Strategy:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Implement robust error handling to address potential issues like index out of bounds, ensuring the stability of your array-based algorithms.
+      Implementing an efficient resizing strategy is crucial for performance. Common strategies include doubling the size or increasing by a certain percentage.
     </p>
 
-    <h3 className='text-light pt-2 listen'> Commenting:</h3>
+    <h3 className='text-light pt-2 listen'>3. Best Practices for Dynamic Arrays:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Use comments to explain complex algorithms, important logic, or any unconventional array operations. Make your code more understandable for others (and future you).
+      Use dynamic arrays when the size of the data is unknown or may change. Regularly monitor and optimize resizing strategies to balance memory usage and performance.
     </p>
 
-    <h3 className='text-light pt-2 listen'> Avoid Magic Numbers:</h3>
+    <h3 className='text-light pt-2 listen'>Advantages of Dynamic Arrays:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Avoid using magic numbers in array indices or lengths. Define constants or variables with meaningful names to enhance code readability and maintenance.
+      Dynamic arrays offer efficient memory usage, adaptability to changing data sizes, and improved overall performance compared to static arrays.
     </p>
 
-    <h3 className='text-light pt-2 listen'>Common Array Operations:</h3>
+    <h3 className='text-light pt-2 listen'>Real-world Application:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Familiarize yourself with common array operations like searching, sorting, and filtering. Choose the most efficient algorithm based on the specific use case.
+      Dynamic arrays are widely used in scenarios where the size of the dataset is unpredictable, such as managing lists, queues, or implementing dynamic data structures.
     </p>
 
-    <h3 className='text-light pt-2 listen'>Memory Management:</h3>
+    <h3 className='pt-2 listen text-success'>Developers' Toolkit:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Be mindful of memory usage, especially in large-scale applications. Optimize array operations to reduce unnecessary memory allocation and deallocation.
-    </p>
-
-    <h3 className='pt-2 listen text-success'>Developers' Note:</h3>
-    <p style={{ color: 'whitesmoke' }} className='listen'>
-      Following these common practices ensures clean, maintainable, and efficient code when working with arrays. Apply these principles to enhance your skills in array manipulation.
+      Mastering dynamic arrays is essential for optimizing memory usage and ensuring flexibility in handling varying amounts of data. Follow best practices to harness their full potential in your applications.
     </p>
   </div>
   <div class="d-lg-none d-block my-3">
@@ -266,4 +268,4 @@ const CommonMistakes = () => {
   )
 }
 
-export default CommonMistakes
+export default DynamicArray

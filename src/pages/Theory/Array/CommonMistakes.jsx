@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import SideTheory from '../../../../component/SideTheory'
-import TextForm from '../../../../component/Textarea'
+import SideTheory from '../../../component/SideTheory'
+import TextForm from '../../../component/Textarea'
 import { Helmet } from 'react-helmet';
-const SearchingArray = () => {
+
+const CommonMistakes = () => {
   let index = 0;
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [selectedVoice, setSelectedVoice] = useState(null);
@@ -86,8 +87,6 @@ const SearchingArray = () => {
     speechSynthesis.speak(utterance);
   };
 
-
-
   const pause = () => {
     speechSynthesis.pause();
     setIsSpeaking(false);
@@ -100,22 +99,20 @@ const SearchingArray = () => {
   };
   return (
     <>
-   
 <Helmet>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Array searching, Searching algorithms, Best practices for array searching, Efficient array search, Optimal search techniques" />
+    <meta name="keywords" content="Common mistakes in Array, Array errors, Array pitfalls, Array coding mistakes" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://codesaarthi.com/Searching-Array" />
-    <meta name="description" content="Explore best practices in Array searching. Learn efficient searching algorithms and optimal techniques for searching arrays. Enhance your programming skills on DSA Playlist." />
-    <title>Array Searching | DSA Playlist , Best Practices in Array Searching</title>
-    <meta property="og:title" content="Best Practices in Array Searching | DSA playlist" />
-    <meta property="og:description" content="Explore best practices in Array searching. Learn efficient searching algorithms and optimal techniques for searching arrays. Enhance your programming skills on DSA Playlist." />
+    <link rel="canonical" href="https://codesaarthi.com/Common-Mistakes-in-Array" />
+    <meta name="description" content="Explore common mistakes in Array programming. Avoid pitfalls and errors in Array coding. Learn key concepts and improve your programming skills on DSA Playlist." />
+    <title>Common Mistakes in Arrays | DSA Playlist</title>
+    <meta property="og:title" content="Common Mistakes in Arrays | DSA playlist" />
+    <meta property="og:description" content="Explore common mistakes in Array programming. Avoid pitfalls and errors in Array coding. Learn key concepts and improve your programming skills on DSA Playlist." />
     <meta property="og:image" content="https://codesaarthi.com/img/Array.jpg" />
-    <meta property="og:url" content="https://codesaarthi.com/Searching-Array" />
+    <meta property="og:url" content="https://codesaarthi.com/Common-Mistakes-in-Array" />
     <meta property="og:type" content="Education-Website" />
     <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
-
 
       <div className="row g-0 pt-lg-0 mt-lg-0 F  pt-5 mt-2 design" style={{ backgroundColor: '#031A33' }}>
         <div className={`col-lg-2 col-12  d-lg-none d-block `}
@@ -164,7 +161,7 @@ const SearchingArray = () => {
     <div className="row g-0">
       <div className="col-lg-8 col-12">
         <h2 style={{ color: '#FFE164' }} className='listen'>
-          Array Mein Searching </h2>
+          Common Practices in Arrays</h2>
       </div>
       <div className="col-4 d-lg-block d-none">
         <div className="row g-0 ">
@@ -198,70 +195,49 @@ const SearchingArray = () => {
         </div>
       </div>
     </div>
-    <h3 className='text-light pt-2 listen'> Searching in Arrays - Ek Simple Guide:</h3>
+    <h3 className='text-light pt-2 listen'> Exploring Common Practices in Arrays</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Searching ka process humare code ke liye crucial hota hai. Array mein specific element ya value ko dhundhna aur uske position ko retrieve karna, yeh sab searching ke antar mein aata hai. Aaiye samjhein kaise hum array mein searching ka magic karte hain, ek simple guide ke through.
+      Arrays are fundamental data structures in programming. Here, we'll explore common practices to follow when working with arrays, optimizing code readability, and ensuring efficient usage.
     </p>
 
-    <h3 className='text-light pt-2 listen'> Searching Ka Arth:</h3>
+    <h3 className='text-light pt-2 listen'> Array Declaration and Initialization:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Searching ka matlab hai kisi specific value ko find karna humare data mein. Jaise ki hum apne phone mein kisi contact ko dhundhte hain, waise hi hum array mein kisi element ko dhundhte hain.
+      Declare and initialize arrays with meaningful names. Clearly define the purpose of the array to enhance code understanding.
     </p>
 
-    <div className='p-2 d-lg-none d-block'>
-      <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-
-    <h2 className='text-light pt-2 listen'>Searching Algorithms:</h2>
-
-    <h3 className='text-light pt-2 listen'>1. Linear Search:</h3>
+    <h3 className='text-light pt-2 listen'> Consistent Coding Style:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Linear search ek simple searching algorithm hai jisme array ko ek ek element check kiya jata hai, aur jab target mil jata hai, toh uska position return kiya jata hai.
+      Follow a consistent coding style for array-related operations. This includes indentation, spacing, and naming conventions for variables and functions.
     </p>
 
-    <h3 className='text-light pt-2 listen'>2. Binary Search:</h3>
+    <h3 className='text-light pt-2 listen'> Error Handling:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Binary search ek efficient algorithm hai jisme array ko divide-and-conquer method se half mein divide kiya jata hai. Agar target element mil jata hai, toh uska position return kiya jata hai.
+      Implement robust error handling to address potential issues like index out of bounds, ensuring the stability of your array-based algorithms.
     </p>
 
-    <h3 className='text-light pt-2 listen'>3. Hashing:</h3>
+    <h3 className='text-light pt-2 listen'> Commenting:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Hashing ek aur tareeka hai searching ka, jisme array elements ko hash function se map kiya jata hai, aur fir target element ko retrieve kiya jata hai.
+      Use comments to explain complex algorithms, important logic, or any unconventional array operations. Make your code more understandable for others (and future you).
     </p>
 
-    <h3 className='text-light pt-2 listen'>Searching Ka Code:</h3>
+    <h3 className='text-light pt-2 listen'> Avoid Magic Numbers:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Searching code likhna bhi kaafi simple hai. Aaiye ek example ke through samjhein kaise hum searching algorithm ka code likhte hain:
-    </p>
-    <pre className='mb-3'><code className='text-warning'>
-      {`
-      def linear_search(arr, target):
-        for i in range(len(arr)):
-          if arr[i] == target:
-            return i
-        return -1
-
-      # Example Usage
-      my_array = [10, 20, 30, 40, 50]
-      target_element = 30
-      result = linear_search(my_array, target_element)
-      print("Element found at index:", result)
-      `}
-    </code></pre>
-
-    <h5 className='text-danger listen'>Common Mistakes:</h5>
-    <p style={{ color: 'whitesmoke' }} className='listen'>
-      Searching mein kuch common mistakes hain jo avoid karni chahiye. Jaise ki loop conditions galat set karna ya target element ka comparison sahi se nahi karna.
+      Avoid using magic numbers in array indices or lengths. Define constants or variables with meaningful names to enhance code readability and maintenance.
     </p>
 
-    <h3 className='text-light pt-2 listen'>Real-world Mein Application:</h3>
+    <h3 className='text-light pt-2 listen'>Common Array Operations:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Searching ka concept har jagah use hota hai, jaise databases, information retrieval systems, aur games mein.
+      Familiarize yourself with common array operations like searching, sorting, and filtering. Choose the most efficient algorithm based on the specific use case.
     </p>
 
-    <h3 className='pt-2 listen text-success'>Developers Ke Liye Magic:</h3>
+    <h3 className='text-light pt-2 listen'>Memory Management:</h3>
     <p style={{ color: 'whitesmoke' }} className='listen'>
-      Searching algorithms ko master karna aapke code ko efficient aur fast banata hai. Yeh ek essential tool hai jo data ko find karne mein aur dynamic applications mein use hota hai.
+      Be mindful of memory usage, especially in large-scale applications. Optimize array operations to reduce unnecessary memory allocation and deallocation.
+    </p>
+
+    <h3 className='pt-2 listen text-success'>Developers' Note:</h3>
+    <p style={{ color: 'whitesmoke' }} className='listen'>
+      Following these common practices ensures clean, maintainable, and efficient code when working with arrays. Apply these principles to enhance your skills in array manipulation.
     </p>
   </div>
   <div class="d-lg-none d-block my-3">
@@ -290,4 +266,4 @@ const SearchingArray = () => {
   )
 }
 
-export default SearchingArray
+export default CommonMistakes

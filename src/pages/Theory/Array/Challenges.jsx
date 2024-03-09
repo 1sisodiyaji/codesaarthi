@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import SideTheory from '../../../../component/SideTheory'
-import TextForm from '../../../../component/Textarea'
+import SideTheory from '../../../component/SideTheory'
+import TextForm from '../../../component/Textarea'
 import { Helmet } from 'react-helmet';
 
 const Challenges = () => {
