@@ -14,7 +14,6 @@ import Contest from "../pages/Contest";
 import Projects from "../pages/Projects";
 import Preparation from "../pages/Preparation";
 import Theory from "../pages/Theory";
-import Whiteboard from "../pages/Whiteboard";
 import { Navbar } from "../component/Navbar";
 import { Footer } from "../component/Footer";
 import Problems from "../pages/Problems";
@@ -76,7 +75,6 @@ const Routess = () => {
           <Route path="/cookies" element={<Cookie />} />
           <Route path="/preparation" element={<Preparation />} />
           <Route path="/theory" element={<Theory />} />
-          <Route path="/whiteboard" element={<Whiteboard />} />
           <Route path="/roadMap" element={<Roadmap />} />
           <Route path="/dsa" element={<Dsa/>} />
           <Route path="/array" element={<Array />} />

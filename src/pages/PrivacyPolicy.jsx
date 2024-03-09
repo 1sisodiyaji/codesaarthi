@@ -72,10 +72,9 @@ const PrivacyPolicy = () => {
               <ul>
                 <li>
                   Company (referred to as either "the Company '', "We", "Us" or
-                  "Our" in this Privacy Policy) refers to codesaarthi Software
-                  Private Limited.
+                  "Our" in this Privacy Policy) refers to codesaarthi.
                 </li>
-                <li>Website refers to codesaarthi.org</li>
+                <li>Website refers to codesaarthi.com</li>
                 <li>
                   You mean the individual accessing or using the Website, or a
                   company, or any legal entity on behalf of which such
@@ -86,7 +85,7 @@ const PrivacyPolicy = () => {
               <h6>Who collects and processes your personal data?</h6>
               <p>
                 codesaarthi does, in the form of the respective legal entity
-                codesaarthi Software Private Limited, India. The codesaarthi
+                codesaarthi , India. The codesaarthi
                 Privacy Statement describes in detail which processing
                 activities of which codesaarthi entity apply.
               </p>

@@ -23,9 +23,9 @@ const Projects = () => {
         <div className="row py-5 g-6">
 
           <div className="col-lg-3 my-2 col-12">
-            <div class="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
               <div
-                class="bg-image hover-overlay ripple"
+                className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
@@ -34,7 +34,7 @@ const Projects = () => {
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
-                      <h5 class="card-title text-light">
+                      <h5 className="card-title text-light">
                         Web Development / clone Projects
                       </h5>
                     </div>
@@ -53,18 +53,18 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div class="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
               <div
-                class="bg-image hover-overlay ripple"
+                className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" class="img-fluid" style={{borderRadius: '50%'}} />
+                    <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" className="img-fluid" style={{borderRadius: '50%'}} />
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
-                      <h5 class="card-title text-light">React Projects</h5>
+                      <h5 className="card-title text-light">React Projects</h5>
                     </div>
 
                     <div>
@@ -81,18 +81,18 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div class="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
               <div
-                class="bg-image hover-overlay ripple"
+                className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="../img/logo.png" class="img-fluid" />
+                    <img src="../img/logo.png" className="img-fluid" />
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
-                      <h5 class="card-title text-light">Php Projects</h5>
+                      <h5 className="card-title text-light">Php Projects</h5>
                     </div>
 
                     <div>
@@ -109,18 +109,18 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div class="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
               <div
-                class="bg-image hover-overlay ripple"
+                className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="../img/logo.png" class="img-fluid" />
+                    <img src="../img/logo.png" className="img-fluid" />
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
-                      <h5 class="card-title text-light">Java Projects</h5>
+                      <h5 className="card-title text-light">Java Projects</h5>
                     </div>
 
                     <div>
@@ -137,18 +137,18 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div class="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
               <div
-                class="bg-image hover-overlay ripple"
+                className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="../img/logo.png" class="img-fluid" />
+                    <img src="../img/logo.png" className="img-fluid" />
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
-                      <h5 class="card-title text-light">Html Projects</h5>
+                      <h5 className="card-title text-light">Html Projects</h5>
                     </div>
 
                     <div>
@@ -165,18 +165,18 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div class="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
               <div
-                class="bg-image hover-overlay ripple"
+                className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="../img/logo.png" class="img-fluid" />
+                    <img src="../img/logo.png" className="img-fluid" />
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
-                      <h5 class="card-title text-light">Html , Css Projects</h5>
+                      <h5 className="card-title text-light">Html , Css Projects</h5>
                     </div>
 
                     <div>
@@ -193,18 +193,18 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div class="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
               <div
-                class="bg-image hover-overlay ripple"
+                className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="../img/logo.png" class="img-fluid" />
+                    <img src="../img/logo.png" className="img-fluid" />
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
-                      <h5 class="card-title text-light">
+                      <h5 className="card-title text-light">
                         Html Css Js Projects
                       </h5>
                     </div>

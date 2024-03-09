@@ -163,17 +163,7 @@ export const Navbar = () => {
                 Preparation
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                className={`nav-link ${
-                  isNavLinkActive("/whiteboard") ? "active" : ""
-                }`}
-                style={{ color: "black" }}
-                to="/whiteboard"
-              > <i className="fi fi-rr-computer pe-2"></i>
-                Whiteboard
-              </Link>
-            </li>
+            
             <li className="nav-item">
               <Link
                 className={`nav-link ${
@@ -298,17 +288,7 @@ export const Navbar = () => {
                   Preparation
                 </Link>
               </li>
-              <li className="nav-items">
-                <Link
-                  className={`nav-link ${
-                    isNavLinkActive("/whiteboard") ? "active" : ""
-                  }`}
-                  style={{ color: "black" }}
-                  to="/whiteboard"
-                >
-                  Whiteboard
-                </Link>
-              </li>
+             
               <li className="nav-items">
                 <Link
                   className={`nav-link ${
