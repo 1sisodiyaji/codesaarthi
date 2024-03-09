@@ -96,15 +96,15 @@ const Login = () => {
                 localStorage.setItem('user_ProfilePic' , userData.picture);
                  navigate("/Problems");
               } else {
-                console.error('Account Does not exist:', response.data.message);
+                emailError.textContent('Account Does not exist:', response.data.message);
               }
             })
             .catch((error) => {
-              console.error('Error checking  user data to backend:', error);
+              emailError.textContent('Error checking  user data to backend:', error);
             });
         })
         .catch((error) => {
-          console.error('Error fetching user information:', error);
+          emailError.textContent('Error fetching user information:', error);
         });
     }
   });

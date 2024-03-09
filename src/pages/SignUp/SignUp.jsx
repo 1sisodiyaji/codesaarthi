@@ -106,23 +106,21 @@ const SignUp = () => {
           const userData = response.data;
           axios.post('https://codesaarthiserver.cyclic.app/api/saveuserData', userData)
             .then((response) => {
-              console.log(response);
               if (response.data.status === 'success') {
                 localStorage.setItem('user_name', userData.name);
                 localStorage.setItem('user_email', userData.email);
                 localStorage.setItem('user_ProfilePic', userData.picture);
-
                 navigate("/Problems");
               } else {
-                console.error('Error saving user data:', response.data.message);
+                name_error.textContent('Error saving user data:', response.data.message);
               }
             })
             .catch((error) => {
-              console.error('Error sending user data to backend:', error);
+              name_error.textContent('Error sending user data to backend:', error);
             });
         })
         .catch((error) => {
-          console.error('Error fetching user information:', error);
+          name_error.textContent('Error fetching user information:', error);
         });
     }
   });
