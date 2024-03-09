@@ -22,6 +22,8 @@ const NewsApi = () => {
     <>
     <h5 className='text-success'>Trends On Today World</h5>
     <div style={{ display: 'flex', flexWrap: 'wrap', overflowY: 'scroll', height: '100vh', borderBottom: '1px solid #FFE164' }}>
+      {data?
+      <>
       {data && data.map(item => (
         <div key={item.id} className='card p-2 my-1' style={{ backgroundColor: '#031A33', border: '1px solid #79b4e2' }}>
           <h6 style={{ color: '#FFE164' }}>{item.title}</h6>
@@ -32,6 +34,11 @@ const NewsApi = () => {
           </div>
         </div>
       ))}
+      </>
+      :
+      <>
+      <p>No data found</p>
+      </>}
     </div>
   </>
   );
