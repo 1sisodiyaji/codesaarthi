@@ -318,7 +318,7 @@ export const Navbar = () => {
                   {/* <i className="fi fi-br-envelope-dot px-2"></i> */}
 
                   {/* <!-- Avatar --> */}
-                  <div className="nav-item dropdown px-2 border border-success">
+                  <div className="nav-item dropdown px-2">
                     <a
                       className="nav-link dropdown-toggle"
                       href="#"
@@ -338,7 +338,9 @@ export const Navbar = () => {
                         </>
                       ) : (
                         <>
+                        <div className="border border-success"> 
                           <i className="fi fi-ss-user"></i>
+                          </div>
                         </>
                       )}
                     </a>
@@ -346,17 +348,17 @@ export const Navbar = () => {
                     <ul className="dropdown-menu dropdown-menu-end">
                       <li>
                         <a className="dropdown-item" href="#">
-                          My profile
+                        <i class="fi fi-ss-user-gear text-secondary"></i>  My profile
                         </a>
                       </li>
                       <li>
                         <a className="dropdown-item" href="#">
-                          Settings
+                        <i class="fi fi-ss-user-gear text-dark"></i> Settings
                         </a>
                       </li>
                       <li>
-                        <Link to="/" className="dropdown-item" onClick={logout}>
-                          Logout
+                        <Link to="/" className="dropdown-item text-danger" onClick={logout}>
+                        <i class="fi fi-ss-sign-out-alt text-danger"></i>  Logout
                         </Link>
                       </li>
                     </ul>
