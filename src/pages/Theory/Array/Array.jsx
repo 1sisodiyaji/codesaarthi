@@ -151,7 +151,7 @@ const Array = () => {
                 <meta property="og:type" content="Education-Website" />
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
-            <div className="row g-0 pt-lg-0 mt-lg-0   pt-5 mt-1 design" style={{ backgroundColor: '#031A33' }}>
+            <div className="row g-0 pt-lg-0 mt-lg-0   pt-5  design" style={{ backgroundColor: '#031A33' }}>
                 <div className="col-2 d-lg-block d-none"><SideTheory /></div>
 
                 <div className={`col-lg-2 col-12  d-lg-none d-block `}
@@ -159,8 +159,8 @@ const Array = () => {
                     <div className="row g-0 position-fixed " >
                         <div className="col-6 ps-2" style={{ backgroundColor: '#031A33' }}><SideTheory /></div>
 
-                        <div className="col-6 ">
-                            <div className="row g-0 " style={{ backgroundColor: '#031A33' }}>
+                        <div className="col-6 w-100">
+                            <div className="row g-0" style={{ backgroundColor: '#031A33' }}>
                                 <div className="col-4 text-center">
                                     {!isSpeaking ?
                                         <>
@@ -176,7 +176,7 @@ const Array = () => {
                                         </>
                                     }
                                 </div>
-                                <div className="col-8">
+                                <div className="col-8 w-100">
                                     <select onChange={handleVoiceChange} value={selectedVoice ? selectedVoice.name : ''} className='w-75 ms-4' style={{
                                         color: '#FFE164',
                                         backgroundColor: '#031A33'
