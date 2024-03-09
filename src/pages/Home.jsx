@@ -38,7 +38,7 @@ const Home = () => {
           </div>
         </div>
         <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center">
-          <img src="img/Home1.png" className="img-fluid" alt="" />
+          <img src="img/home1.png" className="img-fluid" alt="" />
         </div>
       </div>
 
