@@ -10,9 +10,7 @@ import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsCondition from "../pages/TermsAndConditions";
 import Cookie from "../pages/Cookie";
 import ErrorPage from '../pages/Error404Pgae';
-import Contest from "../pages/Contest";
 import Projects from "../pages/Projects";
-import Preparation from "../pages/Preparation";
 import Theory from "../pages/Theory";
 import { Navbar } from "../component/Navbar";
 import { Footer } from "../component/Footer";
@@ -65,7 +63,6 @@ const Routess = () => {
           <Route path="/" element={<Home />} />
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Problems" element={<Problems/>} />
-          <Route path="/contest" element={<Contest />} />
           <Route path="/Projects" element={<Projects />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Login" element={<Login />} />
@@ -73,7 +70,6 @@ const Routess = () => {
           <Route path="/privacy_policy" element={<PrivacyPolicy />} />
           <Route path="/terms_conditions" element={<TermsCondition />} />
           <Route path="/cookies" element={<Cookie />} />
-          <Route path="/preparation" element={<Preparation />} />
           <Route path="/theory" element={<Theory />} />
           <Route path="/roadMap" element={<Roadmap />} />
           <Route path="/dsa" element={<Dsa/>} />

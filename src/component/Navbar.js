@@ -130,17 +130,7 @@ export const Navbar = () => {
                 Problems
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                className={`nav-link ${
-                  isNavLinkActive("/contest") ? "active" : ""
-                }`}
-                style={{ color: "black" }}
-                to="/contest"
-              > <i className="fi fi-sr-trophy-star pe-2"></i>
-                Contests
-              </Link>
-            </li>
+            
             <li className="nav-item">
               <Link
                 className={`nav-link ${
@@ -152,17 +142,7 @@ export const Navbar = () => {
                 Projects
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                className={`nav-link ${
-                  isNavLinkActive("/preparation") ? "active" : ""
-                }`}
-                style={{ color: "black" }}
-                to="/preparation"
-              > <i className="fi fi-rr-tools pe-2"></i>
-                Preparation
-              </Link>
-            </li>
+           
             
             <li className="nav-item">
               <Link
@@ -255,17 +235,7 @@ export const Navbar = () => {
                   Problems
                 </Link>
               </li>
-              <li className="nav-items">
-                <Link
-                  className={`nav-link ${
-                    isNavLinkActive("/contest") ? "active" : ""
-                  }`}
-                  style={{ color: "black" }}
-                  to="/contest"
-                >
-                  Contests
-                </Link>
-              </li>
+             
               <li className="nav-items">
                 <Link
                   className={`nav-link ${
@@ -277,17 +247,7 @@ export const Navbar = () => {
                   Projects
                 </Link>
               </li>
-              <li className="nav-items">
-                <Link
-                  className={`nav-link ${
-                    isNavLinkActive("/preparation") ? "active" : ""
-                  }`}
-                  style={{ color: "black" }}
-                  to="/preparation"
-                >
-                  Preparation
-                </Link>
-              </li>
+              
              
               <li className="nav-items">
                 <Link

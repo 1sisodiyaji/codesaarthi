@@ -203,7 +203,7 @@ const TransversingOfArray = () => {
             <p style={{ color: 'whitesmoke' }} className='listen'>
               Array traversal ka matlab hai har ek array element ko systematic taur par dekhna aur uska istemal karna.
               Yahan har item ka access karna aur usme kuch work karna shaamil hai, jyadatar ek systematic tareeke se. <br />
-              <span className='bg-dark text-warning'>Baically transversing a array includes to go through each element in a array through thier index.</span>
+              <span className='bg-dark text-warning'>Basically transversing a array includes to go through each element in a array through thier index.</span>
             </p>
 
             <h3 className='text-light pt-2 listen'> Array Traversal Kyon Important  Hai:</h3>
