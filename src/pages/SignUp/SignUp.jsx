@@ -50,12 +50,14 @@ const SignUp = () => {
             "Please enter your password to Create account";
         } else {
           try {
+            console.log(formData);
             const response = await axios.post(
               "https://codesaarthiserver.cyclic.app/api/register",
               formData
             );
-           
+           console.log(response);
             const savedUser = response.data;
+            console.log(savedUser);
             const { name, email,status,message } = savedUser;
             if (status === "success") {
               name_error.textContent = "Account created successfully!";
