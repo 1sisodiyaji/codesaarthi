@@ -30,18 +30,16 @@ const AboutUs = () => {
         }else if(!message) {
             setError('Please address your issues');
             return;
-        }
+        }else{
 
         const data = {
             name: name,
             email: email,
             message: message,
         };
-console.log(data);
         try {
             setIsLoading(true);
             const response = await axios.post('https://codesaarthiserver.cyclic.app/api/contactemail', data);
-console.log(response);
             if (response.status === 200) {
                 setError(" ");
                 setIsSubmitted(true);
@@ -60,6 +58,7 @@ console.log(response);
             setIsLoading(false);
             setIsSubmitted(false);
         }
+    }
     };
     return (
         <>
