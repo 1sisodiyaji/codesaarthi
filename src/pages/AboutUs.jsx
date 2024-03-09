@@ -37,12 +37,12 @@ const AboutUs = () => {
             email: email,
             message: message,
         };
-
+console.log(data);
         try {
             setIsLoading(true);
             const response = await axios.post('https://codesaarthiserver.cyclic.app/api/contactemail', data);
-
-            if (response.data.status === 200) {
+console.log(response);
+            if (response.status === 200) {
                 setError(" ");
                 setIsSubmitted(true);
                 handleSubmission(true);
