@@ -1,8 +1,22 @@
 import React from 'react'
-
+import { Helmet } from 'react-helmet';
 const Problems = () => {
   return (
     <>
+    <Helmet>
+  <meta name="keywords" content="Problems, DSA Problems, Algorithmic Questions, Pattern Questions, Array Questions, Bit Manipulation Questions" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://codesaarthi.com/Problems" />
+  <meta name="description" content="Explore a collection of algorithmic problems, including DSA problems, pattern questions, array questions, and bit manipulation questions. Enhance your problem-solving skills and gain valuable insights into various topics." />
+  <title>Algorithmic Problems: DSA, Patterns, Arrays, Bit Manipulation | codesaarthi</title>
+  <meta property="og:title" content="Algorithmic Problems: DSA, Patterns, Arrays, Bit Manipulation |codesaarthi" />
+  <meta property="og:description" content="Explore a collection of algorithmic problems, including DSA problems, pattern questions, array questions, and bit manipulation questions. Enhance your problem-solving skills and gain valuable insights into various topics." />
+  <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+  <meta property="og:url" content="https://codesaarthi.com/Problems" />
+  <meta property="og:type" content="Education-Website" />
+  <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+</Helmet>
+
       <div className="container-lg container-fluid my-3 py-5 ">
 
         <div className="row w-lg-75 w-100  g-0 my-3">

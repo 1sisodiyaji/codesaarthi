@@ -4,10 +4,23 @@ import Dsa from './Roadmap/Dsa';
 import Os from './Roadmap/Os';
 import Dbms from './Roadmap/Dbms';
 import ComputerNetworks from './Roadmap/ComputerNetworks';
-
+import { Helmet } from 'react-helmet';
 const Roadmap = () => {
   return (
     <>
+<Helmet>
+  <meta name="keywords" content="Roadmap, Study Roadmap, DSA Roadmap, OS Roadmap, DBMS Roadmap, CN Roadmap" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://codesaarthi.com/roadMap" />
+  <meta name="description" content="Explore comprehensive study roadmaps for Data Structures and Algorithms (DSA), Operating Systems (OS), Database Management Systems (DBMS), and Computer Networks (CN). Plan your learning journey with detailed roadmaps for each subject." />
+  <title>Roadmaps: DSA, OS, DBMS, CN | codesaarthi</title>
+  <meta property="og:title" content="Subject Roadmaps: DSA, OS, DBMS, CN | codesaarthi" />
+  <meta property="og:description" content="Explore comprehensive study roadmaps for Data Structures and Algorithms (DSA), Operating Systems (OS), Database Management Systems (DBMS), and Computer Networks (CN). Plan your learning journey with detailed roadmaps for each subject." />
+  <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+  <meta property="og:url" content="https://codesaarthi.com/roadMap" />
+  <meta property="og:type" content="Education-Website" />
+  <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+</Helmet>
 
       <div className="container-fluid py-5 design">
         <div className="row g-6">

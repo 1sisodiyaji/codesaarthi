@@ -1,9 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet';
 
 const Theory = () => {
   return (
     <>
+    <Helmet>
+  <meta name="keywords" content="Theory, DSA, Array, String, Sorting, Searching, OS, DBMS, CN" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://codesaarthi.com/theory" />
+  <meta name="description" content="Explore theory and topics related to Data Structures and Algorithms, Operating Systems, Database Management Systems, Computer Networks, and more." />
+  <title>Theory: Data Structures, Algorithms, OS, DBMS, CN | Your Website Name</title>
+  <meta property="og:title" content="Theory: Data Structures, Algorithms, OS, DBMS, CN | Your Website Name" />
+  <meta property="og:description" content="Explore theory and topics related to Data Structures and Algorithms, Operating Systems, Database Management Systems, Computer Networks, and more." />
+  <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+  <meta property="og:url" content="https://codesaarthi.com/theory" />
+  <meta property="og:type" content="Education-Website" />
+  <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+</Helmet>
       <div className="container-fluid my-5 py-5" style={{ minHeight: '100vh' }}>
         <div className="row">
           <div className="col-lg-4 col-12">

@@ -1,8 +1,23 @@
 import React from "react";
+import { Helmet } from 'react-helmet';
 
 const TermsAndConditions = () => {
   return (
     <>
+    <Helmet>
+  <meta name="keywords" content="Terms and Conditions, Privacy Policy, User Agreement, Legal Information" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://codesaarthi.com/terms_conditions" />
+  <meta name="description" content="Read and understand the terms and conditions, privacy policy, and user agreement for using our services. Find important legal information on our website." />
+  <title>Terms and Conditions | codesaarthi</title>
+  <meta property="og:title" content="Terms and Conditions | codesaarthi" />
+  <meta property="og:description" content="Read and understand the terms and conditions, privacy policy, and user agreement for using our services. Find important legal information on our website." />
+  <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+  <meta property="og:url" content="https://codesaarthi.com/terms_conditions" />
+  <meta property="og:type" content="Legal-Website" />
+  <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+</Helmet>
+
       <div
         className="container-fluid d-flex align-items-center justify-content-center"
         style={{ minHeight: "30vh" }}

@@ -1,9 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 const Projects = () => {
   return (
     <>
+    <Helmet>
+  <meta name="keywords" content="Projects, Web Development Projects, React Projects,Top 10 projects in react, Clone Projects, Coding Projects" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://codesaarthi.com/Projects" />
+  <meta name="description" content="Explore a collection of diverse projects, including web development projects, React projects, clone projects, and more. Find inspiration and examples for your coding projects and learn through practical implementation." />
+  <title>Projects: Web Development, React, Clones | codesaarthi</title>
+  <meta property="og:title" content="Projects: Web Development, React, Clones | codesaarthi" />
+  <meta property="og:description" content="Explore a collection of diverse projects, including web development projects, React projects, clone projects, and more. Find inspiration and examples for your coding projects and learn through practical implementation." />
+  <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+  <meta property="og:url" content="https://codesaarthi.com/Projects" />
+  <meta property="og:type" content="Portfolio-Website" />
+  <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+</Helmet>
+
       <div className="container-fluid design" style={{ minHeight: "100vh" }}>
         <div className="row py-5 g-6">
 

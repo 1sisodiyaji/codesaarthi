@@ -10,15 +10,15 @@ const BlogApp = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="Blog App Clone, React Blog, Frontend Development, Blogging Platform" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://yourwebsite.com/BlogApp" />
+        <link rel="canonical" href="https://codesaarthi.com/blog-app-react" />
         <meta name="description" content="Explore the development of a React-based Blog App frontend clone with step-by-step tutorials, examples, and practice questions." />
-        <title>Blog App Frontend Clone: React-based Blogging Platform | Your Website Name</title>
-        <meta property="og:title" content="Blog App Frontend Clone | Your Website Name" />
+        <title>Blog App Frontend Clone: React-based Blogging Platform | codesaarthi</title>
+        <meta property="og:title" content="Blog App  Clone | codesaarthi" />
         <meta property="og:description" content="Explore the development of a React-based Blog App frontend clone with step-by-step tutorials, examples, and practice questions." />
-        <meta property="og:image" content="https://yourwebsite.com/img/BlogApp1.jpg" />
-        <meta property="og:url" content="https://yourwebsite.com/BlogApp" />
+        <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+        <meta property="og:url" content="https://codesaarthi.com/blog-app-react" />
         <meta property="og:type" content="Education-Website" />
-        <link rel="icon" type="image/png" href="https://yourwebsite.com/img/favicon.ico" sizes="32x32" />
+        <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
 
       {/* Main content section */}
