@@ -54,9 +54,9 @@ const AboutUs = () => {
         } catch (error) {
             console.error('Error:', error);
         } finally {
-            setName('');
-            setEmail('');
-            setMessage('');
+            setName(" ");
+            setEmail(" ");
+            setMessage(" ");
             setIsLoading(false);
             setIsSubmitted(false);
         }
