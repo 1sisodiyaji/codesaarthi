@@ -7,7 +7,7 @@ import { useLinkedIn } from 'react-linkedin-login-oauth2';
 const Login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const navigate = useNavigate();
-
+  const emailError = document.getElementById("email_error");
   const [formData, setFormData] = useState({
     email: "",
     password: "",

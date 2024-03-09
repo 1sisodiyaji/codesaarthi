@@ -92,7 +92,7 @@ const AboutUs = () => {
                     <div className="col-lg-2 col-md-0 col-sm-0 ">
                         <img src="../img/vision1.webp" className='img-fluid pt-5 mt-5 gt-5' style={{ height: '50vh', width: '60vw' }} alt="mission image" />
                     </div>
-                    <div className="col-lg-4 col-12 g-0 my-2 rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black' }}>
+                    <div className="col-lg-4 col-12 g-0 my-2 rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black'}}>
                         <div className="card p-4" style={{ backgroundColor: '#79b4e2' }}>
                             <div className="d-flex justify-content-end">
                             </div>
@@ -101,16 +101,15 @@ const AboutUs = () => {
                         </div>
                     </div>
 
-                    <div className="col-lg-4 col-12 g-0 my-2  rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black' }}   >
-                        <div className="card p-4 ms-lg-2 " style={{ backgroundColor: '#79b4e2' }}>
+                    <div className="col-lg-4 col-12 g-0 my-2  rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black'}}   >
+                        <div className="card p-4 ms-lg-2" style={{ backgroundColor: '#79b4e2' }}>
                             <strong><h1 className="text-white heading" style={{ fontWeight: 'bolder' }}>Our <span style={{ color: 'black' }}>Vision</span></h1></strong>
                             <h3 className="text-white heading2">We aspire to revolutionize the educational landscape, making learning accessible and free for all. As the student who have faith to learn they can grow here and each and every student could get learning free . our motive is to make it easy and available for all freely . We will help you atmost we can ....</h3>
-
                         </div>
 
                     </div>
                     <div className="col-lg-2 d-lg-block d-md-block d-none">
-                        <img src="../img/boy1.webp" className='img-fluid pt-5 mt-5 ' style={{ height: '50vh', width: '60vw' }} alt="" />
+                        <img src="../img/boy1.webp" className='img-fluid pt-5 mt-5 ' style={{ height: '50vh', width: '60vw' }} alt="vision Image" />
                     </div>
                 </div>
             </div>

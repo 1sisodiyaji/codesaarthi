@@ -7,7 +7,7 @@ import { useLinkedIn } from 'react-linkedin-login-oauth2';
 const SignUp = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const navigate = useNavigate();
-
+  const name_error = document.getElementById("name_error");
   // password viewer at password section
   const passwordView = () => {
     setIsPasswordVisible(!isPasswordVisible);
