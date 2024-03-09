@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
+   <url>
     <loc>https://codesaarthi.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -158,6 +158,18 @@
   </url>
 
   <url>
+    <loc>https://codesaarthi.com/Os</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/ComputerNetwork</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://codesaarthi.com/web-development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -171,6 +183,18 @@
 
   <url>
     <loc>https://codesaarthi.com/Discord</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/RazorPay</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/Spotify-Clone</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -500,13 +500,13 @@ const AmazonClone = () => {
                     <h6 className='text-light my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</h6>
                     <div className="row">
                         <div className="col-4 text-center">
-                            <div className="btn bg-dark text-warning text-capitalize">Razor pay <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></div>
+                            <Link to ="/RazorPay" className="btn bg-dark text-warning text-capitalize">Razor pay <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                         <div className="col-4 text-center">
                             <Link to = "/Discord" className="btn bg-dark text-warning text-capitalize">Discord <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                         <div className="col-4 text-center">
-                            <div className="btn bg-dark text-warning text-capitalize">Spotify <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></div>
+                            <Link to = "/Spotify-Clone" className="btn bg-dark text-warning text-capitalize">Spotify <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                     </div>
 

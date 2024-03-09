@@ -5,7 +5,7 @@ const WebDevelopment = () => {
     return (
         <>
             <div className="container-fluid design g-0" style={{ minHeight: '100vh' }}>
-                <h3 className='text-success text-center text-capitalize'>here We have Some projects Based on Basics Of Web Development </h3>
+                <h3 className='text-success text-center text-capitalize pt-5'>here We have Some projects Based on Clone </h3>
                 <div className="container py-5">
                     <div className="row">
                         <div className="col-lg-6  my-2 col-12">
@@ -16,7 +16,7 @@ const WebDevelopment = () => {
                                 >
                                     <div className="row">
                                         <div className="col-4">
-                                            <img src="../img/logo.png" class="img-fluid" />
+                                            <img src="../img/Amazon1.jpg"  className="img-fluid tilt-effect2" />
                                         </div>
                                         <div className="col-8 align-self-center">
                                             <div>
@@ -45,7 +45,7 @@ const WebDevelopment = () => {
                                 >
                                     <div className="row">
                                         <div className="col-4">
-                                            <img src="../img/logo.png" class="img-fluid" />
+                                            <img src="../img/Discord1.jpg" className="img-fluid tilt-effect2" />
                                         </div>
                                         <div className="col-8 align-self-center">
                                             <div>
@@ -55,7 +55,7 @@ const WebDevelopment = () => {
                                             </div>
 
                                             <div>
-                                                <Link to="/web-development">
+                                                <Link to="/Discord">
                                                     <div className="btn text-warning text-capitalize bg-dark">
                                                         Get it
                                                     </div>
@@ -74,7 +74,7 @@ const WebDevelopment = () => {
                                 >
                                     <div className="row">
                                         <div className="col-4">
-                                            <img src="../img/logo.png" class="img-fluid" />
+                                            <img src="../img/Razorpay1.jpg" className="img-fluid tilt-effect2" />
                                         </div>
                                         <div className="col-8 align-self-center">
                                             <div>
@@ -84,7 +84,7 @@ const WebDevelopment = () => {
                                             </div>
 
                                             <div>
-                                                <Link to="/web-development">
+                                                <Link to="/RazorPay">
                                                     <div className="btn text-warning text-capitalize bg-dark">
                                                         Get it
                                                     </div>
@@ -103,7 +103,7 @@ const WebDevelopment = () => {
                                 >
                                     <div className="row">
                                         <div className="col-4">
-                                            <img src="../img/logo.png" class="img-fluid" />
+                                            <img src="../img/Spotify1.jpg" className="img-fluid tilt-effect2" />
                                         </div>
                                         <div className="col-8 align-self-center">
                                             <div>
@@ -113,7 +113,7 @@ const WebDevelopment = () => {
                                             </div>
 
                                             <div>
-                                                <Link to="/web-development">
+                                                <Link to="/Spotify-clone">
                                                     <div className="btn text-warning text-capitalize bg-dark">
                                                         Get it
                                                     </div>

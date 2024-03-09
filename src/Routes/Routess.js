@@ -33,6 +33,13 @@ import SearchingArray from "../pages/Theory/Array/SearchingArray";
 import MultiDimension from "../pages/Theory/Array/MultiDimensaionalArray";
 import DynamicArray from "../pages/Theory/Array/DynamicArray";
 import CommonMistakes from "../pages/Theory/Array/CommonMistakes";
+import Os from "../pages/Roadmap/Os";
+import Dbms from "../pages/Roadmap/Dbms";
+import ComputerNetworks from "../pages/Roadmap/ComputerNetworks";
+import RazorPay from "../pages/Projects/RazorPay";
+import Spotify from "../pages/Projects/Spotify";
+import ReactProject from "../pages/Projects/ReactProject";
+import BlogApps from "../pages/Projects/React/BlogApps";
 
 const Routess = () => {
 
@@ -82,9 +89,16 @@ const Routess = () => {
           <Route path="/Dynamic-Arrays" element={<DynamicArray />} />
           <Route path="/Common-Mistakes-in-Array" element={<CommonMistakes />} />
           <Route path="/MultiDimensions-in-Array" element={<MultiDimension />} />
+          <Route path="/Os" element={<Os/>} />
+          <Route path = "/Dbms" element={<Dbms />} />
+          <Route path="/ComputerNetwork" element={<ComputerNetworks />} />
           <Route path="/web-development" element={<WebDevelopment />} />
           <Route path="/Amazon-clone" element={<AmazonClone />} />
           <Route path="/Discord" element={<Discord />} />
+          <Route path="/RazorPay" element={<RazorPay />} />
+          <Route path="/Spotify-Clone" element={<Spotify />} />
+          <Route path="/React-based-project" element={<ReactProject />} />
+          <Route path="/blog-app-react" element={<BlogApps/>} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 

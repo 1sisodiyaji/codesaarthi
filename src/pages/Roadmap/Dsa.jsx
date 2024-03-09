@@ -19,6 +19,7 @@ const Dsa = () => {
     <>
       <div className="container-fluid design  py-3" style={{ backgroundColor: '#031A33' }}>
         <h1 style={{ color: '#FFE164' }}>Data Structures and Algorithms Roadmap</h1>
+        <div className="container">
         <div className="row py-3">
           <div className="col-12">
             <div className="stepper">
@@ -73,6 +74,7 @@ const Dsa = () => {
 
             </div>
           </div>
+        </div>
         </div>
       </div>
     </>
