@@ -80,9 +80,8 @@ const RecoverPassword = () => {
 
   const verifyOtp = async () => {
     try {
-      console.log("otp is ", FormData.otp);
       console.log("otp is ", formData.otp);
-      console.log("email is ", FormData.email);
+      console.log("email is ", formData.email);
       const response = axios.post('https://codesaarthiserver.cyclic.app/api/verifyOtp', {
         otp: formData.otp,
         email: formData.email
