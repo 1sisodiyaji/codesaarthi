@@ -9,6 +9,7 @@ const RecoverPassword = () => {
   const [isButtonDisabled, setButtonDisabled] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState('');
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     otp: "",
@@ -62,12 +63,11 @@ const RecoverPassword = () => {
     }
   };
   const email =formData.email;
+
   const sendOtp = async () => {
+    setLoading(true);
     try {
-      
-      const response = await axios.post('https://codesaarthiserver.cyclic.app/api/sendemail', {
-        email
-      });
+      const response = await axios.post('https://codesaarthiserver.cyclic.app/api/sendemail', {email});
       if (response.data.status === 'success') {
         setShowOtp(true);
         setButtonDisabled(true);
@@ -76,14 +76,16 @@ const RecoverPassword = () => {
       }
     } catch (error) {
       setErrors("Failed to send email: " + error);
+    }finally{
+      setShowOtp(false);
+      setButtonDisabled(true);
+      setLoading(false);
     }
   };
 
-  const otp = formData.otp;
-
   const verifyOtp = async () => {
+    setLoading(true);
     const enteredOtp = Array.from({ length: 4 }, (_, index) => formData[`otp${index}`] || '').join('');
-
     try {
       console.log("otp is ",enteredOtp);
       console.log("email is ",email);
@@ -101,6 +103,8 @@ const RecoverPassword = () => {
       }
     } catch (error) {
       setErrors("Failed to match");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -129,8 +133,7 @@ const RecoverPassword = () => {
             <div className="text-center">
               <p
                 id="wrong_pass_text"
-                className="p-0 m-0"
-                style={{ color: "#79b4e2" }}
+                className="p-0 m-0 text-danger"
               >{errors}</p>
             </div>
             {/* Email input */}
@@ -156,9 +159,8 @@ const RecoverPassword = () => {
               className="btn btn-block mb-4 text-capitalize py-3"
               style={{ backgroundColor: "#79b4e2",color:'black', fontSize: "1rem" }}
             >
-              Send OTP
+             {loading ? 'Sending..' : 'Send OTP' } 
             </button>
-            {/* OTP input section */}
             {showOtp && (
               <div className="mb-4" style={{ display: "block" }} id="otpShow">
                 <div className="row">
@@ -181,7 +183,7 @@ const RecoverPassword = () => {
 
                   <div>
                     <button type="button" onClick={verifyOtp} className="btn btn-block my-4 text-capitalize py-3" style={{ backgroundColor: "#79b4e2",color:'black', fontSize: "1rem" }}>
-                      Verify OTP
+                    {loading ? 'Verifying..' : 'Verifying OTP' }
                     </button>
                   </div>
                 </div>
