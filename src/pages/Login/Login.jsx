@@ -54,10 +54,13 @@ const Login = () => {
             "https://codesaarthiserver.cyclic.app/api/signin",
             formData
           );
+          console.log(response);
           const savedUser = response.data;
+          console.log(savedUser);
           const { status, message } = savedUser;
           const name = savedUser.userName;
           const { email } = savedUser.email;
+          console.log(`your name is ${name} and email is ${email} and status is ${status} and message is ${message}`);
           if (status === "success") {
             emailError.textContent = "Login successfully!";
             localStorage.setItem("user_name", name);
