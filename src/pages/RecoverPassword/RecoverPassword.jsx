@@ -86,11 +86,11 @@ console.log(response)
       console.log("otp is ", FormData.otp);
       console.log("otp is ", formData.otp);
       console.log("email is ", FormData.email);
-      const response = axios.post('https://codesaarthiserver.cyclic.app/verifyOtp', {
+      const response = axios.post('https://codesaarthiserver.cyclic.app/api/verifyOtp', {
         otp: formData.otp,
         email: formData.email
       });
-      if (response.status === 200) {
+      if (response.data.status === 'success') {
         console.log('otp matched');
         setShowPassword(true);
         setShowOtp(false);
