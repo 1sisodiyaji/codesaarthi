@@ -159,7 +159,7 @@ const conPassword= formData.conPassword;
                 className="p-0 m-0 text-danger"
               >{errors}</p>
             </div>
-            {showEmail && (
+            {setEmails && (
               <>
                {/* Email input */}
             <div className="mb-4">
