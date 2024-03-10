@@ -6,7 +6,7 @@ const RecoverPassword = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isPasswordVisible2, setIsPasswordVisible2] = useState(false);
   const [showOtp, setShowOtp] = useState(false);
-  const [showEmails, setShowEmails] = useState(false);
+  const [showEmails, setShowEmails] = useState(true);
   const [isButtonDisabled, setButtonDisabled] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState('');
@@ -77,6 +77,7 @@ const RecoverPassword = () => {
       }
     } catch (error) {
       setErrors("Failed to send email: " + error);
+      setLoading(false);
     }finally{
       setButtonDisabled(true);
       setLoading(false);
