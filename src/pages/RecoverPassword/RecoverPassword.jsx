@@ -6,6 +6,7 @@ const RecoverPassword = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isPasswordVisible2, setIsPasswordVisible2] = useState(false);
   const [showOtp, setShowOtp] = useState(false);
+  const [isButtonDisabled, setButtonDisabled] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -60,18 +61,15 @@ const RecoverPassword = () => {
     }
   };
   const email =formData.email;
-  console.log(email);
   const sendOtp = async () => {
-    console.log('Sending email...');
     try {
       
       const response = await axios.post('https://codesaarthiserver.cyclic.app/api/sendemail', {
         email
       });
-console.log(response)
       if (response.data.status === 'success') {
-        console.log('Email sent successfully');
         setShowOtp(true);
+        setButtonDisabled(true);
       } else {
         console.error('Failed to send email');
       }
@@ -81,7 +79,6 @@ console.log(response)
   };
 
   const verifyOtp = async () => {
-console.log("verify entered");
     try {
       console.log("otp is ", FormData.otp);
       console.log("otp is ", formData.otp);
@@ -151,8 +148,8 @@ console.log("verify entered");
             </div>
             {/* Send OTP button */}
             <button
-              type="button"
-              onClick={sendOtp}
+              type="button" id="sendmailbutton"
+              onClick={sendOtp} disabled={isButtonDisabled}
               className="btn btn-block mb-4 text-capitalize py-3"
               style={{ backgroundColor: "#79b4e2",color:'black', fontSize: "1rem" }}
             >
