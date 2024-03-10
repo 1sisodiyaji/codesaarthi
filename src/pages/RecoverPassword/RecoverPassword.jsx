@@ -87,15 +87,11 @@ const RecoverPassword = () => {
     setLoading(true);
     const enteredOtp = Array.from({ length: 4 }, (_, index) => formData[`otp${index}`] || '').join('');
     try {
-      console.log("otp is ",enteredOtp);
-      console.log("email is ",email);
       const response = await axios.post('https://codesaarthiserver.cyclic.app/api/verifyOtp', {
         otp: enteredOtp,
       email
       });
-      console.log(response);
       if (response.data.status === 'success') {
-        console.log('otp matched');
         setShowPassword(true);
         setShowOtp(false);
       } else {
@@ -110,12 +106,32 @@ const RecoverPassword = () => {
       setErrors('');
     }
   };
+const password = formData.password;
+const conPassword= formData.conPassword;
 
-
-  const updatePassword = () => {
-    // Here, you'll update the password
-    // After successful password update, navigate to the login page
-    navigate("/login");
+  const updatePassword = async () => {
+    setLoading(true);
+    if(password !== conPassword){
+      setErrors("Password Incorrect");
+    }else{
+    try {
+      const response = await axios.post('https://codesaarthiserver.cyclic.app/api/updatePassword', {password,email });
+      if (response.data.status === 'success') {
+        setShowPassword(false);
+        setShowOtp(false);
+        navigate("/login");
+      } else {
+        setErrors(response.data.message);
+      }
+    } catch (error) {
+      setErrors("Failed to update password");
+    } finally {
+      setLoading(false);
+      setShowPassword(false);
+      setShowOtp(false);
+      setErrors('');
+    }
+  }
   };
 
   return (
@@ -221,7 +237,7 @@ const RecoverPassword = () => {
                 </div>
                 {/* Update Password button */}
                 <button type="button" onClick={updatePassword} className="btn btn-block mb-4 text-capitalize py-3" style={{ backgroundColor: "#79b4e2", color: "#011528", fontSize: "1rem" }}>
-                  Update Password
+                {loading ? 'Updating..' : 'Update' } 
                 </button>
               </div>
             )}
