@@ -82,7 +82,6 @@ const RecoverPassword = () => {
       setButtonDisabled(true);
       setLoading(false);
       setErrors('');
-      setShowEmails(false);
     }
   };
 
@@ -97,6 +96,7 @@ const RecoverPassword = () => {
       if (response.data.status === 'success') {
         setShowPassword(true);
         setShowOtp(false);
+        setShowEmails(false);
       } else {
         setErrors(response.data.message);
         setLoading(false);
@@ -105,11 +105,7 @@ const RecoverPassword = () => {
       setErrors("Failed to match");
       setLoading(false);
     } finally {
-     
-      setShowPassword(true);
-      setShowOtp(false);
       setErrors('');
-      setShowEmails(false);
     }
   };
 const password = formData.password;
