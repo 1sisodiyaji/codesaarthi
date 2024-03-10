@@ -77,9 +77,9 @@ const RecoverPassword = () => {
     } catch (error) {
       setErrors("Failed to send email: " + error);
     }finally{
-      setShowOtp(false);
       setButtonDisabled(true);
       setLoading(false);
+      setErrors('');
     }
   };
 
@@ -105,6 +105,9 @@ const RecoverPassword = () => {
       setErrors("Failed to match");
     } finally {
       setLoading(false);
+      setShowPassword(true);
+      setShowOtp(false);
+      setErrors('');
     }
   };
 
