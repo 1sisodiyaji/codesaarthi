@@ -26,6 +26,7 @@ const Login = () => {
 
   //login with normal email id and paasword 
   const loginCheck = async () => {
+    console.log("entered");
     const email = document.getElementById("email_id").value;
     const password = document.getElementById("password").value;
     const emailError = document.getElementById("email_error");
