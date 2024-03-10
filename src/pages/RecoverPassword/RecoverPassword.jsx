@@ -81,7 +81,7 @@ console.log(response)
   };
 
   const verifyOtp = async () => {
-
+console.log("verify entered");
     try {
       console.log("otp is ", FormData.otp);
       console.log("otp is ", formData.otp);
@@ -90,6 +90,7 @@ console.log(response)
         otp: formData.otp,
         email: formData.email
       });
+      console.log(response);
       if (response.data.status === 'success') {
         console.log('otp matched');
         setShowPassword(true);
