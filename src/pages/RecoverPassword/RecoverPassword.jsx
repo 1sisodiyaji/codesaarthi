@@ -72,6 +72,7 @@ const RecoverPassword = () => {
       if (response.data.status === 'success') {
         setShowOtp(true);
         setButtonDisabled(true);
+        setShowEmails(false);
       } else {
         setErrors(response.data.message);
       }
@@ -87,6 +88,7 @@ const RecoverPassword = () => {
 
   const verifyOtp = async () => {
     setLoading(true);
+   
     const enteredOtp = Array.from({ length: 4 }, (_, index) => formData[`otp${index}`] || '').join('');
     try {
       const response = await axios.post('https://codesaarthiserver.cyclic.app/api/verifyOtp', {
@@ -96,7 +98,6 @@ const RecoverPassword = () => {
       if (response.data.status === 'success') {
         setShowPassword(true);
         setShowOtp(false);
-        setShowEmails(false);
       } else {
         setErrors(response.data.message);
         setLoading(false);
