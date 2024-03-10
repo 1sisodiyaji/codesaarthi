@@ -8,7 +8,7 @@ const RecoverPassword = () => {
   const [showOtp, setShowOtp] = useState(false);
   const [isButtonDisabled, setButtonDisabled] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [errors, serErrors] = useState(false);
+  const [errors, setErrors] = useState('');
   const [formData, setFormData] = useState({
     email: "",
     otp: "",
@@ -72,10 +72,10 @@ const RecoverPassword = () => {
         setShowOtp(true);
         setButtonDisabled(true);
       } else {
-        setError[response.data.message];
+        setErrors(response.data.message);
       }
     } catch (error) {
-      setError[response.data.message];
+      setErrors("Failed to send email: " + error);
     }
   };
 
@@ -93,10 +93,10 @@ const RecoverPassword = () => {
         setShowPassword(true);
         setShowOtp(false);
       } else {
-        setError[response.data.message];
+        setErrors(response.data.message);
       }
     } catch (error) {
-      setError[response.data.message];
+      setErrors("Failed to match");
     }
   };
 
