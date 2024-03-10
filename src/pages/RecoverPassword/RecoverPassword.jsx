@@ -8,6 +8,7 @@ const RecoverPassword = () => {
   const [showOtp, setShowOtp] = useState(false);
   const [isButtonDisabled, setButtonDisabled] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [errors, serErrors] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     otp: "",
@@ -71,10 +72,10 @@ const RecoverPassword = () => {
         setShowOtp(true);
         setButtonDisabled(true);
       } else {
-        console.error('Failed to send email');
+        setError[response.data.message];
       }
     } catch (error) {
-      console.error('Error sending OTP:', error);
+      setError[response.data.message];
     }
   };
 
@@ -92,11 +93,10 @@ const RecoverPassword = () => {
         setShowPassword(true);
         setShowOtp(false);
       } else {
-
-        console.log('Error verifying OTP:', response.message);
+        setError[response.data.message];
       }
     } catch (error) {
-      console.error('Error verifying OTP:', error);
+      setError[response.data.message];
     }
   };
 
@@ -127,7 +127,7 @@ const RecoverPassword = () => {
                 id="wrong_pass_text"
                 className="p-0 m-0"
                 style={{ color: "#79b4e2" }}
-              ></p>
+              >{errors}</p>
             </div>
             {/* Email input */}
             <div className="mb-4">
