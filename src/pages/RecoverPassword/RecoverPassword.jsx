@@ -63,12 +63,12 @@ const RecoverPassword = () => {
   const sendOtp = async () => {
     console.log('Sending email...');
     try {
-      const email = formData.email;
       console.log(email);
       const response = await axios.post('https://codesaarthiserver.cyclic.app/api/sendemail', {
         email
       });
-      if (response.status === 'success') {
+console.log(response);
+      if (response.data.status === 'success') {
         console.log('Email sent successfully');
         setShowOtp(true);
       } else {
