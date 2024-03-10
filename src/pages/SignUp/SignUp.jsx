@@ -143,14 +143,15 @@ const SignUp = () => {
       <div
         className="container-fluid  d-flex justify-content-center align-items-center "
         style={{
-          backgroundColor: "white",
           overflowX: "hidden",
           fontFamily: "Exo",
           minHeight: "100vh ",
           overflowY: "scroll ",
         }}
       >
-        <div className="container  m-lg-0 p-lg-0" style={{ maxWidth: "420px" }}>
+       
+        <div className="col-lg-5 col-12 d-flex justify-content-center align-items-center">
+        <div className="container-fluid  m-lg-0 p-lg-0" style={{ maxWidth: "420px" }}>
           <form onSubmit={handleSubmit}>
             <div className=" text-center">
               <img
@@ -307,6 +308,10 @@ const SignUp = () => {
             </div>
           </form>
         </div>
+        </div>
+<div className=" col-lg-7 d-lg-block d-none d-flex justify-content-center align-items-center">
+<img src="img/login1.png"className="img-fluid w-100" alt="login page image" />
+</div>
       </div>
     </>
   );

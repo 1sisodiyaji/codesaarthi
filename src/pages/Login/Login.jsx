@@ -54,10 +54,10 @@ const Login = () => {
             "https://codesaarthiserver.cyclic.app/api/signin",
             formData
           );
-            const savedUser = response.data;
-            const { status,message } = savedUser;
-            const data = savedUser.userName;
-            const {name,email} = data;
+          const savedUser = response.data;
+          const { status, message } = savedUser;
+          const data = savedUser.userName;
+          const { name, email } = data;
           if (status === "success") {
             emailError.textContent = "Login successfully!";
             localStorage.setItem("user_name", name);
@@ -93,8 +93,8 @@ const Login = () => {
               if (response.data.status === 'success') {
                 localStorage.setItem('user_name', userData.name);
                 localStorage.setItem('user_email', userData.email);
-                localStorage.setItem('user_ProfilePic' , userData.picture);
-                 navigate("/Problems");
+                localStorage.setItem('user_ProfilePic', userData.picture);
+                navigate("/Problems");
               } else {
                 emailError.textContent('Account Does not exist:', response.data.message);
               }
@@ -126,170 +126,178 @@ const Login = () => {
       <div
         className="container-fluid m-0 p-0 g-0 d-flex justify-content-center align-items-center position-relative design"
         style={{
-          backgroundColor: "white",
           overflowX: "hidden",
           fontFamily: "Exo",
           minHeight: "100vh",
           overflowY: "scroll",
         }}
       >
-        <div className="container" style={{ maxWidth: "420px" }}>
-          <form>
-            <div className=" text-center">
-              <img
-                src="../img/logo.png"
-                width={95}
-                alt=""
-              />
-              <h3 className="pt-3" style={{color: '#79b4e2'}}> Login</h3>
-              <br />
-            </div>
-            <div
-              id="wrong_pass_text"
-              style={{ display: "none" }}
-              className="text-center"
-            >
-              <p className="p-0 m-0 text-danger"> Invalid email or Password.</p>
-            </div>
-            <div
-              id="registerPage"
-              style={{ display: "none" }}
-              className="text-center"
-            >
-              <p className="p-0 m-0 text-danger">
-                {" "}
-                Email Not Found . Please Create Your account.
-              </p>
-              <Link to="/signup" style={{ color: "#79b4e2" }}>
-                {" "}
-                Create
-              </Link>
-            </div>
-            {/* <!-- Email input --> */}
-            <div className="mb-4">
-              <p id="email_error" style={{ color: "#79b4e2" }}></p>
-              <div className="input-group w-100">
-                <input
-                  type="email"
-                  id="email_id"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="form-control rounded-8 py-2"
-                  style={{
-                    backgroundColor: "black",
-                    color: "#79b4e2",
-                  }}
-                  placeholder="email "
-                />
-                <i
-                  id="checkemail"
-                  style={{ color: "#79b4e2", display: "none" }}
-                  className="fi fi-ss-check-circle text-center ms-1"
-                ></i>
-              </div>
-            </div>
-
-            {/* <!-- Password input --> */}
-            <div className="mb-4">
-              <p id="pass_error" style={{ color: " #79b4e2 " }}></p>
-              <div className="input-group w-100">
-                <input
-                  type={isPasswordVisible ? "text" : "password"}
-                  id="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleInputChange}
-                  className="form-control rounded-8 py-2 "
-                  style={{
-                    backgroundColor: "black",
-                    color: "#79b4e2",
-                  }}
-                  placeholder="password"
-                />
-                <i
-                  id="passwordViewer"
-                  onClick={passwordView}
-                  className="fi fi-ss-eye-crossed pt-2 ps-2"
-                  style={{
-                    color: !isPasswordVisible ? "black" : "#79b4e2",
-                  }}
-                ></i>
-                <i
-                  id="checkpass"
-                  style={{ color: "#79b4e2", display: "none" }}
-                  className="fi fi-ss-check-circle text-center ms-1"
-                ></i>
-              </div>
-            </div>
-
-            <div className="text-end mb-2">
-              <Link to="/RecoverPassword" style={{ color: "#79b4e2" }}>
-                Forgot password ?
-              </Link>
-            </div>
-
-            {/* <!-- Submit button --> */}
-            <button
-              id="login_button"
-              data-mdb-ripple-init
-              type="button"
-              className="btn btn-block mb-4 text-capitalize py-3"
-              onClick={loginCheck}
-              style={{
-                backgroundColor: "#79b4e2",
-                color: "#011528",
-                fontSize: "1rem",
-              }}
-            >
-              Login
-            </button>
-
-            <h3
-              className=" text-light text-center mb-3"
-              style={{ fontWeight: "light", fontSize: "1rem" }}
-            >
-              {" "}
-              -OR-{" "}
-            </h3>
-            {/* <!-- Sign  buttons --> */}
-            <div className="text-center mb-2">
-              <div className="row d-flex justify-content-evenly align-items-center">
-                <div className="col-12">
-                  <button
-                    type="button"
-                    className="btn  bg-light w-100 "
-                    onClick={login}
-                  >
-                    <img src="../img/search 1.png" height={26} alt="" />
-                    <span className="text-dark text-capitalize ms-2 ">
-                      Sign In With Google
-                    </span>
-                  </button>
+       
+          <div className="col-lg-5 col-12 d-flex justify-content-center align-items-center">
+            <div className="container-fluid  m-lg-0 p-lg-0" style={{ maxWidth: "420px" }}>
+              <form>
+                <div className=" text-center">
+                  <img
+                    src="../img/logo.png"
+                    width={95}
+                    alt=""
+                  />
+                  <h3 className="pt-3" style={{ color: '#79b4e2' }}> Login</h3>
+                  <br />
+                </div>
+                <div
+                  id="wrong_pass_text"
+                  style={{ display: "none" }}
+                  className="text-center"
+                >
+                  <p className="p-0 m-0 text-danger"> Invalid email or Password.</p>
+                </div>
+                <div
+                  id="registerPage"
+                  style={{ display: "none" }}
+                  className="text-center"
+                >
+                  <p className="p-0 m-0 text-danger">
+                    {" "}
+                    Email Not Found . Please Create Your account.
+                  </p>
+                  <Link to="/signup" style={{ color: "#79b4e2" }}>
+                    {" "}
+                    Create
+                  </Link>
+                </div>
+                {/* <!-- Email input --> */}
+                <div className="mb-4">
+                  <p id="email_error" style={{ color: "#79b4e2" }}></p>
+                  <div className="input-group w-100">
+                    <input
+                      type="email"
+                      id="email_id"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="form-control rounded-8 py-2"
+                      style={{
+                        backgroundColor: "black",
+                        color: "#79b4e2",
+                      }}
+                      placeholder="email "
+                    />
+                    <i
+                      id="checkemail"
+                      style={{ color: "#79b4e2", display: "none" }}
+                      className="fi fi-ss-check-circle text-center ms-1"
+                    ></i>
+                  </div>
                 </div>
 
-                <div className="col-12  mt-2 d-none">
-                  <button type="button" className="btn  bg-light w-100 " onClick={linkedInLogin} >
-                    <img src="../img/linkedin.png" height={26} alt="" />
-                    <span className="text-dark text-capitalize ms-2 ">
-                      Sign In With Linkedin
-                    </span>
-                  </button>
+                {/* <!-- Password input --> */}
+                <div className="mb-4">
+                  <p id="pass_error" style={{ color: " #79b4e2 " }}></p>
+                  <div className="input-group w-100">
+                    <input
+                      type={isPasswordVisible ? "text" : "password"}
+                      id="password"
+                      name="password"
+                      value={formData.password}
+                      onChange={handleInputChange}
+                      className="form-control rounded-8 py-2 "
+                      style={{
+                        backgroundColor: "black",
+                        color: "#79b4e2",
+                      }}
+                      placeholder="password"
+                    />
+                    <i
+                      id="passwordViewer"
+                      onClick={passwordView}
+                      className="fi fi-ss-eye-crossed pt-2 ps-2"
+                      style={{
+                        color: !isPasswordVisible ? "black" : "#79b4e2",
+                      }}
+                    ></i>
+                    <i
+                      id="checkpass"
+                      style={{ color: "#79b4e2", display: "none" }}
+                      className="fi fi-ss-check-circle text-center ms-1"
+                    ></i>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="text-center ">
-              <p className="text-muted">
-                New Here PLease{" "}
-                <Link to="/signup" style={{ color: "#79b4e2" }}>
 
-                  Register !
-                </Link>
-              </p>
+                <div className="text-end mb-2">
+                  <Link to="/RecoverPassword" style={{ color: "#79b4e2" }}>
+                    Forgot password ?
+                  </Link>
+                </div>
+
+                {/* <!-- Submit button --> */}
+                <button
+                  id="login_button"
+                  data-mdb-ripple-init
+                  type="button"
+                  className="btn btn-block mb-4 text-capitalize py-3"
+                  onClick={loginCheck}
+                  style={{
+                    backgroundColor: "#79b4e2",
+                    color: "#011528",
+                    fontSize: "1rem",
+                  }}
+                >
+                  Login
+                </button>
+
+                <h3
+                  className=" text-light text-center mb-3"
+                  style={{ fontWeight: "light", fontSize: "1rem" }}
+                >
+                  {" "}
+                  -OR-{" "}
+                </h3>
+                {/* <!-- Sign  buttons --> */}
+                <div className="text-center mb-2">
+                  <div className="row d-flex justify-content-evenly align-items-center">
+                    <div className="col-12">
+                      <button
+                        type="button"
+                        className="btn  bg-light w-100 "
+                        onClick={login}
+                      >
+                        <img src="../img/search 1.png" height={26} alt="" />
+                        <span className="text-dark text-capitalize ms-2 ">
+                          Sign In With Google
+                        </span>
+                      </button>
+                    </div>
+
+                    <div className="col-12  mt-2 d-none">
+                      <button type="button" className="btn  bg-light w-100 " onClick={linkedInLogin} >
+                        <img src="../img/linkedin.png" height={26} alt="" />
+                        <span className="text-dark text-capitalize ms-2 ">
+                          Sign In With Linkedin
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-center ">
+                  <p className="text-muted">
+                    New Here PLease{" "}
+                    <Link to="/signup" style={{ color: "#79b4e2" }}>
+
+                      Register !
+                    </Link>
+                  </p>
+                </div>
+              </form>
             </div>
-          </form>
-        </div>
-        
+          </div>
+
+          <div className=" col-lg-7 d-lg-block d-none d-flex justify-content-center align-items-center">
+            <img src="img/login4.png" className="img-fluid w-100" alt="login page image" />
+          </div>
+
+
+
       </div>
     </>
   );
