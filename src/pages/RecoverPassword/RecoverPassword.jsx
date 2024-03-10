@@ -6,6 +6,7 @@ const RecoverPassword = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isPasswordVisible2, setIsPasswordVisible2] = useState(false);
   const [showOtp, setShowOtp] = useState(false);
+  const [emails, setEmails] = useState(false);
   const [isButtonDisabled, setButtonDisabled] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState('');
@@ -80,6 +81,7 @@ const RecoverPassword = () => {
       setButtonDisabled(true);
       setLoading(false);
       setErrors('');
+      setEmails(false);
     }
   };
 
@@ -104,6 +106,7 @@ const RecoverPassword = () => {
       setShowPassword(true);
       setShowOtp(false);
       setErrors('');
+      setEmails(false);
     }
   };
 const password = formData.password;
@@ -127,6 +130,7 @@ const conPassword= formData.conPassword;
       setErrors("Failed to update password");
     } finally {
       setLoading(false);
+      setEmails(false);
       setShowPassword(false);
       setShowOtp(false);
       setErrors('');
@@ -155,7 +159,9 @@ const conPassword= formData.conPassword;
                 className="p-0 m-0 text-danger"
               >{errors}</p>
             </div>
-            {/* Email input */}
+            {showEmail && (
+              <>
+               {/* Email input */}
             <div className="mb-4">
               <input
                 type="email"
@@ -180,6 +186,8 @@ const conPassword= formData.conPassword;
             >
              {loading ? 'Sending..' : 'Send OTP' } 
             </button>
+              </>
+            )}
             {showOtp && (
               <div className="mb-4" style={{ display: "block" }} id="otpShow">
                 <div className="row">

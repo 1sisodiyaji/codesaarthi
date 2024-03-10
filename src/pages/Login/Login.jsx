@@ -56,8 +56,8 @@ const Login = () => {
           );
           const savedUser = response.data;
           const { status, message } = savedUser;
-          const data = savedUser.userName;
-          const { name, email } = data;
+          const name = savedUser.userName;
+          const { email } = savedUser.email;
           if (status === "success") {
             emailError.textContent = "Login successfully!";
             localStorage.setItem("user_name", name);
