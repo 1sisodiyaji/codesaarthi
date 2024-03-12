@@ -27,60 +27,67 @@ const Login = () => {
   //login with normal email id and paasword 
   const loginCheck = async () => {
     console.log("entered");
+  
     const email = document.getElementById("email_id").value;
     const password = document.getElementById("password").value;
     const emailError = document.getElementById("email_error");
     const passError = document.getElementById("pass_error");
-
+  
     emailError.textContent = "";
     passError.textContent = "";
-
+  
     function validateEmail(email) {
       var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);
     }
-
+  
     if (email === "") {
       emailError.textContent = "Please fill in the email.";
     } else if (!validateEmail(email)) {
       emailError.textContent = "Please enter a valid email.";
     } else {
       document.getElementById("checkemail").style.display = "block";
-
+  
       if (password === "") {
         passError.textContent = "Please fill in the password.";
       } else {
         try {
           console.log(email);
           console.log(password);
-          console.log(formData);
+  
           const response = await axios.post(
             "https://codesaarthiserver.cyclic.app/api/signin",
             { email, password }
           );
+  
           console.log(response);
+  
           const savedUser = response.data;
           console.log(savedUser);
+  
           const { status, message } = savedUser;
           const name = savedUser.userName;
-          const { email } = savedUser.email;
-          console.log(`your name is ${name} and email is ${email} and status is ${status} and message is ${message}`);
+          const userEmail = savedUser.email;
+  
+          console.log(`Your name is ${name} and email is ${userEmail} and status is ${status} and message is ${message}`);
+  
           if (status === "success") {
             emailError.textContent = "Login successfully!";
             localStorage.setItem("user_name", name);
-            localStorage.setItem("user_email", email);
+            localStorage.setItem("user_email", userEmail);
             navigate("/Problems");
           } else {
             emailError.textContent = message;
           }
         } catch (error) {
-          console.error("Error loging user:", error);
+          console.error("Error logging user:", error);
           emailError.textContent =
             "Error creating account. Please try again later.";
         }
       }
     }
   };
+  
 
   // login with google
   const login = useGoogleLogin({
