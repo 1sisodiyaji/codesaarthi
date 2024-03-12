@@ -53,7 +53,7 @@ const Login = () => {
         try {
           const response = await axios.post(
             "https://codesaarthiserver.cyclic.app/api/signin",
-            formData
+            { email, password }
           );
           console.log(response);
           const savedUser = response.data;
