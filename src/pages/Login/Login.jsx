@@ -6,6 +6,7 @@ import { useLinkedIn } from 'react-linkedin-login-oauth2';
 
 const Login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [loading , setLoading] = useState(false);
   const navigate = useNavigate();
   const emailError = document.getElementById("email_error");
   const [formData, setFormData] = useState({
@@ -50,37 +51,30 @@ const Login = () => {
         passError.textContent = "Please fill in the password.";
       } else {
         try {
-          console.log(email);
-          console.log(password);
-  
+          setLoading(true);
           const response = await axios.post(
             "https://codesaarthiserver.cyclic.app/api/signin",
             { email, password }
-          );
-  
-          console.log(response);
-  
+          );  
           const savedUser = response.data;
-          console.log(savedUser);
-  
           const { status, message } = savedUser;
           const name = savedUser.userName;
           const userEmail = savedUser.email;
-  
-          console.log(`Your name is ${name} and email is ${userEmail} and status is ${status} and message is ${message}`);
-  
           if (status === "success") {
             emailError.textContent = "Login successfully!";
             localStorage.setItem("user_name", name);
             localStorage.setItem("user_email", userEmail);
+            setLoading(false);
             navigate("/Problems");
           } else {
             emailError.textContent = message;
+            setLoading(false);
           }
         } catch (error) {
           console.error("Error logging user:", error);
           emailError.textContent =
             "Error creating account. Please try again later.";
+            setLoading(false);
         }
       }
     }
@@ -98,7 +92,7 @@ const Login = () => {
       })
         .then((response) => {
           const userData = response.data;
-          // Send user data to the backend
+         setLoading(true);
           axios.post('https://codesaarthiserver.cyclic.app/api/saveuserData', userData)
             .then((response) => {
               console.log(response);
@@ -106,17 +100,21 @@ const Login = () => {
                 localStorage.setItem('user_name', userData.name);
                 localStorage.setItem('user_email', userData.email);
                 localStorage.setItem('user_ProfilePic', userData.picture);
+                setLoading(false);
                 navigate("/Problems");
               } else {
                 emailError.textContent('Account Does not exist:', response.data.message);
+                setLoading(false);
               }
             })
             .catch((error) => {
               emailError.textContent('Error checking  user data to backend:', error);
+              setLoading(false);
             });
         })
         .catch((error) => {
           emailError.textContent('Error fetching user information:', error);
+          setLoading(false);
         });
     }
   });
@@ -255,7 +253,7 @@ const Login = () => {
                     fontSize: "1rem",
                   }}
                 >
-                  Login
+                  {loading? 'Logging in' : 'Login' }
                 </button>
 
                 <h3

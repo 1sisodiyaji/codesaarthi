@@ -209,7 +209,7 @@ const conPassword= formData.conPassword;
 
                   <div>
                     <button type="button" onClick={verifyOtp} className="btn btn-block my-4 text-capitalize py-3" style={{ backgroundColor: "#79b4e2",color:'black', fontSize: "1rem" }}>
-                    {loading ? 'Verifying..' : 'Verifying OTP' }
+                    {!loading ? 'Verifying..' : 'Verifying OTP' }
                     </button>
                   </div>
                 </div>
@@ -244,7 +244,7 @@ const conPassword= formData.conPassword;
                 </div>
                 {/* Update Password button */}
                 <button type="button" onClick={updatePassword} className="btn btn-block mb-4 text-capitalize py-3" style={{ backgroundColor: "#79b4e2", color: "#011528", fontSize: "1rem" }}>
-                {loading ? 'Updating..' : 'Update' } 
+                {!loading ? 'Updating..' : 'Update' } 
                 </button>
               </div>
             )}
