@@ -6,6 +6,7 @@ import { useLinkedIn } from 'react-linkedin-login-oauth2';
 
 const SignUp = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const name_error = document.getElementById("name_error");
   // password viewer at password section
@@ -50,6 +51,7 @@ const SignUp = () => {
             "Please enter your password to Create account";
         } else {
           try {
+            setLoading(true);
             const response = await axios.post(
               "https://codesaarthiserver.cyclic.app/api/register",
               formData
@@ -62,16 +64,20 @@ const SignUp = () => {
               name_error.textContent = "Account created successfully!";
               localStorage.setItem("user_name", name);
               localStorage.setItem("user_email", email);
+              setLoading(false);
               navigate('/Problems')
             } else {
               name_error.textContent = message;
+              setLoading(false);
             }
           } catch (error) {
             console.error("Error registering user:", error);
               if (error.response && error.response.status === 500) {
                 name_error.textContent = "User with this email already exists";
+                setLoading(false);
               } else {
                 name_error.textContent = "Error creating account. Please try again later.";
+                setLoading(false);
               }
           }
         }
@@ -104,23 +110,28 @@ const SignUp = () => {
       })
         .then((response) => {
           const userData = response.data;
+          setLoading(true);
           axios.post('https://codesaarthiserver.cyclic.app/api/saveuserData', userData)
             .then((response) => {
               if (response.data.status === 'success') {
                 localStorage.setItem('user_name', userData.name);
                 localStorage.setItem('user_email', userData.email);
                 localStorage.setItem('user_ProfilePic', userData.picture);
+                setLoading(false);
                 navigate("/Problems");
               } else {
                 name_error.textContent('Error saving user data:', response.data.message);
+                setLoading(false);
               }
             })
             .catch((error) => {
               name_error.textContent('Error sending user data to backend:', error);
+              setLoading(false);
             });
         })
         .catch((error) => {
           name_error.textContent('Error fetching user information:', error);
+          setLoading(false);
         });
     }
   });
@@ -259,7 +270,7 @@ const SignUp = () => {
                 fontSize: "1rem ",
               }}
             >
-              Create Account
+             {loading? 'Sign in':'Create Account'} 
             </button>
 
             <h3
