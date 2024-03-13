@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useGoogleLogin } from "@react-oauth/google";
 import { useLinkedIn } from 'react-linkedin-login-oauth2';
-
+import { Helmet } from 'react-helmet';
 const SignUp = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -150,6 +150,20 @@ const SignUp = () => {
 
   return (
     <>
+    <Helmet>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="CodeSaarthi" content="Codesaarthi" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href="https://codesaarthi.com/signup" />
+                <meta name="description" content="Lets Be a part of codesaarthi , give us  a chance to help you by explaining things in simple Words." />
+                <title>Sign up | Codesaarthi Free Learning Platform</title>
+                <meta property="og:title" content="Sign up | Codesaarthi" />
+                <meta property="og:description" content="Lets Be a part of codesaarthi , give us  a chance to help you by explaining things in simple Words." />
+                <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+                <meta property="og:url" content="https://codesaarthi.com/signup" />
+                <meta property="og:type" content="Education-Website" />
+                <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+            </Helmet>
     
       <div
         className="container-fluid  d-flex justify-content-center align-items-center "
