@@ -270,7 +270,7 @@ const SignUp = () => {
                 fontSize: "1rem ",
               }}
             >
-             {loading? 'Sign in':'Create Account'} 
+             {loading ? 'Sign in':'Create Account'} 
             </button>
 
             <h3
