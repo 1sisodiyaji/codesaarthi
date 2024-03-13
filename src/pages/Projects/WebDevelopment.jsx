@@ -9,7 +9,7 @@ const WebDevelopment = () => {
                 <div className="container p-lg-5">
                     <div className="row">
                         <div className="col-lg-6  my-2 col-12">
-                                <div className="card border p-lg-5 p-3 tilt-effect2" style={{ background: 'transparent', backgroundImage: 'url(img/Amazon1.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+                                <div className="card border p-lg-5 p-3 tilt-effect2" style={{ background: 'transparent', backgroundImage: 'url(img/amazon1.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
 
                                     <div>
                                         <div className="row">
