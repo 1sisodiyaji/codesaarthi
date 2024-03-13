@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-   <url>
+  <url>
     <loc>https://codesaarthi.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+<url>
+    <loc>https://codesaarthi.com/SignUp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://codesaarthi.com/Login</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://codesaarthi.com/AboutUs</loc>
     <changefreq>monthly</changefreq>
@@ -20,28 +29,14 @@
   </url>
 
   <url>
-    <loc>https://codesaarthi.com/contest</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://codesaarthi.com/Projects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://codesaarthi.com/SignUp</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  
 
-  <url>
-    <loc>https://codesaarthi.com/Login</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  
 
   <url>
     <loc>https://codesaarthi.com/RecoverPassword</loc>
@@ -68,19 +63,7 @@
   </url>
 
   <url>
-    <loc>https://codesaarthi.com/preparation</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://codesaarthi.com/theory</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://codesaarthi.com/whiteboard</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -195,6 +178,18 @@
 
   <url>
     <loc>https://codesaarthi.com/Spotify-Clone</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/React-based-project</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/blog-app-react</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
