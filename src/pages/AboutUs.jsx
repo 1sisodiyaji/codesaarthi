@@ -189,7 +189,7 @@ const AboutUs = () => {
                                     style={{ backgroundColor: '#FFE164', fontSize: '16px', color: '#031A33' }}
                                     disabled={isLoading}
                                 >
-                                    {isLoading ? 'Sending...' : 'Send'}
+                                    {isLoading ? <> <img src="img/loader.svg" alt="loader image" /> </> : 'Send'}
                                 </button>
                             </div>
                         </div>

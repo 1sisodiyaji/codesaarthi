@@ -29,8 +29,8 @@ const Projects = () => {
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
-                  <div className="col-4 d-flex" style={{height: '12vh'}}>
-                    <img src="https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png" className="img-fluid" style={{borderRadius:'50%'}} />
+                  <div className="col-4 d-flex">
+                    <img src="img/logo.png" className="img-fluid" style={{borderRadius:'50%'}} />
                   </div>
                   <div className="col-8 align-self-center">
                     <div>

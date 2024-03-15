@@ -268,7 +268,7 @@ const Login = () => {
                     fontSize: "1rem",
                   }}
                 >
-                  {loading? 'Logging in' : 'Login' }
+                  {loading? <> <img src="img/loader.svg" alt="loader image" /> </> : 'Login' }
                 </button>
 
                 <h3

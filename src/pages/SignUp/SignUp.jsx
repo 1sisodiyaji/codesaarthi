@@ -284,7 +284,7 @@ const SignUp = () => {
                 fontSize: "1rem ",
               }}
             >
-             {loading ? 'Sign in':'Create Account'} 
+             {loading ? <> <img src="img/loader.svg" alt="loader image" /> </>:'Create Account'} 
             </button>
 
             <h3
