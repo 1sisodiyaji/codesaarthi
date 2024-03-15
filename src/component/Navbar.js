@@ -329,7 +329,7 @@ export const Navbar = () => {
               <>
                 <Link to="/signup" className="px-2">
                   <button
-                    className="btn rounded-9 text-dark"
+                    className="btn rounded-9 text-dark text-capitalize"
                     style={{ backgroundColor: "#79b4e2" }}
                   >
                     Create Account
@@ -338,7 +338,7 @@ export const Navbar = () => {
 
                 <Link to="/Login">
                   <button
-                    className="btn rounded-9 text-dark"
+                    className="btn rounded-9 text-dark text-capitalize"
                     style={{ backgroundColor: "#79b4e2" }}
                   >
                     Log in
