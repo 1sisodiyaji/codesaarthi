@@ -20,7 +20,7 @@ const NewsApi = () => {
             const saveNewsResponse = await axios.post('https://codesaarthiserver.cyclic.app/api/saveNews', { newsData });
            
 console.log("your resposnse is "+saveNewsResponse);
-            if (saveNewsResponse.status === 201) {
+            if (saveNewsResponse.status === "success") {
                 setData(saveNewsResponse.data);
             } else {
                 console.error('Error saving news:', saveNewsResponse.data.error);
