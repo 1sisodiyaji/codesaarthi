@@ -36,7 +36,9 @@ import ComputerNetworks from "../pages/Roadmap/ComputerNetworks";
 import RazorPay from "../pages/Projects/RazorPay";
 import Spotify from "../pages/Projects/Spotify";
 import ReactProject from "../pages/Projects/ReactProject";
-import BlogApps from "../pages/Projects/React/BlogApps";
+import BlogApps from "../pages/Projects/React/BlogApps"; 
+import setting from "../pages/setting";
+import Profile from "../pages/Profile";
 
 const Routess = () => {
 
@@ -72,6 +74,8 @@ const Routess = () => {
           <Route path="/cookies" element={<Cookie />} />
           <Route path="/theory" element={<Theory />} />
           <Route path="/roadMap" element={<Roadmap />} />
+          <Route path="/setting" element={<setting />} />
+          <Route path="/profile" element={<Profile/>} />
           <Route path="/dsa" element={<Dsa/>} />
           <Route path="/array" element={<Array />} />
           <Route path="/transversing-of-array" element={<TransversingOfArray />} />
