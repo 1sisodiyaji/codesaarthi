@@ -39,6 +39,7 @@ import ReactProject from "../pages/Projects/ReactProject";
 import BlogApps from "../pages/Projects/React/BlogApps"; 
 import setting from "../pages/setting";
 import Profile from "../pages/Profile";
+import array from "../pages/Practise/Array/array";
 
 const Routess = () => {
 
@@ -97,6 +98,7 @@ const Routess = () => {
           <Route path="/Spotify-Clone" element={<Spotify />} />
           <Route path="/React-based-project" element={<ReactProject />} />
           <Route path="/blog-app-react" element={<BlogApps/>} />
+          <Route path="/Basic-Array-problems" element={<array/>} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 

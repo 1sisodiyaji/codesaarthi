@@ -252,7 +252,9 @@ const Array = () => {
                         <p style={{ color: 'whitesmoke' }} className='listen'>
                             Array ka ek fixed size hota hai, matlab hai ki aapko array ka size istemal karne se pahle declare karna hoga.
                             Size Pure Operation me fixed rahta hai. <br />
-                            example:- in C language:<code> int arr[5] = [0,1,2,3,4]</code>
+                            example:- in C language:<code> int arr[5] = [0,1,2,3,4]</code> <br />
+
+                            <span className='bg-dark text-warning'> Note: - We can define the length of array as maximum in two conditions as inside int [ ] = 10<sup>6</sup> but when we declare it globally it could be 10<sup>7</sup></span>
                         </p>
 
                         <h3 className='text-light listen'>Homogeneous Elements:</h3>
@@ -442,7 +444,15 @@ const ArrayExample = () => {
                 </div>
 
                 <div className="col-3 py-5 d-lg-block d-none">
+                    <div className='my-3'>
+                   <h5 className='text-warning'>Practise Question</h5> 
+                   <Link to ="/Basic-Array-problems" className="card p-3 text-warning" style={{backgroundColor:'#000435' , boxShadow:'5px 5px 20px #3393df'}}>
+                    <h5> Arrays Practise Questions <i class="fi fi-ss-portal-enter ps-2"></i></h5>
+                   </Link>
+                   </div>
+                   <div className='my-5'>
                     <NewsApi />
+                    </div>
                 </div>
 
 
