@@ -17,7 +17,7 @@ const NewsApi = () => {
             });
             const newsData = response.data.articles;
             console.log(newsData);
-            const saveNewsResponse = await axios.post('https://codesaarthiserver.cyclic.app/api/saveNews', { newsData });
+            const saveNewsResponse = await axios.post('https://codesaarthiserver.cyclic.app/api/saveNews', newsData );
            
 console.log("your resposnse is "+saveNewsResponse);
             if (saveNewsResponse.status === "success") {
