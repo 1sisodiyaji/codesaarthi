@@ -19,7 +19,7 @@ const Theory = () => {
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
       <div className="container-fluid my-5 py-5" style={{ minHeight: '100vh' }}>
-        <div className="row">
+        <div className="row"> 
           <div className="col-lg-4 col-12">
             <div className="card border p-3 tilt-effect" style={{ backgroundColor: '#6aa1b4' }}>
               <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
@@ -40,8 +40,50 @@ const Theory = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-12"></div>
-          <div className="col-lg-4 col-12"></div>
+
+          <div className="col-lg-4 col-12">
+            <div className="card border p-3 tilt-effect" style={{ backgroundColor: '#6aa1b4' }}>
+              <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <div className="row">
+                  <div className="col-4"  >
+                    <img src="https://play-lh.googleusercontent.com/erU9Hj8_nNsWnyJgFks0p0jdpu769mbv10SjH45JnZshNV_eEITl3RBeqPgCfKtD0Ghd=w240-h480-rw" className="img-fluid rounded-8  " style={{height: '18vh' }}/>
+                  </div>
+                  <div className="col-8 align-self-center">
+                    <div><h5 className="card-title text-light text-capitalize">Dbms Notes</h5></div>
+
+                    <div><Link to="/array">
+                      <div className="btn text-warning text-capitalize bg-dark">Read it..</div>
+                    </Link>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-4 col-12">
+            <div className="card border p-3 tilt-effect" style={{ backgroundColor: '#6aa1b4' }}>
+              <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <div className="row">
+                  <div className="col-4"  >
+                    <img src="https://t4.ftcdn.net/jpg/04/64/21/59/360_F_464215993_LWZKZ52fQKt4YDQ43b50koqZgn9WxHzA.jpg" className="img-fluid rounded-8  " style={{height: '18vh' }}/>
+                  </div>
+                  <div className="col-8 align-self-center">
+                    <div><h5 className="card-title text-light">Os  Notes </h5></div>
+
+                    <div><Link to="/array">
+                      <div className="btn text-warning text-capitalize bg-dark">Read it..</div>
+                    </Link>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
         </div>
       </div>
     </>

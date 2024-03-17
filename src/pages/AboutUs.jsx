@@ -3,6 +3,7 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
     const [name, setName] = useState('');
@@ -21,44 +22,44 @@ const AboutUs = () => {
     };
 
     const saveMessage = async () => {
-        if (!name ) {
+        if (!name) {
             setError('Please fill Your name');
             return;
-        }else if(!email){
+        } else if (!email) {
             setError('Please fill email');
             return;
-        }else if(!message) {
+        } else if (!message) {
             setError('Please address your issues');
             return;
-        }else{
+        } else {
 
-        const data = {
-            name: name,
-            email: email,
-            message: message,
-        };
-        try {
-            setIsLoading(true);
-            const response = await axios.post('https://codesaarthiserver.cyclic.app/api/contactemail', data);
-            if (response.status === 200) {
-                setError(" ");
-                setIsSubmitted(true);
-                handleSubmission(true);
-            } else {
-               
+            const data = {
+                name: name,
+                email: email,
+                message: message,
+            };
+            try {
+                setIsLoading(true);
+                const response = await axios.post('https://codesaarthiserver.cyclic.app/api/contactemail', data);
+                if (response.status === 200) {
+                    setError(" ");
+                    setIsSubmitted(true);
+                    handleSubmission(true);
+                } else {
+
+                    setIsSubmitted(false);
+                    handleSubmission(false);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            } finally {
+                setName(" ");
+                setEmail(" ");
+                setMessage(" ");
+                setIsLoading(false);
                 setIsSubmitted(false);
-                handleSubmission(false);
             }
-        } catch (error) {
-            console.error('Error:', error);
-        } finally {
-            setName(" ");
-            setEmail(" ");
-            setMessage(" ");
-            setIsLoading(false);
-            setIsSubmitted(false);
         }
-    }
     };
     return (
         <>
@@ -94,7 +95,7 @@ const AboutUs = () => {
                     <div className="col-lg-2 col-md-0 col-sm-0 ">
                         <img src="../img/vision1.webp" className='img-fluid pt-5 mt-5 gt-5' style={{ height: '50vh', width: '60vw' }} alt="mission image" />
                     </div>
-                    <div className="col-lg-4 col-12 g-0 my-2 rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black'}}>
+                    <div className="col-lg-4 col-12 g-0 my-2 rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black' }}>
                         <div className="card p-4 h-100" style={{ backgroundColor: '#79b4e2' }}>
                             <div className="d-flex justify-content-end">
                             </div>
@@ -103,7 +104,7 @@ const AboutUs = () => {
                         </div>
                     </div>
 
-                    <div className="col-lg-4 col-12 g-0 my-2  rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black'}}   >
+                    <div className="col-lg-4 col-12 g-0 my-2  rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black' }}   >
                         <div className="card p-4 ms-lg-2 h-100" style={{ backgroundColor: '#79b4e2' }}>
                             <strong><h1 className="text-white heading" style={{ fontWeight: 'bolder' }}>Our <span style={{ color: 'black' }}>Vision</span></h1></strong>
                             <h3 className="text-white heading2">We aspire to revolutionize the educational landscape, making learning accessible and free for all. As the student who have faith to learn they can grow here and each and every student could get learning free . our motive is to make it easy and available for all freely . We will help you atmost we can ....</h3>
@@ -200,6 +201,60 @@ const AboutUs = () => {
                 </div>
 
             </div >
+
+            <div className="container my-3">
+                <div className="row g-0">
+                    <div className="col-lg-3 col-12"></div>
+                    <div className="col-lg-6 col-12 g-0">
+                        <div className="card p-5 d-lg-block d-md-block d-none" style={{ backgroundColor: '#000435' , boxShadow:'15px 15px 40px black' }} >
+                            <div className="row">
+                                <div className="col-3" style={{ borderRadius: '50%' }}>
+                                    <img src="../img/ProfilePic.png" className='img-fluid' alt="Profile Pic Image" style={{ borderRadius: '50%' }} />
+                                </div>
+                                <div className="col-9">
+                                    <h4 className='text-warning'> Golu Singh
+                                        (Software Developer) </h4>
+                                    <p className='text-light'> Ex-Web Intern at Wooble Software pvt ltd. </p>
+                                    <small className='text-success'>helping Students to learn things easily  , Actually i want to help them as the things i get hard to learn that things  i want to make them easier .</small> <br />
+                                    <Link to="https://www.linkedin.com/in/golu-singh/" target='blank'> <span><i class="fi fi-brands-linkedin text-warning pe-1"></i></span>Linkedin</Link> <span className='text-warning'>|</span>|
+                                    <Link to="https://github.com/1sisodiyaji/" target='blank'> <span><i class="fi fi-brands-github text-warning pe-2"></i></span>Github </Link><span className='text-warning'>|</span>| <Link to="https://www.instagram.com/golu_singh_sisodiya/" > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
+
+                                    <div className="row">
+                                        <div className="col-12 text-end">
+                                        <Link to="mailto:637golusingh@gmail.com" className="btn btn-success text-capitalize ">Contact me <i className="fi fi-sr-envelope text-warning ps-2"></i></Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="card p-3 d-lg-none d-md-none d-block" style={{ backgroundColor: '#000435' , boxShadow:'15px 15px 40px black' }} >
+                            <div className="row">
+                                <div className="col-3" style={{ borderRadius: '50%' }}>
+                                    <img src="../img/ProfilePic.png" className='img-fluid' alt="Profile Pic Image" style={{ borderRadius: '50%' }} />
+                                </div>
+                                <div className="col-9">
+                                    <h6 className='text-warning'> Golu Singh
+                                        (Software Developer) </h6>
+                                    <p className='text-light'> Ex-Web Intern at Wooble Software pvt ltd. </p>
+                                </div>
+                            </div>
+                            <small className='text-success'>helping Students to learn things easily  , Actually i want to help them as the things i get hard to learn that things  i want to make them easier .</small> <br />
+                                    <Link to="https://www.linkedin.com/in/golu-singh/" target='blank'> <span><i class="fi fi-brands-linkedin text-warning pe-1"></i></span>Linkedin</Link> <span className='text-warning'>|</span>|
+                                    <Link to="https://github.com/1sisodiyaji/" target='blank'> <span><i class="fi fi-brands-github text-warning pe-2"></i></span>Github </Link><span className='text-warning'>|</span>| <Link to="https://www.instagram.com/golu_singh_sisodiya/" > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
+
+                                    <div className="row">
+                                        <div className="col-12 text-end">
+                                        <Link to="mailto:637golusingh@gmail.com" className="btn btn-success text-capitalize ">Contact me <i className="fi fi-sr-envelope text-warning ps-2"></i></Link>
+                                        </div>
+                                    </div>
+                        </div>
+
+                    </div>
+                    <div className="col-lg-3 col-12"></div>
+                </div>
+            </div>
+
         </>
     )
 }
