@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 const Problems = () => {
   return (
     <>
@@ -28,7 +29,7 @@ const Problems = () => {
                 <p class="card-text"> Practise Basic Questions to clear concepts
                 </p>
 
-                <button type="button" class="btn btn-warning text-capitalize">Start Solving</button>
+                <Link to= "/ArrayProblems" ><button type="button" class="btn btn-warning text-capitalize">Start Solving</button></Link>
               </div>
             </div>
           </div>

@@ -23,7 +23,7 @@ const Home = () => {
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
 
-      <div className="row py-5 my-3 DashImageView" style={{ minHeight: '100vh' }}>
+      <div className="row py-5 my-5 DashImageView" style={{ minHeight: '100vh' }}>
         <div className="col-lg-6 col-12 d-flex  align-items-center ">
           <div>
             <h1 className="text-dark fw-bold">
@@ -42,6 +42,7 @@ const Home = () => {
         </div>
       </div>
 
+<div className="d-lg-block d-md-none d-none">
       <div className="row py-5">
         <div className="col-lg-9 col-12">
           <div className="row ">
@@ -105,7 +106,7 @@ const Home = () => {
           <img src="img/mision1.png" className="img-fluid" alt="" />
         </div>
       </div>
-
+      </div>
     </>
   );
 };
