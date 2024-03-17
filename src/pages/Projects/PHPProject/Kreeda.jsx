@@ -24,7 +24,7 @@ const Kreeda = () => {
 
                         <h6 className='textColor'>Screenshot:</h6>
                         <div className="row my-3">
-                            <div className="col-6 "><img src="img/kreeda1.jpg" alt="" className="img-fluid" /></div>
+                            <div className="col-6 "><img src="img/Kreeda1.jpg" alt="" className="img-fluid" /></div>
                             <div className="col-6"><img src="img/Kreeda2.jpg" alt="" className="img-fluid" /></div>
                         </div>
 

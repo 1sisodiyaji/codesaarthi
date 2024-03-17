@@ -22,7 +22,7 @@ const AssignmentProject = () => {
 
                         <h6 className='textColor'>Screenshot:</h6>
                         <div className="row my-3">
-                            <div className="col-6 "><img src="img/htmlproject1.jpg" alt="" className="img-fluid" /></div>
+                            <div className="col-6 "><img src="img/htmlProject1.jpg" alt="" className="img-fluid" /></div>
                             <div className="col-6"><img src="img/htmlProject2.jpg" alt="" className="img-fluid" /></div>
                         </div>
 
