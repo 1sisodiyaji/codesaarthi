@@ -39,7 +39,7 @@ import ReactProject from "../pages/Projects/ReactProject";
 import BlogApps from "../pages/Projects/React/BlogApps"; 
 import Profile from "../pages/Profile";
 import PractiseBasicArray from "../pages/Practise/Array/PractiseBasicArray";
-import BasicDbms from "../pages/Theory/Dbms/BasicDbms";
+// import BasicDbms from "../pages/Theory/Dbms/BasicDbms";
 import UserSettings from "../pages/UserSetting";
 import HtmlProject from "../pages/Projects/HtmlProject/HtmlProject";
 import AssignmentProject from "../pages/Projects/HtmlProject/AssignmentProject";
@@ -116,7 +116,7 @@ const Routess = () => {
           <Route path="/Kreeda" element={<Kreeda/>} />
           <Route path="/kishanMitra" element={<KishanMitra/>} />
           <Route path="/ArrayProblems" element={<PractiseBasicArray/>} />
-          <Route path="/basic-Dbms" element={<BasicDbms/>} />
+          {/* <Route path="/basic-Dbms" element={<BasicDbms/>} /> */}
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 
