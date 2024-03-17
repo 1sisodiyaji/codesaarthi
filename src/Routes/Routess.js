@@ -40,7 +40,7 @@ import BlogApps from "../pages/Projects/React/BlogApps";
 import Profile from "../pages/Profile";
 import PractiseBasicArray from "../pages/Practise/Array/PractiseBasicArray";
 // import BasicDbms from "../pages/Theory/Dbms/BasicDbms";
-import UserSettings from "../pages/UserSetting";
+// import UserSettings from "../pages/UserSetting";
 import HtmlProject from "../pages/Projects/HtmlProject/HtmlProject";
 import AssignmentProject from "../pages/Projects/HtmlProject/AssignmentProject";
 import PortfolioHtml from "../pages/Projects/HtmlProject/PortfolioHtml";
@@ -84,7 +84,7 @@ const Routess = () => {
           <Route path="/cookies" element={<Cookie />} />
           <Route path="/theory" element={<Theory />} />
           <Route path="/roadMap" element={<Roadmap />} />
-          <Route path="/userSettings  " element={<UserSettings />} />
+          {/* <Route path="/userSettings  " element={<UserSettings />} /> */}
           <Route path="/profile" element={<Profile/>} />
           <Route path="/dsa" element={<Dsa/>} />
           <Route path="/array" element={<Array />} />
