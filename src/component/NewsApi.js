@@ -19,34 +19,22 @@ const NewsApi = () => {
             const newsData = response.data.articles;
             const saveNewsResponse = await axios.post('https://codesaarthiserver.cyclic.app/api/saveNews', { articles: newsData }); 
             if (saveNewsResponse.data.status === "success") {
-              console.log('News saved successfully' + saveNewsResponse);
-                setData(saveNewsResponse.data.article);
-            } else {
-                console.error('Error saving news:', saveNewsResponse.data.error);
-            }
-
-            if (saveNewsResponse.status === "success") {
               console.log('News saved' + saveNewsResponse);
+              console.log("main data is "+ saveNewsResponse.data.newsData);
                 setData(saveNewsResponse.data.article);
             } else {
                 console.error('Error saving news:', saveNewsResponse.data.error);
             }
         } catch (error) {
-            console.error('Error fetching data:', error); // Handling error properly
+            console.error('Error fetching data:', error);
         }
     };
-
-    const fetchAndStoreData = async () => {
-        try {
-            await fetchData();
-            const intervalId = setInterval(fetchData, 20 * 60 * 60 * 1000);
-            return () => clearInterval(intervalId);
-        } catch (error) {
-            console.error(error.message);
-        }
-    };
-    fetchAndStoreData();
+    fetchData();
+    const intervalId = setInterval(fetchData, 20 * 60 * 1000);
+    return () => clearInterval(intervalId);
+    
 }, []);
+
 
 
   return (
