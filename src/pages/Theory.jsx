@@ -46,7 +46,7 @@ const Theory = () => {
               <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
-                    <img src="https://play-lh.googleusercontent.com/erU9Hj8_nNsWnyJgFks0p0jdpu769mbv10SjH45JnZshNV_eEITl3RBeqPgCfKtD0Ghd=w240-h480-rw" className="img-fluid rounded-8  " style={{height: '18vh' }}/>
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-database-data-save-rack-dbms-management-44627.png?f=webp" className="img-fluid rounded-8  " style={{height: '18vh' }}/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light text-capitalize">Dbms Notes</h5></div>
@@ -67,7 +67,7 @@ const Theory = () => {
               <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
-                    <img src="https://t4.ftcdn.net/jpg/04/64/21/59/360_F_464215993_LWZKZ52fQKt4YDQ43b50koqZgn9WxHzA.jpg" className="img-fluid rounded-8  " style={{height: '18vh' }}/>
+                    <img src="https://cdn2.vectorstock.com/i/1000x1000/44/71/os-monogram-logo-vector-33144471.jpg" className="img-fluid rounded-8  " style={{height: '18vh' }}/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light">Os  Notes </h5></div>

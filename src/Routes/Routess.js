@@ -30,6 +30,7 @@ import SearchingArray from "../pages/Theory/Array/SearchingArray";
 import MultiDimension from "../pages/Theory/Array/MultiDimensaionalArray";
 import DynamicArray from "../pages/Theory/Array/DynamicArray";
 import CommonMistakes from "../pages/Theory/Array/CommonMistakes";
+import BasicDbms from "../pages/Theory/Dbms/Basic_Dbms";
 import Os from "../pages/Roadmap/Os";
 import Dbms from "../pages/Roadmap/Dbms";
 import ComputerNetworks from "../pages/Roadmap/ComputerNetworks";
@@ -38,7 +39,6 @@ import Spotify from "../pages/Projects/Spotify";
 import ReactProject from "../pages/Projects/ReactProject";
 import BlogApps from "../pages/Projects/React/BlogApps"; 
 import PractiseBasicArray from "../pages/Practise/Array/PractiseBasicArray";
-// import BasicDbms from "../pages/Theory/Dbms/BasicDbms";
 import HtmlProject from "../pages/Projects/HtmlProject/HtmlProject";
 import AssignmentProject from "../pages/Projects/HtmlProject/AssignmentProject";
 import PortfolioHtml from "../pages/Projects/HtmlProject/PortfolioHtml";
@@ -112,7 +112,7 @@ const Routess = () => {
           <Route path="/Kreeda" element={<Kreeda/>} />
           <Route path="/kishanMitra" element={<KishanMitra/>} />
           <Route path="/ArrayProblems" element={<PractiseBasicArray/>} />
-          {/* <Route path="/basic-Dbms" element={<BasicDbms/>} /> */}
+          <Route path="/basic-Dbms" element={<BasicDbms/>} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 
