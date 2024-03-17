@@ -6,16 +6,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-<url>
-    <loc>https://codesaarthi.com/SignUp</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://codesaarthi.com/Login</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+
   <url>
     <loc>https://codesaarthi.com/AboutUs</loc>
     <changefreq>monthly</changefreq>
@@ -34,9 +25,17 @@
     <priority>0.8</priority>
   </url>
 
-  
+  <url>
+    <loc>https://codesaarthi.com/SignUp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  
+  <url>
+    <loc>https://codesaarthi.com/Login</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <url>
     <loc>https://codesaarthi.com/RecoverPassword</loc>
@@ -190,6 +189,60 @@
 
   <url>
     <loc>https://codesaarthi.com/blog-app-react</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/HtmlProject</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/PortfolioHtml</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/AssignmentProject</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/ProductCatalog</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/youtubeBasedProject</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/Kreeda</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/kishanMitra</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/ArrayProblems</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/basic-Dbms</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
