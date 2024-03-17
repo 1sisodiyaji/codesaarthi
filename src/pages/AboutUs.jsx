@@ -214,7 +214,7 @@ const AboutUs = () => {
                                 <div className="col-9">
                                     <h4 className='text-warning'> Golu Singh
                                         (Software Developer) </h4>
-                                    <p className='text-light'> Ex-Web Intern at Wooble Software pvt ltd. </p>
+                                    <p className='text-light'>Web Intern at Wooble Software pvt ltd. </p>
                                     <small className='text-success'>helping Students to learn things easily  , Actually i want to help them as the things i get hard to learn that things  i want to make them easier .</small> <br />
                                     <Link to="https://www.linkedin.com/in/golu-singh/" target='blank'> <span><i class="fi fi-brands-linkedin text-warning pe-1"></i></span>Linkedin</Link> <span className='text-warning'>|</span>|
                                     <Link to="https://github.com/1sisodiyaji/" target='blank'> <span><i class="fi fi-brands-github text-warning pe-2"></i></span>Github </Link><span className='text-warning'>|</span>| <Link to="https://www.instagram.com/golu_singh_sisodiya/" target='blank' > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
