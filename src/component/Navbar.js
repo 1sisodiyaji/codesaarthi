@@ -307,16 +307,6 @@ export const Navbar = () => {
 
                     <ul className="dropdown-menu dropdown-menu-end">
                       <li>
-                        <Link className="dropdown-item" to="/profile">
-                        <i className="fi fi-ss-user-gear text-secondary"></i>  My profile
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="/userSettings">
-                        <i className="fi fi-ss-user-gear text-dark"></i> Settings
-                        </Link>
-                      </li>
-                      <li>
                         <Link to="/" className="dropdown-item text-danger" onClick={logout}>
                         <i className="fi fi-ss-sign-out-alt text-danger"></i>  Logout
                         </Link>
