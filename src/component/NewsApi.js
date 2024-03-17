@@ -16,10 +16,17 @@ const NewsApi = () => {
                 },
             });
             console.log(response);
-            setData(response.data.articles); // Corrected from response.data.article to response.data.articles
             const newsData = response.data.articles;
-            const saveNewsResponse = await axios.post('https://codesaarthiserver.cyclic.app/api/saveNews', { articles: newsData }); // Sending correct data structure
-            if (saveNewsResponse.data.status === "success") { // Checking status inside saveNewsResponse.data
+            const saveNewsResponse = await axios.post('https://codesaarthiserver.cyclic.app/api/saveNews', { articles: newsData }); 
+            if (saveNewsResponse.data.status === "success") {
+              console.log('News saved successfully' + saveNewsResponse);
+                setData(saveNewsResponse.data.article);
+            } else {
+                console.error('Error saving news:', saveNewsResponse.data.error);
+            }
+
+            if (saveNewsResponse.status === "success") {
+              console.log('News saved' + saveNewsResponse);
                 setData(saveNewsResponse.data.article);
             } else {
                 console.error('Error saving news:', saveNewsResponse.data.error);
