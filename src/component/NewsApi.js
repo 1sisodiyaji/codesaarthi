@@ -21,7 +21,7 @@ const NewsApi = () => {
             if (saveNewsResponse.data.status === "success") {
               console.log('News saved' + saveNewsResponse);
               console.log("main data is "+ saveNewsResponse.data.newsData);
-                setData(saveNewsResponse.data.article);
+                setData(newsData);
             } else {
                 console.error('Error saving news:', saveNewsResponse.data.error);
             }
