@@ -1,16 +1,16 @@
 import React from 'react'
 
-const basicDbms = () => {
+const BasicDbms = () => {
     
   return (
     <>
-    <div className="conatiner-fluid" style={{minHeight:'100vh'}}>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta perspiciatis minima nostrum voluptatibus? Recusandae quibusdam aperiam maxime blanditiis! Corporis illo aut eum corrupti repudiandae necessitatibus ipsam iusto perferendis odit laboriosam!
-
+    <div className="container-fluid g-0 bg-black" style={{minHeight:'100vh'}}>
+      <h6 className='text-warning text-center py-2'>lets Start the journey for learning the database management system . </h6>
+    
     </div>
     
     </>
   )
 }
 
-export default basicDbms
+export default BasicDbms

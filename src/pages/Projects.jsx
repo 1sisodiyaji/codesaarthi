@@ -30,11 +30,11 @@ const Projects = () => {
               >
                 <div className="row">
                   <div className="col-4 d-flex">
-                    <img src="img/logo.png" className="img-fluid" style={{borderRadius:'50%'}} />
+                    <img src="https://img.freepik.com/premium-vector/vector-clone-minimal-text-logo-design_867743-355.jpg" className="img-fluid" style={{borderRadius:'50%'}} />
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
-                      <h5 className="card-title text-light">
+                      <h5 className="card-title text-light text-capitalize">
                        clone Projects
                       </h5>
                     </div>
@@ -88,7 +88,8 @@ const Projects = () => {
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="../img/logo.png" className="img-fluid" />
+                    <img src="https://e7.pngegg.com/pngimages/666/502/png-clipart-brand-php-logo-computer-file-product-breeze-blue-text.png" className="img-fluid" style={{borderRadius:'50%'}} />
+                  
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
@@ -96,7 +97,7 @@ const Projects = () => {
                     </div>
 
                     <div>
-                      <Link to="/dsa">
+                      <Link to="/phpProjects">
                         <div className="btn text-warning text-capitalize bg-dark">
                           Check it Out
                         </div>
@@ -144,7 +145,7 @@ const Projects = () => {
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="../img/logo.png" className="img-fluid" />
+                    <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png" className="img-fluid" />
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
@@ -152,7 +153,7 @@ const Projects = () => {
                     </div>
 
                     <div>
-                      <Link to="/dsa">
+                      <Link to="/HtmlProject">
                         <div className="btn text-warning text-capitalize bg-dark">
                           Check it Out
                         </div>

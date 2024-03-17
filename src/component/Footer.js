@@ -6,7 +6,7 @@ export const Footer = ({ onFooterClick }) => {
    
     <>
         
-        <footer className = "text-center  pt-2" style ={{ color: 'grey' , backgroundColor : 'white'}}>
+        <footer className = "text-center design  pt-2" style ={{ color: 'grey' , backgroundColor : 'white'}}>
 
             <div className = "container-fluid g-0 pt-2" style={{ color: 'grey', backgroundColor : 'white'}}>
                 {/* <!-- Logo and Company Name --> */}

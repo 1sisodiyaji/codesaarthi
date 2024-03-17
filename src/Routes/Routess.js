@@ -39,8 +39,16 @@ import ReactProject from "../pages/Projects/ReactProject";
 import BlogApps from "../pages/Projects/React/BlogApps"; 
 import Profile from "../pages/Profile";
 import PractiseBasicArray from "../pages/Practise/Array/PractiseBasicArray";
-import basicDbms from "../pages/Theory/Dbms/basicDbms";
-import userSettings from "../pages/userSetting";
+import BasicDbms from "../pages/Theory/Dbms/BasicDbms";
+import UserSettings from "../pages/UserSetting";
+import HtmlProject from "../pages/Projects/HtmlProject/HtmlProject";
+import AssignmentProject from "../pages/Projects/HtmlProject/AssignmentProject";
+import PortfolioHtml from "../pages/Projects/HtmlProject/PortfolioHtml";
+import ProductCatalog from "../pages/Projects/HtmlProject/ProductCatalog";
+import IFrame from "../pages/Projects/HtmlProject/IFrame";
+import PhpProject from "../pages/Projects/PHPProject/PhpProjects";
+import Kreeda from "../pages/Projects/PHPProject/Kreeda";
+import KishanMitra from "../pages/Projects/PHPProject/KishanMitra";
 
 const Routess = () => {
 
@@ -76,7 +84,7 @@ const Routess = () => {
           <Route path="/cookies" element={<Cookie />} />
           <Route path="/theory" element={<Theory />} />
           <Route path="/roadMap" element={<Roadmap />} />
-          <Route path="/userSettings  " element={<userSettings />} />
+          <Route path="/userSettings  " element={<UserSettings />} />
           <Route path="/profile" element={<Profile/>} />
           <Route path="/dsa" element={<Dsa/>} />
           <Route path="/array" element={<Array />} />
@@ -99,8 +107,16 @@ const Routess = () => {
           <Route path="/Spotify-Clone" element={<Spotify />} />
           <Route path="/React-based-project" element={<ReactProject />} />
           <Route path="/blog-app-react" element={<BlogApps/>} />
+          <Route path="/HtmlProject" element={<HtmlProject/>} />
+          <Route path="/PortfolioHtml" element={<PortfolioHtml/>} />
+          <Route path="/AssignmentProject" element={<AssignmentProject/>} />
+          <Route path="/ProductCatalog" element={<ProductCatalog/>} />
+          <Route path="/youtubeBasedProject" element={<IFrame/>} />
+          <Route path = "/phpProjects" element={<PhpProject/>} />
+          <Route path="/Kreeda" element={<Kreeda/>} />
+          <Route path="/kishanMitra" element={<KishanMitra/>} />
           <Route path="/ArrayProblems" element={<PractiseBasicArray/>} />
-          <Route path="/dbms_basics" element={<basicDbms/>} />
+          <Route path="/basic-Dbms" element={<BasicDbms/>} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 

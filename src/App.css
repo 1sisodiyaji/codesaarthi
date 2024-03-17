@@ -117,13 +117,30 @@ body::-webkit-scrollbar {
 .textColor{
   color: #358CCA;
 }
+
 .tilt-effect {
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s;
 }
 
 .tilt-effect:hover {
-  transform: rotate(2deg)  translateY(5px);
+  animation: shake 0.5s ease-in-out;
 }
+
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(1deg);
+  }
+}
+
 .tilt-effect2 {
   transition: transform 0.3s ease-in-out;
 }

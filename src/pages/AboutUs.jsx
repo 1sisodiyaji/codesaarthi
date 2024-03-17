@@ -130,7 +130,7 @@ const AboutUs = () => {
                 <div className="row flex-md-row flex-column-reverse g-0 ">
                     <div className=" col-lg-2 col-0"></div>
                     <div className="col-lg-4 col-12   py-lg-5 py-3 px-lg-3 px-3 card shadow-5-soft tilt-effect " style={{
-                        border: '1px solid #FFE164',
+                       
                         borderTopLeftRadius: '20px', borderTopRightRadius: '20px', borderBottomLeftRadius: '0', borderBottomRightRadius: '0', backgroundColor: '#031A33'
                     }}>
                         <div className="justify-content-center" style={{ maxWidth: '100%' }}>
