@@ -37,10 +37,10 @@ import RazorPay from "../pages/Projects/RazorPay";
 import Spotify from "../pages/Projects/Spotify";
 import ReactProject from "../pages/Projects/ReactProject";
 import BlogApps from "../pages/Projects/React/BlogApps"; 
-import userSettings from "../pages/userSetting";
 import Profile from "../pages/Profile";
 import PractiseBasicArray from "../pages/Practise/Array/PractiseBasicArray";
 import basicDbms from "../pages/Theory/Dbms/basicDbms";
+import userSettings from "../pages/userSetting";
 
 const Routess = () => {
 
@@ -100,7 +100,7 @@ const Routess = () => {
           <Route path="/React-based-project" element={<ReactProject />} />
           <Route path="/blog-app-react" element={<BlogApps/>} />
           <Route path="/ArrayProblems" element={<PractiseBasicArray/>} />
-          <Route path="/basicDbms" element={<basicDbms/>} />
+          <Route path="/dbms_basics" element={<basicDbms/>} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 
