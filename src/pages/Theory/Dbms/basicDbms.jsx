@@ -1,6 +1,6 @@
 import React from 'react'
 
-const basic_dbms = () => {
+const basicDbms = () => {
     
   return (
     <>
@@ -10,4 +10,4 @@ const basic_dbms = () => {
   )
 }
 
-export default basic_dbms
+export default basicDbms

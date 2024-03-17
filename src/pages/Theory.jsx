@@ -51,7 +51,7 @@ const Theory = () => {
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light text-capitalize">Dbms Notes</h5></div>
 
-                    <div><Link to="/array">
+                    <div><Link to="/basicDbms">
                       <div className="btn text-warning text-capitalize bg-dark">Read it..</div>
                     </Link>
                     </div>

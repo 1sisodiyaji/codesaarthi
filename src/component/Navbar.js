@@ -312,7 +312,7 @@ export const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to="/setting">
+                        <Link className="dropdown-item" to="/userSettings">
                         <i className="fi fi-ss-user-gear text-dark"></i> Settings
                         </Link>
                       </li>
