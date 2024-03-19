@@ -203,7 +203,7 @@ const TransversingOfArray = () => {
             <p style={{ color: 'whitesmoke' }} className='listen'>
               Array traversal ka matlab hai har ek array element ko systematic taur par dekhna aur uska istemal karna.
               Yahan har item ka access karna aur usme kuch work karna shaamil hai, jyadatar ek systematic tareeke se. <br />
-              <span className='bg-dark text-warning'>Basically transversing a array includes to go through each element in a array through thier index.</span>
+              <span className='highlight'>Basically transversing a array includes to go through each element in a array through thier index.</span>
             </p>
 
             <h3 className='text-light pt-2 listen'> Array Traversal Kyon Important  Hai:</h3>
@@ -240,7 +240,7 @@ const TransversingOfArray = () => {
 
             </p>
             <p style={{ color: 'whitesmoke' }} className='listen'>
-              <span className='bg-dark text-warning'> Real World me Arrays data Storage me use aata h , matrices and image processing me use aata h , Game Developemnt , Audio Processing , Embedded Systems </span>
+              <span className='highlight'> Real World me Arrays data Storage me use aata h , matrices and image processing me use aata h , Game Developemnt , Audio Processing , Embedded Systems </span>
             </p>
 
             <h3 className='text-light pt-2 listen'> 4. Common Mistakes and Best Practices:</h3>
@@ -273,7 +273,7 @@ const TransversingOfArray = () => {
             </p>
 
             <h3 style={{ color: '#FFE164' }} className='pt-2 listen'> 5. Guru mantra::</h3>
-            <p className='listen bg-dark text-warning p-1'>
+            <p className='listen text-light p-1'>
 
             if you were learning Array transversal then you must have to know  about time complexity as which type of loop will be used at what place . 
             You should learn about memory insufficent issue that generate sometime so be careful from that . 

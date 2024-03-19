@@ -86,8 +86,6 @@ const ReverseOfArray = () => {
         speechSynthesis.speak(utterance);
     };
 
-
-
     const pause = () => {
         speechSynthesis.pause();
         setIsSpeaking(false);
@@ -199,22 +197,18 @@ const ReverseOfArray = () => {
                             </div>
                         </div>
 
-                        <h3 className='text-light pt-2 listen'> Reverse Operation Ka Matlab:</h3>
-                        <p style={{ color: 'whitesmoke' }} className='listen'>
-                        Array ko reverse karna ka matlab hai uske elements ko ulta kar dena, jaise hum ek line ko ulta kar lete hain. Yeh operation simple, par powerful hai.
+                        <h3 className='text-light pt-2 listen'> Reverse Operation  Meaning:</h3>
+                        <p style={{ color: 'whitesmoke' }} className='listen highlight'>
+                        Array reversal means arranganging the element of array in reverse order .
                         </p>
 
-                        <h3 className='text-light pt-2 listen'> Reverse Karne Ka Tareeka:</h3>
-                       
-
-                        <div className='p-2 d-lg-none d-block'>
-                            <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                       
+                        <h3 className='text-light pt-2 listen'> Reversal ways:</h3>
+                        <p className='listen text-light'> Array can be reverse by many ways either we can go through move forward , Backward  or taking an pivot point . </p>
                         <h3 className='text-light pt-2 listen'> Backward Loop:</h3>
                         <p style={{ color: 'whitesmoke' }} className='listen'>
-                        Array ko ulta karne ke liye hum backward loop ka use karte hain. Imagine karo ki aap ek purani tasveer ko rewind kar rahe hain, waise hi array ko bhi ulta karte hain.
-                        </p>
+                        Arrray can be reversed by backward as try to use iteration from last of the element in the array . <br/> 
+                        for example :- an array arr[5] = {`1,2,3,4,5`}  then we will iterate from 5 to 1 .
+                         </p>
 
                         <h3 className='text-light pt-2 listen'>Partners Ko Swap Karna:</h3>
                         <p style={{ color: 'whitesmoke' }} className='listen'>
