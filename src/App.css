@@ -149,7 +149,6 @@ body::-webkit-scrollbar {
   transform:  scale(1.1);
 }
 .highlight{
-  background-color: rgb(226, 122, 122) !important;
-  color: black !important;
-
+ color: #3393df !important;
+font-weight: bold !important;
 }

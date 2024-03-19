@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Basic_Dbms = () => {
     
@@ -96,7 +97,11 @@ store and retrieve database information that is both convenient and efficient.
   <li>Secuirity problems</li>
 </ol>
 <p className='text-light'>All the Drawbacks are solved in DBMS System ,  As the drawbacks are there we are solving all of them in DBMS System in next pages .. </p>
-
+    <div className="row">
+      <div className="col-12 text-end">
+        <Link to="/Architecture-Of-Dbms" className="btn bg-dark text-warning text-capitalize">Next</Link>
+      </div>
+    </div>
         </div>
         <div className=" col-lg-2 col-0"></div>
       </div>

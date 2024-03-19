@@ -47,6 +47,7 @@ import IFrame from "../pages/Projects/HtmlProject/IFrame";
 import PhpProject from "../pages/Projects/PHPProject/PhpProjects";
 import Kreeda from "../pages/Projects/PHPProject/Kreeda";
 import KishanMitra from "../pages/Projects/PHPProject/KishanMitra";
+import ArchitectureOfDbms from "../pages/Theory/Dbms/ArchitectureOfDbms";
 
 const Routess = () => {
 
@@ -108,11 +109,12 @@ const Routess = () => {
           <Route path="/AssignmentProject" element={<AssignmentProject/>} />
           <Route path="/ProductCatalog" element={<ProductCatalog/>} />
           <Route path="/youtubeBasedProject" element={<IFrame/>} />
-          <Route path = "/phpProjects" element={<PhpProject/>} />
+          <Route path ="/phpProjects" element={<PhpProject/>} />
           <Route path="/Kreeda" element={<Kreeda/>} />
           <Route path="/kishanMitra" element={<KishanMitra/>} />
           <Route path="/ArrayProblems" element={<PractiseBasicArray/>} />
           <Route path="/basic-Dbms" element={<BasicDbms/>} />
+          <Route path="/Architecture-Of-Dbms" element={<ArchitectureOfDbms/>} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 
