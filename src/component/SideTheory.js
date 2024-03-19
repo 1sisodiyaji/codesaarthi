@@ -21,6 +21,8 @@ const SideTheory = () => {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+
   return (
     <>
       <button
@@ -109,16 +111,28 @@ const SideTheory = () => {
         </div>
       </div>
 
-      <div className="container-fluid py-5 text-light d-lg-block d-none">
-        <Link to="/array" style={{ color: "white" }}>
+      <div className="container-fluid py-5  d-lg-block d-none">
+      <Link
+            to="/array"
+            className={`nav-link ${isNavLinkActive("/array ") ? "active" : "text-light"}`}
+          >
           {" "}
           <p> 1. Introduction to Arrays: </p>{" "}
         </Link>
-        <Link to="/transversing-of-array" style={{ color: "white" }}>
-          {" "}
+        <Link
+            to="/transversing-of-array"
+            className={`nav-link ${
+              isNavLinkActive("/transversing-of-array ") ? "active" : "text-light"
+            }`}
+          >
           <p> 2. Array Traversal: </p>
         </Link>
-        <Link to="/reverse-of-array" style={{ color: "white" }}>
+        <Link
+            to="/reverse-of-array"
+            className={`nav-link ${
+              isNavLinkActive("/reverse-of-array ") ? "text-primary" : "text-light"
+            }`}
+          >
           <p> 3. Reversing an Array: </p>
         </Link>
         <Link to="/Pallindrome-in-Array" style={{ color: "white" }}>
