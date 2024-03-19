@@ -240,7 +240,7 @@ const TransversingOfArray = () => {
 
             </p>
             <p style={{ color: 'whitesmoke' }} className='listen'>
-              <span className='bg-dark text-warning'> Real World me Arrays data Storage me use aata h , matrices and image processing me use aata h , Game Developemnt , Audio Processing , Embedded Systems </span>
+              <span className='highlight'> Real World me Arrays data Storage me use aata h , matrices and image processing me use aata h , Game Developemnt , Audio Processing , Embedded Systems </span>
             </p>
 
             <h3 className='text-light pt-2 listen'> 4. Common Mistakes and Best Practices:</h3>

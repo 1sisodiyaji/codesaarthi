@@ -199,32 +199,21 @@ const ReverseOfArray = () => {
                             </div>
                         </div>
 
-                        <h3 className='text-light pt-2 listen'> Reverse Operation Means:</h3>
-                        <p style={{ color: 'whitesmoke' }} className='listen highlight'>
-                            Array reversal means rearranging of the original array in backward direction.
+                        <h3 className='text-light pt-2 listen'> Reverse Operation Ka Matlab:</h3>
+                        <p style={{ color: 'whitesmoke' }} className='listen'>
+                        Array ko reverse karna ka matlab hai uske elements ko ulta kar dena, jaise hum ek line ko ulta kar lete hain. Yeh operation simple, par powerful hai.
                         </p>
-                        <p className='text-light listen'>For example an array is int arr[ ] = {`{1,2,3,4,5}`} if the transversal action will be perform then
-                            it will iterate from 5 and Store them in a array again but the data will store in reverse manner as our desired output will come . <br />
-                            We can perform these operation in many ways as listed below...</p>
 
-                        <h3 className='text-light pt-2 listen'> Reversal Ways:</h3>
+                        <h3 className='text-light pt-2 listen'> Reverse Karne Ka Tareeka:</h3>
+                       
 
-
+                        <div className='p-2 d-lg-none d-block'>
+                            <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                       
                         <h3 className='text-light pt-2 listen'> Backward Loop:</h3>
                         <p style={{ color: 'whitesmoke' }} className='listen'>
-                            This is a kind of reversal operation performed where the loop will be be from backward . this is a general practise most of time we are doing this method. <br />
-                            <pre>
-                                <code className='text-warning'>
-                                    {`
-int [] array = {1,2,3,4,5} ;
-for(int i = array.length - 1 ; i > 0 ; i--) {
-    system.out.println(array[i] + ' ');
-}
-
- Output Will be :- 5,4,3,2,1
-                                    `}
-                                </code>
-                            </pre>
+                        Array ko ulta karne ke liye hum backward loop ka use karte hain. Imagine karo ki aap ek purani tasveer ko rewind kar rahe hain, waise hi array ko bhi ulta karte hain.
                         </p>
 
                         <h3 className='text-light pt-2 listen'>Swapping Elements :</h3>
