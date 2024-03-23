@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import SideTheory from '../../../component/SideTheory'
-import TextForm from '../../../component/Textarea'
+import NewsApi from '../../../component/NewsApi'
 import { Helmet } from 'react-helmet';
 const PallindromeInArray = () => {
   let index = 0;
@@ -86,8 +86,6 @@ const PallindromeInArray = () => {
     speechSynthesis.speak(utterance);
   };
 
-
-
   const pause = () => {
     speechSynthesis.pause();
     setIsSpeaking(false);
@@ -115,7 +113,7 @@ const PallindromeInArray = () => {
     <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
 
-      <div className="row g-0 pt-lg-0 mt-lg-0 F  pt-5 mt-2 design" style={{ backgroundColor: '#031A33' }}>
+      <div className="row g-0 pt-lg-0 mt-lg-0   pt-5 mt-2 design" style={{ backgroundColor: '#031A33' }}>
         <div className={`col-lg-2 col-12  d-lg-none d-block `}
           style={{ backgroundColor: '#031A33', zIndex: '1' }}>
           <div className="row g-0 position-fixed " >
@@ -163,7 +161,7 @@ const PallindromeInArray = () => {
             <div className="row g-0">
               <div className="col-lg-8 col-12">
                 <h2 style={{ color: '#FFE164' }} className='listen'>
-                  Array Mein Palindrome  </h2>
+                  Arrays Palindrome  </h2>
               </div>
               <div className="col-4 d-lg-block d-none">
                 <div className="row g-0 ">
@@ -198,9 +196,9 @@ const PallindromeInArray = () => {
                 </div>
               </div>
             </div>
-            <h3 className='text-light pt-2 listen'> Palindrome in Array - Samajhne Ka Asaan Guide:</h3>
+            <h3 className='text-light pt-2 listen'> Palindrome in Array -</h3>
             <p style={{ color: 'whitesmoke' }} className='listen'>
-              Palindromic words jaise "radar" ko toh hum sab jante hain, par kya aapne kabhi socha hai ki hum coding mein bhi palindromes ka magic kar sakte hain? Aaiye samjhein kaise array mein palindrome ka jadoo karte hain, woh bhi ek simple guide ke through.
+              
             </p>
 
             <h3 className='text-light pt-2 listen'> Palindrome Ka Matlab:</h3>
@@ -257,20 +255,13 @@ const PallindromeInArray = () => {
             </p>
 
           </div>
-          <div class="d-lg-none d-block my-3">
-            <h5 style={{ color: '#FFE164' }} className='ps-2 py-2'> Save your Notes Here :</h5>
-            <TextForm />
-          </div>
+         
         </div>
         
         <div className="col-3 py-5 d-lg-block d-none">
           <h2 style={{ color: '#FFE164' }}> Learn From Here :</h2>
-          <div className='p-2'>
-            <iframe width="100%" height="250px%" src="https://www.youtube.com/embed/YR12Z8f1Dh8?si=3snUaI1u6e26puKn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
           <div className='my-3'>
-            <h5 style={{ color: '#FFE164' }} className='ps-2 py-2'> Save your Notes Here :</h5>
-            <TextForm />
+           <NewsApi/>
           </div>
 
         </div>

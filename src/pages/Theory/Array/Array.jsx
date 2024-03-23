@@ -238,7 +238,7 @@ const Array = () => {
                         <p style={{ color: 'whitesmoke' }} className='listen'>
                             Data structures ke duniya mein, ek array ek important concept hai jo data ko fundamental aur efficient taur par sambhalne mein ek important role nibhata hai. Ek array ek prakar ke element ka ek group hai, jinme har ek ko ek index ya key ke dvara pahchan kiya jata hai.
                             <br />
-                            <span className='bg-dark  text-warning'> Array is a collection of elements of the same type. and the memory is allocated contigious in storage .</span>
+                            <span className='highlight'> Array is a collection of elements of the same type. and the memory is allocated contigious in storage .</span>
                         </p>
 
                         <h3 className='text-light listen'>Definition:</h3>
@@ -254,7 +254,7 @@ const Array = () => {
                             Size Pure Operation me fixed rahta hai. <br />
                             example:- in C language:<code> int arr[5] = [0,1,2,3,4]</code> <br />
 
-                            <span className='bg-dark text-warning'> Note: - We can define the length of array as maximum in two conditions as inside int [ ] = 10<sup>6</sup> but when we declare it globally it could be 10<sup>7</sup></span>
+                            <span className='highlight'> Note: - We can define the length of array as maximum in two conditions as inside int [ ] = 10<sup>6</sup> but when we declare it globally it could be 10<sup>7</sup></span>
                         </p>
 
                         <h3 className='text-light listen'>Homogeneous Elements:</h3>
@@ -269,7 +269,7 @@ const Array = () => {
                             Index zero se shuru hota hai aur array ke size se kam ke index tak jata hai 1 jaise . <br />
                             <code> int arr[5] = [0,1,2,3,4]</code> <br />
                             isme Array ka size 5 hai but element ka indexing 0 is krne ke baad 4 tak hi gya so, <br />
-                            <code className='bg-dark text-warning'>index = ArraySize - 1.</code> <br />
+                            <code className='highlight'>index = ArraySize - 1.</code> <br />
 
                             Advantages of Arrays:
                         </p>
@@ -284,7 +284,7 @@ const Array = () => {
 
                         <h3 className='text-light listen'>Memory Efficiency :</h3>
                         <p style={{ color: 'whitesmoke' }} className='listen'>
-                            Arrays memory-efficient hote hain kyun ki ve element ko ek ke sath agla  milte hain jisse ki <span className='bg-dark text-warning'>contigiuos memory allocation </span>  bhi kehte h .
+                            Arrays memory-efficient hote hain kyun ki ve element ko ek ke sath agla  milte hain jisse ki <span className='highlight'>contigiuos memory allocation </span>  bhi kehte h .
                         </p>
 
                         <h3 className='text-light listen'>Ease of Implementation :</h3>
@@ -425,7 +425,7 @@ const ArrayExample = () => {
                         <h2 className='text-danger listen'>Disadvantages</h2>
 
                         <h3 className='text-light listen'>Fixed Size:</h3>
-                        <p className='listen text-warning bg-dark'>Fixed size se, agar array pura end tak use  nahin hota hai, to yah unused memory loss ka karan ban sakta hai. </p>
+                        <p className='listen highlight'>Fixed size se, agar array pura end tak use  nahin hota hai, to yah unused memory loss ka karan ban sakta hai. </p>
 
                         <h3 className='text-light listen'> Insertion aur Deletion:</h3>
                         <p style={{ color: 'whitesmoke' }} className='listen'>Insertion aur deletion operations krne me dikkat ho sakti hain kyun ki inme element ko position shifting karne ki Zarrorat hoti hai. </p>
