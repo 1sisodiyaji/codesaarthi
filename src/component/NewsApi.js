@@ -6,6 +6,7 @@ const NewsApi = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    console.log("entered ");
     const fetchData = async () => {
         try {
             const response = await axios.get('https://newsapi.org/v2/top-headlines', {
@@ -15,7 +16,7 @@ const NewsApi = () => {
                     apiKey: '6bcf20f6a79d49b2bbeee8d4b6421245',
                 },
             });
-
+console.log("Response getted");
             return response.data.articles;
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -27,8 +28,7 @@ const NewsApi = () => {
         try {
             const saveNewsResponse = await axios.post('https://codesaarthiserver.cyclic.app/api/saveNews', { articles: newsData }); 
             if (saveNewsResponse.data.status === "success") {
-                console.log('News saved' + saveNewsResponse);
-                console.log("main data is "+ saveNewsResponse.data.newsData);
+              console.log("Data saved");
                 return newsData;
             } else {
                 console.error('Error saving news:', saveNewsResponse.data.error);
@@ -44,6 +44,7 @@ const NewsApi = () => {
             const newsData = await fetchData();
             const savedNewsData = await saveData(newsData);
             setData(savedNewsData);
+            console.log("Showed");
         } catch (error) {
             console.error('Error:', error);
         }
