@@ -15,25 +15,45 @@ const NewsApi = () => {
                     apiKey: '6bcf20f6a79d49b2bbeee8d4b6421245',
                 },
             });
-            console.log(response);
-            const newsData = response.data.articles;
-            const saveNewsResponse = await axios.post('https://codesaarthiserver.cyclic.app/api/saveNews', { articles: newsData }); 
-            if (saveNewsResponse.data.status === "success") {
-              console.log('News saved' + saveNewsResponse);
-              console.log("main data is "+ saveNewsResponse.data.newsData);
-                setData(newsData);
-            } else {
-                console.error('Error saving news:', saveNewsResponse.data.error);
-            }
+
+            return response.data.articles;
         } catch (error) {
             console.error('Error fetching data:', error);
+            throw error;
         }
     };
-    fetchData();
+
+    const saveData = async (newsData) => {
+        try {
+            const saveNewsResponse = await axios.post('https://codesaarthiserver.cyclic.app/api/saveNews', { articles: newsData }); 
+            if (saveNewsResponse.data.status === "success") {
+                console.log('News saved' + saveNewsResponse);
+                console.log("main data is "+ saveNewsResponse.data.newsData);
+                return newsData;
+            } else {
+                console.error('Error saving news:', saveNewsResponse.data.error);
+                throw new Error(saveNewsResponse.data.error);
+            }
+        } catch (error) {
+            throw error;
+        }
+    };
+
+    const fetchDataAndSave = async () => {
+        try {
+            const newsData = await fetchData();
+            const savedNewsData = await saveData(newsData);
+            setData(savedNewsData);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+    fetchDataAndSave();
     const intervalId = setInterval(fetchData, 20 * 60 * 1000);
     return () => clearInterval(intervalId);
-    
 }, []);
+
 
 
 

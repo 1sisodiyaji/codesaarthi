@@ -444,7 +444,7 @@ const ArrayExample = () => {
                 </div>
 
                 <div className="col-3 py-5 d-lg-block d-none">
-                    <div className='my-3'>
+                    <div className='my-3 tilt-effect'>
                    <h5 className='text-warning'>Practise Question</h5> 
                    <Link to ="/ArrayProblems" className="card p-3 text-warning" style={{backgroundColor:'#000435' , boxShadow:'5px 5px 20px #3393df'}}>
                     <h5> Arrays Practise Questions <i class="fi fi-ss-portal-enter ps-2"></i></h5>
