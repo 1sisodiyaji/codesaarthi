@@ -1,10 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { Helmet } from 'react-helmet';
 const KishanMitra = () => {
     return (
         <>
-            <>
+        <Helmet>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="keywords" content="Kishan Mitra , php Based Projects , Kishan helping web app , Kishan php project , Kishan saathi web app , top 5 farmer related  php projects , creative php projects , full stack php projects ,php mysql projects , Kishan Mitra freindly app for farmers" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href="https://codesaarthi.com/kishanMitra" />
+                <meta name="description" content="It is one of the best ever project as related to farmers where they can search the weather , food price and many more . a friendly suitted app for farmers." />
+                <title>Kishan Mitra  php  Projects | CodeSaarthi</title>
+                <meta property="og:title" content="Kishan Mitra  php  Projects | CodeSaarthi" />
+                <meta property="og:description" content="It is one of the best ever project as related to farmers where they can search the weather , food price and many more . a friendly suitted app for farmers." />
+                <meta property="og:image" content="https://codesaarthi.com/img/farmer.png" />
+                <meta property="og:url" content="https://codesaarthi.com/kishanMitra" />
+                <meta property="og:type" content="Education-Website" />
+                <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+            </Helmet>
                 <div className="" style={{ backgroundColor: '#000000' }}>
                     <div className=" container-lg conatiner-sm-fluid design g-0 p-2 py-lg-5">
 
@@ -58,7 +71,7 @@ const KishanMitra = () => {
 
                     </div>
                 </div>
-            </>
+          
         </>
     )
 }

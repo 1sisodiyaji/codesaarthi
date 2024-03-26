@@ -1,9 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet';
 
 const PortfolioHtml = () => {
     return (
         <>
+        <Helmet>
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="keywords" content="basic html project , top 5 easy html projects, learn html with projects., portfolio page in html , easy projects in html." />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href="https://codesaarthi.com/PortfolioHtml" />
+                <meta name="description" content="basically these page is a portfolio of  a person in html , tried to learn more tags in html .  Portfolio based on only html ." />
+                <title>Portfolio page in html | CodeSaarthi</title>
+                <meta property="og:title" content="Portfolio page in html | CodeSaarthi" />
+                <meta property="og:description" content="basically these page is a portfolio of  a person in html , tried to learn more tags in html .  Portfolio based on only html ." />
+                <meta property="og:image" content="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png" />
+                <meta property="og:url" content="https://codesaarthi.com/PortfolioHtml" />
+                <meta property="og:type" content="Education-Website" />
+                <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+            </Helmet>
             <div className="" style={{ backgroundColor: '#000000' }}>
                 <div className=" container-lg conatiner-sm-fluid design g-0 p-2 py-lg-5">
 

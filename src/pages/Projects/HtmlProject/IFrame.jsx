@@ -1,10 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet';
 
 const IFrame = () => {
     return (
         <>
-
+ <Helmet>
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="keywords" content="basic html project , top 5 easy html projects, learn html with projects., youtube tags , IFrame based projects ." />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href="https://codesaarthi.com/youtubeBasedProject" />
+                <meta name="description" content="basically these page is a youtube short clone to use their tags and make more practise of different media tasg in html." />
+                <title>Youtube based page in html | CodeSaarthi</title>
+                <meta property="og:title" content="Youtube based page in html | CodeSaarthi" />
+                <meta property="og:description" content="basically these page is a youtube short clone to use their tags and make more practise of different media tasg in html.." />
+                <meta property="og:image" content="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png" />
+                <meta property="og:url" content="https://codesaarthi.com/youtubeBasedProject" />
+                <meta property="og:type" content="Education-Website" />
+                <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+            </Helmet>
             <div className="" style={{ backgroundColor: '#000000' }}>
                 <div className=" container-lg conatiner-sm-fluid design g-0 p-2 py-lg-5">
 

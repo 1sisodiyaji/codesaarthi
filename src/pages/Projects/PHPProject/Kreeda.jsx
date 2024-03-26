@@ -1,10 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet';
 
 const Kreeda = () => {
     return (
         <>
-            <>
+            <Helmet>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="keywords" content="kreeda , php Based Projects , fanatsy web app , fantasy php project , rummy web app , top 5 php projects , creative php projects , full stack php projects ,php mysql projects , Dream 11 clone project" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href="https://codesaarthi.com/Kreeda" />
+                <meta name="description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
+                <title>Kreeda fantasy app  Projects | CodeSaarthi</title>
+                <meta property="og:title" content="Kreeda fantasy app  Projects | CodeSaarthi" />
+                <meta property="og:description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
+                <meta property="og:image" content="https://codesaarthi.com/img/KreedaLogo.png" />
+                <meta property="og:url" content="https://codesaarthi.com/Kreeda" />
+                <meta property="og:type" content="Education-Website" />
+                <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+            </Helmet>
                 <div className="" style={{ backgroundColor: '#000000' }}>
                     <div className=" container-lg conatiner-sm-fluid design g-0 p-2 py-lg-5">
 
@@ -57,7 +71,7 @@ const Kreeda = () => {
 
                     </div>
                 </div>
-            </>
+            
         </>
     )
 }

@@ -7,15 +7,15 @@ const PhpProject = () => {
         <>
             <Helmet>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <meta name="keywords" content="Discord Clone, Discord project, Chat application, Messaging app, Real-time communication" />
+                <meta name="keywords" content="Php Based Projects , php projects , full stack php projects ,php mysql projects " />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://codesaarthi.com/HtmlProject" />
-                <meta name="description" content="Explore the development of a Discord clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a real-time messaging application." />
-                <title>Html Based Projects | CodeSaarthi</title>
-                <meta property="og:title" content="Discord Clone Project | Your Website Name" />
-                <meta property="og:description" content="Explore the development of a Discord clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a real-time messaging application." />
-                <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
-                <meta property="og:url" content="https://codesaarthi.com/HtmlProject" />
+                <link rel="canonical" href="https://codesaarthi.com/phpProjects" />
+                <meta name="description" content="Explore the project series of php were we upload a full stcak project based on php , mysql an full stack project totally responsive and well structured as for free ." />
+                <title>PHP Based Projects | CodeSaarthi</title>
+                <meta property="og:title" content="PHP Based Projects | CodeSaarthi" />
+                <meta property="og:description" content="Explore the project series of php were we upload a full stcak project based on php , mysql an full stack project totally responsive and well structured as for free" />
+                <meta property="og:image" content="https://e7.pngegg.com/pngimages/666/502/png-clipart-brand-php-logo-computer-file-product-breeze-blue-text.png" />
+                <meta property="og:url" content="https://codesaarthi.com/phpProjects" />
                 <meta property="og:type" content="Education-Website" />
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
