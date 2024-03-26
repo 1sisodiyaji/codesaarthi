@@ -13,7 +13,7 @@ const IFrame = () => {
                 <meta name="description" content="basically these page is a youtube short clone to use their tags and make more practise of different media tasg in html." />
                 <title>Youtube based page in html | CodeSaarthi</title>
                 <meta property="og:title" content="Youtube based page in html | CodeSaarthi" />
-                <meta property="og:description" content="basically these page is a youtube short clone to use their tags and make more practise of different media tasg in html.." />
+                <meta property="og:description" content="basically these page is a youtube short clone to use their tags and make more practise of different media tasg in html." />
                 <meta property="og:image" content="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png" />
                 <meta property="og:url" content="https://codesaarthi.com/youtubeBasedProject" />
                 <meta property="og:type" content="Education-Website" />
