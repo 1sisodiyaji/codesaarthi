@@ -60,7 +60,7 @@ const Projects = () => {
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" className="img-fluid" style={{borderRadius: '50%'}} />
+                    <img src="img/reactLogo.png" className="img-fluid" style={{borderRadius: '50%'}} />
                   </div>
                   <div className="col-8 align-self-center">
                     <div>

@@ -9,13 +9,13 @@ const Spotify = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="Spotify Clone, Music Streaming, React, Frontend Project" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://codesaarthi.com/Spotify-Clone" />
+        <link rel="canonical" href="https://codesaarthi.com/Spotify-clone" />
         <meta name="description" content="Explore the development of a Spotify Clone frontend project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a music streaming application using React." />
-        <title>Spotify Clone Project: Tutorials, Examples, and Practice | Your Website Name</title>
-        <meta property="og:title" content="Spotify Clone Project | Your Website Name" />
+        <title>Spotify Clone Project: Tutorials, Examples, and Practice | Codesaarthi</title>
+        <meta property="og:title" content="Spotify Clone Project | Codesaarthi" />
         <meta property="og:description" content="Explore the development of a Spotify Clone frontend project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a music streaming application using React." />
         <meta property="og:image" content="https://codesaarthi.com/img/Spotify1.jpg" />
-        <meta property="og:url" content="https://codesaarthi.com/Spotify-Clone" />
+        <meta property="og:url" content="https://codesaarthi.com/Spotify-clone" />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>

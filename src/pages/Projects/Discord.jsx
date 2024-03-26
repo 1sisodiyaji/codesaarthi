@@ -15,7 +15,7 @@ const DiscordProject = () => {
         <meta property="og:title" content="Discord Clone Project | Your Website Name" />
         <meta property="og:description" content="Explore the development of a Discord clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a real-time messaging application." />
         <meta property="og:image" content="https://codesaarthi.com/img/Discord1.jpg" />
-        <meta property="og:url" content="https://codesaarthi.com/Amazon-clone" />
+        <meta property="og:url" content="https://codesaarthi.com/Discord" />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>

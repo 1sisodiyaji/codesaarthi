@@ -10,8 +10,8 @@ const Theory = () => {
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://codesaarthi.com/theory" />
   <meta name="description" content="Explore theory and topics related to Data Structures and Algorithms, Operating Systems, Database Management Systems, Computer Networks, and more." />
-  <title>Theory: Data Structures, Algorithms, OS, DBMS, CN | Your Website Name</title>
-  <meta property="og:title" content="Theory: Data Structures, Algorithms, OS, DBMS, CN | Your Website Name" />
+  <title>Theory: DSA , OS, DBMS, CN | Codesaarthi</title>
+  <meta property="og:title" content="Theory: DSA , OS, DBMS, CN | Codesaarthi"/>
   <meta property="og:description" content="Explore theory and topics related to Data Structures and Algorithms, Operating Systems, Database Management Systems, Computer Networks, and more." />
   <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
   <meta property="og:url" content="https://codesaarthi.com/theory" />
@@ -67,7 +67,7 @@ const Theory = () => {
               <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
-                    <img src="https://cdn2.vectorstock.com/i/1000x1000/44/71/os-monogram-logo-vector-33144471.jpg" className="img-fluid rounded-8  " style={{height: '18vh' }}/>
+                    <img src="img/osLogo.png" className="img-fluid rounded-8" style={{height: '18vh' }}/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light">Os  Notes </h5></div>

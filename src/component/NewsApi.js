@@ -5,56 +5,7 @@ import axios from 'axios';
 const NewsApi = () => {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    console.log("entered ");
-    const fetchData = async () => {
-        try {
-            const response = await axios.get('https://newsapi.org/v2/top-headlines', {
-                params: {
-                    country: 'in',
-                    category: 'technology',
-                    apiKey: '6bcf20f6a79d49b2bbeee8d4b6421245',
-                },
-            });
-console.log("Response getted");
-            return response.data.articles;
-        } catch (error) {
-            console.error('Error fetching data:', error);
-            throw error;
-        }
-    };
-
-    const saveData = async (newsData) => {
-        try {
-            const saveNewsResponse = await axios.post('https://codesaarthiserver.cyclic.app/api/saveNews', { articles: newsData }); 
-            if (saveNewsResponse.data.status === "success") {
-              console.log("Data saved");
-                return newsData;
-            } else {
-                console.error('Error saving news:', saveNewsResponse.data.error);
-                throw new Error(saveNewsResponse.data.error);
-            }
-        } catch (error) {
-            throw error;
-        }
-    };
-
-    const fetchDataAndSave = async () => {
-        try {
-            const newsData = await fetchData();
-            const savedNewsData = await saveData(newsData);
-            setData(savedNewsData);
-            console.log("Showed");
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    };
-
-    fetchDataAndSave();
-    const intervalId = setInterval(fetchData, 20 * 60 * 1000);
-    return () => clearInterval(intervalId);
-}, []);
-
+ 
 
 
 

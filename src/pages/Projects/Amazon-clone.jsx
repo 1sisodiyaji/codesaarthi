@@ -1,9 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from "react-helmet";
 
 const AmazonClone = () => {
     return (
         <>
+      <Helmet>
+        <meta name="keywords" content="Amazon clone project , basic frontend of amazon clone , amazon clone , amazon ui clone" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://codesaarthi.com/Amazon-clone" />
+        <meta name="description" content="Amazon clone project based on simple ui and responsive , based on learning making people to move it further and learn the core . " />
+        <title>Amazon Clone Projects | Codesaarthi</title>
+        <meta property="og:title" content="Amazon Clone Projects | Codesaarthi" />
+        <meta property="og:description" content="Amazon clone project based on simple ui and responsive , based on learning making people to move it further and learn the core . " />
+        <meta property="og:image" content="https://codesaarthi.com/img/amazon1.jpg" />
+        <meta property="og:url" content="https://codesaarthi.com/Amazon-clone" />
+        <meta property="og:type" content="Website" />
+        <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+      </Helmet>
             <div className="" style={{ backgroundColor: '#000000' }}>
                 <div className=" container-lg conatiner-sm-fluid design g-0 p-2 py-lg-5">
 

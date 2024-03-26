@@ -1,8 +1,6 @@
 import React from "react";
 import "../App.css";
 import { Helmet } from "react-helmet";
-import AboutUs from "./AboutUs";
-import Theory from "./Theory";
 import Projects from "./Projects";
 import Problems from "./Problems";
 import { Link } from "react-router-dom";
