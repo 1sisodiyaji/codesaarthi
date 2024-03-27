@@ -26,38 +26,38 @@ const TripPlanner = () => {
 
                     <h6 className='textColor'>Description:</h6>
                     <p className='text-light'>
-                        in these project we are going to learn about core concept of java . 
+                        in these project we are going to learn about core concept of java . Bye the use of java core only we built an awesome java projects . We built an java app having hotesls list room price  and bookings system , 
                     </p>
                     <h6 className='textColor'>Key Features:</h6>
 
                     <ul className='text-light'>
-                        <li>Using Tags to practise the basic html code.</li>
-                        <li>Practising more to use media tags in code. </li>
+                        <li>Booking Hotels and getting discount system too.</li>
+                        <li>Get alert at lowest rate when booking hotels. </li>
+                        <li>Login System in java core as JDBC connection using Mysql Database.</li>
                     </ul>
 
                     <h6 className='textColor'>Screenshot:</h6>
                     <div className="row my-3">
-                        <div className="col-6 "><img src="img/TripPlanner1.jpg" alt="" className="img-fluid" /></div>
-                        <div className="col-6"><img src="img/TripPlanner2.jpg" alt="" className="img-fluid" /></div>
+                        <div className="col-6 "><img src="img/TripPlanner1.jpg" alt="trip planner images " className="img-fluid" /></div>
+                        <div className="col-6"><img src="img/TripPlanner2.jpg" alt="images of trip planner" className="img-fluid" /></div>
                     </div>
 
 
 
                     <h6 className='textColor'> Tech Stack:</h6>
                     <ul className='text-light'>
-                        <li>  HTML: Page structure aur content ke liye.</li>
+                        <li> Using java core as awt and and swing For Frontend .</li>
+                        <li>JDBC Connection for mysql  as database.</li>
 
                     </ul>
 
-                    <h6 className='textColor'> Kaise Shuru Karein:</h6>
+                    <h6 className='textColor'> How to Start:</h6>
 
 
-                    <p className='text-light'>Iske baad, aap isey customize kar sakte hain apne requirements ke hisaab se.</p>
-
-                    <h6 className='text-warning'>Html Code :</h6>
-                    <div className="container border rounded-8 p-3 text-light">
-
-                    </div>
+                    <p className='text-light'>You can go through this link of Github: <Link>https://github.com/1sisodiyaji/TripPlanners.git</Link></p>
+                    
+                    <h6 className='text-warning'>or you can visit Here:</h6>
+                    <Link to="https://github.com/1sisodiyaji/TripPlanners.git" target='blank'> <button className='btn btn-dark text-warning text-capitalize'> Click Here</button></Link>
 
 
                     <h6 className='text-light my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</h6>

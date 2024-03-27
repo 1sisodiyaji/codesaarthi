@@ -29,7 +29,7 @@ const JavaProject = () => {
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/TripPlanner1.jpg" className='img-fluid p-2' alt="trip planner logo" style={{borderRadius:'50%'}} />
+                                                <img src="img/javaProjects.png" className='img-fluid p-2' alt="trip planner logo" style={{borderRadius:'50%'}} />
                                             </div>
                                         </div>
                                         <div className="col-8">
