@@ -117,7 +117,7 @@ const Projects = () => {
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="../img/logo.png" className="img-fluid" />
+                    <img src="../img/javaProjects.png" className="img-fluid p-1" style={{borderRadius:'40%'}}/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
@@ -125,7 +125,7 @@ const Projects = () => {
                     </div>
 
                     <div>
-                      <Link to="/dsa">
+                      <Link to="/java-Projects">
                         <div className="btn text-warning text-capitalize bg-dark">
                           Check it Out
                         </div>
@@ -173,7 +173,7 @@ const Projects = () => {
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="../img/logo.png" className="img-fluid" />
+                    <img src="../img/htmlCSS.png" className="img-fluid m-2"/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
@@ -201,7 +201,7 @@ const Projects = () => {
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="../img/logo.png" className="img-fluid" />
+                    <img src="../img/htmlCSSjs.png" className="img-fluid" style={{borderRadius:'50%'}} />
                   </div>
                   <div className="col-8 align-self-center">
                     <div>

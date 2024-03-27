@@ -248,6 +248,24 @@
   </url>
 
   <url>
+    <loc>https://codesaarthi.com/Architecture-Of-Dbms</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/java-Projects</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/TripPlanner</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://codesaarthi.com/*</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

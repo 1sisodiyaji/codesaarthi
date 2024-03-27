@@ -12,7 +12,7 @@ const HtmlProject = () => {
                 <link rel="canonical" href="https://codesaarthi.com/HtmlProject" />
                 <meta name="description" content="Explore the development of a Discord clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a real-time messaging application." />
                 <title>Html Based Projects | CodeSaarthi</title>
-                <meta property="og:title" content="Discord Clone Project | Your Website Name" />
+                <meta property="og:title" content="Discord Clone Project | codesaarthi" />
                 <meta property="og:description" content="Explore the development of a Discord clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a real-time messaging application." />
                 <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
                 <meta property="og:url" content="https://codesaarthi.com/HtmlProject" />
