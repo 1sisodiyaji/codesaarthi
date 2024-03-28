@@ -36,7 +36,7 @@ export const Navbar = () => {
   return (
     <>
       {/* <!-- Navbar For small screen--> */}
-      <nav  className="navbar navbar-expand-lg navbar-dark fixed-top d-lg-none d-md-block d-sm-block  shadow-0"
+      <nav  className="navbar navbar-expand-lg navbar-dark fixed-top d-lg-none d-md-none d-sm-block  shadow-0"
         style={{ backgroundColor: "transparent" }}
       >
         {/* <!-- Container wrapper --> */}
@@ -67,7 +67,7 @@ export const Navbar = () => {
           isSidebarOpen ? "show" : ""
         } d-lg-none d-md-none d-sm-block`}
       >
-        <div className="pt-3">
+        <div className="pt-5 mt-2">
           <ul className="nav flex-column text-start ms-4">
             {!userName && (
               <>
@@ -173,7 +173,7 @@ export const Navbar = () => {
       </div>
 
       {/* <!-- Navbar For big screen--> */}
-      <nav className="navbar navbar-expand-lg sticky sticky-top p-0 d-lg-block  d-none  shadow-0"
+      <nav className="navbar navbar-expand-lg sticky sticky-top p-0 d-lg-block d-md-block d-none  shadow-6"
         style={{ zIndex: "100000!important" }}
       >
         <div

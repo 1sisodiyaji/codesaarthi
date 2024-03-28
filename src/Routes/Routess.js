@@ -19,9 +19,9 @@ import Roadmap from "../pages/Roadmap";
 import Dsa from "../pages/Roadmap/Dsa";
 import Array from "../pages/Theory/Array/Array";
 import TransversingOfArray from "../pages/Theory/Array/TransversingOfArray";
-import WebDevelopment from "../pages/Projects/WebDevelopment";
-import AmazonClone from "../pages/Projects/Amazon-clone";
-import Discord from "../pages/Projects/Discord";
+import WebDevelopment from "../pages/Projects/CloneProjects/WebDevelopment";
+import AmazonClone from "../pages/Projects/CloneProjects/Amazon-clone";
+import DiscordProject from "../pages/Projects/CloneProjects/Discord";
 import ReverseOfArray from "../pages/Theory/Array/ReverseOf Array";
 import Challenges from "../pages/Theory/Array/Challenges";
 import PallindromeInArray from "../pages/Theory/Array/PallindromeInArray";
@@ -34,9 +34,9 @@ import BasicDbms from "../pages/Theory/Dbms/Basic_Dbms";
 import Os from "../pages/Roadmap/Os";
 import Dbms from "../pages/Roadmap/Dbms";
 import ComputerNetworks from "../pages/Roadmap/ComputerNetworks";
-import RazorPay from "../pages/Projects/RazorPay";
-import Spotify from "../pages/Projects/Spotify";
-import ReactProject from "../pages/Projects/ReactProject";
+import RazorpayProject from "../pages/Projects/CloneProjects/RazorPay";
+import Spotify from "../pages/Projects/CloneProjects/Spotify";
+import ReactProject from "../pages/Projects/React/ReactProject";
 import BlogApps from "../pages/Projects/React/BlogApps"; 
 import PractiseBasicArray from "../pages/Practise/Array/PractiseBasicArray";
 import HtmlProject from "../pages/Projects/HtmlProject/HtmlProject";
@@ -103,8 +103,8 @@ const Routess = () => {
           <Route path="/ComputerNetwork" element={<ComputerNetworks />} />
           <Route path="/web-development" element={<WebDevelopment />} />
           <Route path="/Amazon-clone" element={<AmazonClone />} />
-          <Route path="/Discord" element={<Discord />} />
-          <Route path="/RazorPay" element={<RazorPay />} />
+          <Route path="/Discord" element={<DiscordProject />} />
+          <Route path="/RazorPay" element={<RazorpayProject />} />
           <Route path="/Spotify-Clone" element={<Spotify />} />
           <Route path="/React-based-project" element={<ReactProject />} />
           <Route path="/blog-app-react" element={<BlogApps/>} />
