@@ -50,6 +50,7 @@ import KishanMitra from "../pages/Projects/PHPProject/KishanMitra";
 import ArchitectureOfDbms from "../pages/Theory/Dbms/ArchitectureOfDbms"; 
 import JavaProject from "../pages/Projects/JavaProject/JavaProject";
 import TripPlanner from "../pages/Projects/JavaProject/TripPlanner";
+import FunCalculations from "../pages/Projects/JavaProject/FunCalculations";
 
 
 const Routess = () => {
@@ -120,6 +121,7 @@ const Routess = () => {
           <Route path="/Architecture-Of-Dbms" element={<ArchitectureOfDbms/>} />
           <Route path="/java-Projects" element={<JavaProject/>} />
           <Route path="/TripPlanner" element={<TripPlanner/>} />
+          <Route path="/FunCalculations" element={<FunCalculations />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 

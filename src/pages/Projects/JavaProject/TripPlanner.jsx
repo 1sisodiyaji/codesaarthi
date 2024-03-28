@@ -63,13 +63,7 @@ const TripPlanner = () => {
                     <h6 className='text-light my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</h6>
                     <div className="row">
                         <div className="col-4 text-center">
-                            <Link to="/AssignmentProject" className="btn bg-dark text-warning text-capitalize">Assingment page <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
-                        </div>
-                        <div className="col-4 text-center">
-                            <Link to="/PortfolioHtml" className="btn bg-dark text-warning text-capitalize">Portfolio <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
-                        </div>
-                        <div className="col-4 text-center">
-                            <Link to="/ProductCatalog" className="btn bg-dark text-warning text-capitalize">Product Catalog <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to="/FunCalculations" className="btn bg-dark text-warning text-capitalize">Fun Calculations <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                     </div>
 

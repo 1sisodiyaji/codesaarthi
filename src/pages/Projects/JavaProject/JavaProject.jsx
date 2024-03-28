@@ -24,7 +24,7 @@ const JavaProject = () => {
                 <div className="row py-5 ">
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect " style={{ backgroundColor: '#000B18' }}>
+                        <div className="card tilt-effect bg-dark">
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
@@ -34,8 +34,8 @@ const JavaProject = () => {
                                         </div>
                                         <div className="col-8">
                                             <h5 className="card-title text-warning">Trip Planner</h5>
-                                            <p className="card-text text-light">This is Project of booking hotels , managing payments and many more...</p>
-                                            <Link to="/TripPlanner" className="btn bg-dark text-warning text-capitalize">get it </Link>
+                                            <p className="card-text text-light text-capitalize">This is Project of booking hotels , managing payments and many more...</p>
+                                            <Link to="/TripPlanner" className="btn bg-black text-warning text-capitalize">get it </Link>
                                         </div>
                                 </div>
                             </div>
@@ -43,18 +43,18 @@ const JavaProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect " style={{ backgroundColor: '#000B18' }}>
+                        <div className="card tilt-effect bg-dark">
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png" className='img-fluid' alt="" />
+                                                <img src="img/javaProjects.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
                                             </div>
                                         </div>
                                         <div className="col-8">
-                                            <h5 className="card-title text-warning">Portfolio basic page</h5>
-                                            <p className="card-text text-light">This is an Basic project to create ayour portfolio based on html.</p>
-                                            <Link to="/PortfolioHtml" className="btn bg-dark text-warning text-capitalize">get it </Link>
+                                            <h5 className="card-title text-warning">Fun Calculations</h5>
+                                            <p className="card-text text-light text-capitalize">This is an project on the basis of normal calculations and operations .</p>
+                                            <Link to="/FunCalculations" className="btn bg-black text-warning text-capitalize">get it </Link>
                                         </div>
                                 </div>
                             </div>
