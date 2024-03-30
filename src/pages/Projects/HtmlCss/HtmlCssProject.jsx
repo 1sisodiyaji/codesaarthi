@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
-const JavaProject = () => {
+const HtmlCssProject = () => {
     return (
         <>
             <Helmet>
@@ -86,4 +86,4 @@ const JavaProject = () => {
     )
 }
 
-export default JavaProject
+export default HtmlCssProject

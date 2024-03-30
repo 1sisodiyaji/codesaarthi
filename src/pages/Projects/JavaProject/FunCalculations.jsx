@@ -65,6 +65,9 @@ const FunCalculations = () => {
                         <div className="col-4 text-center">
                             <Link to="/TripPlanner" className="btn bg-dark text-warning text-capitalize">Trip Planner <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
+                        <div className="col-4 text-center">
+                            <Link to="/Chat-App" className="btn bg-dark text-warning text-capitalize">Chat App <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                        </div>
                     </div>
 
                 </div>

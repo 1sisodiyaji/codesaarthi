@@ -181,7 +181,7 @@ const Projects = () => {
                     </div>
 
                     <div>
-                      <Link to="/dsa">
+                      <Link to="/Html-Css-Projects">
                         <div className="btn text-warning text-capitalize bg-dark">
                           Check it Out
                         </div>

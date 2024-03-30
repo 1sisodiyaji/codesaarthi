@@ -51,6 +51,8 @@ import ArchitectureOfDbms from "../pages/Theory/Dbms/ArchitectureOfDbms";
 import JavaProject from "../pages/Projects/JavaProject/JavaProject";
 import TripPlanner from "../pages/Projects/JavaProject/TripPlanner";
 import FunCalculations from "../pages/Projects/JavaProject/FunCalculations";
+import ChatApp from "../pages/Projects/JavaProject/ChatApp";
+import HtmlCssProject from "../pages/Projects/HtmlCss/HtmlCssProject";
 
 
 const Routess = () => {
@@ -122,6 +124,8 @@ const Routess = () => {
           <Route path="/java-Projects" element={<JavaProject/>} />
           <Route path="/TripPlanner" element={<TripPlanner/>} />
           <Route path="/FunCalculations" element={<FunCalculations />} />
+          <Route path="/Chat-App" element={<ChatApp/>} />
+          <Route path="/Html-Css-Projects" element={<HtmlCssProject/>} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 
