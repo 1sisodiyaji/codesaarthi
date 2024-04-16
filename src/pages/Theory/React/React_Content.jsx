@@ -495,6 +495,7 @@ const React_Content = () => {
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
       <div class="container-fluid design g-0" style={{ backgroundColor: '#031A33' }}>
+      <div className="container">
         <div class=" d-lg-none d-block">
           <button
             onClick={toggleSidebar}
@@ -562,6 +563,7 @@ const React_Content = () => {
             )}
           </div>
         </div>
+      </div>
       </div>
     </>
   );

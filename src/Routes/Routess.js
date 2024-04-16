@@ -45,8 +45,7 @@ import ProductCatalog from "../pages/Projects/HtmlProject/ProductCatalog";
 import IFrame from "../pages/Projects/HtmlProject/IFrame";
 import PhpProject from "../pages/Projects/PHPProject/PhpProjects";
 import Kreeda from "../pages/Projects/PHPProject/Kreeda";
-import KishanMitra from "../pages/Projects/PHPProject/KishanMitra";
-import ArchitectureOfDbms from "../pages/Theory/Dbms/ArchitectureOfDbms"; 
+import KishanMitra from "../pages/Projects/PHPProject/KishanMitra"; 
 import JavaProject from "../pages/Projects/JavaProject/JavaProject";
 import TripPlanner from "../pages/Projects/JavaProject/TripPlanner";
 import FunCalculations from "../pages/Projects/JavaProject/FunCalculations";
@@ -129,7 +128,6 @@ const Routess = () => {
           <Route path="/kishanMitra" element={<KishanMitra/>} />
           <Route path="/ArrayProblems" element={<PractiseBasicArray/>} />
           <Route path="/basic-Dbms" element={<BasicDbms/>} />
-          <Route path="/Architecture-Of-Dbms" element={<ArchitectureOfDbms/>} />
           <Route path="/java-Projects" element={<JavaProject/>} />
           <Route path="/TripPlanner" element={<TripPlanner/>} />
           <Route path="/FunCalculations" element={<FunCalculations />} />

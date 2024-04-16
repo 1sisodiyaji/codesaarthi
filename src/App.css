@@ -174,7 +174,7 @@ body::-webkit-scrollbar {
 .tilt-effect2:hover {
   transform:  scale(1.1);
 }
-.highlight{
+.highlight , strong{
  color: #3393df !important;
 font-weight: bold !important;
 }
