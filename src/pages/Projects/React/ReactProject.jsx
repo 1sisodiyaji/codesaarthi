@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const ReactProject = () => {
-  return (
-    <>
-    <div className="container-fluid design g-0" style={{ minHeight: '100vh' }}>
+    return (
+        <>
+            <div className="container-fluid design g-0" style={{ minHeight: '100vh' }}>
                 <h3 className='text-success text-center text-capitalize pt-5'>here We have Some projects Based on React </h3>
                 <div className="container py-5">
                     <div className="row">
@@ -16,12 +16,12 @@ const ReactProject = () => {
                                 >
                                     <div className="row">
                                         <div className="col-4">
-                                            <img src="../img/amazon1.jpg"  className="img-fluid tilt-effect2" />
+                                            <img src="../img/amazon1.jpg" className="img-fluid tilt-effect2" />
                                         </div>
                                         <div className="col-8 align-self-center">
                                             <div>
                                                 <h5 class="card-title text-light">
-                                                   Blog Apps
+                                                    Blog Apps
                                                 </h5>
                                             </div>
 
@@ -37,14 +37,14 @@ const ReactProject = () => {
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
-    
-    
-    </>
-  )
+
+
+        </>
+    )
 }
 
 export default ReactProject

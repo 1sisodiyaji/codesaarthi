@@ -30,7 +30,6 @@ import SearchingArray from "../pages/Theory/Array/SearchingArray";
 import MultiDimension from "../pages/Theory/Array/MultiDimensaionalArray";
 import DynamicArray from "../pages/Theory/Array/DynamicArray";
 import CommonMistakes from "../pages/Theory/Array/CommonMistakes";
-import BasicDbms from "../pages/Theory/Dbms/Basic_Dbms";
 import Os from "../pages/Roadmap/Os";
 import Dbms from "../pages/Roadmap/Dbms";
 import ComputerNetworks from "../pages/Roadmap/ComputerNetworks";
@@ -61,6 +60,8 @@ import ImageGallery from "../pages/Projects/HtmlCss/ImageGallery";
 import JobApplication from "../pages/Projects/HtmlCss/JobApplication";
 import ProductCard from "../pages/Projects/HtmlCss/ProductCard";
 import React_Content from "../pages/Theory/React/React_Content";
+import BasicDbms from "../pages/Theory/Dbms/Basic_Dbms";
+import ReactSeo from "../pages/Theory/React/ReactSeo";
 
 
 const Routess = () => {
@@ -123,7 +124,7 @@ const Routess = () => {
           <Route path="/AssignmentProject" element={<AssignmentProject/>} />
           <Route path="/ProductCatalog" element={<ProductCatalog/>} />
           <Route path="/youtubeBasedProject" element={<IFrame/>} />
-          <Route path ="/phpProjects" element={<PhpProject/>} />
+          <Route path="/phpProjects" element={<PhpProject/>} />
           <Route path="/Kreeda" element={<Kreeda/>} />
           <Route path="/kishanMitra" element={<KishanMitra/>} />
           <Route path="/ArrayProblems" element={<PractiseBasicArray/>} />
@@ -142,6 +143,7 @@ const Routess = () => {
           <Route path ="/Job-Application-page" element={<JobApplication/>} />
           <Route path ="/Product-Card" element={<ProductCard/>} />
           <Route path="/React-Content" element={<React_Content/>} />
+          <Route path ="/React-Seo" element={<ReactSeo/>} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 

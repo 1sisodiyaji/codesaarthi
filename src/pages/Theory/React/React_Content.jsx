@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 const React_Content = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -218,12 +217,12 @@ const React_Content = () => {
     <strong>useState Hook:</strong> <br/>
     The useState Hook allows functional components to have state by enabling them to declare state variables. It returns a pair of values: the current state value and a function that updates the state value. useState Hook can be called multiple times in a single component to manage multiple state variables independently. <br/>
     <strong>Example:</strong> <br/><br/>
-     <img class ="imageHeight"  src="img/code10.jpg" className="img-fluid my-2" />
+     <img class ="imageHeight"  src="img/code10.jpg" class="img-fluid my-2" />
     <br/><br/>
     <strong>useEffect Hook:</strong> <br/>
     The useEffect Hook enables functional components to perform side effects such as data fetching, subscriptions, or DOM manipulations. It is similar to componentDidMount, componentDidUpdate, and componentWillUnmount lifecycle methods in class components combined. useEffect accepts a function that contains the code for the side effect and an optional array of dependencies to control when the effect is executed. <br/>
     <strong>Example:</strong> <br/><br/>
-     <img class ="imageHeight"  src="img/code11.jpg" className="img-fluid my-2" />
+     <img class ="imageHeight"  src="img/code11.jpg" class="img-fluid my-2" />
     <br/><br/>
     <strong>Other Hooks:</strong> <br/>
     React provides several built-in Hooks for common use cases, such as useContext for accessing context in functional components, useRef for accessing DOM elements and keeping mutable values between renders, and more. Additionally, developers can create custom Hooks to encapsulate reusable logic and share it across components. <br/> <br/>
@@ -237,12 +236,12 @@ const React_Content = () => {
     <strong>Creating a Context:</strong> <br/>
     To create a new context, you use the createContext function provided by React. This function returns a Context object that consists of two components: Provider and Consumer. The Provider component allows you to pass a value to all descendants of the component tree, while the Consumer component allows you to access the value from any descendant component. <br/>
     <strong>Example:</strong> <br/><br/>
-     <img class ="imageHeight"  src="img/code12.jpg" className="img-fluid my-2" />
+     <img class ="imageHeight"  src="img/code12.jpg" class="img-fluid my-2" />
     <br/><br/>
     <strong>Using Context in Class Components:</strong> <br/>
     In class components, you can use the static contextType property or the Consumer component to access context values. The static contextType property allows you to access the context value directly as a property of the class instance, while the Consumer component provides a render prop function to access the context value. <br/>
     <strong>Example:</strong> <br/><br/>
-     <img class ="imageHeight"  src="img/code13.jpg" className="img-fluid my-2" />
+     <img class ="imageHeight"  src="img/code13.jpg" class="img-fluid my-2" />
     <br/><br/>
     <strong>Benefits of Context API:</strong> <br/>
     - <strong>Simplifies Prop Drilling:</strong> Context API eliminates the need to pass props down the component tree manually, reducing boilerplate code and making the codebase cleaner and more maintainable. <br/>
@@ -268,7 +267,7 @@ const React_Content = () => {
     </code> <br/><br/>
     <strong>Basic Usage:</strong> <br/>
     React Router provides several components for defining routes and navigation in your application, such as BrowserRouter, Route, Link, and Switch. Here's a basic example of how to use React Router in a React application: <br/><br/><br/>
-     <img class ="imageHeight"  src="img/code14.jpg" className="img-fluid my-2" />
+     <img class ="imageHeight"  src="img/code14.jpg" class="img-fluid my-2" />
     <br/><br/>
     <strong>Conclusion:</strong> <br/>
     React Router is an essential tool for building modern single-page applications with React. By providing a declarative and flexible way to define routes and navigation, React Router simplifies the development of complex routing logic and enables developers to create seamless navigation experiences for their users.
@@ -363,70 +362,169 @@ const React_Content = () => {
     <strong>Conclusion:</strong> <br/>
     Deploying a React application involves selecting the right deployment option, implementing deployment best practices, and ensuring optimal performance, security, and reliability. By following established deployment strategies, automating deployment processes, and leveraging monitoring and security tools, developers can deploy React applications efficiently and deliver a seamless user experience to their audience.
   ` },
+    {
+      id: 18, topic: 'Interview Preparation Question', description: `
+          <h4>Q1: What is React.js?</h4><br/>
+          <p>React.js is a JavaScript library for building user interfaces. It allows developers to create reusable UI components and manage their state efficiently. React uses a virtual DOM to improve performance by minimizing DOM manipulation and efficiently updating the UI when data changes. It also supports server-side rendering for better SEO and initial page load performance. React.js follows a component-based architecture, where UIs are composed of independent and reusable components, making it easier to maintain and scale applications.</p><br/><br/>
+       
+          <h4>Q2: What are the differences between class components and functional components in React?</h4><br/>
+          <p>In React, class components are ES6 classes that extend from React.Component and can have state and lifecycle methods. Functional components are simpler, pure JavaScript functions that accept props as an argument and return React elements. They don't have state or lifecycle methods but are lightweight and easy to read. With the introduction of React hooks, functional components can now manage state and use lifecycle methods using hooks like useState, useEffect, etc.</p><br/><br/>
+       
+          <h4>Q3: What is JSX?</h4><br/>
+          <p>JSX (JavaScript XML) is a syntax extension for JavaScript that allows developers to write HTML-like code within JavaScript. It provides a more concise and readable way to describe the structure of UI components in React applications. JSX is transpiled into standard JavaScript using tools like Babel before being rendered in the browser. It allows developers to write UI components as functions or classes and seamlessly integrate JavaScript logic with HTML-like markup.</p><br/><br/>
+       
+          <h4>Q4: What are props in React?</h4><br/>
+          <p>Props (short for properties) are a mechanism for passing data from parent to child components in React. They are read-only and are used to customize the behavior or appearance of a component. Props are passed as attributes to a component when it is used in JSX. Inside the component, props can be accessed using the props object. They allow components to be reusable and configurable, making it easy to create dynamic and interactive UIs in React.</p><br/><br/>
+       
+          <h4>Q5: What is state in React?</h4><br/>
+          <p>State is a built-in feature in React that represents the mutable data of a component. It is managed internally by the component and can be updated using the setState method. State allows components to maintain and update their data over time, enabling them to respond to user input and other events. Stateful components have state data that can change over time, while stateless components rely solely on props for their data. State management is essential for building dynamic and interactive user interfaces in React.</p><br/><br/>
+       
+          <h4>Q6: What are the lifecycle methods in React?</h4><br/>
+          <p>Lifecycle methods are special methods provided by React that allow developers to hook into various stages of a component's lifecycle. These methods are called at specific points in a component's lifecycle, such as when it is created, updated, or destroyed. Lifecycle methods can be used to perform tasks like initializing state, fetching data from APIs, updating the UI in response to state changes, and cleaning up resources when a component is unmounted. Examples of lifecycle methods include componentDidMount, componentDidUpdate, and componentWillUnmount.</p><br/><br/>
+       
+          <h4>Q7: What is the virtual DOM in React?</h4><br/>
+          <p>The virtual DOM (Document Object Model) is a lightweight, in-memory representation of the real DOM in React. It is a JavaScript object that mirrors the structure of the actual DOM elements but lacks the ability to directly manipulate the browser's DOM. React uses the virtual DOM to perform efficient DOM updates by comparing the current virtual DOM with the previous one and only applying the necessary changes to the actual DOM. This approach minimizes DOM manipulation and improves the performance of React applications, especially for complex and frequently updated UIs.</p><br/><br/>
+       
+          <h4>Q8: What are keys in React and why are they important?</h4><br/>
+          <p>Keys are special attributes in React that provide a hint to React about the identity of each component in a list. They help React identify which items have changed, been added, or been removed in a list, and update the UI accordingly. Keys should be unique among siblings and stable across re-renders to ensure proper reconciliation. Using keys correctly ensures efficient updates and prevents unnecessary re-renders, improving the performance and stability of React applications, especially when rendering lists or dynamically generated components.</p><br/><br/>
+      
+          <h4>Q9: What is the purpose of the useEffect hook in React?</h4><br/>
+          <p>The useEffect hook in React is used to perform side effects in functional components. Side effects may include data fetching, subscriptions, or manually changing the DOM in React components. The useEffect hook replaces lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount in functional components. It allows developers to perform side effects safely and efficiently by specifying dependencies and cleanup functions. The useEffect hook runs after every render by default, but developers can control its behavior using dependency arrays and cleanup functions.</p><br/><br/>
+       
+          <h4>Q10: How does React Router work?</h4><br/>
+          <p>React Router is a popular library for declarative routing in React applications. It allows developers to define the navigation structure of their application using a declarative syntax similar to the one used for rendering UI components. React Router uses a component-based approach to define routes, where each route is represented by a React component. When a user navigates to a specific URL, React Router matches the URL against the defined routes and renders the corresponding component. React Router provides features like nested routes, route parameters, programmatic navigation, and dynamic route matching, making it easy to build complex and dynamic navigation systems in React applications.</p><br/><br/>
+       
+          <h4>Q11: What are higher-order components (HOCs) in React?</h4><br/>
+          <p>Higher-order components (HOCs) are a pattern in React used to enhance the functionality of components. A higher-order component is a function that takes a component as an argument and returns a new component with additional features or behavior. HOCs allow developers to reuse logic across multiple components, such as data fetching, state management, or authentication. They promote code reusability and modularity by separating concerns and encapsulating common functionality into reusable components. Examples of higher-order components include withRouter, connect, and memoize.</p><br/><br/>
+       
+          <h4>Q12: What are hooks in React?</h4><br/>
+          <p>Hooks are a new addition in React 16.8 that allow developers to use state and other React features in functional components. Hooks are functions that enable developers to "hook into" React state and lifecycle features from functional components without writing a class. React provides built-in hooks like useState, useEffect, useContext, and useReducer, which cover common use cases such as managing state, performing side effects, accessing context, and implementing complex logic in functional components. Hooks provide a simpler and more concise way to write React components and encourage the use of functional components over class components.</p><br/><br/>
+        
+          <h4>Q13: What are controlled components in React?</h4><br/>
+          <p>Controlled components are React components whose form elements (like inputs, selects, and textareas) are controlled by React state. In a controlled component, the value of the form element is controlled by React state and is updated through React event handlers. This allows developers to maintain full control over the form data and synchronize it with React state, enabling features like validation, conditional rendering, and dynamic updates. Controlled components ensure a single source of truth for form data and make it easier to implement complex form behavior in React applications.</p><br/><br/>
+        
+          <h4>Q14: What is context in React and how is it used?</h4><br/>
+          <p>Context is a feature in React that allows data to be passed through the component tree without having to pass props manually at every level. Context provides a way to share data between components without having to explicitly pass props through every level of the component tree. It consists of two main parts: the context provider and the context consumer. The context provider is used to define the data that needs to be shared, while the context consumer is used to access that data within the component tree. Context is commonly used for global state management, theme management, and localization in React applications.</p><br/><br/>
+        
+          <h4>Q15: What are the advantages of using React.js for web development?</h4><br/>
+          <p>React.js offers several advantages for web development, including:</p>
+          <ul>
+            <li><strong>Component-based architecture:</strong> React's component-based architecture allows developers to build reusable and modular UI components, making it easier to manage and scale complex applications.</li>
+            <li><strong>Virtual DOM:</strong> React uses a virtual DOM to efficiently update the UI by only rendering the components that have changed, resulting in improved performance and faster rendering times.</li>
+            <li><strong>JSX:</strong> JSX is a syntax extension for JavaScript that allows developers to write HTML-like code within JavaScript, making it easier to create and maintain UI components.</li>
+            <li><strong>React Native:</strong> React.js can be used to build cross-platform mobile applications using React Native, allowing developers to reuse code and skills across web and mobile platforms.</li>
+            <li><strong>Strong community and ecosystem:</strong> React.js has a large and active community of developers, along with a rich ecosystem of libraries, tools, and resources to support development and solve common challenges.</li>
+          </ul>
+          <p>Overall, React.js provides a powerful and efficient framework for building modern web applications with a focus on performance, scalability, and developer productivity.</p><br/><br/>
+  `
+    },
+    {
+      id: 19, topic: 'Projects / Practise React', description: ` <div class="container-fluid design g-0">
+      <h3 class='text-success text-center text-capitalize pt-5'>here We have Some projects Based on React </h3>
+      <div class="container py-5">
+          <div class="row">
+              <div class="col-lg-6  my-2 col-12">
+                  <div class="card border p-3" style="background-color:#6aa1b4">
+                      <div
+                          class="bg-image hover-overlay ripple"
+                          data-mdb-ripple-color="light"
+                      >
+                          <div class="row">
+                              <div class="col-4">
+                                  <img src="../img/amazon1.jpg" class="img-fluid tilt-effect2" />
+                              </div>
+                              <div class="col-8 align-self-center">
+                                  <div>
+                                      <h5 class="card-title text-light">
+                                          Blog Apps
+                                      </h5>
+                                  </div>
+
+                                  <div>
+                                      <Link to="/blog-app-react">
+                                          <div class="btn text-warning text-capitalize bg-dark">
+                                              Get it
+                                          </div>
+                                      </Link>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </div>`
+    },
+    {
+      id:20 , topic: 'React-SEO' , description: '<p> AS reading react an implementation of react in real life is not similar as it is fast and reliable but it has so many disadvantages like its seo is poor . Mainly react is used for product building if your site need seo to rank on google then react is mainly for you . But i have  made a way that in terms of seo </p> <br/> <h3> What Seo Actually Needs </h3> <br/> Sitemap that we submit to google on google analytics or google search console so to create sitemap i have written a code in normal Html ,css ,js use it and upload your seo to google that will make your webiste good reach as google will able to know how many pages you have and index them . <br/> <a href = "https://codesaarthi.com/React-Seo" target="_blank" >Click Here</a> <br/> Okay how to use it so you have to put all your Routes only here noting else and it will create the sitemap .'
+    },
+
   ];
 
-    useEffect(() => {
-      if (selectedTopic) {
-        const topicName = importantTopics.find(topic => topic.id === selectedTopic)?.topic;
-        if (topicName) {
-          document.title = `${topicName} | Codesaarthi`;
-          document.querySelector('meta[property="og:title"]').setAttribute("content", `Theory: ${topic.topic} | Codesaarthi`);
-        } else {
-          document.querySelector('meta[property="og:title"]').setAttribute("content", "Codesaarthi");
-          document.title = "Codesaarthi";
-        }
+  useEffect(() => {
+    if (selectedTopic) {
+      const topicName = importantTopics.find(topic => topic.id === selectedTopic)?.topic;
+      if (topicName) {
+        document.title = `${topicName} | Codesaarthi`;
+        document.querySelector('meta[property="og:title"]').setAttribute("content", `${topicName} | Codesaarthi`);
       } else {
         document.querySelector('meta[property="og:title"]').setAttribute("content", "Codesaarthi");
         document.title = "Codesaarthi";
       }
-    }, [selectedTopic]);
+    } else {
+      document.querySelector('meta[property="og:title"]').setAttribute("content", "Codesaarthi");
+      document.title = "Codesaarthi";
+    }
+  }, [selectedTopic]);
 
   return (
     <>
-    <Helmet>
-  <meta name="keywords" content="React , New Version react , Learn React , React with examples ." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://codesaarthi.com/Read-Content" />
-  <meta name="description" content="here you will get all the content related to react  as newest version of learning in react all updates." />
-  <title></title>
-  <meta property="og:title" content="Theory: DSA , OS, DBMS, CN | Codesaarthi"/>
-  <meta property="og:description" content="here you will get all the content related to react  as newest version of learning in react all updates." />
-  <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
-  <meta property="og:url" content="https://codesaarthi.com/Read-Content" />
-  <meta property="og:type" content="Education-Website" />
-  <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
-</Helmet>
-      <div className="container-fluid design g-0" style={{ backgroundColor: '#031A33' }}>
-        <div className=" d-lg-none d-block">
+      <Helmet>
+        <meta name="keywords" content="React , New Version react , Learn React , React with examples ." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://codesaarthi.com/Read-Content" />
+        <meta name="description" content="here you will get all the content related to react  as newest version of learning in react all updates." />
+        <title></title>
+        <meta property="og:title" content="" />
+        <meta property="og:description" content="here you will get all the content related to react  as newest version of learning in react all updates." />
+        <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+        <meta property="og:url" content="https://codesaarthi.com/Read-Content" />
+        <meta property="og:type" content="Education-Website" />
+        <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+      </Helmet>
+      <div class="container-fluid design g-0" style={{ backgroundColor: '#031A33' }}>
+        <div class=" d-lg-none d-block">
           <button
             onClick={toggleSidebar}
-            className=" navbar-toggler  shadow-0 d-lg-none  d-block"
+            class=" navbar-toggler  shadow-0 d-lg-none  d-block"
             style={{ color: "#FFE164", fontSize: "1.8rem" }}
           >
-            <i className="fi fi-br-align-justify ps-2"></i>
+            <i class="fi fi-br-align-justify ps-2"></i>
           </button>
         </div>
-        <h1 className='py-2 text-success text-decoration-underline'>Let's Learn React in the New Version</h1>
-        <div className="row g-0 p-lg-2 p-0">
+        <h1 class='py-2 text-success text-decoration-underline'>Let's Learn React in the New Version</h1>
+        <div class="row g-0 p-lg-2 p-0">
 
-          <div className="col-lg-4 col-0 p-lg-2 p-0 d-lg-block d-none">
+          <div class="col-lg-4 col-0 p-lg-2 p-0 d-lg-block d-none">
             {/* Rendering topic titles */}
             {importantTopics.map(topic => (
               <div key={topic.id} onClick={() => handleTopicClick(topic.id)} style={{ cursor: 'pointer' }}>
-                <h4 className='text-capitalize' style={{ color: '#FFE164' }}>{topic.topic}</h4>
+                <h4 class='text-capitalize' style={{ color: '#FFE164' }}>{topic.topic}</h4>
                 <hr />
               </div>
             ))}
           </div>
           {isSidebarOpen ?
             <>
-              <div className="d-lg-none d-block">
+              <div class="d-lg-none d-block">
 
 
-                <div className="container-fluid  g-0 d-lg-none d-block">
+                <div class="container-fluid  g-0 d-lg-none d-block">
                   <div
                     style={{ zIndex: "99" }}
-                    className={`sidebar3 ${isSidebarOpen ? "show" : ""
+                    class={`sidebar3 ${isSidebarOpen ? "show" : ""
                       } d-lg-none d-md-none d-sm-block`}
                   >
                     {/* Rendering topic titles */}
@@ -436,7 +534,7 @@ const React_Content = () => {
                         onClick={() => handleTopicClick(topic.id)}
                         style={{ cursor: "pointer" }}
                       >
-                        <small className="text-capitalize">
+                        <small class="text-capitalize">
                           {topic.topic}
                         </small>
                         <hr />
@@ -446,18 +544,18 @@ const React_Content = () => {
                 </div>
               </div>
             </> : " "}
-          <div className="col-lg-8 col-12 borderLeft">
+          <div class="col-lg-8 col-12 borderLeft">
             {/* Rendering corresponding descriptions */}
             {selectedTopic !== null && (
-              <div className='p-2'>
-                <h3 className='text-capitalize text-warning'>{importantTopics[selectedTopic - 1].topic}</h3>
-                <div className='text-light p-2' dangerouslySetInnerHTML={{ __html: importantTopics[selectedTopic - 1].description }}></div>
-                <div className="row">
-                  <div className="col-6 text-start">
-                    <div className="btn border text-capitalize text-warning" onClick={goToPreviousTopic}><i class="fi fi-rr-angle-small-left"></i>previous</div>
+              <div class='p-2'>
+                <h3 class='text-capitalize text-warning'>{importantTopics[selectedTopic - 1].topic}</h3>
+                <div class='text-light p-2' dangerouslySetInnerHTML={{ __html: importantTopics[selectedTopic - 1].description }}></div>
+                <div class="row">
+                  <div class="col-6 text-start">
+                    <div class="btn border text-capitalize text-warning" onClick={goToPreviousTopic}><i class="fi fi-rr-angle-small-left"></i>previous</div>
                   </div>
-                  <div className="col-6 text-end">
-                    <div className="btn  border text-capitalize text-warning" onClick={goToNextTopic}>Next <i class="fi fi-rr-angle-small-right"></i></div>
+                  <div class="col-6 text-end">
+                    <div class="btn  border text-capitalize text-warning" onClick={goToNextTopic}>Next <i class="fi fi-rr-angle-small-right"></i></div>
                   </div>
                 </div>
               </div>
