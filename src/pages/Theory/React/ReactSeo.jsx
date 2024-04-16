@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const ReactSeo = () => {
   const [userInput, setUserInput] = useState('');
-  
+  const [userUrl ,setUserUrl] = useState('');
   const generateSitemap = () => {
     const userRoutes = userInput.split('\n').map(route => route.trim()).filter(Boolean);
 
@@ -22,7 +22,7 @@ const ReactSeo = () => {
   };
 
   const generateSitemapXml = (routes) => {
-    const baseUrl = "https://codesaarthi.com";
+    const baseUrl = userUrl;
     const sitemapUrls = [];
 
     routes.forEach(route => {
@@ -74,14 +74,24 @@ ${sitemapUrls.map(url => `
   };
 
   return (
-    <div>
+    <div className='vh-100'>
       <h1>Sitemap Generator</h1>
-      <textarea
-        value={userInput}
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <p>Enter your Url</p>
+            <input type="url"
+        value={userUrl}
+        onChange={(e) => setUserUrl(e.target.value)} className='w-100 mb-3 rounded-8 ps-2' placeholder='enter your url'/>
+          <textarea className='w-100'
+        value={userInput} rows={12}
         onChange={(e) => setUserInput(e.target.value)}
         placeholder="Enter your React routes here..."
       />
-      <button onClick={generateSitemap}>Generate Sitemap</button>
+      <button onClick={generateSitemap} className='bg-dark text-warning btn text-capitalize'>Generate Sitemap</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
