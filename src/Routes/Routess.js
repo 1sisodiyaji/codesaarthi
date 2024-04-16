@@ -53,6 +53,14 @@ import TripPlanner from "../pages/Projects/JavaProject/TripPlanner";
 import FunCalculations from "../pages/Projects/JavaProject/FunCalculations";
 import ChatApp from "../pages/Projects/JavaProject/ChatApp";
 import HtmlCssProject from "../pages/Projects/HtmlCss/HtmlCssProject";
+import ShoppingLastPage from "../pages/Projects/HtmlCss/ShoppingLastPage";
+import ReciepeWebsite from "../pages/Projects/HtmlCss/ReciepeWebsite";
+import ChairPage from "../pages/Projects/HtmlCss/ChairPage";
+import HireMe from "../pages/Projects/HtmlCss/HireMe";
+import ImageGallery from "../pages/Projects/HtmlCss/ImageGallery";
+import JobApplication from "../pages/Projects/HtmlCss/JobApplication";
+import ProductCard from "../pages/Projects/HtmlCss/ProductCard";
+import React_Content from "../pages/Theory/React/React_Content";
 
 
 const Routess = () => {
@@ -126,6 +134,14 @@ const Routess = () => {
           <Route path="/FunCalculations" element={<FunCalculations />} />
           <Route path="/Chat-App" element={<ChatApp/>} />
           <Route path="/Html-Css-Projects" element={<HtmlCssProject/>} />
+          <Route path="/Shopping-page" element={<ShoppingLastPage/>} />
+          <Route path="/Reciepe-website" element={<ReciepeWebsite/>} />
+          <Route path ="/Chair-page" element={<ChairPage/>} />
+          <Route path ="/Hire-Me" element={<HireMe/>} />
+          <Route path ="/Image-Gallery" element={<ImageGallery/>} />
+          <Route path ="/Job-Application-page" element={<JobApplication/>} />
+          <Route path ="/Product-Card" element={<ProductCard/>} />
+          <Route path="/React-Content" element={<React_Content/>} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 

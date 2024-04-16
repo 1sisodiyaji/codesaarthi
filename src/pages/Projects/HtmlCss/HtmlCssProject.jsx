@@ -10,9 +10,9 @@ const HtmlCssProject = () => {
                 <meta name="keywords" content="java core projects , java projects , trip planner in java projects , calculator in java." />
                 <meta name="robots" content="index, follow" />
                 <link rel="canonical" href="https://codesaarthi.com/java-Projects" />
-                <meta name="description" content="Explore the development of a Discord clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a real-time messaging application." />
-                <title>java Based Projects | CodeSaarthi</title>
-                <meta property="og:title" content="java Based Projects | CodeSaarthi" />
+                <meta name="description" content="This is an place where we will serve you projects made up of only html-css to learn the basic frontend development as much easier" />
+                <title>Html-Css Based Projects | CodeSaarthi</title>
+                <meta property="og:title" content="Html-Css Based Projects | CodeSaarthi" />
                 <meta property="og:description" content="Explore the development of a Discord clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a real-time messaging application." />
                 <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
                 <meta property="og:url" content="https://codesaarthi.com/java-Projects" />
@@ -24,18 +24,18 @@ const HtmlCssProject = () => {
                 <div className="row py-5 ">
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect bg-dark">
+                        <div className="card tilt-effect" style={{backgroundColor:'black'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/javaProjects.png" className='img-fluid p-2' alt="trip planner logo" style={{borderRadius:'50%'}} />
+                                                <img src="img/htmlCSS.png" className='img-fluid p-2' alt="trip planner logo" style={{borderRadius:'50%'}} />
                                             </div>
                                         </div>
                                         <div className="col-8">
-                                            <h5 className="card-title text-warning">Trip Planner</h5>
-                                            <p className="card-text text-light text-capitalize">This is Project of booking hotels , managing payments and many more...</p>
-                                            <Link to="/TripPlanner" className="btn bg-black text-warning text-capitalize">get it </Link>
+                                            <h5 className="card-title text-warning">Shopping last page</h5>
+                                            <p className="card-text text-light text-capitalize">This is Project of order design of basic frontend.</p>
+                                            <Link to="/Shopping-page" className="btn bg-dark text-warning text-capitalize">get it </Link>
                                         </div>
                                 </div>
                             </div>
@@ -43,18 +43,18 @@ const HtmlCssProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect bg-dark">
+                        <div className="card tilt-effect" style={{backgroundColor:'black'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/javaProjects.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                                <img src="img/htmlCSS.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
                                             </div>
                                         </div>
                                         <div className="col-8">
-                                            <h5 className="card-title text-warning">Fun Calculations</h5>
-                                            <p className="card-text text-light text-capitalize">This is an project on the basis of normal calculations and operations .</p>
-                                            <Link to="/FunCalculations" className="btn bg-black text-warning text-capitalize">get it </Link>
+                                            <h5 className="card-title text-warning">Reciepe website </h5>
+                                            <p className="card-text text-light text-capitalize">basically here you will create an reciepe webiste of ...</p>
+                                            <Link to="/Reciepe-website" className="btn bg-dark text-warning text-capitalize">get it </Link>
                                         </div>
                                 </div>
                             </div>
@@ -62,18 +62,94 @@ const HtmlCssProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect bg-dark">
+                        <div className="card tilt-effect " style={{backgroundColor:'black'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/javaProjects.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                                <img src="img/htmlCSS.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
                                             </div>
                                         </div>
                                         <div className="col-8">
-                                            <h5 className="card-title text-warning">Chat App</h5>
-                                            <p className='text-light'> In these Projewct we will create an chat app as client and server.</p>
-                                            <Link to="/Chat-App" className="btn bg-black text-warning text-capitalize">get it </Link>
+                                            <h5 className="card-title text-warning">Product card </h5>
+                                            <p className='text-light'> In these Project where we will see the product card design.</p>
+                                            <Link to="/Product-Card" className="btn bg-dark text-warning text-capitalize">get it </Link>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-lg-4 my-2 col-12">
+                        <div className="card tilt-effect " style={{backgroundColor:'black'}}>
+                            <div className="card-body">
+                                <div className="row g-0">
+                                        <div className="col-4">
+                                            <div>
+                                                <img src="img/htmlCSS.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                            </div>
+                                        </div>
+                                        <div className="col-8">
+                                            <h5 className="card-title text-warning">Job Application  </h5>
+                                            <p className='text-light'> In these Project where we will create job application page..</p>
+                                            <Link to="/Job-Application-page" className="btn bg-dark text-warning text-capitalize">get it </Link>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-lg-4 my-2 col-12">
+                        <div className="card tilt-effect " style={{backgroundColor:'black'}}>
+                            <div className="card-body">
+                                <div className="row g-0">
+                                        <div className="col-4">
+                                            <div>
+                                                <img src="img/htmlCSS.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                            </div>
+                                        </div>
+                                        <div className="col-8">
+                                            <h5 className="card-title text-warning">Image Gallery  </h5>
+                                            <p className='text-light'> In these Project where we will  design of an gallery design .</p>
+                                            <Link to="/Image-Gallery" className="btn bg-dark text-warning text-capitalize">get it </Link>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-lg-4 my-2 col-12">
+                        <div className="card tilt-effect "style={{backgroundColor:'black'}}>
+                            <div className="card-body">
+                                <div className="row g-0">
+                                        <div className="col-4">
+                                            <div>
+                                                <img src="img/htmlCSS.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                            </div>
+                                        </div>
+                                        <div className="col-8">
+                                            <h5 className="card-title text-warning">hire me  </h5>
+                                            <p className='text-light'> In these Project where we will create a design or ui of hire button.</p>
+                                            <Link to="/Hire-Me" className="btn bg-dark text-warning text-capitalize">get it </Link>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-lg-4 my-2 col-12">
+                        <div className="card tilt-effect "style={{backgroundColor:'black'}}>
+                            <div className="card-body">
+                                <div className="row g-0">
+                                        <div className="col-4">
+                                            <div>
+                                                <img src="img/htmlCSS.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                            </div>
+                                        </div>
+                                        <div className="col-8">
+                                            <h5 className="card-title text-warning">Chair item  </h5>
+                                            <p className='text-light'> In these Project where we will see create the frontend of a page where chairs were sell.</p>
+                                            <Link to="/Chair-page" className="btn bg-dark text-warning text-capitalize">get it </Link>
                                         </div>
                                 </div>
                             </div>

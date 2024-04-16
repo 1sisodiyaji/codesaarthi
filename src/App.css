@@ -19,13 +19,19 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 520px) {
+@media only screen and (min-width: 300px) and (max-width: 768px) {
   .DashImageView {
     height: 200px !important;
   }
--
+  .firstPage{
+    margin-top: 14vh!important;
+  }
+
   .navbar {
     background-color: white !important;
+  }
+  .borderLeft{
+    border-left: 0px solid white !important;
   }
 
   .sidebar {
@@ -57,6 +63,22 @@ body::-webkit-scrollbar {
 
   .sidebar2.show {
     left: 0;
+  }
+  .sidebar3 {
+    position: fixed;
+    top: 75px;
+    left: 0px;
+    width: 240px;
+    height: 100%;
+    color: #FFE164;
+    background-color: #031A33;
+    transition: right 0.3s ease;
+    padding: 20px;
+    overflow-y: scroll;
+  }
+
+  .sidebar3.show {
+    right: 0;
   }
 
   .design {
@@ -152,4 +174,10 @@ body::-webkit-scrollbar {
 .highlight{
  color: #3393df !important;
 font-weight: bold !important;
+}
+.borderLeft{
+  border-left: 1px solid white;
+}
+.imageHeight{
+height: 20vh !important;
 }
