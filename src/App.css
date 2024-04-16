@@ -23,6 +23,9 @@ body::-webkit-scrollbar {
   .DashImageView {
     height: 200px !important;
   }
+  .imageHeight{
+    width: 320px!important;
+  }
   .firstPage{
     margin-top: 14vh!important;
   }
@@ -179,5 +182,5 @@ font-weight: bold !important;
   border-left: 1px solid white;
 }
 .imageHeight{
-height: 20vh !important;
+  width: 620px;
 }
