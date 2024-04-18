@@ -36,8 +36,9 @@ const BasicDbms = () => {
     {
       id: 1,
       topic: 'Introduction to DBMS',
-      description: `<p>A Database Management System (DBMS) is a software system that provides an interface for users and applications to interact with databases. It enables the creation, storage, retrieval, and management of data in a structured and organized manner.</p>
-      
+      description: `<p>A Database Management System (DBMS) is a software system that provides an interface for users and applications to interact with databases. It enables the creation, storage, retrieval, and management of data in a structured and organized manner.</p> <br/>
+      <img src = "img/DBMS1.jpg" class="imageHeight" />
+      <br/> <br/>
       <p>DBMS serves as an intermediary between the database and the users or applications, allowing them to perform various operations on the data without having to understand the underlying complexities of database implementation. This abstraction layer simplifies data management tasks and enhances productivity.</p>
       
       <p>One of the fundamental components of a DBMS is the database itself, which consists of tables that store data in rows and columns. Each table represents a specific entity or concept, and relationships between tables can be established using keys.</p>
@@ -51,7 +52,7 @@ const BasicDbms = () => {
       <p>DBMS can be categorized into different types based on the data model they support, such as Relational DBMS (RDBMS), NoSQL databases, object-oriented databases, and hierarchical databases. RDBMS, in particular, is widely used and follows the relational model based on tables, keys, and relationships.</p>
       
       <p>Overall, DBMS plays a crucial role in modern information systems by providing efficient and reliable data management capabilities to organizations and businesses. It enables users to store, retrieve, and manipulate data effectively, thereby supporting various applications and decision-making processes.</p>`
-    },{
+    }, {
       id: 2,
       topic: 'Relational Database Management System (RDBMS)',
       description: `<p>A Relational Database Management System (RDBMS) is a type of DBMS that organizes data into tables with rows and columns, where each table represents a relation or entity. It follows the relational model, which defines relationships between tables based on common attributes or keys.</p>
@@ -67,7 +68,7 @@ const BasicDbms = () => {
       <p>Popular examples of RDBMS include MySQL, PostgreSQL, Oracle Database, Microsoft SQL Server, and SQLite. These systems are widely used in various applications and industries, ranging from small-scale web applications to large enterprise systems.</p>
       
       <p>In summary, RDBMS is a powerful and widely adopted technology for managing structured data. It offers a flexible and efficient way to store and manipulate relational data, making it an essential component of modern information systems.</p>`
-    },{
+    }, {
       id: 3,
       topic: 'SQL (Structured Query Language)',
       description: `<p>Structured Query Language (SQL) is a standard language used to interact with relational databases. It provides a set of commands and statements for managing and manipulating data stored in tables.</p>
@@ -138,7 +139,7 @@ const BasicDbms = () => {
   </table>
   
   <p>SQL is widely used in various applications and industries for data manipulation, query execution, and database management. It provides a powerful and flexible way to interact with relational databases, making it an essential skill for developers and database administrators.</p>`
-}, {
+    }, {
       id: 4,
       topic: 'Database Design and Normalization',
       description: `<p>Database design is the process of creating a structured representation of data in a database. It involves identifying entities, defining relationships between them, and organizing data to minimize redundancy and dependency. Proper database design is essential for ensuring data integrity, efficiency, and scalability.</p>
@@ -165,7 +166,7 @@ const BasicDbms = () => {
       </ul>
       
       <p>Normalization helps reduce data redundancy, minimize update anomalies, and simplify data maintenance. By following normalization principles, database designers can create efficient, scalable, and maintainable database schemas that support the needs of the application.</p>`
-    },{
+    }, {
       id: 5,
       topic: 'Indexing and Performance Tuning',
       description: `<p>Indexing and performance tuning are essential techniques for optimizing database performance and improving query execution speed. Indexing involves creating data structures that allow for fast retrieval of data based on specified criteria, while performance tuning focuses on optimizing database configuration, query execution plans, and resource utilization.</p>
@@ -193,7 +194,7 @@ const BasicDbms = () => {
       </ul>
       
       <p>By implementing indexing and performance tuning strategies, database administrators and developers can optimize database performance, reduce response times, and enhance the overall user experience of applications.</p>`
-    } ,{
+    }, {
       id: 6,
       topic: 'Transactions and Concurrency Control',
       description: `<p>Transactions and concurrency control are essential aspects of database management systems (DBMS) that ensure data integrity, consistency, and isolation in multi-user environments. Transactions represent a logical unit of work that consists of one or more database operations, while concurrency control mechanisms manage simultaneous access to shared data by multiple transactions.</p>
@@ -218,7 +219,7 @@ const BasicDbms = () => {
       </ul>
       
       <p>Effective management of transactions and concurrency control is crucial for ensuring data integrity, consistency, and reliability in database systems, especially in multi-user and high-concurrency environments.</p>`
-    },{
+    }, {
       id: 7,
       topic: 'Data Integrity and Constraints',
       description: `<p>Data integrity and constraints are fundamental concepts in database management systems (DBMS) that ensure the accuracy, consistency, and reliability of data stored in databases. Data integrity refers to the validity and reliability of data, while constraints are rules or conditions imposed on data to enforce integrity constraints and prevent data corruption.</p>
@@ -243,7 +244,7 @@ const BasicDbms = () => {
       </ul>
       
       <p>By enforcing data integrity through constraints, database administrators can maintain data accuracy, consistency, and reliability, ensuring that the database remains a trusted source of information for users and applications.</p>`
-    },{
+    }, {
       id: 8,
       topic: 'Query Optimization',
       description: `<p>Query optimization is a crucial aspect of database management aimed at improving the performance and efficiency of database queries. It involves analyzing and refining SQL queries to reduce execution time, resource consumption, and response latency, thereby enhancing overall database performance.</p>
@@ -271,7 +272,7 @@ const BasicDbms = () => {
       </ul>
       
       <p>By employing query optimization techniques, database administrators and developers can maximize the efficiency and performance of database queries, ensuring optimal performance and responsiveness for applications and users.</p>`
-    },{
+    }, {
       id: 9,
       topic: 'Joins and Subqueries',
       description: `<p>Joins and subqueries are fundamental SQL techniques used to combine data from multiple tables and perform complex data retrieval operations in relational databases. Understanding how to effectively use joins and subqueries is essential for querying and analyzing relational data efficiently.</p>
@@ -299,7 +300,7 @@ const BasicDbms = () => {
       </ol>
       
       <p>By mastering joins and subqueries, SQL developers can perform sophisticated data retrieval and analysis tasks, enabling them to extract valuable insights from relational databases efficiently.</p>`
-    },{
+    }, {
       id: 10,
       topic: 'Stored Procedures and Functions',
       description: `<p>Stored procedures and functions are database objects that encapsulate a set of SQL statements and logic, allowing them to be executed as a single unit within a database management system (DBMS). They provide a convenient and efficient way to perform complex data manipulation, business logic processing, and repetitive tasks directly on the database server.</p>
@@ -330,7 +331,7 @@ const BasicDbms = () => {
       </ul>
       
       <p>By leveraging stored procedures and functions, database developers and administrators can improve application performance, enhance data security, and streamline database maintenance and administration tasks.</p>`
-    },{
+    }, {
       id: 11,
       topic: 'Database Security',
       description: `<p>Database security encompasses a set of measures and best practices designed to protect databases and the sensitive information they contain from unauthorized access, data breaches, and malicious attacks. With the increasing volume and value of data stored in databases, ensuring robust security measures is essential to safeguarding critical assets and maintaining regulatory compliance.</p>
@@ -358,7 +359,7 @@ const BasicDbms = () => {
       </ul>
       
       <p>By implementing comprehensive database security measures and staying abreast of emerging threats and compliance requirements, organizations can protect sensitive data, mitigate risks, and maintain trust and confidence among customers, partners, and stakeholders.</p>`
-    },{
+    }, {
       id: 12,
       topic: 'Backup and Recovery',
       description: `<p>Backup and recovery are essential components of database management aimed at preserving data integrity, minimizing data loss, and ensuring business continuity in the event of system failures, disasters, or human errors. By implementing robust backup and recovery strategies, organizations can recover from data loss incidents and restore databases to a consistent state with minimal downtime and disruption.</p>
@@ -393,7 +394,7 @@ const BasicDbms = () => {
       </ul>
       
       <p>By following best practices and implementing reliable backup and recovery solutions, organizations can minimize the risk of data loss, protect against unplanned downtime, and maintain the availability and integrity of critical databases and business operations.</p>`
-    },{
+    }, {
       id: 13,
       topic: 'NoSQL Databases',
       description: `<p>NoSQL databases, also known as "Not Only SQL" databases, are a category of database management systems designed to address the limitations of traditional relational databases in handling large volumes of unstructured or semi-structured data and supporting distributed, scalable architectures. Unlike relational databases, which adhere to a strict schema and use SQL for data manipulation, NoSQL databases offer flexibility, scalability, and performance advantages for certain use cases and workloads.</p>
@@ -430,7 +431,7 @@ const BasicDbms = () => {
       </ul>
       
       <p>By leveraging the scalability, flexibility, and performance advantages of NoSQL databases, organizations can address the challenges of managing diverse data types, supporting high-volume workloads, and delivering responsive, data-driven applications and services.</p>`
-    },{
+    }, {
       id: 14,
       topic: 'Data Warehousing and Business Intelligence',
       description: `<p>Data warehousing and business intelligence (BI) are critical components of modern data-driven organizations, enabling businesses to extract actionable insights from large volumes of structured and unstructured data to support informed decision-making, strategic planning, and performance optimization. By consolidating data from disparate sources into a centralized repository, known as a data warehouse, organizations can analyze historical trends, identify patterns, and gain valuable business insights to drive competitive advantage and innovation.</p>
@@ -469,7 +470,7 @@ const BasicDbms = () => {
       </ul>
       
       <p>By leveraging data warehousing and business intelligence technologies and practices, organizations can unlock the value of their data assets, drive data-driven decision-making, and gain a competitive edge in today's rapidly evolving business landscape.</p>`
-    },{
+    }, {
       id: 15,
       topic: 'Big Data and Data Mining',
       description: `<p>Big data and data mining are essential components of modern data analytics, enabling organizations to extract valuable insights and knowledge from vast and complex datasets to drive informed decision-making, uncover hidden patterns, and gain a competitive advantage. As the volume, velocity, and variety of data continue to grow exponentially, organizations must leverage advanced technologies and techniques to process, analyze, and derive actionable intelligence from big data sources.</p>
@@ -510,112 +511,112 @@ const BasicDbms = () => {
       
       <p>By harnessing the power of big data and data mining, organizations can unlock valuable insights, optimize business processes, mitigate risks, and drive innovation and growth in today's data-driven economy.</p>`
     }
-    
-  ];
-  
 
-    useEffect(() => {
-      if (selectedTopic) {
-        const topicName = importantTopics.find(topic => topic.id === selectedTopic)?.topic;
-        if (topicName) {
-          document.title = `${topicName} | Codesaarthi`;
-          document.querySelector('meta[property="og:title"]').setAttribute("content", `${topicName} | Codesaarthi`);
-        } else {
-          document.querySelector('meta[property="og:title"]').setAttribute("content", "Codesaarthi");
-          document.title = "Codesaarthi";
-        }
+  ];
+
+
+  useEffect(() => {
+    if (selectedTopic) {
+      const topicName = importantTopics.find(topic => topic.id === selectedTopic)?.topic;
+      if (topicName) {
+        document.title = `${topicName} | Codesaarthi`;
+        document.querySelector('meta[property="og:title"]').setAttribute("content", `${topicName} | Codesaarthi`);
       } else {
         document.querySelector('meta[property="og:title"]').setAttribute("content", "Codesaarthi");
         document.title = "Codesaarthi";
       }
-    }, [selectedTopic]);
+    } else {
+      document.querySelector('meta[property="og:title"]').setAttribute("content", "Codesaarthi");
+      document.title = "Codesaarthi";
+    }
+  }, [selectedTopic]);
 
   return (
     <>
-    <Helmet>
-  <meta name="keywords" content="DBMS , learn dbms from scratch , DBMS for begineers , Interview preparation for DBMS" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://codesaarthi.com/Read-Content" />
-  <meta name="description" content="Learn Dbms for interview as short and important concept . DBMS Architecture and Working in SQL and No Sql" />
-  <title></title>
-  <meta property="og:title" content=""/>
-  <meta property="og:description" content="Learn Dbms for interview as short and important concept . DBMS Architecture and Working in SQL and No Sql" />
-  <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
-  <meta property="og:url" content="https://codesaarthi.com/Read-Content" />
-  <meta property="og:type" content="Education-Website" />
-  <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
-</Helmet>
-<div className="conatiner-fluid" style={{ backgroundColor: '#031A33' }}>
-      <div className="container design g-0" >
-        <div className=" d-lg-none d-block">
-          <button
-            onClick={toggleSidebar}
-            className=" navbar-toggler  shadow-0 d-lg-none  d-block"
-            style={{ color: "#FFE164", fontSize: "1.8rem" }}
-          >
-            <i className="fi fi-br-align-justify ps-2"></i>
-          </button>
-        </div>
-        <h1 className='py-2 text-success text-decoration-underline'>DBMS <i class="fi fi-ss-database text-warning"></i></h1>
-        <div className="row g-0 p-lg-2 p-0">
-
-          <div className="col-lg-3 col-0 p-lg-2 p-0 d-lg-block d-none border">
-            {/* Rendering topic titles */}
-            {importantTopics.map(topic => (
-              <div key={topic.id} onClick={() => handleTopicClick(topic.id)} style={{ cursor: 'pointer' }}>
-                <p className='text-capitalize' style={{ color: '#FFE164' }}>{topic.topic}</p>
-                <hr />
-              </div>
-            ))}
+      <Helmet>
+        <meta name="keywords" content="DBMS , learn dbms from scratch , DBMS for begineers , Interview preparation for DBMS" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://codesaarthi.com/Read-Content" />
+        <meta name="description" content="Learn Dbms for interview as short and important concept . DBMS Architecture and Working in SQL and No Sql" />
+        <title></title>
+        <meta property="og:title" content="" />
+        <meta property="og:description" content="Learn Dbms for interview as short and important concept . DBMS Architecture and Working in SQL and No Sql" />
+        <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+        <meta property="og:url" content="https://codesaarthi.com/Read-Content" />
+        <meta property="og:type" content="Education-Website" />
+        <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+      </Helmet>
+      <div className="conatiner-fluid" style={{ backgroundColor: '#031A33' }}>
+        <div className="container design g-0" >
+          <div className=" d-lg-none d-block">
+            <button
+              onClick={toggleSidebar}
+              className=" navbar-toggler  shadow-0 d-lg-none  d-block"
+              style={{ color: "#FFE164", fontSize: "1.8rem" }}
+            >
+              <i className="fi fi-br-align-justify ps-2"></i>
+            </button>
           </div>
-          {isSidebarOpen ?
-            <>
-              <div className="d-lg-none d-block">
+          <h1 className='py-2 text-success text-decoration-underline'>DBMS <i class="fi fi-ss-database text-warning"></i></h1>
+          <div className="row g-0 p-lg-2 p-0">
+
+            <div className="col-lg-3 col-0 p-lg-2 p-0 d-lg-block d-none border">
+              {/* Rendering topic titles */}
+              {importantTopics.map(topic => (
+                <div key={topic.id} onClick={() => handleTopicClick(topic.id)} style={{ cursor: 'pointer' }}>
+                  <p className='text-capitalize' style={{ color: '#FFE164' }}>{topic.topic}</p>
+                  <hr />
+                </div>
+              ))}
+            </div>
+            {isSidebarOpen ?
+              <>
+                <div className="d-lg-none d-block">
 
 
-                <div className="container-fluid  g-0 d-lg-none d-block">
-                  <div
-                    style={{ zIndex: "99" }}
-                    className={`sidebar3 ${isSidebarOpen ? "show" : ""
-                      } d-lg-none d-md-none d-sm-block`}
-                  >
-                    {/* Rendering topic titles */}
-                    {importantTopics.map((topic) => (
-                      <div
-                        key={topic.id}
-                        onClick={() => handleTopicClick(topic.id)}
-                        style={{ cursor: "pointer" }}
-                      >
-                        <small className="text-capitalize">
-                          {topic.topic}
-                        </small>
-                        <hr />
-                      </div>
-                    ))}
+                  <div className="container-fluid  g-0 d-lg-none d-block">
+                    <div
+                      style={{ zIndex: "99" }}
+                      className={`sidebar3 ${isSidebarOpen ? "show" : ""
+                        } d-lg-none d-md-none d-sm-block`}
+                    >
+                      {/* Rendering topic titles */}
+                      {importantTopics.map((topic) => (
+                        <div
+                          key={topic.id}
+                          onClick={() => handleTopicClick(topic.id)}
+                          style={{ cursor: "pointer" }}
+                        >
+                          <small className="text-capitalize">
+                            {topic.topic}
+                          </small>
+                          <hr />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </> : " "}
-          <div className="col-lg-9 col-12 borderLeft">
-            {/* Rendering corresponding descriptions */}
-            {selectedTopic !== null && (
-              <div className='p-2'>
-                <h3 className='text-capitalize text-warning'>{importantTopics[selectedTopic - 1].topic}</h3>
-                <div className='text-light p-2' dangerouslySetInnerHTML={{ __html: importantTopics[selectedTopic - 1].description }}></div>
-                <div className="row">
-                  <div className="col-6 text-start">
-                    <div className="btn border text-capitalize text-warning" onClick={goToPreviousTopic}><i class="fi fi-rr-angle-small-left"></i>previous</div>
-                  </div>
-                  <div className="col-6 text-end">
-                    <div className="btn  border text-capitalize text-warning" onClick={goToNextTopic}>Next <i class="fi fi-rr-angle-small-right"></i></div>
+              </> : " "}
+            <div className="col-lg-9 col-12 borderLeft">
+              {/* Rendering corresponding descriptions */}
+              {selectedTopic !== null && (
+                <div className='p-2'>
+                  <h3 className='text-capitalize text-warning'>{importantTopics[selectedTopic - 1].topic}</h3>
+                  <div className='text-light p-2' dangerouslySetInnerHTML={{ __html: importantTopics[selectedTopic - 1].description }}></div>
+                  <div className="row">
+                    <div className="col-6 text-start">
+                      <div className="btn border text-capitalize text-warning" onClick={goToPreviousTopic}><i class="fi fi-rr-angle-small-left"></i>previous</div>
+                    </div>
+                    <div className="col-6 text-end">
+                      <div className="btn  border text-capitalize text-warning" onClick={goToNextTopic}>Next <i class="fi fi-rr-angle-small-right"></i></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>
-</div>
     </>
   );
 };

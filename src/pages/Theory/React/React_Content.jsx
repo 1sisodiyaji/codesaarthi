@@ -350,7 +350,7 @@ const React_Content = () => {
     <strong>Deploying React Applications</strong> <br/>
     Deploying a React application involves making it available to users on the internet by hosting it on a web server or a cloud platform. There are several deployment options available for React applications, ranging from simple static hosting to more complex server setups with dynamic rendering and server-side rendering (SSR). <br/> <br/>
      <img class ="imageHeight"  src="img/reactDeploy.png"
-    className = "img-fluid" alt = "testing image" /> <br/> <br/>
+    alt = "testing image" /> <br/> <br/>
     <strong>Common Deployment Options for React:</strong> <br/>
     - <strong>Static Hosting:</strong> Deploy your React application as a static site by serving static files, such as HTML, CSS, and JavaScript, from a web server or a cloud storage service. Static hosting options include platforms like Netlify, Vercel, GitHub Pages, and AWS S3, which provide simple and cost-effective hosting solutions for static sites. <br/>
     - <strong>Server-Side Rendering (SSR):</strong> Implement server-side rendering (SSR) to generate HTML on the server and send pre-rendered content to the client for improved performance and SEO. SSR enables faster initial page loads, better search engine indexing, and improved user experience, especially for content-heavy or dynamic applications. Use frameworks like Next.js or Gatsby.js for seamless SSR integration with React applications. <br/>
@@ -508,11 +508,11 @@ const React_Content = () => {
         <h1 class='py-2 text-success text-decoration-underline'>Let's Learn React in the New Version</h1>
         <div class="row g-0 p-lg-2 p-0">
 
-          <div class="col-lg-4 col-0 p-lg-2 p-0 d-lg-block d-none">
+          <div class="col-lg-3 col-0 p-lg-2 p-0 d-lg-block d-none border">
             {/* Rendering topic titles */}
             {importantTopics.map(topic => (
               <div key={topic.id} onClick={() => handleTopicClick(topic.id)} style={{ cursor: 'pointer' }}>
-                <h4 class='text-capitalize' style={{ color: '#FFE164' }}>{topic.topic}</h4>
+                <p class='text-capitalize' style={{ color: '#FFE164' }}>{topic.topic}</p>
                 <hr />
               </div>
             ))}
@@ -545,7 +545,7 @@ const React_Content = () => {
                 </div>
               </div>
             </> : " "}
-          <div class="col-lg-8 col-12 borderLeft">
+          <div class="col-lg-9 col-12 borderLeft">
             {/* Rendering corresponding descriptions */}
             {selectedTopic !== null && (
               <div class='p-2'>

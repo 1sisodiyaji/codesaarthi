@@ -72,7 +72,7 @@ const Theory = () => {
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light">Os  Notes </h5></div>
 
-                    <div><Link to="/array">
+                    <div><Link to="/Os-Content">
                       <div className="btn text-warning text-capitalize bg-dark">Read it..</div>
                     </Link>
                     </div>
@@ -104,6 +104,26 @@ const Theory = () => {
             </div>
           </div> 
 
+          <div className="col-lg-4 col-12 my-2">
+            <div className="card border p-3 tilt-effect" style={{ backgroundColor: '#6aa1b4' }}>
+              <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <div className="row">
+                  <div className="col-4"  >
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/008/681/148/small/computer-network-internet-technologies-icon-vector.jpg" className="img-fluid rounded-8" style={{height: '18vh' }}/>
+                  </div>
+                  <div className="col-8 align-self-center">
+                    <div><h5 className="card-title text-light">CN  Notes </h5></div>
+
+                    <div><Link to="/Cn-Content">
+                      <div className="btn text-warning text-capitalize bg-dark">Read it..</div>
+                    </Link>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
 
         </div>
       </div>

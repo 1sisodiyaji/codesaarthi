@@ -61,6 +61,8 @@ import ProductCard from "../pages/Projects/HtmlCss/ProductCard";
 import React_Content from "../pages/Theory/React/React_Content";
 import BasicDbms from "../pages/Theory/Dbms/Basic_Dbms";
 import ReactSeo from "../pages/Theory/React/ReactSeo";
+import OsContent from "../pages/Theory/Os/OsContent";
+import Cn_Content from "../pages/Theory/CN/Cn_Content";
 
 
 const Routess = () => {
@@ -142,6 +144,8 @@ const Routess = () => {
           <Route path ="/Product-Card" element={<ProductCard/>} />
           <Route path="/React-Content" element={<React_Content/>} />
           <Route path ="/React-Seo" element={<ReactSeo/>} />
+          <Route path="/Os-Content" element={<OsContent />} />
+          <Route path="/Cn-Content" element={<Cn_Content/>} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 
