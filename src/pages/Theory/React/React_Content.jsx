@@ -494,7 +494,7 @@ const React_Content = () => {
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
-      <div class="container-fluid design g-0" style={{ backgroundColor: '#031A33' }}>
+      <div class="container-fluid design g-0" style={{ backgroundColor: '#1E1E1E' }}>
       <div className="container">
         <div class=" d-lg-none d-block">
           <button
@@ -506,9 +506,9 @@ const React_Content = () => {
           </button>
         </div>
         <h1 class='py-2 text-success text-decoration-underline'>Let's Learn React in the New Version</h1>
-        <div class="row g-0 p-lg-2 p-0">
+        <div class="row g-0 p-lg-2 p-0 border border-dark">
 
-          <div class="col-lg-3 col-0 p-lg-2 p-0 d-lg-block d-none border">
+          <div class="col-lg-3 col-0 p-lg-2 p-0 d-lg-block d-none border border-dark"style={{ backgroundColor: '#262626' }} >
             {/* Rendering topic titles */}
             {importantTopics.map(topic => (
               <div key={topic.id} onClick={() => handleTopicClick(topic.id)} style={{ cursor: 'pointer' }}>
@@ -545,7 +545,7 @@ const React_Content = () => {
                 </div>
               </div>
             </> : " "}
-          <div class="col-lg-9 col-12 borderLeft">
+          <div class="col-lg-9 col-12 ">
             {/* Rendering corresponding descriptions */}
             {selectedTopic !== null && (
               <div class='p-2'>

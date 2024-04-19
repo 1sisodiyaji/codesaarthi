@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
+import axios from 'axios';
+
 const Cn_Content = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [selectedTopic, setSelectedTopic] = useState(1);
+  const [read ,setRead] = useState(0);
+  const email = localStorage.getItem("user_email");
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
-
-  // State to keep track of the selected topic
-  const [selectedTopic, setSelectedTopic] = useState(1);
 
   // Function to handle topic selection
   const handleTopicClick = (topicId) => {
@@ -60,8 +62,7 @@ const Cn_Content = () => {
       
       In summary, computer networks form the foundation of modern communication and information exchange, enabling seamless connectivity and collaboration across diverse devices and platforms. By mastering the fundamentals of computer networks, individuals and organizations can harness the power of networked systems to achieve their goals and objectives in today's digital world.
       `
-    },
-    {
+    }, {
         "id": 2,
         "topic": "Network Protocols",
         "description": `<strong>Network Protocols</strong> <br/>
@@ -77,15 +78,12 @@ const Cn_Content = () => {
         </ul>
         Understanding network protocols is essential for network administrators, systems engineers, and IT professionals involved in designing, implementing, and maintaining computer networks. By familiarizing themselves with various protocols and their functionalities, network professionals can troubleshoot network issues, optimize network performance, and ensure the secure and efficient operation of networked systems.
         `
-      }
-      ,
-    {
+    },{
       "id": 3,
       "topic": "OSI Model",
       "description": "Explanation of the OSI (Open Systems Interconnection) model, its layers, and their functions."
-    },
-    {
-        "id": 3,
+    },{
+        "id": 4,
         "topic": "Network Architecture",
         "description": `<strong>Network Architecture</strong> <br/>
         Network architecture refers to the design and structure of a computer network, including its physical layout, logical organization, and communication protocols. It encompasses various components and layers that work together to enable communication and data exchange between devices on the network. Network architecture plays a crucial role in determining the performance, scalability, and reliability of a network, influencing factors such as data transmission speed, network bandwidth, and fault tolerance. <br/><br/>
@@ -99,9 +97,7 @@ const Cn_Content = () => {
         </ul>
         Network architecture plays a critical role in modern computing environments, providing the foundation for communication and collaboration among devices and users. By designing and implementing robust network architectures, organizations can ensure the reliability, scalability, and security of their networked systems, enabling seamless connectivity and data exchange in today's digital world.
         `
-      }
-      ,
-    {
+    },{
       "id": 5,
       "topic": "Ethernet and LAN Technologies",
       "description": "Explanation of Ethernet technology and LAN (Local Area Network) technologies, such as Ethernet standards, LAN architectures, and protocols."
@@ -159,6 +155,20 @@ const Cn_Content = () => {
   ]
   ;
   
+  useEffect(() => {
+    function handleScroll() {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement.scrollTop || 0);
+      const scrolled = (scrollTop / (documentHeight - windowHeight)) * 100;
+      setScrollProgress(scrolled);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
 
   useEffect(() => {
@@ -177,6 +187,37 @@ const Cn_Content = () => {
     }
   }, [selectedTopic]);
 
+  function validateContentRead() {
+    const validationThreshold = 80;
+
+    if (scrollProgress >= validationThreshold) {
+      setRead(1);
+      const backendURL = 'https://codesaarthiserver.cyclic.app/api/CourseCompletion';
+      const requestData = {
+        email: email,
+        subject: 'Computer_Networks',
+        complete: '1' 
+      };
+      axios.post(backendURL, requestData)
+      .then(response => {
+        console.log('Response from server:', response.data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    } else {
+      if(read === 1) {
+        setRead(1);
+      }else{
+        setRead(0);
+      }
+  }
+}
+
+  useEffect(() => {
+    validateContentRead();
+  }, [scrollProgress]);
+
   return (
     <>
       <Helmet>
@@ -192,76 +233,76 @@ const Cn_Content = () => {
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
-      <div className="conatiner-fluid" style={{ backgroundColor: '#031A33' }}>
-        <div className="container design g-0" >
-          <div className=" d-lg-none d-block">
-            <button
-              onClick={toggleSidebar}
-              className=" navbar-toggler  shadow-0 d-lg-none  d-block"
-              style={{ color: "#FFE164", fontSize: "1.8rem" }}
-            >
-              <i className="fi fi-br-align-justify ps-2"></i>
-            </button>
+      <div className="container-fluid design g-0" style={{ backgroundColor: '#1E1E1E' }}>
+      <div className="container">
+        <div className=" d-lg-none d-block">
+          <button
+            onClick={toggleSidebar}
+            className=" navbar-toggler  shadow-0 d-lg-none  d-block"
+            style={{ color: "#FFE164", fontSize: "1.8rem" }}
+          >
+            <i className="fi fi-br-align-justify ps-2"></i>
+          </button>
+        </div>
+        <h1 className='py-2 text-success text-decoration-underline'>Let's Learn React in the New Version</h1>
+        <div className="row g-0 p-lg-2 p-0 border border-dark">
+
+          <div className="col-lg-3 col-0 p-lg-2 p-0 d-lg-block d-none border border-dark"style={{ backgroundColor: '#262626' }} >
+            {/* Rendering topic titles */}
+            {importantTopics.map(topic => (
+              <div key={topic.id} onClick={() => handleTopicClick(topic.id)} style={{ cursor: 'pointer' }}>
+                <p className='text-capitalize' style={{ color: '#FFE164' }}>{topic.topic}</p>
+                <hr />
+              </div>
+            ))}
           </div>
-          <h1 className='py-2 text-success text-decoration-underline'>CN  <i class="fi fi-rr-sitemap text-warning"></i></h1>
-          <div className="row g-0 p-lg-2 p-0">
-
-            <div className="col-lg-3 col-0 p-lg-2 p-0 d-lg-block d-none border">
-              {/* Rendering topic titles */}
-              {importantTopics.map(topic => (
-                <div key={topic.id} onClick={() => handleTopicClick(topic.id)} style={{ cursor: 'pointer' }}>
-                  <p className='text-capitalize' style={{ color: '#FFE164' }}>{topic.topic}</p>
-                  <hr />
-                </div>
-              ))}
-            </div>
-            {isSidebarOpen ?
-              <>
-                <div className="d-lg-none d-block">
+          {isSidebarOpen ?
+            <>
+              <div className="d-lg-none d-block">
 
 
-                  <div className="container-fluid  g-0 d-lg-none d-block">
-                    <div
-                      style={{ zIndex: "99" }}
-                      className={`sidebar3 ${isSidebarOpen ? "show" : ""
-                        } d-lg-none d-md-none d-sm-block`}
-                    >
-                      {/* Rendering topic titles */}
-                      {importantTopics.map((topic) => (
-                        <div
-                          key={topic.id}
-                          onClick={() => handleTopicClick(topic.id)}
-                          style={{ cursor: "pointer" }}
-                        >
-                          <small className="text-capitalize">
-                            {topic.topic}
-                          </small>
-                          <hr />
-                        </div>
-                      ))}
-                    </div>
+                <div className="container-fluid  g-0 d-lg-none d-block">
+                  <div
+                    style={{ zIndex: "99" }}
+                    className={`sidebar3 ${isSidebarOpen ? "show" : ""
+                      } d-lg-none d-md-none d-sm-block`}
+                  >
+                    {/* Rendering topic titles */}
+                    {importantTopics.map((topic) => (
+                      <div
+                        key={topic.id}
+                        onClick={() => handleTopicClick(topic.id)}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <small className="text-capitalize">
+                          {topic.topic}
+                        </small>
+                        <hr />
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </> : " "}
-            <div className="col-lg-9 col-12 borderLeft">
-              {/* Rendering corresponding descriptions */}
-              {selectedTopic !== null && (
-                <div className='p-2'>
-                  <h3 className='text-capitalize text-warning'>{importantTopics[selectedTopic - 1].topic}</h3>
-                  <div className='text-light p-2' dangerouslySetInnerHTML={{ __html: importantTopics[selectedTopic - 1].description }}></div>
-                  <div className="row">
-                    <div className="col-6 text-start">
-                      <div className="btn border text-capitalize text-warning" onClick={goToPreviousTopic}><i class="fi fi-rr-angle-small-left"></i>previous</div>
-                    </div>
-                    <div className="col-6 text-end">
-                      <div className="btn  border text-capitalize text-warning" onClick={goToNextTopic}>Next <i class="fi fi-rr-angle-small-right"></i></div>
-                    </div>
+              </div>
+            </> : " "}
+          <div className="col-lg-9 col-12 ">
+            {/* Rendering corresponding descriptions */}
+            {selectedTopic !== null && (
+              <div className='p-2'>
+                <h3 className='text-capitalize text-warning'>{importantTopics[selectedTopic - 1].topic}</h3>
+                <div className='text-light p-2' dangerouslySetInnerHTML={{ __html: importantTopics[selectedTopic - 1].description }}></div>
+                <div className="row">
+                  <div className="col-6 text-start">
+                    <div className="btn border text-capitalize text-warning" onClick={goToPreviousTopic}><i className="fi fi-rr-angle-small-left"></i>previous</div>
+                  </div>
+                  <div className="col-6 text-end">
+                    <div className="btn  border text-capitalize text-warning" onClick={goToNextTopic}>Next <i className="fi fi-rr-angle-small-right"></i></div>
                   </div>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
+      </div>
       </div>
     </>
   );
