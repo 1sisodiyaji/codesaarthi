@@ -22,18 +22,18 @@ const Roadmap = () => {
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
 
-      <div className="container-fluid py-5 design">
+      <div className="container-fluid py-5 design" style={{ backgroundColor: '#1E1E1E' }}>
         <div className="row g-6">
 
           <div className="col-lg-3 my-2 col-12">
-            <div className="card border p-1" style={{ backgroundColor: '#031A33' }}>
+            <div className="card border p-1" style={{ backgroundColor: '#141414' }}>
              
                 <div className="row">
                   <div className='col-4'><img src="img/logo.png" className='img-fluid' alt="" /></div>
                   <div className='col-8 align-self-center'><h5 className="card-title text-light">DSA Roadmap</h5></div>
                 </div>
                 <div className="container-fluid g-0 p-3" style={{ overflowY: 'auto', width: '100%', height: '400px'  }}>
-                 <img src="img/dsaRoadmap.jpg" className='img-fluid h-100' alt="dsa-roadmap" style={{boxShadow: '5px 5px 20px #3393df'}} />
+                 <img src="img/dsaRoadmap.jpg" className='img-fluid h-100' alt="dsa-roadmap" style={{boxShadow: '5px 5px 20px #703BF7'}} />
                 </div>
 
                 <div className='text-end'>
@@ -43,13 +43,13 @@ const Roadmap = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div className="card border p-1" style={{ backgroundColor: '#031A33' }}>
+            <div className="card border p-1" style={{ backgroundColor: '#141414' }}>
                 <div className="row">
                   <div className='col-4'><img src="img/logo.png" className='img-fluid' alt="" /></div>
                   <div className='col-8 align-self-center'><h5 className="card-title text-light">OS Roadmap</h5></div>
                 </div>
                 <div className="container-fluid g-0 p-3" style={{ overflowY: 'auto', width: '100%', height: '400px'  }}>
-                 <img src="img/OsRoadmap.jpg" className='img-fluid h-100' alt="dsa-roadmap" style={{boxShadow: '5px 5px 20px #3393df'}} />
+                 <img src="img/OsRoadmap.jpg" className='img-fluid h-100' alt="dsa-roadmap" style={{boxShadow: '5px 5px 20px #703BF7'}} />
                 </div>
                 <div className='text-end'>
                   <Link to="/Os" className="btn text-warning text-capitalize bg-dark">Check it Out</Link>
@@ -58,13 +58,13 @@ const Roadmap = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div className="card border p-1" style={{ backgroundColor: '#031A33' }}>
+            <div className="card border p-1" style={{ backgroundColor: '#141414' }}>
                 <div className="row">
                   <div className='col-4'><img src="img/logo.png" className='img-fluid' alt="" /></div>
                   <div className='col-8 align-self-center'><h5 className="card-title text-light">DBMS Roadmap</h5></div>
                 </div>
                 <div className="container-fluid g-0 p-3" style={{ overflowY: 'auto', width: '100%', height: '400px'  }}>
-                 <img src="img/dbmsRoadmap.jpg" className='img-fluid h-100' alt="dsa-roadmap" style={{boxShadow: '5px 5px 20px #3393df'}} />
+                 <img src="img/dbmsRoadmap.jpg" className='img-fluid h-100' alt="dsa-roadmap" style={{boxShadow: '5px 5px 20px #703BF7'}} />
                 </div>
                 <div className='text-end'>
                   <Link to="/Dbms" className="btn text-warning text-capitalize bg-dark">Check it Out</Link>
@@ -74,13 +74,13 @@ const Roadmap = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div className="card border p-1" style={{ backgroundColor: '#031A33' }}>
+            <div className="card border p-1" style={{ backgroundColor: '#141414' }}>
                 <div className="row">
                   <div className='col-4'><img src="img/logo.png" className='img-fluid' alt="" /></div>
                   <div className='col-8 align-self-center'><h5 className="card-title text-light">CN Roadmap</h5></div>
                 </div>
                 <div className="container-fluid g-0 p-3" style={{ overflowY: 'auto', width: '100%', height: '400px'  }}>
-                 <img src="img/CNRoadmap.jpg" className='img-fluid h-100' alt="dsa-roadmap" style={{boxShadow: '5px 5px 20px #3393df'}} />
+                 <img src="img/CNRoadmap.jpg" className='img-fluid h-100' alt="dsa-roadmap" style={{boxShadow: '5px 5px 20px #703BF7'}} />
                 </div>
                 <div className='text-end'>
                   <Link to="/ComputerNetwork" className="btn text-warning text-capitalize bg-dark">Check it Out</Link>

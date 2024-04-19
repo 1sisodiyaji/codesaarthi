@@ -19,18 +19,18 @@ const Projects = () => {
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
 
-      <div className="container-fluid design" style={{ minHeight: "100vh" }}>
+      <div className="container-fluid design" style={{ minHeight: "100vh",backgroundColor: '#1E1E1E' }}>
         <div className="row py-5 g-6">
 
           <div className="col-lg-4 my-2 col-12">
-            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+            <div className="card  p-3" style={{ backgroundColor: "#262626" }}>
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
                   <div className="col-4 d-flex">
-                    <img src="https://img.freepik.com/premium-vector/vector-clone-minimal-text-logo-design_867743-355.jpg" className="img-fluid" style={{borderRadius:'50%'}} />
+                    <img src="img/clone1.png" className="img-fluid"/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
@@ -53,14 +53,14 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-4 my-2 col-12">
-            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+            <div className="card  p-3" style={{ backgroundColor: "#262626" }}>
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="img/reactLogo.png" className="img-fluid" style={{borderRadius: '50%'}} />
+                    <img src="img/React1.png" className="img-fluid"/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
@@ -81,14 +81,14 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-4 my-2 col-12">
-            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+            <div className="card  p-3" style={{ backgroundColor: "#262626" }}>
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="https://e7.pngegg.com/pngimages/666/502/png-clipart-brand-php-logo-computer-file-product-breeze-blue-text.png" className="img-fluid" style={{borderRadius:'50%'}} />
+                    <img src="img/php1.png" className="img-fluid" />
                   
                   </div>
                   <div className="col-8 align-self-center">
@@ -109,15 +109,15 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="col-lg-3 my-2 col-12">
-            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+          <div className="col-lg-4 my-2 col-12">
+            <div className="card  p-3" style={{ backgroundColor: "#262626" }}>
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="../img/javaProjects.png" className="img-fluid p-1" style={{borderRadius:'40%'}}/>
+                    <img src="img/java1.png" className="img-fluid p-1" style={{borderRadius:'40%'}}/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
@@ -137,15 +137,15 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="col-lg-3 my-2 col-12">
-            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+          <div className="col-lg-4 my-2 col-12">
+            <div className="card  p-3" style={{ backgroundColor: "#262626" }}>
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png" className="img-fluid" />
+                    <img src="img/html1.png" className="img-fluid" />
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
@@ -165,15 +165,15 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="col-lg-3 my-2 col-12">
-            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+          <div className="col-lg-4 my-2 col-12">
+            <div className="card p-3" style={{ backgroundColor: "#262626" }}>
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="../img/htmlCSS.png" className="img-fluid m-2"/>
+                    <img src="img/htmlcss1.png" className="img-fluid m-2"/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
@@ -193,15 +193,15 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="col-lg-3 my-2 col-12">
-            <div className="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
+          <div className="col-lg-4 my-2 col-12">
+            <div className="card  p-3" style={{ backgroundColor: "#262626" }}>
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
               >
                 <div className="row">
                   <div className="col-4">
-                    <img src="../img/htmlCSSjs.png" className="img-fluid" style={{borderRadius:'50%'}} />
+                    <img src="img/htmlcssjs1.png" className="img-fluid" />
                   </div>
                   <div className="col-8 align-self-center">
                     <div>

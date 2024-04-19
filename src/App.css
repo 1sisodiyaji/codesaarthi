@@ -10,7 +10,7 @@
 
 body {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -28,10 +28,6 @@ body::-webkit-scrollbar {
   }
   .firstPage{
     margin-top: 14vh!important;
-  }
-
-  .navbar {
-    background-color: white !important;
   }
   .borderLeft{
     border-left: 0px solid white !important;
@@ -143,7 +139,7 @@ body::-webkit-scrollbar {
 /* footer */
 .SocialLinks :hover {
   color: #f3f3f3 !important;
-  background-color: #79b4e2 !important;
+  background-color: black !important;
 }
 .textColor{
   color: #358CCA;

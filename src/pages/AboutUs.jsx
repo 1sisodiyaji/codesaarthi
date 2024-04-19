@@ -78,13 +78,13 @@ const AboutUs = () => {
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
 
-
-            <div className="container-fluid container-lg text-light my-lg-4 py-lg-4 mt-5 pt-4 text-center">
-                <h1 className="heading text-dark" >
+<div className="container-fluid g-0"style={{backgroundColor:' #1E1E1E'}} >
+            <div className="container-fluid container-lg text-light py-lg-4  pt-4 text-center" >
+                <h1 className="heading text-light" >
                     Why we<span style={{ color: '#79b4e2' }} > Exist?</span>
                 </h1>
 
-                <h3 className="px-lg-4 px-1 py-2 heading" style={{ color: 'black' }}>At <span style={{ color: '#79b4e2' }} >
+                <h3 className="px-lg-4 px-1 py-2 heading" style={{ color: 'white' }}>At <span style={{ color: '#79b4e2' }} >
                     Codesaarthi</span> , where the world of coding and computer science unfolds with simplicity and empowerment. We are passionate about guiding individuals on their journey through the intricacies of data structures, algorithms, and fundamental computer science concepts..</h3>
 
             </div>
@@ -202,7 +202,7 @@ const AboutUs = () => {
 
             </div >
 
-            <div className="container my-3">
+            <div className="container py-lg-3">
                 <div className="row g-0">
                     <div className="col-lg-3 col-12"></div>
                     <div className="col-lg-6 col-12 g-0">
@@ -254,7 +254,7 @@ const AboutUs = () => {
                     <div className="col-lg-3 col-12"></div>
                 </div>
             </div>
-
+            </div>
         </>
     )
 }

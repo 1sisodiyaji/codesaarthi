@@ -18,14 +18,15 @@ const Theory = () => {
   <meta property="og:type" content="Education-Website" />
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
-      <div className="container-fluid my-5 py-5" style={{ minHeight: '100vh' }}>
+
+      <div className="container-fluid  py-5" style={{ minHeight: '100vh' ,backgroundColor:'#1E1E1E' }}>
         <div className="row"> 
           <div className="col-lg-4 col-12 my-2">
-            <div className="card border p-3 tilt-effect" style={{ backgroundColor: '#6aa1b4' }}>
-              <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <div className="card p-3 tilt-effect" style={{ backgroundColor: '#262626' }}>
+              <div className=" hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
-                    <img src="../img/Array.jpg" className="img-fluid rounded-8  " style={{height: '18vh' }}/>
+                    <img src="../img/Array.jpg" className="img-fluid rounded-8  " style={{height: '12vh' }}/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light">Array in Short</h5></div>
@@ -42,11 +43,11 @@ const Theory = () => {
           </div>
 
           <div className="col-lg-4 col-12 my-2">
-            <div className="card border p-3 tilt-effect" style={{ backgroundColor: '#6aa1b4' }}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626' }}>
               <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
-                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-database-data-save-rack-dbms-management-44627.png?f=webp" className="img-fluid rounded-8  " style={{height: '18vh' }}/>
+                    <img src="img/dbms1.png" className="img-fluid rounded-8  bg-image"/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light text-capitalize">Dbms Notes</h5></div>
@@ -63,11 +64,11 @@ const Theory = () => {
           </div>
 
           <div className="col-lg-4 col-12 my-2">
-            <div className="card border p-3 tilt-effect" style={{ backgroundColor: '#6aa1b4' }}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626' }}>
               <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
-                    <img src="img/osLogo.png" className="img-fluid rounded-8" style={{height: '18vh' }}/>
+                    <img src="img/Text.png" className="img-fluid rounded-8 bg-image"/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light">Os  Notes </h5></div>
@@ -84,11 +85,11 @@ const Theory = () => {
           </div> 
 
           <div className="col-lg-4 col-12 my-2">
-            <div className="card border p-3 tilt-effect" style={{ backgroundColor: '#6aa1b4' }}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626' }}>
               <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
-                    <img src="img/reactLogo.png" className="img-fluid rounded-8" style={{height: '18vh' }}/>
+                    <img src="img/React1.png" className="img-fluid bg-image rounded-8"/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light">React  Notes </h5></div>
@@ -105,11 +106,11 @@ const Theory = () => {
           </div> 
 
           <div className="col-lg-4 col-12 my-2">
-            <div className="card border p-3 tilt-effect" style={{ backgroundColor: '#6aa1b4' }}>
+            <div className="card border p-3 tilt-effect" style={{ backgroundColor: '#262626' }}>
               <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
-                    <img src="https://static.vecteezy.com/system/resources/thumbnails/008/681/148/small/computer-network-internet-technologies-icon-vector.jpg" className="img-fluid rounded-8" style={{height: '18vh' }}/>
+                    <img src="img/cnLogo.png" className="img-fluid rounded-8 bg-image"/>
                   </div>
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light">CN  Notes </h5></div>

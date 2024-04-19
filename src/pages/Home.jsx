@@ -20,7 +20,7 @@ const Home = () => {
       </Helmet>
 
       <div className="container-fluid" style={{ backgroundColor: '#1E1E1E' }}>
-        <div className="row w-100 py-lg-3">
+        <div className="row w-100 py-lg-4">
           <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center">
 
             <div className=" text-light">
@@ -238,7 +238,7 @@ const Home = () => {
 
             <div className="col-lg-5 col-12 my-2">
               <div class="card p-3" style={{ backgroundColor: '#262626' }}>
-                <Link to="/web-development" >
+                <Link to="/basic-Dbms" >
                   <div className="text-end">
                     <i class="fi fi-rs-arrow-up-right" style={{ color: '#703BF7' }}></i>
                   </div>

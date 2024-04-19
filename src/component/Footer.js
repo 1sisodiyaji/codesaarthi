@@ -5,29 +5,29 @@ export const Footer = ({ onFooterClick }) => {
   return (
     <>
       <footer
-        className="design"
+        className="py-3"
         style={{ color: "#FFFFFF", backgroundColor: "#1A1A1A" }}
       >
         <div className="container-fluid g-0">
           <div className="row g-0">
-            <div className="col-9 d-flex">
+            <div className="col-lg-9 col-12 d-flex">
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-lg-5 text-center">
+                        <div className="col-lg-5 col-12 text-center">
                             {/* <!-- Additional Information --> */}
-              <div className="pb-3 d-flex" style={{ color: "FFFFFF" }}>
+              <div className="pb-lg-3 d-flex" style={{ color: "FFFFFF" }}>
                 <p>
                   © 2024 codesaarthi. All rights reserved by{" "}
                   <Link to="https://codesaarthi.com">codesaarthi.com</Link>
                 </p>
               </div>
                         </div>
-                        <div className="col-lg-6">
-                        <div className="pb-3 d-flex" style={{ color: "#999999" }}>
+                        <div className="col-lg-7  col-12">
+                        <div className="pb-lg-3 d-flex" style={{ color: "#999999" }}>
                 <Link
                   to="/privacy_policy"
                   onClick={onFooterClick}
-                  className="text-body "
+                  className="text-body heading2"
                 >
                   Privacy Policy
                 </Link>{" "}
@@ -35,7 +35,7 @@ export const Footer = ({ onFooterClick }) => {
                 <Link
                   to="/terms_conditions"
                   onClick={onFooterClick}
-                  className="text-body ms-1"
+                  className="text-body ms-1 heading2"
                 >
                   Terms Of Service
                 </Link>{" "}
@@ -43,7 +43,7 @@ export const Footer = ({ onFooterClick }) => {
                 <Link
                   to="/cookies"
                   onClick={onFooterClick}
-                  className="text-body ms-1"
+                  className="text-body ms-1 heading2"
                 >
                   Cookie Settings
                 </Link>
@@ -54,7 +54,7 @@ export const Footer = ({ onFooterClick }) => {
               
               
             </div>
-            <div className="col-3 ">
+            <div className="col-lg-3 col-12 ">
               <div className="pb-3 d-flex justify-content-end " style={{ color: "FFFFFF" }}>
                 {/* <!-- Section: Social media --> */}
                 <section className=" SocialLinks">

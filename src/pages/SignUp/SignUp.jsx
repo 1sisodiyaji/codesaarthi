@@ -172,6 +172,7 @@ const SignUp = () => {
           fontFamily: "Exo",
           minHeight: "100vh ",
           overflowY: "scroll ",
+          backgroundColor:"#141414"
         }}
       >
        
@@ -184,7 +185,7 @@ const SignUp = () => {
                 width={95}
                 alt=""
               />
-              <h3 className="pt-3" style={{ color: '#79b4e2' }}> Create Account</h3>
+              <h3 className="pt-3" style={{ color: '#703BF7' }}> Create Account</h3>
               <br />
             </div>
 
@@ -203,12 +204,12 @@ const SignUp = () => {
                     onChange={handleInputChange}
                     style={{
                       backgroundColor: "black",
-                      color: "#79b4e2",
+                      color: "#703BF7",
                     }}
                   />
                   <i
                     id="checkname"
-                    style={{ color: "#79b4e2", display: "none" }}
+                    style={{ color: "#703BF7", display: "none" }}
                     className="fi fi-ss-check-circle text-center ms-1"
                   ></i>
                 </div>
@@ -217,7 +218,7 @@ const SignUp = () => {
 
             {/* <!-- Email input --> */}
             <div className="mb-4">
-              <p id="email_error" style={{ color: "#79b4e2" }}></p>
+              <p id="email_error" style={{ color: "#703BF7" }}></p>
               <div className="input-group w-100">
                 <input
                   type="email"
@@ -228,50 +229,53 @@ const SignUp = () => {
                   onChange={handleInputChange}
                   style={{
                     backgroundColor: "black",
-                    color: "#79b4e2",
+                    color: "#703BF7",
                   }}
                   placeholder="email "
                 />
                 <i
                   id="checkemail"
-                  style={{ color: "#79b4e2", display: "none" }}
+                  style={{ color: "#703BF7", display: "none" }}
                   className="fi fi-ss-check-circle text-center ms-1"
                 ></i>
               </div>
             </div>
 
             {/* <!-- Password input --> */}
-            <div className="mb-4">
-              <p id="pass_error" style={{ color: "#79b4e2" }}></p>
-              <div className="input-group w-100">
-                <input
-                  type={isPasswordVisible ? "text" : "password"}
-                  id="password"
-                  name="password"
-                  value={formData.password}
-                  className="form-control rounded-8 py-2 "
-                  onChange={handleInputChange}
-                  style={{
-                    backgroundColor: "black",
-                    color: "#79b4e2",
-                  }}
-                  placeholder="Password"
-                />
-                <i
-                  id="passwordViewer"
-                  onClick={passwordView}
-                  className="fi fi-ss-eye-crossed mt-2 mx-2"
-                  style={{
-                    color: !isPasswordVisible ? "black" : "#79b4e2",
-                  }}
-                ></i>
-                <i
-                  id="checkpass"
-                  style={{ color: "#79b4e2", display: "none" }}
-                  className="fi fi-ss-check-circle text-center ms-1"
-                ></i>
-              </div>
-            </div>
+            <div className="mb-4 position-relative">
+  <p id="pass_error" style={{ color: "#703BF7" }}></p>
+  <div className="input-group w-100">
+    <input
+      type={isPasswordVisible ? "text" : "password"}
+      id="password"
+      name="password"
+      value={formData.password}
+      className="form-control rounded-8 py-2 "
+      onChange={handleInputChange}
+      style={{
+        backgroundColor: "black",
+        color: "#703BF7",
+        paddingRight: "3.5rem", // Add right padding to make space for the icon
+      }}
+      placeholder="Password"
+    />
+    <i
+      id="passwordViewer"
+      onClick={passwordView}
+      className={`fi ${isPasswordVisible ? 'fi-ss-eye' : 'fi-ss-eye-crossed'} position-absolute top-50 end-0 pe-2 translate-middle-y text-decoration-none`}
+      style={{
+        color: "#703BF7",
+        cursor: "pointer",
+      }}
+    ></i>
+    <i
+      id="checkpass"
+      style={{ color: "#703BF7", display: "none" }}
+      className="fi fi-ss-check-circle text-center ms-1"
+    ></i>
+  </div>
+</div>
+
 
             {/* <!-- Submit button --> */}
             <button
@@ -279,8 +283,8 @@ const SignUp = () => {
               type="submit"
               className="btn btn-block mb-4 text-capitalize py-3"
               style={{
-                backgroundColor: "#79b4e2",
-                color: "black",
+                backgroundColor: "#703BF7",
+                color: "white",
                 fontSize: "1rem ",
               }}
             >
@@ -289,7 +293,7 @@ const SignUp = () => {
 
             <h3
               className="text-center mb-3"
-              style={{ fontWeight: "light", fontSize: "1rem ", color: 'black' }}
+              style={{ fontWeight: "light", fontSize: "1rem ", color: 'white' }}
             >
               {" "}
               -OR-{" "}
@@ -309,23 +313,13 @@ const SignUp = () => {
                     </span>
                   </button>
                 </div>
-                <div className="col-12  mt-2 d-none">
-
-                  <button type="button" className="btn  bg-light w-100 " onClick={linkedInLogin} >
-                    <img src="../img/linkedin.png" style={{ height: "26px" }} alt="" />
-                    <span className="text-dark text-capitalize ms-2 ">
-                      Sign Up With Linkedin
-                    </span>
-                  </button>
-
-                </div>
               </div>
             </div>
 
             <div className="text-center ">
               <p className="text-muted">
                 Already have an account ?
-                <Link to="/login" style={{ color: "#79b4e2" }}>
+                <Link to="/login" style={{ color: "#703BF7" }}>
                   {" "}
                   Log in
                 </Link>
