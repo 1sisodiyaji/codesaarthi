@@ -20,6 +20,7 @@ const Projects = () => {
 </Helmet>
 
       <div className="container-fluid design" style={{ minHeight: "100vh",backgroundColor: '#1E1E1E' }}>
+        <div className="container">
         <div className="row py-5 g-6">
 
           <div className="col-lg-4 my-2 col-12">
@@ -222,7 +223,7 @@ const Projects = () => {
               </div>
             </div>
           </div>
-
+          </div>
         </div>
       </div>
     </>

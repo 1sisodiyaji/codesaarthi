@@ -26,7 +26,7 @@ const Roadmap = () => {
         <div className="row g-6">
 
           <div className="col-lg-3 my-2 col-12">
-            <div className="card border p-1" style={{ backgroundColor: '#141414' }}>
+            <div className="card border border-dark p-1" style={{ backgroundColor: '#141414' }}>
              
                 <div className="row">
                   <div className='col-4'><img src="img/logo.png" className='img-fluid' alt="" /></div>
@@ -43,7 +43,7 @@ const Roadmap = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div className="card border p-1" style={{ backgroundColor: '#141414' }}>
+            <div className="card border border-dark p-1" style={{ backgroundColor: '#141414' }}>
                 <div className="row">
                   <div className='col-4'><img src="img/logo.png" className='img-fluid' alt="" /></div>
                   <div className='col-8 align-self-center'><h5 className="card-title text-light">OS Roadmap</h5></div>
@@ -58,7 +58,7 @@ const Roadmap = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div className="card border p-1" style={{ backgroundColor: '#141414' }}>
+            <div className="card border border-dark p-1" style={{ backgroundColor: '#141414' }}>
                 <div className="row">
                   <div className='col-4'><img src="img/logo.png" className='img-fluid' alt="" /></div>
                   <div className='col-8 align-self-center'><h5 className="card-title text-light">DBMS Roadmap</h5></div>
@@ -74,7 +74,7 @@ const Roadmap = () => {
           </div>
 
           <div className="col-lg-3 my-2 col-12">
-            <div className="card border p-1" style={{ backgroundColor: '#141414' }}>
+            <div className="card border border-dark p-1" style={{ backgroundColor: '#141414' }}>
                 <div className="row">
                   <div className='col-4'><img src="img/logo.png" className='img-fluid' alt="" /></div>
                   <div className='col-8 align-self-center'><h5 className="card-title text-light">CN Roadmap</h5></div>

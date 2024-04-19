@@ -92,27 +92,27 @@ const AboutUs = () => {
             {/* <!--    Cards--> */}
             <div className="container-fluid  my-lg-4 py-lg-4">
                 <div className="row  p-lg-0 p-3">
-                    <div className="col-lg-2 col-md-0 col-sm-0 ">
-                        <img src="../img/vision1.webp" className='img-fluid pt-5 mt-5 gt-5' style={{ height: '50vh', width: '60vw' }} alt="mission image" />
+                    <div className="col-lg-2 col-md-0 col-sm-0 d-flex align-self-end justify-content-end ">
+                        <img src="../img/Rectangle3.png" className='img-fluid pt-5 mt-5 gt-5' alt="mission image" />
                     </div>
                     <div className="col-lg-4 col-12 g-0 my-2 rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black' }}>
-                        <div className="card p-4 h-100" style={{ backgroundColor: '#79b4e2' }}>
+                        <div className="card p-4 h-100" style={{ backgroundColor: '#262626' }}>
                             <div className="d-flex justify-content-end">
                             </div>
-                            <strong><h1 className="text-light heading" style={{ fontWeight: 'bolder' }}>Our <span style={{ color: 'black' }} >Mission</span></h1></strong>
+                            <strong><h1 className="text-light heading" style={{ fontWeight: 'bolder' }}>Our <span style={{ color: '#703BF7' }} >Mission</span></h1></strong>
                             <h3 className="text-light heading2">we are on a mission to make the world of coding and computer science accessible to everyone. Whether you're a student navigating through DSA problems, a professional seeking to enhance your knowledge of OS, DBMS, CN, or any other theory papers in computer science, we've got you covered..</h3>
                         </div>
                     </div>
 
                     <div className="col-lg-4 col-12 g-0 my-2  rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black' }}   >
-                        <div className="card p-4 ms-lg-2 h-100" style={{ backgroundColor: '#79b4e2' }}>
-                            <strong><h1 className="text-white heading" style={{ fontWeight: 'bolder' }}>Our <span style={{ color: 'black' }}>Vision</span></h1></strong>
+                        <div className="card p-4 ms-lg-2 h-100" style={{ backgroundColor: '#262626' }}>
+                            <strong><h1 className="text-white heading" style={{ fontWeight: 'bolder' }}>Our <span style={{ color: '#703BF7' }}>Vision</span></h1></strong>
                             <h3 className="text-white heading2">We aspire to revolutionize the educational landscape, making learning accessible and free for all. As the student who have faith to learn they can grow here and each and every student could get learning free . our motive is to make it easy and available for all freely . We will help you atmost we can ....</h3>
                         </div>
 
                     </div>
                     <div className="col-lg-2 d-lg-block d-md-block d-none">
-                        <img src="../img/boy1.webp" className='img-fluid pt-5 mt-5 ' style={{ height: '50vh', width: '60vw' }} alt="vision Image" />
+                        <img src="../img/Rectangle2.png" className='img-fluid ' alt="vision Image" />
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@ const AboutUs = () => {
                     <div className=" col-lg-2 col-0"></div>
                     <div className="col-lg-4 col-12   py-lg-5 py-3 px-lg-3 px-3 card shadow-5-soft tilt-effect " style={{
                        
-                        borderTopLeftRadius: '20px', borderTopRightRadius: '20px', borderBottomLeftRadius: '0', borderBottomRightRadius: '0', backgroundColor: '#031A33'
+                        borderTopLeftRadius: '20px', borderTopRightRadius: '20px', borderBottomLeftRadius: '0', borderBottomRightRadius: '0', backgroundColor: '#262626'
                     }}>
                         <div className="justify-content-center" style={{ maxWidth: '100%' }}>
                             <div>
@@ -206,7 +206,7 @@ const AboutUs = () => {
                 <div className="row g-0">
                     <div className="col-lg-3 col-12"></div>
                     <div className="col-lg-6 col-12 g-0">
-                        <div className="card p-5 d-lg-block d-md-block d-none" style={{ backgroundColor: '#000435' , boxShadow:'15px 15px 40px black' }} >
+                        <div className="card p-5 d-lg-block d-md-block d-none" style={{ backgroundColor: '#262626' , boxShadow:'15px 15px 40px black' }} >
                             <div className="row">
                                 <div className="col-3" style={{ borderRadius: '50%' }}>
                                     <img src="../img/ProfilePic.png" className='img-fluid' alt="Profile Pic Image" style={{ borderRadius: '50%' }} />

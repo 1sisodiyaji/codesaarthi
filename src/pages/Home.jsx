@@ -70,7 +70,6 @@ const Home = () => {
                 <div class="bg-image hover-overlay ripple text-center">
                   <img src="img/clone1.png" className="img-fluid" />
                 </div>
-
                 <div class="card-body">
                   <h5 class="card-title text-center text-light">Clone projects</h5>
                 </div>
@@ -171,7 +170,7 @@ const Home = () => {
             <img src="img/Rectangle2.png" className="img-fluid" style={{ marginTop: '7vh', marginLeft: '2vw' }} alt="" />
           </div>
           <div className="col-lg-4 align-self-end">
-            <h2 className="text-light">Premium Notes Tailored for You</h2>
+            <h2 className="text-light text-center">Premium Notes Tailored for You</h2>
             <p className="text-center" style={{ color: '#999999' }}>Discover Top-Notch Study Materials Crafted with Excellence</p>
           </div>
           <div className="col-lg-4">
