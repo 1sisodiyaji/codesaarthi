@@ -1,56 +1,100 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 export const Footer = ({ onFooterClick }) => {
-    const userName = localStorage.getItem("user_email");
+  const userName = localStorage.getItem("user_email");
   return (
-   
     <>
-        
-        <footer className = "text-center design  pt-2" style ={{ color: 'grey' , backgroundColor : 'white'}}>
-
-            <div className = "container-fluid g-0 pt-2" style={{ color: 'grey', backgroundColor : 'white'}}>
-                {/* <!-- Logo and Company Name --> */}
-                <div className = " row mb-3 g-0">
-                    <div className="col-lg-2 col-6 text-start ps-2">
-                    <Link to="/">
-                        <img src="../img/logo.png" alt="logo" style = {{ width: '35px'}}/>
-                    </Link>
-                    <Link to="/" className = "h3 ms-2" style= {{ color:'#79b4e2' }}>
-                        codesaarthi
-                    </Link>
+      <footer
+        className="design"
+        style={{ color: "#FFFFFF", backgroundColor: "#1A1A1A" }}
+      >
+        <div className="container-fluid g-0">
+          <div className="row g-0">
+            <div className="col-9 d-flex">
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-lg-5 text-center">
+                            {/* <!-- Additional Information --> */}
+              <div className="pb-3 d-flex" style={{ color: "FFFFFF" }}>
+                <p>
+                  © 2024 codesaarthi. All rights reserved by{" "}
+                  <Link to="https://codesaarthi.com">codesaarthi.com</Link>
+                </p>
+              </div>
+                        </div>
+                        <div className="col-lg-6">
+                        <div className="pb-3 d-flex" style={{ color: "#999999" }}>
+                <Link
+                  to="/privacy_policy"
+                  onClick={onFooterClick}
+                  className="text-body "
+                >
+                  Privacy Policy
+                </Link>{" "}
+                |
+                <Link
+                  to="/terms_conditions"
+                  onClick={onFooterClick}
+                  className="text-body ms-1"
+                >
+                  Terms Of Service
+                </Link>{" "}
+                |
+                <Link
+                  to="/cookies"
+                  onClick={onFooterClick}
+                  className="text-body ms-1"
+                >
+                  Cookie Settings
+                </Link>
+              </div>
+                        </div>
                     </div>
-                   <div className="col-lg-10 col-6 text-end me-0">
-{/* <!-- Section: Social media --> */}
-<section className = "mb-1 SocialLinks">
-                   
- 
-                   {/* <!-- Instagram --> */}
-                   <Link className = "btn btn-sm ms-3" to="https://www.instagram.com/codesaarthi/" role="button"  style={{ borderRadius:"50%" , color:"#79b4e2" , fontSize:'0.9rem'}}  target="_blank" >
-                       <i className = "fi fi-brands-instagram  rounded-8"></i>
-                   </Link>
-                 
-
-                    {/* <!-- Whatsapp --> */}
-                    <Link className = "btn btn-sm ms-3" to="https://chat.whatsapp.com/BQV3Uv4nlU7IcrnjXHASpE" role="button"  style={{ borderRadius:"50%" , color:"#79b4e2" , fontSize:'0.9rem'}}  target="_blank" >
-                       <i className = "fi fi-brands-whatsapp  rounded-8"></i>
-                   </Link>
-
-                   {/* <!-- Additional social media icons can be added here --> */}
-               </section>
-                   </div>
                 </div>
-
-               
-
-                {/* <!-- Additional Information --> */}
-                <div className = "pb-3" style= {{ color: 'grey'}}>
-                    <p>© 2024 codesaarthi. All rights reserved by <Link to ="https://codesaarthi.com" >codesaarthi.com</Link></p>
-                    <Link to="/privacy_policy"  onClick={onFooterClick}  className = "text-body ">Privacy Policy</Link> |
-                <Link to="/terms_conditions" onClick={onFooterClick}  className = "text-body ms-1">Terms Of Service</Link> |
-                <Link to="/cookies" onClick={onFooterClick}  className = "text-body ms-1">Cookie Settings</Link>
-                </div>
+              
+              
             </div>
-        </footer>
-   </>
-  )
-}
+            <div className="col-3 ">
+              <div className="pb-3 d-flex justify-content-end " style={{ color: "FFFFFF" }}>
+                {/* <!-- Section: Social media --> */}
+                <section className=" SocialLinks">
+                  {/* <!-- Instagram --> */}
+                  <Link
+                    className="btn btn-sm ms-3"
+                    to="https://www.instagram.com/codesaarthi/"
+                    role="button"
+                    style={{
+                      borderRadius: "50%",
+                      color: "#703BF7",
+                      fontSize: "1.2rem",
+                    }}
+                    target="_blank"
+                  >
+                    <i className="fi fi-brands-instagram  rounded-8"></i>
+                  </Link>
+
+                  {/* <!-- Whatsapp --> */}
+                  <Link
+                    className="btn btn-sm ms-3"
+                    to="https://chat.whatsapp.com/BQV3Uv4nlU7IcrnjXHASpE"
+                    role="button"
+                    style={{
+                      borderRadius: "50%",
+                      color: "#703BF7",
+                      fontSize: "1.2rem",
+                    }}
+                    target="_blank"
+                  >
+                    <i className="fi fi-brands-whatsapp rounded-8"></i>
+                  </Link>
+
+                  {/* <!-- Additional social media icons can be added here --> */}
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+};

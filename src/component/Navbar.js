@@ -15,7 +15,6 @@ export const Navbar = () => {
     localStorage.removeItem("user_email");
     localStorage.removeItem("user_name");
     localStorage.removeItem("user_ProfilePic");
-
     navigate("/");
   };
 
@@ -180,7 +179,7 @@ export const Navbar = () => {
           className="container-fluid "
           style={{
             zIndex: "1000!important",
-            backgroundColor: "#f3f3f3",
+            backgroundColor: "#1E1E1E",
           }}
         >
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -188,26 +187,20 @@ export const Navbar = () => {
             <Link
               className="navbar-brand text-center ms-4"
               to="/"
-              style={{ color: "#79b4e2" }}
+              style={{ color: "#703BF7" }}
             >
-              <img
-                src="../img/logo.png"
-                height={35}
-                alt=" codesaarthi Logo"
-                loading="lazy"
-              />
               <h1 style={{ fontSize: "24px" }} className="mb-0 ms-2">
-                codesaarthi
+              Codesaarthi
               </h1>
             </Link>
             {/* Left links */}
-            <ul className="navbar-nav mx-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
+            <ul className="navbar-nav mx-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center p-1">
               <li className="nav-items">
                 <Link
                   className={`nav-link ${
                     isNavLinkActive("/AboutUs") ? "active" : ""
                   }`}
-                  style={{ color: "black" }}
+                  style={{ color: "#FFFFFF" }}
                   to="/AboutUs"
                 >
                   About Us
@@ -218,7 +211,7 @@ export const Navbar = () => {
                   className={`nav-link ${
                     isNavLinkActive("/theory") ? "active" : ""
                   }`}
-                  style={{ color: "black" }}
+                  style={{ color: "#FFFFFF" }}
                   to="/theory"
                 >
                   Theory
@@ -229,7 +222,7 @@ export const Navbar = () => {
                   className={`nav-link ${
                     isNavLinkActive("/Problems") ? "active" : ""
                   }`}
-                  style={{ color: "black" }}
+                  style={{ color: "#FFFFFF" }}
                   to="/Problems"
                 >
                   Problems
@@ -241,7 +234,7 @@ export const Navbar = () => {
                   className={`nav-link ${
                     isNavLinkActive("/Projects") ? "active" : ""
                   }`}
-                  style={{ color: "black" }}
+                  style={{ color: "#FFFFFF" }}
                   to="/Projects"
                 >
                   Projects
@@ -254,7 +247,7 @@ export const Navbar = () => {
                   className={`nav-link ${
                     isNavLinkActive("/roadMap") ? "active" : ""
                   }`}
-                  style={{ color: "black" }}
+                  style={{ color: "#FFFFFF" }}
                   to="/roadMap"
                 >
                   RoadMaps
@@ -264,20 +257,10 @@ export const Navbar = () => {
             {/* Left links */}
           </div>
 
-          <div className="d-flex p-2 d-lg-block d-md-block d-none">
+          <div className="d-lg-block d-md-block d-none">
             {userName ? (
               <>
                 <div className="d-flex align-items-center">
-                  {/* <!-- Icon --> */}
-                  {/* <a className="text-reset me-3" href="#">
-                    <i className="fi fi-ss-flame"></i>
-                  </a> */}
-
-                  {/* <!-- Notifications --> */}
-
-                  {/* <i className="fi fi-br-envelope-dot px-2"></i> */}
-
-                  {/* <!-- Avatar --> */}
                   <div className="nav-item dropdown px-2">
                     <a
                       className="nav-link dropdown-toggle"
@@ -317,19 +300,8 @@ export const Navbar = () => {
               </>
             ) : (
               <>
-                <Link to="/signup" className="px-2">
-                  <button
-                    className="btn rounded-9 text-dark text-capitalize"
-                    style={{ backgroundColor: "#79b4e2" }}
-                  >
-                    Create Account
-                  </button>
-                </Link>
-
-                <Link to="/Login">
-                  <button
-                    className="btn rounded-9 text-dark text-capitalize"
-                    style={{ backgroundColor: "#79b4e2" }}
+                <Link to="/signup" className="borderColor">
+                  <button className="btn btn-sm  rounded-8 text-light text-capitalize"
                   >
                     Log in
                   </button>
