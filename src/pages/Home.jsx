@@ -19,8 +19,8 @@ const Home = () => {
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
 
-      <div className="container-fluid" style={{ backgroundColor: '#1E1E1E' }}>
-        <div className="row w-100 py-lg-4">
+      <div className="container-fluid design" style={{ backgroundColor: '#1E1E1E' }}>
+        <div className="row w-100 py-lg-4 py-4">
           <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center">
 
             <div className=" text-light">
@@ -43,15 +43,15 @@ const Home = () => {
         </div>
 
         <div className="row py-lg-5">
-          <div className="col-4">
+          <div className="col-lg-4 col-0 d-lg-block d-none">
             <img src="img/Rectangle1.png" className="img-fluid" style={{ marginTop: '-32vh', marginLeft: '22vw' }} alt="" />
             <img src="img/Rectangle2.png" className="img-fluid" style={{ marginTop: '12vh', marginLeft: '4vw' }} alt="" />
           </div>
-          <div className="col-5  align-self-end">
-            <h1 className="text-light">Discover Our Tailored Projects</h1>
-            <p style={{ color: '#999999' }} className="text-center">Explore Custom-Made Solutions Designed Just for You!</p>
+          <div className="col-lg-5 col-12  align-self-end">
+            <h1 className="text-light heading">Discover Our Tailored Projects</h1>
+            <p style={{ color: '#999999' }} className="text-center heading2">Explore Custom-Made Solutions Designed Just for You!</p>
           </div>
-          <div className="col-3 text-end">
+          <div className="col-lg-3 col-0 text-end d-lg-block d-none">
             <img src="img/Rectangle3.png" className="img-fluid" alt="" />
           </div>
         </div>
@@ -165,15 +165,15 @@ const Home = () => {
         </div>
 
         <div className="row g-0 py-lg-5">
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-0 d-lg-block d-none">
             <img src="img/Rectangle1.png" className="img-fluid" style={{ marginTop: '7vh', marginLeft: '20vw' }} alt="" />
             <img src="img/Rectangle2.png" className="img-fluid" style={{ marginTop: '7vh', marginLeft: '2vw' }} alt="" />
           </div>
-          <div className="col-lg-4 align-self-end">
+          <div className="col-lg-4 col-12 align-self-end">
             <h2 className="text-light text-center">Premium Notes Tailored for You</h2>
             <p className="text-center" style={{ color: '#999999' }}>Discover Top-Notch Study Materials Crafted with Excellence</p>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 d-lg-block d-none">
             <img src="img/Rectangle1.png" className="img-fluid" style={{ marginTop: '-47vh', marginLeft: '-2vw' }} alt="Rectangle1.png " />
             <img src="img/Rectangle1.png" className="img-fluid" style={{ marginTop: '20vh', marginLeft: '15vw' ,position:' relative' }} alt="Rectangle1.png " />
           </div>

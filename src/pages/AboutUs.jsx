@@ -78,7 +78,7 @@ const AboutUs = () => {
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
 
-<div className="container-fluid g-0"style={{backgroundColor:' #1E1E1E'}} >
+<div className="container-fluid g-0 design"style={{backgroundColor:' #1E1E1E'}} >
             <div className="container-fluid container-lg text-light py-lg-4  pt-4 text-center" >
                 <h1 className="heading text-light" >
                     Why we<span style={{ color: '#79b4e2' }} > Exist?</span>
@@ -92,7 +92,7 @@ const AboutUs = () => {
             {/* <!--    Cards--> */}
             <div className="container-fluid  my-lg-4 py-lg-4">
                 <div className="row  p-lg-0 p-3">
-                    <div className="col-lg-2 col-md-0 col-sm-0 d-flex align-self-end justify-content-end ">
+                    <div className="col-lg-2 col-md-0 col-sm-0 d-flex align-self-end justify-content-end d-lg-block d-none">
                         <img src="../img/Rectangle3.png" className='img-fluid pt-5 mt-5 gt-5' alt="mission image" />
                     </div>
                     <div className="col-lg-4 col-12 g-0 my-2 rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black' }}>

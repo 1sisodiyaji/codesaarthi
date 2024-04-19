@@ -18,7 +18,7 @@ const Problems = () => {
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
 
-<div className="container-fluid" style={{backgroundColor:' #1A1A1A'}}>
+<div className="container-fluid design" style={{backgroundColor:' #1A1A1A'}}>
       <div className="container-lg container-fluid " style={{minHeight:'100vh'}}>
 
         <div className="row w-lg-75 w-100  g-0 py-3">

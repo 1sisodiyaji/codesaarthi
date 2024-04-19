@@ -36,7 +36,7 @@ export const Navbar = () => {
     <>
       {/* <!-- Navbar For small screen--> */}
       <nav  className="navbar navbar-expand-lg navbar-dark fixed-top d-lg-none d-md-none d-sm-block  shadow-0"
-        style={{ backgroundColor: "transparent" }}
+        style={{ backgroundColor: "#1E1E1E" }}
       >
         {/* <!-- Container wrapper --> */}
         <div className="container-fluid">
@@ -70,7 +70,7 @@ export const Navbar = () => {
           <ul className="nav flex-column text-start ms-4">
             {!userName && (
               <>
-                <li className="nav-item">
+                <li className="nav-item text-light">
                 <Link
                 className={`nav-link ${
                   isNavLinkActive("/signup") ? "active" : ""
