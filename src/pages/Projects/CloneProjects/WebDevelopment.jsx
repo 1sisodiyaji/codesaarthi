@@ -18,11 +18,11 @@ const WebDevelopment = () => {
         <meta property="og:type" content="Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
-            <div className="container-fluid design g-0" style={{ minHeight: '100vh' }}>
+            <div className="container-fluid design g-0" style={{ minHeight: '100vh',backgroundColor:'#1E1E1E' }}>
                 <h1 className='text-success text-center text-capitalize pt-5'>here We have Some projects Based on Clone </h1>
                 <div className="container p-lg-5">
                     <div className="row">
-                        <div className="col-lg-6  my-2 col-12">
+                        <div className="col-lg-4  my-2 col-12">
                                 <div className="card border p-lg-5 p-3 tilt-effect2" style={{ background: 'transparent', backgroundImage: 'url(img/amazon1.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
 
                                     <div>
@@ -48,7 +48,7 @@ const WebDevelopment = () => {
                                     </div>
                                 </div>
                         </div>
-                        <div className="col-lg-6 my-2 col-12">
+                        <div className="col-lg-4 my-2 col-12">
                         <div className="card border p-lg-5 p-3 tilt-effect2" style={{ background: 'transparent', backgroundImage: 'url(img/Discord1.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
                                 <div>
                                     <div className="row">
@@ -73,7 +73,7 @@ const WebDevelopment = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-6 my-2  col-12">
+                        <div className="col-lg-4 my-2  col-12">
                             <div className="card border p-lg-5 p-3 tilt-effect2" style={{ background: 'transparent', backgroundImage: 'url(img/Razorpay1.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
                                 <div>
                                     <div className="row">
@@ -98,7 +98,8 @@ const WebDevelopment = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-6  my-2 col-12">
+                        <div className="col-4"></div>
+                        <div className="col-lg-4  my-2 col-12">
                             <div className="card border p-lg-5 p-3  tilt-effect2" style={{ background: 'transparent', backgroundImage: 'url(img/Spotify1.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
                                 <div
                                     class="bg-image hover-overlay ripple"

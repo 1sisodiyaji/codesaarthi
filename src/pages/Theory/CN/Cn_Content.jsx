@@ -9,6 +9,7 @@ const Cn_Content = () => {
   const [selectedTopic, setSelectedTopic] = useState(1);
   const [read ,setRead] = useState(0);
   const email = localStorage.getItem("user_email");
+  console.log(email);
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };

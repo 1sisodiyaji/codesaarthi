@@ -73,9 +73,9 @@ export const Navbar = () => {
                 <li className="nav-item text-light">
                 <Link
                 className={`nav-link ${
-                  isNavLinkActive("/signup") ? "active" : ""
+                  isNavLinkActive("/signup") ? "selected" : ""
                 }`}
-                style={{ color: "black" }}
+                style={{ color: "whitesmoke" }}
                 to="/signup"
               >
                 <i className="fi fi-rs-rocket-lunch pe-2"></i>
@@ -85,9 +85,9 @@ export const Navbar = () => {
                 <li className="nav-item">
                 <Link
                 className={`nav-link ${
-                  isNavLinkActive("/Login") ? "active" : ""
+                  isNavLinkActive("/Login") ? "selected" : ""
                 }`}
-                style={{ color: "black" }}
+                style={{ color: "whitesmoke" }}
                 to="/Login"
               ><i className="fi fi-br-sign-in-alt pe-2"></i>
                 Log in
@@ -99,9 +99,9 @@ export const Navbar = () => {
             <li className="nav-item">
               <Link
                 className={`nav-link ${
-                  isNavLinkActive("/AboutUs") ? "active" : ""
+                  isNavLinkActive("/AboutUs") ? "selected" : ""
                 }`}
-                style={{ color: "black" }}
+                style={{ color: "whitesmoke" }}
                 to="/AboutUs"
               > <i className="fi fi-sr-info pe-2"></i>
                 About Us
@@ -110,9 +110,9 @@ export const Navbar = () => {
             <li className="nav-item">
               <Link
                 className={`nav-link ${
-                  isNavLinkActive("/theory") ? "active" : ""
+                  isNavLinkActive("/theory") ? "selected" : ""
                 }`}
-                style={{ color: "black" }}
+                style={{ color: "whitesmoke" }}
                 to="/theory"
               > <i className="fi fi-rs-books pe-2"></i>
                 Theory
@@ -121,9 +121,9 @@ export const Navbar = () => {
             <li className="nav-item">
               <Link
                 className={`nav-link ${
-                  isNavLinkActive("/Problems") ? "active" : ""
+                  isNavLinkActive("/Problems") ? "selected" : ""
                 }`}
-                style={{ color: "black" }}
+                style={{ color: "whitesmoke" }}
                 to="/Problems"
               >   <i className="fi fi-sr-interrogation pe-2"></i>
                 Problems
@@ -133,9 +133,9 @@ export const Navbar = () => {
             <li className="nav-item">
               <Link
                 className={`nav-link ${
-                  isNavLinkActive("/Projects") ? "active" : ""
+                  isNavLinkActive("/Projects") ? "selected" : ""
                 }`}
-                style={{ color: "black" }}
+                style={{ color: "whitesmoke" }}
                 to="/Projects"
               > <i className="fi fi-sr-workflow-setting-alt pe-2"></i>
                 Projects
@@ -146,9 +146,9 @@ export const Navbar = () => {
             <li className="nav-item">
               <Link
                 className={`nav-link ${
-                  isNavLinkActive("/roadMap") ? "active" : ""
+                  isNavLinkActive("/roadMap") ? "selected" : ""
                 }`}
-                style={{ color: "black" }}
+                style={{ color: "whitesmoke" }}
                 to="/roadMap"
               ><i className="fi fi-ss-road pe-2"></i>
                 RoadMaps
@@ -158,9 +158,9 @@ export const Navbar = () => {
             <li className="nav-item">
               <Link onClick={logout}
                 className={`nav-link ${
-                  isNavLinkActive("/") ? "active" : ""
+                  isNavLinkActive("/") ? "selected" : ""
                 }`}
-                style={{ color: "black" }}
+                style={{ color: "whitesmoke" }}
                 to="/"
               ><i className="fi fi-br-sign-in-alt pe-2"></i>
                 logout
@@ -195,7 +195,7 @@ export const Navbar = () => {
             </Link>
             {/* Left links */}
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center p-1">
-              <li className="nav-items">
+              <li className="nav-items pe-2">
                 <Link
                   className={`nav-link ${
                     isNavLinkActive("/AboutUs") ? "active" : ""
@@ -206,7 +206,7 @@ export const Navbar = () => {
                   About Us
                 </Link>
               </li>
-              <li className="nav-items">
+              <li className="nav-items pe-2">
                 <Link
                   className={`nav-link ${
                     isNavLinkActive("/theory") ? "active" : ""
@@ -217,7 +217,7 @@ export const Navbar = () => {
                   Theory
                 </Link>
               </li>
-              <li className="nav-items">
+              <li className="nav-items pe-2">
                 <Link
                   className={`nav-link ${
                     isNavLinkActive("/Problems") ? "active" : ""
@@ -229,7 +229,7 @@ export const Navbar = () => {
                 </Link>
               </li>
              
-              <li className="nav-items">
+              <li className="nav-items pe-2">
                 <Link
                   className={`nav-link ${
                     isNavLinkActive("/Projects") ? "active" : ""
@@ -242,7 +242,7 @@ export const Navbar = () => {
               </li>
               
              
-              <li className="nav-items">
+              <li className="nav-items pe-2">
                 <Link
                   className={`nav-link ${
                     isNavLinkActive("/roadMap") ? "active" : ""

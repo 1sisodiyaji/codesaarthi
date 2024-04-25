@@ -4,21 +4,18 @@ import { Link } from 'react-router-dom'
 const ReactProject = () => {
     return (
         <>
-            <div className="container-fluid design g-0" style={{ minHeight: '100vh' }}>
+            <div className="container-fluid design g-0" style={{ minHeight: '100vh',backgroundColor: '#1E1E1E' }}>
                 <h3 className='text-success text-center text-capitalize pt-5'>here We have Some projects Based on React </h3>
                 <div className="container py-5">
                     <div className="row">
-                        <div className="col-lg-6  my-2 col-12">
-                            <div class="card border p-3" style={{ backgroundColor: "#6aa1b4" }}>
-                                <div
-                                    class="bg-image hover-overlay ripple"
-                                    data-mdb-ripple-color="light"
-                                >
+                        <div className="col-lg-4  my-2 col-12">
+                            <div class="card border p-3" style={{ backgroundColor: "#262626" }}>
+                               
                                     <div className="row">
-                                        <div className="col-4">
+                                        <div className="col-12">
                                             <img src="../img/amazon1.jpg" className="img-fluid tilt-effect2" />
                                         </div>
-                                        <div className="col-8 align-self-center">
+                                        <div className="col-12 text-center my-2">
                                             <div>
                                                 <h5 class="card-title text-light">
                                                     Blog Apps
@@ -34,7 +31,6 @@ const ReactProject = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
 

@@ -33,8 +33,8 @@ const Login = () => {
     const emailError = document.getElementById("email_error");
     const passError = document.getElementById("pass_error");
 
-    emailError.textContent = "";
-    passError.textContent = "";
+    emailError.innerText = ``;
+    passError.innerText = ``;
 
     function validateEmail(email) {
       var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -42,14 +42,14 @@ const Login = () => {
     }
 
     if (email === "") {
-      emailError.textContent = "Please fill in the email.";
+      emailError.innerText = `Please fill in the email.`;
     } else if (!validateEmail(email)) {
-      emailError.textContent = "Please enter a valid email.";
+      emailError.innerText = `Please enter a valid email.`;
     } else {
       document.getElementById("checkemail").style.display = "block";
 
       if (password === "") {
-        passError.textContent = "Please fill in the password.";
+        passError.innerText = `Please fill in the password.`;
       } else {
         try {
           setLoading(true);
@@ -62,19 +62,19 @@ const Login = () => {
           const name = savedUser.userName;
           const userEmail = savedUser.email;
           if (status === "success") {
-            emailError.textContent = "Login successfully!";
+            emailError.innerText = `Login successfully!`;
             localStorage.setItem("user_name", name);
             localStorage.setItem("user_email", userEmail);
             setLoading(false);
             navigate("/Problems");
           } else {
-            emailError.textContent = message;
+            emailError.innerText = message;
             setLoading(false);
           }
         } catch (error) {
           console.error("Error logging user:", error);
-          emailError.textContent =
-            "Error creating account. Please try again later.";
+          emailError.innerText =
+            `Error creating account. Please try again later.`;
           setLoading(false);
         }
       }
@@ -104,17 +104,17 @@ const Login = () => {
                 setLoading(false);
                 navigate("/Problems");
               } else {
-                emailError.textContent('Account Does not exist:', response.data.message);
+                emailError.innerText =` Account Does not exist:`+response.data.message;
                 setLoading(false);
               }
             })
             .catch((error) => {
-              emailError.textContent('Error checking  user data to backend:', error);
+              emailError.innerText = `Error checking  user data to backend:` + error;
               setLoading(false);
             });
         })
         .catch((error) => {
-          emailError.textContent('Error fetching user information:', error);
+          emailError.innerText = `Error fetching user information`+ error;
           setLoading(false);
         });
     }

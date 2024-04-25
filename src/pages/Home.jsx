@@ -20,7 +20,7 @@ const Home = () => {
       </Helmet>
 
       <div className="container-fluid design" style={{ backgroundColor: '#1E1E1E' }}>
-        <div className="row w-100 py-lg-4 py-4">
+        <div className="row w-100 py-lg-4 py-2">
           <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center">
 
             <div className=" text-light">

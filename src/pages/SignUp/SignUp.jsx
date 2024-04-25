@@ -24,9 +24,9 @@ const SignUp = () => {
     const email_error = document.getElementById("email_error");
     const pass_error = document.getElementById("pass_error");
 
-    name_error.textContent = "";
-    email_error.textContent = "";
-    pass_error.textContent = "";
+    name_error.innerText = ` `;
+    email_error.innerText = ` `;
+    pass_error.innerText = ` `;
 
     function isValidEmail(email) {
       let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -35,20 +35,20 @@ const SignUp = () => {
     const properEmail = isValidEmail(email);
 
     if (name === "") {
-      name_error.textContent = "Please enter your name to Create account";
+      name_error.innerText = `Please enter your name to Create account`;
     } else {
       document.getElementById("checkname").style.display = "block";
 
       if (email === "") {
-        email_error.textContent = "Please enter your email";
+        email_error.innerText = `Please enter your email`;
       } else if (!properEmail) {
-        email_error.textContent = "Please enter a valid email";
+        email_error.innerText = `Please enter a valid email`;
       } else {
         document.getElementById("checkemail").style.display = "block";
 
         if (password === "") {
-          pass_error.textContent =
-            "Please enter your password to Create account";
+          pass_error.innerText =
+            `Please enter your password to Create account`;
         } else {
           try {
             setLoading(true);
@@ -61,22 +61,22 @@ const SignUp = () => {
             const data = savedUser.savedUser;
             const {name,email} = data;
             if (status === "success") {
-              name_error.textContent = "Account created successfully!";
+              name_error.innerText = "Account created successfully!";
               localStorage.setItem("user_name", name);
               localStorage.setItem("user_email", email);
               setLoading(false);
               navigate('/Problems')
             } else {
-              name_error.textContent = message;
+              name_error.innerText = message;
               setLoading(false);
             }
           } catch (error) {
             console.error("Error registering user:", error);
               if (error.response && error.response.status === 500) {
-                name_error.textContent = "User with this email already exists";
+                name_error.innerText = `User with this email already exists`;
                 setLoading(false);
               } else {
-                name_error.textContent = "Error creating account. Please try again later.";
+                name_error.innerText = `Error creating account. Please try again later.`;
                 setLoading(false);
               }
           }
@@ -120,32 +120,20 @@ const SignUp = () => {
                 setLoading(false);
                 navigate("/Problems");
               } else {
-                name_error.textContent('Error saving user data:', response.data.message);
+                name_error.innerText = `Error saving user data:`+ response.data.message;
                 setLoading(false);
               }
             })
             .catch((error) => {
-              name_error.textContent('Error sending user data to backend:', error);
+              name_error.innerText = `Error sending user data to backend:`+ error;
               setLoading(false);
             });
         })
         .catch((error) => {
-          name_error.textContent('Error fetching user information:', error);
+          name_error.innerText = `Error fetching user information:`+ error;
           setLoading(false);
         });
     }
-  });
-
-  // login through linkedin function
-  const { linkedInLogin } = useLinkedIn({
-    clientId: '865ot8yrscixc8',
-    redirectUri: `${window.location.origin}/linkedin`, // for Next.js, you can use `${typeof window === 'object' && window.location.origin}/linkedin`
-    onSuccess: (code) => {
-      console.log(code);
-    },
-    onError: (error) => {
-      console.log(error);
-    },
   });
 
   return (

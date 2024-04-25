@@ -3,9 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   -ms-overflow-style: none;
-  /* Internet Explorer and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
 body {
@@ -40,8 +38,7 @@ body::-webkit-scrollbar {
     right: -250px;
     width: 220px;
     height: 100%;
-    color: 'black';
-    background-color: #deecf2;
+    background-color: #1E1E1E;
     transition: right 0.3s ease;
     box-shadow:5px 5px 20px  #031A33;
   }
@@ -82,7 +79,19 @@ body::-webkit-scrollbar {
   }
 
   .design {
-    margin-top: 7vh;
+    margin-top: 6vh;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .heading2 {
+    font-size: 0.9rem;
+  }
+
+  .heading3 {
+    font-size: 0.6rem !important;
   }
 
 }
@@ -114,23 +123,10 @@ body::-webkit-scrollbar {
   scrollbar-width: none !important;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 520px) {
-  .heading {
-    font-size: 1.2rem;
-  }
-
-  .heading2 {
-    font-size: 0.9rem;
-  }
-
-  .heading3 {
-    font-size: 0.6rem !important;
-  }
-}
-
 .active {
-  box-shadow: 1px 1px 2px whitesmoke !important;
+  box-shadow: 1px 3px 2px whitesmoke !important;
   border-radius: 5px !important;
+  color: #FFE164 !important;
 }
 
 .borderColor{
@@ -179,9 +175,6 @@ body::-webkit-scrollbar {
 .highlight , strong{
  color: #3393df !important;
 font-weight: bold !important;
-}
-.borderLeft{
-  border-left: 1px solid white;
 }
 .imageHeight{
   width: 620px;

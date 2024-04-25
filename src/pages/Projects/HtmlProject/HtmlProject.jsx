@@ -20,11 +20,11 @@ const HtmlProject = () => {
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
 
-            <div className="container-fluid design" style={{ minHeight: '100vh' }}>
+            <div className="container-fluid design" style={{ minHeight: '100vh' , backgroundColor:'#1E1E1E' }}>
                 <div className="row py-5 ">
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect " style={{ backgroundColor: '#000B18' }}>
+                        <div className="card tilt-effect border" style={{ backgroundColor: '#262626' }}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
@@ -43,7 +43,7 @@ const HtmlProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect " style={{ backgroundColor: '#000B18' }}>
+                        <div className="card tilt-effect border " style={{ backgroundColor: '#262626' }}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
@@ -62,7 +62,7 @@ const HtmlProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect " style={{ backgroundColor: '#000B18' }}>
+                        <div className="card tilt-effect border" style={{ backgroundColor: '#262626' }}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
@@ -82,7 +82,7 @@ const HtmlProject = () => {
                     <div className="col-lg-4 col-0"></div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect " style={{ backgroundColor: '#000B18' }}>
+                        <div className="card tilt-effect border" style={{ backgroundColor: '#262626' }}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">

@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
-const HtmlCssProject = () => {
+const htmlcss1Project = () => {
     return (
         <>
             <Helmet>
@@ -20,16 +20,16 @@ const HtmlCssProject = () => {
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
 
-            <div className="container-fluid design" style={{ minHeight: '100vh' }}>
+            <div className="container-fluid design" style={{ minHeight: '100vh' , backgroundColor:'#1E1E1E' }}>
                 <div className="row py-5 ">
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect" style={{backgroundColor:'black'}}>
+                        <div className="card tilt-effect border" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/htmlCSS.png" className='img-fluid p-2' alt="trip planner logo" style={{borderRadius:'50%'}} />
+                                                <img src="img/htmlcss1.png" className='img-fluid p-2' alt="trip planner logo" />
                                             </div>
                                         </div>
                                         <div className="col-8">
@@ -43,12 +43,12 @@ const HtmlCssProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect" style={{backgroundColor:'black'}}>
+                        <div className="card tilt-effect border" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/htmlCSS.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                                <img src="img/htmlcss1.png" className='img-fluid' alt="trip planner image" />
                                             </div>
                                         </div>
                                         <div className="col-8">
@@ -62,12 +62,12 @@ const HtmlCssProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect " style={{backgroundColor:'black'}}>
+                        <div className="card tilt-effect  border" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/htmlCSS.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                                <img src="img/htmlcss1.png" className='img-fluid' alt="trip planner image" />
                                             </div>
                                         </div>
                                         <div className="col-8">
@@ -81,12 +81,12 @@ const HtmlCssProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect " style={{backgroundColor:'black'}}>
+                        <div className="card tilt-effect border" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/htmlCSS.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                                <img src="img/htmlcss1.png" className='img-fluid' alt="trip planner image" />
                                             </div>
                                         </div>
                                         <div className="col-8">
@@ -100,12 +100,12 @@ const HtmlCssProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect " style={{backgroundColor:'black'}}>
+                        <div className="card tilt-effect border " style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/htmlCSS.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                                <img src="img/htmlcss1.png" className='img-fluid' alt="trip planner image" />
                                             </div>
                                         </div>
                                         <div className="col-8">
@@ -119,12 +119,12 @@ const HtmlCssProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect "style={{backgroundColor:'black'}}>
+                        <div className="card tilt-effect border"style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/htmlCSS.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                                <img src="img/htmlcss1.png" className='img-fluid' alt="trip planner image" />
                                             </div>
                                         </div>
                                         <div className="col-8">
@@ -138,12 +138,12 @@ const HtmlCssProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect "style={{backgroundColor:'black'}}>
+                        <div className="card tilt-effect border"style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/htmlCSS.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                                <img src="img/htmlcss1.png" className='img-fluid' alt="trip planner image" />
                                             </div>
                                         </div>
                                         <div className="col-8">
@@ -162,4 +162,4 @@ const HtmlCssProject = () => {
     )
 }
 
-export default HtmlCssProject
+export default htmlcss1Project

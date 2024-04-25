@@ -20,16 +20,16 @@ const JavaProject = () => {
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
 
-            <div className="container-fluid design" style={{ minHeight: '100vh' }}>
+            <div className="container-fluid design" style={{ minHeight: '100vh' , backgroundColor: '#1E1E1E' }}>
                 <div className="row py-5 ">
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect bg-dark">
+                        <div className="card tilt-effect border" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/javaProjects.png" className='img-fluid p-2' alt="trip planner logo" style={{borderRadius:'50%'}} />
+                                                <img src="img/java1.png" className='img-fluid p-2' alt="trip planner logo" style={{borderRadius:'50%'}} />
                                             </div>
                                         </div>
                                         <div className="col-8">
@@ -43,12 +43,12 @@ const JavaProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect bg-dark">
+                        <div className="card tilt-effect border" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/javaProjects.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                                <img src="img/java1.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
                                             </div>
                                         </div>
                                         <div className="col-8">
@@ -62,12 +62,12 @@ const JavaProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect bg-dark">
+                        <div className="card tilt-effect border" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
                                             <div>
-                                                <img src="img/javaProjects.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
+                                                <img src="img/java1.png" className='img-fluid' alt="trip planner image" style={{borderRadius:'50%'}}/>
                                             </div>
                                         </div>
                                         <div className="col-8">
