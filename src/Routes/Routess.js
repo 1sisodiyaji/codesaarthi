@@ -18,18 +18,9 @@ import Problems from "../pages/Problems";
 import Roadmap from "../pages/Roadmap";
 import Dsa from "../pages/Roadmap/Dsa";
 import Array from "../pages/Theory/Array/Array";
-import TransversingOfArray from "../pages/Theory/Array/TransversingOfArray";
 import WebDevelopment from "../pages/Projects/CloneProjects/WebDevelopment";
 import AmazonClone from "../pages/Projects/CloneProjects/Amazon-clone";
 import DiscordProject from "../pages/Projects/CloneProjects/Discord";
-import ReverseOfArray from "../pages/Theory/Array/ReverseOf Array";
-import Challenges from "../pages/Theory/Array/Challenges";
-import PallindromeInArray from "../pages/Theory/Array/PallindromeInArray";
-import SortingArray from "../pages/Theory/Array/SortingArrays";
-import SearchingArray from "../pages/Theory/Array/SearchingArray";
-import MultiDimension from "../pages/Theory/Array/MultiDimensaionalArray";
-import DynamicArray from "../pages/Theory/Array/DynamicArray";
-import CommonMistakes from "../pages/Theory/Array/CommonMistakes";
 import Os from "../pages/Roadmap/Os";
 import Dbms from "../pages/Roadmap/Dbms";
 import ComputerNetworks from "../pages/Roadmap/ComputerNetworks";
@@ -101,15 +92,6 @@ const Routess = () => {
           <Route path="/roadMap" element={<Roadmap />} />
           <Route path="/dsa" element={<Dsa/>} />
           <Route path="/array" element={<Array />} />
-          <Route path="/transversing-of-array" element={<TransversingOfArray />} />
-          <Route path="/reverse-of-array" element={<ReverseOfArray />} />
-          <Route path="/Challenges-And-Exercise" element={<Challenges />} />
-          <Route path="/Pallindrome-in-Array" element={<PallindromeInArray />} />
-          <Route path="/Sorting-Array" element={<SortingArray />} />
-          <Route path="/Searching-Array" element={<SearchingArray />} />
-          <Route path="/Dynamic-Arrays" element={<DynamicArray />} />
-          <Route path="/Common-Mistakes-in-Array" element={<CommonMistakes />} />
-          <Route path="/MultiDimensions-in-Array" element={<MultiDimension />} />
           <Route path="/Os" element={<Os/>} />
           <Route path = "/Dbms" element={<Dbms />} />
           <Route path="/ComputerNetwork" element={<ComputerNetworks />} />
