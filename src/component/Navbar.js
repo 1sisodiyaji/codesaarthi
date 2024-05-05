@@ -300,7 +300,7 @@ export const Navbar = () => {
               </>
             ) : (
               <>
-                <Link to="/signup" className="borderColor">
+                <Link to="/login" className="borderColor">
                   <button className="btn btn-sm  rounded-8 text-light text-capitalize"
                   >
                     Log in
