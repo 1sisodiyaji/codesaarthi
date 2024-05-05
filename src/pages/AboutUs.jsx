@@ -202,7 +202,7 @@ const AboutUs = () => {
 
             </div >
 
-            <div className="container py-lg-3">
+            <div className="container py-lg-3 d-none">
                 <div className="row g-0">
                     <div className="col-lg-3 col-12"></div>
                     <div className="col-lg-6 col-12 g-0">
