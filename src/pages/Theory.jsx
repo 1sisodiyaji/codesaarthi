@@ -24,7 +24,7 @@ const Theory = () => {
         <div className="row"> 
         
           <div className="col-lg-4 col-12 my-2">
-            <div className="card border p-3 tilt-effect" style={{ backgroundColor: '#262626' }}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626' , border:'1px solid grey' }}>
               <div className=" hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
@@ -45,7 +45,7 @@ const Theory = () => {
           </div>
 
           <div className="col-lg-4 col-12 my-2">
-            <div className="card border p-3 tilt-effect" style={{ backgroundColor: '#262626' }}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626',border:'1px solid grey' }}>
               <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
@@ -66,7 +66,7 @@ const Theory = () => {
           </div>
 
           <div className="col-lg-4 col-12 my-2">
-            <div className="card border  p-3 tilt-effect" style={{ backgroundColor: '#262626' }}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626', border:'1px solid grey' }}>
               <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
@@ -87,7 +87,7 @@ const Theory = () => {
           </div> 
 
           <div className="col-lg-4 col-12 my-2">
-            <div className="card border  p-3 tilt-effect" style={{ backgroundColor: '#262626' }}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626' ,border:'1px solid grey'}}>
               <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
@@ -108,7 +108,7 @@ const Theory = () => {
           </div> 
 
           <div className="col-lg-4 col-12 my-2">
-            <div className="card border  p-3 tilt-effect" style={{ backgroundColor: '#262626' }}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626',border:'1px solid grey' }}>
               <div className=" hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
@@ -127,6 +127,7 @@ const Theory = () => {
               </div>
             </div>
           </div> 
+          
           </div>
         </div>
       </div>
