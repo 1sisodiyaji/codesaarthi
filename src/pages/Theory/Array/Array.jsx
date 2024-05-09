@@ -52,6 +52,8 @@ const Array = () => {
             "description": `<p>Array traversal refers to the process of accessing each element in an array and performing some operation on it. It involves iterating over the elements of the array, usually from the first element to the last, and executing a specific action for each element.</p> <br/>
                         <p>There are several methods to traverse an array, with the most common ones being using loops such as <code>for</code> loops, <code>while</code> loops, or using higher-order array methods like <code>forEach</code>, <code>map</code>, <code>filter</code>, etc.</p>
                         
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230302092847/C-array-traversal.png" class=\"imageHeight\" /> <br/><br/>
+                       
                         <p>Here's an example of array traversal using a <code>for</code> loop:</p>
                         <pre><code>const numbers = [1, 2, 3, 4, 5];
       for (let i = 0; i < numbers.length; i++) {
