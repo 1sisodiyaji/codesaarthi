@@ -54,6 +54,7 @@ import BasicDbms from "../pages/Theory/Dbms/Basic_Dbms";
 import ReactSeo from "../pages/Theory/React/ReactSeo";
 import OsContent from "../pages/Theory/Os/OsContent";
 import Cn_Content from "../pages/Theory/CN/Cn_Content";
+import Profile from "../pages/Profile";
 
 
 const Routess = () => {
@@ -128,6 +129,7 @@ const Routess = () => {
           <Route path ="/React-Seo" element={<ReactSeo/>} />
           <Route path="/Os-Content" element={<OsContent />} />
           <Route path="/Cn-Content" element={<Cn_Content/>} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 

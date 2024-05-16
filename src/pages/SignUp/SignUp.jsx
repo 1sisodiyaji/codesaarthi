@@ -70,6 +70,7 @@ const SignUp = () => {
               name_error.textContent = message;
               setLoading(false);
             }
+            
           } catch (error) {
             console.error("Error registering user:", error);
               if (error.response && error.response.status === 500) {

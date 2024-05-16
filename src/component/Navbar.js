@@ -281,22 +281,22 @@ export const Navbar = () => {
                         </>
                       ) : (
                         <>
-                        <div className="border border-success"> 
-                          <i className="fi fi-ss-user"></i>
+                        <div className="rounded-circle pt-2"> 
+                          <i className="fi fi-ss-user text-primary"></i>
                           </div>
                         </>
                       )}
                     </a>
 
-                    <ul className="dropdown-menu dropdown-menu-end  bg-black">
+                    <ul className="dropdown-menu dropdown-menu-end  ">
                       <li>
-                        <Link to="/" className="dropdown-item text-light" onClick={logout}>
+                        <Link to="/profile" className="dropdown-item">
                         <i class="fi fi-ss-user-pen"></i>  Profile
                         </Link>
                       </li>
                       <li>
-                        <Link to="/" className="dropdown-item text-light" onClick={logout}>
-                        <i className="fi fi-ss-sign-out-alt text-light"></i>  Logout
+                        <Link to="/" className="dropdown-item" onClick={logout}>
+                        <i className="fi fi-ss-sign-out-alt"></i>  Logout
                         </Link>
                       </li>
                     </ul>
