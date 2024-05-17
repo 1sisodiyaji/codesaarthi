@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
-import axios from 'axios';
 
 const Cn_Content = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [selectedTopic, setSelectedTopic] = useState(1);
-  const [read ,setRead] = useState(0);
-  const email = localStorage.getItem("user_email");
-  console.log(email);
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -155,21 +149,6 @@ const Cn_Content = () => {
     }
   ]
   ;
-  
-  useEffect(() => {
-    function handleScroll() {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollTop = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement.scrollTop || 0);
-      const scrolled = (scrollTop / (documentHeight - windowHeight)) * 100;
-      setScrollProgress(scrolled);
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
 
   useEffect(() => {
@@ -187,37 +166,6 @@ const Cn_Content = () => {
       document.title = "Codesaarthi";
     }
   }, [selectedTopic]);
-
-  function validateContentRead() {
-    const validationThreshold = 80;
-
-    if (scrollProgress >= validationThreshold) {
-      setRead(1);
-      const backendURL = 'https://codesaarthiserver.cyclic.app/api/CourseCompletion';
-      const requestData = {
-        email: email,
-        subject: 'Computer_Networks',
-        complete: '1' 
-      };
-      axios.post(backendURL, requestData)
-      .then(response => {
-        console.log('Response from server:', response.data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-    } else {
-      if(read === 1) {
-        setRead(1);
-      }else{
-        setRead(0);
-      }
-  }
-}
-
-  useEffect(() => {
-    validateContentRead();
-  }, [scrollProgress]);
 
   return (
     <>

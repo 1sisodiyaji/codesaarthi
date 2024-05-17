@@ -25,7 +25,6 @@ const Theory = () => {
         
           <div className="col-lg-4 col-12 my-2">
             <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626' , border:'1px solid grey' }}>
-              <div className=" hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
                     <img src="../img/Array.jpg" className="img-fluid rounded-8  " style={{height: '12vh' }}/>
@@ -41,12 +40,10 @@ const Theory = () => {
                   </div>
                 </div>
               </div>
-            </div>
           </div>
 
           <div className="col-lg-4 col-12 my-2">
             <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626',border:'1px solid grey' }}>
-              <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
                     <img src="img/dbms1.png" className="img-fluid rounded-8  bg-image"/>
@@ -62,12 +59,10 @@ const Theory = () => {
                   </div>
                 </div>
               </div>
-            </div>
           </div>
 
           <div className="col-lg-4 col-12 my-2">
             <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626', border:'1px solid grey' }}>
-              <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
                     <img src="img/Text.png" className="img-fluid rounded-8 bg-image"/>
@@ -82,13 +77,11 @@ const Theory = () => {
 
                   </div>
                 </div>
-              </div>
             </div>
           </div> 
 
           <div className="col-lg-4 col-12 my-2">
             <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626' ,border:'1px solid grey'}}>
-              <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
                     <img src="img/React1.png" className="img-fluid bg-image rounded-8"/>
@@ -103,13 +96,11 @@ const Theory = () => {
 
                   </div>
                 </div>
-              </div>
             </div>
           </div> 
 
           <div className="col-lg-4 col-12 my-2">
             <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626',border:'1px solid grey' }}>
-              <div className=" hover-overlay ripple" data-mdb-ripple-color="light">
                 <div className="row">
                   <div className="col-4"  >
                     <img src="img/cnLogo.png" className="img-fluid rounded-8 bg-image"/>
@@ -124,10 +115,28 @@ const Theory = () => {
 
                   </div>
                 </div>
-              </div>
             </div>
           </div> 
           
+          <div className="col-lg-4 col-12 my-2">
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626',border:'1px solid grey' }}>
+                <div className="row">
+                  <div className="col-4"  >
+                    <img src="img/java1.png" className="img-fluid rounded-8 bg-image"/>
+                  </div>
+                  <div className="col-8 align-self-center">
+                    <div><h5 className="card-title text-light">Java  Notes </h5></div>
+
+                    <div><Link to="/java-learning">
+                      <div className="btn text-warning text-capitalize bg-dark">Read it..</div>
+                    </Link>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
+          </div> 
+
           </div>
         </div>
       </div>

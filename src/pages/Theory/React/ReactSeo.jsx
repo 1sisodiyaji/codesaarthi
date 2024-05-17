@@ -74,12 +74,12 @@ ${sitemapUrls.map(url => `
   };
 
   return (
-    <div className='vh-100'>
-      <h1>Sitemap Generator</h1>
+    <div className='vh-100' style={{backgroundColor :'#262626'}}>
+      <h1 style={{color: '#6D39F7'}}>Sitemap Generator</h1>
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <p>Enter your Url</p>
+            <p className='text-light'>Enter your Url</p>
             <input type="url"
         value={userUrl}
         onChange={(e) => setUserUrl(e.target.value)} className='w-100 mb-3 rounded-8 ps-2' placeholder='enter your url'/>

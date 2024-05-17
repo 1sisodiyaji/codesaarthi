@@ -63,7 +63,7 @@ body::-webkit-scrollbar {
   }
   .sidebar3 {
     position: fixed;
-    top: 75px;
+    top: 45px;
     left: 0px;
     width: 240px;
     height: 100%;
@@ -71,7 +71,8 @@ body::-webkit-scrollbar {
     background-color: #031A33;
     transition: right 0.3s ease;
     padding: 20px;
-    overflow-y: scroll;
+    overflow-y: auto !important;
+    
   }
 
   .sidebar3.show {
@@ -182,3 +183,12 @@ font-weight: bold !important;
 .bg-image{
   height: 12vh !important;
 }
+
+.topic-item {
+  transition: color 0.3s ease;
+}
+
+.topic-item:hover {
+  color: #6D39F7 !important;
+}
+

@@ -55,6 +55,7 @@ import ReactSeo from "../pages/Theory/React/ReactSeo";
 import OsContent from "../pages/Theory/Os/OsContent";
 import Cn_Content from "../pages/Theory/CN/Cn_Content";
 import Profile from "../pages/Profile";
+import Java_Content from "../pages/Theory/JavaLeaning/Java_Content";
 
 
 const Routess = () => {
@@ -129,6 +130,7 @@ const Routess = () => {
           <Route path ="/React-Seo" element={<ReactSeo/>} />
           <Route path="/Os-Content" element={<OsContent />} />
           <Route path="/Cn-Content" element={<Cn_Content/>} />
+          <Route path="/java-learning" element={<Java_Content/>} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>

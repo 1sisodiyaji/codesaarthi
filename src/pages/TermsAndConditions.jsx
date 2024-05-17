@@ -17,10 +17,10 @@ const TermsAndConditions = () => {
   <meta property="og:type" content="Legal-Website" />
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
-
+<div className="conatiner-fluid" style={{ backgroundColor : '#262626'}}>
       <div
         className="container-fluid d-flex align-items-center justify-content-center"
-        style={{ minHeight: "30vh" }}
+        style={{ minHeight: "30vh"}}
       >
         <div className="container">
           <div className="row text-center">
@@ -39,7 +39,7 @@ const TermsAndConditions = () => {
         </div>
       </div>
       <br />
-      <div className="container text-muted mb-4">
+      <div className="container text-muted ">
         <div className="row">
           <div className="col-12">
           These terms of service ("Terms") are entered into between you and codesaarthi ("us," "we," or "our") for the use of our application in relation to our coding training tools. By accessing our websites (the "Services"), you acknowledge that you have read, understood, and agree to the most recent version of these Terms.
@@ -165,6 +165,7 @@ For billing questions, contact connect@codesaarthi.com.
 
           </div>
         </div>
+      </div>
       </div>
     </>
   );

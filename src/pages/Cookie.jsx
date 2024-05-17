@@ -16,7 +16,7 @@ const Cookie = () => {
   <meta property="og:type" content="Legal-Website" />
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
-
+<div className="container-fluid" style={{ backgroundColor : '#262626' }}> 
       <div
         className="container-fluid d-flex align-items-center justify-content-center "
         style={{ minHeight: "30vh" }}
@@ -33,7 +33,7 @@ const Cookie = () => {
         </div>
       </div>
       <br />
-      <div className="container text-muted mb-4">
+      <div className="container text-muted">
         <div className="row">
           <div className="col-12">
             <h2>Interpretation and Definitions</h2>
@@ -246,6 +246,7 @@ const Cookie = () => {
             </ul>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
