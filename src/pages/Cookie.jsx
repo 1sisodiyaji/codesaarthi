@@ -6,13 +6,13 @@ const Cookie = () => {
     <Helmet>
   <meta name="keywords" content="Cookie Policy, Cookies, Privacy, Data Collection, User Experience" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://codesaarthi.com/cookie" />
+  <link rel="canonical" href="https://codesaarthi.com/cookies" />
   <meta name="description" content="Read our Cookie Policy to understand how we use cookies to enhance user experience, analyze website traffic, and personalize content. Learn about your choices regarding cookie preferences." />
   <title>Cookie Policy |codesaarthi</title>
   <meta property="og:title" content="Cookie Policy | codesaarthi" />
   <meta property="og:description" content="Read our Cookie Policy to understand how we use cookies to enhance user experience, analyze website traffic, and personalize content. Learn about your choices regarding cookie preferences." />
   <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
-  <meta property="og:url" content="https://codesaarthi.com/cookie" />
+  <meta property="og:url" content="https://codesaarthi.com/cookies" />
   <meta property="og:type" content="Legal-Website" />
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>

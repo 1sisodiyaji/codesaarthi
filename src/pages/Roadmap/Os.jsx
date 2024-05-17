@@ -1,6 +1,7 @@
 import React from 'react';
 import './Roadmap.css';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const StepperSection = ({ title, items }) => (
   <section>
@@ -16,6 +17,20 @@ const StepperSection = ({ title, items }) => (
 const Os = () => {
   return (
     <>
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="Recover password " />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://codesaarthi.com/Os" />
+        <meta name="description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
+        <title>Kreeda fantasy app  Projects | CodeSaarthi</title>
+        <meta property="og:title" content="Kreeda fantasy app  Projects | CodeSaarthi" />
+        <meta property="og:description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
+        <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+        <meta property="og:url" content="https://codesaarthi.com/Os" />
+        <meta property="og:type" content="Education-Website" />
+        <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+    </Helmet>
       <div className="container-fluid design  py-3" style={{ backgroundColor: '#031A33' }}>
         <h1 style={{ color: '#FFE164' }}>Operating Systems Roadmap</h1>
         <div className="container">

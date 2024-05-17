@@ -138,13 +138,13 @@ const Login = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="CodeSaarthi" content="Codesaarthi" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://codesaarthi.com/Login" />
+        <link rel="canonical" href="https://codesaarthi.com/login" />
         <meta name="description" content="Lets Be a part of codesaarthi , give us  a chance to help you by explaining things in simple Words." />
         <title>Login | Codesaarthi Free Learning Platform</title>
         <meta property="og:title" content="Sign up | Codesaarthi" />
         <meta property="og:description" content="Lets Be a part of codesaarthi , give us  a chance to help you by explaining things in simple Words." />
         <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
-        <meta property="og:url" content="https://codesaarthi.com/Login" />
+        <meta property="og:url" content="https://codesaarthi.com/login" />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>

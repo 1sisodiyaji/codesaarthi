@@ -9,13 +9,13 @@ const RazorpayProject = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="Razorpay Clone, Razorpay project, Payment Gateway, Online Payments" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://codesaarthi.com/Razorpay" />
+        <link rel="canonical" href="https://codesaarthi.com/RazorPay" />
         <meta name="description" content="Explore the development of a Razorpay frontend clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of integrating a payment gateway into your web application." />
         <title>Razorpay  Frontend Clone Project: Tutorials, Examples, and Practice | Codesaarthi</title>
         <meta property="og:title" content="Razorpay Frontend Clone Project | Your Website Name" />
         <meta property="og:description" content="Explore the development of a Razorpay frontend clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of integrating a payment gateway into your web application." />
         <meta property="og:image" content="https://codesaarthi.com/img/Razorpay1.jpg" />
-        <meta property="og:url" content="https://codesaarthi.com/Razorpay" />
+        <meta property="og:url" content="https://codesaarthi.com/RazorPay" />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>

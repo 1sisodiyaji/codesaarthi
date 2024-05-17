@@ -18,7 +18,7 @@ const Error404Pgae = () => {
 </Helmet>
 
    <div className='d-flex align-items-center justify-content-center bg-light design'>
-        <img src="img/error404.jpg" className='img-fluid' alt="" />
+        <img src="img/error404.jpg" className='img-fluid imageHeight' alt="" />
    </div>
    </>
   )

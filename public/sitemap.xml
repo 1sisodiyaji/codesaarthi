@@ -86,60 +86,6 @@
   </url>
 
   <url>
-    <loc>https://codesaarthi.com/transversing-of-array</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://codesaarthi.com/reverse-of-array</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://codesaarthi.com/Challenges-And-Exercise</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://codesaarthi.com/Pallindrome-in-Array</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://codesaarthi.com/Sorting-Array</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://codesaarthi.com/Searching-Array</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://codesaarthi.com/Dynamic-Arrays</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://codesaarthi.com/Common-Mistakes-in-Array</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://codesaarthi.com/MultiDimensions-in-Array</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://codesaarthi.com/Os</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -224,6 +170,12 @@
   </url>
 
   <url>
+    <loc>https://codesaarthi.com/phpProjects</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://codesaarthi.com/Kreeda</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -248,12 +200,6 @@
   </url>
 
   <url>
-    <loc>https://codesaarthi.com/Architecture-Of-Dbms</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://codesaarthi.com/java-Projects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -261,6 +207,66 @@
 
   <url>
     <loc>https://codesaarthi.com/TripPlanner</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/FunCalculations</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/Chat-App</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/Html-Css-Projects</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/Shopping-page</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/Reciepe-website</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/React-Content</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/Os-Content</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/Cn-Content</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/java-learning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codesaarthi.com/profile</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

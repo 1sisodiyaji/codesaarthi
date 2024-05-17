@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 const RecoverPassword = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -139,6 +140,20 @@ const conPassword= formData.conPassword;
 
   return (
     <>
+     <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="Recover password " />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://codesaarthi.com/RecoverPassword" />
+        <meta name="description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
+        <title>Kreeda fantasy app  Projects | CodeSaarthi</title>
+        <meta property="og:title" content="Kreeda fantasy app  Projects | CodeSaarthi" />
+        <meta property="og:description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
+        <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+        <meta property="og:url" content="https://codesaarthi.com/RecoverPassword" />
+        <meta property="og:type" content="Education-Website" />
+        <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+    </Helmet>
       <div className="container-fluid m-0 p-0 g-0 d-flex justify-content-center align-items-center position-relative design" style={{ backgroundColor: "white", overflowX: "hidden", fontFamily: "Exo", minHeight: "100vh", overflowY: "scroll" }}>
         <div className="container" style={{ maxWidth: "420px" }}>
           <form>
