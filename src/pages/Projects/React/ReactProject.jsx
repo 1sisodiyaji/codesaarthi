@@ -7,13 +7,13 @@ const ReactProject = () => {
         <>
         <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="kreeda , php Based Projects , fanatsy web app , fantasy php project , rummy web app , top 5 php projects , creative php projects , full stack php projects ,php mysql projects , Dream 11 clone project" />
+        <meta name="keywords" content="React Based Project , Learn React based project , React projects , Top 10 Projects in React ." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://codesaarthi.com/React-based-project" />
-        <meta name="description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
-        <title>Kreeda fantasy app  Projects | CodeSaarthi</title>
-        <meta property="og:title" content="Kreeda fantasy app  Projects | CodeSaarthi" />
-        <meta property="og:description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
+        <meta name="description" content="It is basically an react based Projects , Where you can learn react by making projects to learn it quickly and react learning through step by step in this way we are helping to learn react easily." />
+        <title>React Projects | CodeSaarthi</title>
+        <meta property="og:title" content=" React Projects| CodeSaarthi" />
+        <meta property="og:description" content="It is basically an react based Projects , Where you can learn react by making projects to learn it quickly and react learning through step by step in this way we are helping to learn react easily." />
         <meta property="og:image" content="https://codesaarthi.com/img/KreedaLogo.png" />
         <meta property="og:url" content="https://codesaarthi.com/React-based-project" />
         <meta property="og:type" content="Education-Website" />

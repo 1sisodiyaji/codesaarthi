@@ -19,13 +19,13 @@ const ComputerNetworks = () => {
     <>
      <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="Recover password " />
+        <meta name="keywords" content="Compauter Network Roadmap , CN Roadmap , Roadmap for Computer Network , Learn Computer Network easily . " />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://codesaarthi.com/ComputerNetwork" />
-        <meta name="description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
-        <title>Kreeda fantasy app  Projects | CodeSaarthi</title>
-        <meta property="og:title" content="Kreeda fantasy app  Projects | CodeSaarthi" />
-        <meta property="og:description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
+        <meta name="description" content="It is basically a website where we provide the roadmap for learning the Computer Network as easy and early as it will take less time for learn." />
+        <title>CN Roadmap | CodeSaarthi</title>
+        <meta property="og:title" content="CN Roadmap | CodeSaarthi" />
+        <meta property="og:description" content="It is basically a website where we provide the roadmap for learning the Computer Network as easy and early as it will take less time for learn." />
         <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
         <meta property="og:url" content="https://codesaarthi.com/ComputerNetwork" />
         <meta property="og:type" content="Education-Website" />

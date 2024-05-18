@@ -20,13 +20,13 @@ const Dsa = () => {
     <>
     <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="Recover password " />
+        <meta name="keywords" content="Data Structure Roadmap , Roadmap for data structure , Data structure from scratch . " />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://codesaarthi.com/dsa" />
-        <meta name="description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
-        <title>Kreeda fantasy app  Projects | CodeSaarthi</title>
-        <meta property="og:title" content="Kreeda fantasy app  Projects | CodeSaarthi" />
-        <meta property="og:description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
+        <meta name="description" content="It is basically a page where we get an roadmap for Data Structure and algorithm , It will help the student to read and start the data structure." />
+        <title>Data Structure Roadmap  | CodeSaarthi</title>
+        <meta property="og:title" content="Data Structure Roadmap | CodeSaarthi" />
+        <meta property="og:description" content="" />
         <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
         <meta property="og:url" content="https://codesaarthi.com/dsa" />
         <meta property="og:type" content="Education-Website" />

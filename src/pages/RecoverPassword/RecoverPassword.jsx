@@ -142,13 +142,13 @@ const conPassword= formData.conPassword;
     <>
      <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="Recover password " />
+        <meta name="keywords" content="Recover password , forgot password , forgot password in codesaarthi" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://codesaarthi.com/RecoverPassword" />
-        <meta name="description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
-        <title>Kreeda fantasy app  Projects | CodeSaarthi</title>
-        <meta property="og:title" content="Kreeda fantasy app  Projects | CodeSaarthi" />
-        <meta property="og:description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
+        <meta name="description" content="It is an page where you can change the password through recovery method . Recover you rpassword in easy steps ." />
+        <title>Recover Password| CodeSaarthi</title>
+        <meta property="og:title" content=" Recover Password| | CodeSaarthi" />
+        <meta property="og:description" content="It is an page where you can change the password through recovery method . Recover you rpassword in easy steps ." />
         <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
         <meta property="og:url" content="https://codesaarthi.com/RecoverPassword" />
         <meta property="og:type" content="Education-Website" />

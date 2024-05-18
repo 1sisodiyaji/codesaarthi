@@ -19,13 +19,13 @@ const Dbms = () => {
     <>
      <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="Recover password " />
+        <meta name="keywords" content="Database management system roadmap , Dbms Roadmap , roadmap to learn dbms , short revision of dbms. " />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://codesaarthi.com/Dbms" />
-        <meta name="description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
-        <title>Kreeda fantasy app  Projects | CodeSaarthi</title>
-        <meta property="og:title" content="Kreeda fantasy app  Projects | CodeSaarthi" />
-        <meta property="og:description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
+        <meta name="description" content="It is basically a website where we provide a roadmap for learning database management system in easy and early ." />
+        <title>DBMS Roadmap | CodeSaarthi</title>
+        <meta property="og:title" content="DBMS Roadmap | CodeSaarthi" />
+        <meta property="og:description" content="It is basically a website where we provide a roadmap for learning database management system in easy and early ." />
         <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
         <meta property="og:url" content="https://codesaarthi.com/Dbms" />
         <meta property="og:type" content="Education-Website" />
