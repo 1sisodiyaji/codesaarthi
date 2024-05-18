@@ -54,7 +54,7 @@ const Login = () => {
         try {
           setLoading(true);
           const response = await axios.post(
-            "https://codesaarthiserver.cyclic.app/api/signin",
+            "https://server-fl9q.onrender.com/api/signin",
             { email, password }
           );
           const savedUser = response.data;
@@ -94,7 +94,7 @@ const Login = () => {
         .then((response) => {
           const userData = response.data;
           setLoading(true);
-          axios.post('https://codesaarthiserver.cyclic.app/api/saveuserData', userData)
+          axios.post('https://server-fl9q.onrender.com/api/saveuserData', userData)
             .then((response) => {
               console.log(response);
               if (response.data.status === 'success') {

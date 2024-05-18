@@ -69,7 +69,7 @@ const RecoverPassword = () => {
   const sendOtp = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('https://codesaarthiserver.cyclic.app/api/sendemail', {email});
+      const response = await axios.post('https://server-fl9q.onrender.com/api/sendemail', {email});
       if (response.data.status === 'success') {
         setShowOtp(true);
         setButtonDisabled(true);
@@ -90,7 +90,7 @@ const RecoverPassword = () => {
   const verifyOtp = async () => {   
     const enteredOtp = Array.from({ length: 4 }, (_, index) => formData[`otp${index}`] || '').join('');
     try {
-      const response = await axios.post('https://codesaarthiserver.cyclic.app/api/verifyOtp', {
+      const response = await axios.post('https://server-fl9q.onrender.com/api/verifyOtp', {
         otp: enteredOtp,
       email
       });
@@ -118,7 +118,7 @@ const conPassword= formData.conPassword;
       setErrors("Password Incorrect");
     }else{
     try {
-      const response = await axios.post('https://codesaarthiserver.cyclic.app/api/updatePassword', {password,email });
+      const response = await axios.post('https://server-fl9q.onrender.com/api/updatePassword', {password,email });
       if (response.data.status === 'success') {
         setShowPassword(false);
         setShowOtp(false);
