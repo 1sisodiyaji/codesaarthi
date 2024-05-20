@@ -24,7 +24,7 @@ const JavaProject = () => {
                 <div className="row py-5 ">
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border" style={{backgroundColor:'#262626'}}>
+                        <div className="card tilt-effect border border-dark" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
@@ -43,7 +43,7 @@ const JavaProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border" style={{backgroundColor:'#262626'}}>
+                        <div className="card tilt-effect border border-dark" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
@@ -62,7 +62,7 @@ const JavaProject = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border" style={{backgroundColor:'#262626'}}>
+                        <div className="card tilt-effect border border-dark" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">

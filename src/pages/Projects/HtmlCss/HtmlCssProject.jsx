@@ -7,15 +7,15 @@ const htmlcss1Project = () => {
         <>
             <Helmet>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <meta name="keywords" content="java core projects , java projects , trip planner in java projects , calculator in java." />
+                <meta name="keywords" content="Html Css project , Frontend Projects , Top 10 Projects of Frontend , Top 5 best Frontend Project , Simple Frontend Project" />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://codesaarthi.com/java-Projects" />
+                <link rel="canonical" href="https://codesaarthi.com/Html-Css-Projects" />
                 <meta name="description" content="This is an place where we will serve you projects made up of only html-css to learn the basic frontend development as much easier" />
                 <title>Html-Css Based Projects | CodeSaarthi</title>
                 <meta property="og:title" content="Html-Css Based Projects | CodeSaarthi" />
-                <meta property="og:description" content="Explore the development of a Discord clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a real-time messaging application." />
+                <meta property="og:description" content="This is an place where we will serve you projects made up of only html-css to learn the basic frontend development as much easier" />
                 <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
-                <meta property="og:url" content="https://codesaarthi.com/java-Projects" />
+                <meta property="og:url" content="https://codesaarthi.com/Html-Css-Projects" />
                 <meta property="og:type" content="Education-Website" />
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
@@ -24,7 +24,7 @@ const htmlcss1Project = () => {
                 <div className="row py-5 ">
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border" style={{backgroundColor:'#262626'}}>
+                        <div className="card tilt-effect border border-dark" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
@@ -34,7 +34,7 @@ const htmlcss1Project = () => {
                                         </div>
                                         <div className="col-8">
                                             <h5 className="card-title text-warning">Shopping last page</h5>
-                                            <p className="card-text text-light text-capitalize">This is Project of order design of basic frontend.</p>
+                                            <p className="card-text text-light text-capitalize">This is Project of order design of basic frontend Of Shooping last page.</p>
                                             <Link to="/Shopping-page" className="btn bg-dark text-warning text-capitalize">get it </Link>
                                         </div>
                                 </div>
@@ -43,7 +43,7 @@ const htmlcss1Project = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border" style={{backgroundColor:'#262626'}}>
+                        <div className="card tilt-effect border border-dark" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
@@ -62,7 +62,7 @@ const htmlcss1Project = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect  border" style={{backgroundColor:'#262626'}}>
+                        <div className="card tilt-effect  border border-dark " style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
@@ -81,7 +81,7 @@ const htmlcss1Project = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border" style={{backgroundColor:'#262626'}}>
+                        <div className="card tilt-effect border border-dark" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
@@ -100,7 +100,7 @@ const htmlcss1Project = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border " style={{backgroundColor:'#262626'}}>
+                        <div className="card tilt-effect border border-dark" style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
@@ -119,7 +119,7 @@ const htmlcss1Project = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border"style={{backgroundColor:'#262626'}}>
+                        <div className="card tilt-effect border border-dark "style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
@@ -138,7 +138,7 @@ const htmlcss1Project = () => {
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border"style={{backgroundColor:'#262626'}}>
+                        <div className="card tilt-effect border border-dark "style={{backgroundColor:'#262626'}}>
                             <div className="card-body">
                                 <div className="row g-0">
                                         <div className="col-4">
