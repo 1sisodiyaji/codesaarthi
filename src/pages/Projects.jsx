@@ -41,7 +41,7 @@ const Projects = () => {
                     </div>
 
                     <div>
-                      <Link to="/web-development">
+                      <Link to="/Projects/web-development">
                         <div className="btn text-warning text-capitalize bg-dark">
                           Check it Out
                         </div>
@@ -69,7 +69,7 @@ const Projects = () => {
                     </div>
 
                     <div>
-                      <Link to="/React-based-project">
+                      <Link to="/Projects/React-based-project">
                         <div className="btn text-warning text-capitalize bg-dark">
                           Check it Out
                         </div>
@@ -98,7 +98,7 @@ const Projects = () => {
                     </div>
 
                     <div>
-                      <Link to="/phpProjects">
+                      <Link to="/Projects/phpProjects">
                         <div className="btn text-warning text-capitalize bg-dark">
                           Check it Out
                         </div>
@@ -126,7 +126,7 @@ const Projects = () => {
                     </div>
 
                     <div>
-                      <Link to="/java-Projects">
+                      <Link to="/Projects/java-Projects">
                         <div className="btn text-warning text-capitalize bg-dark">
                           Check it Out
                         </div>
@@ -154,7 +154,7 @@ const Projects = () => {
                     </div>
 
                     <div>
-                      <Link to="/HtmlProject">
+                      <Link to="/Projects/HtmlProject">
                         <div className="btn text-warning text-capitalize bg-dark">
                           Check it Out
                         </div>
@@ -182,7 +182,7 @@ const Projects = () => {
                     </div>
 
                     <div>
-                      <Link to="/Html-Css-Projects">
+                      <Link to="/Projects/Html-Css-Projects">
                         <div className="btn text-warning text-capitalize bg-dark">
                           Check it Out
                         </div>
@@ -212,7 +212,7 @@ const Projects = () => {
                     </div>
 
                     <div>
-                      <Link to="/dsa">
+                      <Link to="/Projects/dsa">
                         <div className="btn text-warning text-capitalize bg-dark">
                           Check it Out
                         </div>

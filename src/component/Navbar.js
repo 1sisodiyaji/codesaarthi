@@ -5,7 +5,7 @@ export const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const isNavLinkActive = (path) => {
-    return location.pathname === path;
+    return location.pathname.includes(path);
   };
   const location = useLocation();
   const pic = localStorage.getItem("user_ProfilePic");

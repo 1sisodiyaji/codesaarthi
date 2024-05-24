@@ -92,46 +92,55 @@ const Routess = () => {
           <Route path="/cookies" element={<Cookie />} />
           <Route path="/theory" element={<Theory />} />
           <Route path="/roadMap" element={<Roadmap />} />
-          <Route path="/dsa" element={<Dsa/>} />
-          <Route path="/array" element={<Array />} />
-          <Route path="/Os" element={<Os/>} />
-          <Route path = "/Dbms" element={<Dbms />} />
-          <Route path="/ComputerNetwork" element={<ComputerNetworks />} />
-          <Route path="/web-development" element={<WebDevelopment />} />
-          <Route path="/Amazon-clone" element={<AmazonClone />} />
-          <Route path="/Discord" element={<DiscordProject />} />
-          <Route path="/RazorPay" element={<RazorpayProject />} />
-          <Route path="/Spotify-Clone" element={<Spotify />} />
-          <Route path="/React-based-project" element={<ReactProject />} />
-          <Route path="/blog-app-react" element={<BlogApps/>} />
-          <Route path="/HtmlProject" element={<HtmlProject/>} />
-          <Route path="/PortfolioHtml" element={<PortfolioHtml/>} />
-          <Route path="/AssignmentProject" element={<AssignmentProject/>} />
-          <Route path="/ProductCatalog" element={<ProductCatalog/>} />
-          <Route path="/youtubeBasedProject" element={<IFrame/>} />
-          <Route path="/phpProjects" element={<PhpProject/>} />
-          <Route path="/Kreeda" element={<Kreeda/>} />
-          <Route path="/kishanMitra" element={<KishanMitra/>} />
-          <Route path="/ArrayProblems" element={<PractiseBasicArray/>} />
-          <Route path="/basic-Dbms" element={<BasicDbms/>} />
-          <Route path="/java-Projects" element={<JavaProject/>} />
-          <Route path="/TripPlanner" element={<TripPlanner/>} />
-          <Route path="/FunCalculations" element={<FunCalculations />} />
-          <Route path="/Chat-App" element={<ChatApp/>} />
-          <Route path="/Html-Css-Projects" element={<HtmlCssProject/>} />
-          <Route path="/Shopping-page" element={<ShoppingLastPage/>} />
-          <Route path="/Reciepe-website" element={<ReciepeWebsite/>} />
-          <Route path ="/Chair-page" element={<ChairPage/>} />
-          <Route path ="/Hire-Me" element={<HireMe/>} />
-          <Route path ="/Image-Gallery" element={<ImageGallery/>} />
-          <Route path ="/Job-Application-page" element={<JobApplication/>} />
-          <Route path ="/Product-Card" element={<ProductCard/>} />
-          <Route path="/React-Content" element={<React_Content/>} />
-          <Route path ="/React-Seo" element={<ReactSeo/>} />
-          <Route path="/Os-Content" element={<OsContent />} />
-          <Route path="/Cn-Content" element={<Cn_Content/>} />
-          <Route path="/java-learning" element={<Java_Content/>} />
           <Route path="/profile" element={<Profile />} />
+          
+          
+          <Route path="/theory/array" element={<Array />} />
+          <Route path="/theory/basic-Dbms" element={<BasicDbms/>} />
+          <Route path="/theory/React-Content" element={<React_Content/>} />
+          <Route path="/theory/React-Seo" element={<ReactSeo/>} />
+          <Route path="/theory/Os-Content" element={<OsContent />} />
+          <Route path="/theory/Cn-Content" element={<Cn_Content/>} />
+          <Route path="/theory/java-learning" element={<Java_Content/>} />
+
+
+          <Route path="/Projects/web-development" element={<WebDevelopment />} />
+          <Route path="/Projects/Amazon-clone" element={<AmazonClone />} />
+          <Route path="/Projects/Discord" element={<DiscordProject />} />
+          <Route path="/Projects/RazorPay" element={<RazorpayProject />} />
+          <Route path="/Projects/Spotify-Clone" element={<Spotify />} />
+          <Route path="/Projects/React-based-project" element={<ReactProject />} />
+          <Route path="/Projects/blog-app-react" element={<BlogApps/>} />
+          <Route path="/Projects/HtmlProject" element={<HtmlProject/>} />
+          <Route path="/Projects/PortfolioHtml" element={<PortfolioHtml/>} />
+          <Route path="/Projects/AssignmentProject" element={<AssignmentProject/>} />
+          <Route path="/Projects/ProductCatalog" element={<ProductCatalog/>} />
+          <Route path="/Projects/youtubeBasedProject" element={<IFrame/>} />
+          <Route path="/Projects/phpProjects" element={<PhpProject/>} />
+          <Route path="/Projects/Kreeda" element={<Kreeda/>} />
+          <Route path="/Projects/kishanMitra" element={<KishanMitra/>} />
+          <Route path="/Projects/java-Projects" element={<JavaProject/>} />
+          <Route path="/Projects/TripPlanner" element={<TripPlanner/>} />
+          <Route path="/Projects/FunCalculations" element={<FunCalculations />} />
+          <Route path="/Projects/Chat-App" element={<ChatApp/>} />
+          <Route path="/Projects/Html-Css-Projects" element={<HtmlCssProject/>} />
+          <Route path="/Projects/Shopping-page" element={<ShoppingLastPage/>} />
+          <Route path="/Projects/Reciepe-website" element={<ReciepeWebsite/>} />
+          <Route path="/Projects/Chair-page" element={<ChairPage/>} />
+          <Route path="/Projects/Hire-Me" element={<HireMe/>} />
+          <Route path="/Projects/Product-Card" element={<ProductCard/>} />
+          <Route path="/Projects/Image-Gallery" element={<ImageGallery/>} />
+          <Route path="/Projects/Job-Application-page" element={<JobApplication/>} />
+          
+          <Route path="/Problems/ArrayProblems" element={<PractiseBasicArray/>} />
+          
+
+
+          <Route path="/roadMap/Os" element={<Os/>} />
+          <Route path="/roadMap/dsa" element={<Dsa/>} />
+          <Route path="/roadMap/ComputerNetwork" element={<ComputerNetworks />} />
+          <Route path="/roadMap/Dbms" element={<Dbms />} />
+          
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
 

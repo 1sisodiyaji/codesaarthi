@@ -65,7 +65,7 @@ const SignUp = () => {
               localStorage.setItem("user_name", name);
               localStorage.setItem("user_email", email);
               setLoading(false);
-              navigate('/Problems')
+              navigate('/theory')
             } else {
               name_error.textContent = message;
               setLoading(false);
@@ -119,7 +119,7 @@ const SignUp = () => {
                 localStorage.setItem('user_email', userData.email);
                 localStorage.setItem('user_ProfilePic', userData.picture);
                 setLoading(false);
-                navigate("/Problems");
+                navigate("/theory");
               } else {
                 name_error.textContent = `Error saving user data:`+ response.data.message;
                 setLoading(false);

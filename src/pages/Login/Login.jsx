@@ -66,7 +66,7 @@ const Login = () => {
             localStorage.setItem("user_name", name);
             localStorage.setItem("user_email", userEmail);
             setLoading(false);
-            navigate("/Problems");
+            navigate("/theory");
           } else {
             emailError.innerText = message;
             setLoading(false);
@@ -102,7 +102,7 @@ const Login = () => {
                 localStorage.setItem('user_email', userData.email);
                 localStorage.setItem('user_ProfilePic', userData.picture);
                 setLoading(false);
-                navigate("/Problems");
+                navigate("/theory");
               } else {
                 emailError.innerText =` Account Does not exist:`+response.data.message;
                 setLoading(false);

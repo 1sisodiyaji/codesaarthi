@@ -24,7 +24,7 @@ const Theory = () => {
         <div className="row"> 
         
           <div className="col-lg-4 col-12 my-2">
-            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626' , border:'1px solid grey' }}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626'}}>
                 <div className="row">
                   <div className="col-4"  >
                     <img src="../img/Array.jpg" className="img-fluid rounded-8  " style={{height: '12vh' }}/>
@@ -32,7 +32,7 @@ const Theory = () => {
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light">Array in Short</h5></div>
 
-                    <div><Link to="/array">
+                    <div><Link to="/theory/array">
                       <div className="btn text-warning text-capitalize bg-dark">Read it..</div>
                     </Link>
                     </div>
@@ -43,7 +43,7 @@ const Theory = () => {
           </div>
 
           <div className="col-lg-4 col-12 my-2">
-            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626',border:'1px solid grey' }}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626'}}>
                 <div className="row">
                   <div className="col-4"  >
                     <img src="img/dbms1.png" className="img-fluid rounded-8  bg-image"/>
@@ -51,7 +51,7 @@ const Theory = () => {
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light text-capitalize">Dbms Notes</h5></div>
 
-                    <div><Link to="/basic-Dbms">
+                    <div><Link to="/theory/basic-Dbms">
                       <div className="btn text-warning text-capitalize bg-dark">Read it..</div>
                     </Link>
                     </div>
@@ -62,7 +62,7 @@ const Theory = () => {
           </div>
 
           <div className="col-lg-4 col-12 my-2">
-            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626', border:'1px solid grey' }}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626'}}>
                 <div className="row">
                   <div className="col-4"  >
                     <img src="img/Text.png" className="img-fluid rounded-8 bg-image"/>
@@ -70,7 +70,7 @@ const Theory = () => {
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light">Os  Notes </h5></div>
 
-                    <div><Link to="/Os-Content">
+                    <div><Link to="/theory/Os-Content">
                       <div className="btn text-warning text-capitalize bg-dark">Read it..</div>
                     </Link>
                     </div>
@@ -81,7 +81,7 @@ const Theory = () => {
           </div> 
 
           <div className="col-lg-4 col-12 my-2">
-            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626' ,border:'1px solid grey'}}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626'}}>
                 <div className="row">
                   <div className="col-4"  >
                     <img src="img/React1.png" className="img-fluid bg-image rounded-8"/>
@@ -89,7 +89,7 @@ const Theory = () => {
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light">React  Notes </h5></div>
 
-                    <div><Link to="/React-Content">
+                    <div><Link to="/theory/React-Content">
                       <div className="btn text-warning text-capitalize bg-dark">Read it..</div>
                     </Link>
                     </div>
@@ -100,7 +100,7 @@ const Theory = () => {
           </div> 
 
           <div className="col-lg-4 col-12 my-2">
-            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626',border:'1px solid grey' }}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626'}}>
                 <div className="row">
                   <div className="col-4"  >
                     <img src="img/cnLogo.png" className="img-fluid rounded-8 bg-image"/>
@@ -108,7 +108,7 @@ const Theory = () => {
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light">CN  Notes </h5></div>
 
-                    <div><Link to="/Cn-Content">
+                    <div><Link to="/theory/Cn-Content">
                       <div className="btn text-warning text-capitalize bg-dark">Read it..</div>
                     </Link>
                     </div>
@@ -119,7 +119,7 @@ const Theory = () => {
           </div> 
           
           <div className="col-lg-4 col-12 my-2">
-            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626',border:'1px solid grey' }}>
+            <div className="card  p-3 tilt-effect" style={{ backgroundColor: '#262626' }}>
                 <div className="row">
                   <div className="col-4"  >
                     <img src="img/java1.png" className="img-fluid rounded-8 bg-image"/>
@@ -127,7 +127,7 @@ const Theory = () => {
                   <div className="col-8 align-self-center">
                     <div><h5 className="card-title text-light">Java  Notes </h5></div>
 
-                    <div><Link to="/java-learning">
+                    <div><Link to="/theory/java-learning">
                       <div className="btn text-warning text-capitalize bg-dark">Read it..</div>
                     </Link>
                     </div>
