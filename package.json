@@ -27,6 +27,7 @@
     "react-scripts": "5.0.1",
     "react-snap": "^1.23.0",
     "react-toastify": "^10.0.4",
+    "recharts": "^2.12.7",
     "web-vitals": "^2.1.4"
   },
   "puppeteer": {

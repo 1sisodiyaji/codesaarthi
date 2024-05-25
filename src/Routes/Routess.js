@@ -57,6 +57,7 @@ import Cn_Content from "../pages/Theory/CN/Cn_Content";
 import Profile from "../pages/Profile";
 import Java_Content from "../pages/Theory/JavaLeaning/Java_Content";
 import TableCard from "../pages/Projects/React/Table";
+import Weather from "../pages/Projects/React/Weather";
 
 
 const Routess = () => {
@@ -133,6 +134,7 @@ const Routess = () => {
           <Route path="/Projects/Image-Gallery" element={<ImageGallery/>} />
           <Route path="/Projects/Job-Application-page" element={<JobApplication/>} />
           <Route path="/Projects/react/table" element={<TableCard/>} />
+          <Route path="/Projects/react/weather" element={<Weather/>} />
           <Route path="/Problems/ArrayProblems" element={<PractiseBasicArray/>} />
           
 
