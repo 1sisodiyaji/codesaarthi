@@ -56,6 +56,7 @@ import OsContent from "../pages/Theory/Os/OsContent";
 import Cn_Content from "../pages/Theory/CN/Cn_Content";
 import Profile from "../pages/Profile";
 import Java_Content from "../pages/Theory/JavaLeaning/Java_Content";
+import TableCard from "../pages/Projects/React/Table";
 
 
 const Routess = () => {
@@ -131,7 +132,7 @@ const Routess = () => {
           <Route path="/Projects/Product-Card" element={<ProductCard/>} />
           <Route path="/Projects/Image-Gallery" element={<ImageGallery/>} />
           <Route path="/Projects/Job-Application-page" element={<JobApplication/>} />
-          
+          <Route path="/Projects/react/table" element={<TableCard/>} />
           <Route path="/Problems/ArrayProblems" element={<PractiseBasicArray/>} />
           
 
