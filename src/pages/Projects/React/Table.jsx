@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Helmet } from 'react-helmet';
 const TableCard = () => {
   const [rows, setRows] = useState([]);
   const [newRow, setNewRow] = useState({ name: "", age: "" });
@@ -35,6 +35,20 @@ const TableCard = () => {
 
   return (
     <>
+
+<Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="React Based Project , Learn React based project , React projects , Top 10 Projects in React ., CRUD Operation in react , CRUD simulation ." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://codesaarthi.com/Projects/react/table" />
+        <meta name="description" content="It is basically an react based Projects , Where you can do crud operation and all that simalteneously ." />
+        <title>React Projects | CodeSaarthi</title>
+        <meta property="og:title" content=" React Projects| CodeSaarthi" />
+        <meta property="og:description" content="t is basically an react based Projects , Where you can do crud operation and all that simalteneously ." />
+        <meta property="og:image" content="https://codesaarthi.com/img/reacttable.jpg" />
+        <meta property="og:type" content="https://codesaarthi.com/Projects/react/table" />
+        <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+    </Helmet>
     <div className="conatiner-fluid vh-100 design py-5" style={{backgroundColor:'#1E1E1E'}}>
     <div className="container text-center g-0">
       <h2 className="text-warning">Interactive Table</h2>
