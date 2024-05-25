@@ -54,7 +54,7 @@ const ReactProject = () => {
                                
                                     <div className="row">
                                         <div className="col-12">
-                                            <img src="../img/amazon1.jpg" className="img-fluid tilt-effect2" />
+                                            <img src="../img/reacttable.jpg" className="img-fluid tilt-effect2" />
                                         </div>
                                         <div className="col-12 text-center my-2">
                                             <div>
