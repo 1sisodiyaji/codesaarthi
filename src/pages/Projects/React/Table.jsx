@@ -71,31 +71,35 @@ const TableCard = () => {
                     />
                   </div>
                   <div className="border col-4">
-                    <button onClick={handleSaveEditRow} className="btn border shadow-0 my-2 text-success text-capitalize">Save <i class="fi fi-ss-check-circle"></i></button>
-                    <button onClick={() => setEditingRowIndex(null)} className="btn text-danger border text-capitalize ms-2 my-2">
+                    <div className="row g-6">
+                        <div className="col-6 my-1">
+                        <button onClick={handleSaveEditRow} className="btn btn-sm border  shadow-0  text-success text-capitalize">Save <i class="fi fi-ss-check-circle"></i></button>
+                        </div>
+                        <div className="col-6 my-1">
+                        <button onClick={() => setEditingRowIndex(null)} className="btn btn-sm text-danger border text-capitalize">
                     <i class="fi fi-rr-trash"></i> Cancel
                     </button>
+                        </div>
+                    </div>
                   </div>
                   </div>
                 </>
               ) : (
                 <>
-                <div className="row g-0 bg-dark">
+                <div className="row g-0 bg-dark my-2">
                   <div className="text-light text-capitalize bg-dark border col-4 d-flex align-items-center justify-content-center">{row.name}</div>
                   <div className="text-light bg-dark border col-4 d-flex align-items-center justify-content-center">{row.age}</div>
                   <div className="col-4">
-                    <div className="container-fluid ">
-                    <div className="row border">
-                        <div className="col-6 text-end">
-                        <button onClick={() => handleEditRow(index)} className="btn border shadow-0 text-warning my-2 text-capitalize"> <i class="fi fi-sr-pen-clip"></i> Edit</button>
+                    <div className="row border g-0">
+                        <div className="col-6  my-1">
+                        <button onClick={() => handleEditRow(index)} className="btn btn-sm border shadow-0 text-warning  text-capitalize"> <i class="fi fi-sr-pen-clip"></i> Edit</button>
                         </div>
-                        <div className="col-6 text-start">
-                    <button onClick={() => handleDeleteRow(index)} className="btn border shadow-0 text-danger ms-2 my-2 text-capitalize"> <i class="fi fi-rr-trash"></i> Delete</button>
+                        <div className="col-6  my-1">
+                    <button onClick={() => handleDeleteRow(index)} className="btn btn-sm  border shadow-0 text-danger ms-1  text-capitalize"> <i class="fi fi-rr-trash"></i> Delete</button>
                     </div>
                     </div>
                   
                     </div>
-                  </div>
                   </div>
                 </>
               )}
@@ -121,7 +125,7 @@ const TableCard = () => {
               />
             </div>
             <div className="col-4 border">
-              <button onClick={handleAddRow} className="border btn my-2 bg-dark  text-capitalize text-light">Add</button>
+              <button onClick={handleAddRow} className="border btn  bg-dark  text-capitalize text-light">Add</button>
             </div>
           </div>
         </div>
