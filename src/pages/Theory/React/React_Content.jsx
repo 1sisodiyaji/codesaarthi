@@ -482,18 +482,19 @@ const React_Content = () => {
   return (
     <>
       <Helmet>
-        <meta name="keywords" content="DBMS , learn dbms from scratch , DBMS for begineers , Interview preparation for DBMS" />
+        <meta name="keywords" content="React js , learn react js from scratch , version 19 react details , new upadtes on react , react structure ." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://codesaarthi.com/Read-Content" />
-        <meta name="description" content="Learn Dbms for interview as short and important concept . DBMS Architecture and Working in SQL and No Sql" />
+        <link rel="canonical" href="https://codesaarthi.com/theory/React-Content" />
+        <meta name="description" content="Learn React from scratch to building appilications , react gets easy with codesaarthi as making it easy to learn ." />
         <title></title>
         <meta property="og:title" content="" />
-        <meta property="og:description" content="Learn Dbms for interview as short and important concept . DBMS Architecture and Working in SQL and No Sql" />
+        <meta property="og:description" content="Learn React from scratch to building appilications , react gets easy with codesaarthi as making it easy to learn ." />
         <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
-        <meta property="og:url" content="https://codesaarthi.com/Read-Content" />
+        <meta property="og:url" content="https://codesaarthi.com/theory/React-Content" />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
+
       <div className="container-fluid design g-0" style={{ backgroundColor: '#1E1E1E' }}>
         <div className="container">
           <div className=" d-lg-none d-block d-flex justify-content-end pt-2">
@@ -509,7 +510,7 @@ const React_Content = () => {
 
             <div className="col-lg-3 col-0 p-lg-2 p-0 d-lg-block d-none border border-dark" style={{ backgroundColor: '#262626' }} >
               <div className="d-flex justify-content-center py-2">
-              <img src="img/React1.png" className="img-fluid" alt="java logo" />
+              <img src="https://codesaarthi.com/img/React1.png" className="img-fluid" alt="java logo" />
               </div>
               <h2 className="text-center pb-3 text-primary">REACT JS</h2>
               {importantTopics.map(topic => (

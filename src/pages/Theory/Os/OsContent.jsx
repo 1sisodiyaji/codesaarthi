@@ -110,15 +110,15 @@ const OsContent = () => {
   return (
     <>
       <Helmet>
-        <meta name="keywords" content="DBMS , learn dbms from scratch , DBMS for begineers , Interview preparation for DBMS" />
+        <meta name="keywords" content="Os , learn os from scratch , os for beginners , interview preparation for os ." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://codesaarthi.com/Read-Content" />
-        <meta name="description" content="Learn Dbms for interview as short and important concept . DBMS Architecture and Working in SQL and No Sql" />
+        <link rel="canonical" href="https://codesaarthi.com/theory/Os-Content" />
+        <meta name="description" content="Learn os for interview as short and important concept . Learn easily in easy language for better undersatnding about os and working structure ." />
         <title></title>
         <meta property="og:title" content="" />
-        <meta property="og:description" content="Learn Dbms for interview as short and important concept . DBMS Architecture and Working in SQL and No Sql" />
+        <meta property="og:description" content="Learn os for interview as short and important concept . Learn easily in easy language for better undersatnding about os and working structure ." />
         <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
-        <meta property="og:url" content="https://codesaarthi.com/Read-Content" />
+        <meta property="og:url" content="https://codesaarthi.com/theory/Os-Content" />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
@@ -138,9 +138,9 @@ const OsContent = () => {
 
             <div className="col-lg-3 col-0 p-lg-2 p-0 d-lg-block d-none border border-dark" style={{ backgroundColor: '#262626' }} >
               <div className="d-flex justify-content-center py-2">
-              <img src="img/React1.png" className="img-fluid" alt="java logo" />
+              <img src="https://codesaarthi.com/img/Text.png" className="img-fluid" alt="java logo" />
               </div>
-              <h2 className="text-center pb-3 text-primary">REACT JS</h2>
+              <h2 className="text-center pb-3 text-primary">__</h2>
               {importantTopics.map(topic => (
                 <div
                   key={topic.id}

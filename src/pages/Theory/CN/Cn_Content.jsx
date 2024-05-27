@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
+
 const Cn_Content = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [selectedTopic, setSelectedTopic] = useState(1);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
-
-  // State to keep track of the selected topic
-  const [selectedTopic, setSelectedTopic] = useState(1);
 
   // Function to handle topic selection
   const handleTopicClick = (topicId) => {
     setSelectedTopic(topicId);
     setIsSidebarOpen(false);
   };
-
-  // Function to handle selecting the previous topic
   const goToPreviousTopic = () => {
     if (selectedTopic > 1) {
       setSelectedTopic(selectedTopic - 1);
@@ -145,7 +141,6 @@ const Cn_Content = () => {
   ]
   ;
 
-
   useEffect(() => {
     if (selectedTopic) {
       const topicName = importantTopics.find(topic => topic.id === selectedTopic)?.topic;
@@ -162,86 +157,112 @@ const Cn_Content = () => {
     }
   }, [selectedTopic]);
 
+
   return (
     <>
       <Helmet>
-        <meta name="keywords" content="DBMS , learn dbms from scratch , DBMS for begineers , Interview preparation for DBMS" />
+        <meta name="keywords" content="Computer networks , learn computer networks from scratch . Computer networks interview preparation questions ." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://codesaarthi.com/Read-Content" />
-        <meta name="description" content="Learn Dbms for interview as short and important concept . DBMS Architecture and Working in SQL and No Sql" />
+        <link rel="canonical" href="https://codesaarthi.com/theory/Cn-Content" />
+        <meta name="description" content="Learn Computer Networks as in easy language from scratch for better understanding . easy to undersatnd the structure of networking and osi model for better enhancement in acknowledge the https request ." />
         <title></title>
         <meta property="og:title" content="" />
-        <meta property="og:description" content="Learn Dbms for interview as short and important concept . DBMS Architecture and Working in SQL and No Sql" />
+        <meta property="og:description" content="Learn Computer Networks as in easy language from scratch for better understanding . easy to undersatnd the structure of networking and osi model for better enhancement in acknowledge the https request ." />
         <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
-        <meta property="og:url" content="https://codesaarthi.com/Read-Content" />
+        <meta property="og:url" content="https://codesaarthi.com/theory/Cn-Content" />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
-      <div class="container-fluid design g-0" style={{ backgroundColor: '#1E1E1E' }}>
+
+      <div className="container-fluid design g-0" style={{ backgroundColor: '#1E1E1E' }}>
         <div className="container">
-          <div class=" d-lg-none d-block">
+          <div className=" d-lg-none d-block d-flex justify-content-end pt-2">
             <button
               onClick={toggleSidebar}
-              class=" navbar-toggler  shadow-0 d-lg-none  d-block"
+              className=" navbar-toggler  shadow-0 d-lg-none  d-block"
               style={{ color: "#FFE164", fontSize: "1.8rem" }}
             >
-              <i class="fi fi-br-align-justify ps-2"></i>
+              <i className="fi fi-br-align-justify pt-2"></i>
             </button>
           </div>
-          <h1 class='py-2 text-success text-decoration-underline'>Computer Networks  <i className="fi fi-ss-back-up"></i></h1>
+          <div className="row g-0 p-lg-2 p-0 border border-dark">
 
-          <div class="row g-0 p-lg-2 p-0 border border-dark">
-
-            <div className="col-lg-3 col-0 p-lg-2 p-0 d-lg-block d-none border border-dark" style={{ backgroundColor: '#262626' }}>
-              {/* Rendering topic titles */}
+            <div className="col-lg-3 col-0 p-lg-2 p-0 d-lg-block d-none border border-dark" style={{ backgroundColor: '#262626' }} >
+              <div className="d-flex justify-content-center py-2">
+              <img src="https://codesaarthi.com/img/cnLogo.png" className="img-fluid" alt="java logo" />
+              </div>
+              <h2 className="text-center pb-3 text-primary">Computer Networks</h2>
               {importantTopics.map(topic => (
-                <div key={topic.id} onClick={() => handleTopicClick(topic.id)} style={{ cursor: 'pointer' }}>
-                  <p className='text-capitalize' style={{ color: '#FFE164' }}>{topic.topic}</p>
+                <div
+                  key={topic.id}
+                  onClick={() => handleTopicClick(topic.id)}
+                  style={{
+                    cursor: 'pointer',
+                    textDecoration: selectedTopic === topic.id ? 'underline' : 'none',
+                    color : selectedTopic === topic.id ? '#FFE164' :'none'
+                  }}
+                >
+                  <p
+                    className="text-capitalize topic-item"
+                    style={{
+                      color : selectedTopic === topic.id ? '#6D39F7' :'#FFE164'
+                    }}
+                  >
+                    <i className="fi fi-ss-book-alt pe-1" ></i> {topic.topic}
+                  </p>
                   <hr />
                 </div>
               ))}
-            </div>
 
+            </div>
             {isSidebarOpen ?
               <>
-                <div class="d-lg-none d-block">
+                <div className="d-lg-none d-block">
 
 
-                  <div class="container-fluid  g-0 d-lg-none d-block">
+                  <div className="container-fluid  g-0 d-lg-none d-block">
                     <div
                       style={{ zIndex: "99" }}
-                      class={`sidebar3 ${isSidebarOpen ? "show" : ""
+                      className={`sidebar3 ${isSidebarOpen ? "show" : ""
                         } d-lg-none d-md-none d-sm-block`}
                     >
-                      {/* Rendering topic titles */}
-                      {importantTopics.map((topic) => (
-                        <div
-                          key={topic.id}
-                          onClick={() => handleTopicClick(topic.id)}
-                          style={{ cursor: "pointer" }}
-                        >
-                          <small class="text-capitalize">
-                            {topic.topic}
-                          </small>
-                          <hr />
-                        </div>
-                      ))}
+                      {importantTopics.map(topic => (
+                <div
+                  key={topic.id}
+                  onClick={() => handleTopicClick(topic.id)}
+                  style={{
+                    cursor: 'pointer',
+                    textDecoration: selectedTopic === topic.id ? 'underline' : 'none',
+                    color : selectedTopic === topic.id ? '#FFE164' :'none'
+                  }}
+                >
+                  <p
+                    className="text-capitalize topic-item"
+                    style={{
+                      color : selectedTopic === topic.id ? '#6D39F7' :'#FFE164'
+                    }}
+                  >
+                    <i className="fi fi-ss-book-alt pe-1" ></i> {topic.topic}
+                  </p>
+                  <hr />
+                </div>
+              ))}
                     </div>
                   </div>
                 </div>
               </> : " "}
-            <div class="col-lg-9 col-12 ">
+            <div className="col-lg-9 col-12">
               {/* Rendering corresponding descriptions */}
               {selectedTopic !== null && (
-                <div class='p-2'>
-                  <h3 class='text-capitalize text-warning'>{importantTopics[selectedTopic - 1].topic}</h3>
-                  <div class='text-light p-2' dangerouslySetInnerHTML={{ __html: importantTopics[selectedTopic - 1].description }}></div>
-                  <div class="row">
-                    <div class="col-6 text-start">
-                      <div class="btn border text-capitalize text-warning" onClick={goToPreviousTopic}><i class="fi fi-rr-angle-small-left"></i>previous</div>
+                <div className='p-2'>
+                  <h3 className='text-capitalize text-warning'>{importantTopics[selectedTopic - 1].topic}</h3>
+                  <div className='text-light p-2' dangerouslySetInnerHTML={{ __html: importantTopics[selectedTopic - 1].description }}></div>
+                  <div className="row g-0">
+                    <div className="col-6 text-start">
+                      <div className="btn border text-capitalize text-warning" onClick={goToPreviousTopic}><i className="fi fi-rr-angle-small-left"></i>previous</div>
                     </div>
-                    <div class="col-6 text-end">
-                      <div class="btn  border text-capitalize text-warning" onClick={goToNextTopic}>Next <i class="fi fi-rr-angle-small-right"></i></div>
+                    <div className="col-6 text-end">
+                      <div className="btn  border text-capitalize text-warning" onClick={goToNextTopic}>Next <i className="fi fi-rr-angle-small-right"></i></div>
                     </div>
                   </div>
                 </div>

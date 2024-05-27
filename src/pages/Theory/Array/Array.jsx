@@ -193,13 +193,13 @@ const Array = () => {
           <Helmet>
             <meta name="keywords" content="Array short revision , learn array in short time , start learning array , Basic array concept , array concepts " />
             <meta name="robots" content="index, follow" />
-            <link rel="canonical" href="https://codesaarthi.com/Read-Content" />
+            <link rel="canonical" href="https://codesaarthi.com/theory/array" />
             <meta name="description" content="Learn Array in short time , covering all important topics , practise important questions and interview round question in a single platform ." />
             <title></title>
             <meta property="og:title" content="" />
             <meta property="og:description" content="Learn Array in short time , covering all important topics , practise important questions and interview round question in a single platform . " />
             <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
-            <meta property="og:url" content="https://codesaarthi.com/Read-Content" />
+            <meta property="og:url" content="https://codesaarthi.com/theory/array" />
             <meta property="og:type" content="Education-Website" />
             <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
           </Helmet>
@@ -218,7 +218,7 @@ const Array = () => {
     
                 <div className="col-lg-3 col-0 p-lg-2 p-0 d-lg-block d-none border border-dark" style={{ backgroundColor: '#262626' }} >
                   <div className="d-flex justify-content-center py-2">
-                  <img src="img/Array.jpg" className="img-fluid" style={{height:'200px'}} alt="java logo" />
+                  <img src=" https://codesaarthi.com/img/Array.jpg" className="img-fluid" style={{height:'200px'}} alt="Arrays logo" />
                   </div>
                   <h2 className="text-center pb-3 text-primary">ARRAY</h2>
                   {importantTopics.map(topic => (

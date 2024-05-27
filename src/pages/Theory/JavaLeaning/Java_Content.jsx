@@ -35,7 +35,7 @@ const Java_Content = () => {
         "id": 1,
         "topic": "Introduction to Java",
         "description": `<h5>Java is a class based , object oriented Programming Language  at having some dependecies .</h5> <p> The main fetures of java is it support <strong> WORA </strong> (Write once run Anywhere) Dues its Environment that it provides . </p> 
-        <img class ="img-fluid"  src = "img/java1.png"> <br/> <br/>
+        <img class ="img-fluid"  src = "https://codesaarthi.com/img/java1.png"> <br/> <br/>
         <p><strong>History and Features of Java:</strong> Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It was developed by <strong>James Gosling </strong> at <strong> Sun Microsystems </strong>, which is now a subsidiary of <strong> Oracle Corporation </strong>. The language was initially released in 1995 and has since become one of the most popular programming languages in use.</p>\n<p>Key features of Java include:</p>\n<ul>\n<li>Platform Independence: Write once, run anywhere (WORA) capability due to the Java Virtual Machine (JVM).</li>\n<li>Object-Oriented: Supports principles of OOP such as inheritance, encapsulation, and polymorphism.</li>\n<li>Robust and Secure: Java provides strong memory management and security features.</li>\n<li>Multi-threaded: Supports concurrent programming and multi-threading capabilities.</li>\n<li>High Performance: Just-In-Time (JIT) compilers and performance optimizations.</li>\n</ul>\n<p><strong>Installing Java Development Kit (JDK):</strong> To start developing Java applications, you need to install the Java Development Kit (JDK). The JDK includes the Java Runtime Environment (JRE), an interpreter/loader (Java), a compiler (javac), an archiver (jar), a documentation generator (Javadoc), and other tools needed for Java development. <a href = "https://www.oracle.com/in/java/technologies/downloads/" target = "blank" >Click Here </a> </p>\n<p>Steps to install JDK:</p>\n<ol>\n<li>Download the JDK from the official Oracle website or OpenJDK.</li>\n<li>Follow the installation instructions specific to your operating system.</li>\n<li>Set the PATH environment variable to include the JDK bin directory.</li>\n</ol>\n<p><strong>Setting Up the Development Environment:</strong> After installing the JDK, you can set up your development environment. Popular Integrated Development Environments (IDEs) for Java development include:</p>\n<ul>\n
         <li>Eclipse: A free, open-source IDE with extensive plugins and features. <a href = " https://www.eclipse.org/downloads/ " target= "blank" > <i class="fi fi-rr-arrow-up-right-from-square text-success"> </i> </a> </li>\n
         <li>IntelliJ IDEA: A powerful IDE with both a free Community edition and a paid Ultimate edition. <a href = " https://www.jetbrains.com/idea/download/ " target= "blank" > <i class="fi fi-rr-arrow-up-right-from-square text-success"></i> </a> </li>\n
@@ -143,7 +143,7 @@ const Java_Content = () => {
 
             <div className="col-lg-3 col-0 p-lg-2 p-0 d-lg-block d-none border border-dark" style={{ backgroundColor: '#262626' }} >
               <div className="d-flex justify-content-center py-2">
-              <img src="img/java1.png" className="img-fluid" alt="java logo" />
+              <img src="https://codesaarthi.com/img/java1.png" className="img-fluid" alt="java logo" />
               </div>
               <h2 className="text-center pb-3 text-primary">JAVA</h2>
               {importantTopics.map(topic => (

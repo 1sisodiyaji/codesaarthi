@@ -52,7 +52,7 @@ const Os = () => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://codesaarthi.com/Os" />
         <meta name="description" content="This website is an edtech platform of learning operating system from scratch to end as in simple language to make it better experience of learning ." />
-        <title>operating system | CodeSaarthi</title>
+        <title>Operating system | CodeSaarthi</title>
         <meta property="og:title" content="operating system | CodeSaarthi" />
         <meta property="og:description" content="This website is an edtech platform of learning operating system from scratch to end as in simple language to make it better experience of learning ." />
         <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
