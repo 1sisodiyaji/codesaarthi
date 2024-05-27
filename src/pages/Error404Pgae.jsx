@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { Link } from 'react-router-dom'
 const Error404Pgae = () => {
   return (
    <>
@@ -16,10 +17,41 @@ const Error404Pgae = () => {
   <meta property="og:type" content="Website" />
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
+<div className="container-fluid  design bg-light g-0 " style={{backgroundColor:'#1E1E1E'}}>
 
-   <div className='d-flex align-items-center justify-content-center bg-light design'>
-        <img src="img/error404.jpg" className='img-fluid imageHeight' alt="" />
+   <div className='d-flex align-items-center justify-content-center'>
+        <img src="img/error404.jpg" className='img-fluid imageHeight' alt="error page image" />
    </div>
+ 
+
+<div className="">
+   <h2 className='text-dark text-center'>Check Out For More</h2> 
+
+<Link to = "/theory" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i>Theory </Link>
+<Link to = "/Problems" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i>Problems</Link>
+<Link to = "/Projects"className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i>Projects</Link>
+<Link to = "/theory/React-Content" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i>React</Link>
+<Link to = "/roadMap" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i>Roadmap</Link>
+<Link to = "/theory/java-learning" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i> Java</Link>
+
+<Link to = "/theory/array" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i>Arrays </Link>
+<Link to = "/theory/basic-Dbms" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i>DBMS</Link>
+<Link to = "/theory/Os-Content"className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i>OS</Link>
+<Link to = "/theory/Cn-Content" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i>Computer Networks</Link>
+<Link to = "/Projects/web-development" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i>Web Development</Link>
+<Link to = "/Projects/React-based-project" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i> react Project</Link>
+
+<Link to = "/Projects/java-Projects" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i>Java Projects </Link>
+<Link to = "/Projects/HtmlProject" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i>Html Projects</Link>
+<Link to = "/Projects/Html-Css-Projects"className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i> html , cssProjects</Link>
+<Link to = "/roadMap/dsa" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i>Dsa roadmap</Link>
+<Link to = "/roadMap/Os" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i> os Roadmap</Link>
+<Link to = "/roadMap/Dbms" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i> Dbms roadmap</Link>
+<Link to = "/roadMap/ComputerNetwork" className='btn text-capitalize bg-dark text-warning m-2'> <i class="fi fi-rr-hand-back-point-right pe-2"></i> C N  roadmap</Link>
+<Link to = "/"className='btn text-capitalize border border-success bg-success text-light w-100'><i class="fi fi-rr-hand-back-point-right"></i> Go to Website </Link>
+</div>
+
+</div>
    </>
   )
 }

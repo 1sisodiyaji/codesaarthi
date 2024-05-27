@@ -6,12 +6,12 @@ const Projects = () => {
   return (
     <>
     <Helmet>
-  <meta name="keywords" content="Projects, Web Development Projects, React Projects,Top 10 projects in react, Clone Projects, Coding Projects" />
+  <meta name="keywords" content="Projects, Web Development Projects, React Projects,Top 10 projects in react, Clone Projects, Coding Projects , easy projects , learn web develpopment through projects , learn with projects" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://codesaarthi.com/Projects" />
   <meta name="description" content="Explore a collection of diverse projects, including web development projects, React projects, clone projects, and more. Find inspiration and examples for your coding projects and learn through practical implementation." />
-  <title>Projects: Web Development, React, Clones | codesaarthi</title>
-  <meta property="og:title" content="Projects: Web Development, React, Clones | codesaarthi" />
+  <title>Projects: Web Development, React, Php , Java | codesaarthi</title>
+  <meta property="og:title" content="Projects: Web Development, React, Php , Java | codesaarthi" />
   <meta property="og:description" content="Explore a collection of diverse projects, including web development projects, React projects, clone projects, and more. Find inspiration and examples for your coding projects and learn through practical implementation." />
   <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
   <meta property="og:url" content="https://codesaarthi.com/Projects" />

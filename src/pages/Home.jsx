@@ -8,7 +8,7 @@ const Home = () => {
       <Helmet>
         <meta name="keywords" content="codesaarthi,code saarthi, saarthi ,dsa Question , CodeSaarthi, Code saarthi , Web Development, Coding, Programming, Interview Preparation" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://codesaarthi.com" />
+        <link rel="canonical" href="https://codesaarthi.com/" />
         <meta name="description" content="Explore the world of coding and programming. Learn web development, prepare for interviews, and discover a variety of projects and tutorials. Start your coding journey with us!" />
         <title>codesaarthi | Coding and Programming Hub</title>
         <meta property="og:title" content="codesaarthi | Coding and Programming Hub" />
@@ -62,7 +62,7 @@ const Home = () => {
 
             <div className="col-lg-4 col-12 my-2">
               <div class="card p-3" style={{ backgroundColor: '#262626' }}>
-                <Link to="/web-development" >
+                <Link to="/Projects/web-development" >
                   <div className="text-end">
                     <i class="fi fi-rs-arrow-up-right" style={{ color: '#703BF7' }}></i>
                   </div>
@@ -78,7 +78,7 @@ const Home = () => {
 
             <div className="col-lg-4 col-12 my-2">
               <div class="card p-3" style={{ backgroundColor: '#262626' }}>
-                <Link to="/React-based-project" >
+                <Link to="/Projects/React-based-project" >
                   <div className="text-end">
                     <i class="fi fi-rs-arrow-up-right" style={{ color: '#703BF7' }}></i>
                   </div>
@@ -95,7 +95,7 @@ const Home = () => {
 
             <div className="col-lg-4 col-12 my-2">
               <div class="card p-3" style={{ backgroundColor: '#262626' }}>
-                <Link to="/phpProjects" >
+                <Link to="/Projects/phpProjects" >
                   <div className="text-end">
                     <i class="fi fi-rs-arrow-up-right" style={{ color: '#703BF7' }}></i>
                   </div>
@@ -112,7 +112,7 @@ const Home = () => {
 
             <div className="col-lg-4 col-12 my-2">
               <div class="card p-3" style={{ backgroundColor: '#262626' }}>
-                <Link to="/java-Projects" >
+                <Link to="/Projects/java-Projects" >
                   <div className="text-end">
                     <i class="fi fi-rs-arrow-up-right" style={{ color: '#703BF7' }}></i>
                   </div>
@@ -129,7 +129,7 @@ const Home = () => {
 
             <div className="col-lg-4 col-12 my-2">
               <div class="card p-3" style={{ backgroundColor: '#262626' }}>
-                <Link to="/HtmlProject" >
+                <Link to="/Projects/HtmlProject" >
                   <div className="text-end">
                     <i class="fi fi-rs-arrow-up-right" style={{ color: '#703BF7' }}></i>
                   </div>
@@ -146,7 +146,7 @@ const Home = () => {
 
             <div className="col-lg-4 col-12 my-2">
               <div class="card p-3" style={{ backgroundColor: '#262626' }}>
-                <Link to="" >
+                <Link to="/Projects" >
                   <div className="text-end">
                     <i class="fi fi-rs-arrow-up-right" style={{ color: '#703BF7' }}></i>
                   </div>
@@ -184,7 +184,7 @@ const Home = () => {
             <div className="col-1"></div>
             <div className="col-lg-5 col-12 my-2">
               <div class="card p-3" style={{ backgroundColor: '#262626' }}>
-                <Link to="/Os-Content" >
+                <Link to="/theory/Os-Content" >
                   <div className="text-end">
                     <i class="fi fi-rs-arrow-up-right" style={{ color: '#703BF7' }}></i>
                   </div>
@@ -201,7 +201,7 @@ const Home = () => {
 
             <div className="col-lg-5 col-12 my-2">
               <div class="card p-3" style={{ backgroundColor: '#262626' }}>
-                <Link to="/React-Content" >
+                <Link to="/theory/React-Content" >
                   <div className="text-end">
                     <i class="fi fi-rs-arrow-up-right" style={{ color: '#703BF7' }}></i>
                   </div>
@@ -220,7 +220,7 @@ const Home = () => {
             <div className="col-1"></div>
             <div className="col-lg-5 col-12 my-2">
               <div class="card p-3" style={{ backgroundColor: '#262626' }}>
-                <Link to="/array" >
+                <Link to="/theory/array" >
                   <div className="text-end">
                     <i class="fi fi-rs-arrow-up-right" style={{ color: '#703BF7' }}></i>
                   </div>
@@ -237,7 +237,7 @@ const Home = () => {
 
             <div className="col-lg-5 col-12 my-2">
               <div class="card p-3" style={{ backgroundColor: '#262626' }}>
-                <Link to="/basic-Dbms" >
+                <Link to="/theory/basic-Dbms" >
                   <div className="text-end">
                     <i class="fi fi-rs-arrow-up-right" style={{ color: '#703BF7' }}></i>
                   </div>

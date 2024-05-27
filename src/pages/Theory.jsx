@@ -6,7 +6,7 @@ const Theory = () => {
   return (
     <>
     <Helmet>
-  <meta name="keywords" content="Theory, DSA, Array, String, Sorting, Searching, OS, DBMS, CN" />
+  <meta name="keywords" content="Theory, DSA, Array, String, Sorting, Searching, OS, DBMS, CN Notes , Free Notes" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://codesaarthi.com/theory" />
   <meta name="description" content="Explore theory and topics related to Data Structures and Algorithms, Operating Systems, Database Management Systems, Computer Networks, and more." />

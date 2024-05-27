@@ -8,8 +8,8 @@ const PrivacyPolicy = () => {
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://codesaarthi.com/privacy_policy" />
   <meta name="description" content="Read and understand our privacy policy to learn how we collect, use, and protect your personal information. We are committed to safeguarding your privacy and ensuring the security of your data." />
-  <title>Privacy Policy | Your Website Name</title>
-  <meta property="og:title" content="Privacy Policy | Your Website Name" />
+  <title>Privacy Policy | Codesaarthi</title>
+  <meta property="og:title" content="Privacy Policy | Codesaarthi" />
   <meta property="og:description" content="Read and understand our privacy policy to learn how we collect, use, and protect your personal information. We are committed to safeguarding your privacy and ensuring the security of your data." />
   <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
   <meta property="og:url" content="https://codesaarthi.com/privacy_policy" />
