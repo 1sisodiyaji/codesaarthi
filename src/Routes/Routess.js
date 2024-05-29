@@ -59,6 +59,7 @@ import Java_Content from "../pages/Theory/JavaLeaning/Java_Content";
 import TableCard from "../pages/Projects/React/Table";
 import Weather from "../pages/Projects/React/Weather";
 import UserList from "../pages/Projects/React/userList";
+import SaveNews from "../Admin/SaveNews";
 
 
 const Routess = () => {
@@ -147,6 +148,9 @@ const Routess = () => {
           <Route path="/roadMap/Dbms" element={<Dbms />} />
           
           <Route path="/*" element={<ErrorPage />} />
+
+          <Route path="/Admin/SaveArticle" element={<SaveNews />} />
+
         </Routes>
 
         <Footer onFooterClick={handleFooterClick} />

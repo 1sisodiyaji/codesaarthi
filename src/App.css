@@ -192,3 +192,9 @@ font-weight: bold !important;
   color: #6D39F7 !important;
 }
 
+.cardImageHeight{
+  height: 180px !important;
+}
+.cardWidth{
+  width: 340px !important;
+}

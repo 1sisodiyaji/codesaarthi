@@ -291,7 +291,7 @@ export const Navbar = () => {
                     <ul className="dropdown-menu dropdown-menu-end  ">
                       <li>
                         <Link to="/profile" className="dropdown-item">
-                        <i class="fi fi-ss-user-pen"></i>  Profile
+                        <i className="fi fi-ss-user-pen"></i>  Profile
                         </Link>
                       </li>
                       <li>
