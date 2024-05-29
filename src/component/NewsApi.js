@@ -9,7 +9,6 @@ const NewsApi = () => {
   const [visibleContent, setVisibleContent] = useState({});
   const [likes, setLikes] = useState({});
 
-  const Username = localStorage.getItem('user_email');
   
   const toggleContentVisibility = (index) => {
     setVisibleContent(prevState => ({
@@ -35,9 +34,15 @@ const NewsApi = () => {
       const response = await axios.get('https://server-fl9q.onrender.com/api/articles');
       console.log('Raw response data:', response.data);  // Log the raw response data
       const articles = response.data;
+      // Check if the data is an array
       if (Array.isArray(articles)) {
+        // Assuming the data is already in the correct format
         setData(articles);
       } else {
+        // If the data is not an array, it might be in a different format
+        // Log the data to see its structure
+        console.log('Invalid data format:', articles);
+        // You might need to adjust this logic based on the actual structure of the data
         setError(new Error('Invalid data format'));
       }
     } catch (error) {
@@ -47,6 +52,7 @@ const NewsApi = () => {
       setLoading(false);
     }
   };
+  
 
   const handleLike = (index) => {
     setLikes(prevLikes => ({
