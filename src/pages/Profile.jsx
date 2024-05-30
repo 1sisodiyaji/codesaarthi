@@ -37,7 +37,7 @@ const Profile = () => {
           [e.target.name]: e.target.value,
         });
       };
-      
+
       const handlePhotoChange = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -67,13 +67,15 @@ const Profile = () => {
           formData.append('photo', image);
           try {
             const userEmail = localStorage.getItem('userEmail');
-            await axios.post(`https://server-fl9q.onrender.com/api/profile/${userEmail}/photo`, formData, {
+            const response = await axios.post(`https://server-fl9q.onrender.com/api/profile/${userEmail}/photo`, formData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
             });
+            console.log("Your response is " + response);
             toast.success('Profile image updated successfully');
           } catch (error) {
+            console.log("Your response is " + error);
             toast.error('Failed to update profile image');
           }
         }
