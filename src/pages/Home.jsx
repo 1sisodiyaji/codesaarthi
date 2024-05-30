@@ -3,6 +3,7 @@ import "../App.css";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import NewsApi from "../component/NewsApi";
+
 const Home = () => {
   const Username = localStorage.getItem('user_email');
 
@@ -22,8 +23,9 @@ const Home = () => {
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
 
-      <div className="container-fluid design" style={{ backgroundColor: '#1E1E1E' }}>
-        {!Username ? <>
+      <div className="container-fluid design g-0" style={{ backgroundColor: '#1E1E1E' }}>
+        {!Username ?
+         <>
 
           <div className="row w-100 py-lg-4 py-2">
             <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center">
@@ -260,24 +262,25 @@ const Home = () => {
             </div>
           </div>
         </> : <>
-          <div className="row vh-100">
+        <div className="container-fluid" style={{ backgroundColor: '#1E1E1E' }}>
+          <div className="row  g-0">
 
-            <div className="col-3  pt-2">
+            <div className="col-lg-3 col-0  d-lg-block d-none pt-2">
               <div className="card bg-dark text-light text-end">
-                <div className=" p-2 ">
+                <div className="p-2 ">
                 <p> Blogs </p>
                 <p> Jobs </p>
               </div>
               </div>
             </div>
 
-            <div className="col-6">
+            <div className="col-lg-6 col-12 " >
 
               <NewsApi/>
               
             </div>
 
-            <div className="col-3  pt-2">
+            <div className="col-lg-3 col-0 d-lg-block d-none pt-2">
               <div className="card bg-dark text-light text-start">
                 <div className=" p-2 ">
                 <p> News </p>
@@ -287,7 +290,7 @@ const Home = () => {
             </div>
 
           </div>
-
+          </div>
         </>}
       </div>
     </>

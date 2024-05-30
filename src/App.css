@@ -198,3 +198,14 @@ font-weight: bold !important;
 .cardWidth{
   width: 340px !important;
 }
+
+/* .sharebutton  */
+.share-options {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.share-options > * {
+  margin-right: 10px;
+}

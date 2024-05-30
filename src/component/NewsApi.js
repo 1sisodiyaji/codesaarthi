@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { FacebookShareButton, WhatsappShareButton, FacebookIcon, WhatsappIcon } from 'react-share';
+import { ToastContainer,Bounce, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const NewsApi = () => {
   const [data, setData] = useState([]);
@@ -8,8 +11,30 @@ const NewsApi = () => {
   const [error, setError] = useState(null);
   const [visibleContent, setVisibleContent] = useState({});
   const [likes, setLikes] = useState({});
+  const [showShareOptions, setShowShareOptions] = useState({});
 
-  
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await axios.get('https://newsapi.org/v2/everything?q=apple&from=2024-05-26&to=2024-05-26&sortBy=popularity&apiKey=6bcf20f6a79d49b2bbeee8d4b6421245');
+        console.log('Raw response data:', response.data);  // Log the raw response data
+        const articles = response.data.articles;
+        if (Array.isArray(articles)) {
+          setData(articles);
+        } else {
+          setError(new Error('Invalid data format'));
+        }
+      } catch (error) {
+        console.error('Error fetching articles:', error);
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
+  }, []);
+
   const toggleContentVisibility = (index) => {
     setVisibleContent(prevState => ({
       ...prevState,
@@ -17,105 +42,121 @@ const NewsApi = () => {
     }));
   };
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    return date.toLocaleDateString(undefined, options);
-  };
-  
-  const formatTime = (dateString) => {
-    const date = new Date(dateString);
-    const options = { hour: 'numeric', minute: 'numeric', hour12: true };
-    return date.toLocaleTimeString(undefined, options);
-  };
-
-  const fetchArticles = async () => {
-    try {
-      const response = await axios.get('https://server-fl9q.onrender.com/api/articles');
-      console.log('Raw response data:', response.data);  // Log the raw response data
-      const articles = response.data;
-      // Check if the data is an array
-      if (Array.isArray(articles)) {
-        // Assuming the data is already in the correct format
-        setData(articles);
-      } else {
-        // If the data is not an array, it might be in a different format
-        // Log the data to see its structure
-        console.log('Invalid data format:', articles);
-        // You might need to adjust this logic based on the actual structure of the data
-        setError(new Error('Invalid data format'));
-      }
-    } catch (error) {
-      console.error('Error fetching articles:', error);
-      setError(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-  
-
   const handleLike = (index) => {
-    setLikes(prevLikes => ({
-      ...prevLikes,
-      [index]: prevLikes[index] ? prevLikes[index] + 1 : 1
+    setLikes(prevState => ({
+      ...prevState,
+      [index]: (prevState[index] || 0) + 1
     }));
   };
 
-  useEffect(() => {
-    fetchArticles();
-  }, []);
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString();
+  };
+
+  const formatTime = (timeString) => {
+    const date = new Date(timeString);
+    return date.toLocaleTimeString();
+  };
+
+  const toggleShareOptions = (index) => {
+    setShowShareOptions(prevState => ({
+      ...prevState,
+      [index]: !prevState[index]
+    }));
+  };
+
+  const handleCopyLink = (url) => {
+    navigator.clipboard.writeText(url);
+      toast.success('Link Copy Successfully!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+        });
+  };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='vh-100 text-warning d-flex justify-content-center align-items-center'>
+     <h1> <i class="fi fi-sr-loading"></i> </h1> 
+     </div>;
   }
 
   if (error) {
-    return <div>Error fetching data: {error.message}</div>;
+    return <div>{error.message}</div>;
   }
 
   return (
-    <>
-      <div style={{ display: 'flex', flexWrap: 'wrap', overflowY: 'scroll', height: '100vh', borderBottom: '1px solid #262626' }}>
-        {data.length > 0 ? (
-          data.map((item, index) => (
-            <div key={index} className='card p-2 my-1' style={{ backgroundColor: '#262626', border: '1px solid #1E1E1E' }}>
-              <Link to={item.url} target='_blank'> <h6 className='text-capitalize text-warning'>{item.title}</h6> </Link>
-              <small className='text-light'>{item.description}</small>
-
-              <button className='text-success text-decoration-underline btn text-start text-capitalize' style={{ cursor: 'pointer' }} onClick={() => toggleContentVisibility(index)}>
-                {visibleContent[index] ? 'Read Less' : 'Read More'}
-              </button>
-              {visibleContent[index] && (
-                <div className='text-light'>
-                  <small>{item.content}</small>
-                </div>
-              )}  
-
-              <div className='text-center'>
-                {item.urlToImage ? 
-                <img src={item.urlToImage} className='img-fluid' alt="" /> : 
-                <img src="https://codesaarthi.com/img/logo1.jpg" className='img-fluid' alt="" />
-                }
+    <div>
+      <ToastContainer />
+      {data.length > 0 ? (
+        data.map((item, index) => (
+          <div key={index} className='card p-2 my-2' style={{ backgroundColor: '#262626', border: '1px solid #1E1E1E' }}>
+            <Link to={item.url} target='_blank'> <h6 className='text-capitalize text-warning'>{item.title}</h6> </Link>
+            <div className="row">
+              <div className="col-6 text-start"><small className='text-muted'>  By <span className=' text-decoration-underline'>{item.author} </span> </small></div>
+              <div className="col-6 text-end">
+                 <div> <small className='text-light text-decoration-underline'> 1 </small><i className="fi fi-rr-eyes px-1 text-warning heading1"></i>
+                 </div> 
               </div>
-              <div className="row my-3">
-                <div className="col-6 text-light d-flex">
-                  <div onClick={() => handleLike(index)} style={{ cursor: 'pointer' }}>
-                    {likes[index] || 0} <i className="fi fi-rs-heart px-3"></i>
-                  </div>
-                  <div><i className="fi fi-rr-eyes px-3 text-warning heading3"></i></div>
-                  <div><i className="fi fi-sr-share px-3 heading3 text-success"></i></div>
+            </div> 
+            
+            
+            <small className='text-light'>{item.description}</small>
+
+            <button className='text-success text-decoration-underline btn text-start text-capitalize' style={{ cursor: 'pointer' }} onClick={() => toggleContentVisibility(index)}>
+              {visibleContent[index] ? 'Read Less' : 'Read More'}
+            </button>
+            {visibleContent[index] && (
+              <div className='text-light'>
+                <small>{item.content}</small>
+              </div>
+            )}  
+
+            <div className='text-center'>
+              {item.urlToImage ? 
+              <img src={item.urlToImage} className='img-fluid' alt="" /> : 
+              <img src="https://codesaarthi.com/img/logo1.jpg" className='img-fluid' alt="" />
+              }
+            </div>
+            <div className="row my-3">
+              <div className="col-6 text-light d-flex">
+                <div onClick={() => handleLike(index)} style={{ cursor: 'pointer' }}>
+                  <small className='text-decoration-underline text-success'>{likes[index] || 0}</small> <i className="fi fi-rs-heart "></i>
                 </div>
-                <div className="col-6 text-end text-light pe-2">
-                  <small className='text-secondary'>{formatTime(item.publishedAt)} . {item.author} <br /> {formatDate(item.publishedAt)}</small>
+                <div onClick={() => toggleShareOptions(index)} style={{ cursor: 'pointer' }}>
+                  <i className="fi fi-sr-share px-3 heading1 text-success"></i>
                 </div>
+              </div>
+              <div className="col-6 text-end text-light pe-2">
+                <small className='text-secondary'>{formatTime(item.publishedAt)} . {formatDate(item.publishedAt)}</small>
               </div>
             </div>
-          ))
-        ) : (
-          <p>No data found</p>
-        )}
-      </div>
-    </>
+            {showShareOptions[index] && (
+              <div className="share-options">
+                <FacebookShareButton url={item.url}>
+                  <FacebookIcon size={32} round={true} />
+                </FacebookShareButton>
+                <WhatsappShareButton url={item.url}>
+                  <WhatsappIcon size={32} round={true} />
+                </WhatsappShareButton>
+                <div onClick={() => handleCopyLink(item.url)} style={{ cursor: 'pointer', display: 'inline-block', marginLeft: '10px' }}>
+                  <i className="fi fi-rs-link heading1 text-success"></i>
+                  <small className='text-decoration-underline text-success'>Copy Link</small>
+                </div>
+              </div>
+            )}
+          </div>
+        ))
+      ) : (
+        <p>No data found</p>
+      )}
+    </div>
   );
 };
 

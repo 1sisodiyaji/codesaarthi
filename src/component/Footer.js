@@ -8,7 +8,7 @@ export const Footer = ({ onFooterClick }) => {
         className="py-3"
         style={{ color: "#FFFFFF", backgroundColor: "#1A1A1A" }}
       >
-        <div className="container-fluid g-0">
+        <div className="container-fluid g-0 mb-lg-0 mb-5">
           <div className="row g-0">
             <div className="col-lg-9 col-12 d-flex">
               <div className="container-fluid">

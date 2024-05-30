@@ -60,6 +60,7 @@ import TableCard from "../pages/Projects/React/Table";
 import Weather from "../pages/Projects/React/Weather";
 import UserList from "../pages/Projects/React/userList";
 import SaveNews from "../Admin/SaveNews";
+import { Navbar2 } from "../component/Navbar2";
 
 
 const Routess = () => {
@@ -154,6 +155,7 @@ const Routess = () => {
         </Routes>
 
         <Footer onFooterClick={handleFooterClick} />
+        <Navbar2/>
       
     </>
   )
