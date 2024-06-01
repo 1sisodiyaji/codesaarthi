@@ -26,9 +26,9 @@ const Theory = () => {
 
             <div className="col-lg-4 col-12 my-2 ">
               <div className="card rounded-8 cardWidth  p-4 tilt-effect bg-dark">
-                <img src="../img/Array.jpg" className="img-fluid cardImageHeight " />
+                <img src="../img/dsa.jpg" className="img-fluid cardImageHeight w-100 " />
                 <div className="text-end text-success text-decoration-underline"> Free Course</div>
-                <h4 className="card-title text-light text-center my-2">Array Notes</h4>
+                <h4 className="card-title text-light text-center my-2">DSA Notes</h4>
                 <p className='text-muted text-capitalize'>this is an brief description about array Where we where going to make you Understand Array with problems . </p>
                 <Link to="/theory/array">
                   <div className="btn text-warning text-capitalize rounded-8" style={{ backgroundColor: '#262626' }}>Start Reading</div>
@@ -74,7 +74,7 @@ const Theory = () => {
 
             <div className="col-lg-4 col-12 my-2">
               <div className="card rounded-8 cardWidth p-4 tilt-effect bg-dark">
-                <div className=" text-center"> <img src="img/cnLogo.png" className="img-fluid cardImageHeight" /></div>
+                <div className=" text-center"> <img src="img/cnLogo.jpg" className="img-fluid cardImageHeight w-100" /></div>
                 <div className="text-end text-success text-decoration-underline"> Free Course</div>
                 <h4 className="card-title text-light text-center my-2">C N Notes</h4>
                 <p className='text-muted text-capitalize'>KNow more about computer networks basics , connection of https request , loader and header . OSI model of commuinication and many more ... </p>

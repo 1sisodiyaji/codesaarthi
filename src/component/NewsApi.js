@@ -1,44 +1,73 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect, useRef } from 'react'; 
 import { Link } from 'react-router-dom';
 import { FacebookShareButton, WhatsappShareButton, FacebookIcon, WhatsappIcon } from 'react-share';
 import { ToastContainer, Bounce, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import config from "../config/config";
+import News from "../data/News"; // Ensure this path is correct
 
 const NewsApi = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([]); // All articles
+  const [currentBatch, setCurrentBatch] = useState([]); // Articles to display
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [visibleContent, setVisibleContent] = useState({});
-  const [likes, setLikes] = useState({});
   const [showShareOptions, setShowShareOptions] = useState({});
+  const [nextBatchIndex, setNextBatchIndex] = useState(0);
+  const loadMoreRef = useRef(null);
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await axios.get(`${config.BASE_URL}/api/articlesdata`);
-        console.log('Raw response data:', response.data);
-        if (Array.isArray(response.data)) {
-          setData(response.data);
-        } else if (typeof response.data === 'object') {
-          setData([response.data]); // Wrap the single object in an array
+        console.log('Fetched News:', News);
+        if (Array.isArray(News)) {
+          setData(News);
+          loadNextBatch(News, 0);
         } else {
-          console.log(response)
-          console.error('Unexpected response format:', response.data);
-          setError(new Error('Unexpected response format'));
+          throw new Error('Fetched data is not an array');
         }
       } catch (error) {
-        console.error('Error fetching articles:', error);
+        console.error('Error setting articles:', error);
         setError(error);
       } finally {
         setLoading(false);
       }
     };
-  
+
     fetchArticles();
   }, []);
-  
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          handleLoadMore();
+        }
+      });
+    }, {
+      threshold: 1.0
+    });
+
+    if (loadMoreRef.current) {
+      observer.observe(loadMoreRef.current);
+    }
+
+    return () => {
+      if (loadMoreRef.current) {
+        observer.unobserve(loadMoreRef.current);
+      }
+    };
+  }, [loadMoreRef.current, nextBatchIndex, data]);
+
+  const loadNextBatch = (articles, startIndex) => {
+    const batch = getRandomArticles(articles, 15, startIndex);
+    setCurrentBatch(prevBatch => [...prevBatch, ...batch]);
+    setNextBatchIndex(prevIndex => prevIndex + 15);
+  };
+
+  const getRandomArticles = (articles, count, startIndex) => {
+    const shuffled = articles.slice(startIndex).sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
 
   const toggleContentVisibility = (index) => {
     setVisibleContent(prevState => ({
@@ -47,12 +76,6 @@ const NewsApi = () => {
     }));
   };
 
-  const handleLike = (index) => {
-    setLikes(prevState => ({
-      ...prevState,
-      [index]: (prevState[index] || 0) + 1
-    }));
-  };
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -73,7 +96,7 @@ const NewsApi = () => {
 
   const handleCopyLink = (url) => {
     navigator.clipboard.writeText(url);
-    toast.success('Link Copy Successfully!', {
+    toast.success('Link Copied Successfully!', {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: true,
@@ -86,10 +109,16 @@ const NewsApi = () => {
     });
   };
 
+  const handleLoadMore = () => {
+    loadNextBatch(data, nextBatchIndex);
+  };
+
   if (loading) {
-    return <div className='vh-100 text-warning d-flex justify-content-center align-items-center'>
-      <h1> <i className="fi fi-sr-loading"></i> </h1>
-    </div>;
+    return (
+      <div className='vh-100 text-warning d-flex justify-content-center align-items-center'>
+        <h1><i className="fi fi-sr-loading"></i></h1>
+      </div>
+    );
   }
 
   if (error) {
@@ -97,69 +126,81 @@ const NewsApi = () => {
   }
 
   return (
-    <div>
+    <>
       <ToastContainer />
-      {Array.isArray(data) && data.length > 0 ? (
-        data.map((item, index) => (
-          <div key={index} className='card p-2 my-2' style={{ backgroundColor: '#262626', border: '1px solid #1E1E1E' }}>
-            <Link to={item.url} target='_blank'> <h6 className='text-capitalize text-warning'>{item.title}</h6> </Link>
-            <div className="row">
-              <div className="col-6 text-start"><small className='text-muted'>  By <span className=' text-decoration-underline'>{item.author} </span> </small></div>
-              <div className="col-6 text-end">
-                <div> <small className='text-light text-decoration-underline'> 1 </small><i className="fi fi-rr-eyes px-1 text-warning heading1"></i>
+      <div>
+        {Array.isArray(currentBatch) && currentBatch.length > 0 ? (
+          currentBatch.map((article, index) => (
+            <div key={index} className='card p-2 my-2' style={{ backgroundColor: '#262626', border: '1px solid #1E1E1E' }}>
+              <Link to={article.url} target='_blank'>
+                <h6 className='text-capitalize text-warning'>{article.title}</h6>
+              </Link>
+              <div className="row">
+                <div className="col-6 text-start">
+                  <small className='text-muted'>By <span className='text-decoration-underline'>{article.author}</span></small>
+                </div>
+                <div className="col-6 text-end">
+                  
                 </div>
               </div>
+              <small className='text-light'>{article.description}</small>
+              <button 
+                className='text-success text-decoration-underline btn text-start text-capitalize' 
+                style={{ cursor: 'pointer' }} 
+                onClick={() => toggleContentVisibility(index)}
+              >
+                {visibleContent[index] ? 'Read Less' : 'Read More'}
+              </button>
+              {visibleContent[index] && (
+                <div className='text-light'>
+                  <small>{article.content}</small>
+                </div>
+              )}
+              <div className='text-center'>
+                {article.urlToImage ? (
+                  <img src={article.urlToImage} className='img-fluid' alt="" />
+                ) : (
+                  <img src="https://codesaarthi.com/img/logo1.jpg" className='img-fluid' alt="" />
+                )}
+              </div>
+              <div className="row my-3">
+                <div className="col-6 text-light d-flex">
+                  <div onClick={() => toggleShareOptions(index)} style={{ cursor: 'pointer' }}>
+                    <i className="fi fi-sr-share px-3 heading1 text-success"></i>
+                  </div>
+                </div>
+                <div className="col-6 text-end text-light pe-2">
+                  <small className='text-secondary'>{formatTime(article.publishedAt)} . {formatDate(article.publishedAt)}</small>
+                </div>
+              </div>
+              {showShareOptions[index] && (
+                <div className="share-options">
+                  <FacebookShareButton url={article.url}>
+                    <FacebookIcon size={32} round={true} />
+                  </FacebookShareButton>
+                  <WhatsappShareButton url={article.url}>
+                    <WhatsappIcon size={32} round={true} />
+                  </WhatsappShareButton>
+                  <div onClick={() => handleCopyLink(article.url)} style={{ cursor: 'pointer', display: 'inline-block', marginLeft: '10px' }}>
+                    <i className="fi fi-rs-link heading1 text-success"></i>
+                    <small className='text-decoration-underline text-success'>Copy Link</small>
+                  </div>
+                </div>
+              )}
             </div>
-            <small className='text-light'>{item.description}</small>
-
-            <button className='text-success text-decoration-underline btn text-start text-capitalize' style={{ cursor: 'pointer' }} onClick={() => toggleContentVisibility(index)}>
-              {visibleContent[index] ? 'Read Less' : 'Read More'}
-            </button>
-            {visibleContent[index] && (
-              <div className='text-light'>
-                <small>{item.content}</small>
-              </div>
-            )}
-
-            <div className='text-center'>
-              {item.urlToImage ?
-                <img src={item.urlToImage} className='img-fluid' alt="" /> :
-                <img src="https://codesaarthi.com/img/logo1.jpg" className='img-fluid' alt="" />
-              }
-            </div>
-            <div className="row my-3">
-              <div className="col-6 text-light d-flex">
-                <div onClick={() => handleLike(index)} style={{ cursor: 'pointer' }}>
-                  <small className='text-decoration-underline text-success'>{likes[index] || 0}</small> <i className="fi fi-rs-heart "></i>
-                </div>
-                <div onClick={() => toggleShareOptions(index)} style={{ cursor: 'pointer' }}>
-                  <i className="fi fi-sr-share px-3 heading1 text-success"></i>
-                </div>
-              </div>
-              <div className="col-6 text-end text-light pe-2">
-                <small className='text-secondary'>{formatTime(item.publishedAt)} . {formatDate(item.publishedAt)}</small>
-              </div>
-            </div>
-            {showShareOptions[index] && (
-              <div className="share-options">
-                <FacebookShareButton url={item.url}>
-                  <FacebookIcon size={32} round={true} />
-                </FacebookShareButton>
-                <WhatsappShareButton url={item.url}>
-                  <WhatsappIcon size={32} round={true} />
-                </WhatsappShareButton>
-                <div onClick={() => handleCopyLink(item.url)} style={{ cursor: 'pointer', display: 'inline-block', marginLeft: '10px' }}>
-                  <i className="fi fi-rs-link heading1 text-success"></i>
-                  <small className='text-decoration-underline text-success'>Copy Link</small>
-                </div>
-              </div>
-            )}
+          ))
+        ) : (
+          <div className='vh-100 text-warning d-flex justify-content-center align-items-center'>
+            <h1>No more articles to display</h1>
           </div>
-        ))
-      ) : (
-        <p>No data found</p>
+        )}
+      </div>
+      {nextBatchIndex < data.length && (
+        <div ref={loadMoreRef} className='d-flex justify-content-center my-3'>
+          <button onClick={handleLoadMore} className=''> Loading ...</button>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

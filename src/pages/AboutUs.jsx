@@ -61,6 +61,14 @@ const AboutUs = () => {
             }
         }
     };
+
+    const handlesendData = async () => {
+        const whatsappNumber = '6371790702'; 
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
+      };
+    
+    
     return (
         <>
             <Helmet>
@@ -214,14 +222,19 @@ const AboutUs = () => {
                                 <div className="col-9">
                                     <h4 className='text-warning'> Golu Singh
                                         (Software Developer) </h4>
-                                    <p className='text-light'>Web Intern at Wooble Software pvt ltd. </p>
+                                    <p className='text-light'>Mern Stack Developer at Qunatac Software private limited. </p>
                                     <small className='text-success'>Helping students to learn things easily . Actually i want to help them with the things which I learnt the hard way and make the learning easier for them.</small> <br />
-                                    <Link to="https://www.linkedin.com/in/golu-singh/" target='blank'> <span><i class="fi fi-brands-linkedin text-warning pe-1"></i></span>Linkedin</Link> <span className='text-warning'>|</span>|
-                                    <Link to="https://github.com/1sisodiyaji/" target='blank'> <span><i class="fi fi-brands-github text-warning pe-2"></i></span>Github </Link><span className='text-warning'>|</span>| <Link to="https://www.instagram.com/golu_singh_sisodiya/" target='blank' > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
+                                    <Link to="https://www.linkedin.com/in/golu-singh/" target='blank'> <span><i className="fi fi-brands-linkedin text-warning pe-1"></i></span>Linkedin</Link> <span className='text-warning'>|</span>|
+                                    <Link to="https://github.com/1sisodiyaji/" target='blank'> <span><i className="fi fi-brands-github text-warning pe-2"></i></span>Github </Link><span className='text-warning'>|</span>| <Link to="https://www.instagram.com/golu_singh_sisodiya/" target='blank' > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
 
-                                    <div className="row">
-                                        <div className="col-12 text-end">
+                                    <div className="row my-2">
+                                        <div className=" col-lg-6 col-12 text-end">
                                         <Link to="mailto:637golusingh@gmail.com" className="btn btn-success text-capitalize ">Contact me <i className="fi fi-sr-envelope text-warning ps-2"></i></Link>
+                                        </div>
+
+                                        <div className=" col-lg-6 col-12 text-end">
+                                            <button type='submit' onClick={handlesendData} className='btn btn-black text-light text-capitalize'> Whatsapp <i className="fi fi-brands-whatsapp text-success mx-2"></i> </button>
+                                       
                                         </div>
                                     </div>
                                 </div>
@@ -236,16 +249,21 @@ const AboutUs = () => {
                                 <div className="col-9">
                                     <h6 className='text-warning'> Golu Singh
                                         (Software Developer) </h6>
-                                    <p className='text-light'> Ex-Web Intern at Wooble Software pvt ltd. </p>
+                                    <p className='text-light'>Mern Stack Developer at Qunatac Software private limited. </p>
                                 </div>
                             </div>
                             <small className='text-success'>helping Students to learn things easily  , Actually i want to help them as the things i get hard to learn that things  i want to make them easier .</small> <br />
-                                    <Link to="https://www.linkedin.com/in/golu-singh/" target='blank'> <span><i class="fi fi-brands-linkedin text-warning pe-1"></i></span>Linkedin</Link> <span className='text-warning'>|</span>|
-                                    <Link to="https://github.com/1sisodiyaji/" target='blank'> <span><i class="fi fi-brands-github text-warning pe-2"></i></span>Github </Link><span className='text-warning'>|</span>| <Link to="https://www.instagram.com/golu_singh_sisodiya/" > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
+                                    <Link to="https://www.linkedin.com/in/golu-singh/" target='blank'> <span><i className="fi fi-brands-linkedin text-warning pe-1"></i></span>Linkedin</Link> <span className='text-warning'>|</span>|
+                                    <Link to="https://github.com/1sisodiyaji/" target='blank'> <span><i className="fi fi-brands-github text-warning pe-2"></i></span>Github </Link><span className='text-warning'>|</span>| <Link to="https://www.instagram.com/golu_singh_sisodiya/" > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
 
-                                    <div className="row">
-                                        <div className="col-12 text-end">
+                                    <div className="row my-2">
+                                        <div className=" col-lg-6 col-12 text-end">
                                         <Link to="mailto:637golusingh@gmail.com" className="btn btn-success text-capitalize ">Contact me <i className="fi fi-sr-envelope text-warning ps-2"></i></Link>
+                                        </div>
+
+                                        <div className=" col-lg-6 col-12 text-end">
+                                        <button type='submit' onClick={handlesendData} className='btn btn-black text-light text-capitalize'> Whatsapp <i className="fi fi-brands-whatsapp text-success mx-2"></i> </button>
+                                        
                                         </div>
                                     </div>
                         </div>
