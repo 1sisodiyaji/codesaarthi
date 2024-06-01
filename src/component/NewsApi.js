@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FacebookShareButton, WhatsappShareButton, FacebookIcon, WhatsappIcon } from 'react-share';
 import { ToastContainer,Bounce, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import config from '../config/config';
 
 const NewsApi = () => {
   const [data, setData] = useState([]);
@@ -16,8 +17,8 @@ const NewsApi = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await axios.get('https://newsapi.org/v2/everything?q=apple&from=2024-05-26&to=2024-05-26&sortBy=popularity&apiKey=6bcf20f6a79d49b2bbeee8d4b6421245');
-        console.log('Raw response data:', response.data);  // Log the raw response data
+        const response = await axios.get(`https://newsapi.org/v2/everything?q=apple&from=2024-05-26&to=2024-05-26&sortBy=popularity&apiKey=6bcf20f6a79d49b2bbeee8d4b6421245`);
+        console.log('Raw response data:', response.data);
         const articles = response.data.articles;
         if (Array.isArray(articles)) {
           setData(articles);

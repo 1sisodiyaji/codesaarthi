@@ -1,26 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, {  useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export const Navbar2 = () => {
-  const isNavLinkActive = (path) => {
-    return location.pathname.includes(path);
-  };
+
   const location = useLocation();
   const pic = localStorage.getItem("user_ProfilePic");
-  const navigate = useNavigate();
-
-  const logout = () => {
-    localStorage.removeItem("user_email");
-    localStorage.removeItem("user_name");
-    localStorage.removeItem("user_ProfilePic");
-    navigate("/");
-  };
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname]);
 
-  let userName = localStorage.getItem("user_name");
 
   return (
     <>
@@ -32,10 +21,10 @@ export const Navbar2 = () => {
 
         <div className="container-fluid">
 
-          <Link className="text-end   " style={{fontSize:'1.4rem'}} to="/"> <i class="fi fi-rr-house-window"></i> </Link>
-          <Link className="text-center " style={{fontSize:'1.4rem'}} to="/theory">      <i class="fi fi-rr-catalog-magazine"></i> </Link>
-          <Link className="text-center  " style={{fontSize:'1.4rem'}} to="/">    <i class="fi fi-rr-square-plus"></i> </Link>
-          <Link className="text-center " style={{fontSize:'1.4rem'}} to="/Problems"><i class="fi fi-rr-code-simple"></i> </Link>
+          <Link className="text-end   " style={{fontSize:'1.4rem'}} to="/"> <i className="fi fi-rr-house-window"></i> </Link>
+          <Link className="text-center " style={{fontSize:'1.4rem'}} to="/theory">      <i className="fi fi-rr-catalog-magazine"></i> </Link>
+          <Link className="text-center  " style={{fontSize:'1.4rem'}} to="/">    <i className="fi fi-rr-square-plus"></i> </Link>
+          <Link className="text-center " style={{fontSize:'1.4rem'}} to="/Problems"><i className="fi fi-rr-code-simple"></i> </Link>
           <div>
               <div className="d-flex align-items-center">
                 <div className="nav-item dropdown px-2">

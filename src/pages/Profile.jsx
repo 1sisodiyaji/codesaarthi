@@ -21,7 +21,7 @@ const Profile = () => {
         const fetchProfileData = async () => {
           try {
             const userEmail = localStorage.getItem('userEmail');
-            const response = await axios.get(`https://server-fl9q.onrender.com/api/profile/${userEmail}`);
+            const response = await axios.get(`http://localhost:8081/api/profile/${userEmail}`);
             setProfile(response.data);
           } catch (error) {
             toast.error('Failed to load profile data');
@@ -54,7 +54,7 @@ const Profile = () => {
         e.preventDefault();
         try {
           const userEmail = localStorage.getItem('userEmail');
-          await axios.put(`https://server-fl9q.onrender.com/api/profile/${userEmail}`, profile);
+          await axios.put(`http://localhost:8081/api/profile/${userEmail}`, profile);
           toast.success('Profile updated successfully');
         } catch (error) {
           toast.error('Failed to update profile');
@@ -67,7 +67,7 @@ const Profile = () => {
           formData.append('photo', image);
           try {
             const userEmail = localStorage.getItem('userEmail');
-            const response = await axios.post(`https://server-fl9q.onrender.com/api/profile/${userEmail}/photo`, formData, {
+            const response = await axios.post(`http://localhost:8081/api/profile/${userEmail}/photo`, formData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },

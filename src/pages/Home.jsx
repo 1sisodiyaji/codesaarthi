@@ -24,7 +24,7 @@ const Home = () => {
       </Helmet>
 
       <div className="container-fluid design g-0" style={{ backgroundColor: '#1E1E1E' }}>
-        {!Username ?
+        {Username ?
          <>
 
           <div className="row w-100 py-lg-4 py-2">

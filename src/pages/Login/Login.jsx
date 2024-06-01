@@ -2,39 +2,36 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useGoogleLogin } from "@react-oauth/google";
-import { useLinkedIn } from 'react-linkedin-login-oauth2';
-import { Helmet } from 'react-helmet';
+import { useLinkedIn } from "react-linkedin-login-oauth2";
+import { Helmet } from "react-helmet";
+import config from "../../config/config";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const emailError = document.getElementById("email_error");
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
-  // password view button 
+  // password view button
   const passwordView = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
 
-  //taking input 
+  //taking input
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-  //login with normal email id and paasword 
+  //login with normal email id and paasword
   const loginCheck = async () => {
     const email = document.getElementById("email_id").value;
     const password = document.getElementById("password").value;
-    const emailError = document.getElementById("email_error");
-    const passError = document.getElementById("pass_error");
-
-    emailError.innerText = ``;
-    passError.innerText = ``;
 
     function validateEmail(email) {
       var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -42,87 +39,87 @@ const Login = () => {
     }
 
     if (email === "") {
-      emailError.innerText = `Please fill in the email.`;
+      toast.warn("PLease Fill the data Completely!", { theme: "dark" });
     } else if (!validateEmail(email)) {
-      emailError.innerText = `Please enter a valid email.`;
+      toast.warn("Please enter a valid email!", { theme: "dark" });
     } else {
       document.getElementById("checkemail").style.display = "block";
-
       if (password === "") {
-        passError.innerText = `Please fill in the password.`;
+        toast.warn("Please fill in the password!", { theme: "dark" });
       } else {
         try {
           setLoading(true);
-          const response = await axios.post(
-            "https://server-fl9q.onrender.com/api/signin",
-            { email, password }
-          );
+          const response = await axios.post(`${config.BASE_URL}/api/signin`, {
+            email,
+            password,
+          });
           const savedUser = response.data;
           const { status, message } = savedUser;
           const name = savedUser.userName;
           const userEmail = savedUser.email;
           if (status === "success") {
-            emailError.innerText = `Login successfully!`;
+            toast.success("Login Successfully!", { theme: "dark" });
             localStorage.setItem("user_name", name);
             localStorage.setItem("user_email", userEmail);
             setLoading(false);
             navigate("/theory");
           } else {
-            emailError.innerText = message;
+            console.log(message);
             setLoading(false);
           }
         } catch (error) {
           console.error("Error logging user:", error);
-          emailError.innerText =
-            `Error creating account. Please try again later.`;
+          toast.error("Error creating account. Please try again later.", { theme: "dark" });
           setLoading(false);
         }
       }
     }
   };
 
-
   // login with google
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => {
       const accessToken = tokenResponse.access_token;
-      axios.get('https://www.googleapis.com/oauth2/v2/userinfo', {
-        headers: {
-          Authorization: `Bearer ${accessToken}`
-        }
-      })
+      axios
+        .get("https://www.googleapis.com/oauth2/v2/userinfo", {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        })
         .then((response) => {
           const userData = response.data;
           setLoading(true);
-          axios.post('https://server-fl9q.onrender.com/api/saveuserData', userData)
+          axios
+            .post(`${config.BASE_URL}/api/saveuserData`, userData)
             .then((response) => {
-              console.log(response);
-              if (response.data.status === 'success') {
-                localStorage.setItem('user_name', userData.name);
-                localStorage.setItem('user_email', userData.email);
-                localStorage.setItem('user_ProfilePic', userData.picture);
+              if (response.data.status === "success") {
+                localStorage.setItem("user_name", userData.name);
+                localStorage.setItem("user_email", userData.email);
+                localStorage.setItem("user_ProfilePic", userData.picture);
                 setLoading(false);
                 navigate("/theory");
               } else {
-                emailError.innerText =` Account Does not exist:`+response.data.message;
+                toast.error("Account Does not exist!", { theme: "dark" });
+                console.log(response.data.message);
                 setLoading(false);
               }
             })
             .catch((error) => {
-              emailError.innerText = `Error checking  user data to backend:` + error;
+              toast.error("Error checking  user data to backend:", { theme: "dark" });
+              console.log(error);
               setLoading(false);
             });
         })
         .catch((error) => {
-          emailError.innerText = `Error fetching user information`+ error;
+          toast.error("Error fetching user information", { theme: "dark" });
+          console.log(error);
           setLoading(false);
         });
-    }
+    },
   });
 
-
   const { linkedInLogin } = useLinkedIn({
-    clientId: '865ot8yrscixc8',
+    clientId: "865ot8yrscixc8",
     redirectUri: `${window.location.origin}/linkedin`, // for Next.js, you can use `${typeof window === 'object' && window.location.origin}/linkedin`
     onSuccess: (code) => {
       console.log(code);
@@ -134,19 +131,34 @@ const Login = () => {
 
   return (
     <>
+      <ToastContainer />
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="CodeSaarthi" content="Codesaarthi" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://codesaarthi.com/login" />
-        <meta name="description" content="Lets Be a part of codesaarthi , give us  a chance to help you by explaining things in simple Words." />
+        <meta
+          name="description"
+          content="Lets Be a part of codesaarthi , give us  a chance to help you by explaining things in simple Words."
+        />
         <title>Login | Codesaarthi Free Learning Platform</title>
         <meta property="og:title" content="Sign up | Codesaarthi" />
-        <meta property="og:description" content="Lets Be a part of codesaarthi , give us  a chance to help you by explaining things in simple Words." />
-        <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+        <meta
+          property="og:description"
+          content="Lets Be a part of codesaarthi , give us  a chance to help you by explaining things in simple Words."
+        />
+        <meta
+          property="og:image"
+          content="https://codesaarthi.com/img/logo.png"
+        />
         <meta property="og:url" content="https://codesaarthi.com/login" />
         <meta property="og:type" content="Education-Website" />
-        <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://codesaarthi.com/img/favicon.ico"
+          sizes="32x32"
+        />
       </Helmet>
       <div
         className="container-fluid m-0 p-0 g-0 d-flex justify-content-center align-items-center position-relative design"
@@ -155,46 +167,27 @@ const Login = () => {
           fontFamily: "Exo",
           minHeight: "100vh",
           overflowY: "scroll",
-          backgroundColor: "#141414"
+          backgroundColor: "#141414",
         }}
       >
-
         <div className="col-lg-5 col-12 d-flex justify-content-center align-items-center">
-          <div className="container-fluid  m-lg-0 p-lg-0" style={{ maxWidth: "420px" }}>
+          <div
+            className="container-fluid  m-lg-0 p-lg-0"
+            style={{ maxWidth: "420px" }}
+          >
             <form>
               <div className=" text-center">
-                <img
-                  src="../img/logo.png"
-                  width={95}
-                  alt=""
-                />
-                <h3 className="pt-3" style={{ color: '#703BF7' }}> Login</h3>
+                <img src="../img/logo.png" width={95} alt="" />
+                <h3 className="pt-3" style={{ color: "#703BF7" }}>
+                  {" "}
+                  Login
+                </h3>
                 <br />
               </div>
-              <div
-                id="wrong_pass_text"
-                style={{ display: "none" }}
-                className="text-center"
-              >
-                <p className="p-0 m-0 text-danger"> Invalid email or Password.</p>
-              </div>
-              <div
-                id="registerPage"
-                style={{ display: "none" }}
-                className="text-center"
-              >
-                <p className="p-0 m-0 text-danger">
-                  {" "}
-                  Email Not Found . Please Create Your account.
-                </p>
-                <Link to="/signup" style={{ color: "#79b4e2" }}>
-                  {" "}
-                  Create
-                </Link>
-              </div>
+             
+             
               {/* <!-- Email input --> */}
               <div className="mb-4">
-                <p id="email_error" style={{ color: "#79b4e2" }}></p>
                 <div className="input-group w-100">
                   <input
                     type="email"
@@ -219,7 +212,6 @@ const Login = () => {
 
               {/* <!-- Password input --> */}
               <div className="mb-4 position-relative">
-                <p id="pass_error" style={{ color: "#703BF7" }}></p>
                 <div className="input-group w-100">
                   <input
                     type={isPasswordVisible ? "text" : "password"}
@@ -238,7 +230,8 @@ const Login = () => {
                   <i
                     id="passwordViewer"
                     onClick={passwordView}
-                    className={`fi ${isPasswordVisible ? 'fi-ss-eye' : 'fi-ss-eye-crossed'} position-absolute top-50 end-0 pe-2 translate-middle-y text-decoration-none`}
+                    className={`fi ${isPasswordVisible ? "fi-ss-eye" : "fi-ss-eye-crossed"
+                      } position-absolute top-50 end-0 pe-2 translate-middle-y text-decoration-none`}
                     style={{
                       color: "#703BF7",
                       cursor: "pointer",
@@ -271,7 +264,14 @@ const Login = () => {
                   fontSize: "1rem",
                 }}
               >
-                {loading ? <> <img src="img/loader.svg" alt="loader image" /> </> : 'Login'}
+                {loading ? (
+                  <>
+                    {" "}
+                    <img src="img/loader.svg" alt="loader image" />{" "}
+                  </>
+                ) : (
+                  "Login"
+                )}
               </button>
 
               <h3
@@ -296,7 +296,6 @@ const Login = () => {
                       </span>
                     </button>
                   </div>
-
                 </div>
               </div>
               <div className="text-center ">
@@ -312,11 +311,12 @@ const Login = () => {
         </div>
 
         <div className=" col-lg-7 d-lg-block d-none d-flex justify-content-center align-items-center">
-          <img src="img/login4.png" className="img-fluid w-100" alt="login page image" />
+          <img
+            src="img/login4.png"
+            className="img-fluid w-100"
+            alt="login page image"
+          />
         </div>
-
-
-
       </div>
     </>
   );
