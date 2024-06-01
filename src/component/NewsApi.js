@@ -17,7 +17,7 @@ const NewsApi = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await axios.get(`${config.BASE_URL}/api/articles`);
+        const response = await axios.get(`${config.BASE_URL}/api/articlesdata`);
         console.log('Raw response data:', response.data);
         if (Array.isArray(response.data)) {
           setData(response.data);
