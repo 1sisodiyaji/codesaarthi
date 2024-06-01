@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { FacebookShareButton, WhatsappShareButton, FacebookIcon, WhatsappIcon } from 'react-share';
-import { ToastContainer,Bounce, toast } from 'react-toastify';
+import { ToastContainer, Bounce, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import config from '../config/config';
+import config from "../config/config";
 
 const NewsApi = () => {
   const [data, setData] = useState([]);
@@ -17,13 +17,13 @@ const NewsApi = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await axios.get(`https://newsapi.org/v2/everything?q=apple&from=2024-05-26&to=2024-05-26&sortBy=popularity&apiKey=6bcf20f6a79d49b2bbeee8d4b6421245`);
+        const response = await axios.get(`${config.BASE_URL}/api/articles`);
         console.log('Raw response data:', response.data);
-        const articles = response.data.articles;
-        if (Array.isArray(articles)) {
-          setData(articles);
+        if (Array.isArray(response.data)) {
+          setData(response.data);
         } else {
-          setError(new Error('Invalid data format'));
+          console.error('Unexpected response format:', response.data);
+          setError(new Error('Unexpected response format'));
         }
       } catch (error) {
         console.error('Error fetching articles:', error);
@@ -32,9 +32,10 @@ const NewsApi = () => {
         setLoading(false);
       }
     };
-
+  
     fetchArticles();
   }, []);
+  
 
   const toggleContentVisibility = (index) => {
     setVisibleContent(prevState => ({
@@ -69,23 +70,23 @@ const NewsApi = () => {
 
   const handleCopyLink = (url) => {
     navigator.clipboard.writeText(url);
-      toast.success('Link Copy Successfully!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Bounce,
-        });
+    toast.success('Link Copy Successfully!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
   };
 
   if (loading) {
     return <div className='vh-100 text-warning d-flex justify-content-center align-items-center'>
-     <h1> <i class="fi fi-sr-loading"></i> </h1> 
-     </div>;
+      <h1> <i className="fi fi-sr-loading"></i> </h1>
+    </div>;
   }
 
   if (error) {
@@ -95,19 +96,17 @@ const NewsApi = () => {
   return (
     <div>
       <ToastContainer />
-      {data.length > 0 ? (
+      {Array.isArray(data) && data.length > 0 ? (
         data.map((item, index) => (
           <div key={index} className='card p-2 my-2' style={{ backgroundColor: '#262626', border: '1px solid #1E1E1E' }}>
             <Link to={item.url} target='_blank'> <h6 className='text-capitalize text-warning'>{item.title}</h6> </Link>
             <div className="row">
               <div className="col-6 text-start"><small className='text-muted'>  By <span className=' text-decoration-underline'>{item.author} </span> </small></div>
               <div className="col-6 text-end">
-                 <div> <small className='text-light text-decoration-underline'> 1 </small><i className="fi fi-rr-eyes px-1 text-warning heading1"></i>
-                 </div> 
+                <div> <small className='text-light text-decoration-underline'> 1 </small><i className="fi fi-rr-eyes px-1 text-warning heading1"></i>
+                </div>
               </div>
-            </div> 
-            
-            
+            </div>
             <small className='text-light'>{item.description}</small>
 
             <button className='text-success text-decoration-underline btn text-start text-capitalize' style={{ cursor: 'pointer' }} onClick={() => toggleContentVisibility(index)}>
@@ -117,12 +116,12 @@ const NewsApi = () => {
               <div className='text-light'>
                 <small>{item.content}</small>
               </div>
-            )}  
+            )}
 
             <div className='text-center'>
-              {item.urlToImage ? 
-              <img src={item.urlToImage} className='img-fluid' alt="" /> : 
-              <img src="https://codesaarthi.com/img/logo1.jpg" className='img-fluid' alt="" />
+              {item.urlToImage ?
+                <img src={item.urlToImage} className='img-fluid' alt="" /> :
+                <img src="https://codesaarthi.com/img/logo1.jpg" className='img-fluid' alt="" />
               }
             </div>
             <div className="row my-3">

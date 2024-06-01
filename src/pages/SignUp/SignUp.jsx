@@ -5,7 +5,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import { Helmet } from 'react-helmet';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import config from "../../config/config";
 const SignUp = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -47,12 +47,12 @@ const SignUp = () => {
           try {
             setLoading(true);
             const response = await axios.post(
-              "https://server-fl9q.onrender.com/api/register",
+              `${config.BASE_URL}api/register`,
               formData
             );
-            const savedUser = response.data;
-            const { status, message } = savedUser;
-            const data = savedUser.savedUser;
+            console.log(response);
+            const { status, message } = response.data;
+            const data = response.data.savedUser;
             const { name, email } = data;
             if (status === "success") { 
                toast.success("Account created successfully!", { theme: "dark" });
@@ -106,7 +106,7 @@ const SignUp = () => {
         .then((response) => {
           const userData = response.data;
           setLoading(true);
-          axios.post('https://server-fl9q.onrender.com/api/saveuserData', userData)
+          axios.post(`${config.BASE_URL}/api/saveuserData`, userData)
             .then((response) => {
               if (response.data.status === 'success') {
                 localStorage.setItem('user_name', userData.name);
