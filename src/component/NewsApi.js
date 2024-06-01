@@ -24,6 +24,7 @@ const NewsApi = () => {
         } else if (typeof response.data === 'object') {
           setData([response.data]); // Wrap the single object in an array
         } else {
+          console.log(response)
           console.error('Unexpected response format:', response.data);
           setError(new Error('Unexpected response format'));
         }
