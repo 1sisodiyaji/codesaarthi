@@ -10,17 +10,13 @@ const BlogList = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get(`${Config.BASE_URL}/userBlogs/blogs`);
+        const response = await axios.get('https://server-fl9q.onrender.com/userBlogs/blogs');
         console.log(response);
-        if (Array.isArray(response.data)) {
-          setBlogs(response.data);
-        } else {
-          setError('Unexpected response format');
-        }
+        setBlogs(response.data);
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching blogs:', error);
-        setError('Error fetching blogs');
-      } finally {
+        setError('Error fetching blogs. Please try again later.'); 
         setLoading(false);
       }
     };
@@ -28,12 +24,18 @@ const BlogList = () => {
     fetchBlogs();
   }, []);
 
+
   if (loading) {
     return <p>Loading...</p>;
   }
 
   if (error) {
     return <p>{error}</p>;
+  }
+
+  // Check if blogs is not an array
+  if (!Array.isArray(blogs)) {
+    return <p>No blogs available</p>;
   }
 
   return (

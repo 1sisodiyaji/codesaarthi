@@ -18,7 +18,6 @@ const NewsApi = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        console.log('Fetched News:', News);
         if (Array.isArray(News)) {
           setData(News);
           loadNextBatch(News, 0);

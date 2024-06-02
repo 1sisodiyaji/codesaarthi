@@ -261,16 +261,12 @@ export const Navbar = () => {
             {userName ? (
               <>
                 <div className="d-flex align-items-center">
-                  <div className="nav-item dropdown px-2">
-                    <a
-                      className="nav-link dropdown-toggle"
-                      href="#"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
+                  <div className="nav-item dropdown px-2" style={{zIndex: '9999'}}>
+                    <div
                     >
                       {pic ? (
                         <>
+                        <Link to="/profile">
                           <img
                             src={pic}
                             className="rounded-circle"
@@ -278,6 +274,7 @@ export const Navbar = () => {
                             alt="Black and White Portrait of a Man"
                             loading="lazy"
                           />
+                          </Link>
                         </>
                       ) : (
                         <>
@@ -286,20 +283,9 @@ export const Navbar = () => {
                           </div>
                         </>
                       )}
-                    </a>
+                    </div>
 
-                    <ul className="dropdown-menu dropdown-menu-end  ">
-                      <li>
-                        <Link to="/profile" className="dropdown-item">
-                        <i className="fi fi-ss-user-pen"></i>  Profile
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/" className="dropdown-item" onClick={logout}>
-                        <i className="fi fi-ss-sign-out-alt"></i>  Logout
-                        </Link>
-                      </li>
-                    </ul>
+                    
                   </div>
                 </div>
               </>

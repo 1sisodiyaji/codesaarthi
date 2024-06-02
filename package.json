@@ -44,7 +44,6 @@
     "dev": "index.js",
     "generate-sitemap": "node sitemap-generator.js"
   },
-  "proxy": "http://localhost:8081",
   "eslintConfig": {
     "extends": [
       "react-app",

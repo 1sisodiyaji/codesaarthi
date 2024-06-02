@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { Helmet } from "react-helmet";
 import { toast, ToastContainer } from 'react-toastify';
@@ -80,6 +81,16 @@ const Profile = () => {
           }
         }
       };
+
+      const navigate = useNavigate();
+      const logout = () => {
+        localStorage.removeItem("user_email");
+        localStorage.removeItem("user_name");
+        localStorage.removeItem("user_ProfilePic");
+        navigate("/");
+      };
+
+
     return (
         <>
             <Helmet>
@@ -96,12 +107,11 @@ const Profile = () => {
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
 
-            <div className="container-fluid bg-black design">
-      <div className="container p-lg-5 p-0">
-        <div className="row p-lg-4 vh-100 p-0">
-          <div className="col-lg-1 col-0"></div>
-          <div className="col-lg-10 col-12">
-            <div className="card p-lg-5 m-lg-5 p-1 text-light" style={{ backgroundColor: '#1E1E1E' }}>
+            <div className="container-fluid  design" style={{backgroundColor:'#1E1E1E'}}>
+      <div className="container p-lg-4 p-0">
+        <div className="row  vh-100 p-0">
+          <div className="col-12">
+            <div className="card p-lg-5 m-lg-5 p-1 text-light bg-dark">
               <form onSubmit={handleSubmit}>
                 <div className="row g-0">
                   <div className="col-4">
@@ -140,9 +150,10 @@ const Profile = () => {
               </form>
             </div>
           </div>
-          <div className="col-lg-1 col-0"></div>
         </div>
       </div>
+
+      <div className="btn" onClick={logout}>Logout</div>
       <ToastContainer />
     </div>
         </>
