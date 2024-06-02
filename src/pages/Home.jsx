@@ -420,13 +420,13 @@ const Home = () => {
                   <div className="card bg-dark text-light text-end sticky-top" style={{ top: '70px' }}>
                     <div className="p-2">
                     <p onClick={() => setContent('jobs')} className="text-light" style={{ cursor: 'pointer' }}>Jobs</p>
-              <p onClick={() => setContent('blogs')} className="text-light" style={{ cursor: 'pointer' }}>Blogs</p>
+                    <p onClick={() => setContent('blogs')} className="text-light" style={{ cursor: 'pointer' }}>Blogs</p>
            
                     </div>
                   </div>
                 </div>
 
-                <div className="col-lg-6 col-12">
+                <div className="col-lg-6 col-12 g-0">
                 {renderContent()}
                 </div>
 

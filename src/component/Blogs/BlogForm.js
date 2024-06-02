@@ -56,7 +56,7 @@ const BlogForm = () => {
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid  g-0">
         <div className="card bg-black p-3">
           <form onSubmit={handleSubmit}>
             <input
@@ -69,7 +69,7 @@ const BlogForm = () => {
             />
             <textarea
               rows={4}
-              className="w-100 bg-dark rounded-8 border-0 p-2"
+              className="w-100 bg-dark rounded-8 border-0 p-2 text-light"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Description"

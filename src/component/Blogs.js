@@ -1,13 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react';
 import BlogForm from './Blogs/BlogForm'
+import { Link, Navigate } from 'react-router-dom'
+import BlogList from './Blogs/BlogList';
 
 const Blogs = () => {
-  return (
-   <>
-   <div className="container-fluid design">
-<BlogForm/>
+    const [showBlogForm, setShowBlogForm] = useState(false);
 
-   </div>
+    const handleNewPost = () => {
+      setShowBlogForm(true);
+    };
+    return (
+   <>
+  <div className="container-fluid design">
+        <button
+          className='btn w-100 bg-black text-warning text-capitalize'
+          onClick={handleNewPost}
+        >
+          Post Your Own Blog
+        </button>
+        {showBlogForm && <BlogForm />}
+
+
+
+        <BlogList/>
+      </div>
    
    
    </>
