@@ -1,30 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import "../App.css";
 import { Helmet } from "react-helmet";
 import NewsApi from "../component/NewsApi";
 import Profile from "./Profile";
 import News from "../data/News";
-import Blogs from "../component/Blogs";
-import Jobs from "../component/Jobs";
 
 const Home = () => {
   const Username = localStorage.getItem("user_email");
-  const [content, setContent] = useState('news');
 
-  const renderContent = () => {
-    switch (content) {
-      case 'jobs':
-        return <Jobs />;
-      case 'profile':
-        return <Profile />;
-      case 'blogs':
-        return <Blogs />;
-      case 'news':
-      default:
-        return <NewsApi />;
-    }
-  };
   return (
     <>
       <Helmet>
@@ -65,9 +49,9 @@ const Home = () => {
         className="container-fluid design g-0"
         style={{ backgroundColor: "#1E1E1E" }}
       >
-        {!Username ? (
+        {Username ? (
           <>
-            <div className="row w-100 py-lg-4 py-2 ">
+            <div className="row w-100 py-lg-4 py-2">
               <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center">
                 <div className=" text-light">
                   <h1 className="text-start">
@@ -420,27 +404,27 @@ const Home = () => {
                 <div className="col-lg-3 col-0 d-lg-block d-none pt-2">
                   <div className="card bg-dark text-light text-end sticky-top" style={{ top: '70px' }}>
                     <div className="p-2">
-                      <p onClick={() => setContent('jobs')} className="text-light" style={{ cursor: 'pointer' }}>Jobs</p>
-                      <p onClick={() => setContent('blogs')} className="text-light" style={{ cursor: 'pointer' }}>Blogs</p>
+                      <Link to="/jobs" className="text-light"><p>Jobs</p></Link>
+                      <Link to="/blogs" className="text-light"><p>Blogs</p></Link>
                     </div>
                   </div>
                 </div>
 
                 <div className="col-lg-6 col-12">
-                  {renderContent()}
+                  <NewsApi/>
                 </div>
 
                 <div className="col-lg-3 col-0 d-lg-block d-none pt-2">
                   <div className="card bg-dark text-light text-start sticky-top" style={{ top: '70px' }}>
                     <div className="p-2">
-                      <p onClick={() => setContent('news')} className="text-light" style={{ cursor: 'pointer' }}>News</p>
-                      <p onClick={() => setContent('profile')} className="text-light" style={{ cursor: 'pointer' }}>My Account</p>
+                      <p> News </p>
+                      <p> My Account </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
+           
           </>
         )}
       </div>
