@@ -427,6 +427,7 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-6 col-12 g-0">
+                  
                 {renderContent()}
                 </div>
 

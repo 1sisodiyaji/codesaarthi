@@ -37,7 +37,7 @@ const Jobs = () => {
 
     return (
         <>
-            <div className='design  g-0 py-lg-5 py-2'>
+            <div className='design  g-0 py-lg-5 py-2 container-fluid' style={{backgroundColor:'#1E1E1E'}}>
                
                 {loading ? (
                     <p className='vh-100 text-warning text-center'>Loading...</p>
@@ -45,7 +45,7 @@ const Jobs = () => {
                     <div>
                         {jobs.map((job) => (
                             <div key={job.id}  className='g-0'>
-                                <div className='bg-dark text-light rounded-8 p-lg-3 p-2 card ' style={{ marginBottom: '20px', padding: '10px' }}>
+                                <div className='bg-dark text-light rounded-6 p-lg-3 p-2 card ' style={{ marginBottom: '20px', padding: '10px' }}>
                                 <div className="row g-0">
                                     <div className="col-6 text-start"><small><strong>Company : </strong> {job.company.display_name}</small></div>
                                     <div className="col-6 text-end"><small><strong>Category : </strong> {job.category.label}</small></div>

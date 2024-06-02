@@ -96,6 +96,17 @@ export const Navbar = () => {
                 
               </>
             )}
+             <li className="nav-item">
+              <Link
+                className={`nav-link ${
+                  isNavLinkActive("/profile") ? "selected" : ""
+                }`}
+                style={{ color: "whitesmoke" }}
+                to="/profile"
+              > <i className="fi fi-sr-user-trust pe-2"></i>
+                 Profile 
+              </Link>
+            </li>
             <li className="nav-item">
               <Link
                 className={`nav-link ${

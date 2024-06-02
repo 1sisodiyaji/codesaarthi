@@ -62,6 +62,8 @@ import UserList from "../pages/Projects/React/userList";
 import { Navbar2 } from "../component/Navbar2";
 import NewsApi from "../component/NewsApi";
 import News from "../Admin/News";
+import Blogs from "../component/Blogs";
+import Jobs from "../component/Jobs";
 
 
 const Routess = () => {
@@ -149,8 +151,9 @@ const Routess = () => {
           <Route path="/roadMap/ComputerNetwork" element={<ComputerNetworks />} />
           <Route path="/roadMap/Dbms" element={<Dbms />} />
           
-
-          <Route path="/news" component={NewsApi} />
+          <Route path="/blogs" element={<Blogs/>} />
+          <Route path="/news" element={<NewsApi/>} />
+          <Route path="/jobs" element={<Jobs/>} />
           <Route path="/*" element={<ErrorPage />} />
 
           {/* Admin Section  */}

@@ -19,12 +19,43 @@ const News = () => {
     setLoading(false);
   };
 
+  const deleteAllArticles = async () => {
+    setLoading(true);
+    setMessage('');
+    try {
+      const response = await axios.delete(`${Config.BASE_URL}/deleteAllArticles`);
+      setMessage(response.data.message);
+    } catch (error) {
+      console.error('Error deleting articles:', error);
+      setMessage('Error deleting articles');
+    }
+    setLoading(false);
+  };
+
   return (
     <div className='vh-100 bg-dark d-flex align-items-center justify-content-center'>
-      <button onClick={fetchAndSaveArticles} disabled={loading} className=' btn text-capitalize bg-black text-warning'>
+        <div className="card bg-black p-5">
+            <div className="row g-6">
+                <div className="col-6 ">
+                <button onClick={fetchAndSaveArticles} disabled={loading} className=' btn text-capitalize bg-black text-success rounded-8 border'>
         {loading ? 'Saving Articles...' : 'Save Articles'}
       </button>
-      {message && <p className='text-danger ms-4'>{message}</p>}
+                </div>
+                <div className="col-6 ">
+                <button onClick={deleteAllArticles} disabled={loading} className='btn text-capitalize bg-black text-danger border rounded-8'>
+          {loading ? 'Deleting Articles...' : 'Drop Articles'}
+        </button>
+                </div>
+    
+            </div>
+       
+
+    
+        <hr />
+        {message && <p className='text-danger ms-4'>{message}</p>}
+        </div>
+      
+       
     </div>
   );
 };

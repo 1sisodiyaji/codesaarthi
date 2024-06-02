@@ -11,9 +11,9 @@ const Blogs = () => {
     };
     return (
    <>
-  <div className="container-fluid design">
+  <div className="container-fluid design py-lg-5 vh-100" style={{backgroundColor:'#1E1E1E'}}>
         <button
-          className='btn w-100 bg-black text-warning text-capitalize'
+          className='btn w-100 bg-black text-warning text-capitalize mt-2'
           onClick={handleNewPost}
         >
           Post Your Own Blog
