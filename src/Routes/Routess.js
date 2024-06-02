@@ -61,6 +61,7 @@ import Weather from "../pages/Projects/React/Weather";
 import UserList from "../pages/Projects/React/userList";
 import { Navbar2 } from "../component/Navbar2";
 import NewsApi from "../component/NewsApi";
+import News from "../Admin/News";
 
 
 const Routess = () => {
@@ -151,6 +152,9 @@ const Routess = () => {
 
           <Route path="/news" component={NewsApi} />
           <Route path="/*" element={<ErrorPage />} />
+
+          {/* Admin Section  */}
+          <Route path="/Admin/SaveNews" element={<News />} />
 
 
         </Routes>

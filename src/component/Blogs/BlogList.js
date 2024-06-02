@@ -44,14 +44,28 @@ const BlogList = () => {
         <p>No blogs available</p>
       ) : (
         blogs.map((blog) => (
-          <div key={blog._id} className="card bg-dark text-light mb-3 p-3">
-            <h2 className="text-warning">{blog.title}</h2>
-            <img src={blog.image} alt={blog.title} className="img-fluid mb-3" />
+          <div key={blog._id} className="card bg-dark text-light my-3 p-3 ">
+            <h4 className="text-warning">{blog.title}</h4>
+            <img src={blog.image} alt={blog.title} className="img-fluid cardImageHeight mb-3" />
             <p>{blog.description}</p>
-            <p>{blog.emoji}</p>
-            <p>
-              Posted by: {blog.email} at {new Date(blog.timestamp).toLocaleString()}
-            </p>
+            <hr />
+            <div className="row">
+              <div className="col-6 text-start">
+             <small> Posted by: {blog.userName} </small>
+              </div>
+              <div className="col-6 text-end">
+<small>
+              {new Date(blog.timestamp).toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true,
+              })}
+              </small>
+              </div>
+            </div>
           </div>
         ))
       )}

@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'; 
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { FacebookShareButton, WhatsappShareButton, FacebookIcon, WhatsappIcon } from 'react-share';
 import { ToastContainer, Bounce, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import News from "../data/News"; // Ensure this path is correct
+import Config from '../config/config';
 
 const NewsApi = () => {
   const [data, setData] = useState([]); // All articles
@@ -18,6 +19,9 @@ const NewsApi = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
+        const response = await axios.post(`${Config.BASE_URL}/getArticles`);
+     
+        let News = response.data;
         if (Array.isArray(News)) {
           setData(News);
           loadNextBatch(News, 0);

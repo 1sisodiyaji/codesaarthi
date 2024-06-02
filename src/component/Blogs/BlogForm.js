@@ -6,8 +6,6 @@ const BlogForm = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState(null);
-  const [imageUrl, setImageUrl] = useState('');
-  const [previewUrl, setPreviewUrl] = useState('');
   const [loading, setLoading] = useState(false);
 
   const userEmail = localStorage.getItem('user_email');
@@ -15,20 +13,10 @@ const BlogForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    try {
-      let uploadedImageUrl = imageUrl;
-      if (image) {
-        const formData = new FormData();
-        formData.append('image', image);
-        const uploadResponse = await axios.post(`${Config.BASE_URL}/upload`, formData, {
-          headers: { 'Content-Type': 'multipart/form-data' },
-        });
-        uploadedImageUrl = uploadResponse.data.url;
-      }
-
+    try{
       const response = await axios.post(`${Config.BASE_URL}/userBlogs/blogs`, {
         title,
-        image: uploadedImageUrl,
+        image ,
         description,
         email: userEmail,
       });
@@ -36,9 +24,7 @@ const BlogForm = () => {
       // Reset form
       setTitle('');
       setDescription('');
-      setImage(null);
-      setImageUrl('');
-      setPreviewUrl('');
+      setImage('');
     } catch (error) {
       console.error('Error posting blog:', error);
     } finally {
@@ -46,13 +32,7 @@ const BlogForm = () => {
     }
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setImage(file);
-      setPreviewUrl(URL.createObjectURL(file));
-    }
-  };
+
 
   return (
     <>
@@ -76,24 +56,19 @@ const BlogForm = () => {
               required
             />
             <div className="row my-2">
-              <div className="col-6">
+              <div className="col-8 d-flex">
+                
+              <i class="fi fi-rr-graphic-style text-warning mx-2"  style={{ cursor: 'pointer' }}></i>
                 <input
-                  type="file"
-                  id="file-input"
-                  accept='.jpg , .png , .webp, .jpeg'
-                  style={{ display: 'none' }}
-                  onChange={handleImageChange}
+                  type="url"
+                  className='bg-dark border-0 rounded-8 w-100 ps-2'
+                  value={image}
+                  placeholder='please enter your image url'
+                  onChange={(e) => setImage(e.target.value)}
                 />
-                <label htmlFor="file-input" style={{ cursor: 'pointer' }}>
-                <i class="fi fi-rr-graphic-style text-warning mx-2"></i>
-                </label>
-                {previewUrl && (
-                    <div className='border p-2'>
-                  <img src={previewUrl} alt="Selected" className="img-fluid mt-2" />
-                  </div>
-                )}
+          
               </div>
-              <div className="col-6 text-end">
+              <div className="col-4 text-end">
                 <button
                   type="submit"
                   className="btn btn-dark text-warning text-capitalize"
