@@ -10,7 +10,7 @@ const BlogList = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('https://server-fl9q.onrender.com/userBlogs/blogs');
+        const response = await axios.post(`${Config.BASE_URL}/getBlogsData`);
         console.log(response);
         setBlogs(response.data);
         setLoading(false);

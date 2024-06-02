@@ -111,7 +111,7 @@ const Profile = () => {
       <div className="container p-lg-4 p-0">
         <div className="row  vh-100 p-0">
           <div className="col-12">
-            <div className="card p-lg-5 m-lg-5 p-1 text-light bg-dark">
+            <div className="card p-lg-5  p-1 text-light bg-dark">
               <form onSubmit={handleSubmit}>
                 <div className="row g-0">
                   <div className="col-4">

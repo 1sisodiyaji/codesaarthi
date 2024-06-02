@@ -133,20 +133,20 @@ const Home = () => {
             <div className="container">
               <div className="row">
                 <div className="col-lg-4 col-12 my-2">
-                  <div class="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
                     <Link to="/Projects/web-development">
                       <div className="text-end">
                         <i
-                          class="fi fi-rs-arrow-up-right"
+                          className="fi fi-rs-arrow-up-right"
                           style={{ color: "#703BF7" }}
                         ></i>
                       </div>
                     </Link>
-                    <div class="bg-image hover-overlay ripple text-center">
+                    <div className="bg-image hover-overlay ripple text-center">
                       <img src="img/clone1.png" className="img-fluid" />
                     </div>
-                    <div class="card-body">
-                      <h5 class="card-title text-center text-light">
+                    <div className="card-body">
+                      <h5 className="card-title text-center text-light">
                         Clone projects
                       </h5>
                     </div>
@@ -154,21 +154,21 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-4 col-12 my-2">
-                  <div class="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
                     <Link to="/Projects/React-based-project">
                       <div className="text-end">
                         <i
-                          class="fi fi-rs-arrow-up-right"
+                          className="fi fi-rs-arrow-up-right"
                           style={{ color: "#703BF7" }}
                         ></i>
                       </div>
                     </Link>
-                    <div class="bg-image hover-overlay ripple text-center">
+                    <div className="bg-image hover-overlay ripple text-center">
                       <img src="img/React1.png" className="img-fluid" />
                     </div>
 
-                    <div class="card-body">
-                      <h5 class="card-title text-center text-light">
+                    <div className="card-body">
+                      <h5 className="card-title text-center text-light">
                         React Js projects
                       </h5>
                     </div>
@@ -176,21 +176,21 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-4 col-12 my-2">
-                  <div class="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
                     <Link to="/Projects/phpProjects">
                       <div className="text-end">
                         <i
-                          class="fi fi-rs-arrow-up-right"
+                          className="fi fi-rs-arrow-up-right"
                           style={{ color: "#703BF7" }}
                         ></i>
                       </div>
                     </Link>
-                    <div class="bg-image hover-overlay ripple text-center">
+                    <div className="bg-image hover-overlay ripple text-center">
                       <img src="img/php1.png" className="img-fluid" />
                     </div>
 
-                    <div class="card-body">
-                      <h5 class="card-title text-center text-light">
+                    <div className="card-body">
+                      <h5 className="card-title text-center text-light">
                         Php projects
                       </h5>
                     </div>
@@ -198,21 +198,21 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-4 col-12 my-2">
-                  <div class="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
                     <Link to="/Projects/java-Projects">
                       <div className="text-end">
                         <i
-                          class="fi fi-rs-arrow-up-right"
+                          className="fi fi-rs-arrow-up-right"
                           style={{ color: "#703BF7" }}
                         ></i>
                       </div>
                     </Link>
-                    <div class="bg-image hover-overlay ripple text-center">
+                    <div className="bg-image hover-overlay ripple text-center">
                       <img src="img/java1.png" className="img-fluid" />
                     </div>
 
-                    <div class="card-body">
-                      <h5 class="card-title text-center text-light">
+                    <div className="card-body">
+                      <h5 className="card-title text-center text-light">
                         Java projects
                       </h5>
                     </div>
@@ -220,21 +220,21 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-4 col-12 my-2">
-                  <div class="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
                     <Link to="/Projects/HtmlProject">
                       <div className="text-end">
                         <i
-                          class="fi fi-rs-arrow-up-right"
+                          className="fi fi-rs-arrow-up-right"
                           style={{ color: "#703BF7" }}
                         ></i>
                       </div>
                     </Link>
-                    <div class="bg-image hover-overlay ripple text-center">
+                    <div className="bg-image hover-overlay ripple text-center">
                       <img src="img/html1.png" className="img-fluid" />
                     </div>
 
-                    <div class="card-body">
-                      <h5 class="card-title text-center text-light">
+                    <div className="card-body">
+                      <h5 className="card-title text-center text-light">
                         Html projects
                       </h5>
                     </div>
@@ -242,21 +242,21 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-4 col-12 my-2">
-                  <div class="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
                     <Link to="/Projects">
                       <div className="text-end">
                         <i
-                          class="fi fi-rs-arrow-up-right"
+                          className="fi fi-rs-arrow-up-right"
                           style={{ color: "#703BF7" }}
                         ></i>
                       </div>
                     </Link>
-                    <div class="bg-image hover-overlay ripple text-center">
+                    <div className="bg-image hover-overlay ripple text-center">
                       <img src="img/htmlcssjs1.png" className="img-fluid" />
                     </div>
 
-                    <div class="card-body">
-                      <h5 class="card-title text-center text-light">
+                    <div className="card-body">
+                      <h5 className="card-title text-center text-light">
                         Html , Css , Js projects
                       </h5>
                     </div>
@@ -312,21 +312,21 @@ const Home = () => {
               <div className="row py-lg-5">
                 <div className="col-1"></div>
                 <div className="col-lg-5 col-12 my-2">
-                  <div class="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
                     <Link to="/theory/Os-Content">
                       <div className="text-end">
                         <i
-                          class="fi fi-rs-arrow-up-right"
+                          className="fi fi-rs-arrow-up-right"
                           style={{ color: "#703BF7" }}
                         ></i>
                       </div>
                     </Link>
-                    <div class="bg-image hover-overlay ripple text-center">
+                    <div className="bg-image hover-overlay ripple text-center">
                       <img src="img/Text.png" className="img-fluid" />
                     </div>
 
-                    <div class="card-body">
-                      <h5 class="card-title text-center text-light">
+                    <div className="card-body">
+                      <h5 className="card-title text-center text-light">
                         Operating System Notes
                       </h5>
                     </div>
@@ -334,21 +334,21 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-5 col-12 my-2">
-                  <div class="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
                     <Link to="/theory/React-Content">
                       <div className="text-end">
                         <i
-                          class="fi fi-rs-arrow-up-right"
+                          className="fi fi-rs-arrow-up-right"
                           style={{ color: "#703BF7" }}
                         ></i>
                       </div>
                     </Link>
-                    <div class="bg-image hover-overlay ripple text-center">
+                    <div className="bg-image hover-overlay ripple text-center">
                       <img src="img/React1.png" className="img-fluid" />
                     </div>
 
-                    <div class="card-body">
-                      <h5 class="card-title text-center text-light">
+                    <div className="card-body">
+                      <h5 className="card-title text-center text-light">
                         React Notes
                       </h5>
                     </div>
@@ -358,16 +358,16 @@ const Home = () => {
                 <div className="col-1"></div>
                 <div className="col-1"></div>
                 <div className="col-lg-5 col-12 my-2">
-                  <div class="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
                     <Link to="/theory/array">
                       <div className="text-end">
                         <i
-                          class="fi fi-rs-arrow-up-right"
+                          className="fi fi-rs-arrow-up-right"
                           style={{ color: "#703BF7" }}
                         ></i>
                       </div>
                     </Link>
-                    <div class=" hover-overlay ripple text-center">
+                    <div className=" hover-overlay ripple text-center">
                       <img
                         src="img/javaNotes.png"
                         className="img-fluid"
@@ -375,8 +375,8 @@ const Home = () => {
                       />
                     </div>
 
-                    <div class="card-body">
-                      <h5 class="card-title text-center text-light">
+                    <div className="card-body">
+                      <h5 className="card-title text-center text-light">
                         Arrays in short
                       </h5>
                     </div>
@@ -384,16 +384,16 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-5 col-12 my-2">
-                  <div class="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
                     <Link to="/theory/basic-Dbms">
                       <div className="text-end">
                         <i
-                          class="fi fi-rs-arrow-up-right"
+                          className="fi fi-rs-arrow-up-right"
                           style={{ color: "#703BF7" }}
                         ></i>
                       </div>
                     </Link>
-                    <div class=" hover-overlay ripple text-center">
+                    <div className=" hover-overlay ripple text-center">
                       <img
                         src="img/dbms1.png"
                         className="img-fluid"
@@ -401,8 +401,8 @@ const Home = () => {
                       />
                     </div>
 
-                    <div class="card-body">
-                      <h5 class="card-title text-center text-light">
+                    <div className="card-body">
+                      <h5 className="card-title text-center text-light">
                         DBMS Notes
                       </h5>
                     </div>
