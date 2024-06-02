@@ -16,7 +16,7 @@ const Home = () => {
       case 'jobs':
         return <Jobs />;
         case 'profile':
-          return <profile />;
+          return <Profile />;
       case 'blogs':
         return <Blogs />;
       case 'news':
@@ -61,7 +61,7 @@ const Home = () => {
       </Helmet>
 
       <div
-        className="container-fluid design g-0"
+        className="container-fluid design w-100"
         style={{ backgroundColor: "#1E1E1E" }}
       >
         {!Username ? (
