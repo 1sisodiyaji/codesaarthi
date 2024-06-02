@@ -19,13 +19,13 @@ export const Navbar2 = () => {
         style={{ backgroundColor: "#1E1E1E" }}
       >
 
-        <div className="container-fluid">
+        <div className="container-fluid d-flex justify-content-around  align-items-center p-1">
 
-          <Link className="text-end   " style={{fontSize:'1.4rem'}} to="/"> <i className="fi fi-rr-house-window"></i> </Link>
-          <Link className="text-center " style={{fontSize:'1.4rem'}} to="/theory">      <i className="fi fi-rr-catalog-magazine"></i> </Link>
-          <Link className="text-center  " style={{fontSize:'1.4rem'}} to="/blogs">    <i className="fi fi-rr-square-plus"></i> </Link>
-          <Link className="text-center " style={{fontSize:'1.4rem'}} to="/Problems"><i className="fi fi-rr-code-simple"></i> </Link> 
-          <Link className="text-center " style={{fontSize:'1.4rem'}} to="/jobs"><i className="fi fi-br-briefcase"></i> </Link>
+          <Link className="text-center" style={{fontSize:'1.4rem'}} to="/"> <i className="fi fi-rr-house-window"></i> </Link>
+          <Link className="text-center" style={{fontSize:'1.4rem'}} to="/theory">      <i className="fi fi-rr-catalog-magazine"></i> </Link>
+          <Link className="text-center" style={{fontSize:'1.4rem'}} to="/blogs">    <i className="fi fi-rr-square-plus"></i> </Link>
+          <Link className="text-center" style={{fontSize:'1.4rem'}} to="/Problems"><i className="fi fi-rr-code-simple"></i> </Link> 
+          <Link className="text-center" style={{fontSize:'1.4rem'}} to="/jobs"><i className="fi fi-br-briefcase"></i> </Link>
         
          
         </div>

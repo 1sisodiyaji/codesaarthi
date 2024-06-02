@@ -40,7 +40,9 @@ const Jobs = () => {
             <div className='design  g-0 py-lg-5 py-2 container-fluid' style={{backgroundColor:'#1E1E1E'}}>
                
                 {loading ? (
-                    <p className='vh-100 text-warning text-center'>Loading...</p>
+                     <div className='vh-100 text-warning d-flex justify-content-center align-items-center'>
+                     <h1><i className="fi fi-sr-loading"></i></h1>
+                   </div>
                 ) : (
                     <div>
                         {jobs.map((job) => (

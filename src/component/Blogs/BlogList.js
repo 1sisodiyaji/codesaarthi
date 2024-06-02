@@ -26,7 +26,9 @@ const BlogList = () => {
 
 
   if (loading) {
-    return <p>Loading...</p>;
+    return  <div className='vh-100 text-warning d-flex justify-content-center align-items-center'>
+    <h1><i className="fi fi-sr-loading"></i></h1>
+  </div>;
   }
 
   if (error) {
