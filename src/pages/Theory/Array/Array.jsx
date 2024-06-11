@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet';
+import TextForm from "../../../component/Textarea";
 
 const Array = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -171,6 +172,10 @@ const Array = () => {
         }
     ];
 
+    const handleOpenNotepad = async (req,res) => {
+<TextForm/>
+    }
+
     useEffect(() => {
         if (selectedTopic) {
           const topicName = importantTopics.find(topic => topic.id === selectedTopic)?.topic;
@@ -204,7 +209,7 @@ const Array = () => {
             <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
           </Helmet>
           <div className="container-fluid design g-0" style={{ backgroundColor: '#1E1E1E' }}>
-            <div className="container">
+            <div className="container-fluid p-5">
               <div className=" d-lg-none d-block d-flex justify-content-end pt-2">
                 <button
                   onClick={toggleSidebar}
@@ -281,6 +286,11 @@ const Array = () => {
                     </div>
                   </> : " "}
                 <div className="col-lg-9 col-12">
+                  
+                  <div className="text-end">
+                    <div className="btn rouned-8 bg-warning text-light text-capitalize" onClick={{handleOpenNotepad}}><i className="fi fi-rr-square-plus mx-1 fa-2x"></i> Save your notes</div>
+                  </div>
+                  
                   {/* Rendering corresponding descriptions */}
                   {selectedTopic !== null && (
                     <div className='p-2'>

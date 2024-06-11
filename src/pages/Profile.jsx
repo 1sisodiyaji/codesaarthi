@@ -107,7 +107,7 @@ const Profile = () => {
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
-      {editing ? <>
+      {!editing ? <>
         <div className="container-fluid  design" style={{ backgroundColor: '#1E1E1E' }}>
           <div className="container p-lg-4 p-0">
             <div className="row  vh-100 p-0">

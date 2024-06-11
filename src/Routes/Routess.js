@@ -64,6 +64,7 @@ import NewsApi from "../component/NewsApi";
 import News from "../Admin/News";
 import Blogs from "../component/Blogs";
 import Jobs from "../component/Jobs";
+import JobApplicationForm from "../Admin/JobApplicationForm";
 
 
 const Routess = () => {
@@ -158,7 +159,7 @@ const Routess = () => {
 
           {/* Admin Section  */}
           <Route path="/Admin/SaveNews" element={<News />} />
-
+          <Route path="/Admin/JobApply" element={<JobApplicationForm />} />
 
         </Routes>
 
