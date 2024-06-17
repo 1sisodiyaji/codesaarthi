@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
+import config from "../../config/config";
 
 const RecoverPassword = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -36,16 +37,12 @@ const RecoverPassword = () => {
 
   const handleOtpChange = (index, e) => {
     const { value } = e.target;
-
-    // Strict validation: Only update state if the input is a single digit number or empty
     if (/^\d$/.test(value) || value === "") {
-      // Update formData state with the value of the input at the specified index
       setFormData((prevFormData) => ({
         ...prevFormData,
         [`otp${index}`]: value
       }));
 
-      // Move focus to next input if a number is entered
       const nextIndex = index + 1;
       const nextInput = otpInputs.current[nextIndex];
       if (value && nextInput) {
@@ -64,15 +61,19 @@ const RecoverPassword = () => {
       }));
     }
   };
-  const email =formData.email;
+
+
 
   const sendOtp = async () => {
+
     setLoading(true);
+    const formDataEncoded = new URLSearchParams();
+    formDataEncoded.append("email", formData.email);
     try {
-      const response = await axios.post('https://server-fl9q.onrender.com/api/sendemail', {email});
+      const response = await axios.post(`${config.BASE_URL}/api/sendemail`, formDataEncoded);
       if (response.data.status === 'success') {
+        setLoading(false);
         setShowOtp(true);
-        setButtonDisabled(true);
         setShowEmails(false);
       } else {
         setErrors(response.data.message);
@@ -80,24 +81,25 @@ const RecoverPassword = () => {
     } catch (error) {
       setErrors("Failed to send email: " + error);
       setLoading(false);
-    }finally{
-      setButtonDisabled(true);
+    } finally {
       setLoading(false);
       setErrors('');
     }
   };
 
-  const verifyOtp = async () => {   
+  const verifyOtp = async () => {
+    setLoading(true);
     const enteredOtp = Array.from({ length: 4 }, (_, index) => formData[`otp${index}`] || '').join('');
     try {
-      const response = await axios.post('https://server-fl9q.onrender.com/api/verifyOtp', {
-        otp: enteredOtp,
-      email
-      });
+
+      const verifyOtp = new URLSearchParams();
+      verifyOtp.append('email', formData.email);
+      verifyOtp.append('otp', enteredOtp);
+      const response = await axios.post(`${config.BASE_URL}/api/verifyOtp`, verifyOtp);
       if (response.data.status === 'success') {
-        setLoading(true);
-        setShowPassword(true);
+        setLoading(false);
         setShowOtp(false);
+        setShowPassword(true);
       } else {
         setErrors(response.data.message);
         setLoading(false);
@@ -109,38 +111,44 @@ const RecoverPassword = () => {
       setErrors('');
     }
   };
-const password = formData.password;
-const conPassword= formData.conPassword;
 
   const updatePassword = async () => {
-    setLoading(true);
-    if(password !== conPassword){
+    const password = formData.password;
+    const conPassword = formData.conPassword;
+
+    if (password !== conPassword) {
       setErrors("Password Incorrect");
-    }else{
-    try {
-      const response = await axios.post('https://server-fl9q.onrender.com/api/updatePassword', {password,email });
-      if (response.data.status === 'success') {
+    } else {
+      try {
+        setLoading(true);
+        const updatePassword = new URLSearchParams();
+        updatePassword.append('email', formData.email);
+        updatePassword.append('password', password);
+
+        const response = await axios.post(`${config.BASE_URL}/api/updatePassword`, updatePassword);
+        if (response.data.status === 'success') {
+          setLoading(false);
+          setShowPassword(false);
+          setShowOtp(false);
+          navigate("/login");
+        } else {
+          setErrors(response.data.message);
+        }
+      } catch (error) {
+        setErrors("Failed to update password");
+      } finally {
+        setLoading(false);
+        setShowEmails(false);
         setShowPassword(false);
         setShowOtp(false);
-        navigate("/login");
-      } else {
-        setErrors(response.data.message);
+        setErrors('');
       }
-    } catch (error) {
-      setErrors("Failed to update password");
-    } finally {
-      setLoading(false);
-      setShowEmails(false);
-      setShowPassword(false);
-      setShowOtp(false);
-      setErrors('');
     }
-  }
   };
 
   return (
     <>
-     <Helmet>
+      <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="Recover password , forgot password , forgot password in codesaarthi" />
         <meta name="robots" content="index, follow" />
@@ -153,8 +161,8 @@ const conPassword= formData.conPassword;
         <meta property="og:url" content="https://codesaarthi.com/RecoverPassword" />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
-    </Helmet>
-      <div className="container-fluid m-0 p-0 g-0 d-flex justify-content-center align-items-center position-relative design" style={{ backgroundColor: "white", overflowX: "hidden", fontFamily: "Exo", minHeight: "100vh", overflowY: "scroll" }}>
+      </Helmet>
+      <div className="container-fluid m-0 p-0 g-0 d-flex justify-content-center align-items-center position-relative design" style={{ backgroundColor: "#262626", overflowX: "hidden", fontFamily: "Exo", minHeight: "100vh", overflowY: "scroll" }}>
         <div className="container" style={{ maxWidth: "420px" }}>
           <form>
             <div className=" text-center">
@@ -175,31 +183,31 @@ const conPassword= formData.conPassword;
             </div>
             {showEmails && (
               <>
-               {/* Email input */}
-            <div className="mb-4">
-              <input
-                type="email"
-                id="email_id"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                className="form-control rounded-8 py-2"
-                style={{
-                  backgroundColor: "black",
-                  color: "#79b4e2",
-                }}
-                placeholder="email"
-              />
-            </div>
-            {/* Send OTP button */}
-            <button
-              type="button" id="sendmailbutton"
-              onClick={sendOtp} disabled={isButtonDisabled}
-              className="btn btn-block mb-4 text-capitalize py-3"
-              style={{ backgroundColor: "#79b4e2",color:'black', fontSize: "1rem" }}
-            >
-             {loading ? <> <img src="img/loader.svg" alt="loader image" /> </> : 'Send OTP' } 
-            </button>
+                {/* Email input */}
+                <div className="mb-4">
+                  <input
+                    type="email"
+                    id="email_id"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="form-control rounded-8 py-2"
+                    style={{
+                      backgroundColor: "black",
+                      color: "#79b4e2",
+                    }}
+                    placeholder="email"
+                  />
+                </div>
+                {/* Send OTP button */}
+                <button
+                  type="button" id="sendmailbutton"
+                  onClick={sendOtp}
+                  className="btn btn-block mb-4 text-capitalize py-3"
+                  style={{ backgroundColor: "#79b4e2", color: 'black', fontSize: "1rem" }}
+                >
+                  {loading ? <> <img src="img/loader.svg" alt="loader image" /> </> : 'Send OTP'}
+                </button>
               </>
             )}
             {showOtp && (
@@ -223,8 +231,8 @@ const conPassword= formData.conPassword;
                   </div>
 
                   <div>
-                    <button type="button" onClick={verifyOtp} className="btn btn-block my-4 text-capitalize py-3" style={{ backgroundColor: "#79b4e2",color:'black', fontSize: "1rem" }}>
-                    {!loading ? <> <img src="img/loader.svg" alt="loader image" /> </> : 'Verify OTP' }
+                    <button type="button" onClick={verifyOtp} className="btn btn-block my-4 text-capitalize py-3" style={{ backgroundColor: "#79b4e2", color: 'black', fontSize: "1rem" }}>
+                      {loading ? <> <img src="img/loader.svg" alt="loader image" /> </> : 'Verify OTP'}
                     </button>
                   </div>
                 </div>
@@ -259,7 +267,7 @@ const conPassword= formData.conPassword;
                 </div>
                 {/* Update Password button */}
                 <button type="button" onClick={updatePassword} className="btn btn-block mb-4 text-capitalize py-3" style={{ backgroundColor: "#79b4e2", color: "#011528", fontSize: "1rem" }}>
-                {!loading ? <> <img src="img/loader.svg" alt="loader image" /> </> : 'Update' } 
+                  {loading ? <> <img src="img/loader.svg" alt="loader image" /> </> : 'Update'}
                 </button>
               </div>
             )}
