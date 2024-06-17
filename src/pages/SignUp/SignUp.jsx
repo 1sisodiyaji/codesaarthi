@@ -67,7 +67,7 @@ const SignUp = () => {
       formDataEncoded.append("email", email);
       formDataEncoded.append("password", password);
 
-      const response = await axios.post(`${config.BASE_URL}/api/register`, {name: name , email :email , password :password});
+      const response = await axios.post(`${config.BASE_URL}/api/register`, formDataEncoded);
 
       if (response.data.status === "success") {
         toast.success("Account created successfully!", { theme: "dark" });
@@ -106,8 +106,15 @@ const SignUp = () => {
         });
   
         const userData = googleResponse.data; 
-        // Send user data to backend
-        const saveUserDataResponse = await axios.post(`${config.BASE_URL}/api/saveuserData`,{ email: userData.email, name: userData.name, username : userData.given_name , image : userData.picture}); 
+        const formDataEncoded = new URLSearchParams();
+        formDataEncoded.append("email", userData.email);
+        formDataEncoded.append("name", userData.name);
+        formDataEncoded.append("username", userData.given_name);
+        formDataEncoded.append("image", userData.picture);
+      
+          const saveUserDataResponse = await axios.post(
+            `${config.BASE_URL}/api/saveuserData`,formDataEncoded);
+            
         if (saveUserDataResponse.data.status === "success") {
           localStorage.setItem("token", saveUserDataResponse.data.token);
           setLoading(false);

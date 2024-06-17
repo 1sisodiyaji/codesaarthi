@@ -39,7 +39,6 @@ export const Navbar = () => {
               },
             }
           );
-
           if (response.data.status === "success") {
             setUser(response.data.user);
           } else {
@@ -131,7 +130,7 @@ export const Navbar = () => {
                 to="/profile"
               >
                 {" "}
-                <i className="fi fi-sr-user-trust pe-2"></i>
+                <i className="fi fi-ss-user-trust pe-2"></i>
                 Profile
               </Link>
             </li>

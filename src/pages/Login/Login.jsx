@@ -49,7 +49,10 @@ const Login = () => {
       } else {
         try {
           setLoading(true);
-          const response = await axios.post(`${config.BASE_URL}/api/signin`,{email:email , password:password} ); 
+          const formDataEncoded = new URLSearchParams();
+          formDataEncoded.append("email", email);
+          formDataEncoded.append("password", password);
+          const response = await axios.post(`${config.BASE_URL}/api/signin`,formDataEncoded); 
           console.log(response); 
           if (response.data.status === "success") {
             toast.success("Login Successfully!", { theme: "dark" });
@@ -58,6 +61,7 @@ const Login = () => {
             navigate("/");
           } else {
             console.log(response.data.message);
+            toast.warn(response.data.message, { theme: "dark" });
             setLoading(false);
           }
         } catch (error) {
@@ -84,8 +88,15 @@ const Login = () => {
         });
   
         const userData = googleResponse.data; 
-        // Send user data to backend
-        const saveUserDataResponse = await axios.post(`${config.BASE_URL}/api/saveuserData`,{ email: userData.email, name: userData.name, username : userData.given_name , image : userData.picture}); 
+        const formDataEncoded = new URLSearchParams();
+        formDataEncoded.append("email", userData.email);
+        formDataEncoded.append("name", userData.name);
+        formDataEncoded.append("username", userData.given_name);
+        formDataEncoded.append("image", userData.picture);
+      
+          const saveUserDataResponse = await axios.post(
+            `${config.BASE_URL}/api/saveuserData`,formDataEncoded);
+            
         if (saveUserDataResponse.data.status === "success") {
           localStorage.setItem("token", saveUserDataResponse.data.token);
           setLoading(false);
