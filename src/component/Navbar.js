@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+import config from "../config/config";
 
 export const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+  const [user, setUser] = useState(null);
   const isNavLinkActive = (path) => {
     return location.pathname.includes(path);
   };
   const location = useLocation();
-  const pic = localStorage.getItem("user_ProfilePic");
   const navigate = useNavigate();
 
   const logout = () => {
-    localStorage.removeItem("user_email");
-    localStorage.removeItem("user_name");
-    localStorage.removeItem("user_ProfilePic");
+    localStorage.removeItem("token");
     navigate("/");
   };
 
@@ -26,7 +25,34 @@ export const Navbar = () => {
     setIsSidebarOpen(false);
   }, [location.pathname]);
 
-  let userName = localStorage.getItem("user_name");
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        try {
+          const response = await axios.post(
+            `${config.BASE_URL}/api/user`,
+            {},
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+
+          if (response.data.status === "success") {
+            setUser(response.data.user);
+          } else {
+            console.log("Failed to fetch user information");
+          }
+        } catch (error) {
+          console.error("Error fetching user information:", error);
+        }
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -35,12 +61,11 @@ export const Navbar = () => {
   return (
     <>
       {/* <!-- Navbar For small screen--> */}
-      <nav  className="navbar navbar-expand-lg navbar-dark fixed-top d-lg-none d-md-none d-sm-block  shadow-0"
+      <nav
+        className="navbar navbar-expand-lg navbar-dark fixed-top d-lg-none d-md-none d-sm-block  shadow-0"
         style={{ backgroundColor: "#1E1E1E" }}
       >
-        {/* <!-- Container wrapper --> */}
         <div className="container-fluid">
-          {/* <!-- Navbar brand --> */}
           <Link className="navbar-brand text-center" to="/">
             <img
               src="../img/logo.png"
@@ -61,50 +86,53 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      <div style={{zIndex: '99'}} 
+      <div
+        style={{ zIndex: "99" }}
         className={`sidebar ${
           isSidebarOpen ? "show" : ""
         } d-lg-none d-md-none d-sm-block`}
       >
         <div className="pt-5 mt-2">
           <ul className="nav flex-column text-start ms-4">
-            {!userName && (
+            {!user && (
               <>
                 <li className="nav-item text-light">
-                <Link
-                className={`nav-link ${
-                  isNavLinkActive("/signup") ? "selected" : ""
-                }`}
-                style={{ color: "whitesmoke" }}
-                to="/signup"
-              >
-                <i className="fi fi-rs-rocket-lunch pe-2"></i>
-               Create Account
-              </Link>
+                  <Link
+                    className={`nav-link ${
+                      isNavLinkActive("/signup") ? "selected" : ""
+                    }`}
+                    style={{ color: "whitesmoke" }}
+                    to="/signup"
+                  >
+                    <i className="fi fi-rs-rocket-lunch pe-2"></i>
+                    Create Account
+                  </Link>
                 </li>
                 <li className="nav-item">
-                <Link
-                className={`nav-link ${
-                  isNavLinkActive("/Login") ? "selected" : ""
-                }`}
-                style={{ color: "whitesmoke" }}
-                to="/Login"
-              ><i className="fi fi-br-sign-in-alt pe-2"></i>
-                Log in
-              </Link>
+                  <Link
+                    className={`nav-link ${
+                      isNavLinkActive("/Login") ? "selected" : ""
+                    }`}
+                    style={{ color: "whitesmoke" }}
+                    to="/Login"
+                  >
+                    <i className="fi fi-br-sign-in-alt pe-2"></i>
+                    Log in
+                  </Link>
                 </li>
-                
               </>
             )}
-             <li className="nav-item">
+            <li className="nav-item">
               <Link
                 className={`nav-link ${
                   isNavLinkActive("/profile") ? "selected" : ""
                 }`}
                 style={{ color: "whitesmoke" }}
                 to="/profile"
-              > <i className="fi fi-sr-user-trust pe-2"></i>
-                 Profile 
+              >
+                {" "}
+                <i className="fi fi-sr-user-trust pe-2"></i>
+                Profile
               </Link>
             </li>
             <li className="nav-item">
@@ -114,7 +142,9 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "whitesmoke" }}
                 to="/AboutUs"
-              > <i className="fi fi-sr-info pe-2"></i>
+              >
+                {" "}
+                <i className="fi fi-sr-info pe-2"></i>
                 About Us
               </Link>
             </li>
@@ -125,7 +155,9 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "whitesmoke" }}
                 to="/theory"
-              > <i className="fi fi-rs-books pe-2"></i>
+              >
+                {" "}
+                <i className="fi fi-rs-books pe-2"></i>
                 Theory
               </Link>
             </li>
@@ -136,11 +168,13 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "whitesmoke" }}
                 to="/Problems"
-              >   <i className="fi fi-sr-interrogation pe-2"></i>
+              >
+                {" "}
+                <i className="fi fi-sr-interrogation pe-2"></i>
                 Problems
               </Link>
             </li>
-            
+
             <li className="nav-item">
               <Link
                 className={`nav-link ${
@@ -148,12 +182,13 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "whitesmoke" }}
                 to="/Projects"
-              > <i className="fi fi-sr-workflow-setting-alt pe-2"></i>
+              >
+                {" "}
+                <i className="fi fi-sr-workflow-setting-alt pe-2"></i>
                 Projects
               </Link>
             </li>
-           
-            
+
             <li className="nav-item">
               <Link
                 className={`nav-link ${
@@ -161,29 +196,33 @@ export const Navbar = () => {
                 }`}
                 style={{ color: "whitesmoke" }}
                 to="/roadMap"
-              ><i className="fi fi-ss-road pe-2"></i>
+              >
+                <i className="fi fi-ss-road pe-2"></i>
                 RoadMaps
               </Link>
             </li>
-            {userName &&
-            <li className="nav-item">
-              <Link onClick={logout}
-                className={`nav-link ${
-                  isNavLinkActive("/") ? "selected" : ""
-                }`}
-                style={{ color: "whitesmoke" }}
-                to="/"
-              ><i className="fi fi-br-sign-in-alt pe-2"></i>
-                logout
-              </Link>
-            </li>
-}
+            {user && (
+              <li className="nav-item">
+                <Link
+                  onClick={logout}
+                  className={`nav-link ${
+                    isNavLinkActive("/") ? "selected" : ""
+                  }`}
+                  style={{ color: "whitesmoke" }}
+                  to="/"
+                >
+                  <i className="fi fi-br-sign-in-alt pe-2"></i>
+                  logout
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>
 
       {/* <!-- Navbar For big screen--> */}
-      <nav className="navbar navbar-expand-lg sticky sticky-top p-0 d-lg-block d-md-block d-none  shadow-6"
+      <nav
+        className="navbar navbar-expand-lg sticky sticky-top p-0 d-lg-block d-md-block d-none  shadow-6"
         style={{ zIndex: "100000!important" }}
       >
         <div
@@ -201,7 +240,7 @@ export const Navbar = () => {
               style={{ color: "#703BF7" }}
             >
               <h1 style={{ fontSize: "24px" }} className="mb-0 ms-2">
-              Codesaarthi
+                Codesaarthi
               </h1>
             </Link>
             {/* Left links */}
@@ -239,7 +278,7 @@ export const Navbar = () => {
                   Problems
                 </Link>
               </li>
-             
+
               <li className="nav-items pe-2">
                 <Link
                   className={`nav-link ${
@@ -251,8 +290,7 @@ export const Navbar = () => {
                   Projects
                 </Link>
               </li>
-              
-             
+
               <li className="nav-items pe-2">
                 <Link
                   className={`nav-link ${
@@ -269,42 +307,43 @@ export const Navbar = () => {
           </div>
 
           <div className="d-lg-block d-md-block d-none">
-            {userName ? (
+            {user ? (
               <>
                 <div className="d-flex align-items-center">
-                  <div className="nav-item dropdown px-2" style={{zIndex: '9999'}}>
-                    <div
-                    >
-                      {pic ? (
+                  <div
+                    className="nav-item dropdown px-2"
+                    style={{ zIndex: "9999" }}
+                  >
+                    <div>
+                      {user ? (
                         <>
-                        <Link to="/profile">
-                          <img
-                            src={pic}
-                            className="rounded-circle"
-                            height="25"
-                            alt="Black and White Portrait of a Man"
-                            loading="lazy"
-                          />
+                          <Link to="/profile">
+                            <img
+                              src={user.image}
+                              className="rounded-circle"
+                              height="25"
+                              alt="Black and White Portrait of a Man"
+                              loading="lazy"
+                            />
                           </Link>
                         </>
                       ) : (
                         <>
-                        <div className="rounded-circle pt-2"> 
-                          <i className="fi fi-ss-user text-primary"></i>
-                          </div>
+                          <Link to="/profile">
+                            <div className="rounded-circle pt-2">
+                              <i className="fi fi-ss-user text-primary"></i>
+                            </div>
+                          </Link>
                         </>
                       )}
                     </div>
-
-                    
                   </div>
                 </div>
               </>
             ) : (
               <>
                 <Link to="/login" className="borderColor">
-                  <button className="btn btn-sm  rounded-8 text-light text-capitalize"
-                  >
+                  <button className="btn btn-sm  rounded-8 text-light text-capitalize">
                     Log in
                   </button>
                 </Link>

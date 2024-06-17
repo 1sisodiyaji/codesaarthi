@@ -9,7 +9,22 @@ const Jobs = () => {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const response = await fetch('https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=f0f3f511&app_key=4441b9334ebf9a73b9e916e2262ea3d2&results_per_page=20&what=javascript&content-type=application/json');
+                
+                 const response = await fetch('https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=f0f3f511&app_key=4441b9334ebf9a73b9e916e2262ea3d2&results_per_page=20&what=javascript&content-type=application/json');
+
+                // all jobs in for fresher 
+                // const response = await fetch('https://api.adzuna.com/v1/api/jobs/in/search/1?app_id=f0f3f511&app_key=4441b9334ebf9a73b9e916e2262ea3d2&what=MERN%20stack%20developer%201%20year%20experience&distance=10&sort_by=relevance')
+                
+                // all jobs as 1 year experience 
+                // const response = await fetch('https://api.adzuna.com/v1/api/jobs/in/search/1?app_id=f0f3f511&app_key=4441b9334ebf9a73b9e916e2262ea3d2&where=Bangalore&what=MERN%20stack%20developer%201%20year%20experience&distance=10&sort_by=relevance');
+
+                // only for banglore  Fresher
+            //    const response = await fetch('https://api.adzuna.com/v1/api/jobs/in/search/1?app_id=f0f3f511&app_key=4441b9334ebf9a73b9e916e2262ea3d2&where=Bangalore&what=MERN%20stack%20developer%20fresher&distance=10&sort_by=relevance');
+
+                // only for 1 year experience 
+                // const response = await fetch('https://api.adzuna.com/v1/api/jobs/in/search/1?app_id=f0f3f511&app_key=4441b9334ebf9a73b9e916e2262ea3d2&where=Bangalore&what=MERN%20stack%20developer%201%20year%20experience&distance=10&sort_by=relevance');
+
+
                 if (!response.ok) {
                     throw new Error('Failed to fetch job listings');
                 }
@@ -61,7 +76,7 @@ const Jobs = () => {
                                 <small dangerouslySetInnerHTML={{ __html: job.description }} />
                                 <hr />
                                 <div className="row">
-                                    <div className="col-4 text-center"><Link to={job.redirect_url} target="_blank" rel="noopener noreferrer" > <button className='btn btn-black  text-success text-capitalize '>Apply Now <i class="fi fi-br-arrow-up-right mx-1"></i></button> </Link></div>
+                                    <div className="col-4 text-center"><Link to={job.redirect_url} target="_blank" rel="noopener noreferrer" > <button className='btn btn-black  text-success text-capitalize '>Apply Now <i className="fi fi-br-arrow-up-right mx-1"></i></button> </Link></div>
                                     <div className="col-8 text-end"><small>Location : {job.location.display_name}</small> </div>
                                 </div>
                                 </div>

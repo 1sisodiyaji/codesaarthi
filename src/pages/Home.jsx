@@ -1,14 +1,14 @@
-import React ,{useState}from "react";
+import React ,{useEffect, useState}from "react";
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import "../App.css";
 import { Helmet } from "react-helmet";
 import NewsApi from "../component/NewsApi";
 import Profile from "./Profile";
 import Jobs from "../component/Jobs";
-import Blogs from "../component/Blogs";
-
+import Blogs from "../component/Blogs"; 
 const Home = () => {
-  const Username = localStorage.getItem("user_email");
+  const token = localStorage.getItem("token");
+
   const [content, setContent] = useState('news');
 
   const renderContent = () => {
@@ -24,6 +24,7 @@ const Home = () => {
         return <NewsApi />;
     }
   };
+ 
   return (
     <>
       <Helmet>
@@ -64,7 +65,7 @@ const Home = () => {
         className="container-fluid design w-100"
         style={{ backgroundColor: "#1E1E1E" }}
       >
-        {!Username ? (
+        {!token ? (
           <>
             <div className="row w-100 py-lg-4 py-2">
               <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center">

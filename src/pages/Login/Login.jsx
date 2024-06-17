@@ -49,22 +49,15 @@ const Login = () => {
       } else {
         try {
           setLoading(true);
-          const response = await axios.post(`${config.BASE_URL}/api/signin`, {
-            email,
-            password,
-          });
-          const savedUser = response.data;
-          const { status, message } = savedUser;
-          const name = savedUser.userName;
-          const userEmail = savedUser.email;
-          if (status === "success") {
+          const response = await axios.post(`${config.BASE_URL}/api/signin`,{email:email , password:password} ); 
+          console.log(response); 
+          if (response.data.status === "success") {
             toast.success("Login Successfully!", { theme: "dark" });
-            localStorage.setItem("user_name", name);
-            localStorage.setItem("user_email", userEmail);
+            localStorage.setItem("token", response.data.token);
             setLoading(false);
-            navigate("/theory");
+            navigate("/");
           } else {
-            console.log(message);
+            console.log(response.data.message);
             setLoading(false);
           }
         } catch (error) {
@@ -78,54 +71,40 @@ const Login = () => {
 
   // login with google
   const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => {
+    onSuccess: async (tokenResponse) => {
       const accessToken = tokenResponse.access_token;
-      axios
-        .get("https://www.googleapis.com/oauth2/v2/userinfo", {
+      try {
+        setLoading(true);
+  
+        // Fetch user data from Google API
+        const googleResponse = await axios.get("https://www.googleapis.com/oauth2/v2/userinfo", {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
-        })
-        .then((response) => {
-          const userData = response.data;
-          setLoading(true);
-          axios
-            .post(`${config.BASE_URL}/api/saveuserData`, userData)
-            .then((response) => {
-              if (response.data.status === "success") {
-                localStorage.setItem("user_name", userData.name);
-                localStorage.setItem("user_email", userData.email);
-                localStorage.setItem("user_ProfilePic", userData.picture);
-                setLoading(false);
-                navigate("/theory");
-              } else {
-                toast.error("Account Does not exist!", { theme: "dark" });
-                console.log(response.data.message);
-                setLoading(false);
-              }
-            })
-            .catch((error) => {
-              toast.error("Error checking  user data to backend:", { theme: "dark" });
-              console.log(error);
-              setLoading(false);
-            });
-        })
-        .catch((error) => {
-          toast.error("Error fetching user information", { theme: "dark" });
-          console.log(error);
-          setLoading(false);
         });
+  
+        const userData = googleResponse.data; 
+        // Send user data to backend
+        const saveUserDataResponse = await axios.post(`${config.BASE_URL}/api/saveuserData`,{ email: userData.email, name: userData.name, username : userData.given_name , image : userData.picture}); 
+        if (saveUserDataResponse.data.status === "success") {
+          localStorage.setItem("token", saveUserDataResponse.data.token);
+          setLoading(false);
+          navigate("/");
+        } else {
+          toast.error("Error saving user data", { theme: "dark" });
+          console.log(saveUserDataResponse.data.message);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Error during login:", error);
+        toast.error("Error during login. Please try again later.", { theme: "dark" });
+        setLoading(false);
+      }
     },
-  });
-
-  const { linkedInLogin } = useLinkedIn({
-    clientId: "865ot8yrscixc8",
-    redirectUri: `${window.location.origin}/linkedin`, // for Next.js, you can use `${typeof window === 'object' && window.location.origin}/linkedin`
-    onSuccess: (code) => {
-      console.log(code);
-    },
-    onError: (error) => {
-      console.log(error);
+    onFaliure: (error) => {
+      console.error("Error during login:", error);
+      toast.error("Error during login. Please try again later.", { theme: "dark" });
+      setLoading(false);
     },
   });
 

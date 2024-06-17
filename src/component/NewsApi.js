@@ -18,9 +18,9 @@ const NewsApi = () => {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      try {
-        const response = await axios.post(`${Config.BASE_URL}/getArticles`);
-     
+      try { 
+        const response = await axios.post(`${Config.BASE_URL}/article/getArticles`);
+ 
         let News = response.data;
         if (Array.isArray(News)) {
           setData(News);

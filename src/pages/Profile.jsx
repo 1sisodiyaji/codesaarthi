@@ -1,94 +1,66 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { Helmet } from "react-helmet";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import config from '../config/config'; 
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
-  const [profile, setProfile] = useState({
-    name: '',
-    institute: '',
-    location: '',
-    dateOfBirth: '',
-    contact: '',
-    socialMediaLinks: '',
-  });
-  const [image, setImage] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
-  const [editing, setEditing] = useState(false);
 
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+const navigate = useNavigate();
   useEffect(() => {
-    // Load initial profile data from the backend
-    const fetchProfileData = async () => {
+    const fetchUserData = async () => {
+      const token = localStorage.getItem('token');
+
       try {
-        const userEmail = localStorage.getItem('userEmail');
-        const response = await axios.get(`http://localhost:8081/api/profile/${userEmail}`);
-        setProfile(response.data);
+        const response = await axios.post(
+          `${config.BASE_URL}/api/user`,
+          {}, // empty object as the data payload
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        console.log(response);
+
+        if (response.data.status === 'success') {
+          console.log('User data:', response.data.user);
+          setUser(response.data.user);
+        } else {
+          throw new Error('Failed to fetch user information');
+        }
       } catch (error) {
-        toast.error('Failed to load profile data');
+        console.error('Error fetching user information:', error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
       }
     };
 
-    fetchProfileData();
-  }, []);
+    fetchUserData();
+  }, [2000]); // Empty dependency array ensures the effect runs once on component mount
 
-  const handleChange = (e) => {
-    setProfile({
-      ...profile,
-      [e.target.name]: e.target.value,
-    });
-  };
+  if (loading) {
+    return <p>Loading...</p>; // Or any loading indicator
+  }
 
-  const handlePhotoChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setImage(file);
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImagePreview(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+  if (error) {
+    return <p>Error: {error}</p>; // Or handle error state
+  }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const userEmail = localStorage.getItem('userEmail');
-      await axios.put(`http://localhost:8081/api/profile/${userEmail}`, profile);
-      toast.success('Profile updated successfully');
-    } catch (error) {
-      toast.error('Failed to update profile');
-    }
-  };
+  if (!user) {
+    return <p>No user data found.</p>; // Handle case where user data is null
+  }
 
-  const handleImageUpload = async () => {
-    if (image) {
-      const formData = new FormData();
-      formData.append('photo', image);
-      try {
-        const userEmail = localStorage.getItem('userEmail');
-        const response = await axios.post(`http://localhost:8081/api/profile/${userEmail}/photo`, formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        });
-        console.log("Your response is " + response);
-        toast.success('Profile image updated successfully');
-      } catch (error) {
-        console.log("Your response is " + error);
-        toast.error('Failed to update profile image');
-      }
-    }
-  };
-
-  const navigate = useNavigate();
+ 
   const logout = () => {
-    localStorage.removeItem("user_email");
-    localStorage.removeItem("user_name");
-    localStorage.removeItem("user_ProfilePic");
-    navigate("/");
+    localStorage.removeItem("token");
+    navigate('/');
   };
 
 
@@ -107,63 +79,15 @@ const Profile = () => {
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
-      {!editing ? <>
-        <div className="container-fluid  design" style={{ backgroundColor: '#1E1E1E' }}>
-          <div className="container p-lg-4 p-0">
-            <div className="row  vh-100 p-0">
-              <div className="col-12">
-                <div className="card p-lg-5  p-1 text-light bg-dark">
-                  <form onSubmit={handleSubmit}>
-                    <div className="row g-0">
-                      <div className="col-4">
-                        <img src={imagePreview || 'https://via.placeholder.com/150'} className='img-fluid imageHeight' style={{ borderRadius: '50%' }} alt="" />
-                        <input type="file" name="photo" accept="image/*" onChange={handlePhotoChange} />
-                        <button type="button" className='bg-dark btn text-success text-capitalize border mt-2' onClick={handleImageUpload}>Upload Image</button>
-                      </div>
-                      <div className="col-8 ps-2">
-                        <div className='d-flex my-2 align-items-center'>
-                          <p>Name:</p>
-                          <input type="text" className='w-100 rounded-8 ps-2 ms-2 bg-dark border-0 text-light' name="name" value={profile.name} onChange={handleChange} />
-                        </div>
-                        <div className='d-flex my-2 align-items-center'>
-                          <p>Institute:</p>
-                          <input type="text" className='w-100 rounded-8 ps-2 ms-2 bg-dark border-0 text-light' name="institute" value={profile.institute} onChange={handleChange} />
-                        </div>
-                        <div className='d-flex my-2 align-items-center'>
-                          <p>Location:</p>
-                          <input type="text" className='w-100 rounded-8 ps-2 ms-2 bg-dark border-0 text-light' name="location" value={profile.location} onChange={handleChange} />
-                        </div>
-                        <div className='d-flex my-2 align-items-center'>
-                          <p>Date of Birth:</p>
-                          <input type="date" className='w-100 rounded-8 ps-2 ms-2 bg-dark border-0 text-light' name="dateOfBirth" value={profile.dateOfBirth} onChange={handleChange} />
-                        </div>
-                        <div className='d-flex my-2 align-items-center'>
-                          <p>Contact:</p>
-                          <input type="text" className='w-100 rounded-8 ps-2 ms-2 bg-dark border-0 text-light' name="contact" value={profile.contact} onChange={handleChange} />
-                        </div>
-                        <div className='d-flex my-2 align-items-center'>
-                          <p>Social Media Links:</p>
-                          <input type="text" className='w-100 rounded-8 ps-2 ms-2 bg-dark border-0 text-light' name="socialMediaLinks" value={profile.socialMediaLinks} onChange={handleChange} />
-                        </div>
-                        <button type="submit" className='bg-dark btn text-success text-capitalize border'>Update</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div className="btn" onClick={logout}>Logout</div>
-          <ToastContainer />
-        </div>
-      </> :
-        <>
-        <div className="container-fluid design py-5 vh-100" style={{backgroundColor:'#1E1E1E'}}>
-<h1>Will be made</h1>
-</div>
-        </>
-      }
+      <div>
+      <h1>User Information</h1>
+      <p>Name: {user.name}</p>
+      <p>Email: {user.email}</p>
+      <img src={user.image} alt="" />
+      <button onClick={logout}>Logout</button>
+    </div>
+     
     </>
   );
 };

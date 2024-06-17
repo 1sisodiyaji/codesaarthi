@@ -10,7 +10,7 @@ const BlogList = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.post(`${Config.BASE_URL}/getBlogsData`);
+        const response = await axios.post(`${Config.BASE_URL}/article/getBlogsData`);
         console.log(response);
         setBlogs(response.data);
         setLoading(false);

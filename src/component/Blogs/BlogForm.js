@@ -13,13 +13,12 @@ const BlogForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    try{
-      const response = await axios.post(`${Config.BASE_URL}/userBlogs/blogs`, {
-        title,
-        image ,
-        description,
-        email: userEmail,
-      });
+    try {
+      console.log("Title:", title);
+      console.log("Image:", image);
+      console.log("Description:", description);
+      console.log("Email:", userEmail);
+      const response = await axios.post('http://localhost:8081/article/userBlogs/blogs',{ title  ,description ,image, email : userEmail });
       console.log('Blog posted:', response.data);
       // Reset form
       setTitle('');
