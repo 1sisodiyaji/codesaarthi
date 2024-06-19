@@ -10,7 +10,7 @@ const News = () => {
     setLoading(true);
     setMessage('');
     try {
-      const response = await axios.post(`${Config.BASE_URL}/saveArticles`);
+      const response = await axios.post(`${Config.BASE_URL}/Admin/saveArticles`);
       setMessage(response.data.message);
     } catch (error) {
       console.error('Error saving articles:', error);
@@ -23,7 +23,7 @@ const News = () => {
     setLoading(true);
     setMessage('');
     try {
-      const response = await axios.delete(`${Config.BASE_URL}/deleteAllArticles`);
+      const response = await axios.delete(`${Config.BASE_URL}/Admin/deleteAllArticles`);
       setMessage(response.data.message);
     } catch (error) {
       console.error('Error deleting articles:', error);

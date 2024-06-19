@@ -24,13 +24,13 @@ const Problems = () => {
         <div className="row w-lg-75 w-100  g-0 py-3">
 
           <div className="col-lg-4 col-12 my-2 pe-lg-2">
-            <div class=" card  tilt-effect2 " style={{ backgroundColor: '#262626' }}>
-              <div class="card-body text-light">
-                <h5 class="card-title "> Basics Array Question  </h5>
-                <p class="card-text"> Practise Basic Questions to clear concepts
+            <div className=" card  tilt-effect2 " style={{ backgroundColor: '#262626' }}>
+              <div className="card-body text-light">
+                <h5 className="card-title "> Basics Array Question  </h5>
+                <p className="card-text"> Practise Basic Questions to clear concepts
                 </p>
 
-                <Link to= "/Problems/ArrayProblems" ><button type="button" class="btn  text-light text-capitalize" style={{backgroundColor:'purple'}}>Start Solving</button></Link>
+                <Link to= "/Problems/ArrayProblems" ><button type="button" className="btn  text-light text-capitalize" style={{backgroundColor:'purple'}}>Start Solving</button></Link>
               </div>
             </div>
           </div>

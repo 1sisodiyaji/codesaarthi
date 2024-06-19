@@ -65,6 +65,9 @@ import News from "../Admin/News";
 import Blogs from "../component/Blogs";
 import Jobs from "../component/Jobs";
 import JobApplicationForm from "../Admin/JobApplicationForm";
+import TextForm from "../component/Textarea";
+import UpdateBlogs from "../component/Blogs/UpdateBlog";
+import Blog from "../component/Blogs/Blog";
 
 
 const Routess = () => {
@@ -153,6 +156,8 @@ const Routess = () => {
           <Route path="/roadMap/Dbms" element={<Dbms />} />
           
           <Route path="/blogs" element={<Blogs/>} />
+          <Route path="/blog/:id" element={<Blog/>} />
+          <Route path="/edit-blog/:id" element={<UpdateBlogs/>} />
           <Route path="/news" element={<NewsApi/>} />
           <Route path="/jobs" element={<Jobs/>} />
           <Route path="/*" element={<ErrorPage />} />
@@ -160,7 +165,7 @@ const Routess = () => {
           {/* Admin Section  */}
           <Route path="/Admin/SaveNews" element={<News />} />
           <Route path="/Admin/JobApply" element={<JobApplicationForm />} />
-
+          <Route path="/Admin/text-editor" element={<TextForm />} />
         </Routes>
 
         <Footer onFooterClick={handleFooterClick} />

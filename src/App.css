@@ -80,7 +80,7 @@ body::-webkit-scrollbar {
   }
 
   .design {
-    margin-top: 6vh;
+    margin-top: 52px;
   }
 
   .heading {
@@ -193,7 +193,8 @@ font-weight: bold !important;
 }
 
 .cardImageHeight{
-  height: 180px !important;
+  height: 480px !important;
+  width: 480px !important;
 }
 .cardWidth{
   width: 340px !important;

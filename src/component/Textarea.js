@@ -60,8 +60,10 @@ export default function TextForm() {
 
   return (
     <>
+    <div className="container-fluid py-lg-5 vh-100" style={{backgroundColor:'#262626'}}>
+ 
       <div className="container">
-        <div className="row mb-2 ">
+        <div className="row">
           <div className="col-12 d-flex justify-content-evenly align-items-center">
             <div className="col-3">
               <input
@@ -172,6 +174,7 @@ export default function TextForm() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

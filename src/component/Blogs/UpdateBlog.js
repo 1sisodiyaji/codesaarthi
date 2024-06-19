@@ -1,9 +1,14 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import config from "../../config/config";
 import JoditEditor from "jodit-react";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const BlogForm = () => {
+const UpdateBlog = () => {
+  const { id } = useParams(); // Get the blog ID from the URL
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
@@ -41,6 +46,25 @@ const BlogForm = () => {
     fetchUserData();
   }, []);
 
+  useEffect(() => {
+    const fetchBlogData = async () => {
+      try {
+        const response = await axios.post(`${config.BASE_URL}/article/getbyid/${id}`);
+        toast.success("Blog Fetched Successfully", { theme: "dark" });
+        const blog = response.data;
+        setTitle(blog.title);
+        setDescription(blog.description);
+        setContent(blog.content);
+        setImagePreview(blog.image);
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+        toast.error("Error fetching blogs. Please try again later.", { theme: "dark" });
+      }
+    };
+
+    fetchBlogData();
+  }, [id]);
+
   const handleImageChange = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -66,22 +90,18 @@ const BlogForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const id = user._id;
-    if (!id) {
-      console.log("please login first");
-      window.location.href = "/login";
-    }
 
     try {
       const formData = new FormData();
       formData.append("title", title);
       formData.append("description", description);
       formData.append("content", content);
-      formData.append("image", image);
-      formData.append("idAuthor", id);
+      if (image) {
+        formData.append("image", image);
+      }
 
-      const response = await axios.post(
-        `${config.BASE_URL}/article/createarticle`,
+      const response = await axios.put(
+        `${config.BASE_URL}/article/update/${id}`,
         formData,
         {
           headers: {
@@ -91,17 +111,16 @@ const BlogForm = () => {
       );
 
       if (response.status === 200) {
+        toast.success("Blog Updated Successfully.", { theme: "dark" });
         setLoading(false);
-        setTitle("");
-        setDescription("");
-        setContent("");
-        setImage(null);
-        setImagePreview(null);
+         navigate(`/blog/${id}`); 
       } else {
-        console.log("Failed to post blog", response);
+        console.log("Failed to update blog", response);
+        toast.error("Blog Updated Failed", { theme: "dark" });
       }
     } catch (error) {
-      console.error("Error posting blog:", error);
+      console.error("Error updating blog:", error);
+      toast.error("Error Updating blogs. Please try again later.", { theme: "dark" });
     } finally {
       setLoading(false);
     }
@@ -109,7 +128,9 @@ const BlogForm = () => {
 
   return (
     <>
-      <div className="container-fluid  g-0">
+     <ToastContainer/>
+      <div className="container-fluid g-0 bg-dark design py-4">
+        <div className="container vh-100 py-lg-5">
         <div className="card bg-black p-3">
           <form onSubmit={handleSubmit}>
             <input
@@ -155,16 +176,16 @@ const BlogForm = () => {
                   </label>
                 </div>
                 <div>
-                {imagePreview && (
-                  <div className="mb-3">
-                    <img
-                      src={imagePreview}
-                      alt="Selected"
-                      style={{ maxHeight: "300px" }}
-                      className="img-fluid"
-                    />
-                  </div>
-                )}
+                  {imagePreview && (
+                    <div className="mb-3">
+                      <img
+                        src={imagePreview}
+                        alt="Selected"
+                        style={{ maxHeight: "300px" }}
+                        className="img-fluid"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="col-4 text-end">
@@ -173,15 +194,16 @@ const BlogForm = () => {
                   className="btn btn-dark text-warning text-capitalize"
                   disabled={loading}
                 >
-                  {loading ? "Posting..." : "Post Blog"}
+                  {loading ? "Updating..." : "Update Blog"}
                 </button>
               </div>
             </div>
           </form>
+        </div>
         </div>
       </div>
     </>
   );
 };
 
-export default BlogForm;
+export default UpdateBlog;

@@ -1,23 +1,28 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import config from "../../config/config";
+import { useParams } from "react-router-dom";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const BlogList = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(true);
+const Blog = () => {
+  const { id } = useParams(); 
+  const [blog, setBlog] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchBlogs = async () => {
+      setLoading(true);
       try {
         const response = await axios.post(
-          `${config.BASE_URL}/article/getArticleData`
+          `${config.BASE_URL}/article/getbyid/${id}`
         );
-        setBlogs(response.data);
+        setBlog(response.data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching blogs:", error);
-        setError("Error fetching blogs. Please try again later.");
+        toast.error("Error fetching blogs. Please try again later.", { theme: "dark" }); 
         setLoading(false);
       }
     };
@@ -26,47 +31,36 @@ const BlogList = () => {
   }, []);
 
   if (loading) {
-    return (
-      <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
-        <h1>
-          <i className="fi fi-sr-loading"></i>
-        </h1>
-      </div>
-    );
+    return ( toast.loading( "loading ...", { theme: "dark" } ) );
   }
 
   if (error) {
-    return (
-      <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
-        <h1>
-          {error}
-        </h1>
-      </div>
-    );
+    return ( toast.error( error ) );
   }
 
-  // Check if blogs is not an array
-  if (!Array.isArray(blogs)) {
-    return <p>No blogs available</p>;
-  }
 
   return (
-   
-      <>
-       { blogs.map((blog) => (
-          <div key={blog._id} className="card bg-dark text-light my-2 shadow-6 p-3 ">
-            <h4 className="text-warning">{blog.title}</h4>
+
+    
+   <>
+   <ToastContainer/>
+   <div className="container-fluid design py-4" style={{minHeight: '100vh' , backgroundColor: '#1e1e1e'}}>
+    <div className="g-0 ">
+     <div className="card bg-dark text-light  shadow-6 p-3">
+     <h4 className="text-warning">{blog.title}</h4>
+      <div className="d-flex justify-content-center align-items-center" >
             <img
               src={blog.image}
               alt={blog.title}
               className="img-fluid cardImageHeight mb-3"
             />
+      </div>
             <p>{blog.description}</p>
             <div dangerouslySetInnerHTML={{ __html: blog.content }} />
             <hr />
             <div className="row">
               <div className="col-6 text-start">
-              <small>Posted by: {blog.idAuthor ? blog.name : "Anonymous" }</small>
+              <small>Posted by: {blog.idAuthor ? blog.idAuthor.name : "Anonymous" }</small>
               </div>
               <div className="col-6 text-end">
                 <small>
@@ -82,10 +76,10 @@ const BlogList = () => {
               </div>
             </div>
           </div>
-        )) }
-      </>
-     
-  );
-};
+          </div>
+          </div>
+   </>
+  )
+}
 
-export default BlogList;
+export default Blog

@@ -319,8 +319,8 @@ export const Navbar = () => {
                           <Link to="/profile">
                             <img
                               src={user.image}
-                              className="rounded-circle"
-                              height="25"
+                              className="rounded-circle border"
+                              height="28"
                               alt="Black and White Portrait of a Man"
                               loading="lazy"
                             />
