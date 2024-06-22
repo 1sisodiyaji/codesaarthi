@@ -183,11 +183,11 @@ const Profile = () => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://codesaarthi.com/Profile" />
         <meta name="description" content="Profile page of users in codesaarthi , Defining the profile page of users." />
-        <title>Profile | codesaarthi</title>
-        <meta property="og:title" content="Profile | codesaarthi" />
+        <title>{user.name} | codesaarthi</title>
+        <meta property="og:title" content= {`${user.name} | codesaarthi`} />
         <meta property="og:description" content="Profile page of users in codesaarthi , Defining the profile page of users." />
-        <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
-        <meta property="og:url" content="https://codesaarthi.com/Profile" />
+        <meta property="og:image" content={user.image} />
+        <meta property="og:url" content={`https://codesaarthi.com/Profile/${user._id}`} />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>

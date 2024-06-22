@@ -63,10 +63,13 @@ const Content = () => {
     }
   }, [selectedTopic, course]);
 
+
   if (!course) {
-    return toast.loading("loading ...", { theme: "dark" });
-  }else{
-    toast.dismiss();
+    return (
+      <div className=" vh-100 d-flex justify-content-center align-items-center bg-dark">
+        <img src="https://codesaarthi.com/img/loader.svg" alt="Loading" />;
+      </div>
+    );
   }
 
   return (
@@ -126,15 +129,15 @@ const Content = () => {
             )}
             <div className="col-lg-9 col-12">
               {course.topics && course.topics[selectedTopic] && (
-                <div className='p-lg-3 p-0'>
+                <div className='p-lg-3 p-2'>
                   <h3 className='text-capitalize text-warning'>{course.topics[selectedTopic].title}</h3>
                   {course.topics[selectedTopic].image && (
-                    <div className="my-3 p-2">
+                    <div className="my-3 p-2 d-flex align-items-center justify-content-center">
                       <img src={course.topics[selectedTopic].image} alt={course.topics[selectedTopic].title} style={{ maxHeight: "300px" }} className="img-fluid" />
                     </div>
                   )}
                   <div className='text-light p-2' dangerouslySetInnerHTML={{ __html: course.topics[selectedTopic].details }}></div>
-                  <div className="row g-0 pb-4">
+                  <div className="row g-0 pb-4 p-2">
                     <div className="col-6 text-start">
                       <div className="btn border text-capitalize text-warning" onClick={goToPreviousTopic}><i className="fi fi-rr-angle-small-left"></i> previous</div>
                     </div>

@@ -122,7 +122,11 @@ const NewsApi = () => {
   };
 
   if (loading) {
-    return (toast.loading('loading...' , {theme: 'dark'}));
+    return (
+      <div className=" vh-100 d-flex justify-content-center align-items-center">
+        <img src="img/loader.svg" alt="Loading" />;
+      </div>
+    );
   }
 
   if (error) {
@@ -206,7 +210,9 @@ const ImageWithSkeleton = ({ src, alt }) => {
                    src={article.urlToImage} className='img-fluid' alt={article.title}  title= {article.title} loading='lazy'
                />
                 ) : (
-                  <img src="https://codesaarthi.com/img/logo1.jpg" className='img-fluid' alt="" />
+                  <ImageWithSkeleton
+                  src= "https://codesaarthi.com/img/logo1.jpg" className='img-fluid' alt={article.title}  title= {article.title} loading='lazy'
+              />
                 )}
               </div>
 

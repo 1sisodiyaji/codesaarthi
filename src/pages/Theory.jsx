@@ -13,7 +13,6 @@ const Theory = () => {
     const fetchCourses = async () => {
       try {
         const response = await axios.post(`${config.BASE_URL}/Admin/courses`);
-        console.log(response);
         setCourses(response.data);
       } catch (error) {
         console.error('Error fetching courses:', error);
@@ -24,9 +23,11 @@ const Theory = () => {
   }, []);
 
   if (!courses) {
-    return toast.loading("loading ...", { theme: "dark" });
-  }else{
-    toast.dismiss();
+    return (
+      <div className=" vh-100 d-flex justify-content-center align-items-center">
+        <img src="img/loader.svg" alt="Loading" />;
+      </div>
+    );
   }
   return (
     <>

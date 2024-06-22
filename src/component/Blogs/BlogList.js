@@ -29,8 +29,10 @@ const BlogList = () => {
 
   if (loading) {
     return (
-     toast.loading('loading...',{theme: 'dark'})
-    )
+      <div className=" vh-100 d-flex justify-content-center align-items-center">
+        <img src="img/loader.svg" alt="Loading" />;
+      </div>
+    );
   }
 
   if (error) {
@@ -49,7 +51,7 @@ const BlogList = () => {
       <>
       <ToastContainer/>
        { blogs.map((blog) => (
-          <div key={blog._id} className="card bg-dark text-light my-2 shadow-6 p-3 ">
+          <div key={blog._id} className="card bg-dark text-light py-3 shadow-6 p-3 ">
             <h4 className="text-warning">{blog.title}</h4>
             <img
               src={blog.image}
