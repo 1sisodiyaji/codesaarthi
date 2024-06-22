@@ -280,7 +280,7 @@ const CreateCourse = () => {
       </>
       :
       <>
-      <div className="vh-100 bh-dark text-danger  d-flex justify-content-center align-items-center">
+      <div className="vh-100 bg-dark text-danger  d-flex justify-content-center align-items-center">
       <h6>Access Blocked by admin</h6>
     </div>
       </>
