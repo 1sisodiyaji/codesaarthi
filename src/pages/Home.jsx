@@ -63,7 +63,7 @@ const Home = () => {
 
       <div
         className="container-fluid design w-100"
-        style={{ backgroundColor: "#1E1E1E" }}
+        style={{ backgroundColor: "#1E1E1E" , minHeight : '100vh' }}
       >
         {!token ? (
           <>

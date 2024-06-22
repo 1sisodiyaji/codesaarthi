@@ -92,6 +92,7 @@ const Profile = () => {
           setUser(response.data.user)
           localStorage.setItem("userID", response.data.user._id);
         } else {
+
           toast.error("Failed to fetch user information!", { theme: "dark" });
         }
       } catch (error) {
@@ -129,15 +130,7 @@ const Profile = () => {
 
   if (error) {
     return toast.error("error ..." + error, { theme: "dark" });
-  } 
-  if (!user) {
-    return (
-      <div className='vh-100 text-warning d-flex justify-content-center align-items-center bg-dark'>
-        <h6>No User Found , Please  <Link to="/login" > Login </Link></h6>
-      </div>
-    );
   }
-
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -183,160 +176,164 @@ const Profile = () => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://codesaarthi.com/Profile" />
         <meta name="description" content="Profile page of users in codesaarthi , Defining the profile page of users." />
-        <title>{user.name} | codesaarthi</title>
-        <meta property="og:title" content= {`${user.name} | codesaarthi`} />
+        <title>Profile | codesaarthi</title>
+        <meta property="og:title" content= "Profile | codesaarthi " />
         <meta property="og:description" content="Profile page of users in codesaarthi , Defining the profile page of users." />
-        <meta property="og:image" content={user.image} />
-        <meta property="og:url" content={`https://codesaarthi.com/Profile/${user._id}`} />
+        <meta property="og:image" content="{user.image}" />
+        <meta property="og:url" content={`https://codesaarthi.com/Profile/{user._id}`} />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
 
       <div className='bg-dark py-lg-5 design py-3  bg-dark' style={{ minHeight: '100vh' }}>
-        <div className='text-end pe-4 d-lg-block d-md-block d-none'><button className='btn border border-warning text-warning text-capitalize' onClick={logout}>Logout</button></div>
-
-        {editing ?
+        {user ?
           <>
-            <h3 className='text-warning text-center'> Edit Profile </h3>
+            <div className='text-end pe-4 d-lg-block d-md-block d-none'><button className='btn border border-warning text-warning text-capitalize' onClick={logout}>Logout</button></div>
 
-            <div className="card bg-black p-lg-4 my-3 p-3 m-1">
-              <form onSubmit={handleSubmit}>
-                <div className="row g-0 py-lg-3">
-                  <div className="col-lg-3 col-12 d-flex laign-items-cenetr justify-content-center">
-                    <input type="file" accept="image/*" onChange={handleImageChange} style={{ display: "none" }} id="profileImageInput" />
-                    <label htmlFor="profileImageInput">
-                      <img
-                        src={user.image}
-                        alt={formData.name}
-                        className="img-fluid border border-dark"
-                        width={250}
-                        height={250}
-                        style={{ borderRadius: "50%", cursor: "pointer" }}
-                      />
-                    </label>
-                  </div>
-                  <div className="col-lg-9 col-12 ps-lg-3 my-3">
-                    {["name", "institute", "location", "dateOfBirth", "contact", "socialMediaLinks"].map((field) => (
-                      <div className="row" key={field}>
-                        <div className="col-3">
-                          <p className="text-light">{field.charAt(0).toUpperCase() + field.slice(1)}:</p>
-                        </div>
-                        <div className="col-9">
-                          <input
-                            type="text"
-                            className="w-100 bg-dark border-1 text-light ps-2"
-                            name={field}
-                            value={formData[field]}
-                            onChange={handleInputChange}
-                            placeholder={user[field]}
+            {editing ?
+              <>
+                <h3 className='text-warning text-center'> Edit Profile </h3>
+
+                <div className="card bg-black p-lg-4 my-3 p-3 m-1">
+                  <form onSubmit={handleSubmit}>
+                    <div className="row g-0 py-lg-3">
+                      <div className="col-lg-3 col-12 d-flex laign-items-cenetr justify-content-center">
+                        <input type="file" accept="image/*" onChange={handleImageChange} style={{ display: "none" }} id="profileImageInput" />
+                        <label htmlFor="profileImageInput">
+                          <img
+                            src={user.image}
+                            alt={formData.name}
+                            className="img-fluid border border-dark"
+                            width={250}
+                            height={250}
+                            value={imagePreview}
+                            style={{ borderRadius: "50%", cursor: "pointer" }}
                           />
+                        </label>
+                      </div>
+                      <div className="col-lg-9 col-12 ps-lg-3 my-3">
+                        {["name", "institute", "location", "dateOfBirth", "contact", "socialMediaLinks"].map((field) => (
+                          <div className="row" key={field}>
+                            <div className="col-3">
+                              <p className="text-light">{field.charAt(0).toUpperCase() + field.slice(1)}:</p>
+                            </div>
+                            <div className="col-9">
+                              <input
+                                type="text"
+                                className="w-100 bg-dark border-1 text-light ps-2"
+                                name={field}
+                                value={formData[field]}
+                                onChange={handleInputChange}
+                                placeholder={user[field]}
+                              />
+                            </div>
+                          </div>
+                        ))}
+                        <div className="row">
+
+                          <div className="col-6 text-start">
+                            <button type="submit" className="btn btn-danger text-light text-capitalize" disabled={loading} onClick={() => deleteUser(user._id)}>
+                              {loading ? "Deleting..." : <>Delete <i className="fi fi-ss-trash-xmark ps-2"></i></>}
+                            </button>
+                          </div>
+
+                          <div className="col-6 text-end">
+                            <button type="submit" className="btn btn-dark text-warning text-capitalize" disabled={loading}>
+                              {loading ? "Updating..." : <>Update <i className="fi fi-sr-pen-clip ps-2"></i></>}
+                            </button>
+                          </div>
+
+
+
                         </div>
                       </div>
-                    ))}
-                    <div className="row">
+                    </div>
+                  </form>
+                </div>
+              </>
+              :
+              <>
+                <h3 className='text-warning text-center'>Profile </h3>
 
-                      <div className="col-6 text-start">
-                        <button type="submit" className="btn btn-danger text-light text-capitalize" disabled={loading} onClick={() => deleteUser(user._id)}>
-                          {loading ? "Deleting..." : <>Delete <i className="fi fi-ss-trash-xmark ps-2"></i></>}
-                        </button>
-                      </div>
+                <div className="card bg-black p-lg-4  p-2 m-lg-3 m-0">
+                  <div className="row d-flex justify-content-end g-0">
+                    <div className="col-6"></div>
+                    <div className="col-6 text-end">  <div className="btn border border-dark  text-capitalize text-warning" onClick={editingMode}> Edit <i className="fi fi-sr-user-pen text-warning fa-2x ps-2"></i></div> </div>
 
-                      <div className="col-6 text-end">
-                        <button type="submit" className="btn btn-dark text-warning text-capitalize" disabled={loading}>
-                          {loading ? "Updating..." : <>Update <i className="fi fi-sr-pen-clip ps-2"></i></>}
-                        </button>
-                      </div>
+                  </div>
 
-
+                  <div className="row g-0 ">
+                    <div className="col-3">
+                      <img src={user.image} alt={user.name} title={user.name} className='img-fluid border border-dark p-1' width={250} height={250} style={{ borderRadius: '50%' }} />
+                    </div>
+                    <div className="col-9 ps-3">
+                      <small className='text-light'>Name : {user.name}</small> <br />
+                      <small className='text-light'>Email : {user.email}</small> <br />
+                      <small className='text-light'>Username : {user.username}</small> <br />
+                      <small className='text-light'>D O B : {user.dateOfBirth}</small> <br />
+                      <small className='text-light'>Institue : {user.institute}</small> <br />
+                      <small className='text-light'>Location : {user.location}</small> <br />
+                      <small className='text-light'>Contact : {user.contact}</small> <br />
+                      <small className='text-light'>Websites : {user.socialMediaLinks}</small>
 
                     </div>
                   </div>
                 </div>
-              </form>
-            </div>
+              </>
+            }
+
+            {blogs ?
+              <>
+                {/* //blogs posted by user  */}
+                {blogs.map((blog) => (
+                  <div key={blog._id} className="card bg-dark text-light my-2 shadow-6 p-3 ">
+                    <Link to={`/blog/${blog._id}`} > <h4 className="text-warning">{blog.title}</h4> </Link>
+                    <figure> <img
+                      src={blog.image}
+                      alt={blog.title}
+                      title={blog.title}
+                      loading='lazy'
+                      className="img-fluid   mb-3"
+                    />
+                      <figcaption>{blog.description}</figcaption>
+                    </figure>
+                    <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+                    <hr />
+                    <div className="row">
+                      <div className="col-6 text-start">
+                        <small>Posted by: {blog.idAuthor ? blog.name : "Anonymous"}</small>
+                      </div>
+                      <div className="col-6 text-end">
+                        <small>
+                          {new Date(blog.date).toLocaleString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true,
+                          })}
+                        </small>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-6 text-start"><Link to={`/edit-blog/${blog._id}`} className='text-light' > <button className="btn btn-warning text-capitalize ">  Update <i className="fi fi-sr-pen-clip ps-2"></i>  </button> </Link> </div>
+                      <div className="col-6 text-end"> <div className="btn btn-danger text-capitalize" onClick={() => deleteArticle(blog._id)}>Delete <i className="fi fi-ss-trash-xmark ps-2"></i> </div> </div>
+                    </div>
+                  </div>
+                ))}
+              </>
+              :
+              <>
+                <p className='text-light'>No blogs posted yet</p>
+              </>
+            }
           </>
           :
           <>
-            <h3 className='text-warning text-center'>Profile </h3>
-
-            <div className="card bg-black p-lg-4  p-2 m-lg-3 m-0">
-              <div className="row d-flex justify-content-end g-0">
-                <div className="col-6"></div>
-                <div className="col-6 text-end">  <div className="btn border border-dark  text-capitalize text-warning" onClick={editingMode}> Edit <i className="fi fi-sr-user-pen text-warning fa-2x ps-2"></i></div> </div>
-
-              </div>
-
-              <div className="row g-0 ">
-                <div className="col-3">
-                  <img src={user.image} alt={user.name} title = {user.name} className='img-fluid border border-dark p-1' width={250} height={250} style={{ borderRadius: '50%' }} />
-                </div>
-                <div className="col-9 ps-3">
-                  <small className='text-light'>Name : {user.name}</small> <br />
-                  <small className='text-light'>Email : {user.email}</small> <br />
-                  <small className='text-light'>Username : {user.username}</small> <br />
-                  <small className='text-light'>D O B : {user.dateOfBirth}</small> <br />
-                  <small className='text-light'>Institue : {user.institute}</small> <br />
-                  <small className='text-light'>Location : {user.location}</small> <br />
-                  <small className='text-light'>Contact : {user.contact}</small> <br />
-                  <small className='text-light'>Websites : {user.socialMediaLinks}</small>
-
-                </div>
-              </div>
-            </div>
+            <h6>No User Found , Please  <Link to="/login" > Login </Link></h6>
           </>
         }
-
-
-        {blogs ?
-          <>
-            {/* //blogs posted by user  */}
-            {blogs.map((blog) => (
-              <div key={blog._id} className="card bg-dark text-light my-2 shadow-6 p-3 ">
-                <Link to={`/blog/${blog._id}`} > <h4 className="text-warning">{blog.title}</h4> </Link>
-                <figure> <img
-                  src={blog.image}
-                  alt={blog.title}
-                  title={blog.title}
-                  loading='lazy'
-                  className="img-fluid   mb-3"
-                />
-                <figcaption>{blog.description}</figcaption>
-            </figure>
-                <div dangerouslySetInnerHTML={{ __html: blog.content }} />
-                <hr />
-                <div className="row">
-                  <div className="col-6 text-start">
-                    <small>Posted by: {blog.idAuthor ? blog.name : "Anonymous"}</small>
-                  </div>
-                  <div className="col-6 text-end">
-                    <small>
-                      {new Date(blog.date).toLocaleString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                        hour: "numeric",
-                        minute: "numeric",
-                        hour12: true,
-                      })}
-                    </small>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-6 text-start"><Link to={`/edit-blog/${blog._id}`} className='text-light' > <button className="btn btn-warning text-capitalize ">  Update <i className="fi fi-sr-pen-clip ps-2"></i>  </button> </Link> </div>
-                  <div className="col-6 text-end"> <div className="btn btn-danger text-capitalize" onClick={() => deleteArticle(blog._id)}>Delete <i className="fi fi-ss-trash-xmark ps-2"></i> </div> </div>
-                </div>
-              </div>
-            ))}
-          </>
-          :
-          <>
-            <p className='text-light'>No blogs posted yet</p>
-          </>
-        }
-
-
-
-
 
       </div>
 

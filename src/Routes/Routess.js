@@ -56,7 +56,6 @@ import { Navbar2 } from "../component/Navbar2";
 import NewsApi from "../component/NewsApi"; 
 import Blogs from "../component/Blogs";
 import Jobs from "../component/Jobs";
-import JobApplicationForm from "../Admin/JobApplicationForm";
 import TextForm from "../component/Textarea";
 import UpdateBlogs from "../component/Blogs/UpdateBlog";
 import Blog from "../component/Blogs/Blog";
@@ -150,8 +149,7 @@ const Routess = () => {
           <Route path="/*" element={<ErrorPage />} />
 
           {/* Admin Section  */}
-          <Route path="/Admin" element={<Admin />} /> 
-          <Route path="/Admin/JobApply" element={<JobApplicationForm />} />
+          <Route path="/Admin" element={<Admin />} />  
           <Route path="/Admin/create-course" element={<CreateCourse />} />
           <Route path="/Admin/update/:title" element={<UpdateCourse />} />
           <Route path="/Admin/text-editor" element={<TextForm />} />

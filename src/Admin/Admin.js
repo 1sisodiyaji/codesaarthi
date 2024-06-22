@@ -42,6 +42,13 @@ const Admin = () => {
     };
 
     fetchUserData();
+
+
+    if(!admin){
+      // window.location.href = "/login";
+      console.log("no admin specified");
+    }
+
   }, []);
 
   const fetchAndSaveArticles = async () => {
@@ -103,6 +110,8 @@ const Admin = () => {
       // Handle error: display an error message or log the error
     }
   };
+
+
 
   return (
     <>
