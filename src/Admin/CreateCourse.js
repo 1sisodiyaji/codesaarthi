@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef , useEffect} from "react";
 import axios from "axios";
 import config from "../config/config";
 import JoditEditor from "jodit-react";
@@ -13,6 +13,41 @@ const CreateCourse = () => {
   const editor = useRef(null);
   const [content, setContent] = useState("");
   const navigate = useNavigate();
+  const [admin, setAdmin] = useState(false);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const token = localStorage.getItem("token");
+      try {
+        const response = await axios.post(
+          `${config.BASE_URL}/api/user`,
+          {}, // empty object as the data payload
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        if (response.data.status === "success") {
+          if (response.data.user.email === "637golusingh@gmail.com") {
+            setAdmin(true);
+          }
+        } else {
+          toast.error("Failed to fetch user information!", { theme: "dark" });
+        }
+      } catch (error) {
+        toast.error("Error fetching user information !", { theme: "dark" });
+        console.error("Error fetching user information:", error);
+      } finally {
+      }
+    };
+
+    fetchUserData();
+ 
+  }, []);
+
+
   const [course, setCourse] = useState({
     title: "",
     description: "",
@@ -121,7 +156,9 @@ const CreateCourse = () => {
   return (
     <>
       <ToastContainer />
-      <div className="container-fluid bg-dark">
+      {admin ? 
+      <>
+       <div className="container-fluid bg-dark">
         <div className="container">
           <h1 className="text-warning py-2">Create a New Course</h1>
           <form onSubmit={handleSubmit}>
@@ -240,6 +277,15 @@ const CreateCourse = () => {
           </form>
         </div>
       </div>
+      </>
+      :
+      <>
+      <div className="vh-100 bh-dark text-danger  d-flex justify-content-center align-items-center">
+      <h6>Access Blocked by admin</h6>
+    </div>
+      </>
+      }
+     
     </>
   );
 };

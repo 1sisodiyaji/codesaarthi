@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import config from "../config/config";
 import JoditEditor from "jodit-react";
+import "react-toastify/dist/ReactToastify.css"; 
+import { ToastContainer , toast } from "react-toastify";
 
 const UpdateCourse = () => {
   const { title } = useParams();
@@ -15,6 +17,42 @@ const UpdateCourse = () => {
   });
   const editor = useRef(null);
   const navigate = useNavigate();
+  const [admin, setAdmin] = useState(false);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const token = localStorage.getItem("token");
+      try {
+        const response = await axios.post(
+          `${config.BASE_URL}/api/user`,
+          {}, // empty object as the data payload
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        if (response.data.status === "success") {
+          if (response.data.user.email === "637golusingh@gmail.com") {
+            setAdmin(true);
+          }
+        } else {
+          toast.error("Failed to fetch user information!", { theme: "dark" });
+        }
+      } catch (error) {
+        toast.error("Error fetching user information !", { theme: "dark" });
+        console.error("Error fetching user information:", error);
+      } finally {
+      }
+    };
+
+    fetchUserData();
+ 
+  }, []);
+
+
+
 
   // Fetch course data by title on component mount
   useEffect(() => {
@@ -111,7 +149,10 @@ const UpdateCourse = () => {
 
   return (
     <>
-      <div className="container-fluid bg-dark">
+    <ToastContainer/>
+    {admin ?
+    <>
+  <div className="container-fluid bg-dark">
         <div className="container">
           <h1 className="text-warning py-2">Update Course</h1>
           <form onSubmit={handleSubmit}>
@@ -230,6 +271,15 @@ const UpdateCourse = () => {
           </form>
         </div>
       </div>
+    </>
+    :
+    <>
+    <div className="vh-100 bh-dark text-danger  d-flex justify-content-center align-items-center">
+      <h6>Access Blocked by admin</h6>
+    </div>
+    </>
+    }
+    
     </>
   );
 };

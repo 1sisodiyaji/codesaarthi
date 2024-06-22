@@ -25,7 +25,7 @@ const Theory = () => {
   if (!courses) {
     return (
       <div className=" vh-100 d-flex justify-content-center align-items-center">
-        <img src="img/loader.svg" alt="Loading" />;
+        <img src="https://codesaarthi.com/img/loader.svg" alt="Loading" />;
       </div>
     );
   }
@@ -52,11 +52,11 @@ const Theory = () => {
             <>
               {courses.map(course => (
                 <div key={course._id} className="col-lg-4 col-12 my-2">
-                    <div className="card rounded-8  p-4 bg-dark">
+                    <div className="card rounded-8  p-lg-4 p-4 bg-dark">
                       <div className=" text-center"> <img src={course.thumbnailImage} className="img-fluid courseImage text-light" loading='lazy' title={course.title}  alt={course.title}/></div>
-                      <div className="text-end text-success text-decoration-underline"> Free Course</div>
-                      <h4 className="card-title text-light text-center my-2">{course.title}</h4>
-                      <small className='text-muted text-capitalize'>{course.description} </small>
+                      <div className="text-end text-success text-decoration-underline"><small>Free Course </small> </div>
+                      <h5 className="card-title text-light text-center my-2">{course.title}</h5>
+                      <small className='text-muted text-capitalize my-1'>{course.description} </small>
                       <Link to={`/theory/${course.title}`}>
                         <div className="btn text-warning text-capitalize rounded-8 tilt-effect" style={{ backgroundColor: '#262626' }}>Start Reading</div>
                       </Link>

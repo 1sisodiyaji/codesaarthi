@@ -42,13 +42,7 @@ const Admin = () => {
     };
 
     fetchUserData();
-
-
-    if(!admin){
-      // window.location.href = "/login";
-      console.log("no admin specified");
-    }
-
+ 
   }, []);
 
   const fetchAndSaveArticles = async () => {
@@ -151,11 +145,16 @@ const Admin = () => {
               <hr />
               {message && <p className="text-success ms-4">{message}</p>}
             </div>
-            <Link to="/Admin/create-course">
-              <div className="btn btn-dark border border-warning text-warning w-100 my-2">
-                Create Your course
+            <div className="row">
+              <div className="col-lg-4 col-12">
+              <Link to="/Admin/create-course">
+              <div className="card bg-dark border border-warning text-warning my-2 p-3 text-center">
+              <i class="fi fi-sr-add"></i>  Create Your course 
               </div>
             </Link>
+              </div>
+            </div>
+           
             <div className="container">
               <div className="row g-6">
                 <>
@@ -214,9 +213,9 @@ const Admin = () => {
         </>
       ) : (
         <>
-        <div className="design vh-100 bg-dark text-center">
-        <p className="text-danger pt-5">Admin Access only</p>
-         </div>
+         <div className="vh-100 bh-dark text-danger  d-flex justify-content-center align-items-center">
+      <h6>Access Blocked by admin</h6>
+    </div>
          
          </>
 
