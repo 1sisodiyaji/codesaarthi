@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import { Helmet } from "react-helmet";
+import { ToastContainer, Bounce, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Jobs = () => {
     const [jobs, setJobs] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     
     useEffect(() => {
         const fetchJobs = async () => {
+            setLoading(true); 
             try {
                 
                  const response = await fetch('https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=f0f3f511&app_key=4441b9334ebf9a73b9e916e2262ea3d2&results_per_page=20&what=javascript&content-type=application/json');
@@ -23,9 +26,9 @@ const Jobs = () => {
 
                 // only for 1 year experience 
                 // const response = await fetch('https://api.adzuna.com/v1/api/jobs/in/search/1?app_id=f0f3f511&app_key=4441b9334ebf9a73b9e916e2262ea3d2&where=Bangalore&what=MERN%20stack%20developer%201%20year%20experience&distance=10&sort_by=relevance');
-
-
+ 
                 if (!response.ok) {
+                    setLoading(false);
                     throw new Error('Failed to fetch job listings');
                 }
                 const data = await response.json();
@@ -50,9 +53,31 @@ const Jobs = () => {
         return match ? match[0] : 'Not specified';
     };
 
+    if(loading){
+        return ( toast.loading('loading...', {theme:'dark'}))
+    }
+
     return (
         <>
-            <div className='design  g-0 py-lg-5 py-2 container-fluid' style={{backgroundColor:'#1E1E1E'}}>
+<ToastContainer/>
+<Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="CodeSaarthi" content="Codesaarthi" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://codesaarthi.com/jobs`} />
+        <meta name="description" content="Here we go we get the jobs listing for freshers from the adunza job api so use it to short and fast apply ." />
+        <title>Jobs | Codesaarthi</title>
+        <meta property="og:title" content="Blogs | Codesaarthi" />
+        <meta property="og:description" content="Here we go we get the jobs listing for freshers from the adunza job api so use it to short and fast apply ." />
+        <meta property="og:image" content="https://codesaarthi.com/img/logo.png " />
+        <meta property="og:url" content={`https://codesaarthi.com/jobs`} />
+        <meta property="og:type" content="Education-Website" />
+        <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+      </Helmet>
+
+
+
+            <div className='design  g-0 py-lg-5 py-2 container-fluid' style={{backgroundColor:'#1E1E1E' , minHeight: '100vh'}}>
                
                 {loading ? (
                      <div className='vh-100 text-warning d-flex justify-content-center align-items-center'>

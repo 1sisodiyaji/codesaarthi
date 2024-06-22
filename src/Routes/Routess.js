@@ -16,8 +16,7 @@ import { Navbar } from "../component/Navbar";
 import { Footer } from "../component/Footer";
 import Problems from "../pages/Problems";
 import Roadmap from "../pages/Roadmap";
-import Dsa from "../pages/Roadmap/Dsa";
-import Array from "../pages/Theory/Array/Array";
+import Dsa from "../pages/Roadmap/Dsa"; 
 import WebDevelopment from "../pages/Projects/CloneProjects/WebDevelopment";
 import AmazonClone from "../pages/Projects/CloneProjects/Amazon-clone";
 import DiscordProject from "../pages/Projects/CloneProjects/Discord";
@@ -48,26 +47,23 @@ import ChairPage from "../pages/Projects/HtmlCss/ChairPage";
 import HireMe from "../pages/Projects/HtmlCss/HireMe";
 import ImageGallery from "../pages/Projects/HtmlCss/ImageGallery";
 import JobApplication from "../pages/Projects/HtmlCss/JobApplication";
-import ProductCard from "../pages/Projects/HtmlCss/ProductCard";
-import React_Content from "../pages/Theory/React/React_Content";
-import BasicDbms from "../pages/Theory/Dbms/Basic_Dbms";
-import ReactSeo from "../pages/Theory/React/ReactSeo";
-import OsContent from "../pages/Theory/Os/OsContent";
-import Cn_Content from "../pages/Theory/CN/Cn_Content";
-import Profile from "../pages/Profile";
-import Java_Content from "../pages/Theory/JavaLeaning/Java_Content";
+import ProductCard from "../pages/Projects/HtmlCss/ProductCard"; 
+import Profile from "../pages/Profile"; 
 import TableCard from "../pages/Projects/React/Table";
 import Weather from "../pages/Projects/React/Weather";
 import UserList from "../pages/Projects/React/userList";
 import { Navbar2 } from "../component/Navbar2";
-import NewsApi from "../component/NewsApi";
-import News from "../Admin/News";
+import NewsApi from "../component/NewsApi"; 
 import Blogs from "../component/Blogs";
 import Jobs from "../component/Jobs";
 import JobApplicationForm from "../Admin/JobApplicationForm";
 import TextForm from "../component/Textarea";
 import UpdateBlogs from "../component/Blogs/UpdateBlog";
 import Blog from "../component/Blogs/Blog";
+import CreateCourse from "../Admin/CreateCourse";
+import Content from "../component/Content" ;
+import UpdateCourse from "../Admin/UpdateCourse";
+import Admin from "../Admin/Admin";
 
 
 const Routess = () => {
@@ -103,19 +99,10 @@ const Routess = () => {
           <Route path="/terms_conditions" element={<TermsCondition />} />
           <Route path="/cookies" element={<Cookie />} />
           <Route path="/theory" element={<Theory />} />
+          <Route path="/theory/:title" element={<Content />} />
           <Route path="/roadMap" element={<Roadmap />} />
           <Route path="/profile" element={<Profile />} />
-          
-          
-          <Route path="/theory/array" element={<Array />} />
-          <Route path="/theory/basic-Dbms" element={<BasicDbms/>} />
-          <Route path="/theory/React-Content" element={<React_Content/>} />
-          <Route path="/theory/React-Seo" element={<ReactSeo/>} />
-          <Route path="/theory/Os-Content" element={<OsContent />} />
-          <Route path="/theory/Cn-Content" element={<Cn_Content/>} />
-          <Route path="/theory/java-learning" element={<Java_Content/>} />
-
-
+            
           <Route path="/Projects/web-development" element={<WebDevelopment />} />
           <Route path="/Projects/Amazon-clone" element={<AmazonClone />} />
           <Route path="/Projects/Discord" element={<DiscordProject />} />
@@ -163,8 +150,10 @@ const Routess = () => {
           <Route path="/*" element={<ErrorPage />} />
 
           {/* Admin Section  */}
-          <Route path="/Admin/SaveNews" element={<News />} />
+          <Route path="/Admin" element={<Admin />} /> 
           <Route path="/Admin/JobApply" element={<JobApplicationForm />} />
+          <Route path="/Admin/create-course" element={<CreateCourse />} />
+          <Route path="/Admin/update/:title" element={<UpdateCourse />} />
           <Route path="/Admin/text-editor" element={<TextForm />} />
         </Routes>
 

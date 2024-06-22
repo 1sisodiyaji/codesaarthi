@@ -5,11 +5,12 @@ import { FacebookShareButton, WhatsappShareButton, FacebookIcon, WhatsappIcon } 
 import { ToastContainer, Bounce, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Config from '../config/config';
+import { Helmet } from "react-helmet";
 
 const NewsApi = () => {
   const [data, setData] = useState([]); // All articles
   const [currentBatch, setCurrentBatch] = useState([]); // Articles to display
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [visibleContent, setVisibleContent] = useState({});
   const [showShareOptions, setShowShareOptions] = useState({});
@@ -18,6 +19,7 @@ const NewsApi = () => {
 
   useEffect(() => {
     const fetchArticles = async () => {
+      setLoading(true);
       try { 
         const response = await axios.post(`${Config.BASE_URL}/article/getNews`);
  
@@ -25,12 +27,15 @@ const NewsApi = () => {
         if (Array.isArray(News)) {
           setData(News);
           loadNextBatch(News, 0);
+          setLoading(false);
         } else {
           throw new Error('Fetched data is not an array');
+          setLoading(false);
         }
       } catch (error) {
         console.error('Error setting articles:', error);
         setError(error);
+        setLoading(false);
       } finally {
         setLoading(false);
       }
@@ -117,20 +122,55 @@ const NewsApi = () => {
   };
 
   if (loading) {
-    return (
-      <div className='vh-100 text-warning d-flex justify-content-center align-items-center'>
-        <h1><i className="fi fi-sr-loading"></i></h1>
-      </div>
-    );
+    return (toast.loading('loading...' , {theme: 'dark'}));
   }
 
   if (error) {
     return <div>{error.message}</div>;
   }
 
+  const SkeletonLoader = () => {
+    return <div className="skeleton-loader"></div>;
+};
+
+const ImageWithSkeleton = ({ src, alt }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+      setIsLoaded(true);
+  };
+
+  return (
+      <div className="image-container">
+          {!isLoaded && <SkeletonLoader />}
+          <img
+              src={src}
+              alt={alt}
+              onLoad={handleImageLoad}
+              style={{ display: isLoaded ? 'block' : 'none' }}
+          />
+      </div>
+  );
+};
+
+
   return (
     <>
       <ToastContainer />
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="CodeSaarthi" content="Codesaarthi" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href= {`https://codesaarthi.com/news`} />
+        <meta name="description" content= "See whats going around you through our news feature sharing the valuable information to your friends"/>
+        <title>News | Codesaarthi</title>
+        <meta property="og:title" content= "News | Codesaarthi" />
+        <meta property="og:description" content= "See whats going around you through our news feature sharing the valuable information to your friends" />
+        <meta  property="og:image" content= "https://codesaarthi.com/img/logo.png " />
+        <meta property="og:url" content= {`https://codesaarthi.com/news`} />
+        <meta property="og:type" content="Education-Website" />
+        <link rel="icon" type="image/png" href= "https://codesaarthi.com/img/favicon.ico" sizes="32x32"/>
+      </Helmet>
       <div>
         {Array.isArray(currentBatch) && currentBatch.length > 0 ? (
           currentBatch.map((article, index) => (
@@ -160,12 +200,17 @@ const NewsApi = () => {
                 </div>
               )}
               <div className='text-center'>
+             
                 {article.urlToImage ? (
-                  <img src={article.urlToImage} className='img-fluid' alt="" />
+                   <ImageWithSkeleton
+                   src={article.urlToImage} className='img-fluid' alt={article.title}  title= {article.title} loading='lazy'
+               />
                 ) : (
                   <img src="https://codesaarthi.com/img/logo1.jpg" className='img-fluid' alt="" />
                 )}
               </div>
+
+              
               <div className="row my-3">
                 <div className="col-6 text-light d-flex">
                   <div onClick={() => toggleShareOptions(index)} style={{ cursor: 'pointer' }}>

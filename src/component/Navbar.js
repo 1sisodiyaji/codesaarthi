@@ -321,7 +321,7 @@ export const Navbar = () => {
                               src={user.image}
                               className="rounded-circle border"
                               height="28"
-                              alt="Black and White Portrait of a Man"
+                              alt={user.name}
                               loading="lazy"
                             />
                           </Link>

@@ -139,6 +139,7 @@ body::-webkit-scrollbar {
   color: #f3f3f3 !important;
   background-color: #79b4e2 !important;
 }
+
 .textColor{
   color: #358CCA;
 }
@@ -173,13 +174,16 @@ body::-webkit-scrollbar {
 .tilt-effect2:hover {
   transform:  scale(1.1);
 }
+
 .highlight , strong{
  color: #3393df !important;
 font-weight: bold !important;
 }
+
 .imageHeight{
   width: 620px;
 }
+
 .bg-image{
   height: 12vh !important;
 }
@@ -196,9 +200,6 @@ font-weight: bold !important;
   height: 480px !important;
   width: 480px !important;
 }
-.cardWidth{
-  width: 340px !important;
-}
 
 /* .sharebutton  */
 .share-options {
@@ -209,4 +210,41 @@ font-weight: bold !important;
 
 .share-options > * {
   margin-right: 10px;
+}
+
+.courseImage{
+  height: 100px !important;
+  width: 100px !important;
+}
+
+
+/* src/SkeletonLoader.css */
+.skeleton-loader {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+      background-position: 200% 0;
+  }
+  100% {
+      background-position: -200% 0;
+  }
+}
+
+
+/* src/ImageWithSkeleton.css */
+.image-container {
+  position: relative;
+  width: 100%; /* Adjust as needed */
+  height: 100%; /* Adjust as needed */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
 }

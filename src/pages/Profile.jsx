@@ -89,7 +89,7 @@ const Profile = () => {
         );
 
         if (response.data.status === 'success') {
-          console.log(response.data); 
+          setUser(response.data.user)
           localStorage.setItem("userID", response.data.user._id);
         } else {
           toast.error("Failed to fetch user information!", { theme: "dark" });
@@ -129,8 +129,7 @@ const Profile = () => {
 
   if (error) {
     return toast.error("error ..." + error, { theme: "dark" });
-  }
-
+  } 
   if (!user) {
     return (
       <div className='vh-100 text-warning d-flex justify-content-center align-items-center bg-dark'>
@@ -269,7 +268,7 @@ const Profile = () => {
 
               <div className="row g-0 ">
                 <div className="col-3">
-                  <img src={user.image} alt={user.name} className='img-fluid' width={250} height={250} style={{ borderRadius: '50%' }} />
+                  <img src={user.image} alt={user.name} title = {user.name} className='img-fluid border border-dark p-1' width={250} height={250} style={{ borderRadius: '50%' }} />
                 </div>
                 <div className="col-9 ps-3">
                   <small className='text-light'>Name : {user.name}</small> <br />
@@ -294,12 +293,15 @@ const Profile = () => {
             {blogs.map((blog) => (
               <div key={blog._id} className="card bg-dark text-light my-2 shadow-6 p-3 ">
                 <Link to={`/blog/${blog._id}`} > <h4 className="text-warning">{blog.title}</h4> </Link>
-                <img
+                <figure> <img
                   src={blog.image}
                   alt={blog.title}
+                  title={blog.title}
+                  loading='lazy'
                   className="img-fluid   mb-3"
                 />
-                <p>{blog.description}</p>
+                <figcaption>{blog.description}</figcaption>
+            </figure>
                 <div dangerouslySetInnerHTML={{ __html: blog.content }} />
                 <hr />
                 <div className="row">
