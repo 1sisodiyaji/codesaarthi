@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import axios from "axios";
 import config from "../config/config";
 import { ToastContainer, toast } from "react-toastify";
@@ -26,8 +26,8 @@ const Admin = () => {
           }
         );
 
-        if (response.data.status === "success") { 
-          if (response.data.user.email === "637golusingh@gmail.com") {
+        if (response.data.status === "success") {
+          if (response.data.user.email == "637golusingh@gmail.com") {
             setAdmin(true);
           }
         } else {
@@ -41,7 +41,6 @@ const Admin = () => {
     };
 
     fetchUserData();
- 
   }, []);
 
   const fetchAndSaveArticles = async () => {
@@ -104,8 +103,6 @@ const Admin = () => {
     }
   };
 
-
-
   return (
     <>
       <ToastContainer />
@@ -146,14 +143,14 @@ const Admin = () => {
             </div>
             <div className="row">
               <div className="col-lg-4 col-12">
-              <Link to="/Admin/create-course">
-              <div className="card bg-dark border border-warning text-warning my-2 p-3 text-center">
-              <i class="fi fi-sr-add"></i>  Create Your course 
-              </div>
-            </Link>
+                <Link to="/Admin/create-course">
+                  <div className="card bg-dark border border-warning text-warning my-2 p-3 text-center">
+                    <i class="fi fi-sr-add"></i> Create Your course
+                  </div>
+                </Link>
               </div>
             </div>
-           
+
             <div className="container">
               <div className="row g-6">
                 <>
@@ -212,12 +209,10 @@ const Admin = () => {
         </>
       ) : (
         <>
-         <div className="vh-100 bg-dark text-danger  d-flex justify-content-center align-items-center">
-      <h6>Access Blocked by admin</h6>
-    </div>
-         
-         </>
-
+          <div className="vh-100 bg-dark text-danger  d-flex justify-content-center align-items-center">
+            <h6>Access Blocked by admin</h6>
+          </div>
+        </>
       )}
     </>
   );
