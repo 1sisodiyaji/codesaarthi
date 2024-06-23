@@ -9,13 +9,13 @@ const Spotify = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="Spotify Clone, Music Streaming, React, Frontend Project" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://codesaarthi.com/Spotify-clone" />
+        <link rel="canonical" href="https://codesaarthi.com/Projects/Spotify-Clone" />
         <meta name="description" content="Explore the development of a Spotify Clone frontend project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a music streaming application using React." />
-        <title>Spotify Clone Project: Tutorials, Examples, and Practice | Codesaarthi</title>
-        <meta property="og:title" content="Spotify Clone Project | Codesaarthi" />
+        <title>Spotify Clone | Codesaarthi</title>
+        <meta property="og:title" content="Spotify Clone | Codesaarthi" />
         <meta property="og:description" content="Explore the development of a Spotify Clone frontend project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a music streaming application using React." />
         <meta property="og:image" content="https://codesaarthi.com/img/Spotify1.jpg" />
-        <meta property="og:url" content="https://codesaarthi.com/Spotify-clone" />
+        <meta property="og:url" content="https://codesaarthi.com/Projects/Spotify-Clone" />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
@@ -42,8 +42,8 @@ const Spotify = () => {
           <h6 className='textColor'>Screenshots:</h6>
           {/* Add screenshots of your Spotify frontend clone */}
           <div className="row my-3">
-            <div className="col-6"><img src="img/Spotify1.jpg" alt="" className="img-fluid" /></div>
-            <div className="col-6"><img src="img/Spotify2.jpg" alt="" className="img-fluid" /></div>
+            <div className="col-6"><img src="https://codesaarthi.com/img/Spotify1.jpg" alt="" className="img-fluid" /></div>
+            <div className="col-6"><img src="https://codesaarthi.com/img/Spotify2.jpg" alt="" className="img-fluid" /></div>
           </div>
 
           <h6 className='textColor'>Tech Stack:</h6>
@@ -83,13 +83,13 @@ const Spotify = () => {
           <h6 className='text-light my-lg-4 my-2'>Thank you for exploring this Spotify frontend clone project. Check out more frontend projects below:</h6>
           <div className="row">
             <div className="col-4 text-center">
-              <Link to="/Razorpay" className="btn bg-dark text-warning text-capitalize">Razorpay<i className="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+              <Link to="/Projects/Razorpay" className="btn bg-dark text-warning text-capitalize">Razorpay<i className="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
             </div>
             <div className="col-4 text-center">
-              <Link to="/Amazon-clone" className="btn bg-dark text-warning text-capitalize">Amazon<i className="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+              <Link to="/Projects/Amazon-clone" className="btn bg-dark text-warning text-capitalize">Amazon<i className="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
             </div>
             <div className="col-4 text-center">
-              <Link to="/Discord" className="btn bg-dark text-warning text-capitalize">Discord Clone <i className="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+              <Link to="/Projects/Discord" className="btn bg-dark text-warning text-capitalize">Discord Clone <i className="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
             </div>
           </div>
         </div>

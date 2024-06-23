@@ -9,13 +9,13 @@ const IFrame = () => {
                   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="keywords" content="basic html project , top 5 easy html projects, learn html with projects., youtube tags , IFrame based projects ." />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://codesaarthi.com/youtubeBasedProject" />
+                <link rel="canonical" href="https://codesaarthi.com/Projects/youtubeBasedProject" />
                 <meta name="description" content="basically these page is a youtube short clone to use their tags and make more practise of different media tasg in html." />
-                <title>Youtube based page in html | CodeSaarthi</title>
-                <meta property="og:title" content="Youtube based page in html | CodeSaarthi" />
+                <title>Youtube based | CodeSaarthi</title>
+                <meta property="og:title" content="Youtube based | CodeSaarthi" />
                 <meta property="og:description" content="basically these page is a youtube short clone to use their tags and make more practise of different media tasg in html." />
-                <meta property="og:image" content="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png" />
-                <meta property="og:url" content="https://codesaarthi.com/youtubeBasedProject" />
+                <meta property="og:image" content="https://codesaarthi.com/img/Media1.jpg" />
+                <meta property="og:url" content="https://codesaarthi.com/Projects/youtubeBasedProject" />
                 <meta property="og:type" content="Education-Website" />
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
@@ -37,8 +37,8 @@ const IFrame = () => {
 
                     <h6 className='textColor'>Screenshot:</h6>
                     <div className="row my-3">
-                        <div className="col-6 "><img src="img/Media1.jpg" alt="" className="img-fluid" /></div>
-                        <div className="col-6"><img src="img/Media2.jpg" alt="" className="img-fluid" /></div>
+                        <div className="col-6 "><img src="https://codesaarthi.com/img/Media1.jpg" alt="html projects " title='first view of youtube' loading='lazy' className="img-fluid" /></div>
+                        <div className="col-6"><img src="https://codesaarthi.com/img/Media2.jpg" alt="html projects images" title='second view of youtube projects' loading='lazy' className="img-fluid" /></div>
                     </div>
 
 
@@ -270,13 +270,13 @@ const IFrame = () => {
                     <h6 className='text-light my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</h6>
                     <div className="row">
                         <div className="col-4 text-center">
-                            <Link to="/AssignmentProject" className="btn bg-dark text-warning text-capitalize">Assingment page <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to="/Projects/AssignmentProject" className="btn bg-dark text-warning text-capitalize">Assingment page <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                         <div className="col-4 text-center">
-                            <Link to="/PortfolioHtml" className="btn bg-dark text-warning text-capitalize">Portfolio <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to="/Projects/PortfolioHtml" className="btn bg-dark text-warning text-capitalize">Portfolio <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                         <div className="col-4 text-center">
-                            <Link to="/ProductCatalog" className="btn bg-dark text-warning text-capitalize">Product Catalog <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to="/Projects/ProductCatalog" className="btn bg-dark text-warning text-capitalize">Product Catalog <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                     </div>
 

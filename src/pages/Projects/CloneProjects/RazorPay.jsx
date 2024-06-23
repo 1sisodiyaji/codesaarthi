@@ -9,13 +9,13 @@ const RazorpayProject = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="Razorpay Clone, Razorpay project, Payment Gateway, Online Payments" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://codesaarthi.com/RazorPay" />
+        <link rel="canonical" href="https://codesaarthi.com/Projects/RazorPay" />
         <meta name="description" content="Explore the development of a Razorpay frontend clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of integrating a payment gateway into your web application." />
-        <title>Razorpay  Frontend Clone Project: Tutorials, Examples, and Practice | Codesaarthi</title>
-        <meta property="og:title" content="Razorpay Frontend Clone Project | Your Website Name" />
+        <title>Razorpay Clone | Codesaarthi</title>
+        <meta property="og:title" content="azorpay Clone | Codesaarthi" />
         <meta property="og:description" content="Explore the development of a Razorpay frontend clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of integrating a payment gateway into your web application." />
         <meta property="og:image" content="https://codesaarthi.com/img/Razorpay1.jpg" />
-        <meta property="og:url" content="https://codesaarthi.com/RazorPay" />
+        <meta property="og:url" content="https://codesaarthi.com/Projects/RazorPay" />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
@@ -42,8 +42,8 @@ const RazorpayProject = () => {
           <h6 className='textColor'>Screenshots:</h6>
           {/* Add screenshots of your Razorpay frontend clone */}
           <div className="row my-3">
-            <div className="col-6"><img src="img/Razorpay1.jpg" alt="" className="img-fluid" /></div>
-            <div className="col-6"><img src="img/Razorpay2.jpg" alt="" className="img-fluid" /></div>
+            <div className="col-6"><img src="https://codesaarthi.com/img/Razorpay1.jpg" alt="" className="img-fluid" /></div>
+            <div className="col-6"><img src="https://codesaarthi.com/img/Razorpay2.jpg" alt="" className="img-fluid" /></div>
           </div>
 
           <h6 className='textColor'>Tech Stack:</h6>
@@ -84,13 +84,13 @@ const RazorpayProject = () => {
           <h6 className='text-light my-lg-4 my-2'>Thank you for exploring this Razorpay frontend clone project. Check out more frontend projects below:</h6>
           <div className="row">
             <div className="col-4 text-center">
-              <Link to="/Discord" className="btn bg-dark text-warning text-capitalize">Discord Clone <i className="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+              <Link to="/Projects/Discord" className="btn bg-dark text-warning text-capitalize">Discord Clone <i className="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
             </div>
             <div className="col-4 text-center">
-              <Link to="/Amazon-clone" className="btn bg-dark text-warning text-capitalize">Amazon Clone <i className="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+              <Link to="/Projects/Amazon-clone" className="btn bg-dark text-warning text-capitalize">Amazon Clone <i className="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
             </div>
             <div className="col-4 text-center">
-              <Link to="/Spotify-Clone" className="btn bg-dark text-warning text-capitalize">Spotify Clone <i className="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+              <Link to="/Projects/Spotify-Clone" className="btn bg-dark text-warning text-capitalize">Spotify Clone <i className="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
             </div>
           </div>
         </div>

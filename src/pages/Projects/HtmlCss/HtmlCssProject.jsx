@@ -20,137 +20,118 @@ const htmlcss1Project = () => {
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
 
-            <div className="container-fluid design" style={{ minHeight: '100vh' , backgroundColor:'#1E1E1E' }}>
+            <div className="container-fluid design" style={{ minHeight: '100vh', backgroundColor: '#1E1E1E' }}>
                 <div className="row py-5 ">
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border border-dark" style={{backgroundColor:'#262626'}}>
+                        <div className="card border border-dark" style={{ backgroundColor: '#262626' }}>
                             <div className="card-body">
                                 <div className="row g-0">
-                                        <div className="col-4">
-                                            <div>
-                                                <img src="img/htmlcss1.png" className='img-fluid p-2' alt="trip planner logo" />
-                                            </div>
+                                    <div className="col-4 d-flex justify-content-center align-items-center">
+                                        <div>
+                                            <img src="https://codesaarthi.com/img/htmlcss1.png" className='img-fluid p-2' alt="trip planner logo" title='css logo' loading='lazy' />
                                         </div>
-                                        <div className="col-8">
-                                            <h5 className="card-title text-warning">Shopping last page</h5>
-                                            <p className="card-text text-light text-capitalize">This is Project of order design of basic frontend Of Shooping last page.</p>
-                                            <Link to="/Shopping-page" className="btn bg-dark text-warning text-capitalize">get it </Link>
-                                        </div>
+                                    </div>
+                                    <div className="col-8">
+                                        <h5 className="card-title text-warning">Shopping last page</h5>
+                                        <p className="card-text text-light text-capitalize">This is Project of order design of basic frontend Of Shooping  page.</p>
+                                        <Link to="/Projects/Shopping-page" className="btn bg-dark text-warning text-capitalize tilt-effect  rounded-8">get it </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border border-dark" style={{backgroundColor:'#262626'}}>
+                        <div className="card   border border-dark" style={{ backgroundColor: '#262626' }}>
                             <div className="card-body">
                                 <div className="row g-0">
-                                        <div className="col-4">
-                                            <div>
-                                                <img src="img/htmlcss1.png" className='img-fluid' alt="trip planner image" />
-                                            </div>
+                                    <div className="col-4 d-flex justify-content-center align-items-center">
+                                        <div>
+                                            <img src="https://codesaarthi.com/img/htmlcss1.png" className='img-fluid p-2' alt="trip planner logo" title='css logo' loading='lazy' />
                                         </div>
-                                        <div className="col-8">
-                                            <h5 className="card-title text-warning">Reciepe website </h5>
-                                            <p className="card-text text-light text-capitalize">basically here you will create an reciepe webiste of ...</p>
-                                            <Link to="/Reciepe-website" className="btn bg-dark text-warning text-capitalize">get it </Link>
-                                        </div>
+                                    </div>
+                                    <div className="col-8">
+                                        <h5 className="card-title text-warning">Reciepe website </h5>
+                                        <p className="card-text text-light text-capitalize">basically here you will create an reciepe webiste of ...</p>
+                                        <Link to="/Projects/Reciepe-website" className="btn bg-dark text-warning text-capitalize tilt-effect  rounded-8">get it </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect  border border-dark " style={{backgroundColor:'#262626'}}>
+                        <div className="card   border border-dark " style={{ backgroundColor: '#262626' }}>
                             <div className="card-body">
                                 <div className="row g-0">
-                                        <div className="col-4">
-                                            <div>
-                                                <img src="img/htmlcss1.png" className='img-fluid' alt="trip planner image" />
-                                            </div>
+                                    <div className="col-4 d-flex justify-content-center align-items-center">
+                                        <div>
+                                            <img src="https://codesaarthi.com/img/htmlcss1.png" className='img-fluid p-2' alt="trip planner logo" title='css logo' loading='lazy' />
                                         </div>
-                                        <div className="col-8">
-                                            <h5 className="card-title text-warning">Product card </h5>
-                                            <p className='text-light'> In these Project where we will see the product card design.</p>
-                                            <Link to="/Product-Card" className="btn bg-dark text-warning text-capitalize">get it </Link>
-                                        </div>
+                                    </div>
+                                    <div className="col-8">
+                                        <h5 className="card-title text-warning">Product card </h5>
+                                        <p className='text-light'> In these Project where we will see the product card design.</p>
+                                        <Link to="/Projects/Product-Card" className="btn bg-dark text-warning text-capitalize tilt-effect  rounded-8">get it </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border border-dark" style={{backgroundColor:'#262626'}}>
+                        <div className="card  border border-dark" style={{ backgroundColor: '#262626' }}>
                             <div className="card-body">
                                 <div className="row g-0">
-                                        <div className="col-4">
-                                            <div>
-                                                <img src="img/htmlcss1.png" className='img-fluid' alt="trip planner image" />
-                                            </div>
+                                    <div className="col-4 d-flex justify-content-center align-items-center">
+                                        <div>
+                                            <img src="https://codesaarthi.com/img/htmlcss1.png" className='img-fluid p-2' alt="trip planner logo" title='css logo' loading='lazy' />
                                         </div>
-                                        <div className="col-8">
-                                            <h5 className="card-title text-warning">Job Application  </h5>
-                                            <p className='text-light'> In these Project where we will create job application page..</p>
-                                            <Link to="/Job-Application-page" className="btn bg-dark text-warning text-capitalize">get it </Link>
-                                        </div>
+                                    </div>
+                                    <div className="col-8">
+                                        <h5 className="card-title text-warning">Image Gallery  </h5>
+                                        <p className='text-light'> In these Project where we will  design of an gallery design .</p>
+                                        <Link to="/Projects/Image-Gallery" className="btn bg-dark text-warning text-capitalize tilt-effect  rounded-8">get it </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border border-dark" style={{backgroundColor:'#262626'}}>
+                        <div className="card  border border-dark " style={{ backgroundColor: '#262626' }}>
                             <div className="card-body">
                                 <div className="row g-0">
-                                        <div className="col-4">
-                                            <div>
-                                                <img src="img/htmlcss1.png" className='img-fluid' alt="trip planner image" />
-                                            </div>
+                                    <div className="col-4 d-flex justify-content-center align-items-center">
+                                        <div>
+                                            <img src="https://codesaarthi.com/img/htmlcss1.png" className='img-fluid p-2' alt="trip planner logo" title='css logo' loading='lazy' />
                                         </div>
-                                        <div className="col-8">
-                                            <h5 className="card-title text-warning">Image Gallery  </h5>
-                                            <p className='text-light'> In these Project where we will  design of an gallery design .</p>
-                                            <Link to="/Image-Gallery" className="btn bg-dark text-warning text-capitalize">get it </Link>
-                                        </div>
+                                    </div>
+                                    <div className="col-8">
+                                        <h5 className="card-title text-warning">hire me  </h5>
+                                        <p className='text-light'> In these Project where we will create a design or ui of hire button.</p>
+                                        <Link to="/Projects/Hire-Me" className="btn bg-dark text-warning text-capitalize tilt-effect  rounded-8">get it </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border border-dark "style={{backgroundColor:'#262626'}}>
+                        <div className="card   border border-dark " style={{ backgroundColor: '#262626' }}>
                             <div className="card-body">
                                 <div className="row g-0">
-                                        <div className="col-4">
-                                            <div>
-                                                <img src="img/htmlcss1.png" className='img-fluid' alt="trip planner image" />
-                                            </div>
+                                    <div className="col-4 d-flex justify-content-center align-items-center">
+                                        <div>
+                                            <img src="https://codesaarthi.com/img/htmlcss1.png" className='img-fluid p-2' alt="trip planner logo" title='css logo' loading='lazy' />
                                         </div>
-                                        <div className="col-8">
-                                            <h5 className="card-title text-warning">hire me  </h5>
-                                            <p className='text-light'> In these Project where we will create a design or ui of hire button.</p>
-                                            <Link to="/Hire-Me" className="btn bg-dark text-warning text-capitalize">get it </Link>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-lg-4 my-2 col-12">
-                        <div className="card tilt-effect border border-dark "style={{backgroundColor:'#262626'}}>
-                            <div className="card-body">
-                                <div className="row g-0">
-                                        <div className="col-4">
-                                            <div>
-                                                <img src="img/htmlcss1.png" className='img-fluid' alt="trip planner image" />
-                                            </div>
-                                        </div>
-                                        <div className="col-8">
-                                            <h5 className="card-title text-warning">Chair item  </h5>
-                                            <p className='text-light'> In these Project where we will see create the frontend of a page where chairs were sell.</p>
-                                            <Link to="/Chair-page" className="btn bg-dark text-warning text-capitalize">get it </Link>
-                                        </div>
+                                    </div>
+                                    <div className="col-8">
+                                        <h5 className="card-title text-warning">Chair item  </h5>
+                                        <p className='text-light'> In these Project where we will create the page where chairs were sell.</p>
+                                        <Link to="/Projects/Chair-page" className="btn bg-dark text-warning text-capitalize tilt-effect  rounded-8">get it </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -5,17 +5,17 @@ import { Helmet } from 'react-helmet';
 const TripPlanner = () => {
     return (
         <>
- <Helmet>
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <Helmet>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="keywords" content="Basic java Project , java core projects , hotel  managament project in java." />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://codesaarthi.com/TripPlanner" />
+                <link rel="canonical" href="https://codesaarthi.com/Projects/TripPlanner" />
                 <meta name="description" content="Basically these project is develped in java core as using java core subjects , as a hootel management projects ." />
-                <title>TripPlanner in java | CodeSaarthi</title>
-                <meta property="og:title" content="TripPlanner in java | CodeSaarthi" />
-                <meta property="og:description" content="basically these page is a youtube short clone to use their tags and make more practise of different media tasg in html." />
-                <meta property="og:image" content="img/javaProjects.png" />
-                <meta property="og:url" content="https://codesaarthi.com/TripPlanner" />
+                <title>TripPlanner | CodeSaarthi</title>
+                <meta property="og:title" content="TripPlanner | CodeSaarthi" />
+                <meta property="og:description" content="Basically these project is develped in java core as using java core subjects , as a hootel management projects " />
+                <meta property="og:image" content="https://codesaarthi.com/img/javaProjects.png" />
+                <meta property="og:url" content="https://codesaarthi.com/Projects/TripPlanner" />
                 <meta property="og:type" content="Education-Website" />
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
@@ -26,7 +26,7 @@ const TripPlanner = () => {
 
                     <h6 className='textColor'>Description:</h6>
                     <p className='text-light'>
-                        in these project we are going to learn about core concept of java . Bye the use of java core only we built an awesome java projects . We built an java app having hotesls list room price  and bookings system , 
+                        in these project we are going to learn about core concept of java . Bye the use of java core only we built an awesome java projects . We built an java app having hotesls list room price  and bookings system ,
                     </p>
                     <h6 className='textColor'>Key Features:</h6>
 
@@ -38,8 +38,8 @@ const TripPlanner = () => {
 
                     <h6 className='textColor'>Screenshot:</h6>
                     <div className="row my-3">
-                        <div className="col-6 "><img src="img/TripPlanner1.jpg" alt="trip planner images " className="img-fluid" /></div>
-                        <div className="col-6"><img src="img/TripPlanner2.jpg" alt="images of trip planner" className="img-fluid" /></div>
+                        <div className="col-6 "><img src="https://codesaarthi.com/img/TripPlanner1.jpg" alt="trip planner images " title='trip planner hotel view ' loading='lazy' className="img-fluid" /></div>
+                        <div className="col-6"><img src="https://codesaarthi.com/img/TripPlanner2.jpg" alt="images of trip planner" title='trip planner payment page ' loading='lazy' className="img-fluid" /></div>
                     </div>
 
 
@@ -55,7 +55,7 @@ const TripPlanner = () => {
 
 
                     <p className='text-light'>You can go through this link of Github: <Link>https://github.com/1sisodiyaji/TripPlanners.git</Link></p>
-                    
+
                     <h6 className='text-warning'>or you can visit Here:</h6>
                     <Link to="https://github.com/1sisodiyaji/TripPlanners.git" target='blank'> <button className='btn btn-dark text-warning text-capitalize'> Click Here</button></Link>
 
@@ -63,10 +63,10 @@ const TripPlanner = () => {
                     <h6 className='text-light my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</h6>
                     <div className="row">
                         <div className="col-4 text-center">
-                            <Link to="/FunCalculations" className="btn bg-dark text-warning text-capitalize">Fun Calculations <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to="/Projects/FunCalculations" className="btn bg-dark text-warning text-capitalize">Fun Calculations <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                         <div className="col-4 text-center">
-                            <Link to="/Chat-App" className="btn bg-dark text-warning text-capitalize">Chat App <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to="/Projects/Chat-App" className="btn bg-dark text-warning text-capitalize">Chat App <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                     </div>
 

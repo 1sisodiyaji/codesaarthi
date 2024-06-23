@@ -9,13 +9,13 @@ const AssignmentProject = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="keywords" content="basic html project , top 5 easy html projects, learn html with projects." />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://codesaarthi.com/AssignmentProject" />
+                <link rel="canonical" href="https://codesaarthi.com/Projects/AssignmentProject" />
                 <meta name="description" content="It is a single page web app where  i tried to use maximum tags of html to create a assignment page simple and useful." />
-                <title>Assignment page in html | CodeSaarthi</title>
-                <meta property="og:title" content="Assignment page in html | CodeSaarthi" />
+                <title>Assignment page | CodeSaarthi</title>
+                <meta property="og:title" content="Assignment page | CodeSaarthi" />
                 <meta property="og:description" content="It is a single page web app where  i tried to use maximum tags of html to create a assignment page simple and useful." />
                 <meta property="og:image" content="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png" />
-                <meta property="og:url" content="https://codesaarthi.com/AssignmentProject" />
+                <meta property="og:url" content="https://codesaarthi.com/Projects/AssignmentProject" />
                 <meta property="og:type" content="Education-Website" />
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
@@ -36,8 +36,8 @@ const AssignmentProject = () => {
 
                         <h6 className='textColor'>Screenshot:</h6>
                         <div className="row my-3">
-                            <div className="col-6 "><img src="img/htmlProject1.jpg" alt="" className="img-fluid" /></div>
-                            <div className="col-6"><img src="img/htmlProject2.jpg" alt="" className="img-fluid" /></div>
+                            <div className="col-6 "><img src="https://codesaarthi.com/img/htmlProject1.jpg" alt="html projects images" title='first page of assignment ' loading='lazy' className="img-fluid" /></div>
+                            <div className="col-6"><img src="https://codesaarthi.com/img/htmlProject2.jpg" alt="html projects images" title='second page of assignment website' loading='lazy' className="img-fluid" /></div>
                         </div>
 
 
@@ -184,13 +184,13 @@ const AssignmentProject = () => {
                         <h6 className='text-light my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</h6>
                         <div className="row">
                             <div className="col-4 text-center">
-                                <Link to="/PortfolioHtml" className="btn bg-dark text-warning text-capitalize">Portfolio Project <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                                <Link to="/Projects/PortfolioHtml" className="btn bg-dark text-warning text-capitalize">Portfolio Project <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                             </div>
                             <div className="col-4 text-center">
-                                <Link to="/youtubeBasedProject" className="btn bg-dark text-warning text-capitalize">Youtube Based project <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                                <Link to="/Projects/youtubeBasedProject" className="btn bg-dark text-warning text-capitalize">Youtube Based project <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                             </div>
                             <div className="col-4 text-center">
-                                <Link to="/ProductCatalog" className="btn bg-dark text-warning text-capitalize">Product Catalog <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                                <Link to="/Projects/ProductCatalog" className="btn bg-dark text-warning text-capitalize">Product Catalog <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                             </div>
                         </div>
 

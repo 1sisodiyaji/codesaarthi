@@ -44,8 +44,8 @@ const BlogApp = () => {
           <h6 className='textColor'>Screenshots:</h6>
           {/* Add screenshots of your Blog App frontend clone */}
           <div className="row my-3">
-            <div className="col-6"><img src="img/BlogApp1.jpg" alt="" className="img-fluid" /></div>
-            <div className="col-6"><img src="img/BlogApp2.jpg" alt="" className="img-fluid" /></div>
+            <div className="col-6"><img src="https://codesaarthi.com/img/BlogApp1.jpg" alt="no " className="img-fluid" /></div>
+            <div className="col-6"><img src="https://codesaarthi.com/img/BlogApp2.jpg" alt="" className="img-fluid" /></div>
           </div>
 
           <h6 className='textColor'>Tech Stack:</h6>

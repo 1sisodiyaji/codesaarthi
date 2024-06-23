@@ -9,13 +9,13 @@ const Kreeda = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="keywords" content="kreeda , php Based Projects , fanatsy web app , fantasy php project , rummy web app , top 5 php projects , creative php projects , full stack php projects ,php mysql projects , Dream 11 clone project" />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://codesaarthi.com/Kreeda" />
+                <link rel="canonical" href="https://codesaarthi.com/Projects/Kreeda" />
                 <meta name="description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
-                <title>Kreeda fantasy app  Projects | CodeSaarthi</title>
+                <title>Kreeda Fantasy App | CodeSaarthi</title>
                 <meta property="og:title" content="Kreeda fantasy app  Projects | CodeSaarthi" />
                 <meta property="og:description" content="It is basocally an platform like dream 11 , fantasy games, it is on developing stage it will be a better oppurtuininty to start it as many have dreams to make web app like that , so it is good chance to contirbute." />
                 <meta property="og:image" content="https://codesaarthi.com/img/KreedaLogo.png" />
-                <meta property="og:url" content="https://codesaarthi.com/Kreeda" />
+                <meta property="og:url" content="https://codesaarthi.com/Projects/Kreeda" />
                 <meta property="og:type" content="Education-Website" />
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
@@ -38,8 +38,8 @@ const Kreeda = () => {
 
                         <h6 className='textColor'>Screenshot:</h6>
                         <div className="row my-3">
-                            <div className="col-6 "><img src="img/Kreeda1.jpg" alt="" className="img-fluid" /></div>
-                            <div className="col-6"><img src="img/Kreeda2.jpg" alt="" className="img-fluid" /></div>
+                            <div className="col-6 "><img src="https://codesaarthi.com/img/Kreeda1.jpg" alt="" className="img-fluid" /></div>
+                            <div className="col-6"><img src="https://codesaarthi.com/img/Kreeda2.jpg" alt="" className="img-fluid" /></div>
                         </div>
 
 
@@ -65,7 +65,7 @@ const Kreeda = () => {
                         <div className="row">
                             
                             <div className="col-4 text-center">
-                                <Link to="/kishanMitra" className="btn bg-dark text-warning text-capitalize">Kishan Mitra <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                                <Link to="/Projects/kishanMitra" className="btn bg-dark text-warning text-capitalize">Kishan Mitra <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                             </div>
                         </div>
 

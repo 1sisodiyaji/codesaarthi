@@ -201,12 +201,11 @@ const Profile = () => {
                         <input type="file" accept="image/*" onChange={handleImageChange} style={{ display: "none" }} id="profileImageInput" />
                         <label htmlFor="profileImageInput">
                           <img
-                            src={user.image}
+                            src={imagePreview}
                             alt={formData.name}
                             className="img-fluid border border-dark"
                             width={250}
-                            height={250}
-                            value={imagePreview}
+                            height={250} 
                             style={{ borderRadius: "50%", cursor: "pointer" }}
                           />
                         </label>
@@ -288,12 +287,12 @@ const Profile = () => {
                 {blogs.map((blog) => (
                   <div key={blog._id} className="card bg-dark text-light my-2 shadow-6 p-3 ">
                     <Link to={`/blog/${blog._id}`} > <h4 className="text-warning">{blog.title}</h4> </Link>
-                    <figure> <img
+                    <figure className='text-center'> <img
                       src={blog.image}
                       alt={blog.title}
                       title={blog.title}
                       loading='lazy'
-                      className="img-fluid   mb-3"
+                      className="img-fluid cardImageHeight  mb-3"
                     />
                       <figcaption>{blog.description}</figcaption>
                     </figure>

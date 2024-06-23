@@ -198,7 +198,7 @@ font-weight: bold !important;
 
 .cardImageHeight{
   height: 480px !important;
-  width: 480px !important;
+  width: 100% !important;
 }
 
 /* .sharebutton  */

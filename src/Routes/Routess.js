@@ -46,7 +46,7 @@ import ReciepeWebsite from "../pages/Projects/HtmlCss/ReciepeWebsite";
 import ChairPage from "../pages/Projects/HtmlCss/ChairPage";
 import HireMe from "../pages/Projects/HtmlCss/HireMe";
 import ImageGallery from "../pages/Projects/HtmlCss/ImageGallery";
-import JobApplication from "../pages/Projects/HtmlCss/JobApplication";
+import JobApplication from "../pages/Projects/HtmlProject/JobApplication";
 import ProductCard from "../pages/Projects/HtmlCss/ProductCard"; 
 import Profile from "../pages/Profile"; 
 import TableCard from "../pages/Projects/React/Table";

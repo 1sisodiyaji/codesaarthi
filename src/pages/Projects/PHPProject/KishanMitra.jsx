@@ -8,13 +8,13 @@ const KishanMitra = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="keywords" content="Kishan Mitra , php Based Projects , Kishan helping web app , Kishan php project , Kishan saathi web app , top 5 farmer related  php projects , creative php projects , full stack php projects ,php mysql projects , Kishan Mitra freindly app for farmers" />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://codesaarthi.com/kishanMitra" />
+                <link rel="canonical" href="https://codesaarthi.com/Projects/kishanMitra" />
                 <meta name="description" content="It is one of the best ever project as related to farmers where they can search the weather , food price and many more . a friendly suitted app for farmers." />
-                <title>Kishan Mitra  php  Projects | CodeSaarthi</title>
-                <meta property="og:title" content="Kishan Mitra  php  Projects | CodeSaarthi" />
+                <title>Kishan Mitra | CodeSaarthi</title>
+                <meta property="og:title" content="Kishan Mitra | CodeSaarthi" />
                 <meta property="og:description" content="It is one of the best ever project as related to farmers where they can search the weather , food price and many more . a friendly suitted app for farmers." />
                 <meta property="og:image" content="https://codesaarthi.com/img/farmer.png" />
-                <meta property="og:url" content="https://codesaarthi.com/kishanMitra" />
+                <meta property="og:url" content="https://codesaarthi.com/Projects/kishanMitra" />
                 <meta property="og:type" content="Education-Website" />
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
@@ -37,8 +37,8 @@ const KishanMitra = () => {
 
                         <h6 className='textColor'>Screenshot:</h6>
                         <div className="row my-3">
-                            <div className="col-6 "><img src="img/KishanMitra1.jpg" alt="" className="img-fluid" /></div>
-                            <div className="col-6"><img src="img/KishanMitra2.jpg" alt="" className="img-fluid" /></div>
+                            <div className="col-6 "><img src="https://codesaarthi.com/img/KishanMitra1.jpg" alt="" className="img-fluid" /></div>
+                            <div className="col-6"><img src="https://codesaarthi.com/img/KishanMitra2.jpg" alt="" className="img-fluid" /></div>
                         </div>
 
 
@@ -65,7 +65,7 @@ const KishanMitra = () => {
                         <div className="row">
                             
                             <div className="col-4 text-center">
-                                <Link to="/Kreeda" className="btn bg-dark text-warning text-capitalize">Kreeda <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                                <Link to="/Projects/Kreeda" className="btn bg-dark text-warning text-capitalize">Kreeda <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                             </div>
                         </div>
 

@@ -207,7 +207,7 @@ const ImageWithSkeleton = ({ src, alt }) => {
              
                 {article.urlToImage ? (
                    <ImageWithSkeleton
-                   src={article.urlToImage} className='img-fluid' alt={article.title}  title= {article.title} loading='lazy'
+                   src={article.urlToImage} className='img-fluid' alt={article.title}  title = {article.title} loading='lazy'
                />
                 ) : (
                   <ImageWithSkeleton

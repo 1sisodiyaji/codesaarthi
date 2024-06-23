@@ -9,13 +9,13 @@ const PortfolioHtml = () => {
                   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="keywords" content="basic html project , top 5 easy html projects, learn html with projects., portfolio page in html , easy projects in html." />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://codesaarthi.com/PortfolioHtml" />
+                <link rel="canonical" href="https://codesaarthi.com/Projects/PortfolioHtml" />
                 <meta name="description" content="basically these page is a portfolio of  a person in html , tried to learn more tags in html .  Portfolio based on only html ." />
-                <title>Portfolio page in html | CodeSaarthi</title>
-                <meta property="og:title" content="Portfolio page in html | CodeSaarthi" />
+                <title>Portfolio page  | CodeSaarthi</title>
+                <meta property="og:title" content="Portfolio page | CodeSaarthi" />
                 <meta property="og:description" content="basically these page is a portfolio of  a person in html , tried to learn more tags in html .  Portfolio based on only html ." />
-                <meta property="og:image" content="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png" />
-                <meta property="og:url" content="https://codesaarthi.com/PortfolioHtml" />
+                <meta property="og:image" content="https://codesaarthi.com/img/portfolio1.jpg" />
+                <meta property="og:url" content="https://codesaarthi.com/Projects/PortfolioHtml" />
                 <meta property="og:type" content="Education-Website" />
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
@@ -36,8 +36,8 @@ const PortfolioHtml = () => {
 
                     <h6 className='textColor'>Screenshot:</h6>
                     <div className="row my-3">
-                        <div className="col-6 "><img src="img/portfolio1.jpg" alt="" className="img-fluid" /></div>
-                        <div className="col-6"><img src="img/portfolio2.jpg" alt="" className="img-fluid" /></div>
+                        <div className="col-6 "><img src="https://codesaarthi.com/img/portfolio1.jpg" alt="html project images" title='first page of portfolio'  loading = "lazy" className="img-fluid" /></div> 
+                        <div className="col-6"><img src="https://codesaarthi.com/img/portfolio2.jpg" alt="html project images" title='second view of portfolio' loading='lazy' className="img-fluid" /></div>
                     </div>
 
 
@@ -159,13 +159,13 @@ const PortfolioHtml = () => {
                     <h6 className='text-light my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</h6>
                     <div className="row">
                         <div className="col-4 text-center">
-                            <Link to="/AssignmentProject" className="btn bg-dark text-warning text-capitalize">Assingment page <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to="/Projects/AssignmentProject" className="btn bg-dark text-warning text-capitalize">Assingment page <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                         <div className="col-4 text-center">
-                            <Link to="/ProductCatalog" className="btn bg-dark text-warning text-capitalize">Product Catalog <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to="/Projects/ProductCatalog" className="btn bg-dark text-warning text-capitalize">Product Catalog <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                         <div className="col-4 text-center">
-                            <Link to="/youtubeBasedProject" className="btn bg-dark text-warning text-capitalize">Youtube Based  <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to="/Projects/youtubeBasedProject" className="btn bg-dark text-warning text-capitalize">Youtube Based  <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                     </div>
 

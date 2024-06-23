@@ -9,13 +9,13 @@ const ChatApp = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="keywords" content="Basic java Project , java core projects , chatting app in java , whatsapp web chat in java , java web socket based Project , amazing project in java , easy project in java." />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://codesaarthi.com/Chat-App" />
+                <link rel="canonical" href="https://codesaarthi.com/Projects/Chat-App" />
                 <meta name="description" content="Basically These is a project Where we will use java swing and awt and the most used technology web-socket where an connection is created for both client and server." />
-                <title>Chat App  in java | CodeSaarthi</title>
-                <meta property="og:title" content="Chat App  in java | CodeSaarthi" />
+                <title>Chat App  | CodeSaarthi</title>
+                <meta property="og:title" content="Chat App | CodeSaarthi" />
                 <meta property="og:description" content="Basically These is a project Where we will use java swing and awt and the most used technology web-socket where an connection is created for both client and server." />
                 <meta property="og:image" content="img/javaProjects.png" />
-                <meta property="og:url" content="https://codesaarthi.com/Chat-App" />
+                <meta property="og:url" content="https://codesaarthi.com/Projects/Chat-App" />
                 <meta property="og:type" content="Education-Website" />
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
@@ -39,8 +39,8 @@ const ChatApp = () => {
 
                     <h6 className='textColor'>Screenshot:</h6>
                     <div className="row my-3">
-                        <div className="col-6 "><img src="img/ChatApp1.jpg" alt="trip planner images " className="img-fluid" style={{height:'400px'}}/></div>
-                        <div className="col-6"><img src="img/ChatApp2.jpg" alt="images of trip planner" className="img-fluid" /></div>
+                        <div className="col-6 "><img src="https://codesaarthi.com/img/ChatApp1.jpg" alt="trip planner images " title='client side screen' loading='lazy' className="img-fluid" style={{height:'400px'}}/></div>
+                        <div className="col-6"><img src="https://codesaarthi.com/img/ChatApp2.jpg" alt="images of trip planner" title='proper chaating view' loading='lazy' className="img-fluid" /></div>
                     </div>
 
 
@@ -64,10 +64,10 @@ const ChatApp = () => {
                     <h6 className='text-light my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</h6>
                     <div className="row">
                         <div className="col-4 text-center">
-                            <Link to="/TripPlanner" className="btn bg-dark text-warning text-capitalize">Trip Planner <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to="/Projects/TripPlanner" className="btn bg-dark text-warning text-capitalize">Trip Planner <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                         <div className="col-4 text-center">
-                            <Link to="/FunCalculations" className="btn bg-dark text-warning text-capitalize">Fun Calculations  <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to="/Projects/FunCalculations" className="btn bg-dark text-warning text-capitalize">Fun Calculations  <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                     </div>
 

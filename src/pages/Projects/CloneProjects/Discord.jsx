@@ -9,13 +9,13 @@ const DiscordProject = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="Discord Clone, Discord project, Chat application, Messaging app, Real-time communication" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://codesaarthi.com/Discord" />
+        <link rel="canonical" href="https://codesaarthi.com/Projects/Discord" />
         <meta name="description" content="Explore the development of a Discord clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a real-time messaging application." />
-        <title>Discord Clone Project: Tutorials, Examples, and Practice | Your Website Name</title>
-        <meta property="og:title" content="Discord Clone Project | Your Website Name" />
+        <title>Discord Clone | Codesaarthi</title>
+        <meta property="og:title" content="Discord Clone | Codesaarthi" />
         <meta property="og:description" content="Explore the development of a Discord clone project with step-by-step tutorials, examples, and practice questions. Learn the basics of building a real-time messaging application." />
         <meta property="og:image" content="https://codesaarthi.com/img/Discord1.jpg" />
-        <meta property="og:url" content="https://codesaarthi.com/Discord" />
+        <meta property="og:url" content="https://codesaarthi.com/Projects/Discord" />
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
@@ -42,8 +42,8 @@ const DiscordProject = () => {
           <h6 className='textColor'>Screenshots:</h6>
           {/* Add screenshots of your Discord frontend clone */}
           <div className="row my-3">
-            <div className="col-6 "><img src="img/Discord1.jpg" alt="" className="img-fluid" /></div>
-            <div className="col-6"><img src="img/Discord2.jpg" alt="" className="img-fluid" /></div>
+            <div className="col-6 "><img src="https://codesaarthi.com/img/Discord1.jpg" alt="" className="img-fluid" /></div>
+            <div className="col-6"><img src="https://codesaarthi.com/img/Discord2.jpg" alt="" className="img-fluid" /></div>
           </div>
 
           <h6 className='textColor'>Tech Stack:</h6>
@@ -84,13 +84,13 @@ const DiscordProject = () => {
           <h6 className='text-light my-lg-4 my-2'>Thank you for exploring this Discord frontend clone project. Check out more frontend projects below:</h6>
           <div className="row">
             <div className="col-4 text-center">
-              <Link to="/RazorPay" className="btn bg-dark text-warning text-capitalize">Razorpay<i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+              <Link to="/Projects/RazorPay" className="btn bg-dark text-warning text-capitalize">Razorpay<i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
             </div>
             <div className="col-4 text-center">
-              <Link to="/Amazon-clone" className="btn bg-dark text-warning text-capitalize">Amazon<i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+              <Link to="/Projects/Amazon-clone" className="btn bg-dark text-warning text-capitalize">Amazon<i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
             </div>
             <div className="col-4 text-center">
-              <Link to="/Spotify-Clone" className="btn bg-dark text-warning text-capitalize">Spotify <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+              <Link to="/Projects/Spotify-Clone" className="btn bg-dark text-warning text-capitalize">Spotify <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
             </div>
           </div>
         </div>

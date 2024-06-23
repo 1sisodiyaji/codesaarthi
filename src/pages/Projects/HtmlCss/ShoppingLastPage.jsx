@@ -8,13 +8,13 @@ const ShoppingLastPage = () => {
       <Helmet>
         <meta name="keywords" content="Shopping page last card design , last page design of product , last page of product . product cart design " />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://codesaarthi.com/Shopping-page" />
-        <meta name="description" content="Amazon clone project based on simple ui and responsive , based on learning making people to move it further and learn the core . " />
+        <link rel="canonical" href="https://codesaarthi.com/Projects/Shopping-page" />
+        <meta name="description" content="These is an projects of product page wher you can see buttons of order and price will be there. " />
         <title>Shopping Page | Codesaarthi</title>
-        <meta property="og:title" content="Amazon Clone Projects | Codesaarthi" />
-        <meta property="og:description" content="Amazon clone project based on simple ui and responsive , based on learning making people to move it further and learn the core . " />
-        <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
-        <meta property="og:url" content="https://codesaarthi.com/Shopping-page" />
+        <meta property="og:title" content="Shopping Page | Codesaarthi" />
+        <meta property="og:description" content="These is an projects of product page wher you can see buttons of order and price will be there. " />
+        <meta property="og:image" content="https://codesaarthi.com/img/shopping_last_page.jpg" />
+        <meta property="og:url" content="https://codesaarthi.com/Projects/Shopping-page" />
         <meta property="og:type" content="Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
@@ -37,7 +37,7 @@ const ShoppingLastPage = () => {
 
                     <h6 className='textColor'>Screenshot:</h6>
                     <div className="row my-3">
-                        <div className="col-lg-6 col-12 "><img src="img/shopping_last_page.jpg" alt="" className="img-fluid" /></div>
+                        <div className="col-lg-6 col-12 "><img src="https://codesaarthi.com/img/shopping_last_page.jpg" alt="html css project " title='product page simple design' loading='lazy' className="img-fluid" /></div>
                     </div>
 
 
@@ -71,13 +71,13 @@ const ShoppingLastPage = () => {
                     <h6 className='text-light my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</h6>
                     <div className="row">
                         <div className="col-4 text-center">
-                            <Link to ="/Reciepe-website" className="btn bg-dark text-warning text-capitalize">Reciepe website <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to ="/Projects/Reciepe-website" className="btn bg-dark text-warning text-capitalize">Reciepe website <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                         <div className="col-4 text-center">
-                            <Link to = "/Product-Card" className="btn bg-dark text-warning text-capitalize">Product Card <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to = "/Projects/Product-Card" className="btn bg-dark text-warning text-capitalize">Product Card <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                         <div className="col-4 text-center">
-                            <Link to = "/Job-Application-page" className="btn bg-dark text-warning text-capitalize">Job Application page <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
+                            <Link to = "/Projects/Image-Gallery" className="btn bg-dark text-warning text-capitalize"> Image Gallery <i class="fi fi-rr-arrow-up-left-from-circle ps-2"></i></Link>
                         </div>
                     </div>
 

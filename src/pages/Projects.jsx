@@ -178,7 +178,7 @@ const Projects = () => {
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
-                      <h5 className="card-title text-light">Html , Css</h5>
+                      <h5 className="card-title text-light">Html  Css</h5>
                     </div>
 
                     <div>
