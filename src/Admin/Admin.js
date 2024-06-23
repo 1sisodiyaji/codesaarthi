@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom"; 
 import axios from "axios";
 import config from "../config/config";
 import { ToastContainer, toast } from "react-toastify";
@@ -27,7 +26,7 @@ const Admin = () => {
           }
         );
 
-        if (response.data.status === "success") {
+        if (response.data.status === "success") { 
           if (response.data.user.email === "637golusingh@gmail.com") {
             setAdmin(true);
           }
