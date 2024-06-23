@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route ,useNavigate } from "react-router-dom";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
 import RecoverPassword from "../pages/RecoverPassword/RecoverPassword";
@@ -63,13 +63,14 @@ import CreateCourse from "../Admin/CreateCourse";
 import Content from "../component/Content" ;
 import UpdateCourse from "../Admin/UpdateCourse";
 import Admin from "../Admin/Admin";
+import Offline from "../pages/Offline";
 
 
 const Routess = () => {
 
   const [shouldScrollToTop, setShouldScrollToTop] = useState(false);
   const location = useLocation();
-
+const navigate = useNavigate();
   useEffect(() => {
     if (shouldScrollToTop) {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -81,6 +82,25 @@ const Routess = () => {
     setShouldScrollToTop(true);
   };
 
+  const checkInternetConnection = () => {
+    if (navigator.onLine) {
+      navigate('/');
+    } else {
+      navigate('/offline');
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('online', checkInternetConnection);
+    window.addEventListener('offline', checkInternetConnection);
+    checkInternetConnection();
+
+    return () => {
+      window.removeEventListener('online', checkInternetConnection);
+      window.removeEventListener('offline', checkInternetConnection);
+    };
+  }, []);
+
 
   return (
     <>
@@ -88,6 +108,7 @@ const Routess = () => {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/offline" element={<Offline />} />
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Problems" element={<Problems/>} />
           <Route path="/Projects" element={<Projects />} />

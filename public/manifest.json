@@ -1,5 +1,5 @@
 {
-  "short_name": "Cosesaarthi",
+  "short_name": "Codesaarthi",
   "name": "Codesaarthi | Be your companion in learning journey",
   "icons": [
     {
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "https://codesaarthi.com/img/android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "https://codesaarthi.com/img/android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -21,5 +21,5 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#071a30"
 }

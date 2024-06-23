@@ -13,18 +13,15 @@ export const Navbar = () => {
   const navigate = useNavigate();
 
   const logout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("token"); 
     navigate("/");
   };
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+     setIsSidebarOpen(false);
   }, [location.pathname]);
-
-  useEffect(() => {
-    setIsSidebarOpen(false);
-  }, [location.pathname]);
-
+ 
   useEffect(() => {
     const fetchUserData = async () => {
       const token = localStorage.getItem("token");
@@ -69,6 +66,7 @@ export const Navbar = () => {
             <img
               src="../img/logo.png"
               height="25"
+              title="codesaarthi"
               alt="Codesaarthi  Logo"
               loading="lazy"
             />
@@ -93,7 +91,7 @@ export const Navbar = () => {
       >
         <div className="pt-5 mt-2">
           <ul className="nav flex-column text-start ms-4">
-            {!user && (
+            {!user ?
               <>
                 <li className="nav-item text-light">
                   <Link
@@ -120,8 +118,9 @@ export const Navbar = () => {
                   </Link>
                 </li>
               </>
-            )}
-            <li className="nav-item">
+            :
+            <>
+              <li className="nav-item">
               <Link
                 className={`nav-link ${
                   isNavLinkActive("/profile") ? "selected" : ""
@@ -130,10 +129,13 @@ export const Navbar = () => {
                 to="/profile"
               >
                 {" "}
-                <i className="fi fi-ss-user-trust pe-2"></i>
+                <i className="fi fi-ss-user text-light pe-2"></i>
                 Profile
               </Link>
             </li>
+            </>
+          }
+          
             <li className="nav-item">
               <Link
                 className={`nav-link ${
@@ -306,11 +308,11 @@ export const Navbar = () => {
           </div>
 
           <div className="d-lg-block d-md-block d-none">
-            {user ? (
+            {user ? 
               <>
                 <div className="d-flex align-items-center">
                   <div
-                    className="nav-item dropdown px-2"
+                    className="nav-item "
                     style={{ zIndex: "9999" }}
                   >
                     <div>
@@ -339,7 +341,7 @@ export const Navbar = () => {
                   </div>
                 </div>
               </>
-            ) : (
+             : 
               <>
                 <Link to="/login" className="borderColor">
                   <button className="btn btn-sm  rounded-8 text-light text-capitalize">
@@ -347,7 +349,7 @@ export const Navbar = () => {
                   </button>
                 </Link>
               </>
-            )}
+            }
           </div>
         </div>
       </nav>
