@@ -12,9 +12,19 @@ export const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const logout = () => {
-    localStorage.removeItem("token"); 
-    navigate("/");
+  const logout = async () => {
+    try { 
+      const response = await axios.post(`${config.BASE_URL}/api/logout`);
+
+      if (response.status === 200) {
+        localStorage.removeItem('token');
+        navigate('/');
+      } else {
+        console.log('Logout failed');
+      }
+    } catch (error) {
+      console.error('Logout error:', error); 
+    }
   };
 
   useEffect(() => {
