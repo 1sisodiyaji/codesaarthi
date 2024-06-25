@@ -138,7 +138,7 @@ const Profile = () => {
 
       if (response.status === 200) {
         localStorage.removeItem('token');
-        navigate('/');
+        window.location.reload();
       } else {
         console.log('Logout failed');
       }

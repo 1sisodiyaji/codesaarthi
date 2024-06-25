@@ -102,8 +102,7 @@ const CreateCourse = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    console.log("entered");
+    setLoading(true); 
     const formData = new FormData();
     formData.append("title", course.title);
     formData.append("description", course.description);
@@ -123,26 +122,29 @@ const CreateCourse = () => {
       if (topic.image) {
         formData.append("images", topic.image);
       }
-    });
-
+    }); 
     try {
-      console.log(`${config.BASE_URL}/Admin/create-course`);
-      console.log(formData);
-      const response = await axios.post(
-        `${config.BASE_URL}/Admin/create-course`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-
-      if (response.status === 201) {
+      const response = await fetch(`${config.BASE_URL}/Admin/CreateCourse`, {
+        method: 'POST',
+        body: formData,
+      });
+    
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+    
+      const data = await response.json();
+      console.log('Response data:', data);
+    
+      if (data.status === "success") {
         console.log("Course created successfully");
         setLoading(false);
         toast.success("Course Created successfully", { theme: "dark" });
         navigate("/Admin");
+      } else {
+        console.log("Course creation failed:", data.message);
+        setLoading(false);
+        toast.error("Course Creation Failed: " + data.message, { theme: "dark" });
       }
     } catch (error) {
       console.error("Error creating course:", error);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import config from "../config/config";
 
@@ -9,8 +9,7 @@ export const Navbar = () => {
   const isNavLinkActive = (path) => {
     return location.pathname.includes(path);
   };
-  const location = useLocation();
-  const navigate = useNavigate();
+  const location = useLocation(); 
 
   const logout = async () => {
     try { 
@@ -18,7 +17,7 @@ export const Navbar = () => {
 
       if (response.status === 200) {
         localStorage.removeItem('token');
-        navigate('/');
+        window.location.reload();
       } else {
         console.log('Logout failed');
       }

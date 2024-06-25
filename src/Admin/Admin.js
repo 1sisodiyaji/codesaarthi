@@ -145,7 +145,7 @@ const Admin = () => {
               <div className="col-lg-4 col-12">
                 <Link to="/Admin/create-course">
                   <div className="card bg-dark border border-warning text-warning my-2 p-3 text-center">
-                    <i class="fi fi-sr-add"></i> Create Your course
+                    <i className="fi fi-sr-add"></i> Create Your course
                   </div>
                 </Link>
               </div>
