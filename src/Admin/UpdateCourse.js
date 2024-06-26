@@ -15,6 +15,7 @@ const UpdateCourse = () => {
     thumbnailImage: null,
     topics: [{ _id: "", title: "", details: "", image: null, imagePreview: null }],
   });
+  
   const editor = useRef(null);
   const navigate = useNavigate();
   const [admin, setAdmin] = useState(false);
@@ -51,16 +52,11 @@ const UpdateCourse = () => {
  
   }, []);
 
-
-
-
-  // Fetch course data by title on component mount
   useEffect(() => {
     const fetchCourse = async () => {
       try {
         const response = await axios.post(`${config.BASE_URL}/Admin/coursesByTitle/${title}`);
         const fetchedCourse = response.data[0];
-        console.log(response);
         setCourse({
           title: fetchedCourse.title,
           description: fetchedCourse.description,
@@ -78,9 +74,10 @@ const UpdateCourse = () => {
         console.error("Error fetching course:", error);
       }
     };
-
+  
     fetchCourse();
   }, [title]);
+  
 
   // Handle input change for course title and description
   const handleInputChange = (e) => {
@@ -113,31 +110,29 @@ const UpdateCourse = () => {
   // Handle form submission for updating the course
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const formData = new FormData();
     formData.append("title", course.title);
     formData.append("description", course.description);
     formData.append("thumbnailImage", course.thumbnailImage);
-
-    // Append topics array as JSON string
+  
     formData.append(
       "topics",
       JSON.stringify(course.topics.map(topic => ({
         _id: topic._id,
         title: topic.title,
         details: topic.details,
-        // Only append image if it's a file (new image)
         image: topic.image instanceof File ? topic.image : null,
       })))
     );
-
+  
     try {
-        const response = await axios.put(`${config.BASE_URL}/Admin/update-course/${title}`, formData, {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-
+      const response = await axios.put(`${config.BASE_URL}/Admin/update-course/${title}`, formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
       if (response.status === 200) {
         console.log("Course updated successfully");
         navigate("/Admin");
@@ -146,6 +141,7 @@ const UpdateCourse = () => {
       console.error("Error updating course:", error);
     }
   };
+  
 
   return (
     <>

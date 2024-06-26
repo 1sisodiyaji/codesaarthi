@@ -1,73 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import axios from 'axios';
+import config from '../config/config';
 
 const Roadmap = () => {
   const [startCard, setStartCard] = useState(0);
+  const [cardsData, setCardsData] = useState([]);
 
-  const cardsData = [
-    {
-      title: 'DSA Roadmap',
-      imageUrl: 'img/dsaRoadmap.jpg',
-      link: '/roadMap/dsa',
-      description: 'This is the roadmap for Data Structures and Algorithms.'
-    },
-    {
-      title: 'OS Roadmap',
-      imageUrl: 'img/OsRoadmap.jpg',
-      link: '/roadMap/Os',
-      description: 'This is the roadmap for Operating Systems.'
-    },
-    {
-      title: 'DBMS Roadmap',
-      imageUrl: 'img/dbmsRoadmap.jpg',
-      link: '/roadMap/Dbms',
-      description: 'This is the roadmap for Database Management Systems.'
-    },
-    {
-      title: 'CN Roadmap',
-      imageUrl: 'img/CNRoadmap.jpg',
-      link: '/roadMap/ComputerNetwork',
-      description: 'This is the roadmap for Computer Networks.'
-    }
-  ];
+  useEffect(() => {
+    const fetchRoadmap = async () => {
+      try {
+        const response = await axios.post(`${config.BASE_URL}/Admin/getRoadmap`);
+        setCardsData(response.data);
+      } catch (error) {
+        console.error("Error fetching roadmap:", error);
+      }
+    };
+    fetchRoadmap();
+  }, []);
 
   const nextCards = () => {
-    setStartCard((startCard + 1) % cardsData.length);
+    if (cardsData.length > 0) {
+      setStartCard((startCard + 1) % cardsData.length);
+    }
   };
 
   const prevCards = () => {
-    setStartCard((startCard + cardsData.length - 1) % cardsData.length);
+    if (cardsData.length > 0) {
+      setStartCard((startCard + cardsData.length - 1) % cardsData.length);
+    }
   };
 
   const renderCards = () => {
-    const cards = [];
-    for (let i = 0; i < 3; i++) {
-      let index = (startCard + i) % cardsData.length;
-      if (cardsData[index]) {
-        cards.push(
-          <div key={index} className="col-lg-4 col-12">
-            <div className="card border border-dark p-1" style={{ backgroundColor: '#141414' }}>
-              <div className="row">
-                <div className='col-4'>
-                  <img src="img/logo.png" className='img-fluid' alt="" />
-                </div>
-                <div className='col-8 align-self-center'>
-                  <h5 className="card-title text-light">{cardsData[index].title}</h5>
-                </div>
-              </div>
-              <div className="container-fluid g-0 p-3" style={{ overflowY: 'auto', width: '100%', height: '400px' }}>
-                <img src={cardsData[index].imageUrl} className='img-fluid h-100' alt="dsa-roadmap" style={{ boxShadow: '5px 5px 20px #703BF7' }} />
-              </div>
-              <div className='text-end'>
-                <Link to={cardsData[index].link} className="btn text-warning text-capitalize bg-dark">Check it Out</Link>
-              </div>
+    return cardsData.map((card, index) => (
+      <div key={index} className="col-lg-4 col-12">
+        <div className="card border border-dark p-1" style={{ backgroundColor: '#141414' }}>
+          <div className="row">
+            <div className='col-4'>
+              <img src="img/logo.png" className='img-fluid' alt="" />
+            </div>
+            <div className='col-8 align-self-center'>
+              <h5 className="card-title text-light">{card.title}</h5>
             </div>
           </div>
-        );
-      }
-    }
-    return cards;
+          <div className="container-fluid g-0 p-3 text-center" style={{ overflowY: 'auto', width: '100%', height: '400px' }}>
+            <img src={card.thumbnail} className='img-fluid h-75' alt={card.title}  title={card.title} loading='lazy' style={{ boxShadow: '5px 5px 20px #703BF7' }} />
+          </div>
+          <div className='text-end'>
+            <Link to={`/roadMap/${card.title}`} className="btn text-warning text-capitalize bg-dark">Check it Out</Link>
+          </div>
+        </div>
+      </div>
+    ));
   };
 
   return (

@@ -20,14 +20,10 @@ import Theory from "../pages/Theory";
 import { Navbar } from "../component/Navbar";
 import { Footer } from "../component/Footer";
 import Problems from "../pages/Problems";
-import Roadmap from "../pages/Roadmap";
-import Dsa from "../pages/Roadmap/Dsa";
+import Roadmap from "../pages/Roadmap"; 
 import WebDevelopment from "../pages/Projects/CloneProjects/WebDevelopment";
 import AmazonClone from "../pages/Projects/CloneProjects/Amazon-clone";
-import DiscordProject from "../pages/Projects/CloneProjects/Discord";
-import Os from "../pages/Roadmap/Os";
-import Dbms from "../pages/Roadmap/Dbms";
-import ComputerNetworks from "../pages/Roadmap/ComputerNetworks";
+import DiscordProject from "../pages/Projects/CloneProjects/Discord"; 
 import RazorpayProject from "../pages/Projects/CloneProjects/RazorPay";
 import Spotify from "../pages/Projects/CloneProjects/Spotify";
 import ReactProject from "../pages/Projects/React/ReactProject";
@@ -60,8 +56,7 @@ import UserList from "../pages/Projects/React/userList";
 import { Navbar2 } from "../component/Navbar2";
 import NewsApi from "../component/NewsApi";
 import Blogs from "../component/Blogs";
-import Jobs from "../component/Jobs";
-import TextForm from "../component/Textarea";
+import Jobs from "../component/Jobs"; 
 import UpdateBlogs from "../component/Blogs/UpdateBlog";
 import Blog from "../component/Blogs/Blog";
 import CreateCourse from "../Admin/CreateCourse";
@@ -69,7 +64,9 @@ import Content from "../component/Content";
 import UpdateCourse from "../Admin/UpdateCourse";
 import Admin from "../Admin/Admin";
 import Offline from "../pages/Offline";
-
+import CreateRoadmap from "../Admin/CreateRoadmap";
+import UpdateRoadmap from "../Admin/UpdateRoadmap"; 
+import RoadmapDetails from "../pages/Roadmap/RoadmapDetails"
 const Routess = () => {
   const [shouldScrollToTop, setShouldScrollToTop] = useState(false);
   const location = useLocation();
@@ -121,6 +118,7 @@ const Routess = () => {
         <Route path="/theory" element={<Theory />} />
         <Route path="/theory/:title" element={<Content />} />
         <Route path="/roadMap" element={<Roadmap />} />
+        <Route path="/roadMap/:title" element={<RoadmapDetails />} />
         <Route path="/profile" element={<Profile />} />
 
         <Route path="/Projects/web-development" element={<WebDevelopment />} />
@@ -169,12 +167,7 @@ const Routess = () => {
           path="/Problems/ArrayProblems"
           element={<PractiseBasicArray />}
         />
-
-        <Route path="/roadMap/Os" element={<Os />} />
-        <Route path="/roadMap/dsa" element={<Dsa />} />
-        <Route path="/roadMap/ComputerNetwork" element={<ComputerNetworks />} />
-        <Route path="/roadMap/Dbms" element={<Dbms />} />
-
+ 
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:id" element={<Blog />} />
         <Route path="/edit-blog/:id" element={<UpdateBlogs />} />
@@ -186,7 +179,8 @@ const Routess = () => {
         <Route path="/Admin" element={<Admin />} />
         <Route path="/Admin/create-course" element={<CreateCourse />} />
         <Route path="/Admin/update/:title" element={<UpdateCourse />} />
-        <Route path="/Admin/text-editor" element={<TextForm />} />
+        <Route path="/Admin/create-Roadmap" element={<CreateRoadmap />} />
+        <Route path="/Admin/updateRoadmap/:title" element={<UpdateRoadmap />} />
       </Routes>
 
       <Footer onFooterClick={handleFooterClick} />

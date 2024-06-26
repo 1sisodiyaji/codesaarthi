@@ -8,9 +8,9 @@ import "react-toastify/dist/ReactToastify.css";
 const Admin = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [loading2, setLoading2] = useState(false);
-  const [message, setMessage] = useState("");
+  const [loading2, setLoading2] = useState(false); 
   const [admin, setAdmin] = useState(false);
+  const [roadmaps , setRoadmaps] = useState([]);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -18,7 +18,7 @@ const Admin = () => {
       try {
         const response = await axios.post(
           `${config.BASE_URL}/api/user`,
-          {}, // empty object as the data payload
+          {},
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -44,36 +44,33 @@ const Admin = () => {
   }, []);
 
   const fetchAndSaveArticles = async () => {
-    setLoading(true);
-    setMessage("");
+    setLoading(true); 
     try {
       const response = await axios.post(`${config.BASE_URL}/Admin/saveNews`);
-      setMessage(response.data.message);
+      toast.success(response.data.message, { theme: "dark" });
     } catch (error) {
-      console.error("Error saving articles:", error);
-      setMessage("Error saving articles");
+      toast.error(error, { theme: "dark" });
     }
     setLoading(false);
   };
 
   const deleteAllArticles = async () => {
-    setLoading2(true);
-    setMessage("");
+    setLoading2(true); 
     try {
       const response = await axios.delete(
         `${config.BASE_URL}/Admin/deleteAllNews`
-      );
-      setMessage(response.data.message);
+      ); 
+      toast.success(response.data.message, { theme: "dark" });
       setLoading2(false);
-    } catch (error) {
-      console.error("Error deleting articles:", error);
-      setMessage("Error deleting articles");
+    } catch (error) { 
+      toast.error(error , { theme: "dark" }); 
       setLoading2(false);
     }
     setLoading2(false);
   };
 
   useEffect(() => {
+
     const fetchCourses = async () => {
       try {
         const response = await axios.post(`${config.BASE_URL}/Admin/courses`);
@@ -83,23 +80,56 @@ const Admin = () => {
       }
     };
 
+    const fetchRoadmap = async () => {
+      try {
+        const response = await axios.post(`${config.BASE_URL}/Admin/getRoadmap`);
+        setRoadmaps(response.data);
+      } catch (error) {
+        console.error("Error fetching setRoadmap:", error);
+      }
+    };
+
     fetchCourses();
+    fetchRoadmap();
+
+
   }, []);
 
   const handleDelete = async (title) => {
     try {
-      console.log(title);
+      setLoading(true);
       const response = await axios.delete(
         `${config.BASE_URL}/Admin/delete-course/${title}`
       );
 
       if (response.status === 200) {
         console.log("Course deleted successfully");
+        setLoading(false);
+        window.location.reload();
+        toast.success("Courses Deleted Successfully", { theme: "dark" });
+      }
+    } catch (error) {
+      setLoading(false);
+      toast.error("Failed to delete Course", { theme: "dark" });
+      console.error("Error deleting course:", error);
+    }
+  };
+  
+  const handleDeleteroadmap = async (title) => {
+    try {
+      setLoading(true);
+      const response = await axios.delete(
+        `${config.BASE_URL}/Admin/deleteRoadmap/${title}`
+      );
+
+      if (response.status === 200) {
+        setLoading(false);
+        toast.success("Roadmap deleted successfully", { theme: "dark" });
         window.location.reload();
       }
     } catch (error) {
-      console.error("Error deleting course:", error);
-      // Handle error: display an error message or log the error
+      setLoading(false);
+      toast.error("Failed to Delete Roadmap", { theme: "dark" });
     }
   };
 
@@ -139,9 +169,8 @@ const Admin = () => {
               </div>
 
               <hr />
-              {message && <p className="text-success ms-4">{message}</p>}
             </div>
-            <div className="row">
+            <div className="row g-6">
               <div className="col-lg-4 col-12">
                 <Link to="/Admin/create-course">
                   <div className="card bg-dark border border-warning text-warning my-2 p-3 text-center">
@@ -149,10 +178,21 @@ const Admin = () => {
                   </div>
                 </Link>
               </div>
+
+              <div className="col-lg-4 col-12">
+                <Link to="/Admin/create-Roadmap">
+                  <div className="card bg-dark border border-warning text-warning my-2 p-3 text-center">
+                    <i className="fi fi-sr-add"></i> Create Your Roadmap
+                  </div>
+                </Link>
+              </div>
+
+
             </div>
 
             <div className="container">
               <div className="row g-6">
+              <h1 className="text-center text-warning my-3">Course</h1>
                 <>
                   {courses.map((course) => (
                     <div key={course._id} className="col-lg-4 col-12 my-2">
@@ -202,9 +242,58 @@ const Admin = () => {
                   ))}
                 </>
               </div>
+
+
+              <div className="row g-6">
+                <h1 className="text-center text-warning my-3">Roadmap</h1>
+                <>
+                {roadmaps.map((roadmap) => (
+                    <div key={roadmap._id} className="col-lg-4 col-12 my-2">
+                      <div className="card rounded-8  p-4 bg-dark">
+                        <div className=" text-center">
+                          {" "}
+                          <img
+                            src={roadmap.thumbnail}
+                            className="img-fluid courseImage text-light"
+                            alt={roadmap.title}
+                          />
+                        </div>
+                        <h4 className="card-title text-light text-center my-2">
+                          {roadmap.title}
+                        </h4>
+                        <p className="text-muted text-capitalize">
+                          {roadmap.description}{" "}
+                        </p>
+
+                        <div className="row">
+                          <div className="col-6">
+                            <Link to={`/Admin/updateRoadmap/${roadmap.title}`}>
+                              <div
+                                className="btn text-warning text-capitalize rounded-8 tilt-effect"
+                                style={{ backgroundColor: "#262626" }}
+                              >
+                                Update
+                              </div>
+                            </Link>
+                          </div>
+                          <div className="col-6">
+                            <div
+                              className="btn text-danger text-capitalize rounded-8 tilt-effect"
+                              onClick={() => handleDeleteroadmap(roadmap.title)}
+                              style={{ backgroundColor: "#262626" }}
+                            >
+                              Delete
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </>
+              </div>
             </div>
 
-            <div className="card">Chat app</div>
+           
           </div>
         </>
       ) : (

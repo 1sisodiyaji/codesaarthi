@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const CreateCourse = () => {
   const [imagePreview, setImagePreview] = useState(null);
   const [thumbnailImage, setThumbnailImage] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(false); // Initialize to false
   const editor = useRef(null);
   const [content, setContent] = useState("");
   const navigate = useNavigate();
@@ -39,14 +39,11 @@ const CreateCourse = () => {
       } catch (error) {
         toast.error("Error fetching user information !", { theme: "dark" });
         console.error("Error fetching user information:", error);
-      } finally {
       }
     };
 
     fetchUserData();
-
   }, []);
-
 
   const [course, setCourse] = useState({
     title: "",
@@ -76,9 +73,9 @@ const CreateCourse = () => {
     const file = e.target.files[0];
     if (!file) return;
 
-    const allowedTypes = ["image/jpeg", "image/png", "image/jpg", "image/webp"];
+    const allowedTypes = ["image/jpeg", "image/png", "image/jpg", "image/webp", "image/svg+xml"];
     if (!allowedTypes.includes(file.type)) {
-      alert("Only JPEG, PNG, JPG, and WebP formats are allowed.");
+      alert("Only JPEG, PNG, JPG, WebP, and SVG formats are allowed.");
       return;
     }
 
@@ -100,194 +97,187 @@ const CreateCourse = () => {
       ],
     });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); 
-    const formData = new FormData();
-    formData.append("title", course.title);
-    formData.append("description", course.description);
-    formData.append("thumbnailImage", thumbnailImage);
-
-    formData.append(
-      "topics",
-      JSON.stringify(
-        course.topics.map((topic) => ({
-          title: topic.title,
-          details: topic.details,
-        }))
-      )
-    );
-
-    course.topics.forEach((topic) => {
-      if (topic.image) {
-        formData.append("images", topic.image);
-      }
-    }); 
+    setLoading(true);
+  
     try {
-      const response = await fetch(`${config.BASE_URL}/Admin/CreateCourse`, {
-        method: 'POST',
-        body: formData,
+      const formData = new FormData();
+      formData.append("title", course.title);
+      formData.append("description", course.description);
+      formData.append("thumbnailImage", thumbnailImage);
+      formData.append("topics", JSON.stringify(course.topics.map((topic) => ({
+        title: topic.title,
+        details: topic.details,
+      }))));
+  
+      course.topics.forEach((topic) => {
+        if (topic.image) {
+          formData.append("images", topic.image);
+        }
       });
-    
-      if (!response.ok) {
-        throw new Error('Network response was not ok ' + response.statusText);
-      }
-    
-      const data = await response.json();
-      console.log('Response data:', data);
-    
-      if (data.status === "success") {
-        console.log("Course created successfully");
+  
+      const response = await axios.post(`${config.BASE_URL}/Admin/CreateCourse`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+  
+      if (response.data.status === "success") {
         setLoading(false);
         toast.success("Course Created successfully", { theme: "dark" });
         navigate("/Admin");
       } else {
-        console.log("Course creation failed:", data.message);
         setLoading(false);
-        toast.error("Course Creation Failed: " + data.message, { theme: "dark" });
+        toast.error("Course Creation Failed: " + response.data.message, { theme: "dark" });
       }
     } catch (error) {
-      console.error("Error creating course:", error);
       setLoading(false);
       toast.error("Error Creating Course. Please try again later.", {
         theme: "dark",
       });
     }
   };
-
+  
+  
   return (
     <>
       <ToastContainer />
-      {admin ?
-        <>
-          <div className="container-fluid bg-dark">
-            <div className="container">
-              <h1 className="text-warning py-2">Create a New Course</h1>
-              <form onSubmit={handleSubmit}>
-                <div className="form-group my-2">
-                  <label className="text-light">Course Title</label>
+      {admin ? (
+        <div className="container-fluid bg-dark">
+          <div className="container">
+            <h1 className="text-warning py-2">Create a New Course</h1>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group my-2">
+                <label className="text-light">Course Title</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="title"
+                  value={course.title}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+
+              <div className="form-group my-2">
+                <label className="text-light">Course Description</label>
+                <textarea
+                  className="form-control text-dark"
+                  name="description"
+                  value={course.description}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="Write a short description"
+                />
+              </div>
+
+              <div className="form-group my-2">
+                <label className="text-light">Course Thumbnail</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleThumbnailImageChange}
+                  style={{ display: "none" }}
+                  id="thumbnailInput"
+                />
+                <label htmlFor="thumbnailInput">
+                  <i
+                    className="fi fi-rr-graphic-style text-warning mx-2"
+                    style={{ cursor: "pointer" }}
+                  ></i>
+                </label>
+              </div>
+              {imagePreview && (
+                <div className="mb-3">
+                  <img
+                    src={imagePreview}
+                    alt="Thumbnail"
+                    style={{ maxHeight: "300px" }}
+                    className="img-fluid"
+                  />
+                </div>
+              )}
+
+              {course.topics.map((topic, index) => (
+                <div key={index} className="form-group my-2">
+                  <label className="text-light">Topic Title</label>
                   <input
                     type="text"
                     className="form-control"
                     name="title"
-                    value={course.title}
-                    onChange={handleInputChange}
+                    value={topic.title}
+                    onChange={(e) => handleTopicChange(index, e)}
                     required
                   />
-                </div>
-
-                <div className="form-group my-2">
-                  <label className="text-light">Course Description</label>
-                  <textarea
-                    className="form-control text-dark"
-                    name="description"
-                    value={course.description}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="Write a short description"
+                  <label className="text-light my-2">Topic Details</label>
+                  <JoditEditor
+                    ref={editor}
+                    value={topic.details}
+                    tabIndex={1}
+                    onBlur={(newContent) => {
+                      const topics = [...course.topics];
+                      topics[index].details = newContent;
+                      setCourse({ ...course, topics });
+                    }}
+                    onChange={(newContent) => { }}
                   />
-                </div>
-
-                <div className="form-group my-2">
-                  <label className="text-light">Course Thumbnail</label>
+                  <label className="text-light my-2">Topic Image</label>
                   <input
                     type="file"
-                    accept="image/*"
-                    onChange={handleThumbnailImageChange}
+                    className="form-control"
+                    name="image"
                     style={{ display: "none" }}
-                    id="thumbnailInput"
+                    id={`topicImage${index}`}
+                    onChange={(e) => handleTopicChange(index, e)}
                   />
-                  <label htmlFor="thumbnailInput">
+                  <label htmlFor={`topicImage${index}`}>
                     <i
                       className="fi fi-rr-graphic-style text-warning mx-2"
                       style={{ cursor: "pointer" }}
                     ></i>
                   </label>
-                </div>
-                {imagePreview && (
-                  <div className="mb-3">
-                    <img
-                      src={imagePreview}
-                      alt="Thumbnail"
-                      style={{ maxHeight: "300px" }}
-                      className="img-fluid"
-                    />
-                  </div>
-                )}
 
-                {course.topics.map((topic, index) => (
-                  <div key={index} className="form-group my-2">
-                    <label className="text-light">Topic Title</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="title"
-                      value={topic.title}
-                      onChange={(e) => handleTopicChange(index, e)}
-                      required
-                    />
-                    <label className="text-light my-2">Topic Details</label>
-                    <JoditEditor
-                      ref={editor}
-                      value={topic.details}
-                      tabIndex={1}
-                      onBlur={(newContent) => {
-                        const topics = [...course.topics];
-                        topics[index].details = newContent;
-                        setCourse({ ...course, topics });
-                      }}
-                      onChange={(newContent) => { }}
-                    />
-                    <label className="text-light my-2">Topic Image</label>
-                    <input
-                      type="file"
-                      className="form-control"
-                      name="image"
-                      onChange={(e) => handleTopicChange(index, e)}
-                    />
-                    {topic.imagePreview && (
-                      <div className="mb-3">
-                        <img
-                          src={topic.imagePreview}
-                          alt={`Topic ${index}`}
-                          style={{ maxHeight: "200px" }}
-                          className="img-fluid"
-                        />
-                      </div>
-                    )}
-                  </div>
-                ))}
-                <div className="row py-2">
-                  <div className="col-6">
-                    <button
-                      type="button"
-                      className="btn btn-warning text-capitalize"
-                      onClick={addTopic}
-                    >
-                      Add Topic
-                    </button>
-                  </div>
-                  <div className="col-6 text-end">
-                    <button
-                      type="submit"
-                      className="btn btn-primary text-capitalize"
-                    >
-                      {loading ? "Creating" : "Create Course "}
-                    </button>
-                  </div>
+                  {topic.imagePreview && (
+                    <div className="mb-3">
+                      <img
+                        src={topic.imagePreview}
+                        alt={`Topic ${index}`}
+                        style={{ maxHeight: "200px" }}
+                        className="img-fluid"
+                      />
+                    </div>
+                  )}
                 </div>
-              </form>
-            </div>
+              ))}
+              <div className="row py-2">
+                <div className="col-6">
+                  <button
+                    type="button"
+                    className="btn btn-warning text-capitalize"
+                    onClick={addTopic}
+                  >
+                    Add Topic
+                  </button>
+                </div>
+                <div className="col-6 text-end">
+                  <button
+                    type="submit"
+                    className="btn btn-primary text-capitalize"
+                  >
+                    {loading ? "Creating..." : "Create Course"}
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
-        </>
-        :
-        <>
-          <div className="vh-100 bg-dark text-danger  d-flex justify-content-center align-items-center">
-            <h6>Access Blocked by admin</h6>
-          </div>
-        </>
-      }
-
+        </div>
+      ) : (
+        <div className="vh-100 bg-dark text-danger d-flex justify-content-center align-items-center">
+          <h6>Access Blocked by admin</h6>
+        </div>
+      )}
     </>
   );
 };
