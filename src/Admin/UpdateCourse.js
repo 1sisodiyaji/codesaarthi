@@ -10,6 +10,7 @@ const UpdateCourse = () => {
   const { title } = useParams();
   const [imagePreview, setImagePreview] = useState(null);
   const [course, setCourse] = useState({
+    _id: "",
     title: "",
     description: "",
     thumbnailImage: null,
@@ -56,8 +57,9 @@ const UpdateCourse = () => {
     const fetchCourse = async () => {
       try {
         const response = await axios.post(`${config.BASE_URL}/Admin/coursesByTitle/${title}`);
-        const fetchedCourse = response.data[0];
+        const fetchedCourse = response.data[0]; 
         setCourse({
+          id : fetchedCourse._id,
           title: fetchedCourse.title,
           description: fetchedCourse.description,
           thumbnailImage: fetchedCourse.thumbnailImage,
@@ -66,7 +68,7 @@ const UpdateCourse = () => {
             title: topic.title || "",
             details: topic.details || "",
             image: topic.image || null,
-            imagePreview: null, // Assuming no image preview needed for existing images
+            imagePreview: topic.image,
           })),
         });
         setImagePreview(fetchedCourse.thumbnailImage);
@@ -107,29 +109,38 @@ const UpdateCourse = () => {
     });
   };
 
+
   // Handle form submission for updating the course
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    const formData = new FormData();
+    const id = course.id; 
+    const formData = new FormData(); 
     formData.append("title", course.title);
     formData.append("description", course.description);
-    formData.append("thumbnailImage", course.thumbnailImage);
+    
+    // Append thumbnail image if it exists
+    if (course.thumbnailImage) {
+      formData.append("thumbnailImage", course.thumbnailImage);
+    }
+    
+    // Append topics as JSON string
+    formData.append("topics", JSON.stringify(course.topics.map((topic) => ({
+      _id: topic._id, // Include _id for existing topics
+      title: topic.title,
+      details: topic.details,
+    }))));
   
-    formData.append(
-      "topics",
-      JSON.stringify(course.topics.map(topic => ({
-        _id: topic._id,
-        title: topic.title,
-        details: topic.details,
-        image: topic.image instanceof File ? topic.image : null,
-      })))
-    );
+    // Append images for each topic if they exist
+    course.topics.forEach((topic, index) => {
+      if (topic.image) { 
+        formData.append(`images[${index}]`, topic.image);
+      }
+    });
   
     try {
-      const response = await axios.put(`${config.BASE_URL}/Admin/update-course/${title}`, formData, {
+      const response = await axios.put(`${config.BASE_URL}/Admin/updateCourse/${id}`, formData, {
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'multipart/form-data',
         },
       });
   
@@ -142,7 +153,7 @@ const UpdateCourse = () => {
     }
   };
   
-
+  
   return (
     <>
     <ToastContainer/>
