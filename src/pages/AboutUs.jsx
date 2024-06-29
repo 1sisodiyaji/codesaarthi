@@ -86,13 +86,13 @@ const AboutUs = () => {
                 <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
             </Helmet>
 
-            <div className="container-fluid g-0 design" style={{ backgroundColor: ' #1E1E1E' }} >
-                <div className="container-fluid container-lg text-light py-lg-4  pt-4 text-center" >
-                    <h1 className="heading text-light" >
+            <div className="container-fluid g-0 design"   >
+                <div className="container-fluid container-lg  py-lg-4  pt-4 text-center" >
+                    <h1 className="heading " >
                         Why we<span style={{ color: '#79b4e2' }} > Exist?</span>
                     </h1>
 
-                    <h3 className="px-lg-4 px-1 py-2 heading" style={{ color: 'white' }}>At <span style={{ color: '#79b4e2' }} >
+                    <h3 className="px-lg-4 px-1 py-2 heading">At <span style={{ color: '#79b4e2' }} >
                         Codesaarthi</span> , where the world of coding and computer science unfolds with simplicity and empowerment. We are passionate about guiding individuals on their journey through the intricacies of data structures, algorithms, and fundamental computer science concepts..</h3>
 
                 </div>
@@ -103,19 +103,19 @@ const AboutUs = () => {
                         <div className="col-lg-2 col-md-0 col-sm-0 d-flex align-self-end justify-content-end d-lg-block d-none">
                             <img src="../img/Rectangle3.png" className='img-fluid pt-5 mt-5 gt-5' alt="mission image" />
                         </div>
-                        <div className="col-lg-4 col-12 g-0 my-2 rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black' }}>
-                            <div className="card p-4 h-100" style={{ backgroundColor: '#262626' }}>
+                        <div className="col-lg-4 col-12 g-0 my-2 rounded-6 tilt-effect2 ">
+                            <div className="card p-4 h-100"  style={{ boxShadow: '5px 5px 20px black' }}>
                                 <div className="d-flex justify-content-end">
                                 </div>
-                                <strong><h1 className="text-light heading" style={{ fontWeight: 'bolder' }}>Our <span style={{ color: '#703BF7' }} >Mission</span></h1></strong>
-                                <h3 className="text-light heading2">we are on a mission to make the world of coding and computer science accessible to everyone. Whether you're a student navigating through DSA problems, a professional seeking to enhance your knowledge of OS, DBMS, CN, or any other theory papers in computer science, we've got you covered..</h3>
+                                <strong><h1 className="heading" style={{ fontWeight: 'bolder' }}>Our <span style={{ color: '#703BF7' }} >Mission</span></h1></strong>
+                                <h3 className=" heading2">we are on a mission to make the world of coding and computer science accessible to everyone. Whether you're a student navigating through DSA problems, a professional seeking to enhance your knowledge of OS, DBMS, CN, or any other theory papers in computer science, we've got you covered..</h3>
                             </div>
                         </div>
 
-                        <div className="col-lg-4 col-12 g-0 my-2  rounded-6 tilt-effect2 " style={{ boxShadow: '5px 5px 20px black' }}   >
-                            <div className="card p-4 ms-lg-2 h-100" style={{ backgroundColor: '#262626' }}>
-                                <strong><h1 className="text-white heading" style={{ fontWeight: 'bolder' }}>Our <span style={{ color: '#703BF7' }}>Vision</span></h1></strong>
-                                <h3 className="text-white heading2">We aspire to revolutionize the educational landscape, making learning accessible and free for all. As the student who have faith to learn they can grow here and each and every student could get learning free . our motive is to make it easy and available for all freely . We will help you atmost we can ....</h3>
+                        <div className="col-lg-4 col-12 g-0 my-2  rounded-6 tilt-effect2 "  >
+                            <div className="card p-4 ms-lg-2 h-100"  style={{ boxShadow: '5px 5px 20px black' }} >
+                                <strong><h1 className=" heading" style={{ fontWeight: 'bolder' }}>Our <span style={{ color: '#703BF7' }}>Vision</span></h1></strong>
+                                <h3 className=" heading2">We aspire to revolutionize the educational landscape, making learning accessible and free for all. As the student who have faith to learn they can grow here and each and every student could get learning free . our motive is to make it easy and available for all freely . We will help you atmost we can ....</h3>
                             </div>
 
                         </div>
@@ -222,18 +222,21 @@ const AboutUs = () => {
                                     <div className="col-9">
                                         <h4 className='text-warning'> Golu Singh
                                             (Software Developer) </h4>
-                                        <p className='text-light'>Mern Stack Developer at Qunatac Software private limited. </p>
+                                        <p className='text-light'>Mern Stack Developer   </p>
                                         <small className='text-success'>Helping students to learn things easily . Actually i want to help them with the things which I learnt the hard way and make the learning easier for them.</small> <br />
-                                        <Link to="https://www.linkedin.com/in/golu-singh/" target='blank'> <span><i className="fi fi-brands-linkedin text-warning pe-1"></i></span>Linkedin</Link> <span className='text-warning'>|</span>|
-                                        <Link to="https://github.com/1sisodiyaji/" target='blank'> <span><i className="fi fi-brands-github text-warning pe-2"></i></span>Github </Link><span className='text-warning'>|</span>| <Link to="https://www.instagram.com/golu_singh_sisodiya/" target='blank' > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
+                                        <Link to="https://www.linkedin.com/in/golu-singh/" target='blank' className='text-light'> <span><i className="fi fi-brands-linkedin text-warning pe-1"></i></span>Linkedin</Link> <span className='text-warning'>|</span>|
+
+                                        <Link to="https://github.com/1sisodiyaji/" target='blank' className='text-light'> <span><i className="fi fi-brands-github text-warning pe-2"></i></span>Github </Link><span className='text-warning'>|</span>| 
+                                        
+                                        <Link to="https://www.instagram.com/golu_singh_sisodiya/" target='blank' className='text-light' > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
 
                                         <div className="row my-2">
                                             <div className=" col-lg-6 col-12 text-end">
-                                                <Link to="mailto:637golusingh@gmail.com" className="btn btn-success text-capitalize ">Contact me <i className="fi fi-sr-envelope text-warning ps-2"></i></Link>
+                                                <Link to="mailto:637golusingh@gmail.com" className="btn text-capitalize ">Contact me <i className="fi fi-sr-envelope ps-2"></i></Link>
                                             </div>
 
                                             <div className=" col-lg-6 col-12 text-end">
-                                                <button type='submit' onClick={handlesendData} className='btn btn-black text-light text-capitalize'> Whatsapp <i className="fi fi-brands-whatsapp text-success mx-2"></i> </button>
+                                                <button type='submit' onClick={handlesendData} className='btn   text-capitalize'> Whatsapp <i className="fi fi-brands-whatsapp  mx-2"></i> </button>
 
                                             </div>
                                         </div>
@@ -249,20 +252,21 @@ const AboutUs = () => {
                                     <div className="col-9">
                                         <h6 className='text-warning'> Golu Singh
                                             (Software Developer) </h6>
-                                        <p className='text-light'>Mern Stack Developer at Qunatac Software private limited. </p>
+                                        <p className='text-light'>Mern Stack Developer</p>
                                     </div>
                                 </div>
                                 <small className='text-success'>helping Students to learn things easily  , Actually i want to help them as the things i get hard to learn that things  i want to make them easier .</small> <br />
-                                <Link to="https://www.linkedin.com/in/golu-singh/" target='blank'> <span><i className="fi fi-brands-linkedin text-warning pe-1"></i></span>Linkedin</Link> <span className='text-warning'>|</span>|
-                                <Link to="https://github.com/1sisodiyaji/" target='blank'> <span><i className="fi fi-brands-github text-warning pe-2"></i></span>Github </Link><span className='text-warning'>|</span>| <Link to="https://www.instagram.com/golu_singh_sisodiya/" > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
+                                <Link to="https://www.linkedin.com/in/golu-singh/" target='blank' className='text-light'> <span ><i className="fi fi-brands-linkedin text-warning pe-1"></i></span>Linkedin</Link> <span className='text-warning'>|</span>|
+                                <Link to="https://github.com/1sisodiyaji/" target='blank' className='text-light'> <span><i className="fi fi-brands-github text-warning pe-2"></i></span>Github </Link><span className='text-warning'>|</span>| 
+                                <Link to="https://www.instagram.com/golu_singh_sisodiya/" target='blank' className='text-light' > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
 
                                 <div className="row my-2">
                                     <div className=" col-6 text-end">
-                                        <Link to="mailto:637golusingh@gmail.com" className="btn btn-success text-capitalize ">Contact me <i className="fi fi-sr-envelope text-warning ps-2"></i></Link>
+                                        <Link to="mailto:637golusingh@gmail.com" className="btn  text-capitalize ">Contact me <i className="fi fi-sr-envelope   ps-2"></i></Link>
                                     </div>
 
                                     <div className=" col-6 text-end">
-                                        <button type='submit' onClick={handlesendData} className='btn btn-black text-light text-capitalize'> Whatsapp <i className="fi fi-brands-whatsapp text-success mx-2"></i> </button>
+                                        <button type='submit' onClick={handlesendData} className='btn   text-capitalize'> Whatsapp <i className="fi fi-brands-whatsapp   mx-2"></i> </button>
 
                                     </div>
                                 </div>

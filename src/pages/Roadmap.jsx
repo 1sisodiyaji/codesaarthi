@@ -71,18 +71,18 @@ const Roadmap = () => {
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
 
-      <div className="container-fluid py-5 design d-lg-none d-md-none d-block" style={{ backgroundColor: '#1E1E1E' }}>
+      <div className="container-fluid py-5 design d-lg-none d-md-none d-block">
         <div className="row g-6">
           {renderCards()}
           <div className="row my-2">
             <div className="col-6 text-start">
               <div className="ms-2" onClick={prevCards}>
-                <i className="fi fi-sr-angle-circle-left text-warning" style={{ fontSize: '2rem', cursor: 'pointer' }}></i>
+                <i className="fi fi-sr-angle-circle-left  " style={{ fontSize: '2rem', cursor: 'pointer' }}></i>
               </div>
             </div>
             <div className="col-6 text-end">
               <div className="mx-1" onClick={nextCards}>
-                <i className="fi fi-sr-angle-circle-right text-warning" style={{ fontSize: '2rem', cursor: 'pointer' }}></i>
+                <i className="fi fi-sr-angle-circle-right  " style={{ fontSize: '2rem', cursor: 'pointer' }}></i>
               </div>
             </div>
           </div>
@@ -90,12 +90,12 @@ const Roadmap = () => {
       </div>
 
       {/* for larger screen */}
-      <div className="container-fluid py-5 design d-lg-block d-md-block d-none" style={{ backgroundColor: '#1E1E1E' }}>
+      <div className="container-fluid py-5 design d-lg-block d-md-block d-none">
         <div className="container py-5">
           <div className="row">
             <div className="col-1 d-flex justify-content-center align-items-center">
               <div className="mx-1" onClick={prevCards}>
-                <i className="fi fi-sr-angle-circle-left text-warning" style={{ fontSize: '2rem', cursor: 'pointer' }}></i>
+                <i className="fi fi-sr-angle-circle-left " style={{ fontSize: '2rem', cursor: 'pointer' }}></i>
               </div>
             </div>
             <div className="col-10">
@@ -105,7 +105,7 @@ const Roadmap = () => {
             </div>
             <div className="col-1 d-flex justify-content-center align-items-center">
               <div className="mx-1" onClick={nextCards}>
-                <i className="fi fi-sr-angle-circle-right text-warning" style={{ fontSize: '2rem', cursor: 'pointer' }}></i>
+                <i className="fi fi-sr-angle-circle-right  " style={{ fontSize: '2rem', cursor: 'pointer' }}></i>
               </div>
             </div>
           </div>

@@ -21,9 +21,9 @@ const StepperSection = ({ title, items }) => {
             <i className="fi fi-rr-hand-back-point-right text-warning"></i>
           </div>
           <div className="col-lg-7 col-10 text-start">
-            <h5 className=' my-2' onClick={toggleOpen} style={{ cursor: 'pointer' , color: '#f3f3f3' }}> {title} {!isOpen ? <i class="fi fi-sr-lock text-warning"></i> : <i class="fi fi-sr-unlock text-success"></i>}</h5>
+            <h5 className=' my-2' onClick={toggleOpen} style={{ cursor: 'pointer'  }}> {title} {!isOpen ? <i class="fi fi-sr-lock text-warning"></i> : <i class="fi fi-sr-unlock text-success"></i>}</h5>
             {isOpen && (
-              <ul className='text-light'>
+              <ul>
                 {items.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
@@ -79,14 +79,14 @@ const RoadmapDetails = () => {
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
 
-      <div className="container-fluid design py-3" style={{ backgroundColor: '#1E1E1E' }}>
-        <h1 style={{ color: '#FFE164' }} className='py-3 text-center'>{`${title} Roadmap`}</h1>
-        <h6 className='text-light text-center mb-3'>{`${roadmapData.description}`}</h6>
+      <div className="container-fluid design py-3">
+        <h1  className='py-3 text-center'>{`${title} Roadmap`}</h1>
+        <h6 className='  text-center mb-3'>{`${roadmapData.description}`}</h6>
         <div className="container g-0">
           <div className="row p-lg-5 p-3 my-2 border  rounded-8 g-0">
             {roadmapData.topics.map((topic, index) => (
               <div key={index}>
-                     <Link to ={`/theory/${title} `}>  <h5 className="text-light text-decoration-underline">{topic.headline}</h5> </Link>
+                     <Link to ={`/theory/${title} `}>  <h5 className="  text-decoration-underline">{topic.headline}</h5> </Link>
                 
                   <div className="container-fluid g-0 p-3" style={{ overflowY: 'auto'}}>
                     <StepperSection title= {title}  items={topic.points} />

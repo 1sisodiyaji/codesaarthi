@@ -46,7 +46,7 @@ const Theory = () => {
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
 
-      <div className="container-fluid  py-5" style={{ minHeight: '100vh', backgroundColor: '#1E1E1E' }}>
+      <div className="container-fluid  py-5" style={{ minHeight: '100vh' }}>
         <div className="container">
           <div className="row g-6">
             <>
@@ -57,9 +57,20 @@ const Theory = () => {
                       <div className="text-end text-success text-decoration-underline"><small>Free Course </small> </div>
                       <h5 className="card-title text-light text-center my-2">{course.title}</h5>
                       <small className='text-muted text-capitalize my-1'>{course.description} </small>
-                      <Link to={`/theory/${course.title}`}>
-                        <div className="btn text-warning text-capitalize rounded-8 tilt-effect" style={{ backgroundColor: '#262626' }}>Start Reading</div>
+                      <div className="row my-2">
+                        <div className="col-6">
+                          <div className="btn  text-capitalize">
+                          <i class="fi fi-sr-add pe-1"></i>
+                            Add to Read
+                          </div>
+                        </div>
+                        <div className="col-6 text-end">
+                        <Link to={`/theory/${course.title}`}>
+                        <div className="btn rounded-8  text-capitalize tilt-effect">Start Reading <i class="fi fi-ss-book-open-reader ps-1"></i></div>
                       </Link>
+                        </div>
+                      </div>
+                     
                   </div>
                   
                 </div>

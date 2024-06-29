@@ -6,6 +6,7 @@ import config from "../config/config";
 export const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [user, setUser] = useState(null);
+  const [darkmode, setDarkmode] = useState(false);
   const isNavLinkActive = (path) => {
     return location.pathname.includes(path);
   };
@@ -63,13 +64,29 @@ export const Navbar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+ 
+
+  const toggleDarkMode = () => {
+    const isDarkMode = !darkmode;
+    setDarkmode(isDarkMode);
+
+    // Toggle dark theme class on body
+    const body = document.body;
+    if (isDarkMode) {
+      body.classList.add('dark-theme');
+    } else {
+      body.classList.remove('dark-theme');
+    }
+
+    // Optionally, persist dark mode state in localStorage
+    localStorage.setItem('darkmode', JSON.stringify(isDarkMode));
+  };
+ 
   return (
     <>
       {/* <!-- Navbar For small screen--> */}
       <nav
-        className="navbar navbar-expand-lg navbar-dark fixed-top d-lg-none d-md-none d-sm-block  shadow-0"
-        style={{ backgroundColor: "#1E1E1E" }}
-      >
+        className="navbar navbar-expand-lg  fixed-top d-lg-none d-md-none d-sm-block  shadow-0">
         <div className="container-fluid">
           <Link className="navbar-brand text-center" to="/">
             <img
@@ -80,6 +97,10 @@ export const Navbar = () => {
               loading="lazy"
             />
           </Link>
+<div>
+          <button class="btn btn-sm rounded-8  me-2" onClick={toggleDarkMode} >
+             <i class="fi fi-ss-moon-stars"></i>
+          </button>
 
           {/* <!-- Toggle button --> */}
           <button
@@ -87,8 +108,10 @@ export const Navbar = () => {
             type="button"
             onClick={toggleSidebar}
           >
-            <i className="fi fi-br-bars-staggered text-primary"></i>
+            <i className="fi fi-br-bars-staggered "></i>
           </button>
+
+          </div>
         </div>
       </nav>
 
@@ -102,12 +125,11 @@ export const Navbar = () => {
           <ul className="nav flex-column text-start ms-4">
             {!user ?
               <>
-                <li className="nav-item text-light">
+                <li className="nav-item ">
                   <Link
                     className={`nav-link ${
                       isNavLinkActive("/signup") ? "selected" : ""
-                    }`}
-                    style={{ color: "whitesmoke" }}
+                    }`} 
                     to="/signup"
                   >
                     <i className="fi fi-rs-rocket-lunch pe-2"></i>
@@ -118,8 +140,7 @@ export const Navbar = () => {
                   <Link
                     className={`nav-link ${
                       isNavLinkActive("/Login") ? "selected" : ""
-                    }`}
-                    style={{ color: "whitesmoke" }}
+                    }`} 
                     to="/Login"
                   >
                     <i className="fi fi-br-sign-in-alt pe-2"></i>
@@ -134,7 +155,6 @@ export const Navbar = () => {
                 className={`nav-link ${
                   isNavLinkActive("/profile") ? "selected" : ""
                 }`}
-                style={{ color: "whitesmoke" }}
                 to="/profile"
               >
                 {" "}
@@ -149,8 +169,7 @@ export const Navbar = () => {
               <Link
                 className={`nav-link ${
                   isNavLinkActive("/AboutUs") ? "selected" : ""
-                }`}
-                style={{ color: "whitesmoke" }}
+                }`} 
                 to="/AboutUs"
               >
                 {" "}
@@ -162,8 +181,7 @@ export const Navbar = () => {
               <Link
                 className={`nav-link ${
                   isNavLinkActive("/theory") ? "selected" : ""
-                }`}
-                style={{ color: "whitesmoke" }}
+                }`} 
                 to="/theory"
               >
                 {" "}
@@ -175,8 +193,7 @@ export const Navbar = () => {
               <Link
                 className={`nav-link ${
                   isNavLinkActive("/Problems") ? "selected" : ""
-                }`}
-                style={{ color: "whitesmoke" }}
+                }`} 
                 to="/Problems"
               >
                 {" "}
@@ -189,8 +206,7 @@ export const Navbar = () => {
               <Link
                 className={`nav-link ${
                   isNavLinkActive("/Projects") ? "selected" : ""
-                }`}
-                style={{ color: "whitesmoke" }}
+                }`} 
                 to="/Projects"
               >
                 {" "}
@@ -203,8 +219,7 @@ export const Navbar = () => {
               <Link
                 className={`nav-link ${
                   isNavLinkActive("/roadMap") ? "selected" : ""
-                }`}
-                style={{ color: "whitesmoke" }}
+                }`} 
                 to="/roadMap"
               >
                 <i className="fi fi-ss-road pe-2"></i>
@@ -217,8 +232,7 @@ export const Navbar = () => {
                   onClick={logout}
                   className={`nav-link ${
                     isNavLinkActive("/") ? "selected" : ""
-                  }`}
-                  style={{ color: "whitesmoke" }}
+                  }`} 
                   to="/"
                 >
                   <i className="fi fi-br-sign-in-alt pe-2"></i>
@@ -232,14 +246,13 @@ export const Navbar = () => {
 
       {/* <!-- Navbar For big screen--> */}
       <nav
-        className="navbar navbar-expand-lg sticky sticky-top p-0 d-lg-block d-md-block d-none  shadow-6"
+         className= "navbar navbar-expand-lg sticky sticky-top p-0 d-lg-block d-md-block d-none  shadow-6"
         style={{ zIndex: "100000!important" }}
       >
         <div
           className="container-fluid "
           style={{
-            zIndex: "1000!important",
-            backgroundColor: "#1E1E1E",
+            zIndex: "1000!important"
           }}
         >
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -259,8 +272,7 @@ export const Navbar = () => {
                 <Link
                   className={`nav-link ${
                     isNavLinkActive("/AboutUs") ? "active" : ""
-                  }`}
-                  style={{ color: "#FFFFFF" }}
+                  }`} 
                   to="/AboutUs"
                 >
                   About Us
@@ -270,8 +282,7 @@ export const Navbar = () => {
                 <Link
                   className={`nav-link ${
                     isNavLinkActive("/theory") ? "active" : ""
-                  }`}
-                  style={{ color: "#FFFFFF" }}
+                  }`} 
                   to="/theory"
                 >
                   Theory
@@ -281,8 +292,7 @@ export const Navbar = () => {
                 <Link
                   className={`nav-link ${
                     isNavLinkActive("/Problems") ? "active" : ""
-                  }`}
-                  style={{ color: "#FFFFFF" }}
+                  }`} 
                   to="/Problems"
                 >
                   Problems
@@ -293,8 +303,7 @@ export const Navbar = () => {
                 <Link
                   className={`nav-link ${
                     isNavLinkActive("/Projects") ? "active" : ""
-                  }`}
-                  style={{ color: "#FFFFFF" }}
+                  }`} 
                   to="/Projects"
                 >
                   Projects
@@ -305,8 +314,7 @@ export const Navbar = () => {
                 <Link
                   className={`nav-link ${
                     isNavLinkActive("/roadMap") ? "active" : ""
-                  }`}
-                  style={{ color: "#FFFFFF" }}
+                  }`} 
                   to="/roadMap"
                 >
                   RoadMaps
@@ -315,8 +323,13 @@ export const Navbar = () => {
             </ul>
             {/* Left links */}
           </div>
+          <button class="btn btn-sm rounded-8  me-2" onClick={toggleDarkMode} >
+             <i class="fi fi-ss-moon-stars"></i>
+          </button>
+         
+          <div className="d-lg-block d-md-block d-none d-flex justify-content-center align-items-center">
+          
 
-          <div className="d-lg-block d-md-block d-none">
             {user ? 
               <>
                 <div className="d-flex align-items-center">
@@ -324,7 +337,7 @@ export const Navbar = () => {
                     className="nav-item "
                     style={{ zIndex: "9999" }}
                   >
-                    <div>
+                    <button className="btn btn-floating">
                       {user ? (
                         <>
                           <Link to="/profile">
@@ -346,14 +359,14 @@ export const Navbar = () => {
                           </Link>
                         </>
                       )}
-                    </div>
+                    </button>
                   </div>
                 </div>
               </>
              : 
               <>
-                <Link to="/login" className="borderColor">
-                  <button className="btn btn-sm  rounded-8 text-light text-capitalize">
+                <Link to="/login">
+                  <button className="btn btn-sm     text-capitalize">
                     Log in
                   </button>
                 </Link>

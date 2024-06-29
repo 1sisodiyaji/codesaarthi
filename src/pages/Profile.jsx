@@ -195,10 +195,10 @@ const Profile = () => {
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
 
-      <div className='bg-dark py-lg-5 design py-3  bg-dark' style={{ minHeight: '100vh' }}>
+      <div className='py-lg-5 design py-3' style={{ minHeight: '100vh' }}>
         {user ?
           <>
-            <div className='text-end pe-4 d-lg-block d-md-block d-none'><button className='btn border border-warning text-warning text-capitalize' onClick={logout}>Logout</button></div>
+            <div className='text-end pe-4 d-lg-block d-md-block d-none'><button className='btn   text-capitalize' onClick={logout}>Logout</button></div>
 
             {editing ?
               <>
@@ -213,7 +213,7 @@ const Profile = () => {
                           <img
                             src={imagePreview}
                             alt={formData.name}
-                            className="img-fluid border border-dark"
+                            className="img-fluid border border-light"
                             width={250}
                             height={250} 
                             style={{ borderRadius: "50%", cursor: "pointer" }}
@@ -241,13 +241,13 @@ const Profile = () => {
                         <div className="row">
 
                           <div className="col-6 text-start">
-                            <button type="submit" className="btn btn-danger text-light text-capitalize" disabled={loading} onClick={() => deleteUser(user._id)}>
+                            <button type="submit" className="btn  bg-danger text-light text-capitalize" disabled={loading} onClick={() => deleteUser(user._id)}>
                               {loading ? "Deleting..." : <>Delete <i className="fi fi-ss-trash-xmark ps-2"></i></>}
                             </button>
                           </div>
 
                           <div className="col-6 text-end">
-                            <button type="submit" className="btn btn-dark text-warning text-capitalize" disabled={loading}>
+                            <button type="submit" className="btn bg-dark text-warning text-capitalize" disabled={loading}>
                               {loading ? "Updating..." : <>Update <i className="fi fi-sr-pen-clip ps-2"></i></>}
                             </button>
                           </div>
@@ -262,28 +262,28 @@ const Profile = () => {
               </>
               :
               <>
-                <h3 className='text-warning text-center'>Profile </h3>
+                <h3 className='text-center'>Profile </h3>
 
                 <div className="card bg-black p-lg-4  p-2 m-lg-3 m-0">
                   <div className="row d-flex justify-content-end g-0">
                     <div className="col-6"></div>
-                    <div className="col-6 text-end">  <div className="btn border border-dark  text-capitalize text-warning" onClick={editingMode}> Edit <i className="fi fi-sr-user-pen text-warning fa-2x ps-2"></i></div> </div>
+                    <div className="col-6 text-end">  <div className="btn  text-capitalize " onClick={editingMode}> Edit <i className="fi fi-sr-user-pen fa-2x ps-2"></i></div> </div>
 
                   </div>
 
                   <div className="row g-0 ">
                     <div className="col-3">
-                      <img src={user.image} alt={user.name} title={user.name} className='img-fluid border border-dark p-1' width={250} height={250} style={{ borderRadius: '50%' }} />
+                      <img src={user.image} alt={user.name} title={user.name} className='img-fluid border border-light p-1' width={250} height={250} style={{ borderRadius: '50%' }} />
                     </div>
                     <div className="col-9 ps-3">
-                      <small className='text-light'>Name : {user.name}</small> <br />
-                      <small className='text-light'>Email : {user.email}</small> <br />
-                      <small className='text-light'>Username : {user.username}</small> <br />
-                      <small className='text-light'>D O B : {user.dateOfBirth}</small> <br />
-                      <small className='text-light'>Institue : {user.institute}</small> <br />
-                      <small className='text-light'>Location : {user.location}</small> <br />
-                      <small className='text-light'>Contact : {user.contact}</small> <br />
-                      <small className='text-light'>Websites : {user.socialMediaLinks}</small>
+                      <small>Name : {user.name}</small> <br />
+                      <small>Email : {user.email}</small> <br />
+                      <small>Username : {user.username}</small> <br />
+                      <small>D O B : {user.dateOfBirth}</small> <br />
+                      <small>Institue : {user.institute}</small> <br />
+                      <small>Location : {user.location}</small> <br />
+                      <small>Contact : {user.contact}</small> <br />
+                      <small>Websites : {user.socialMediaLinks}</small>
 
                     </div>
                   </div>
@@ -295,7 +295,7 @@ const Profile = () => {
               <>
                 {/* //blogs posted by user  */}
                 {blogs.map((blog) => (
-                  <div key={blog._id} className="card bg-dark text-light my-2 shadow-6 p-3 ">
+                  <div key={blog._id} className="card  my-2 shadow-6 p-3 ">
                     <Link to={`/blog/${blog._id}`} > <h4 className="text-warning">{blog.title}</h4> </Link>
                     <figure className='text-center'> <img
                       src={blog.image}

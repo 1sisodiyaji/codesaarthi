@@ -13,8 +13,7 @@ export const Navbar2 = () => {
     <>
       {/* <!-- Navbar For small screen--> */}
       <nav
-        className="navbar navbar-expand-lg navbar-dark fixed-bottom d-lg-none d-md-none d-sm-block  shadow-0"
-        style={{ backgroundColor: "#1E1E1E" }}
+        className="navbar navbar-expand-lg   fixed-bottom d-lg-none d-md-none d-sm-block  shadow-0"
       >
         <div className="container-fluid d-flex justify-content-around  align-items-center p-1">
           <Link className="text-center" style={{ fontSize: "1.4rem" }} to="/">

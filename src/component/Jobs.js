@@ -54,13 +54,7 @@ const Jobs = () => {
     return match ? match[0] : "Not specified";
   };
 
-  if (loading) {
-    return (
-      <div className=" vh-100 d-flex justify-content-center align-items-center bg-dark">
-        <img src="img/loader.svg" alt="Loading" />;
-      </div>
-    );
-  }
+
 
   return (
     <>
@@ -96,20 +90,35 @@ const Jobs = () => {
 
       <div
         className="design  g-0 py-lg-5 py-2 container-fluid"
-        style={{ backgroundColor: "#1E1E1E", minHeight: "100vh" }}
+        style={{   minHeight: "100vh" }}
       >
-        {loading ? (
+        {loading ? <>
           <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
-            <h1>
-              <i className="fi fi-sr-loading"></i>
-            </h1>
+            <div class="card" aria-hidden="true" style={{width: '350px'}}>
+          <div class="text-center">
+            <img src="img/loader.gif" style={{height: '125px', width: '115px'}} class="card-img-top" alt="..." />
+        </div>
+          <div class="card-body">
+            <h5 class="card-title placeholder-glow">
+              <span class="placeholder col-6"></span>
+            </h5>
+            <p class="card-text placeholder-glow">
+              <span class="placeholder col-7"></span>
+              <span class="placeholder col-4"></span>
+              <span class="placeholder col-4"></span>
+              <span class="placeholder col-6"></span>
+              <span class="placeholder col-8"></span>
+            </p>
+            <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
           </div>
-        ) : (
+        </div>
+          </div>
+          </> : (
           <div>
             {jobs.map((job) => (
               <div key={job.id} className="g-0">
                 <div
-                  className="bg-dark text-light rounded-6 p-lg-3 p-2 card "
+                  className=" bg-dark rounded-6 p-lg-3 p-2 card "
                   style={{ marginBottom: "20px", padding: "10px" }}
                 >
                   <div className="row g-0">
@@ -149,7 +158,7 @@ const Jobs = () => {
                         rel="noopener noreferrer"
                       >
                         {" "}
-                        <button className="btn btn-black  text-success text-capitalize ">
+                        <button className="btn bg-black  text-success text-capitalize ">
                           Apply Now{" "}
                           <i className="fi fi-br-arrow-up-right mx-1"></i>
                         </button>{" "}

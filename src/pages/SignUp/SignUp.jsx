@@ -173,13 +173,7 @@ const SignUp = () => {
 
       <div
         className="container-fluid d-flex justify-content-center align-items-center"
-        style={{
-          overflowX: "hidden",
-          fontFamily: "Exo",
-          minHeight: "100vh",
-          overflowY: "scroll",
-          backgroundColor: "#141414",
-        }}
+        style={{  minHeight: "100vh"  }}
       >
         <div className="col-lg-5 col-12 d-flex justify-content-center align-items-center">
           <div
@@ -314,7 +308,7 @@ const SignUp = () => {
                         style={{ height: "26px" }}
                         alt="Google Icon"
                       />
-                      <span className="text-dark text-capitalize ms-2">
+                      <span className=" text-capitalize ms-2">
                         Sign Up With Google
                       </span>
                     </button>

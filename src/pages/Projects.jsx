@@ -19,12 +19,12 @@ const Projects = () => {
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
 
-      <div className="container-fluid design" style={{ minHeight: "100vh",backgroundColor: '#1E1E1E' }}>
+      <div className="container-fluid design" style={{ minHeight: "100vh"  }}>
         <div className="container">
         <div className="row py-5 g-6">
 
           <div className="col-lg-4 my-2 col-12">
-            <div className="card  p-3" style={{ backgroundColor: "#262626" }}>
+            <div className="card  p-3">
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
@@ -35,15 +35,15 @@ const Projects = () => {
                   </div>
                   <div className="col-8 align-self-center">
                     <div>
-                      <h5 className="card-title text-light text-capitalize">
+                      <h5 className="card-title   text-capitalize">
                        clone Projects
                       </h5>
                     </div>
 
                     <div>
                       <Link to="/Projects/web-development">
-                        <div className="btn text-warning text-capitalize bg-dark">
-                          Check it Out
+                        <div className="btn   text-capitalize  ">
+                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>
@@ -54,7 +54,7 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-4 my-2 col-12">
-            <div className="card  p-3" style={{ backgroundColor: "#262626" }}>
+            <div className="card  p-3"  >
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
@@ -70,8 +70,8 @@ const Projects = () => {
 
                     <div>
                       <Link to="/Projects/React-based-project">
-                        <div className="btn text-warning text-capitalize bg-dark">
-                          Check it Out
+                        <div className="btn  text-capitalize  ">
+                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>
@@ -82,7 +82,7 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-4 my-2 col-12">
-            <div className="card  p-3" style={{ backgroundColor: "#262626" }}>
+            <div className="card  p-3"  >
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
@@ -99,8 +99,8 @@ const Projects = () => {
 
                     <div>
                       <Link to="/Projects/phpProjects">
-                        <div className="btn text-warning text-capitalize bg-dark">
-                          Check it Out
+                        <div className="btn  text-capitalize  ">
+                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>
@@ -111,7 +111,7 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-4 my-2 col-12">
-            <div className="card  p-3" style={{ backgroundColor: "#262626" }}>
+            <div className="card  p-3"  >
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
@@ -127,8 +127,8 @@ const Projects = () => {
 
                     <div>
                       <Link to="/Projects/java-Projects">
-                        <div className="btn text-warning text-capitalize bg-dark">
-                          Check it Out
+                        <div className="btn  text-capitalize ">
+                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>
@@ -139,7 +139,7 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-4 my-2 col-12">
-            <div className="card  p-3" style={{ backgroundColor: "#262626" }}>
+            <div className="card  p-3"  >
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
@@ -155,8 +155,8 @@ const Projects = () => {
 
                     <div>
                       <Link to="/Projects/HtmlProject">
-                        <div className="btn text-warning text-capitalize bg-dark">
-                          Check it Out
+                        <div className="btn  text-capitalize ">
+                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>
@@ -167,7 +167,7 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-4 my-2 col-12">
-            <div className="card p-3" style={{ backgroundColor: "#262626" }}>
+            <div className="card p-3"  >
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
@@ -183,8 +183,8 @@ const Projects = () => {
 
                     <div>
                       <Link to="/Projects/Html-Css-Projects">
-                        <div className="btn text-warning text-capitalize bg-dark">
-                          Check it Out
+                        <div className="btn   text-capitalize  ">
+                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>
@@ -195,7 +195,7 @@ const Projects = () => {
           </div>
 
           <div className="col-lg-4 my-2 col-12">
-            <div className="card  p-3" style={{ backgroundColor: "#262626" }}>
+            <div className="card  p-3"  >
               <div
                 className="bg-image hover-overlay ripple"
                 data-mdb-ripple-color="light"
@@ -213,8 +213,8 @@ const Projects = () => {
 
                     <div>
                       <Link to="/Projects/dsa">
-                        <div className="btn text-warning text-capitalize bg-dark">
-                          Check it Out
+                        <div className="btn   text-capitalize ">
+                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>

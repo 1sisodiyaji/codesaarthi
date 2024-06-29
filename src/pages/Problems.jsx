@@ -18,19 +18,19 @@ const Problems = () => {
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
 
-<div className="container-fluid design" style={{backgroundColor:' #1A1A1A'}}>
+<div className="container-fluid design">
       <div className="container-lg container-fluid " style={{minHeight:'100vh'}}>
 
         <div className="row w-lg-75 w-100  g-0 py-3">
 
           <div className="col-lg-4 col-12 my-2 pe-lg-2">
-            <div className=" card  tilt-effect2 " style={{ backgroundColor: '#262626' }}>
+            <div className=" card">
               <div className="card-body text-light">
                 <h5 className="card-title "> Basics Array Question  </h5>
                 <p className="card-text"> Practise Basic Questions to clear concepts
                 </p>
 
-                <Link to= "/Problems/ArrayProblems" ><button type="button" className="btn  text-light text-capitalize" style={{backgroundColor:'purple'}}>Start Solving</button></Link>
+                <Link to= "/Problems/ArrayProblems" ><button type="button" className="btn  text-light tilt-effect2 text-capitalize" style={{backgroundColor:'purple'}}>Start Solving <i class="fi fi-sr-square-terminal text-light ps-2"></i></button></Link>
               </div>
             </div>
           </div>

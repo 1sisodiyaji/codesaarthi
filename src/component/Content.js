@@ -66,9 +66,26 @@ const Content = () => {
 
   if (!course) {
     return (
-      <div className=" vh-100 d-flex justify-content-center align-items-center bg-dark">
-        <img src="https://codesaarthi.com/img/loader.svg" alt="Loading" />;
-      </div>
+      <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
+            <div class="card" aria-hidden="true" style={{width: '350px'}}>
+          <div class="text-center">
+            <img src="img/loader.gif" style={{height: '125px', width: '115px'}} class="card-img-top" alt="..." />
+        </div>
+          <div class="card-body">
+            <h5 class="card-title placeholder-glow">
+              <span class="placeholder col-6"></span>
+            </h5>
+            <p class="card-text placeholder-glow">
+              <span class="placeholder col-7"></span>
+              <span class="placeholder col-4"></span>
+              <span class="placeholder col-4"></span>
+              <span class="placeholder col-6"></span>
+              <span class="placeholder col-8"></span>
+            </p>
+            <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+          </div>
+        </div>
+          </div>
     );
   }
 
@@ -89,22 +106,22 @@ const Content = () => {
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
 
-      <div className="container-fluid design g-0" style={{ backgroundColor: '#1E1E1E' }}>
-        <div className="container g-0">
+      <div className="container-fluid design g-0">
+        <div className="container g-0 ">
           <div className="d-lg-none d-block d-flex justify-content-end pt-2">
-            <button onClick={toggleSidebar} className="navbar-toggler shadow-0 d-lg-none d-block" style={{ color: "#FFE164", fontSize: "1.8rem" }}>
+            <button onClick={toggleSidebar} className="navbar-toggler shadow-0 d-lg-none d-block" style={{  fontSize: "1.8rem" }}>
               <i className="fi fi-br-align-justify pt-2"></i>
             </button>
           </div>
-          <div className="row g-0 border border-dark">
-            <div className="col-lg-3 col-0 p-lg-2 d-lg-block d-none border border-dark" style={{ backgroundColor: '#262626' }}>
+          <div className="row g-0 border border-dark rounded-8">
+            <div className="col-lg-3 col-0 p-lg-2 d-lg-block d-none" style={{borderRight: '1px solid #262626'}}>
               <div className="d-flex justify-content-center py-2">
                 <img src={course.thumbnailImage} className="img-fluid" alt="course thumbnail" />
               </div>
               <h2 className="text-center pb-3 text-primary">{course.title.toUpperCase()}</h2>
               {course.topics && course.topics.map((topic, index) => (
-                <div key={topic._id} onClick={() => handleTopicClick(index)} style={{ cursor: 'pointer', textDecoration: selectedTopic === index ? 'underline' : 'none', color: selectedTopic === index ? '#FFE164' : 'none' }}>
-                  <p className="text-capitalize topic-item" style={{ color: selectedTopic === index ? '#6D39F7' : '#FFE164' }}>
+                <div key={topic._id} onClick={() => handleTopicClick(index)} style={{ cursor: 'pointer', textDecoration: selectedTopic === index ? 'underline' : 'none', color: selectedTopic === index ? '' : 'none' }}>
+                  <p className="text-capitalize topic-item" style={{ color: selectedTopic === index ? '#6D39F7' : '' }}>
                     <i className="fi fi-ss-book-alt pe-1"></i> {topic.title}
                   </p>
                   <hr />
@@ -136,13 +153,13 @@ const Content = () => {
                       <img src={course.topics[selectedTopic].image} alt={course.topics[selectedTopic].title} style={{ maxHeight: "300px" }} className="img-fluid" />
                     </div>
                   )}
-                  <div className='text-light p-2' dangerouslySetInnerHTML={{ __html: course.topics[selectedTopic].details }}></div>
+                  <div className=' p-2' dangerouslySetInnerHTML={{ __html: course.topics[selectedTopic].details }}></div>
                   <div className="row g-0 pb-4 p-2">
                     <div className="col-6 text-start">
-                      <div className="btn border text-capitalize text-warning" onClick={goToPreviousTopic}><i className="fi fi-rr-angle-small-left"></i> previous</div>
+                      <div className="btn text-capitalize" onClick={goToPreviousTopic}><i className="fi fi-rr-angle-small-left"></i> previous</div>
                     </div>
                     <div className="col-6 text-end">
-                      <div className="btn border text-capitalize text-warning" onClick={goToNextTopic}>Next <i className="fi fi-rr-angle-small-right"></i></div>
+                      <div className="btn  text-capitalize" onClick={goToNextTopic}>Next <i className="fi fi-rr-angle-small-right"></i></div>
                     </div>
                   </div>
                 </div>

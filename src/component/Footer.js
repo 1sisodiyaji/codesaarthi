@@ -1,13 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-export const Footer = ({ onFooterClick }) => {
-  const userName = localStorage.getItem("user_email");
+export const Footer = ({ onFooterClick }) => { 
   return (
     <>
-      <footer
-        className="py-3"
-        style={{ color: "#FFFFFF", backgroundColor: "#1A1A1A" }}
-      >
+      <footer  className="py-3">
         <div className="container-fluid g-0 mb-lg-0 mb-5">
           <div className="row g-0">
             <div className="col-lg-9 col-12 d-flex">
@@ -15,7 +11,7 @@ export const Footer = ({ onFooterClick }) => {
                 <div className="row">
                   <div className="col-lg-5 col-12 text-center">
                     {/* <!-- Additional Information --> */}
-                    <div className="pb-lg-3 d-flex" style={{ color: "FFFFFF" }}>
+                    <div className="pb-lg-3 d-flex">
                       <p>
                         © 2024 codesaarthi. All rights reserved by{" "}
                         <Link to="https://codesaarthi.com">
@@ -67,12 +63,7 @@ export const Footer = ({ onFooterClick }) => {
                   <Link
                     className="btn btn-sm ms-3"
                     to="https://www.instagram.com/codesaarthi/"
-                    role="button"
-                    style={{
-                      borderRadius: "50%",
-                      color: "#703BF7",
-                      fontSize: "1.2rem",
-                    }}
+                    role="button" 
                     target="_blank"
                   >
                     <i className="fi fi-brands-instagram  rounded-8"></i>
@@ -82,12 +73,7 @@ export const Footer = ({ onFooterClick }) => {
                   <Link
                     className="btn btn-sm ms-3"
                     to="https://chat.whatsapp.com/BQV3Uv4nlU7IcrnjXHASpE"
-                    role="button"
-                    style={{
-                      borderRadius: "50%",
-                      color: "#703BF7",
-                      fontSize: "1.2rem",
-                    }}
+                    role="button" 
                     target="_blank"
                   >
                     <i className="fi fi-brands-whatsapp rounded-8"></i>
@@ -106,12 +92,7 @@ export const Footer = ({ onFooterClick }) => {
                           <Link
                             className="btn btn-sm ms-3"
                             to="https://www.instagram.com/codesaarthi/"
-                            role="button"
-                            style={{
-                              borderRadius: "50%",
-                              color: "#703BF7",
-                              fontSize: "1.2rem",
-                            }}
+                            role="button" 
                             target="_blank"
                           >
                             <i className="fi fi-brands-instagram  rounded-8"></i>
@@ -122,12 +103,7 @@ export const Footer = ({ onFooterClick }) => {
                           <Link
                             className="btn btn-sm ms-3"
                             to="https://chat.whatsapp.com/BQV3Uv4nlU7IcrnjXHASpE"
-                            role="button"
-                            style={{
-                              borderRadius: "50%",
-                              color: "#703BF7",
-                              fontSize: "1.2rem",
-                            }}
+                            role="button" 
                             target="_blank"
                           >
                             <i className="fi fi-brands-whatsapp rounded-8"></i>

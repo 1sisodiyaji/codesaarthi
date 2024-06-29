@@ -17,7 +17,7 @@ const TermsAndConditions = () => {
   <meta property="og:type" content="Legal-Website" />
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
-<div className="conatiner-fluid" style={{ backgroundColor : '#262626'}}>
+<div className="conatiner-fluid">
       <div
         className="container-fluid d-flex align-items-center justify-content-center"
         style={{ minHeight: "30vh"}}

@@ -152,14 +152,7 @@ const Login = () => {
       </Helmet>
       <div
         className="container-fluid m-0 p-0 g-0 d-flex justify-content-center align-items-center position-relative design"
-        style={{
-          overflowX: "hidden",
-          fontFamily: "Exo",
-          minHeight: "100vh",
-          overflowY: "scroll",
-          backgroundColor: "#141414",
-        }}
-      >
+        style={{  minHeight: "100vh"}} >
         <div className="col-lg-5 col-12 d-flex justify-content-center align-items-center">
           <div
             className="container-fluid  m-lg-0 p-lg-0"
@@ -281,7 +274,7 @@ const Login = () => {
                       onClick={login}
                     >
                       <img src="../img/search 1.png" height={26} alt="" />
-                      <span className="text-dark text-capitalize ms-2 ">
+                      <span className="text-capitalize ms-2 ">
                         Sign In With Google
                       </span>
                     </button>

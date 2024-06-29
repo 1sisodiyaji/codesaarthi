@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
 
-      <div style={{ minHeight: "100vh" , backgroundColor : '#262626' }}>
+      <div style={{ minHeight: "100vh" }}>
         <div
           className="container-fluid d-flex align-items-center justify-content-center"
           style={{ minHeight: "30vh" }}

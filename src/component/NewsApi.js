@@ -123,40 +123,32 @@ const NewsApi = () => {
 
   if (loading) {
     return (
-      <div className=" vh-100 d-flex justify-content-center align-items-center">
-        <img src="img/loader.svg" alt="Loading" />;
-      </div>
+      <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
+      <div class="card" aria-hidden="true" style={{width: '350px'}}>
+    <div class="text-center">
+      <img src="img/loader.gif" style={{height: '125px', width: '115px'}} class="card-img-top" alt="..." />
+  </div>
+    <div class="card-body">
+      <h5 class="card-title placeholder-glow">
+        <span class="placeholder col-6"></span>
+      </h5>
+      <p class="card-text placeholder-glow">
+        <span class="placeholder col-7"></span>
+        <span class="placeholder col-4"></span>
+        <span class="placeholder col-4"></span>
+        <span class="placeholder col-6"></span>
+        <span class="placeholder col-8"></span>
+      </p>
+      <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+    </div>
+  </div>
+    </div>
     );
   }
 
   if (error) {
     return <div>{error.message}</div>;
   }
-
-  const SkeletonLoader = () => {
-    return <div className="skeleton-loader"></div>;
-};
-
-const ImageWithSkeleton = ({ src, alt }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  const handleImageLoad = () => {
-      setIsLoaded(true);
-  };
-
-  return (
-      <div className="image-container">
-          {!isLoaded && <SkeletonLoader />}
-          <img
-              src={src}
-              alt={alt}
-              onLoad={handleImageLoad}
-              style={{ display: isLoaded ? 'block' : 'none' }}
-          />
-      </div>
-  );
-};
-
 
   return (
     <>
@@ -191,29 +183,20 @@ const ImageWithSkeleton = ({ src, alt }) => {
                 </div>
               </div>
               <small className='text-light'>{article.description}</small>
-              <button 
-                className='text-success text-decoration-underline btn text-start text-capitalize' 
+              <div 
+                className=' text-decoration-underline  text-start text-capitalize' 
                 style={{ cursor: 'pointer' }} 
                 onClick={() => toggleContentVisibility(index)}
               >
                 {visibleContent[index] ? 'Read Less' : 'Read More'}
-              </button>
+              </div>
               {visibleContent[index] && (
                 <div className='text-light'>
                   <small>{article.content}</small>
                 </div>
               )}
               <div className='text-center'>
-             
-                {article.urlToImage ? (
-                   <ImageWithSkeleton
-                   src={article.urlToImage} className='img-fluid' alt={article.title}  title = {article.title} loading='lazy'
-               />
-                ) : (
-                  <ImageWithSkeleton
-                  src= "https://codesaarthi.com/img/logo1.jpg" className='img-fluid' alt={article.title}  title= {article.title} loading='lazy'
-              />
-                )}
+                <img src={article.urlToImage ? article.urlToImage : 'https://codesaarthi.com/img/logo1.jpg'} className='img-fluid' alt={article.title}  title = {article.title} loading='lazy'/>
               </div>
 
               

@@ -1,11 +1,12 @@
-import React ,{useEffect, useState}from "react";
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import React ,{useState}from "react";
+import { Link } from 'react-router-dom';
 import "../App.css";
 import { Helmet } from "react-helmet";
 import NewsApi from "../component/NewsApi";
 import Profile from "./Profile";
 import Jobs from "../component/Jobs";
 import Blogs from "../component/Blogs"; 
+
 const Home = () => {
   const token = localStorage.getItem("token");
 
@@ -63,13 +64,13 @@ const Home = () => {
 
       <div
         className="container-fluid design w-100"
-        style={{ backgroundColor: "#1E1E1E" , minHeight : '100vh' }}
+        style={{   minHeight : '100vh' }}
       >
         {!token ? (
           <>
             <div className="row w-100 py-lg-4 py-2">
               <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center">
-                <div className=" text-light">
+                <div className="">
                   <h1 className="text-start">
                     Start Learning with <br />
                     <span style={{ color: "#703BF7" }}>Codesaarthi</span> <br />
@@ -115,7 +116,7 @@ const Home = () => {
                 />
               </div>
               <div className="col-lg-5 col-12  align-self-end">
-                <h1 className="text-light heading">
+                <h1 className="heading">
                   Discover Our Tailored Projects
                 </h1>
                 <p
@@ -134,7 +135,7 @@ const Home = () => {
             <div className="container">
               <div className="row">
                 <div className="col-lg-4 col-12 my-2">
-                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3">
                     <Link to="/Projects/web-development">
                       <div className="text-end">
                         <i
@@ -147,7 +148,7 @@ const Home = () => {
                       <img src="img/clone1.png" className="img-fluid" />
                     </div>
                     <div className="card-body">
-                      <h5 className="card-title text-center text-light">
+                      <h5 className="card-title text-center ">
                         Clone projects
                       </h5>
                     </div>
@@ -155,7 +156,7 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-4 col-12 my-2">
-                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3">
                     <Link to="/Projects/React-based-project">
                       <div className="text-end">
                         <i
@@ -169,7 +170,7 @@ const Home = () => {
                     </div>
 
                     <div className="card-body">
-                      <h5 className="card-title text-center text-light">
+                      <h5 className="card-title text-center">
                         React Js projects
                       </h5>
                     </div>
@@ -177,7 +178,7 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-4 col-12 my-2">
-                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3">
                     <Link to="/Projects/phpProjects">
                       <div className="text-end">
                         <i
@@ -191,7 +192,7 @@ const Home = () => {
                     </div>
 
                     <div className="card-body">
-                      <h5 className="card-title text-center text-light">
+                      <h5 className="card-title text-center">
                         Php projects
                       </h5>
                     </div>
@@ -199,7 +200,7 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-4 col-12 my-2">
-                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3">
                     <Link to="/Projects/java-Projects">
                       <div className="text-end">
                         <i
@@ -213,7 +214,7 @@ const Home = () => {
                     </div>
 
                     <div className="card-body">
-                      <h5 className="card-title text-center text-light">
+                      <h5 className="card-title text-center">
                         Java projects
                       </h5>
                     </div>
@@ -221,7 +222,7 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-4 col-12 my-2">
-                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3">
                     <Link to="/Projects/HtmlProject">
                       <div className="text-end">
                         <i
@@ -235,7 +236,7 @@ const Home = () => {
                     </div>
 
                     <div className="card-body">
-                      <h5 className="card-title text-center text-light">
+                      <h5 className="card-title text-center">
                         Html projects
                       </h5>
                     </div>
@@ -243,7 +244,7 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-4 col-12 my-2">
-                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3">
                     <Link to="/Projects">
                       <div className="text-end">
                         <i
@@ -257,7 +258,7 @@ const Home = () => {
                     </div>
 
                     <div className="card-body">
-                      <h5 className="card-title text-center text-light">
+                      <h5 className="card-title text-center">
                         Html , Css , Js projects
                       </h5>
                     </div>
@@ -282,7 +283,7 @@ const Home = () => {
                 />
               </div>
               <div className="col-lg-4 col-12 align-self-end">
-                <h2 className="text-light text-center">
+                <h2 className="text-center">
                   Premium Notes Tailored for You
                 </h2>
                 <p className="text-center" style={{ color: "#999999" }}>
@@ -313,7 +314,7 @@ const Home = () => {
               <div className="row py-lg-5">
                 <div className="col-1"></div>
                 <div className="col-lg-5 col-12 my-2">
-                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3">
                     <Link to="/theory/Os-Content">
                       <div className="text-end">
                         <i
@@ -327,7 +328,7 @@ const Home = () => {
                     </div>
 
                     <div className="card-body">
-                      <h5 className="card-title text-center text-light">
+                      <h5 className="card-title text-center">
                         Operating System Notes
                       </h5>
                     </div>
@@ -335,7 +336,7 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-5 col-12 my-2">
-                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3">
                     <Link to="/theory/React-Content">
                       <div className="text-end">
                         <i
@@ -349,7 +350,7 @@ const Home = () => {
                     </div>
 
                     <div className="card-body">
-                      <h5 className="card-title text-center text-light">
+                      <h5 className="card-title text-center">
                         React Notes
                       </h5>
                     </div>
@@ -359,7 +360,7 @@ const Home = () => {
                 <div className="col-1"></div>
                 <div className="col-1"></div>
                 <div className="col-lg-5 col-12 my-2">
-                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3">
                     <Link to="/theory/array">
                       <div className="text-end">
                         <i
@@ -377,7 +378,7 @@ const Home = () => {
                     </div>
 
                     <div className="card-body">
-                      <h5 className="card-title text-center text-light">
+                      <h5 className="card-title text-center">
                         Arrays in short
                       </h5>
                     </div>
@@ -385,7 +386,7 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-5 col-12 my-2">
-                  <div className="card p-3" style={{ backgroundColor: "#262626" }}>
+                  <div className="card p-3">
                     <Link to="/theory/basic-Dbms">
                       <div className="text-end">
                         <i
@@ -403,7 +404,7 @@ const Home = () => {
                     </div>
 
                     <div className="card-body">
-                      <h5 className="card-title text-center text-light">
+                      <h5 className="card-title text-center">
                         DBMS Notes
                       </h5>
                     </div>
@@ -415,13 +416,13 @@ const Home = () => {
           </>
         ) : (
           <>
-            <div className="container-fluid" style={{ backgroundColor: '#1E1E1E' }}>
+            <div className="container-fluid">
               <div className="row g-6">
                 <div className="col-lg-3 col-0 d-lg-block d-none pt-2">
-                  <div className="card bg-dark text-light text-end sticky-top" style={{ top: '70px' }}>
+                  <div className="card   text-end sticky-top" style={{ top: '70px' }}>
                     <div className="p-2">
-                    <p onClick={() => setContent('jobs')} className="text-light" style={{ cursor: 'pointer' }}>Jobs</p>
-                    <p onClick={() => setContent('blogs')} className="text-light" style={{ cursor: 'pointer' }}>Blogs</p>
+                    <p onClick={() => setContent('jobs')} style={{ cursor: 'pointer' }}>Jobs</p>
+                    <p onClick={() => setContent('blogs')}   style={{ cursor: 'pointer' }}>Blogs</p>
            
                     </div>
                   </div>
@@ -433,10 +434,10 @@ const Home = () => {
                 </div>
 
                 <div className="col-lg-3 col-0 d-lg-block d-none pt-2">
-                  <div className="card bg-dark text-light text-start sticky-top" style={{ top: '70px' }}>
+                  <div className="card   text-start sticky-top" style={{ top: '70px' }}>
                     <div className="p-2"> 
-                    <p onClick={() => setContent('news')} className="text-light" style={{ cursor: 'pointer' }}>News</p>
-                    <p onClick={() => setContent('profile')} className="text-light" style={{ cursor: 'pointer' }}>My Account</p>
+                    <p onClick={() => setContent('news')}  style={{ cursor: 'pointer' }}>News</p>
+                    <p onClick={() => setContent('profile')}  style={{ cursor: 'pointer' }}>My Account</p>
                     </div>
                   </div>
                 </div>

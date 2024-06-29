@@ -17,7 +17,7 @@ const Error404Pgae = () => {
   <meta property="og:type" content="Website" />
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
-<div className="container-fluid  design bg-light g-0 " style={{backgroundColor:'#1E1E1E'}}>
+<div className="container-fluid  design g-0 ">
 
    <div className='d-flex align-items-center justify-content-center'>
         <img src="img/error404.jpg" className='img-fluid imageHeight' alt="error page image" />

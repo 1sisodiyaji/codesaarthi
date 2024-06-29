@@ -162,7 +162,7 @@ const RecoverPassword = () => {
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
-      <div className="container-fluid m-0 p-0 g-0 d-flex justify-content-center align-items-center position-relative design" style={{ backgroundColor: "#262626", overflowX: "hidden", fontFamily: "Exo", minHeight: "100vh", overflowY: "scroll" }}>
+      <div className="container-fluid m-0 p-0 g-0 d-flex justify-content-center align-items-center position-relative design" style={{ minHeight: "100vh"}}>
         <div className="container" style={{ maxWidth: "420px" }}>
           <form>
             <div className=" text-center">
@@ -171,7 +171,7 @@ const RecoverPassword = () => {
                 width={95}
                 alt=""
               />
-              <h3 className="pt-3" style={{ color: '#79b4e2' }}> Forgot password</h3>
+              <h3 className="pt-3"> Forgot password</h3>
               <br />
             </div>
 
@@ -204,7 +204,7 @@ const RecoverPassword = () => {
                   type="button" id="sendmailbutton"
                   onClick={sendOtp}
                   className="btn btn-block mb-4 text-capitalize py-3"
-                  style={{ backgroundColor: "#79b4e2", color: 'black', fontSize: "1rem" }}
+                  style={{ fontSize: "1rem" }}
                 >
                   {loading ? <> <img src="img/loader.svg" alt="loader image" /> </> : 'Send OTP'}
                 </button>
@@ -231,7 +231,7 @@ const RecoverPassword = () => {
                   </div>
 
                   <div>
-                    <button type="button" onClick={verifyOtp} className="btn btn-block my-4 text-capitalize py-3" style={{ backgroundColor: "#79b4e2", color: 'black', fontSize: "1rem" }}>
+                    <button type="button" onClick={verifyOtp} className="btn btn-block my-4 text-capitalize py-3" style={{fontSize: "1rem" }}>
                       {loading ? <> <img src="img/loader.svg" alt="loader image" /> </> : 'Verify OTP'}
                     </button>
                   </div>
@@ -266,7 +266,7 @@ const RecoverPassword = () => {
                   <i onClick={passwordView2} className="fi fi-ss-eye-crossed pt-2 ps-2"></i>
                 </div>
                 {/* Update Password button */}
-                <button type="button" onClick={updatePassword} className="btn btn-block mb-4 text-capitalize py-3" style={{ backgroundColor: "#79b4e2", color: "#011528", fontSize: "1rem" }}>
+                <button type="button" onClick={updatePassword} className="btn btn-block mb-4 text-capitalize py-3" style={{ fontSize: "1rem" }}>
                   {loading ? <> <img src="img/loader.svg" alt="loader image" /> </> : 'Update'}
                 </button>
               </div>

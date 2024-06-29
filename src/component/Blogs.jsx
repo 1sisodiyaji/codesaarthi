@@ -27,9 +27,9 @@ const Blogs = () => {
       </Helmet>
 
 
-      <div className="container-fluid design py-lg-5" style={{ backgroundColor: '#1E1E1E', minHeight: '100vh' }}>
+      <div className="container-fluid design py-lg-5" style={{ minHeight: '100vh' }}>
         <button
-          className='btn w-100 bg-black text-warning text-capitalize mt-2'
+          className='btn w-100    text-capitalize my-2'
           onClick={handleNewPost}
         >
           Post Your Own Blog

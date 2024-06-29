@@ -36,9 +36,32 @@ const Blog = () => {
 
   if (loading) {
     return (
-      <div className="d-flex justify-content-center align-items-center vh-100">
-        <div className="spinner-border text-warning" role="status">
-          <span className="sr-only">Loading...</span>
+      <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
+        <div class="card" aria-hidden="true" style={{ width: "350px" }}>
+          <div class="text-center">
+            <img
+              src="img/loader.gif"
+              style={{ height: "125px", width: "115px" }}
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title placeholder-glow">
+              <span class="placeholder col-6"></span>
+            </h5>
+            <p class="card-text placeholder-glow">
+              <span class="placeholder col-7"></span>
+              <span class="placeholder col-4"></span>
+              <span class="placeholder col-4"></span>
+              <span class="placeholder col-6"></span>
+              <span class="placeholder col-8"></span>
+            </p>
+            <a
+              class="btn btn-secondary disabled placeholder col-6"
+              aria-disabled="true"
+            ></a>
+          </div>
         </div>
       </div>
     );
