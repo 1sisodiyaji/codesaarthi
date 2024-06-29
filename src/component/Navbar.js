@@ -98,8 +98,8 @@ export const Navbar = () => {
             />
           </Link>
 <div>
-          <button class="btn btn-sm rounded-8  me-2" onClick={toggleDarkMode} >
-             <i class="fi fi-ss-moon-stars"></i>
+          <button  className="btn btn-sm rounded-8  me-2" onClick={toggleDarkMode} >
+             <i  className="fi fi-ss-moon-stars"></i>
           </button>
 
           {/* <!-- Toggle button --> */}
@@ -323,8 +323,8 @@ export const Navbar = () => {
             </ul>
             {/* Left links */}
           </div>
-          <button class="btn btn-sm rounded-8  me-2" onClick={toggleDarkMode} >
-             <i class="fi fi-ss-moon-stars"></i>
+          <button  className="btn btn-sm rounded-8  me-2" onClick={toggleDarkMode} >
+             <i  className="fi fi-ss-moon-stars"></i>
           </button>
          
           <div className="d-lg-block d-md-block d-none d-flex justify-content-center align-items-center">

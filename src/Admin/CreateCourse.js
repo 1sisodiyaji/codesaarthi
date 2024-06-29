@@ -117,13 +117,11 @@ const CreateCourse = () => {
           formData.append("images", topic.image);
         }
       });
-  
       const response = await axios.post(`${config.BASE_URL}/Admin/CreateCourse`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-  
       if (response.data.status === "success") {
         setLoading(false);
         toast.success("Course Created successfully", { theme: "dark" });
@@ -145,15 +143,15 @@ const CreateCourse = () => {
     <>
       <ToastContainer />
       {admin ? (
-        <div className="container-fluid bg-dark">
+        <div className="container-fluid">
           <div className="container">
-            <h1 className="text-warning py-2">Create a New Course</h1>
+            <h1 className="text-center py-2">Create a New Course</h1>
             <form onSubmit={handleSubmit}>
               <div className="form-group my-2">
-                <label className="text-light">Course Title</label>
+                <label className="">Course Title</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="w-100 "
                   name="title"
                   value={course.title}
                   onChange={handleInputChange}
@@ -162,9 +160,9 @@ const CreateCourse = () => {
               </div>
 
               <div className="form-group my-2">
-                <label className="text-light">Course Description</label>
+                <label  >Course Description</label>
                 <textarea
-                  className="form-control text-dark"
+                  className=" w-100"
                   name="description"
                   value={course.description}
                   onChange={handleInputChange}
@@ -174,7 +172,7 @@ const CreateCourse = () => {
               </div>
 
               <div className="form-group my-2">
-                <label className="text-light">Course Thumbnail</label>
+                <label className=" ">Course Thumbnail</label>
                 <input
                   type="file"
                   accept="image/*"
@@ -202,16 +200,16 @@ const CreateCourse = () => {
 
               {course.topics.map((topic, index) => (
                 <div key={index} className="form-group my-2">
-                  <label className="text-light">Topic Title</label>
+                  <label className=" ">Topic Title</label>
                   <input
                     type="text"
-                    className="form-control"
+                    className="w-100"
                     name="title"
                     value={topic.title}
                     onChange={(e) => handleTopicChange(index, e)}
                     required
                   />
-                  <label className="text-light my-2">Topic Details</label>
+                  <label className="my-2">Topic Details</label>
                   <JoditEditor
                     ref={editor}
                     value={topic.details}
@@ -223,7 +221,7 @@ const CreateCourse = () => {
                     }}
                     onChange={(newContent) => { }}
                   />
-                  <label className="text-light my-2">Topic Image</label>
+                  <label className="  my-2">Topic Image</label>
                   <input
                     type="file"
                     className="form-control"
