@@ -88,7 +88,7 @@ export const Navbar = () => {
       <nav
         className="navbar navbar-expand-lg  fixed-top d-lg-none d-md-none d-sm-block  shadow-0">
         <div className="container-fluid">
-          <Link className="navbar-brand text-center" to="/">
+          <Link className="navbar-brand text-center text-decoration-none" to="/">
             <img
               src="../img/logo.png"
               height="25"

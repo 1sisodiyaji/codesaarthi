@@ -1,37 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import axios from 'axios';
-import config from '../config/config';
-import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Course from '../data/Course.json';
+
 const Theory = () => {
 
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    const fetchCourses = async () => {
-      try {
-        const response = await axios.post(`${config.BASE_URL}/Admin/courses`);
-        setCourses(response.data);
-      } catch (error) {
-        console.error('Error fetching courses:', error);
-      }
-    };
-
-    fetchCourses();
+    setCourses(Course);
   }, []);
 
-  if (!courses) {
+  if (!courses.length) {
     return (
-      <div className=" vh-100 d-flex justify-content-center align-items-center">
+      <div className="vh-100 d-flex justify-content-center align-items-center">
         <img src="https://codesaarthi.com/img/loader.svg" alt="Loading" />;
       </div>
     );
   }
+
   return (
     <>
-    <ToastContainer />
       <Helmet>
         <meta name="keywords" content="Theory, DSA, Array, String, Sorting, Searching, OS, DBMS, CN Notes , Free Notes" />
         <meta name="robots" content="index, follow" />
@@ -46,43 +36,42 @@ const Theory = () => {
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
 
-      <div className="container-fluid  py-5" style={{ minHeight: '100vh' }}>
+      <div className="container-fluid py-5" style={{ minHeight: '100vh' }}>
         <div className="container">
           <div className="row g-6">
             <>
-              {courses.map(course => (
+              { courses && courses.map(course => (
                 <div key={course._id} className="col-lg-4 col-12 my-2">
-                    <div className="card rounded-8  p-lg-4 p-4 bg-dark">
-                      <div className=" text-center"> <img src={course.thumbnailImage} className="img-fluid courseImage text-light" loading='lazy' title={course.title}  alt={course.title}/></div>
-                      <div className="text-end text-success text-decoration-underline"><small>Free Course </small> </div>
-                      <h5 className="card-title text-light text-center my-2">{course.title}</h5>
-                      <small className='text-muted text-capitalize my-1'>{course.description} </small>
-                      <div className="row my-2">
-                        <div className="col-6">
-                          <div className="btn  text-capitalize">
-                          <i class="fi fi-sr-add pe-1"></i>
-                            Add to Read
-                          </div>
-                        </div>
-                        <div className="col-6 text-end">
-                        <Link to={`/theory/${course.title}`}>
-                        <div className="btn rounded-8  text-capitalize tilt-effect">Start Reading <i class="fi fi-ss-book-open-reader ps-1"></i></div>
-                      </Link>
+                  <div className="card rounded-8 p-lg-4 p-4 bg-dark">
+                    <div className="text-center">
+                      <img src={course.thumbnailImage} className="img-fluid courseImage text-light" loading="lazy" title={course.title} alt={course.title} />
+                    </div>
+                    <div className="text-end text-success text-decoration-underline">
+                      <small>Free Course </small>
+                    </div>
+                    <h5 className="card-title text-light text-center my-2">{course.title}</h5>
+                    <small className="text-muted text-capitalize my-1">{course.description}</small>
+                    <div className="row my-2">
+                      <div className="col-6">
+                        <div className="btn btn-sm rounded-8 text-capitalize">
+                          Add to Read <i className="fi fi-sr-add ps-1"></i>
                         </div>
                       </div>
-                     
+                      <div className="col-6 text-end">
+                        <Link to={`/theory/${course.title}`}>
+                          <div className="btn btn-sm rounded-8 text-capitalize tilt-effect">Start Reading <i className="fi fi-ss-book-open-reader ps-1"></i></div>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                  
                 </div>
               ))}
-
             </>
           </div>
-
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Theory
+export default Theory;

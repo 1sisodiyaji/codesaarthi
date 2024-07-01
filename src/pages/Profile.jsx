@@ -293,9 +293,9 @@ const Profile = () => {
 
             {blogs ?
               <>
-                {/* //blogs posted by user  */}
+               <div className="p-1">
                 {blogs.map((blog) => (
-                  <div key={blog._id} className="card  my-2 shadow-6 p-3 ">
+                  <div key={blog._id} className="card bg-black my-2 shadow-6 p-3 ">
                     <Link to={`/blog/${blog._id}`} > <h4 className="text-warning">{blog.title}</h4> </Link>
                     <figure className='text-center'> <img
                       src={blog.image}
@@ -326,11 +326,12 @@ const Profile = () => {
                       </div>
                     </div>
                     <div className="row">
-                      <div className="col-6 text-start"><Link to={`/edit-blog/${blog._id}`} className='text-light' > <button className="btn btn-warning text-capitalize ">  Update <i className="fi fi-sr-pen-clip ps-2"></i>  </button> </Link> </div>
-                      <div className="col-6 text-end"> <div className="btn btn-danger text-capitalize" onClick={() => deleteArticle(blog._id)}>Delete <i className="fi fi-ss-trash-xmark ps-2"></i> </div> </div>
+                      <div className="col-6 text-start"><Link to={`/edit-blog/${blog._id}`} className='text-light' > <button className="btn bg-warning text-capitalize ">  Update <i className="fi fi-sr-pen-clip ps-2"></i>  </button> </Link> </div>
+                      <div className="col-6 text-end"> <div className="btn bg-danger text-capitalize" onClick={() => deleteArticle(blog._id)}>Delete <i className="fi fi-ss-trash-xmark ps-2"></i> </div> </div>
                     </div>
                   </div>
                 ))}
+                </div>
               </>
               :
               <>

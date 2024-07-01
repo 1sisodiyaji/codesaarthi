@@ -169,11 +169,11 @@ const[thumbnail , setThumbnail] = useState(null);
                                     />
                                 </div>
                             ))}
-                            <button type="button" className='btn border border-warning text-warning text-capitalize shadow-6' onClick={() => addPoint(index)}>Add Point</button>
+                            <button type="button" className='btn border border-warning text-light bg-warning text-capitalize shadow-6' onClick={() => addPoint(index)}>Add Point</button>
                         </div>
                     ))}
-                    <button type="button" className='btn border border-warning text-warning text-capitalize shadow-6' onClick={addTopic}>Add Topic</button>
-                    <button type="submit" className='btn border border-success text-success text-capitalize shadow-6 ms-3'> {loading ? "Updating..." : "Update Roadmap"} </button>
+                    <button type="button" className='btn border border-warning text-light bg-warning text-capitalize shadow-6' onClick={addTopic}>Add Topic</button>
+                    <button type="submit" className='btn border border-success text-light bg-success text-capitalize shadow-6 ms-3'> {loading ? "Updating..." : "Update Roadmap"} </button>
                 </form>
             </div>
         </>

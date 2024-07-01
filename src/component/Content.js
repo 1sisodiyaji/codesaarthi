@@ -1,54 +1,48 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet";
 import config from "../config/config";
-import "react-toastify/dist/ReactToastify.css";
+import CourseData from "../data/Course.json";  
 
 const Content = () => {
   const { title } = useParams();
   const [course, setCourse] = useState(null);
+  const [blogs, setBlogs] = useState([]);
   const [selectedTopic, setSelectedTopic] = useState(0);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [count , setCount] = ('1');
+  const [count, setCount] = useState(() => {
+    const storedCount = localStorage.getItem("topicProgress");
+    return storedCount ? JSON.parse(storedCount) : 1;
+  });
 
-  useEffect(() => {
-    const fetchCourse = async () => {
+  useEffect(() => { 
+ 
+    const foundCourse = CourseData.find((item) => item.title === title);
+    if (foundCourse) {
+      setCourse(foundCourse);
+    } 
+
+    const fetchBlogs = async () => {
       try {
-        const response = await axios.post(
-          `${config.BASE_URL}/Admin/coursesByTitle/${title}`
-        );
-        console.log(response);
-        setCourse(response.data[0]);
+        const response = await axios.post(`${config.BASE_URL}/article/getArticleData`);
+        const formattedBlogs = response.data.map((blog) => ({
+          ...blog,
+          formattedDate: new Date(blog.date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
+        }));
+        const sortedBlogs = formattedBlogs.sort((a, b) => new Date(a.date) - new Date(b.date));
+        setBlogs(sortedBlogs.slice(0, 5));
       } catch (error) {
-        console.error("Error fetching course:", error);
+        console.error("Error fetching blogs:", error);
       }
-    };
+    }
 
-    fetchCourse();
+    fetchBlogs(); 
   }, [title]);
-
-  const handleTopicClick = (index) => {
-    setSelectedTopic(index);
-  };
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const goToPreviousTopic = () => {
-    if (selectedTopic > 0) {
-      setSelectedTopic(selectedTopic - 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
-
-  const goToNextTopic = () => {
-    if (course && course.topics && selectedTopic < course.topics.length - 1) {
-      setSelectedTopic(selectedTopic + 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
 
   useEffect(() => {
     if (course && course.topics && course.topics[selectedTopic]) {
@@ -72,6 +66,34 @@ const Content = () => {
     }
   }, [selectedTopic, course]);
 
+  const progress = course && course.topics ? Math.min((count / course.topics.length) * 100, 100) : 0;
+  useEffect(() => {
+    localStorage.setItem("topicProgress", JSON.stringify(count));
+  }, [count]);
+
+  const handleTopicClick = (index) => {
+    setSelectedTopic(index);
+  };
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const goToPreviousTopic = () => {
+    if (selectedTopic > 0) {
+      setSelectedTopic(selectedTopic - 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const goToNextTopic = () => {
+    if (course && course.topics && selectedTopic < course.topics.length - 1) {
+      setSelectedTopic(selectedTopic + 1);
+      setCount(count + 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   if (!course) {
     return (
       <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
@@ -81,7 +103,7 @@ const Content = () => {
               src="https://codesaarthi.com/img/loader.gif"
               style={{ height: "125px", width: "115px" }}
               className="card-img-top"
-              alt="..."
+              alt="Loading..."
             />
           </div>
           <div className="card-body">
@@ -104,6 +126,13 @@ const Content = () => {
       </div>
     );
   }
+
+  const truncateText = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + "...";
+    }
+    return text;
+  };
 
   return (
     <>
@@ -149,7 +178,7 @@ const Content = () => {
         />
       </Helmet>
 
-      <div className="container-fluid design g-0">
+      <div className="container-fluid design ">
         <div className="d-lg-none d-block d-flex justify-content-end pt-2">
           <button
             onClick={toggleSidebar}
@@ -160,8 +189,7 @@ const Content = () => {
           </button>
         </div>
         <div className="row g-0 border border-dark rounded-8">
-          <div
-            className="col-lg-3 col-0 p-lg-2 d-lg-block d-none"
+          <div  className="col-lg-3 col-0 p-lg-2 d-lg-block d-none"
             style={{ borderRight: "1px solid #262626" }}
           >
             <div className="d-flex justify-content-center py-2">
@@ -174,9 +202,18 @@ const Content = () => {
             <h2 className="text-center pb-3 text-primary">
               {course.title.toUpperCase()}
             </h2>
-            <div  className="progress mb-3" style={{height: '15px'}}>
-  <div  className="progress-bar" role="progressbar" style={{width: '75%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-</div>
+            <div className="progress mb-3" style={{ height: "15px" }}>
+              <div
+                className="progress-bar bg-success"
+                role="progressbar"
+                style={{ width: `${progress}%` }}
+                aria-valuenow={progress}
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                {Math.round(progress)}%
+              </div>
+            </div>
             {course.topics &&
               course.topics.map((topic, index) => (
                 <div
@@ -186,7 +223,6 @@ const Content = () => {
                     cursor: "pointer",
                     textDecoration:
                       selectedTopic === index ? "underline" : "none",
-                    color: selectedTopic === index ? "" : "",
                   }}
                 >
                   <p
@@ -204,9 +240,8 @@ const Content = () => {
               <div className="container-fluid g-0 d-lg-none d-block">
                 <div
                   style={{ zIndex: "99" }}
-                  className={`sidebar3 ${
-                    isSidebarOpen ? "show" : ""
-                  } d-lg-none d-md-none d-sm-block`}
+                  className={`sidebar3 ${isSidebarOpen ? "show" : ""
+                    } d-lg-none d-md-none d-sm-block`}
                 >
                   {course.topics &&
                     course.topics.map((topic, index) => (
@@ -228,7 +263,7 @@ const Content = () => {
                           }}
                         >
                           <i className="fi fi-ss-book-alt pe-1"></i>{" "}
-                          {course.topics.title}
+                          {topic.title}
                         </p>
                         <hr />
                       </div>
@@ -271,7 +306,8 @@ const Content = () => {
                   <div className="col-6 text-end">
                     <div
                       className="btn  text-capitalize"
-                      onClick={goToNextTopic}  >
+                      onClick={goToNextTopic}
+                    >
                       Next <i className="fi fi-rr-angle-small-right"></i>
                     </div>
                   </div>
@@ -280,38 +316,66 @@ const Content = () => {
             )}
           </div>
 
-          <div className="col-lg-2 ">
+          <div className="col-lg-2 col-12">
+            <div style={{ position: 'fixed', width: '240px'}}>
+              <div className="p-1">
+                {course.topics &&
+                  course.topics.map((topic, index) => (
+                    <div
+                      key={topic._id}
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setSelectedTopic(index)}
+                    >
+                      {selectedTopic === index && (
+                        <>
+                          {topic.headingPoints &&
+                            topic.headingPoints.map((headingPoint, idx) => (
+                              <div key={`${topic._id}-${idx}`}>
+                                <small
+                                  className="text-capitalize topic-item"
+                                  style={{ fontSize: "0.7rem" }}
+                                >
+                                  <i className="fi fi-ss-book-alt pe-1"></i>{" "}
+                                  <a href={`#${headingPoint}`}> {headingPoint} </a>
+                                </small>
+                              </div>
+                            ))}
+                        </>
+                      )}
+                    </div>
+                  ))}
+              </div>
 
-          <div className="p-1">
-            {course.topics &&
-              course.topics.map((topic, index) => (
-                <div
-                  key={topic._id}
-                  style={{ cursor: "pointer" }}
-                  onClick={() => setSelectedTopic(index)}
-                >
-                  {selectedTopic === index && (
-                    <>
-                      {topic.headingPoints &&
-                        topic.headingPoints.map((headingPoint, idx) => (
-                          <div key={`${topic._id}-${idx}`}>
-                            <small className="text-capitalize topic-item" style={{fontSize: '0.7rem'}}>
-                              <i className="fi fi-ss-book-alt pe-1"></i>{" "}
-                              {headingPoint}
-                            </small> 
-                          </div>
-                        ))}
-                    </>
-                  )}
-                </div>
-              ))}
-          </div>
+              <div className="card p-2 d-flex justify-content-center align-items-center my-2">
+                <i className="fi fi-sr-add"></i>
+                Save Your Notes
+              </div>
+              <>
+                {blogs.map((blog) => (
+                  <div className="border rounded-6 mb-1" key={blog._id}>
+                    <div className="row g-0">
+                      <div className="col-3 d-flex justify-content-center align-items-center">
 
-            <div className="card p-3 d-flex justify-content-center align-items-center my-2">
-            <i  className="fi fi-sr-add"></i>
-              Save Your Notes
+                        <img
+                          src={blog.image || "https://via.placeholder.com/150"}
+                          alt="Author"
+                          style={{ width: '35px' }}
+                          className="img-fluid rounded-circle"
+                        />
+                      </div>
+                      <div className="col-9">
+                        <div className="card-body">
+                         <Link to = {`/blog/${blog._id}`} >  <small style={{ fontSize: '0.6rem' }}>{truncateText(blog.title, 35)}</small> </Link>
+
+                        </div>
+                      </div>
+                    </div>
+                    <small className="text-muted text-center ps-2" style={{ fontSize: '0.6rem' }}>By {blog.name} | {blog.formattedDate}</small>
+
+                  </div>
+                ))}
+              </>
             </div>
-
           </div>
         </div>
       </div>
@@ -320,3 +384,4 @@ const Content = () => {
 };
 
 export default Content;
+

@@ -109,7 +109,7 @@ const BlogForm = () => {
 
   return (
     <>
-      <div className="container-fluid  g-0">
+      <div className="container-fluid g-0">
         <div className="card bg-black p-3">
           <form onSubmit={handleSubmit}>
             <input
@@ -131,6 +131,7 @@ const BlogForm = () => {
             <div className="my-3">
               <JoditEditor
                 ref={editor}
+                className="text-dark"
                 value={content}
                 tabIndex={1}
                 onBlur={(newContent) => setContent(newContent)}
@@ -170,7 +171,7 @@ const BlogForm = () => {
               <div className="col-4 text-end">
                 <button
                   type="submit"
-                  className="btn btn-dark text-warning text-capitalize"
+                  className="btn bg-warning text-capitalize"
                   disabled={loading}
                 >
                   {loading ? "Posting..." : "Post Blog"}

@@ -1,8 +1,7 @@
  import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
-import axios from 'axios';
-import config from '../../config/config';  
+import { Helmet } from 'react-helmet'; 
+import RoadmapData from '../../data/Roadmap.json';  
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -21,7 +20,7 @@ const StepperSection = ({ title, items }) => {
             <i className="fi fi-rr-hand-back-point-right text-warning"></i>
           </div>
           <div className="col-lg-7 col-10 text-start">
-            <h5 className=' my-2' onClick={toggleOpen} style={{ cursor: 'pointer'  }}> {title} {!isOpen ? <i class="fi fi-sr-lock text-warning"></i> : <i class="fi fi-sr-unlock text-success"></i>}</h5>
+            <h5 className=' my-2' onClick={toggleOpen} style={{ cursor: 'pointer'  }}> {title} {!isOpen ? <i  className="fi fi-sr-lock text-warning"></i> : <i  className="fi fi-sr-unlock text-success"></i>}</h5>
             {isOpen && (
               <ul>
                 {items.map((item, index) => (
@@ -41,14 +40,16 @@ const StepperSection = ({ title, items }) => {
 };
 
 const RoadmapDetails = () => {
-  const { title } = useParams();
+  const { title } = useParams();  
   const [roadmapData, setRoadmapData] = useState(null);
   const [isOpen, setIsOpen] = useState(true);
   useEffect(() => {
     const fetchRoadmapData = async () => {
-      try {
-        const response = await axios.post(`${config.BASE_URL}/Admin/getRoadmap/${title}`);
-        setRoadmapData(response.data);
+      try { 
+         const foundRoadmap = RoadmapData.find((item) => item.title === title);
+    if (foundRoadmap) {
+      setRoadmapData(foundRoadmap);
+    }   
       } catch (error) {
         console.error("Error fetching roadmap data:", error);
       }
@@ -58,7 +59,7 @@ const RoadmapDetails = () => {
   }, [title]);
 
   if (!roadmapData) {
-    return <div className='vh-100 bg-dark'> toast.loading(Loading...)</div>;
+    return <div className='vh-100 '> No Data Found </div>;
   }
 
   return (

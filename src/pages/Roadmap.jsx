@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
-import axios from 'axios';
-import config from '../config/config';
+import { Helmet } from 'react-helmet'; 
+import RoadmapDAta from '../data/Roadmap.json';
 
 const Roadmap = () => {
   const [startCard, setStartCard] = useState(0);
@@ -10,9 +9,8 @@ const Roadmap = () => {
 
   useEffect(() => {
     const fetchRoadmap = async () => {
-      try {
-        const response = await axios.post(`${config.BASE_URL}/Admin/getRoadmap`);
-        setCardsData(response.data);
+      try { 
+        setCardsData(RoadmapDAta);
       } catch (error) {
         console.error("Error fetching roadmap:", error);
       }
@@ -33,9 +31,31 @@ const Roadmap = () => {
   };
 
   const renderCards = () => {
-    return cardsData.map((card, index) => (
+    return cardsData.slice(startCard, startCard + 3).map((card, index) => (
       <div key={index} className="col-lg-4 col-12">
-        <div className="card border border-dark p-1" style={{ backgroundColor: '#141414' }}>
+        <div className="card border border-dark p-1 my-2" style={{ backgroundColor: '#141414' }}>
+          <div className="row">
+            <div className='col-4'>
+              <img src="img/logo.png" className='img-fluid' alt="" />
+            </div>
+            <div className='col-8 align-self-center'>
+              <h5 className="card-title text-light">{card.title}</h5>
+            </div>
+          </div>
+          <div className="container-fluid g-0 p-3 text-center" style={{ overflowY: 'auto', width: '100%', height: '400px' }}>
+            <img src={card.thumbnail} className='img-fluid h-75' alt={card.title}  title={card.title} loading='lazy' style={{ boxShadow: '5px 5px 20px #703BF7' }} />
+          </div>
+          <div className='text-end'>
+            <Link to={`/roadMap/${card.title}`} className="btn text-warning text-capitalize bg-dark">Check it Out</Link>
+          </div>
+        </div>
+      </div>
+    ));
+  };
+  const renderCardsForPhone = () => {
+    return cardsData.slice(startCard, startCard + 1).map((card, index) => (
+      <div key={index} className="col-lg-4 col-12">
+        <div className="card border border-dark p-1 my-2" style={{ backgroundColor: '#141414' }}>
           <div className="row">
             <div className='col-4'>
               <img src="img/logo.png" className='img-fluid' alt="" />
@@ -73,7 +93,7 @@ const Roadmap = () => {
 
       <div className="container-fluid py-5 design d-lg-none d-md-none d-block">
         <div className="row g-6">
-          {renderCards()}
+          {renderCardsForPhone()}
           <div className="row my-2">
             <div className="col-6 text-start">
               <div className="ms-2" onClick={prevCards}>

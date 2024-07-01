@@ -5,6 +5,7 @@ import config from "../../config/config";
 import JoditEditor from "jodit-react";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
 
 const UpdateBlog = () => {
   const { id } = useParams(); // Get the blog ID from the URL
@@ -129,8 +130,46 @@ const UpdateBlog = () => {
   return (
     <>
      <ToastContainer/>
-      <div className="container-fluid g-0 bg-dark design py-4">
+
+     <Helmet>
+        <meta
+          name="keywords"
+          content="Update your blog , Blg update section in codesaarthi , blogs update "
+        />
+        <meta name="robots" content="index, follow" />
+        <link
+          rel="canonical"
+          href={`https://codesaarthi.com/edit-blog/${id}`}
+        />
+        <meta
+          name="description"
+          content="edit your blogs with high end security from here "
+        />
+        <title>
+          {title}
+        </title>
+        <meta
+          property="og:title"
+          content= {title}
+        />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
+        <meta
+          property="og:url"
+          content={`https://codesaarthi.com/edit-blog/${id}`}
+        />
+        <meta property="og:type" content="Education-Website" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://codesaarthi.com/img/favicon.ico"
+          sizes="32x32"
+        />
+      </Helmet>
+      <div className="container-fluid g-0   design py-4">
         <div className="container vh-100 py-lg-5">
+         <h4> Update Your" <span className="bg-warning"> {title} </span> "</h4>  <br/> 
+        
         <div className="card bg-black p-3">
           <form onSubmit={handleSubmit}>
             <input
@@ -153,6 +192,7 @@ const UpdateBlog = () => {
               <JoditEditor
                 ref={editor}
                 value={content}
+                className="text-dark"
                 tabIndex={1}
                 onBlur={(newContent) => setContent(newContent)}
                 onChange={(newContent) => {}}
@@ -191,7 +231,7 @@ const UpdateBlog = () => {
               <div className="col-4 text-end">
                 <button
                   type="submit"
-                  className="btn btn-dark text-warning text-capitalize"
+                  className="btn  text-capitalize"
                   disabled={loading}
                 >
                   {loading ? "Updating..." : "Update Blog"}

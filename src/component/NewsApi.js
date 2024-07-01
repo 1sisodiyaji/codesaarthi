@@ -124,22 +124,22 @@ const NewsApi = () => {
   if (loading) {
     return (
       <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
-      <div class="card" aria-hidden="true" style={{width: '350px'}}>
-    <div class="text-center">
-      <img src="img/loader.gif" style={{height: '125px', width: '115px'}} class="card-img-top" alt="..." />
+      <div className="card" aria-hidden="true" style={{width: '350px'}}>
+    <div className="text-center">
+      <img src="img/loader.gif" style={{height: '125px', width: '115px'}} className="card-img-top" alt="..." />
   </div>
-    <div class="card-body">
-      <h5 class="card-title placeholder-glow">
-        <span class="placeholder col-6"></span>
+    <div className="card-body">
+      <h5 className="card-title placeholder-glow">
+        <span className="placeholder col-6"></span>
       </h5>
-      <p class="card-text placeholder-glow">
-        <span class="placeholder col-7"></span>
-        <span class="placeholder col-4"></span>
-        <span class="placeholder col-4"></span>
-        <span class="placeholder col-6"></span>
-        <span class="placeholder col-8"></span>
+      <p className="card-text placeholder-glow">
+        <span className="placeholder col-7"></span>
+        <span className="placeholder col-4"></span>
+        <span className="placeholder col-4"></span>
+        <span className="placeholder col-6"></span>
+        <span className="placeholder col-8"></span>
       </p>
-      <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+      <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
     </div>
   </div>
     </div>

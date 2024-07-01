@@ -67,6 +67,7 @@ import Offline from "../pages/Offline";
 import CreateRoadmap from "../Admin/CreateRoadmap";
 import UpdateRoadmap from "../Admin/UpdateRoadmap"; 
 import RoadmapDetails from "../pages/Roadmap/RoadmapDetails"
+import BlogForm from "../component/Blogs/BlogForm";
 const Routess = () => {
   const [shouldScrollToTop, setShouldScrollToTop] = useState(false);
   const location = useLocation();
@@ -170,6 +171,7 @@ const Routess = () => {
  
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:id" element={<Blog />} />
+        <Route path="/add-blog" element={<BlogForm />} />
         <Route path="/edit-blog/:id" element={<UpdateBlogs />} />
         <Route path="/news" element={<NewsApi />} />
         <Route path="/jobs" element={<Jobs />} />

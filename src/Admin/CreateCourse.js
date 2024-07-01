@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const CreateCourse = () => {
   const [imagePreview, setImagePreview] = useState(null);
   const [thumbnailImage, setThumbnailImage] = useState(null);
-  const [loading, setLoading] = useState(false); // Initialize to false
+  const [loading, setLoading] = useState(false);
   const editor = useRef(null);
   const [content, setContent] = useState("");
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const CreateCourse = () => {
       try {
         const response = await axios.post(
           `${config.BASE_URL}/api/user`,
-          {}, // empty object as the data payload
+          {},
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -49,7 +49,7 @@ const CreateCourse = () => {
     title: "",
     description: "",
     thumbnailImage: null,
-    topics: [{ title: "", details: "", image: null, imagePreview: null }],
+    topics: [{ title: "", details: "", image: null, imagePreview: null, tags: "" }],
   });
 
   const handleInputChange = (e) => {
@@ -93,7 +93,7 @@ const CreateCourse = () => {
       ...course,
       topics: [
         ...course.topics,
-        { title: "", details: "", image: null, imagePreview: null },
+        { title: "", details: "", image: null, imagePreview: null, tags: "" },
       ],
     });
   };
@@ -101,34 +101,47 @@ const CreateCourse = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-  
+
     try {
       const formData = new FormData();
       formData.append("title", course.title);
       formData.append("description", course.description);
-      formData.append("thumbnailImage", thumbnailImage);
-      formData.append("topics", JSON.stringify(course.topics.map((topic) => ({
-        title: topic.title,
-        details: topic.details,
-      }))));
-  
+      formData.append("thumbnailImage ", thumbnailImage);
+      formData.append(
+        "topics",
+        JSON.stringify(
+          course.topics.map((topic) => ({
+            title: topic.title,
+            details: topic.details,
+            tags: topic.tags,
+          }))
+        )
+      );
+
       course.topics.forEach((topic) => {
         if (topic.image) {
           formData.append("images", topic.image);
         }
       });
-      const response = await axios.post(`${config.BASE_URL}/Admin/CreateCourse`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
+      console.log(formData);
+      const response = await axios.post(
+        `${config.BASE_URL}/Admin/Createcourses`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       if (response.data.status === "success") {
         setLoading(false);
         toast.success("Course Created successfully", { theme: "dark" });
         navigate("/Admin");
       } else {
         setLoading(false);
-        toast.error("Course Creation Failed: " + response.data.message, { theme: "dark" });
+        toast.error("Course Creation Failed: " + response.data.message, {
+          theme: "dark",
+        });
       }
     } catch (error) {
       setLoading(false);
@@ -137,8 +150,7 @@ const CreateCourse = () => {
       });
     }
   };
-  
-  
+
   return (
     <>
       <ToastContainer />
@@ -148,10 +160,10 @@ const CreateCourse = () => {
             <h1 className="text-center py-2">Create a New Course</h1>
             <form onSubmit={handleSubmit}>
               <div className="form-group my-2">
-                <label className="">Course Title</label>
+                <label>Course Title</label>
                 <input
                   type="text"
-                  className="w-100 "
+                  className="w-100 form-control"
                   name="title"
                   value={course.title}
                   onChange={handleInputChange}
@@ -160,9 +172,9 @@ const CreateCourse = () => {
               </div>
 
               <div className="form-group my-2">
-                <label  >Course Description</label>
+                <label>Course Description</label>
                 <textarea
-                  className=" w-100"
+                  className="w-100 form-control"
                   name="description"
                   value={course.description}
                   onChange={handleInputChange}
@@ -172,7 +184,7 @@ const CreateCourse = () => {
               </div>
 
               <div className="form-group my-2">
-                <label className=" ">Course Thumbnail</label>
+                <label>Course Thumbnail</label>
                 <input
                   type="file"
                   accept="image/*"
@@ -200,16 +212,16 @@ const CreateCourse = () => {
 
               {course.topics.map((topic, index) => (
                 <div key={index} className="form-group my-2">
-                  <label className=" ">Topic Title</label>
+                  <label>Topic Title</label>
                   <input
                     type="text"
-                    className="w-100"
+                    className="w-100 form-control"
                     name="title"
                     value={topic.title}
                     onChange={(e) => handleTopicChange(index, e)}
                     required
                   />
-                  <label className="my-2">Topic Details</label>
+                  <label>Topic Details</label>
                   <JoditEditor
                     ref={editor}
                     value={topic.details}
@@ -219,9 +231,19 @@ const CreateCourse = () => {
                       topics[index].details = newContent;
                       setCourse({ ...course, topics });
                     }}
-                    onChange={(newContent) => { }}
+                    onChange={(newContent) => {}}
                   />
-                  <label className="  my-2">Topic Image</label>
+                  <label htmlFor={`tags-${index}`}>Headpoints (Tags)</label>
+                  <input
+                    type="text"
+                    className="w-100 form-control"
+                    id={`tags-${index}`}
+                    value={topic.tags}
+                    onChange={(e) => handleTopicChange(index, e)}
+                    name="tags"
+                    placeholder="Enter tags separated by commas"
+                  />
+                  <label className="my-2">Topic Image</label>
                   <input
                     type="file"
                     className="form-control"

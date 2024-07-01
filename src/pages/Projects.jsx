@@ -43,7 +43,7 @@ const Projects = () => {
                     <div>
                       <Link to="/Projects/web-development">
                         <div className="btn   text-capitalize  ">
-                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
+                          Check it Out <i className= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>
@@ -71,7 +71,7 @@ const Projects = () => {
                     <div>
                       <Link to="/Projects/React-based-project">
                         <div className="btn  text-capitalize  ">
-                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
+                          Check it Out <i className= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>
@@ -100,7 +100,7 @@ const Projects = () => {
                     <div>
                       <Link to="/Projects/phpProjects">
                         <div className="btn  text-capitalize  ">
-                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
+                          Check it Out <i className= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>
@@ -128,7 +128,7 @@ const Projects = () => {
                     <div>
                       <Link to="/Projects/java-Projects">
                         <div className="btn  text-capitalize ">
-                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
+                          Check it Out <i className= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>
@@ -156,7 +156,7 @@ const Projects = () => {
                     <div>
                       <Link to="/Projects/HtmlProject">
                         <div className="btn  text-capitalize ">
-                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
+                          Check it Out <i className= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>
@@ -184,7 +184,7 @@ const Projects = () => {
                     <div>
                       <Link to="/Projects/Html-Css-Projects">
                         <div className="btn   text-capitalize  ">
-                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
+                          Check it Out <i className= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>
@@ -214,7 +214,7 @@ const Projects = () => {
                     <div>
                       <Link to="/Projects/dsa">
                         <div className="btn   text-capitalize ">
-                          Check it Out <i class= "fi fi-rs-workflow-setting-alt"></i>
+                          Check it Out <i className= "fi fi-rs-workflow-setting-alt"></i>
                         </div>
                       </Link>
                     </div>

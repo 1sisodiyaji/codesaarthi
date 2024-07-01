@@ -102,15 +102,15 @@ const CreateRoadmap = () => {
     return (
         <>
             <ToastContainer />
-            <div className=' bg-dark design'>
-                <h2 className='text-center text-warning py-3'>Create Roadmap</h2>
+            <div className='design'>
+                <h2 className='text-center  py-3'>Create Roadmap</h2>
                 <form onSubmit={handleSubmit} className=' p-4 container py-3'>
                     <div className='my-3 d-flex p-2'>
-                        <label className='text-light pe-3'>Title:</label>
-                        <input className='w-100 border-0 rounded-8 bg-black text-light ps-2' type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+                        <label className=' pe-3'>Title:</label>
+                        <input className='w-100 border-0 rounded-8   ps-2' type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
                     </div>
                     <div>
-                        <label className='text-light pe-3'>Thumbnail:</label>
+                        <label className=' pe-3'>Thumbnail:</label>
                         <input type="file" accept='image/*' onChange={handleThumbnailImageChange} style={{ display: "none" }}
                             id="thumbnailInput" />
                     </div>
@@ -128,35 +128,35 @@ const CreateRoadmap = () => {
                         </div>
                     )}
                     <div className='my-3 d-flex p-2'>
-                        <label className='text-light pe-3'>Description:</label>
-                        <textarea className='w-100  border-0 rounded-8 bg-black text-light ps-2' value={description} onChange={(e) => setDescription(e.target.value)} />
+                        <label className='  pe-3'>Description:</label>
+                        <textarea className='w-100  border-0 rounded-8   ps-2' value={description} onChange={(e) => setDescription(e.target.value)} />
                     </div>
                     {topics.map((topic, index) => (
                         <div key={index} className='my-3 border border-warning rounded-6 p-3'>
-                            <label className='text-light pe-3'>Headline:</label>
+                            <label className='  pe-3'>Headline:</label>
                             <input
                                 type="text"
                                 name="headline"
                                 value={topic.headline}
-                                className='w-75  border-0 rounded-8 bg-black text-light ps-2 my-2'
+                                className='w-75  border-0 rounded-8   ps-2 my-2'
                                 onChange={(e) => handleTopicChange(index, e)}
                             />
                             {topic.points.map((point, pIndex) => (
                                 <div key={pIndex} className='my-3 pe-3'>
-                                    <label className='text-light pe-3'>Point:</label>
+                                    <label className=' pe-3'>Point:</label>
                                     <input
                                         type="text"
                                         value={point}
-                                        className='w-75  border-0 rounded-8 bg-black text-light ps-2 my-2'
+                                        className='w-75  border-0 rounded-8  ps-2 my-2'
                                         onChange={(e) => handlePointChange(index, pIndex, e)}
                                     />
                                 </div>
                             ))}
-                            <button type="button" className='btn border border-warning text-warning text-capitalize shadow-6' onClick={() => addPoint(index)}>Add Point</button>
+                            <button type="button" className='btn border border-warning text-light bg-warning text-capitalize shadow-6' onClick={() => addPoint(index)}>Add Point</button>
                         </div>
                     ))}
-                    <button type="button" className='btn border border-warning text-warning text-capitalize shadow-6' onClick={addTopic}>Add Topic</button>
-                    <button type="submit" className='btn border border-success text-success text-capitalize shadow-6 ms-3'> {loading ? "creating" : " Create Roadmap "}</button>
+                    <button type="button" className='btn border border-warning text-light bg-warning text-capitalize shadow-6' onClick={addTopic}>Add Topic</button>
+                    <button type="submit" className='btn border border-success text-light bg-success text-capitalize shadow-6 ms-3'> {loading ? "creating" : " Create Roadmap "}</button>
                 </form>
             </div>
         </>
