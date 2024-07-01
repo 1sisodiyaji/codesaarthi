@@ -176,18 +176,6 @@ body::-webkit-scrollbar {
   border: 1px solid #79b4e2;
 }
 
-.form-control {
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  border-bottom: 1px solid #79b4e2 !important;
-}
-
-.form-control::placeholder {
-  color: white !important;
-  opacity: 80%;
-}
-
 
 .tilt-effect {
   transition: transform 0.2s;
