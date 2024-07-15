@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import projectsData from "../../data/Projects.json";
+import ProjectData from "../../data/ProjectsData";
 
 const SingleDetailingProject = () => {
-  const { projectTitle } = useParams(); // Assuming you use 'proj.title' for the URL param
+  const { projectTitle } = useParams(); 
+  console.log(useParams);
 console.log(projectTitle);
   const [project, setProject] = useState(null);
 
   useEffect(() => {
-    if (projectsData && projectsData.projects) {
-      const selectedProject = projectsData.projects.find(
+    if (ProjectData && ProjectData.projects) {
+      const selectedProject = ProjectData.projects.find(
         proj => proj.title === projectTitle
       );
       if (selectedProject) {

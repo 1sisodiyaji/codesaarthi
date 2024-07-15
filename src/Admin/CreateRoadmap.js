@@ -102,7 +102,7 @@ const CreateRoadmap = () => {
     return (
         <>
             <ToastContainer />
-            <div className='design'>
+            <div className='design container-fluid g-0' style={{minHeight: '100vh'}}>
                 <h2 className='text-center  py-3'>Create Roadmap</h2>
                 <form onSubmit={handleSubmit} className=' p-4 container py-3'>
                     <div className='my-3 d-flex p-2'>

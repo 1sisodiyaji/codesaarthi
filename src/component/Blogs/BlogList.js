@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import config from "../../config/config";
-import { ToastContainer, Bounce, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 const BlogList = () => {
@@ -33,7 +33,7 @@ const BlogList = () => {
       <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
       <div className="card" aria-hidden="true" style={{width: '350px'}}>
     <div className="text-center">
-      <img src="img/loader.gif" style={{height: '125px', width: '115px'}} className="card-img-top" alt="..." />
+      <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721021304/loader_wqvahg.gif" style={{height: '125px', width: '115px'}} className="card-img-top" alt="..." />
   </div>
     <div className="card-body">
       <h5 className="card-title placeholder-glow">
@@ -46,7 +46,7 @@ const BlogList = () => {
         <span className="placeholder col-6"></span>
         <span className="placeholder col-8"></span>
       </p>
-      <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+      <a href="/" className="btn btn-secondary disabled placeholder col-6" aria-disabled="true">Loading Blogs list</a>
     </div>
   </div>
     </div>

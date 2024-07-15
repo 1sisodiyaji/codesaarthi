@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { ToastContainer, Bounce, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Jobs = () => {
@@ -21,6 +21,7 @@ const Jobs = () => {
 
         if (!response.ok) {
           setLoading(false);
+          toast.error("Failed to fetch job post" , {theme  : 'dark'})
           throw new Error("Failed to fetch job listings");
         }
         const data = await response.json();
@@ -185,7 +186,7 @@ const Jobs = () => {
             <div className="card" aria-hidden="true" style={{ width: "350px" }}>
               <div className="text-center">
                 <img
-                  src="img/loader.gif"
+                  src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721031578/loader_bhnpfb.gif"
                   style={{ height: "125px", width: "115px" }}
                   className="card-img-top"
                   alt="..."
@@ -202,10 +203,10 @@ const Jobs = () => {
                   <span className="placeholder col-6"></span>
                   <span className="placeholder col-8"></span>
                 </p>
-                <a
+                <a href="/"
                   className="btn btn-secondary disabled placeholder col-6"
                   aria-disabled="true"
-                ></a>
+                >Getting job list</a>
               </div>
             </div>
           </div>

@@ -59,7 +59,7 @@ const Blog = () => {
         <div className="card" aria-hidden="true" style={{ width: "350px" }}>
           <div className="text-center">
             <img
-              src="img/loader.gif"
+              src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721031578/loader_bhnpfb.gif"
               style={{ height: "125px", width: "115px" }}
               className="card-img-top"
               alt="..."
@@ -76,10 +76,10 @@ const Blog = () => {
               <span className="placeholder col-6"></span>
               <span className="placeholder col-8"></span>
             </p>
-            <a
+            <a href="/"
               className="btn btn-secondary disabled placeholder col-6"
               aria-disabled="true"
-            ></a>
+            > Getting Blogs For you</a>
           </div>
         </div>
       </div>

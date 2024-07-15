@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import config from "../config/config";
+import Cookies from 'js-cookie';
 
 export const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,6 +19,7 @@ export const Navbar = () => {
 
       if (response.status === 200) {
         sessionStorage.removeItem('token');
+        Cookies.remove("token");
         window.location.href = "/";
       } else {
         console.log('Logout failed');
@@ -47,10 +49,8 @@ export const Navbar = () => {
             }
           );
           if (response.data.status === "success") {
-            setUser(response.data.user);
-          } else {
-            console.log("Failed to fetch user information");
-          }
+            setUser(response.data.user); 
+          }  
         } catch (error) {
           console.error("Error fetching user information:", error);
         }
@@ -58,7 +58,7 @@ export const Navbar = () => {
     };
 
     fetchUserData();
-  }, []);
+  },[]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -164,7 +164,7 @@ useEffect(() => {
                 to="/profile"
               >
                 {" "}
-                <i className="fi fi-ss-user text-light pe-2"></i>
+                <i className="fi fi-rr-circle-user pe-2"></i>
                 Profile
               </Link>
             </li>
@@ -234,16 +234,12 @@ useEffect(() => {
             </li>
             {user && (
               <li className="nav-item">
-                <Link
-                  onClick={logout}
-                  className={`nav-link ${
-                    isNavLinkActive("/") ? "selected" : ""
-                  }`} 
-                  to="/"
+                <div
+                  onClick={logout} 
                 >
-                  <i className="fi fi-br-sign-in-alt pe-2"></i>
+                  <i className="fi fi-br-sign-in-alt pe-2 ms-3"></i>
                   logout
-                </Link>
+                </div>
               </li>
             )}
           </ul>
@@ -260,17 +256,17 @@ useEffect(() => {
           style={{
             zIndex: "1000!important"
           }}
-        >
+        ><Link
+        className="navbar-brand text-center ms-4"
+        to="/" 
+      >
+        <h1 style={{ fontSize: "24px" }} className="mb-0 ms-2">
+          Codesaarthi
+        </h1>
+      </Link>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             {/* Navbar brand */}
-            <Link
-              className="navbar-brand text-center ms-4"
-              to="/" 
-            >
-              <h1 style={{ fontSize: "24px" }} className="mb-0 ms-2">
-                Codesaarthi
-              </h1>
-            </Link>
+            
             {/* Left links */}
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center p-1">
               <li className="nav-items pe-2">
@@ -328,6 +324,7 @@ useEffect(() => {
             </ul>
             {/* Left links */}
           </div>
+          <div className="d-flex">
           <button  className="btn btn-sm rounded-8  me-2" onClick={toggleDarkMode} >
              <i  className="fi fi-ss-moon-stars"></i>
           </button>
@@ -343,7 +340,7 @@ useEffect(() => {
                     style={{ zIndex: "9999" }}
                   >
                     <button className="btn btn-floating">
-                      {user ? (
+                      {user && user.image ? (
                         <>
                           <Link to="/profile">
                             <img
@@ -377,6 +374,7 @@ useEffect(() => {
                 </Link>
               </>
             }
+          </div>
           </div>
         </div>
       </nav>

@@ -65,14 +65,17 @@ body.dark-theme {
   overflow-x: hidden;
 
   .navbar{
-    background-color: #1e1e1e !important;
+    background-color: #1e1e1e !important; 
   }
-
-  a {
+  .navbar-brand{
     color: white !important;
   }
 
-  a:hover {
+  .nav-link {
+    color: white !important;
+  }
+
+  .nav-link:hover {
     color: #ffe164 !important;
     border-bottom: 1px solid#ffe164;
   }

@@ -6,7 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const UpdateRoadmap = () => {
-    const { title } = useParams();
+    const { id } = useParams(); 
     const navigate = useNavigate();
     const [roadmap, setRoadmap] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -17,7 +17,7 @@ const[thumbnail , setThumbnail] = useState(null);
         const fetchRoadmap = async () => {
             try {
                 setLoading(true);
-                const response = await axios.post(`${config.BASE_URL}/Admin/getRoadmap/${title}`);
+                const response = await axios.get(`${config.BASE_URL}/Admin/getRoadmap/${id}`);
                 setRoadmap(response.data); 
                 if (response.data.thumbnail) {
                     setImagePreview(response.data.thumbnail);
@@ -32,7 +32,7 @@ const[thumbnail , setThumbnail] = useState(null);
             }
         };
         fetchRoadmap();
-    }, [title]);
+    }, [id]);
 
     const handleTopicChange = (index, event) => {
         const newTopics = [...roadmap.topics];
@@ -88,7 +88,7 @@ const[thumbnail , setThumbnail] = useState(null);
         
         try {
             setLoading(true);
-            const response = await axios.put(`${config.BASE_URL}/Admin/updateRoadmap/${title}`, formData, {
+            const response = await axios.put(`${config.BASE_URL}/Admin/updateRoadmap/${id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -96,7 +96,7 @@ const[thumbnail , setThumbnail] = useState(null);
             if (response.status === 200) {
                 setLoading(false);
                 toast.success("Roadmap Updated Successfully", { theme: "dark" });
-                navigate("/Admin"); // Navigate to the admin dashboard or wherever you want after update
+                navigate("/Admin");  
             } else {
                 setLoading(false);
                 toast.error("Failed to Update Roadmap", { theme: "dark" });
@@ -111,9 +111,26 @@ const[thumbnail , setThumbnail] = useState(null);
     };
 
     if (loading || !roadmap || !roadmap.topics) {
-        return <div className='vh-100 bg-dark'>
-            toast.loading("Loading ...");
-            </div>;
+        return   <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
+        <div className="card" aria-hidden="true" style={{width: '350px'}}>
+      <div className="text-center">
+        <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721031578/loader_bhnpfb.gif" style={{height: '125px', width: '115px'}} className="card-img-top" alt="..." />
+    </div>
+      <div className="card-body">
+        <h5 className="card-title placeholder-glow">
+          <span className="placeholder col-6"></span>
+        </h5>
+        <p className="card-text placeholder-glow">
+          <span className="placeholder col-7"></span>
+          <span className="placeholder col-4"></span>
+          <span className="placeholder col-4"></span>
+          <span className="placeholder col-6"></span>
+          <span className="placeholder col-8"></span>
+        </p>
+        <a href='/' className="btn btn-secondary btn-block disabled placeholder col-6" aria-disabled="true"> loading Roadmap</a>
+      </div>
+    </div>
+      </div>
     }
 
     return (

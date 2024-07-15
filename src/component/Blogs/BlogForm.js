@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
 import config from "../../config/config";
 import JoditEditor from "jodit-react";
+import { useNavigate } from "react-router-dom";
 
 const BlogForm = () => {
   const [title, setTitle] = useState("");
@@ -12,10 +13,11 @@ const BlogForm = () => {
   const editor = useRef(null);
   const [content, setContent] = useState("");
   const [user, setUser] = useState(null);
+  const Navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserData = async () => {
-      const token = localStorage.getItem("token");
+      const token = sessionStorage.getItem("token");
       if (token) {
         try {
           const response = await axios.post(
@@ -97,6 +99,7 @@ const BlogForm = () => {
         setContent("");
         setImage(null);
         setImagePreview(null);
+        Navigate("/blogs");
       } else {
         console.log("Failed to post blog", response);
       }

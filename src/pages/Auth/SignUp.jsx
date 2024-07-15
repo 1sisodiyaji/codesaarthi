@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useGoogleLogin } from "@react-oauth/google";
 import { Helmet } from "react-helmet";
@@ -19,8 +19,7 @@ const SignUp = () => {
     password: "",
   });
   const [verificationCode, setVerificationCode] = useState(['', '', '', '', '', '']);
-  const inputRefs = useRef([]);
-  const navigate = useNavigate();
+  const inputRefs = useRef([]); 
 
 
   // Toggle password visibility
@@ -76,7 +75,7 @@ const SignUp = () => {
       const response = await axios.post(`${config.BASE_URL}/api/register`, formDataEncoded);
 
       if (response.data.status === "success") {
-        toast.success("Account created successfully!", { theme: "dark" }); 
+        toast.success("Please Verify Your Account !", { theme: "dark" }); 
         setLoading(false);
         setToken(response.data.token);
         setVerify(true);
@@ -125,7 +124,7 @@ const SignUp = () => {
           sessionStorage.setItem("token", saveUserDataResponse.data.token);
           Cookies.set("token", saveUserDataResponse.data.token, { expires: 30 });
           setLoading(false);
-          navigate("/");
+         window.location.href = "/";
         } else {
           toast.error("Error saving user data", { theme: "dark" });
           console.log(saveUserDataResponse.data.message);
@@ -174,26 +173,28 @@ const SignUp = () => {
     try {
       const { email } = formData; 
       const code = verificationCode.join('');  
-      const response = await axios.post(
-        `${config.BASE_URL}/api/verify-user`,
-        JSON.stringify({ code, email }),
-        {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        }
-      );
+        
+    const response = await fetch(`${config.BASE_URL}/api/verify-user`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ code, email })
+    });
       
-      if (response.status === 200) {
-        console.log("User verified successfully");
+      if (response.status === 200) { 
+        toast.success("User Verified Welcome to Codesaarthi !", { theme: "dark" }); 
         sessionStorage.setItem("token", token);
         Cookies.set("token",token, { expires: 30 });
         setLoading(false);
-        navigate("/"); 
+        window.location.href = "/";
       } else {
         console.error("Verification failed");
+        toast.error("failed to Verify try again after sometime ..", { theme: "dark" }); 
+       
       }
     } catch (error) {
+      toast.error(error, { theme: "dark" }); 
       console.error("Error verifying user:", error);
     }
   };
@@ -250,8 +251,8 @@ const SignUp = () => {
         <>
          <div className="container-fluid design g-0 d-flex justify-content-center align-items-center " style={{ minHeight: '100vh' }}>
             <div className="row p-2">
-              <div className="col-lg-4 col-md-6 col-12">
-                <div className='text-center'>
+              <div className="col-lg-4 col-md-6 col-12 py-lg-5">
+                <div className='text-center py-lg-5'>
                   <img
                     src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720990203/logo_zdeshk.png"
                     width={95}
@@ -261,7 +262,7 @@ const SignUp = () => {
                   <div className="row g-0">
                     {inputs}
                   </div>
-                  <button onClick={verifyUser} className='btn my-3'>Verify</button>
+                  <button onClick={verifyUser} className='btn btn-block my-3'>Verify</button>
                 </div>
               </div>
               <div className="col-lg-8 col-md-6 col-12">

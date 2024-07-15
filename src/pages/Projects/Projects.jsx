@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
-import projectsData from '../../data/Projects.json';
+import ProjectData from '../../data/ProjectsData';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
-  useEffect(() => {
-    console.log(projectsData); // Log projectsData to see its structure
-    if (Array.isArray(projectsData)) {
-      setProjects(projectsData);
+  useEffect(() => { 
+    if (Array.isArray(ProjectData)) {
+      setProjects(ProjectData);
     } else {
-      console.error("projectsData is not an array");
+      console.error("ProjectData is not an array");
     }
   }, []);
 

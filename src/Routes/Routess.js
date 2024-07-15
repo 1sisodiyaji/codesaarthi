@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { Routes, Route} from "react-router-dom";
+import { useLocation, Routes, Route } from "react-router-dom";
+import axios from "axios";
+import config from "../config/config";
+
 import SignUp from "../pages/Auth/SignUp";
 import Login from "../pages/Auth/Login";
 import RecoverPassword from "../pages/Auth/RecoverPassword";
@@ -20,27 +22,27 @@ import Profile from "../pages/Profile/Profile";
 import { Navbar2 } from "../component/Navbar2";
 import NewsApi from "../component/NewsApi";
 import Blogs from "../component/Blogs";
-import Jobs from "../component/Jobs"; 
+import Jobs from "../component/Jobs";
 import UpdateBlogs from "../component/Blogs/UpdateBlog";
 import Blog from "../component/Blogs/Blog";
 import CreateCourse from "../Admin/CreateCourse";
 import Content from "../pages/Theory/Content";
 import UpdateCourse from "../Admin/UpdateCourse";
-import Admin from "../Admin/Admin"; 
+import Admin from "../Admin/Admin";
 import CreateRoadmap from "../Admin/CreateRoadmap";
-import UpdateRoadmap from "../Admin/UpdateRoadmap"; 
-import RoadmapDetails from "../pages/Roadmap/RoadmapDetails"
+import UpdateRoadmap from "../Admin/UpdateRoadmap";
+import RoadmapDetails from "../pages/Roadmap/RoadmapDetails";
 import BlogForm from "../component/Blogs/BlogForm";
 import ProjectDetails from "../pages/Projects/ProjectDetails";
-import SingleDetailingProject from "../pages/Projects/SingleDetailingProject"; 
+import SingleDetailingProject from "../pages/Projects/SingleDetailingProject";
 import Protected from "../config/Protected";
-import axios from "axios";
-import config from "../config/config";
+import AdminProtected from "../config/AdminProtected";
 
 const Routess = () => {
   const [shouldScrollToTop, setShouldScrollToTop] = useState(false);
-  const [admin , setAdmin] = useState(false);
-  const location = useLocation(); 
+  const [admin, setAdmin] = useState(null);
+  const location = useLocation();
+
   useEffect(() => {
     if (shouldScrollToTop) {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -55,55 +57,62 @@ const Routess = () => {
   const checkInternetConnection = () => {
     if (!navigator.onLine) {
       console.log("offline");
-    }  
+    }
   };
 
   useEffect(() => {
-    window.addEventListener('online', checkInternetConnection);
-    window.addEventListener('offline', checkInternetConnection);
+    window.addEventListener("online", checkInternetConnection);
+    window.addEventListener("offline", checkInternetConnection);
     checkInternetConnection();
 
     return () => {
-      window.removeEventListener('online', checkInternetConnection);
-      window.removeEventListener('offline', checkInternetConnection);
+      window.removeEventListener("online", checkInternetConnection);
+      window.removeEventListener("offline", checkInternetConnection);
     };
-  });
+  }, []);
 
-  const token = sessionStorage.getItem('token');
   useEffect(() => {
-      const GetAdminDetails = async (req,res) => {
-        const response = await axios.post(
-          `${config.BASE_URL}/Admin/user`,
-          {},
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
+    const token = sessionStorage.getItem("token");
+    if (token) {
+      const getAdminDetails = async () => {
+        try {
+          const response = await axios.post(
+            `${config.BASE_URL}/Admin/user`,
+            {},
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          if (response.status === 200) {
+            setAdmin(true);
+          } else {
+            setAdmin(false);
           }
-        ); 
-        if(response.status === 200){
-          setAdmin(true);
+        } catch (error) {
+          console.error("Error fetching admin details:", error);
+          setAdmin(false);
         }
-      }
-
-      GetAdminDetails();
-  },[token]) 
+      };
+      getAdminDetails();
+    } else {
+      setAdmin(false);
+    }
+  }, []);
 
   return (
     <>
-    
       <Navbar />
-
       <Routes>
-        <Route path="/" element={<Home />} /> 
+        <Route path="/" element={<Home />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/RecoverPassword" element={<RecoverPassword />} /> 
+        <Route path="/RecoverPassword" element={<RecoverPassword />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/privacy_policy" element={<PrivacyPolicy />} />
         <Route path="/terms_conditions" element={<TermsCondition />} />
         <Route path="/cookies" element={<Cookie />} />
-        
         <Route path="/profile" element={<Protected Component={Profile} />} />
         <Route path="/theory" element={<Theory />} />
         <Route path="/theory/:title" element={<Content />} />
@@ -111,28 +120,25 @@ const Routess = () => {
         <Route path="/roadMap/:title" element={<RoadmapDetails />} />
         <Route path="/Problems" element={<Problems />} />
         <Route path="/Projects" element={<Projects />} />
-        <Route path="/Projects/:projectId" element={<ProjectDetails/>} />
-        <Route path="/Detail-Project/:projectId" element={<SingleDetailingProject/>} />
-
+        <Route path="/Projects/:projectId" element={<ProjectDetails />} />
+        <Route path="/Detail-Project/:projectId" element={<SingleDetailingProject />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:id" element={<Blog />} />
         <Route path="/add-blog" element={<Protected Component={BlogForm} />} />
-        <Route path="/edit-blog/:id" element={<UpdateBlogs />} />
+        <Route path="/edit-blog/:id" element={<Protected Component={UpdateBlogs} />} />
         <Route path="/news" element={<NewsApi />} />
         <Route path="/jobs" element={<Jobs />} />
+        {admin !== null && admin &&(
+          <>
+            <Route path="/Admin" element={<AdminProtected Component={Admin} />} />
+            <Route path="/Admin/create-course" element={<AdminProtected Component={CreateCourse} />} />
+            <Route path="/Admin/update/:title" element={<AdminProtected Component={UpdateCourse} />} />
+            <Route path="/Admin/create-Roadmap" element={<AdminProtected Component={CreateRoadmap} />} />
+            <Route path="/Admin/updateRoadmap/:id" element={<AdminProtected Component={UpdateRoadmap} />} />
+          </>
+        )}
         <Route path="/*" element={<ErrorPage />} />
-
-        {/* Admin Section  */}
-        {admin && 
-        <>
-        <Route path="/Admin" element={<Admin />} />
-        <Route path="/Admin/create-course" element={<CreateCourse />} />
-        <Route path="/Admin/update/:title" element={<UpdateCourse />} />
-        <Route path="/Admin/create-Roadmap" element={<CreateRoadmap />} />
-        <Route path="/Admin/updateRoadmap/:title" element={<UpdateRoadmap />} />
-        </>}
       </Routes>
-
       <Footer onFooterClick={handleFooterClick} />
       <Navbar2 />
     </>

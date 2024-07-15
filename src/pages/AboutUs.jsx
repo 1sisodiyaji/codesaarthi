@@ -10,8 +10,7 @@ const AboutUs = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isLoading, setIsLoading] = useState(false); 
     const [error, setError] = useState(false);
 
     const handleSubmission = (isSubmitted) => {
@@ -43,12 +42,9 @@ const AboutUs = () => {
                 setIsLoading(true);
                 const response = await axios.post(`${config.BASE_URL}/api/contactemail`, data);
                 if (response.status === 200) {
-                    setError(" ");
-                    setIsSubmitted(true);
+                    setError(" "); 
                     handleSubmission(true);
-                } else {
-
-                    setIsSubmitted(false);
+                } else { 
                     handleSubmission(false);
                 }
             } catch (error) {
@@ -57,8 +53,7 @@ const AboutUs = () => {
                 setName(" ");
                 setEmail(" ");
                 setMessage(" ");
-                setIsLoading(false);
-                setIsSubmitted(false);
+                setIsLoading(false); 
             }
         }
     };
@@ -226,11 +221,11 @@ const AboutUs = () => {
                                         <Link to="https://www.instagram.com/golu_singh_sisodiya/" target='blank' className='text-light' > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
 
                                         <div className="row my-2">
-                                            <div className=" col-lg-6 col-12 text-end">
+                                            <div className=" col-lg-6 col-md-6 col-12 text-end">
                                                 <Link to="mailto:637golusingh@gmail.com" className="btn text-capitalize ">Contact me <i className="fi fi-sr-envelope ps-2"></i></Link>
                                             </div>
 
-                                            <div className=" col-lg-6 col-12 text-end">
+                                            <div className=" col-lg-6  col-md-6 col-12 text-end">
                                                 <button type='submit' onClick={handlesendData} className='btn   text-capitalize'> Whatsapp <i className="fi fi-brands-whatsapp  mx-2"></i> </button>
 
                                             </div>

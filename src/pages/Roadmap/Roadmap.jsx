@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet'; 
-import RoadmapDAta from '../../data/Roadmap.json';
+import RoadmapData from '../../data/RoadmapData';
 
 const Roadmap = () => {
   const [startCard, setStartCard] = useState(0);
@@ -10,7 +10,7 @@ const Roadmap = () => {
   useEffect(() => {
     const fetchRoadmap = async () => {
       try { 
-        setCardsData(RoadmapDAta);
+        setCardsData(RoadmapData);
       } catch (error) {
         console.error("Error fetching roadmap:", error);
       }
@@ -58,7 +58,7 @@ const Roadmap = () => {
         <div className="card border border-dark p-1 my-2" style={{ backgroundColor: '#141414' }}>
           <div className="row">
             <div className='col-4'>
-              <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720990203/logo_zdeshk.png" className='img-fluid' alt="logo" loading='lazy' />
+              <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721031578/loader_bhnpfb.gif" className='img-fluid' alt="logo" loading='lazy' />
             </div>
             <div className='col-8 align-self-center'>
               <h5 className="card-title text-light">{card.title}</h5>

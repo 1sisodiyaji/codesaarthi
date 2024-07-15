@@ -100,7 +100,7 @@ const Content = () => {
         <div className="card" aria-hidden="true" style={{ width: "350px" }}>
           <div className="text-center">
             <img
-              src="https://res.cloudinary.com/dbqq41bpc/image/upload/v1721017937/codesaarthi/Projects/Clone/loader_v5ithg.gif"
+              src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721031578/loader_bhnpfb.gif"
               style={{ height: "125px", width: "115px" }}
               className="card-img-top"
               alt="Loading..."
@@ -357,7 +357,7 @@ const Content = () => {
                       <div className="col-3 d-flex justify-content-center align-items-center">
 
                         <img
-                          src={blog.image || "https://via.placeholder.com/150"}
+                          src={blog.image || "https://res.cloudinary.com/ducw7orvn/image/upload/v1721024136/codesaarthi/article-1721024134471.png"}
                           alt="Author"
                           style={{ width: '35px' }}
                           className="img-fluid rounded-circle"

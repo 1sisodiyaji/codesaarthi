@@ -15,7 +15,7 @@ const Theory = () => {
   if (!courses.length) {
     return (
       <div className="vh-100 d-flex justify-content-center align-items-center">
-        <img src="https://res.cloudinary.com/dbqq41bpc/image/upload/v1721017937/codesaarthi/Projects/Clone/loader_v5ithg.gif" alt="Loading" loading='lazy' />;
+        <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721031578/loader_bhnpfb.gif" alt="Loading" loading='lazy' />;
       </div>
     );
   }

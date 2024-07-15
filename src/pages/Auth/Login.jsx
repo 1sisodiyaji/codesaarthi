@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useGoogleLogin } from "@react-oauth/google"; 
 import { Helmet } from "react-helmet";
@@ -11,7 +11,6 @@ import Cookies from 'js-cookie';
 const Login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -59,7 +58,7 @@ const Login = () => {
             sessionStorage.setItem("token", response.data.token);
             Cookies.set("token", response.data.token, { expires: 30 });
             setLoading(false);
-            navigate("/");
+            window.location.href = "/" ;
           } else {
             console.log(response.data.message);
             toast.warn(response.data.message, { theme: "dark" });
@@ -102,7 +101,7 @@ const Login = () => {
           sessionStorage.setItem("token", saveUserDataResponse.data.token);
           Cookies.set("token", saveUserDataResponse.data.token, { expires: 30 });
           setLoading(false);
-          navigate("/");
+          window.location.href = "/" ;
         } else {
           toast.error("Error saving user data", { theme: "dark" });
           console.log(saveUserDataResponse.data.message);

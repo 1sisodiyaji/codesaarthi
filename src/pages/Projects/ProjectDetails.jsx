@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import projectsData from '../../data/Projects.json';
+import ProjectData from "../../data/ProjectsData";
 
 const ProjectDetails = () => {
     const { projectId } = useParams();
@@ -8,7 +8,7 @@ const ProjectDetails = () => {
     const [project, setProject] = useState(null);
 
     useEffect(() => {
-        const selectedProject = projectsData.find(p => p.name === projectId);
+        const selectedProject = ProjectData.find(p => p.name === projectId);
         if (selectedProject) {
             setProject(selectedProject);
         }
