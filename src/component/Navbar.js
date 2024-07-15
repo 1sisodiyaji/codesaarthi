@@ -17,8 +17,8 @@ export const Navbar = () => {
       const response = await axios.post(`${config.BASE_URL}/api/logout`);
 
       if (response.status === 200) {
-        localStorage.removeItem('token');
-        window.location.reload();
+        sessionStorage.removeItem('token');
+        window.location.href = "/";
       } else {
         console.log('Logout failed');
       }
@@ -34,7 +34,7 @@ export const Navbar = () => {
  
   useEffect(() => {
     const fetchUserData = async () => {
-      const token = localStorage.getItem("token");
+      const token = sessionStorage.getItem("token"); 
       if (token) {
         try {
           const response = await axios.post(
@@ -64,7 +64,19 @@ export const Navbar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
- 
+  useEffect(() => {
+    // Check local storage for dark mode preference on initial load
+    const storedDarkMode = localStorage.getItem('darkmode');
+    if (storedDarkMode) {
+        const isDarkMode = JSON.parse(storedDarkMode);
+        setDarkmode(isDarkMode);
+        document.body.classList.toggle('dark-theme', isDarkMode);
+    }
+}, []);
+
+useEffect(() => {
+  setIsSidebarOpen(false);
+}, [location]);
 
   const toggleDarkMode = () => {
     const isDarkMode = !darkmode;
@@ -72,15 +84,9 @@ export const Navbar = () => {
 
     // Toggle dark theme class on body
     const body = document.body;
-    if (isDarkMode) {
-      body.classList.add('dark-theme');
-    } else {
-      body.classList.remove('dark-theme');
-    }
-
-    // Optionally, persist dark mode state in localStorage
     localStorage.setItem('darkmode', JSON.stringify(isDarkMode));
-  };
+    body.classList.toggle('dark-theme', isDarkMode);
+};
  
   return (
     <>
@@ -259,8 +265,7 @@ export const Navbar = () => {
             {/* Navbar brand */}
             <Link
               className="navbar-brand text-center ms-4"
-              to="/"
-              style={{ color: "#703BF7" }}
+              to="/" 
             >
               <h1 style={{ fontSize: "24px" }} className="mb-0 ms-2">
                 Codesaarthi

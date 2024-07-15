@@ -14,7 +14,7 @@ const Admin = () => {
 
   useEffect(() => {
     const fetchUserData = async () => {
-      const token = localStorage.getItem("token");
+      const token = sessionStorage.getItem("token");
       try {
         const response = await axios.post(
           `${config.BASE_URL}/api/user`,
@@ -25,8 +25,9 @@ const Admin = () => {
             },
           }
         );
-
+console.log(response);
         if (response.data.status === "success") {
+          console.log(response.data);
           if (response.data.user.email == "637golusingh@gmail.com") {
             setAdmin(true);
           }
@@ -136,7 +137,7 @@ const Admin = () => {
   return (
     <>
       <ToastContainer />
-      {admin ? (
+      {!admin ? (
         <>
           <div
             className="container-fluid  py-5"

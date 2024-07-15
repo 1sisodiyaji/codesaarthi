@@ -4,6 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import config from "../config/config";
 
 const AboutUs = () => {
     const [name, setName] = useState('');
@@ -40,7 +41,7 @@ const AboutUs = () => {
             };
             try {
                 setIsLoading(true);
-                const response = await axios.post('https://server-fl9q.onrender.com/api/contactemail', data);
+                const response = await axios.post(`${config.BASE_URL}/api/contactemail`, data);
                 if (response.status === 200) {
                     setError(" ");
                     setIsSubmitted(true);
@@ -101,7 +102,7 @@ const AboutUs = () => {
                 <div className="container-fluid  my-lg-4 py-lg-4">
                     <div className="row  p-lg-0 p-3">
                         <div className="col-lg-2 col-md-0 col-sm-0 d-flex align-self-end justify-content-end d-lg-block d-none">
-                            <img src="../img/Rectangle3.png" className='img-fluid pt-5 mt-5 gt-5' alt="mission image" />
+                            <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720994988/Rectangle3_pgla2x.png" className='img-fluid pt-5 mt-5 gt-5' alt="mission " />
                         </div>
                         <div className="col-lg-4 col-12 g-0 my-2 rounded-6 tilt-effect2 ">
                             <div className="card p-4 h-100"  style={{ boxShadow: '5px 5px 20px black' }}>
@@ -120,21 +121,13 @@ const AboutUs = () => {
 
                         </div>
                         <div className="col-lg-2 d-lg-block d-md-block d-none">
-                            <img src="../img/Rectangle2.png" className='img-fluid ' alt="vision Image" />
+                            <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720994938/Rectangle2_ckx3bx.png" className='img-fluid ' alt="vision " />
                         </div>
                     </div>
                 </div>
 
                 <div className="container-fluid  text-light my-lg-4 py-lg-4 my-3 py-3">
-                    <ToastContainer
-                        position="bottomRight"
-                        autoClose={3000}
-                        hideProgressBar={false}
-                        closeOnClick
-                        pauseOnHover
-                        draggable
-                        style={{ zIndex: '9999', height: '50px', width: '250px' }}
-                    />
+                    <ToastContainer/>
                     <div className="row flex-md-row flex-column-reverse g-0 ">
                         <div className=" col-lg-2 col-0"></div>
                         <div className="col-lg-4 col-12   py-lg-5 py-3 px-lg-3 px-3 card shadow-5-soft tilt-effect " style={{
@@ -142,7 +135,7 @@ const AboutUs = () => {
                             borderTopLeftRadius: '20px', borderTopRightRadius: '20px', borderBottomLeftRadius: '0', borderBottomRightRadius: '0', backgroundColor: '#262626'
                         }}>
                             <div className="justify-content-center" style={{ maxWidth: '100%' }}>
-                                <div>
+                                <div className='form-group'>
                                     <h1 style={{ color: '#FFE164', fontWeight: 'lighter' }} className="text-start mb-4">
                                         Contact Us</h1>
 
@@ -157,6 +150,7 @@ const AboutUs = () => {
                                             style={{ color: '#FFE164' }}
                                             id="name"
                                             value={name}
+                                            required
                                             onChange={(e) => setName(e.target.value)}
                                         />
                                     </div>
@@ -172,6 +166,7 @@ const AboutUs = () => {
                                             style={{ color: '#FFE164' }}
                                             id="Email"
                                             value={email}
+                                            required email
                                             onChange={(e) => setEmail(e.target.value)}
                                         />
                                     </div>
@@ -204,7 +199,7 @@ const AboutUs = () => {
                             </div>
                         </div>
                         <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center">
-                            <img src="img/contactPage.png" className="img-fluid w-100" />
+                            <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720996692/contactPage_tuarrs.png" className="img-fluid w-100" alt='contact' />
                         </div>
                     </div>
 
@@ -217,7 +212,7 @@ const AboutUs = () => {
                             <div className="card p-5 d-lg-block d-md-block d-none" style={{ backgroundColor: '#262626', boxShadow: '15px 15px 40px black' }} >
                                 <div className="row">
                                     <div className="col-3" style={{ borderRadius: '50%' }}>
-                                        <img src="../img/ProfilePic.png" className='img-fluid' alt="Profile Pic Image" style={{ borderRadius: '50%' }} />
+                                        <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720996731/ProfilePic_dqulox.png" className='img-fluid' alt="Profile Pic " style={{ borderRadius: '50%' }} />
                                     </div>
                                     <div className="col-9">
                                         <h4 className='text-warning'> Golu Singh
@@ -247,7 +242,7 @@ const AboutUs = () => {
                             <div className="card p-3 d-lg-none d-md-none d-block" style={{ backgroundColor: '#000435', boxShadow: '15px 15px 40px black' }} >
                                 <div className="row">
                                     <div className="col-3" style={{ borderRadius: '50%' }}>
-                                        <img src="../img/ProfilePic.png" className='img-fluid' alt="Profile Pic Image" style={{ borderRadius: '50%' }} />
+                                        <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720996731/ProfilePic_dqulox.png" className='img-fluid' alt="Profile Pic  " style={{ borderRadius: '50%' }} />
                                     </div>
                                     <div className="col-9">
                                         <h6 className='text-warning'> Golu Singh

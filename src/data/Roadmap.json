@@ -887,6 +887,101 @@
             }
         ],
         "__v": 0
+    },
+    {
+        "_id": "6",
+        "title": "Express.js",
+        "thumbnail": "https://res.cloudinary.com/dbqq41bpc/image/upload/v1719844851/codesaarthi/courses/Express/express-js-removebg-preview_q40d5a.png",
+        "description": "Learn Express.js from scratch, covering everything from basic concepts to advanced topics, including deployment and interview preparation.",
+        "topics": [
+            {
+                "headline": "Introduction",
+                "points": [
+                    "History of Express.js",
+                    "What is Express.js?",
+                    "Key features and benefits"
+                ],
+                "_id": "1"
+            },
+            {
+                "headline": "Getting Started",
+                "points": [
+                    "Installation and Setup",
+                    "Basic Concepts: Middleware, Routing, Request and Response objects"
+                ],
+                "_id": "2"
+            },
+            {
+                "headline": "Core Concepts",
+                "points": [
+                    "Middleware: Built-in, Third-party, Custom",
+                    "Routing: Defining routes, Route parameters, Query strings",
+                    "Request Handling: Handling HTTP methods, Form data, File uploads"
+                ],
+                "_id": "3"
+            },
+            {
+                "headline": "Advanced Topics",
+                "points": [
+                    "Error Handling: Error-handling middleware, 404 errors, Centralized error handling",
+                    "Templating Engines: Using Pug, EJS, Handlebars, Rendering dynamic content",
+                    "Database Integration: Connecting to databases, Using ORMs, CRUD operations"
+                ],
+                "_id": "4"
+            },
+            {
+                "headline": "Security",
+                "points": [
+                    "Authentication and Authorization: Using Passport.js, Implementing JWT, Role-based access control",
+                    "Data Validation and Sanitization: Using libraries like Joi, Preventing SQL injection and XSS attacks"
+                ],
+                "_id":"5"
+            },
+            {
+                "headline": "Performance Optimization",
+                "points": [
+                    "Caching: In-memory stores, HTTP caching headers",
+                    "Load Balancing and Scaling: Horizontal scaling, Using process managers",
+                    "Best Practices: Code organization, Environment variables, Logging and monitoring"
+                ],
+                "_id": "6"
+            },
+            {
+                "headline": "Testing",
+                "points": [
+                    "Unit Testing: Setting up frameworks, Writing and running tests",
+                    "Integration Testing: Testing routes and middleware, Using Supertest",
+                    "Continuous Integration: Setting up CI/CD pipelines"
+                ],
+                "_id": "7"
+            },
+            {
+                "headline": "Deployment",
+                "points": [
+                    "Preparing for Production: Environment configuration, Security best practices",
+                    "Deploying to Cloud Services: Deploying to Heroku, AWS, and others, Using Docker and containerization",
+                    "Monitoring and Maintenance: Setting up monitoring tools, Performance tuning and troubleshooting"
+                ],
+                "_id": "8"
+            },
+            {
+                "headline": "Real-world Applications",
+                "points": [
+                    "Building a RESTful API: Designing endpoints, Implementing CRUD operations",
+                    "Creating a Full-stack Application: Integrating with front-end frameworks, Handling user authentication and authorization",
+                    "Project: Building a Blog Application: Setting up the project, Implementing features step-by-step, Deploying the application"
+                ],
+                "_id": "9"
+            },
+            {
+                "headline": "Interview Questions and Preparation",
+                "points": [
+                    "Common Interview Questions: Basic to advanced questions, Code challenges",
+                    "Practical Exercises: Hands-on coding tasks, Debugging and optimizing code",
+                    "Mock Interviews: Simulating real-world interview scenarios, Feedback and improvement tips"
+                ],
+                "_id": "10"
+            }
+        ]
     }
-    
 ]

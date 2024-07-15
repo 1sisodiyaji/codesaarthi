@@ -20,7 +20,7 @@ const Error404Pgae = () => {
 <div className="container-fluid  design g-0 ">
 
    <div className='d-flex align-items-center justify-content-center'>
-        <img src="img/error404.jpg" className='img-fluid imageHeight' alt="error page image" />
+        <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720997051/error404_jznaqp.jpg" className='img-fluid imageHeight' alt="error page" />
    </div>
  
 

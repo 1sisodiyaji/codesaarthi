@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export const Navbar2 = () => {
-  const location = useLocation();
-  const pic = localStorage.getItem("user_ProfilePic");
+  const location = useLocation(); 
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });

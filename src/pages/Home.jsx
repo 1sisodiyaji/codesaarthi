@@ -1,14 +1,14 @@
-import React ,{useState}from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import "../App.css";
 import { Helmet } from "react-helmet";
 import NewsApi from "../component/NewsApi";
-import Profile from "./Profile";
+import Profile from "./Profile/Profile";
 import Jobs from "../component/Jobs";
-import Blogs from "../component/Blogs"; 
+import Blogs from "../component/Blogs";
 
 const Home = () => {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
 
   const [content, setContent] = useState('news');
 
@@ -16,8 +16,8 @@ const Home = () => {
     switch (content) {
       case 'jobs':
         return <Jobs />;
-        case 'profile':
-          return <Profile />;
+      case 'profile':
+        return <Profile />;
       case 'blogs':
         return <Blogs />;
       case 'news':
@@ -25,7 +25,7 @@ const Home = () => {
         return <NewsApi />;
     }
   };
- 
+
   return (
     <>
       <Helmet>
@@ -64,10 +64,44 @@ const Home = () => {
 
       <div
         className="container-fluid design w-100"
-        style={{   minHeight : '100vh' }}
+        style={{ minHeight: '100vh' }}
       >
-        {!token ? (
+        {token ? (
           <>
+            <div className="container-fluid">
+              <div className="row g-6">
+                <div className="col-lg-3 col-0 d-lg-block d-none pt-2">
+                  <div className="card   text-end sticky-top" style={{ top: '70px' }}>
+                    <div className="p-2">
+                      <p onClick={() => setContent('jobs')} style={{ cursor: 'pointer' }}>Jobs</p>
+                      <p onClick={() => setContent('blogs')} style={{ cursor: 'pointer' }}>Blogs</p>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-lg-6 col-12 g-0">
+
+                  {renderContent()}
+                </div>
+
+                <div className="col-lg-3 col-0 d-lg-block d-none pt-2">
+                  <div className="card   text-start sticky-top" style={{ top: '70px' }}>
+                    <div className="p-2">
+                      <p onClick={() => setContent('news')} style={{ cursor: 'pointer' }}>News</p>
+                      <p onClick={() => setContent('profile')} style={{ cursor: 'pointer' }}>My Account</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </>
+
+        ) : (
+          <>
+             
+
             <div className="row w-100 py-lg-4 py-2">
               <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center">
                 <div className="">
@@ -84,7 +118,7 @@ const Home = () => {
                   <Link to="/signup">
                     <div
                       className="btn text-capitalize rounded-3 text-light"
-                      style={{ backgroundColor: "purple" }}
+                      style={{ backgroundColor: "purple" , fontSize: '1rem'}}
                     >
                       Start Your Journey
                     </div>
@@ -93,9 +127,10 @@ const Home = () => {
               </div>
               <div className="col-lg-6 col-12">
                 <img
-                  src="img/HeroImage.png"
+                  src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720994849/HeroImage_w0lwv2.png"
                   className="img-fluid"
-                  alt="laptop view image"
+                  loading="lazy"
+                  alt="laptop view "
                 />
               </div>
             </div>
@@ -103,13 +138,13 @@ const Home = () => {
             <div className="row py-lg-5">
               <div className="col-lg-4 col-0 d-lg-block d-none">
                 <img
-                  src="img/Rectangle1.png"
+                  src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720994914/Rectangle1_qbln76.png"
                   className="img-fluid"
                   style={{ marginTop: "-32vh", marginLeft: "22vw" }}
                   alt=""
                 />
                 <img
-                  src="img/Rectangle2.png"
+                  src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720994938/Rectangle2_ckx3bx.png"
                   className="img-fluid"
                   style={{ marginTop: "12vh", marginLeft: "4vw" }}
                   alt=""
@@ -127,7 +162,7 @@ const Home = () => {
                 </p>
               </div>
               <div className="col-lg-3 col-0 text-end d-lg-block d-none">
-                <img src="img/Rectangle3.png" className="img-fluid" alt="" />
+                <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720994988/Rectangle3_pgla2x.png" className="img-fluid" alt="" />
               </div>
             </div>
 
@@ -139,13 +174,12 @@ const Home = () => {
                     <Link to="/Projects/web-development">
                       <div className="text-end">
                         <i
-                          className="fi fi-rs-arrow-up-right"
-                          style={{ color: "#703BF7" }}
+                          className="fi fi-rs-arrow-up-right text-light" 
                         ></i>
                       </div>
                     </Link>
                     <div className="bg-image hover-overlay ripple text-center">
-                      <img src="img/clone1.png" className="img-fluid" />
+                      <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720995043/clone1_piecml.png" className="img-fluid" alt="clone" />
                     </div>
                     <div className="card-body">
                       <h5 className="card-title text-center ">
@@ -160,13 +194,12 @@ const Home = () => {
                     <Link to="/Projects/React-based-project">
                       <div className="text-end">
                         <i
-                          className="fi fi-rs-arrow-up-right"
-                          style={{ color: "#703BF7" }}
+                          className="fi fi-rs-arrow-up-right text-light" 
                         ></i>
                       </div>
                     </Link>
                     <div className="bg-image hover-overlay ripple text-center">
-                      <img src="img/React1.png" className="img-fluid" />
+                      <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720995214/React1_ievzdg.png" className="img-fluid"  alt="react"/>
                     </div>
 
                     <div className="card-body">
@@ -182,13 +215,12 @@ const Home = () => {
                     <Link to="/Projects/phpProjects">
                       <div className="text-end">
                         <i
-                          className="fi fi-rs-arrow-up-right"
-                          style={{ color: "#703BF7" }}
+                          className="fi fi-rs-arrow-up-right text-light" 
                         ></i>
                       </div>
                     </Link>
                     <div className="bg-image hover-overlay ripple text-center">
-                      <img src="img/php1.png" className="img-fluid" />
+                      <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720995293/php1_vgzkyn.png" className="img-fluid" alt="php" />
                     </div>
 
                     <div className="card-body">
@@ -204,13 +236,12 @@ const Home = () => {
                     <Link to="/Projects/java-Projects">
                       <div className="text-end">
                         <i
-                          className="fi fi-rs-arrow-up-right"
-                          style={{ color: "#703BF7" }}
+                          className="fi fi-rs-arrow-up-right text-light" 
                         ></i>
                       </div>
                     </Link>
                     <div className="bg-image hover-overlay ripple text-center">
-                      <img src="img/java1.png" className="img-fluid" />
+                      <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720995337/java1_qikuqa.png" className="img-fluid"  alt="java"/>
                     </div>
 
                     <div className="card-body">
@@ -226,13 +257,12 @@ const Home = () => {
                     <Link to="/Projects/HtmlProject">
                       <div className="text-end">
                         <i
-                          className="fi fi-rs-arrow-up-right"
-                          style={{ color: "#703BF7" }}
+                          className="fi fi-rs-arrow-up-right text-light"
                         ></i>
                       </div>
                     </Link>
                     <div className="bg-image hover-overlay ripple text-center">
-                      <img src="img/html1.png" className="img-fluid" />
+                      <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720995414/html1_w62ewn.png" className="img-fluid" alt="html" />
                     </div>
 
                     <div className="card-body">
@@ -248,13 +278,12 @@ const Home = () => {
                     <Link to="/Projects">
                       <div className="text-end">
                         <i
-                          className="fi fi-rs-arrow-up-right"
-                          style={{ color: "#703BF7" }}
+                          className="fi fi-rs-arrow-up-right text-light" 
                         ></i>
                       </div>
                     </Link>
                     <div className="bg-image hover-overlay ripple text-center">
-                      <img src="img/htmlcssjs1.png" className="img-fluid" />
+                      <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720995414/htmlcssjs1_l4v56a.png" className="img-fluid" alt="html css" />
                     </div>
 
                     <div className="card-body">
@@ -270,16 +299,16 @@ const Home = () => {
             <div className="row g-0 py-lg-5">
               <div className="col-lg-4 col-0 d-lg-block d-none">
                 <img
-                  src="img/Rectangle1.png"
+                  src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720994914/Rectangle1_qbln76.png"
                   className="img-fluid"
                   style={{ marginTop: "7vh", marginLeft: "20vw" }}
-                  alt=""
+                  alt="designs"
                 />
                 <img
-                  src="img/Rectangle2.png"
+                  src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720994938/Rectangle2_ckx3bx.png"
                   className="img-fluid"
                   style={{ marginTop: "7vh", marginLeft: "2vw" }}
-                  alt=""
+                  alt="designs"
                 />
               </div>
               <div className="col-lg-4 col-12 align-self-end">
@@ -292,13 +321,13 @@ const Home = () => {
               </div>
               <div className="col-lg-4 d-lg-block d-none">
                 <img
-                  src="img/Rectangle1.png"
+                  src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720994914/Rectangle1_qbln76.png"
                   className="img-fluid"
                   style={{ marginTop: "-47vh", marginLeft: "-2vw" }}
                   alt="Rectangle1.png "
                 />
                 <img
-                  src="img/Rectangle1.png"
+                  src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720994914/Rectangle1_qbln76.png"
                   className="img-fluid"
                   style={{
                     marginTop: "20vh",
@@ -318,13 +347,12 @@ const Home = () => {
                     <Link to="/theory/Os-Content">
                       <div className="text-end">
                         <i
-                          className="fi fi-rs-arrow-up-right"
-                          style={{ color: "#703BF7" }}
+                          className="fi fi-rs-arrow-up-right text-light"
                         ></i>
                       </div>
                     </Link>
                     <div className="bg-image hover-overlay ripple text-center">
-                      <img src="img/Text.png" className="img-fluid" />
+                      <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720995677/Text_mwaw1m.png" className="img-fluid" alt="os" />
                     </div>
 
                     <div className="card-body">
@@ -340,13 +368,12 @@ const Home = () => {
                     <Link to="/theory/React-Content">
                       <div className="text-end">
                         <i
-                          className="fi fi-rs-arrow-up-right"
-                          style={{ color: "#703BF7" }}
+                          className="fi fi-rs-arrow-up-right text-light" 
                         ></i>
                       </div>
                     </Link>
                     <div className="bg-image hover-overlay ripple text-center">
-                      <img src="img/React1.png" className="img-fluid" />
+                      <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720995214/React1_ievzdg.png" className="img-fluid" alt="react" />
                     </div>
 
                     <div className="card-body">
@@ -364,15 +391,15 @@ const Home = () => {
                     <Link to="/theory/array">
                       <div className="text-end">
                         <i
-                          className="fi fi-rs-arrow-up-right"
-                          style={{ color: "#703BF7" }}
+                          className="fi fi-rs-arrow-up-right text-light" 
                         ></i>
                       </div>
                     </Link>
                     <div className=" hover-overlay ripple text-center">
                       <img
-                        src="img/javaNotes.png"
+                        src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720995674/javaNotes_lqenmq.png"
                         className="img-fluid"
+                        alt="java"
                         style={{ height: "12vh" }}
                       />
                     </div>
@@ -390,15 +417,15 @@ const Home = () => {
                     <Link to="/theory/basic-Dbms">
                       <div className="text-end">
                         <i
-                          className="fi fi-rs-arrow-up-right"
-                          style={{ color: "#703BF7" }}
+                          className="fi fi-rs-arrow-up-right text-light" 
                         ></i>
                       </div>
                     </Link>
                     <div className=" hover-overlay ripple text-center">
                       <img
-                        src="img/dbms1.png"
+                        src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720995673/dbms1_exxs9f.png"
                         className="img-fluid"
+                        alt="dbms"
                         style={{ height: "12vh" }}
                       />
                     </div>
@@ -413,37 +440,6 @@ const Home = () => {
                 <div className="col-1"></div>
               </div>
             </div>
-          </>
-        ) : (
-          <>
-            <div className="container-fluid">
-              <div className="row g-6">
-                <div className="col-lg-3 col-0 d-lg-block d-none pt-2">
-                  <div className="card   text-end sticky-top" style={{ top: '70px' }}>
-                    <div className="p-2">
-                    <p onClick={() => setContent('jobs')} style={{ cursor: 'pointer' }}>Jobs</p>
-                    <p onClick={() => setContent('blogs')}   style={{ cursor: 'pointer' }}>Blogs</p>
-           
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-12 g-0">
-                  
-                {renderContent()}
-                </div>
-
-                <div className="col-lg-3 col-0 d-lg-block d-none pt-2">
-                  <div className="card   text-start sticky-top" style={{ top: '70px' }}>
-                    <div className="p-2"> 
-                    <p onClick={() => setContent('news')}  style={{ cursor: 'pointer' }}>News</p>
-                    <p onClick={() => setContent('profile')}  style={{ cursor: 'pointer' }}>My Account</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-           
           </>
         )}
       </div>
