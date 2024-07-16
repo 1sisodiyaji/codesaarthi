@@ -27,10 +27,12 @@ const Blogs = () => {
       </Helmet>
 
 
-      <div className="container-fluid design py-lg-5" style={{ minHeight: '100vh' }}>
-        <button  className='btn w-100    text-capitalize my-2'  onClick={handleNewPost}  >
+      <div className="container-fluid design py-lg-5 p-0" style={{ minHeight: '100vh' }}>
+        <div className="px-1">
+        <button  className='btn btn-block  text-capitalize my-3 '  onClick={handleNewPost}  >
           Post Your Own Blog
         </button>
+        </div>
         {showBlogForm && <BlogForm />}
         <BlogList />
       </div>

@@ -21,8 +21,10 @@ const Home = () => {
       case 'blogs':
         return <Blogs />;
       case 'news':
+        return <NewsApi/>;
+        
       default:
-        return <NewsApi />;
+        return <Blogs />;
     }
   };
 
@@ -68,7 +70,7 @@ const Home = () => {
       >
         {token ? (
           <>
-            <div className="container-fluid">
+            <div className="container-fluid g-0">
               <div className="row g-6">
                 <div className="col-lg-3 col-0 d-lg-block d-none pt-2">
                   <div className="card   text-end sticky-top" style={{ top: '70px' }}>

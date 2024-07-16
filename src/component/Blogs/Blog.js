@@ -132,19 +132,22 @@ const Blog = () => {
       <div className="container-fluid design py-4 " style={{ minHeight: "100vh" }}>
         <div className="row">
           <div className="col-lg-8 col-12">
-          <div className="card shadow-6 p-3">
-            <h4 className="text-warning">{blog.title}</h4>
+          <div className=" shadow-6">
+            <h4 className="p-1 text-decoration-underline">{blog.title}</h4>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src={blog.image}
                 alt={blog.title}
-                className="img-fluid  mb-3"
+                className="img-fluid imageHeight mb-3"
               />
             </div>
+            <div className="p-2">
             <p>{blog.description}</p>
             <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+            </div>
             <hr />
-            <div className="row">
+            
+            <div className="row p-2">
               <div className="col-6 text-start">
                 <small>
                   Posted by: {blog.idAuthor ? blog.idAuthor.name : "Anonymous"}
@@ -163,6 +166,7 @@ const Blog = () => {
                 </small>
               </div>
             </div>
+
           </div>
           </div>
           <div className="col-lg-4 col-12">

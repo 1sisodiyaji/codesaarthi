@@ -17,7 +17,7 @@ export const Navbar2 = () => {
         <div className="container-fluid d-flex justify-content-around  align-items-center p-1">
           <Link className="text-center" style={{ fontSize: "1.4rem" }} to="/">
             {" "}
-            <i className="fi fi-rr-house-window"></i>{" "}
+            <i className="fi fi-rr-house-window iconColor"></i>{" "}
           </Link>
           <Link
             className="text-center"
@@ -25,7 +25,7 @@ export const Navbar2 = () => {
             to="/theory"
           >
             {" "}
-            <i className="fi fi-rr-catalog-magazine"></i>{" "}
+            <i className="fi fi-rr-catalog-magazine iconColor"></i>{" "}
           </Link>
           <Link
             className="text-center"
@@ -33,21 +33,21 @@ export const Navbar2 = () => {
             to="/blogs"
           >
             {" "}
-            <i className="fi fi-rr-square-plus"></i>{" "}
+            <i className="fi fi-rr-square-plus iconColor"></i>{" "}
           </Link>
           <Link
             className="text-center"
             style={{ fontSize: "1.4rem" }}
             to="/Problems"
           >
-            <i className="fi fi-rr-code-simple"></i>{" "}
+            <i className="fi fi-rr-code-simple iconColor"></i>{" "}
           </Link>
           <Link
             className="text-center"
             style={{ fontSize: "1.4rem" }}
             to="/jobs"
           >
-            <i className="fi fi-br-briefcase"></i>{" "}
+            <i className="fi fi-br-briefcase iconColor"></i>{" "}
           </Link>
         </div>
       </nav>

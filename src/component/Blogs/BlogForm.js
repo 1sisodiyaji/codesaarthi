@@ -92,14 +92,14 @@ const BlogForm = () => {
         }
       );
 
-      if (response.status === 200) {
+      if (response.status === 200) { 
         setLoading(false);
         setTitle("");
         setDescription("");
         setContent("");
         setImage(null);
         setImagePreview(null);
-        Navigate("/blogs");
+        Navigate(`/blog/${response.data._id}`);
       } else {
         console.log("Failed to post blog", response);
       }

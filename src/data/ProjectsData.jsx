@@ -1210,12 +1210,49 @@ const ProjectData = [
         </div>
         `,
       }
-      
-      
-      
-      
-      
+       
     ],
   },
+  {
+    id: "4",
+    name: "Java",
+    thumbnail:
+      "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721108419/codesaarthi/Projects/HTML_CSS/htmlcss1_qiau0p.png",
+    projects: [
+    ]
+  },
+  {
+    id: "5",
+    name: "Php",
+    thumbnail:
+      "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721108419/codesaarthi/Projects/HTML_CSS/htmlcss1_qiau0p.png",
+    projects: [
+    ]
+  },
+  {
+    id: "6",
+    name: "React",
+    thumbnail:
+      "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721108419/codesaarthi/Projects/HTML_CSS/htmlcss1_qiau0p.png",
+    projects: [
+    ]
+  },
+  {
+    id: "7",
+    name: "Javascript",
+    thumbnail:
+      "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721108419/codesaarthi/Projects/HTML_CSS/htmlcss1_qiau0p.png",
+    projects: [
+    ]
+  }
+  ,
+  {
+    id: "8",
+    name: "Angular",
+    thumbnail:
+      "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721108419/codesaarthi/Projects/HTML_CSS/htmlcss1_qiau0p.png",
+    projects: [
+    ]
+  }
 ];
 export default ProjectData;

@@ -5,6 +5,7 @@ import config from "../config/config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CanvasJSReact from '@canvasjs/react-charts';
+import { Helmet } from "react-helmet";
 
 const Admin = () => {
   const [courses, setCourses] = useState([]);
@@ -226,6 +227,35 @@ const Admin = () => {
 
   return (
     <>
+
+<Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="CodeSaarthi" content="Codesaarthi" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://codesaarthi.com/Admin" />
+        <meta
+          name="description"
+          content="Lets Be a part of codesaarthi , give us  a chance to help you by explaining things in simple Words."
+        />
+        <title>Admin | Codesaarthi </title>
+        <meta property="og:title" content="Admin | Codesaarthi" />
+        <meta
+          property="og:description"
+          content="Lets Be a part of codesaarthi , give us  a chance to help you by explaining things in simple Words."
+        />
+        <meta
+          property="og:image"
+          content="https://codesaarthi.com/img/logo.png"
+        />
+        <meta property="og:url" content="https://codesaarthi.com/login" />
+        <meta property="og:type" content="Education-Website" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://codesaarthi.com/img/favicon.ico"
+          sizes="32x32"
+        />
+      </Helmet>
       <ToastContainer />
       {admin ? (
         <>

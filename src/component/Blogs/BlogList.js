@@ -64,29 +64,44 @@ const BlogList = () => {
     return <p>No blogs available</p>;
   }
 
+  function truncateDescription(description, wordLimit) {
+    // Split the description into an array of words
+    const words = description.split(' ');
+
+    // Check if the number of words exceeds the word limit
+    if (words.length > wordLimit) {
+        // Truncate the array of words to the specified limit and join them back into a string
+        return words.slice(0, wordLimit).join(' ') + '...';
+    }
+
+    // If the number of words is within the limit, return the original description
+    return description;
+}
+ 
   return (
    
       <>
       <ToastContainer/>
        { blogs.map((blog) => (
-          <div key={blog._id} className="card bg-dark text-light my-3 shadow-6 p-3 ">
-            <Link to = {`/blog/${blog._id}`}> <h4 className="text-warning">{blog.title}</h4> </Link>
+          <div key={blog._id} className="  m-1 my-3 shadow-lg border border-dark rounded-4">
+            <Link to = {`/blog/${blog._id}`}> <h4 className=" iconColor ps-2 pt-2 heading">{blog.title}</h4> </Link>
             
             <img
               src={blog.image}
               alt={blog.title}
               title={blog.title}
               loading="lazy"
-              className="img-fluid cardImageHeight mb-3"
-            />
-            <p>{blog.description}</p>
-            <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+              className="img-fluid imageHeight mb-3"
+            /> <br/>
+            <div className="p-2">
+            <small>{truncateDescription(blog.description, 50)} ...</small>
+             
             <hr />
             <div className="row">
-              <div className="col-6 text-start">
+              <div className="col-6 text-start ps-3">
               <small>Posted by: {blog.idAuthor ? blog.name : "Anonymous" }</small>
               </div>
-              <div className="col-6 text-end">
+              <div className="col-6 text-end pe-3">
                 <small>
                   {new Date(blog.date).toLocaleString("en-US", {
                     year: "numeric",
@@ -97,6 +112,7 @@ const BlogList = () => {
                     hour12: true,
                   })}
                 </small>
+              </div>
               </div>
             </div>
           </div>

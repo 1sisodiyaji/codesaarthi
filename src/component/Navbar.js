@@ -8,6 +8,7 @@ export const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [darkmode, setDarkmode] = useState(false);
+  const [admin ,setAdmin] = useState(false);
   const isNavLinkActive = (path) => {
     return location.pathname.includes(path);
   };
@@ -35,8 +36,8 @@ export const Navbar = () => {
   }, [location.pathname]);
  
   useEffect(() => {
+    const token = sessionStorage.getItem("token"); 
     const fetchUserData = async () => {
-      const token = sessionStorage.getItem("token"); 
       if (token) {
         try {
           const response = await axios.post(
@@ -57,6 +58,22 @@ export const Navbar = () => {
       }
     };
 
+    const GetAdminDetails = async (req, res) => {
+      const response = await axios.post(
+        `${config.BASE_URL}/Admin/user`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      if (response.status === 200) {
+        setAdmin(true);
+      }
+    };
+
+    GetAdminDetails(); 
     fetchUserData();
   },[]);
 
@@ -232,6 +249,19 @@ useEffect(() => {
                 RoadMaps
               </Link>
             </li>
+
+            {admin && (
+               <Link
+               className={`nav-link ${
+                 isNavLinkActive("/Admin") ? "selected" : ""
+               }`} 
+               to="/Admin"
+             >
+               <i className="fi fi-ss-admin-alt"></i>
+               Admin
+             </Link>
+            )}
+
             {user && (
               <li className="nav-item">
                 <div
@@ -321,6 +351,17 @@ useEffect(() => {
                   RoadMaps
                 </Link>
               </li>
+              {admin && (
+               <Link
+               className={`nav-link ${
+                 isNavLinkActive("/Admin") ? "active" : ""
+               }`} 
+               to="/Admin"
+             >
+              <i className="fi fi-ss-admin-alt"></i>
+               Admin
+             </Link>
+            )}
             </ul>
             {/* Left links */}
           </div>
