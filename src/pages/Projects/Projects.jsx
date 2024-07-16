@@ -35,7 +35,7 @@ const Projects = () => {
           <div className="row py-5 g-6">
             {projects.length > 0 ? projects.map((project, index) => (
               <div key={index} className="col-lg-4 my-2 col-12">
-                <div className="card p-3">
+                <div className="card p-3" style={{minHeight: '16vh'}}>
                   <div
                     className="bg-image hover-overlay ripple"
                     data-mdb-ripple-color="light"

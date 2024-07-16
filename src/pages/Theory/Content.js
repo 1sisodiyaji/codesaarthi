@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet";
 import config from "../../config/config";
-import CourseData from "../../data/Course.json";  
+import CourseData from "../../data/Course"; 
 
 const Content = () => {
   const { title } = useParams();

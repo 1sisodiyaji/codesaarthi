@@ -120,8 +120,8 @@ const Routess = () => {
         <Route path="/roadMap/:title" element={<RoadmapDetails />} />
         <Route path="/Problems" element={<Problems />} />
         <Route path="/Projects" element={<Projects />} />
-        <Route path="/Projects/:projectId" element={<ProjectDetails />} />
-        <Route path="/Detail-Project/:projectId" element={<SingleDetailingProject />} />
+        <Route path="/Projects/:name" element={<ProjectDetails />} />
+        <Route path="/Projects/:name/:title" element={<SingleDetailingProject />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:id" element={<Blog />} />
         <Route path="/add-blog" element={<Protected Component={BlogForm} />} />

@@ -1,4 +1,4 @@
-[
+const CourseData = [
     {
         "id": "1",
         "title": "Mongo DB",
@@ -666,3 +666,5 @@
         ]
     }
 ]
+
+export default CourseData

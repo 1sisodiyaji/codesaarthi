@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import 'react-toastify/dist/ReactToastify.css';
-import Course from '../../data/Course.json';
+import CourseData from '../../data/Course';
 
 const Theory = () => {
 
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    setCourses(Course);
+    setCourses(CourseData);
   }, []);
 
   if (!courses.length) {

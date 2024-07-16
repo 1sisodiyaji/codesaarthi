@@ -1,15 +1,27 @@
 const ProjectData = [
   {
+    id: "1",
     name: "HTML",
     thumbnail:
       "https://res.cloudinary.com/dbqq41bpc/image/upload/v1718958922/codesaarthi/article-1718958916242.png",
     projects: [
       {
+        number: "01",
         title: "Assignment page",
         description:
-          "This is an Basic project to learn html tags and practise more.",
-        headingDescription:
-          '<p classname="text-light">\n     Ye Project ek simple assignment page ke liye h isme bss html ke tags ko use krke basically ek assignment page bnaya h\n </p>\n <h6 classname="textColor">Key Features:</h6>\n\n <ul classname="text-light">\n     <li>Using Tags to practise the basic html code.</li>\n     \n </ul>',
+          "This is an Basic project to learn html tags and practise more tags. Here we will create an Assignment Page Where Some Questions and Answers .",
+        headingDescription: `
+          <div>
+              <small>
+                  This project is a simple assignment page created using basic HTML tags.
+              </small>
+              <p class= "text-decoration-underline" >Key Features:</p>
+              <ul>
+                  <li>Utilizes HTML tags to practice fundamental HTML coding.</li>
+              </ul>
+          </div>
+          `,
+
         images: {
           image1:
             "https://res.cloudinary.com/dbqq41bpc/image/upload/v1719859968/codesaarthi/htmlProject1_qkydt6.jpg",
@@ -20,15 +32,158 @@ const ProjectData = [
           github: "https://github.com/1sisodiyaji/Assignment_Page.git",
           deployed: "https://assignment-page.vercel.app",
         },
-        additionalDescriptions:
-          '<h6 classname="textColor"> Tech Stack:</h6>\n<ul classname="text-light">\n    <li> HTML: Page structure aur content ke liye.</li>\n\n</ul>\n\n<h6 classname="textColor"> Kaise Shuru Karein:</h6>\n\n\n<p classname="text-light">Iske baad, aap isey customize kar sakte hain apne requirements ke hisaab se.</p>\n\n<h6 classname="text-warning">Html Code :</h6>\n<div classname="container border rounded-8 p-3 text-light">\n    <pre>    <code>\n        &lt;!DOCTYPE html&gt;<br>\n        &lt;html lang="en"&gt;<br>\n        &lt;head&gt;<br>\n            &lt;meta charset="UTF-8"&gt;<br>\n            &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br>\n            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>\n            &lt;title&gt;Questions&lt;/title&gt;<br>\n        &lt;/head&gt;<br>\n        &lt;body&gt;<br>\n            &lt;h2&gt;Assignment test&lt;/h2&gt;<br>\n            &lt;details&gt;<br>\n                &lt;summary&gt;Who is the current cm of Bihar ? &lt;/summary&gt;<br>\n                &lt;p&gt;Nitish Kumar&lt;/p&gt;<br>\n            &lt;/details&gt;<br>\n            &lt;details&gt;<br>\n                &lt;summary&gt;Who is the current pm of India ? &lt;/summary&gt;<br>\n                &lt;p&gt;Narendar Modi&lt;/p&gt;<br>\n            &lt;/details&gt;<br>\n            &lt;details&gt;<br>\n                &lt;summary&gt;Who is the current cm of odisha ? &lt;/summary&gt;<br>\n                &lt;p&gt;Naveen Pattnayak&lt;/p&gt;<br>\n            &lt;/details&gt;<br>\n            &lt;details&gt;<br>\n                &lt;summary&gt;Who is the current external affair minister ? &lt;/summary&gt;<br>\n                &lt;p&gt;S. jayshankar&lt;/p&gt;<br>\n            &lt;/details&gt;<br>\n            &lt;details&gt;<br>\n                &lt;summary&gt;Who is the current Governor of RBI ? &lt;/summary&gt;<br>\n                &lt;p&gt;Shashikant Das&lt;/p&gt;<br>\n            &lt;/details&gt;<br>\n            &lt;br&gt;<br>\n            &lt;h3&gt;Multiple choice Question&lt;/h3&gt;<br>\n            &lt;p&gt;<br>\n                 Q1. Which of the following is a renewable source of energy?&lt;br&gt;<br>\n                &lt;input type="radio" id="Coal" name="Question1" value="Coal"&gt;<br>\n                &lt;label for="Coal"&gt;Coal&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="Natural gas" name="Question1" value="Natural gas"&gt;<br>\n                &lt;label for="Natural gas"&gt;Natural gas&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="Solar power" name="Question1" value="Solar power"&gt;<br>\n                &lt;label for="Solar power"&gt;Solar power&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="Petroleum" name="Question1" value="Petroleum"&gt;<br>\n                &lt;label for="Petroleum"&gt;Petroleum&lt;/label&gt;&lt;br&gt;&lt;br&gt;<br>\n                \n                &lt;details&gt;<br>\n                    &lt;summary&gt;Answer&lt;/summary&gt;<br>\n                        &lt;p&gt;Solar Power&lt;/p&gt;<br>\n                    \n                &lt;/details&gt;<br>\n            \n                Q2. Which of the following is an example of a chemical change?&lt;br&gt;<br>\n                &lt;input type="radio" id=" Melting ice" name="Question1" value=" Melting ice"&gt;<br>\n                &lt;label for=" Melting ice"&gt; Melting ice&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="Dissolving sugar in water" name="Question1" value="Dissolving sugar in water"&gt;<br>\n                &lt;label for="Dissolving sugar in water"&gt;Dissolving sugar in water&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id=" Rusting of iron" name="Question1" value=" Rusting of iron"&gt;<br>\n                &lt;label for=" Rusting of iron"&gt; Rusting of iron&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="Breaking a glass" name="Question1" value="Breaking a glass"&gt;<br>\n                &lt;label for="Breaking a glass"&gt;&lt;/label&gt;Breaking a glass&lt;/label&gt;&lt;br&gt;&lt;br&gt;<br>\n            \n                &lt;details&gt;<br>\n                    &lt;summary&gt;Answer&lt;/summary&gt;<br>\n                        &lt;p&gt;Rusting Of iron&lt;/p&gt;<br>\n                    \n                &lt;/details&gt;<br>\n            \n                Q3. Which of the following is a characteristic of a plant cell?&lt;br&gt;<br>\n                &lt;input type="radio" id="Cell wall and chloroplasts" name="Question1" value="Cell wall and chloroplasts"&gt;<br>\n                &lt;label for="Cell wall and chloroplasts"&gt;Cell wall and chloroplasts&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="Cell membrane and mitochondria" name="Question1" value="Cell membrane and mitochondria"&gt;<br>\n                &lt;label for="Cell membrane and mitochondria"&gt;Cell membrane and mitochondria&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="Nucleus and Golgi apparatus" name="Question1" value="Nucleus and Golgi apparatus"&gt;<br>\n                &lt;label for="Nucleus and Golgi apparatus"&gt;Nucleus and Golgi apparatus&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="Vacuoles and ribosomes" name="Question1" value="Vacuoles and ribosomes"&gt;<br>\n                &lt;label for="Vacuoles and ribosomes"&gt;Vacuoles and ribosomes&lt;/label&gt;&lt;br&gt;&lt;br&gt;<br>\n            \n                &lt;details&gt;<br>\n                    &lt;summary&gt;Answer &lt;/summary&gt;<br>\n                        &lt;p&gt;Cell wall and chloroplasts&lt;/p&gt;<br>\n                    \n                &lt;/details&gt;<br>\n            \n                Q4.What is the largest planet in our solar system?&lt;br&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="C Earth" name="Question1" value="C Earth"&gt;<br>\n                &lt;label for=" Earth"&gt;C Earth&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="Venus" name="Question1" value="Venus"&gt;<br>\n                &lt;label for="Venus"&gt;Venus&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="Mars" name="Question1" value="Mars"&gt;<br>\n                &lt;label for="Mars"&gt;Mars&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id=" Jupiter" name="Question1" value=" Jupiter"&gt;<br>\n                &lt;label for=" Jupiter"&gt; Jupiter&lt;/label&gt;&lt;br&gt;<br>\n            \n                &lt;details&gt;<br>\n                    &lt;summary&gt;Answer&lt;/summary&gt;<br>\n                        &lt;p&gt;Jupiter&lt;/p&gt;<br>\n                    \n                &lt;/details&gt;<br>\n            \n                Q5. Who invented the telephone?&lt;br&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="Thomas Edison" name="Question1" value="Thomas Edison"&gt;<br>\n                &lt;label for="Thomas Edison"&gt;Thomas Edison&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="Alexander Graham Bell" name="Question1" value="Alexander Graham Bell"&gt;<br>\n                &lt;label for="Alexander Graham Bell"&gt;Alexander Graham Bell&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id="Albert Einstein" name="Question1" value="Albert Einstein"&gt;<br>\n                &lt;label for="Albert Einstein"&gt;Albert Einstein&lt;/label&gt;&lt;br&gt;<br>\n                &lt;input type="radio" id=" Isaac Newton" name="Question1" value=" Isaac Newton"&gt;<br>\n                &lt;label for=" Isaac Newton"&gt; Isaac Newton&lt;/label&gt;&lt;br&gt;<br>\n            \n                &lt;details&gt;<br>\n                    &lt;summary&gt;Answer&lt;/summary&gt;<br>\n                        &lt;p&gt;Alexander Graham Bell&lt;/p&gt;<br>\n                    \n                &lt;/details&gt;<br>\n            \n                &lt;input type="submit"&gt;<br>\n            &lt;/p&gt;<br>\n        &lt;/body&gt;<br>\n    &lt;/html&gt;<br>\n    </code>\n</pre>\n\n\n</div>\n\n\n<h6 classname="text-light my-lg-4 my-2">Thank you For Reading These Projects You can Also Check Out These ..</h6>',
+        code: `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Questions</title>
+    </head>
+    <body>
+        <h2>Assignment test</h2>
+        <details>
+            <summary>Who is the current cm of Bihar ? </summary>
+            <p>Nitish Kumar</p>
+        </details>
+        <details>
+            <summary>Who is the current pm of India ? </summary>
+            <p>Narendar Modi</p>
+        </details>
+        <details>
+            <summary>Who is the current cm of Odisha ? </summary>
+            <p>Naveen Pattnayak</p>
+        </details>
+        <details>
+            <summary>Who is the current external affair minister ? </summary>
+            <p>S. Jayshankar</p>
+        </details>
+        <details>
+            <summary>Who is the current Governor of RBI ? </summary>
+            <p>Shashikant Das</p>
+        </details>
+        <br>
+        <h3>Multiple choice Question</h3>
+        <p>
+             Q1. Which of the following is a renewable source of energy?<br>
+            <input type="radio" id="Coal" name="Question1" value="Coal">
+            <label for="Coal">Coal</label><br>
+            <input type="radio" id="Natural gas" name="Question1" value="Natural gas">
+            <label for="Natural gas">Natural gas</label><br>
+            <input type="radio" id="Solar power" name="Question1" value="Solar power">
+            <label for="Solar power">Solar power</label><br>
+            <input type="radio" id="Petroleum" name="Question1" value="Petroleum">
+            <label for="Petroleum">Petroleum</label><br><br>
+            
+            <details>
+                <summary>Answer</summary>
+                <p>Solar Power</p>
+            </details>
+        
+            Q2. Which of the following is an example of a chemical change?<br>
+            <input type="radio" id=" Melting ice" name="Question1" value=" Melting ice">
+            <label for=" Melting ice"> Melting ice</label><br>
+            <input type="radio" id="Dissolving sugar in water" name="Question1" value="Dissolving sugar in water">
+            <label for="Dissolving sugar in water">Dissolving sugar in water</label><br>
+            <input type="radio" id=" Rusting of iron" name="Question1" value=" Rusting of iron">
+            <label for=" Rusting of iron"> Rusting of iron</label><br>
+            <input type="radio" id="Breaking a glass" name="Question1" value="Breaking a glass">
+            <label for="Breaking a glass">Breaking a glass</label><br><br>
+        
+            <details>
+                <summary>Answer</summary>
+                <p>Rusting Of iron</p>
+            </details>
+        
+            Q3. Which of the following is a characteristic of a plant cell?<br>
+            <input type="radio" id="Cell wall and chloroplasts" name="Question1" value="Cell wall and chloroplasts">
+            <label for="Cell wall and chloroplasts">Cell wall and chloroplasts</label><br>
+            <input type="radio" id="Cell membrane and mitochondria" name="Question1" value="Cell membrane and mitochondria">
+            <label for="Cell membrane and mitochondria">Cell membrane and mitochondria</label><br>
+            <input type="radio" id="Nucleus and Golgi apparatus" name="Question1" value="Nucleus and Golgi apparatus">
+            <label for="Nucleus and Golgi apparatus">Nucleus and Golgi apparatus</label><br>
+            <input type="radio" id="Vacuoles and ribosomes" name="Question1" value="Vacuoles and ribosomes">
+            <label for="Vacuoles and ribosomes">Vacuoles and ribosomes</label><br><br>
+        
+            <details>
+                <summary>Answer </summary>
+                <p>Cell wall and chloroplasts</p>
+            </details>
+        
+            Q4.What is the largest planet in our solar system?<br><br>
+            <input type="radio" id="C Earth" name="Question1" value="C Earth">
+            <label for=" Earth">C Earth</label><br>
+            <input type="radio" id="Venus" name="Question1" value="Venus">
+            <label for="Venus">Venus</label><br>
+            <input type="radio" id="Mars" name="Question1" value="Mars">
+            <label for="Mars">Mars</label><br>
+            <input type="radio" id=" Jupiter" name="Question1" value=" Jupiter">
+            <label for=" Jupiter"> Jupiter</label><br>
+        
+            <details>
+                <summary>Answer</summary>
+                <p>Jupiter</p>
+            </details>
+        
+            Q5. Who invented the telephone?<br><br>
+            <input type="radio" id="Thomas Edison" name="Question1" value="Thomas Edison">
+            <label for="Thomas Edison">Thomas Edison</label><br>
+            <input type="radio" id="Alexander Graham Bell" name="Question1" value="Alexander Graham Bell">
+            <label for="Alexander Graham Bell">Alexander Graham Bell</label><br>
+            <input type="radio" id="Albert Einstein" name="Question1" value="Albert Einstein">
+            <label for="Albert Einstein">Albert Einstein</label><br>
+            <input type="radio" id=" Isaac Newton" name="Question1" value=" Isaac Newton">
+            <label for=" Isaac Newton"> Isaac Newton</label><br>
+        
+            <details>
+                <summary>Answer</summary>
+                <p>Alexander Graham Bell</p>
+            </details>
+        
+            <input type="submit">
+        </p>
+    </body>
+    </html>
+  `,
+        additionalDescriptions: `
+          <div>
+              <h6 class = "fw-bold">Tech Stack:</h6>
+              <ul>
+                  <li>HTML: For page structure and content.</li>
+              </ul>
+              <h6 class="text-decoration-underline">Getting Started:</h6>
+              <small>You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+              </samll>
+              <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <h6 class = " "> But My personal Suggestion will be check the images and try it by your self if not then go with the code mention it here . </h6> 
+             
+             </div>
+              <small class="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
+          </div>
+          `,
       },
       {
+        number: "02",
         title: "Portfolio basic page",
         description:
           "This is an project to describe an portfolio by using only HTML. You can create with an amazing power of HTML You can see this..",
-        headingDescription:
-          ' <p classname="text-light">\n                        Ye Project ek simple Portfolio based project h jo ki sirf html se bnaya gya h .\n                    </p>\n                    <h6 classname="textColor">Key Features:</h6>\n\n                    <ul classname="text-light">\n                        <li>Using Tags to practise the basic html code.</li>\n                    </ul>',
+        headingDescription: `
+          <div>
+    <small>
+        This project is a simple portfolio-based project created using only HTML. Where we will create the portfolio page simple by Html tags
+    </small>
+    <p class = "my-2" >Key Features:</p>
+    <ul>
+        <li>Utilizes HTML tags to practice fundamental HTML coding.</li>
+    </ul>
+    
+</div>
+
+          
+          `,
         images: {
           image1:
             "https://res.cloudinary.com/dbqq41bpc/image/upload/v1719862810/codesaarthi/portfolio1_otc8wc.jpg",
@@ -39,15 +194,129 @@ const ProjectData = [
           github: "https://github.com/1sisodiyaji/its_me-HTML.git",
           deployed: "https://its-me-html.vercel.app",
         },
-        additionalDescriptions:
-          '<h6 classname="textColor"> Tech Stack:</h6>\n<ul classname="text-light">\n    <li> HTML: Page structure aur content ke liye.</li>\n\n</ul>\n\n<h6 classname="textColor"> Kaise Shuru Karein:</h6>\n\n\n<p classname="text-light">Iske baad, aap isey customize kar sakte hain apne requirements ke hisaab se.</p>\n\n<h6 classname="text-warning">Html Code :</h6>\n<div classname="container border rounded-8 p-3 text-light">\n    <pre>    <code>\n        &lt;!DOCTYPE html&gt;<br>\n        &lt;html lang="en"&gt;<br>\n        &lt;head&gt;<br>\n            &lt;meta charset="UTF-8"&gt;<br>\n            &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br>\n            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>\n            &lt;title&gt;Portfolio&lt;/title&gt;<br>\n        &lt;/head&gt;<br>\n        &lt;body&gt;<br>\n            &lt;div&gt;<br>\n                &lt;div&gt;<br>\n                    &lt;h1&gt;Golu Singh&lt;/h1&gt;<br>\n                    &lt;p&gt;Contact: &lt;a href="637golusingh@gmail.com"&gt;637golusingh@gmail.com&lt;/a&gt;&lt;/p&gt;<br>\n                    &lt;p&gt;Linkedin: &lt;a href="https://www.linkedin.com/in/golu-singh-602023204"&gt;My Linkedin id&lt;/a&gt;&lt;/p&gt;<br>\n                    &lt;p&gt;Github: &lt;a href="https://github.com/1sisodiyaji"&gt;My Github id&lt;/a&gt;&lt;/p&gt;<br>\n                &lt;/div&gt;<br>\n                &lt;table&gt;&lt;tr&gt;<br>\n                    &lt;tr&gt;<br>\n                        &lt;td&gt;<br>\n                            &lt;img src="its_me.jpg" width="100px" alt="My pic"&gt;<br>\n                        &lt;/td&gt;<br>\n                        &lt;td&gt;<br>\n                            I am a passionate and dedicated coder, seeking an exciting opportunity to showcase my skills<br>\n                            and contribute to a dynamic team. With a solid foundation in programming and a deep love for<br>\n                            creating innovative solutions, I am confident in my ability to make a significant impact.<br>\n                            This portfolio and CV will provide you with an insight into my experience, technical expertise,<br>\n                            and projects that demonstrate my passion for coding.<br>\n                        &lt;/td&gt;<br>\n                    &lt;/tr&gt;<br>\n                &lt;/tr&gt;&lt;/table&gt;<br>\n                &lt;section&gt;<br>\n                    &lt;h2&gt;Education&lt;/h2&gt;<br>\n                    &lt;ul&gt;<br>\n                    &lt;li&gt; BAchelor of Technology in Information Technology , Trident Academy<br>\n                        of Technology.<br>\n                    &lt;/li&gt;<br>\n                    &lt;li&gt;<br>\n                        B.S.S.N  Deo College Secondary School<br>\n                    &lt;/li&gt;<br>\n                &lt;/ul&gt;<br>\n                &lt;/section&gt;<br>\n                &lt;section&gt;<br>\n                    &lt;h1&gt;Work experience&lt;/h1&gt;<br>\n                    &lt;h3&gt;Currently Studying&lt;/h3&gt;<br>\n                    I am currently pursuring my collge degree ...<br>\n                &lt;/section&gt;<br>\n                &lt;section&gt;<br>\n                    &lt;h2&gt;skills&lt;/h2&gt;<br>\n                    &lt;ul&gt;<br>\n                    &lt;li&gt;Java&lt;/li&gt;<br>\n                    &lt;li&gt;C&lt;/li&gt;<br>           \n                    &lt;li&gt;Html&lt;/li&gt;<br>\n                    &lt;li&gt;Css&lt;/li&gt;<br>\n                    &lt;li&gt;JavaScript&lt;/li&gt;<br>\n                    &lt;li&gt;Sql&lt;/li&gt;<br>\n                    &lt;li&gt;mongo Db&lt;/li&gt;<br>\n                &lt;/ul&gt;<br>\n                &lt;/section&gt;<br>\n                &lt;section&gt;<br>\n                    &lt;h2&gt;Achievements&lt;/h2&gt;<br>\n                    &lt;ul&gt;<br>\n                    &lt;li&gt;<br>\n                        I have Won the Runner prize in our College tech fest <br>\n                    &lt;/li&gt;<br>\n                    &lt;li&gt;<br>\n                         I have recently Won in a Coding platform as 12th Poistion.<br>\n                    &lt;/li&gt;<br>\n                    &lt;/ul&gt;<br>\n                &lt;/section&gt;<br>\n                &lt;section&gt;<br>\n                   &lt;h2&gt; Projects&lt;/h2&gt;<br>\n                   &lt;ul&gt;<br>\n                    &lt;li&gt;<br>\n                    &lt;h4&gt;Bank Management System&lt;/h4&gt;<br>\n                    &lt;p&gt;Bank Management Application - developed a desktop Application<br>\n                        by using java swing and mySQL server.<br>\n                    &lt;/p&gt;<br>\n                    &lt;p&gt;Hosted Link &lt;a href="Not present.com"&gt; Not present at all&lt;/a&gt;&lt;/p&gt;<br>\n                    &lt;p&gt;Github Link &lt;a href="https://github.com/1sisodiyaji/Bank_Management_System.git"&gt; My Github_project link&lt;/a&gt;&lt;/p&gt;<br>\n    \n                   &lt;/li&gt;<br>\n                   &lt;li&gt;<br>\n                        &lt;h4&gt;Calculator&lt;/h4&gt;<br>\n                        &lt;p&gt;It  is basicaaaly created by html css js and perform basic activity&lt;/p&gt;<br>\n                        &lt;p&gt;Hosted Link &lt;a href="https://calculator-vert-nine.vercel.app/"&gt;Click Here ..&lt;/a&gt;&lt;/p&gt;<br>\n                        &lt;p&gt;Github Link : &lt;a href="https://github.com/1sisodiyaji/Calculator.git"&gt;Project link&lt;/a&gt;&lt;/p&gt;<br>\n        \n                   &lt;/li&gt;<br>\n                &lt;/ul&gt;<br>\n                &lt;/section&gt;<br>\n            &lt;/div&gt;<br>\n        &lt;/body&gt;<br>\n    &lt;/html&gt;<br>\n    </code>\n</pre>\n\n</div>\n\n\n\n<h6 classname="text-light my-lg-4 my-2">Thank you For Reading These Projects You can Also Check Out These ..</h6>',
+        code: `  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1>Golu Singh</h1>
+            <p>Contact: <a href="mailto:637golusingh@gmail.com">637golusingh@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/golu-singh-602023204">My LinkedIn ID</a></p>
+            <p>GitHub: <a href="https://github.com/1sisodiyaji">My GitHub ID</a></p>
+        </div>
+        <table>
+            <tr>
+                <td>
+                    <img src="its_me.jpg" width="100px" alt="My pic">
+                </td>
+                <td>
+                    I am a passionate and dedicated coder, seeking an exciting opportunity to showcase my skills
+                    and contribute to a dynamic team. With a solid foundation in programming and a deep love for
+                    creating innovative solutions, I am confident in my ability to make a significant impact.
+                    This portfolio and CV will provide you with an insight into my experience, technical expertise,
+                    and projects that demonstrate my passion for coding.
+                </td>
+            </tr>
+        </table>
+        <section>
+            <h2>Education</h2>
+            <ul>
+                <li>Bachelor of Technology in Information Technology, Trident Academy of Technology.</li>
+                <li>B.S.S.N. Deo College Secondary School</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Work experience</h1>
+            <h3>Currently Studying</h3>
+            I am currently pursuing my college degree...
+        </section>
+        <section>
+            <h2>Skills</h2>
+            <ul>
+                <li>Java</li>
+                <li>C</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>SQL</li>
+                <li>MongoDB</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Achievements</h2>
+            <ul>
+                <li>I have won the Runner-up prize in our College Tech Fest.</li>
+                <li>I have recently placed 12th in a Coding competition.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <h4>Bank Management System</h4>
+                    <p>Bank Management Application - developed a desktop application using Java Swing and MySQL server.</p>
+                    <p>Hosted Link: <a href="Not present.com">Not present at all</a></p>
+                    <p>GitHub Link: <a href="https://github.com/1sisodiyaji/Bank_Management_System.git">My GitHub project link</a></p>
+                </li>
+                <li>
+                    <h4>Calculator</h4>
+                    <p>It is basically created using HTML, CSS, and JS, and performs basic calculations.</p>
+                    <p>Hosted Link: <a href="https://calculator-vert-nine.vercel.app/">Click Here</a></p>
+                    <p>GitHub Link: <a href="https://github.com/1sisodiyaji/Calculator.git">Project link</a></p>
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
+
+        `,
+        additionalDescriptions: `
+        <h6 class = "fw-bold">Tech Stack:</h6>
+        <ul>
+          <li>HTML For Page Structure and basic layout .</li>
+        </ul>
+    
+       <h6 class="text-decoration-underline">Getting Started:</h6>
+              <small>You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+              </samll>
+              <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <h6 class = " "> But My personal Suggestion will be check the images and try it by your self if not then go with the code mention it here . </h6> 
+             
+             </div>
+              <small class="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
+        
+     
+      `,
       },
       {
-        title: "Product  page",
+        number: "03",
+        title: "Product  Page",
         description:
           "This is an Product page where you can see a basic design of an product page shopping  page card by using HTML only an ecommerce webiste .",
-        headingDescription:
-          '<p classname="text-light">\n    this one is a simple project based on creating asingle of design based on html of product and bookmarks.\n</p>\n<h6 classname="textColor">Key Features:</h6>\n\n<ul classname="text-light">\n    <li>Using Tags to practise the basic html code.</li>\n    <li>Creating bookmarks and lists tag</li>\n    \n</ul>',
+        headingDescription: `
+          <div>
+    <small>
+        This project is a simple design-based project focused on creating a product page and bookmarks using HTML.
+    </small>
+    <p class= "my-2" >Key Features:</p>
+    <ul>
+        <li>Utilizes HTML tags to practice fundamental HTML coding.</li>
+        <li>Involves creating bookmarks and list tags.</li>
+    </ul>
+</div>
+
+          
+          `,
         images: {
           image1:
             "https://res.cloudinary.com/dbqq41bpc/image/upload/v1719860740/codesaarthi/ProductCatalog2_owo7jd.jpg",
@@ -58,15 +327,166 @@ const ProjectData = [
           github: "https://github.com/1sisodiyaji/E-commerce-HTML.git",
           deployed: "https://e-commerce-html-zeta.vercel.app",
         },
-        additionalDescriptions:
-          '<h6 classname="textColor"> Tech Stack:</h6>\n<ul classname="text-light">\n    <li> HTML: Page structure aur content ke liye.</li>\n\n</ul>\n\n<h6 classname="textColor"> Kaise Shuru Karein:</h6>\n\n\n<p classname="text-light">Iske baad, aap isey customize kar sakte hain apne requirements ke hisaab se.</p>\n\n<h6 classname="text-warning">Html Code :</h6>\n<div classname="container border rounded-8 p-3 text-light">\n\n    <pre>    <code>\n        &lt;!DOCTYPE html&gt;<br>\n        &lt;html lang="en"&gt;<br>\n        &lt;head&gt;<br>\n            &lt;meta charset="UTF-8"&gt;<br>\n            &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br>\n            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>\n            &lt;title&gt;Project 2&lt;/title&gt;<br>\n        &lt;/head&gt;<br>\n        &lt;body&gt;<br>\n        &lt;div&gt;<br>\n                &lt;h1&gt;Product Catalog&lt;/h1&gt;<br>\n            &lt;p&gt;<br>\n                &lt;a href="#Electronics"&gt;Electronics&lt;/a&gt;&lt;br&gt;\n                &lt;a href="#Clothing"&gt;Clothing&lt;/a&gt;&lt;br&gt;\n                &lt;a href="#Home"&gt;Home&lt;/a&gt;&lt;br&gt;\n            &lt;/p&gt;<br> \n            &lt;section&gt;<br>\n            &lt;h2 id="Electronics"&gt;Electronics&lt;/h2&gt;<br>\n            &lt;h4&gt;Laptop&lt;/h4&gt;<br>\n            &lt;p&gt;<br>\n                &lt;Strong&gt;Description :&lt;/Strong&gt; High - Performance with latest Processor and ample Storage &lt;br&gt;\n                &lt;strong&gt;price :&lt;/strong&gt;5999.99 &lt;br&gt;\n                &lt;strong&gt;Availability :&lt;/strong&gt; In Stock &lt;br&gt;\n                &lt;img src="Laptop.png" alt="Laptop" width="200px"&gt;&lt;br&gt;\n                &lt;detail &gt;<br>\n                &lt;summary&gt;View Details&lt;/summary&gt;<br>\n                &lt;p&gt;<br>\n                    &lt;ul&gt;<br>\n                    &lt;li&gt;&lt;strong&gt;Brand : &lt;/strong&gt; XYZ electronics&lt;/li&gt;<br>\n                    &lt;li&gt;&lt;strong&gt;Screen Size : &lt;/strong&gt;15.6 inches&lt;/li&gt;<br>\n                    &lt;li&gt;&lt;strong&gt;RAM : &lt;/strong&gt;8Gb&lt;/li&gt;<br>\n                    &lt;li&gt;&lt;strong&gt;Storage : &lt;/strong&gt; 512 GB SSD&lt;/li&gt;<br>\n                &lt;/ul&gt;<br>\n                &lt;/p&gt;<br>\n                &lt;/detail&gt;<br>\n            &lt;/p&gt;<br>\n            &lt;/section&gt;<br>\n            &lt;section&gt;<br>\n                &lt;h2&gt;Smartphone&lt;/h2&gt;<br>\n                &lt;p&gt;<br>\n                    &lt;Strong&gt;Description :&lt;/Strong&gt; Features rich -amartphone with a high resolution display and advanced camera &lt;/br&gt;\n                    &lt;strong&gt;price :&lt;/strong&gt; 5699.99 &lt;br&gt;\n                    &lt;strong&gt;Availability :&lt;/strong&gt; Out of stock &lt;br&gt;\n                    &lt;img src="Phone.jpg" alt="Smartphone image" width ="150px"&gt;&lt;br&gt;\n                    &lt;detail &gt;<br>\n                        &lt;summary&gt;View Details&lt;/summary&gt;<br>\n                        &lt;p&gt;<br>\n                            &lt;ul&gt;<br>\n                            &lt;li&gt;&lt;strong&gt;Brand : &lt;/strong&gt; ABC model&lt;/li&gt;<br>\n                            &lt;li&gt;&lt;strong&gt;Screen Size : &lt;/strong&gt;6.5 inches&lt;/li&gt;<br>\n                            &lt;li&gt;&lt;strong&gt;RAM : &lt;/strong&gt;6Gb&lt;/li&gt;<br>\n                            &lt;li&gt;&lt;strong&gt;Storage : &lt;/strong&gt; 128 GB &lt;/li&gt;\n                            &lt;/ul&gt;<br>\n                        &lt;/p&gt;<br>\n                        &lt;/detail&gt;<br>\n                &lt;/p&gt;<br>\n            &lt;/section&gt;<br>\n            &lt;section&gt;<br>\n                &lt;h2 id="Clothing"&gt;Clothing&lt;/h2&gt;<br>\n                &lt;h3&gt;T-Shirt&lt;/h3&gt;<br>\n                &lt;p&gt;<br>\n                    &lt;Strong&gt;Description :&lt;/Strong&gt;Casual and Comfortable t-shirt made from Premium Quaility cotton&lt;/br&gt;\n                    &lt;strong&gt;price :&lt;/strong&gt; $59.99 &lt;br&gt;\n                    &lt;strong&gt;Availability :&lt;/strong&gt;In stock &lt;br&gt;\n                    &amp;\n\nlt;img src="T-shirt.jpg" alt="t-shirt image" width ="150px"&gt;&lt;br&gt;\n                &lt;/p&gt;<br>\n                &lt;detail &gt;<br>\n                    &lt;summary&gt;View Details&lt;/summary&gt;<br>\n                    &lt;p&gt;<br>\n                        &lt;ul&gt;<br>\n                        &lt;li&gt;&lt;strong&gt;Brand : &lt;/strong&gt; Fashion Apparel&lt;/li&gt;<br>\n                        &lt;li&gt;&lt;strong&gt;Color: &lt;/strong&gt;ligth -Grey&lt;/li&gt;<br>\n                        &lt;li&gt;&lt;strong&gt;Size : &lt;/strong&gt;S,M,L&lt;/li&gt;<br>\n                        &lt;li&gt;&lt;strong&gt;Material : &lt;/strong&gt;  100 % cotton &lt;/li&gt;\n                       &lt;/ul&gt;<br>\n                    &lt;/p&gt;<br>\n                    &lt;/detail&gt;<br>\n            &lt;/section&gt;<br>\n            &lt;section&gt;<br>\n                &lt;h4&gt;Jeans&lt;/h4&gt;<br>\n                &lt;p&gt;<br>\n                    &lt;Strong&gt;Description :&lt;/Strong&gt;Casual jeans with a slim fit and stylist design&lt;/br&gt;\n                    &lt;strong&gt;price :&lt;/strong&gt; $49.99 &lt;br&gt;\n                    &lt;strong&gt;Availability :&lt;/strong&gt;In stock &lt;br&gt;\n                    &lt;img src="Jeans.jpg" alt="Jeans image" width ="150px"&gt;&lt;br&gt;\n                &lt;/p&gt;<br>\n                &lt;detail &gt;<br>\n                    &lt;summary&gt;View Details&lt;/summary&gt;<br>\n                    &lt;p&gt;<br>\n                        &lt;ul&gt;<br>\n                        &lt;li&gt;&lt;strong&gt;Brand : &lt;/strong&gt; DEnim Co.&lt;/li&gt;<br>\n                        &lt;li&gt;&lt;strong&gt;Color: &lt;/strong&gt;Grey&lt;/li&gt;<br>\n                        &lt;li&gt;&lt;strong&gt;Size : &lt;/strong&gt;30,32,34&lt;/li&gt;<br>\n                        &lt;li&gt;&lt;strong&gt;Material : &lt;/strong&gt;  Denim &lt;/li&gt;\n                       &lt;/ul&gt;<br>\n                    &lt;/p&gt;<br>\n                    &lt;/detail&gt;<br>\n            &lt;/section&gt;<br>\n        &lt;br&gt;&lt;br&gt;<br>\n        &lt;section&gt;<br>\n            &lt;h2 id="Home"&gt;Home&lt;/h2&gt;<br>\n            &lt;h4&gt;Table&lt;/h4&gt;<br>\n            &lt;p&gt;<br>\n                &lt;Strong&gt;Description :&lt;/Strong&gt;Modern and Stylish table lamp to enhance home decor&lt;/br&gt;\n                &lt;strong&gt;price :&lt;/strong&gt; $39.99 &lt;br&gt;\n                &lt;strong&gt;Availability :&lt;/strong&gt;In stock &lt;br&gt;\n                &lt;img src="Table.jpg" alt="Table " width ="150px"&gt;&lt;br&gt;\n            &lt;/p&gt;<br>\n            &lt;detail &gt;<br>\n                &lt;summary&gt;View Details&lt;/summary&gt;<br>\n                &lt;p&gt;<br>\n                    &lt;ul&gt;<br>\n                    &lt;li&gt;&lt;strong&gt;Brand : &lt;/strong&gt;  Home Essenstial&lt;/li&gt;<br>\n                    &lt;li&gt;&lt;strong&gt;Color: &lt;/strong&gt;White&lt;/li&gt;<br>\n                    &lt;li&gt;&lt;strong&gt;Size : &lt;/strong&gt;12 inches&lt;/li&gt;<br>\n                    &lt;li&gt;&lt;strong&gt;Material : &lt;/strong&gt; Creamic Metalr&lt;/li&gt;\n                   &lt;/ul&gt;<br>\n                &lt;/p&gt;<br>\n                &lt;/detail&gt;<br>\n            &lt;h4&gt;Throw pillows&lt;/h4&gt;<br>\n            &lt;p&gt;<br>\n                &lt;Strong&gt;Description :&lt;/Strong&gt;Soft and Comfortable throw pillow for your living room to bedroom&lt;/br&gt;\n                &lt;strong&gt;price :&lt;/strong&gt; $24.99 &lt;br&gt;\n                &lt;strong&gt;Availability :&lt;/strong&gt;In stock &lt;br&gt;\n                &lt;img src="Pillow.jpg" alt="Pillow image" width ="150px"&gt;&lt;br&gt;\n            &lt;/p&gt;<br>\n            &lt;detail &gt;<br>\n                &lt;summary&gt;View Details&lt;/summary&gt;<br>\n                &lt;p&gt;<br>\n                    &lt;ul&gt;<br>\n                    &lt;li&gt;&lt;strong&gt;Brand : &lt;/strong&gt; Cozt Home&lt;/li&gt;<br>\n                    &lt;li&gt;&lt;strong&gt;Color: &lt;/strong&gt;Grey&lt;/li&gt;<br>\n                    &lt;li&gt;&lt;strong&gt;Size : &lt;/strong&gt;18*18 inches&lt;/li&gt;<br>\n                    &lt;li&gt;&lt;strong&gt;Material : &lt;/strong&gt;  Cotton , Polyster&lt;/li&gt;\n                   &lt;/ul&gt;<br>\n                &lt;/p&gt;<br>\n                &lt;/detail&gt;<br>\n        &lt;/section&gt;<br>\n    &lt;footer&gt; @  2023 product catalog , All rights reserved .&lt;/footer&gt;<br>\n   \n\n &lt;/div&gt;<br>\n    &lt;/body&gt;<br>\n    &lt;/html&gt;<br>\n    </code>\n</pre>\n    ```\n\n</div>\n\n\n<h6 classname="text-light my-lg-4 my-2">Thank you For Reading These Projects You can Also Check Out These ..</h6>\n\n',
+        code: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+</head>
+<body>
+    <div>
+        <h1>Product Catalog</h1>
+        <p>
+            <a href="#Electronics">Electronics</a><br>
+            <a href="#Clothing">Clothing</a><br>
+            <a href="#Home">Home</a><br>
+        </p>
+        
+        <section>
+            <h2 id="Electronics">Electronics</h2>
+            <h4>Laptop</h4>
+            <p>
+                <strong>Description:</strong> High-performance with the latest Processor and ample storage<br>
+                <strong>Price:</strong> $5999.99<br>
+                <strong>Availability:</strong> In stock<br>
+                <img src="Laptop.png" alt="Laptop" width="200px"><br>
+                <details>
+                    <summary>View Details</summary>
+                    <ul>
+                        <li><strong>Brand:</strong> XYZ electronics</li>
+                        <li><strong>Screen Size:</strong> 15.6 inches</li>
+                        <li><strong>RAM:</strong> 8GB</li>
+                        <li><strong>Storage:</strong> 512 GB SSD</li>
+                    </ul>
+                </details>
+            </p>
+        </section>
+        
+        <section>
+            <h2>Smartphone</h2>
+            <p>
+                <strong>Description:</strong> Feature-rich smartphone with a high-resolution display and advanced camera<br>
+                <strong>Price:</strong> $5699.99<br>
+                <strong>Availability:</strong> Out of stock<br>
+                <img src="Phone.jpg" alt="Smartphone image" width="150px"><br>
+                <details>
+                    <summary>View Details</summary>
+                    <ul>
+                        <li><strong>Brand:</strong> ABC model</li>
+                        <li><strong>Screen Size:</strong> 6.5 inches</li>
+                        <li><strong>RAM:</strong> 6GB</li>
+                        <li><strong>Storage:</strong> 128GB</li>
+                    </ul>
+                </details>
+            </p>
+        </section>
+        
+        <section>
+            <h2 id="Clothing">Clothing</h2>
+            <h3>T-Shirt</h3>
+            <p>
+                <strong>Description:</strong> Casual and comfortable t-shirt made from premium quality cotton<br>
+                <strong>Price:</strong> $59.99<br>
+                <strong>Availability:</strong> In stock<br>
+                <img src="T-shirt.jpg" alt="T-shirt image" width="150px"><br>
+                <details>
+                    <summary>View Details</summary>
+                    <ul>
+                        <li><strong>Brand:</strong> Fashion Apparel</li>
+                        <li><strong>Color:</strong> Light-Grey</li>
+                        <li><strong>Size:</strong> S, M, L</li>
+                        <li><strong>Material:</strong> 100% cotton</li>
+                    </ul>
+                </details>
+            </p>
+        </section>
+        
+        <section>
+            <h4>Jeans</h4>
+            <p>
+                <strong>Description:</strong> Casual jeans with a slim fit and stylish design<br>
+                <strong>Price:</strong> $49.99<br>
+                <strong>Availability:</strong> In stock<br>
+                <img src="Jeans.jpg" alt="Jeans image" width="150px"><br>
+                <details>
+                    <summary>View Details</summary>
+                    <ul>
+                        <li><strong>Brand:</strong> Denim Co.</li>
+                        <li><strong>Color:</strong> Grey</li>
+                        <li><strong>Size:</strong> 30, 32, 34</li>
+                        <li><strong>Material:</strong> Denim</li>
+                    </ul>
+                </details>
+            </p>
+        </section>
+        
+        <section>
+            <h2 id="Home">Home</h2>
+            <h4>Table</h4>
+            <p>
+                <strong>Description:</strong> Modern and stylish table lamp to enhance home decor<br>
+                <strong>Price:</strong> $39.99<br>
+                <strong>Availability:</strong> In stock<br>
+                <img src="Table.jpg" alt="Table" width="150px"><br>
+                <details>
+                    <summary>View Details</summary>
+                    <ul>
+                        <li><strong>Brand:</strong> Home Essentials</li>
+                        <li><strong>Color:</strong> White</li>
+                        <li><strong>Size:</strong> 12 inches</li>
+                        <li><strong>Material:</strong> Wood</li>
+                    </ul>
+                </details>
+            </p>
+        </section>
+    </div>
+</body>
+</html>
+
+
+
+`,
+
+        additionalDescriptions: `
+         <h6 class="fw-bold">Tech Stack:</h6>
+    <ul>
+        <li>HTML: For structuring the page and its content.</li>
+    </ul>
+ 
+    <h6 class="text-decoration-underline">Getting Started:</h6>
+              <small>You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+              </samll>
+              <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <h6 class = " "> But My personal Suggestion will be check the images and try it by your self if not then go with the code mention it here . </h6> 
+             
+             </div>
+              <small class="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
+        
+         `,
       },
       {
+        number: "04",
         title: "Job Application",
         description:
           " This project is an job application form where you can see a job application form as basic design of job application Form.",
-        headingDescription:
-          ' <p classname="text-light">\n                       Basically this is a project of creatingan job application page where you can submit your job post . You can use this projects as a skelton to your main projects .\n                    </p>\n                    <h6 classname="textColor">Key Features:</h6>\n\n                    <ul classname="text-light">\n                        <li>Good Design: It has an good design or we can say basic simple design as we can start from here .</li>\n                        <li>High-Quality Code :  As the code is well maintained and written in a proper manner as you can edit it more and modify it .</li>\n                        <li>Responsive Design: As the design is more responsive as user can check it any device it will work on every platform seamlessely  &amp; if not then you can try and add fork on github.</li>\n                    </ul>',
+        headingDescription: `
+          <small>
+    Basically, this is a project of creating a job application page where you can submit your job post. You can use this project as a skeleton for your main projects.
+</small>
+<p class = "my-2" >Key Features:</p>
+
+<ul>
+    <li>Good Design: It has a good design or we can say a basic simple design as we can start from here.</li>
+    <li>High-Quality Code: The code is well maintained and written in a proper manner so you can edit and modify it more easily.</li>
+    <li>Responsive Design: The design is responsive, allowing users to check it on any device. It will work seamlessly on every platform, and if not, you can try and add a fork on GitHub.</li>
+</ul>
+
+          `,
         images: {
           image1:
             "https://res.cloudinary.com/dbqq41bpc/image/upload/v1719862683/codesaarthi/JobApplication_cfzxn2.jpg",
@@ -77,15 +497,116 @@ const ProjectData = [
           github: "https://github.com/1sisodiyaji/Job_Application.git",
           deployed: "https://job-application-three-kappa.vercel.app",
         },
-        additionalDescriptions:
-          '\n <h6 classname="textColor"> Tech Stack:</h6>\n                    <ul classname="text-light">\n                        <li>  HTML: As for  Page structure and content.</li> \n                    </ul>\n\n                    <h6 classname="textColor"> How To Start:</h6>\n\n                    <ol classname="text-light">\n                        <li>Clone : you have to clone the project from Github <br>\n                            ```bash <br>\n                            https://github.com/1sisodiyaji/Job_Application.git <br>\n                            <link to="https://github.com/1sisodiyaji/Job_Application.git" target="blank">Click Here\n                        </li>\n                        <li>Installation: You don\'t need any server installation or package it is a basic program of html , css so do only clone it will run.\n                        </li>\n                        <li> Launch : To See the Project you have to go on the folder and run the index.html file you will see the result .\n                        </li>\n                    </ol>\n\n\n                    <p classname="text-light">As this is a practise project you can modify it according to your choice and show us as learning phase . Either you can post on social media as sharing your content of learning on linkedin mentioning us.</p>\n                    <div classname="d-flex justify-content-between my-3 ">\n                        <link to="https://job-application-three-kappa.vercel.app" target="blank" classname="btn border bg-dark text-warning rounded-6">View Demo Link <i class="fi fi-sr-share-square ps-2"></i>\n                        <link to="https://github.com/1sisodiyaji/Job_Application.git" target="blank" classname="btn border bg-dark text-warning rounded-6"> <i class="fi fi-sr-location-arrow pe-2"></i> Github Code link\n                    </div>\n                    <h6 classname="text-light my-lg-4 my-2">Thank you For Reading These Projects You can Also Check Out These ..</h6>',
+        code: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application </title>
+</head>
+<body>
+    <h2>Job Application </h2>
+    <form >
+    <label for="name"> Name :</label>
+    <input type="text" id ="name" name = "name">
+    <br>
+    <br>
+    <label for="EmailID">Email Id :</label>
+    <input type="email" id="EmailID" name ="EmailID">
+    <br>
+    <br>
+    <label for="PhoneNumber">Phone No:</label>
+    <input type="tel" id="PhoneNumber" name ="PhoneNumber">
+    <br>
+    <br>
+    <label for="FileUpload">Resume :</label>
+    <input type="file" name ="FileUpload" id="FileUpload">
+    <br>
+    <br>
+    <label for="Counter"> Experience (in Years)</label>
+    <input type="number" id="Counter" name="Counter"min ="0" max = "50">
+    <br>
+    <fieldset>
+        <legend>Skills</legend>
+        <label for="Html">HTML</label>
+        <input type="checkbox"id="html" name= "html">
+        <br>
+        <label for="css">CSS</label>
+        <input type="checkbox" id="css" name ="css">
+        <br>
+        <label for="Javascript">JAVASCRIPT</label>
+        <input type="checkbox" id ="Javascript" name ="Javascript">
+    </fieldset>
+    <br><br>
+    <label for="EdcuationType">Hihgest Education</label>
+    <select name="EdcuationType" id="EdcuationType">
+        <option value="M.tech">M.tech</option>
+        <option value="B.tech">B.tech</option>
+        <option value="Secondary School">Secondary School</option>
+        <option value="High School">High School</option>
+        <option value="Diploma">Diploma</option>
+        <option value="Others">Others</option> 
+    </select>
+<br><br>
+<fieldset>
+    <legend>Availability</legend>
+    <label for="radio1">Full-Time</label>
+    <input type="radio" id="radio1" name="radio">
+    <br>
+    <label for="radio2">Part-Time</label>
+    <input type="radio" id="radio2" name="radio">
+    <br>
+</fieldset>
+<br><br>
+<label for="AdditionalComments">Additional Comments </label> <br>
+<div style="padding: 5px;">
+<textarea name="AdditionalComments" id="AdditionalComments" style="width: 100%;"  rows="10"></textarea>
+</div>
+<br>
+<input type="Submit" value="Submit Application">
+</form>
+</body>
+</html>
+        
+        `,
+        additionalDescriptions: `
+           <h5 class = "fw-bold" >Tech Stack:</h6>
+        <ul>
+          <li>HTML: Page structure and layout.</li>
+        </ul>
+    
+        <h6 class="text-decoration-underline">Getting Started:</h6>
+              <small>You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+              </samll>
+              <div class= " my-2 bg-success p-2"> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <h6> But My personal Suggestion will be check the images and try it by your self if not then go with the code mention it here . </h6> 
+             
+             </div>
+              <small class="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
+        
+          `,
       },
       {
+        number: "05",
         title: "Youtube based  page",
         description:
           " This is an page Where you can see the youtube videos as using iframe tag basically to show basic html tags",
-        headingDescription:
-          ' <p classname="text-light">\n                        in these project we are going to add iframe , media such as image , audio all that in htese project .\n                    </p>\n                    <h6 classname="textColor">Key Features:</h6>\n\n                    <ul classname="text-light">\n                        <li>Using Tags to practise the basic html code.</li>\n                        <li>Practising more to use media tags in code. </li>\n                    </ul>',
+        headingDescription: `
+          <small>
+    In these projects, we are going to add iframes, media such as images, audio, and all that in these projects.
+</small>
+<p class = "my-2" >Key Features:</p>
+
+<ul>
+    <li>Using tags to practice the basic HTML code.</li>
+    <li>Practicing more to use media tags in code.</li>
+</ul>
+
+          `,
         images: {
           image1:
             "https://res.cloudinary.com/dbqq41bpc/image/upload/v1719861815/codesaarthi/Media1_dxectj.jpg",
@@ -96,22 +617,146 @@ const ProjectData = [
           github: "https://github.com/1sisodiyaji/HTML_TAGS.git",
           deployed: "https://html-tags01.vercel.app",
         },
-        additionalDescriptions:
-          '  <h6 classname="textColor"> Tech Stack:</h6>\n                    <ul classname="text-light">\n                        <li>  HTML: Page structure aur content ke liye.</li>\n\n                    </ul>\n\n                    <h6 classname="textColor"> Kaise Shuru Karein:</h6>\n\n\n                    <p classname="text-light">Iske baad, aap isey customize kar sakte hain apne requirements ke hisaab se.</p>\n\n                    <h6 classname="text-warning">Html Code :</h6>\n                    <div classname="container border rounded-8 p-3 text-light">\n\n<pre> <code>\n &lt;!DOCTYPE html&gt;<br>\n&lt;html lang="en"&gt;<br>\n&lt;head&gt;<br>\n    &lt;meta charset="UTF-8"&gt;<br>\n    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br>\n    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>\n    &lt;title&gt;Document&lt;/title&gt;<br>\n&lt;/head&gt;<br>\n&lt;body&gt;<br>\n    &lt;header&gt;<br>\n        &lt;h1&gt;Welcome to Code arena&lt;/h1&gt;<br>\n    &lt;/header&gt;<br>\n    &lt;table&gt;<br>\n        &lt;tr&gt;<br>\n            &lt;td&gt;<br>\n                &lt;img src="Ram-Siyaram.jpg" alt="Ram siyaram images" width=" 200px" loading="lazy"&gt;<br>\n            &lt;/td&gt;<br>\n            &lt;td&gt;<br>\n                &lt;nav&gt;<br>\n                    &lt;ul&gt;<br>\n                        &lt;li&gt;<br>\n                            &lt;a href="#roadmapSection"&gt; Roadmap Videos&lt;/a&gt;<br>\n                        &lt;/li&gt;<br>\n                        &lt;li&gt;<br>\n                            &lt;a href="#operatingSection" &gt;Operating System Videos&lt;/a&gt;<br>\n                        &lt;/li&gt;<br>\n                        &lt;li&gt;<br>\n                            &lt;a href="#DbmsSection" &gt;DBMS Videos&lt;/a&gt;<br>\n                        &lt;/li&gt;<br>\n                        &lt;li&gt;<br>\n                            &lt;a href="#DsaSection" &gt;DSA Videos&lt;/a&gt;<br>\n                        &lt;/li&gt;<br>\n                        &lt;li&gt;<br>\n                            &lt;a href="#WebDevelopment" &gt;Web Development Videos&lt;/a&gt;<br>\n                        &lt;/li&gt;<br>\n                    &lt;/ul&gt;<br>\n                &lt;/nav&gt;<br>\n            &lt;/td&gt;<br>\n        &lt;/tr&gt;<br>\n    &lt;/table&gt;<br>\n    &lt;div&gt;<br>\n        &lt;h2&gt;About Codehelp&lt;/h2&gt;<br>\n        &lt;p&gt;<br>\n            Codehelp mission is such a good person or we can say a contributor<br>\n            who wants to make better education quality for students<br>\n            freely. These type of work i totally support May God bless Him !.<br>\n        &lt;/p&gt;<br>\n    &lt;/div&gt;<br>\n    &lt;div&gt;<br>\n        &lt;h2&gt;Additional Media&lt;/h2&gt;<br>\n        &lt;table&gt;<br>\n            &lt;tr&gt;<br>\n                &lt;td&gt;<br>\n                    &lt;audio src="Ram Siyaram.mp3" controls&gt;&lt;/audio&gt;<br>\n                &lt;/td&gt;<br>\n                &lt;td&gt;<br>\n                    &lt;video src="Video.mp4" height ="400px" width = "200px" controls&gt;&lt;/video&gt;<br>\n                &lt;/td&gt;<br>\n            &lt;/tr&gt;<br>\n        &lt;/table&gt;<br>\n    &lt;/div&gt;<br>\n     &lt;div&gt;<br>\n        &lt;h2 id = "roadmapSection"&gt;Roadmap Videos&lt;/h2&gt;<br>\n        &lt;table&gt;<br>\n           &lt;tr&gt;<br>\n             &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/VY6003vijLw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen &gt;&lt;/iframe&gt;<br>\n             &lt;/td&gt;<br>\n           &lt;td&gt;<br>\n            &lt;iframe src="https://www.youtube.com/embed/mlxoB3wI9eY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>\n           &lt;/td&gt;<br>\n           &lt;td&gt;<br>\n            &lt;iframe src="https://www.youtube.com/embed/mlxoB3wI9eY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>\n           &lt;/td&gt;<br>\n           &lt;/tr&gt;<br>\n           &lt;tr&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe  src="https://www.youtube.com/embed/VaMWsm6CFss" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>\n            &lt;/td&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe  src="https://www.youtube.com/embed/07QCAJYolaE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>\n            &lt;/td&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/PM8gczl7DVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>\n            &lt;/td&gt;<br>\n            &lt;/tr&gt;<br>\n        &lt;/table&gt;<br>\n     &lt;/div&gt;<br>\n     &lt;div&gt;<br>\n        &lt;h2 id = "operatingSection"&gt;Operating System Videos&lt;/h2&gt;<br>\n        &lt;table&gt;<br>\n           &lt;tr&gt;<br>\n             &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/a1l4MceYHaQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>    \n            &lt;/td&gt;<br>\n           &lt;td&gt;<br>\n            &lt;iframe src="https://www.youtube.com/embed/LBqNWOqSzBA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>\n           &lt;/td&gt;<br>\n           &lt;td&gt;<br>\n            &lt;iframe  src="https://www.youtube.com/embed/iAnEvdCya6M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>\n           &lt;/td&gt;<br>\n           &lt;/tr&gt;<br>\n           &lt;tr&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe  src="https://www.youtube.com/embed/kHMXP_i6zew" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>  \n            &lt;/td&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/lo8Z61qCDqQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>  \n            &lt;/td&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/nAr2sLiLDWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>  \n            &lt;/td&gt;<br>\n            &lt;/tr&gt;<br>\n        &lt;/table&gt;<br>\n     &lt;/div&gt;<br>\n     &lt;div&gt;<br>\n        &lt;h2 id = "DbmsSection"&gt;DBMS Videos&lt;/h2&gt;<br>\n        &lt;table&gt;<br>\n           &lt;tr&gt;<br>\n             &lt;td&gt;<br>\n                &lt;iframe  src="https://www.youtube.com/embed/TYo_CUnIWP8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>\n            &lt;/td&gt;<br>\n           &lt;td&gt;<br>\n            &lt;iframe src="https://www.youtube.com/embed/mYI2nopkQJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>\n           &lt;/td&gt;<br>\n           &lt;td&gt;<br>\n            &lt;iframe src="https://www.youtube.com/embed/kMHJhhIx5k4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>\n           &lt;/td&gt;<br>\n           &lt;/tr&gt;<br>\n           &lt;tr&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/8_dMPX6_qiY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;   <br>\n            &lt;/td&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe  src="https://www.youtube.com/embed/w-VfTUvxETQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>\n            &lt;/td&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/kUk8PgORTzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;    <br>\n            &lt;/td&gt;<br>\n            &lt;/tr&gt;<br>\n        &lt;/table&gt;<br>\n     &lt;/div&gt;<br>\n     &lt;div&gt;<br>\n        &lt;h2 id = "DsaSection"&gt;DSA Videos&lt;/h2&gt;<br>\n        &lt;table&gt;<br>\n           &lt;tr&gt;<br>\n             &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/WQoB2z67hvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;    <br>\n            &lt;/td&gt;<br>\n           &lt;td&gt;<br>\n               &lt;iframe src="https://www.youtube.com/embed/t6zLJOCVqD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;   <br>\n           &lt;/td&gt;<br>\n           &lt;td&gt;<br>\n            &lt;iframe src="https://www.youtube.com/embed/WR31ByTzAVQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;<br>\n           &lt;/td&gt;<br>\n           &lt;/tr&gt;<br>\n           &lt;tr&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/dr-pLeJBr38" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;    <br>\n            &lt;/td&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/yjdQHb2elqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;   <br>\n            &lt;/td&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/bWrsk0QizEk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;   <br>\n            &lt;/td&gt;<br>\n            &lt;/tr&gt;<br>\n        &lt;/table&gt;<br>\n     &lt;/div&gt;<br>\n     &lt;div&gt;<br>\n        &lt;h2 id = "WebDevelopment"&gt;Web Development Videos&lt;/h2&gt;<br>\n        &lt;table&gt;<br>\n           &lt;tr&gt;<br>\n             &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/Vi9bxu-M-ag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;   <br>\n            &lt;/td&gt;<br>\n           &lt;td&gt;<br>\n            &lt;iframe src="https://www.youtube.com/embed/ofHYRdWQESo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt; <br>\n           &lt;/td&gt;<br>\n           &lt;td&gt;<br>\n            &lt;iframe src="https://www.youtube.com/embed/aRUhd1Wd3Sw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt; <br>\n           &lt;/td&gt;<br>\n           &lt;/tr&gt;<br>\n           &lt;tr&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/0gU-qrq3gjU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;  <br>\n            &lt;/td&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/KdWPGqT5GwE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;  <br>\n            &lt;/td&gt;<br>\n            &lt;td&gt;<br>\n                &lt;iframe src="https://www.youtube.com/embed/VjCHupej12U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;    <br>\n            &lt;/td&gt;<br>\n            &lt;/tr&gt;<br>\n        &lt;/table&gt;<br>\n     &lt;/div&gt;<br>\n    &lt;footer&gt;<br>\n        @2023 codehelp. All rights reserved.<br>\n    &lt;/footer&gt;<br>\n&lt;/body&gt;<br>\n&lt;/html&gt;<br>\n\n </code>\n</pre>\n\n                    </div>\n\n\n                    <h6 classname="text-light my-lg-4 my-2">Thank you For Reading These Projects You can Also Check Out These ..</h6>',
+        code: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Code Arena</h1>
+    </header>
+    <table>
+        <tr>
+            <td>
+                <img src="Ram-Siyaram.jpg" alt="Ram Siyaram Images" width="200" loading="lazy">
+            </td>
+            <td>
+                <nav>
+                    <ul>
+                        <li><a href="#roadmapSection">Roadmap Videos</a></li>
+                        <li><a href="#operatingSection">Operating System Videos</a></li>
+                        <li><a href="#DbmsSection">DBMS Videos</a></li>
+                        <li><a href="#DsaSection">DSA Videos</a></li>
+                        <li><a href="#WebDevelopment">Web Development Videos</a></li>
+                    </ul>
+                </nav>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <h2>Tech Stack:</h2>
+        <ul>
+            <li>HTML: Page structure and content.</li>
+        </ul>
+    </div>
+    <div>
+        <h2>How to Start:</h2>
+        <p>After that, you can customize it according to your requirements.</p>
+    </div>
+    <div>
+        <h2>HTML Code:</h2>
+        <div class="container border rounded-8 p-3  ">
+            <pre><code>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Code Arena</h1>
+    </header>
+    <table>
+        <tr>
+            <td>
+                <img src="Ram-Siyaram.jpg" alt="Ram Siyaram Images" width="200" loading="lazy">
+            </td>
+            <td>
+                <nav>
+                    <ul>
+                        <li><a href="#roadmapSection">Roadmap Videos</a></li>
+                        <li><a href="#operatingSection">Operating System Videos</a></li>
+                        <li><a href="#DbmsSection">DBMS Videos</a></li>
+                        <li><a href="#DsaSection">DSA Videos</a></li>
+                        <li><a href="#WebDevelopment">Web Development Videos</a></li>
+                    </ul>
+                </nav>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <h2>Tech Stack:</h2>
+        <ul>
+            <li>HTML: Page structure and content.</li>
+        </ul>
+    </div>
+    <div>
+        <h2>How to Start:</h2>
+        <p>After that, you can customize it according to your requirements.</p>
+    </div>
+</body>
+</html>
+
+            </code></pre>
+        </div>
+    </div>
+</body>
+</html>
+        
+        `,
+        additionalDescriptions: `
+           <h6 class = "fw-bold" >Tech Stack:</h6>
+            <ul>
+                <li>HTML: Page structure and layout.</li>
+            </ul>
+
+             <h6 class="text-decoration-underline">Getting Started:</h6>
+              <small>You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+              </samll>
+              <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <h6 class = " "> But My personal Suggestion will be check the images and try it by your self if not then go with the code mention it here . </h6> 
+             
+             </div>
+              <small class="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
+        
+          `,
       },
     ],
   },
   {
+    id: "2",
     name: "Clone_Html",
     thumbnail:
       "https://res.cloudinary.com/dbqq41bpc/image/upload/v1719863601/codesaarthi/Projects/Clone/clone1_w5a9gw.png",
     projects: [
       {
-        title: "Amazon",
+        number: "01",
+        title: "Amazon Clone",
         description:
-          " Ye project ek Amazon ki frontend ka clone hai, jise maine HTML, CSS, aur JavaScript ka use karke banaya hai. Isme aapko ek online shopping website ki tarah feel hoga. ",
-        headingDescription:
-          ' <p classname="text-light">\n     Ye project ek Amazon ki frontend ka clone hai, jise maine HTML, CSS, aur JavaScript ka use karke banaya hai. Isme aapko ek online shopping website ki tarah feel hoga.\n </p>\n <h6 classname="textColor">Key Features:</h6>\n\n <ul classname="text-light">\n     <li>Good Design: Website ka design Amazon ki tarah hai, jisse users ko familiar feel hota hai aur wo aasani se navigation kar sakein.</li>\n     <li>High-Quality Images: Har product ke saath high-quality images hain, jo users ko clear view deti hain aur unhe product samajhne mein madad karti hain.</li>\n     <li>High-Quality Images: Har product ke saath high-quality images hain, jo users ko clear view deti hain aur unhe product samajhne mein madad karti hain.</li>\n     <li>Categories aur Search: Products ko alag-alag categories mein divide kiya gaya hai aur ek search bar diya gaya hai taaki users apne pasandeeda products ko jaldi se khoj sakein.</li>\n     <li>Responsive Design: Website mobile aur desktop dono platforms ke liye responsive hai, jisse users apne preferred device pe seamlessly access kar sakein.</li>\n     <li>Product Details: Har product ke saath detailed information aur pricing di gayi hai, taaki users apne purchase ke decisions ko informed taur par le sakein.\n     </li>\n     \n </ul>',
+          "This project is a frontend clone of Amazon, built using HTML, CSS, and JavaScript. It aims to provide users with an experience similar to an online shopping website.",
+        headingDescription: `
+          <small>
+            This project is a frontend clone of Amazon, created using HTML, CSS, and JavaScript. It aims to provide users with an experience similar to an online shopping website.
+          </small>
+          <p class="mt-2">Key Features:</p>
+          <ul>
+            <li>Good Design</li>
+            <li>High-Quality Images:</li>
+            <li>Categories and Search:</li>
+            <li>Responsive Design:</li>
+            <li>Product Details:</li>
+          </ul>
+        `,
         images: {
           image1:
             "https://res.cloudinary.com/dbqq41bpc/image/upload/v1719865094/codesaarthi/Projects/Clone/amazon1_q7aqwn.jpg",
@@ -122,15 +767,47 @@ const ProjectData = [
           github: "https://github.com/1sisodiyaji/Amazon-Clone.git",
           deployed: "https://amazon-clone-indol-zeta.vercel.app",
         },
-        additionalDescriptions:
-          '<h6 classname="textColor"> Tech Stack:</h6>\n  <ul classname="text-light">\n      <li> HTML: Page structure aur content ke liye.</li>\n      <li> CSS: Design aur styling ke liye.</li>\n      <li> JavaScript: Interactive features aur user interface ke liye.</li>\n  </ul>\n\n  <h6 classname="textColor"> Kaise Shuru Karein:</h6>\n\n  <ol classname="text-light">\n      <li>Clone karein: GitHub se project ko clone karein. <br>\n          ```bash <br>\n          https://github.com/1sisodiyaji/Amazon-Clone.git <br>\n          <link to="https://github.com/1sisodiyaji/Amazon-Clone.git" target="blank">Click Here\n      </li>\n      <li>Installation: Kisi bhi specific server ya build process ki zarurat nahi hai. Sirf clone karein aur local browser mein open karein.\n      </li>\n      <li> Launch Karein: Project directory mein jaake `index.html` file ko browser mein open karein.\n      </li>\n  </ol>\n\n\n  <p classname="text-light">Iske baad, aap isey customize kar sakte hain apne requirements ke hisaab se.</p>\n  <div classname="d-flex justify-content-between my-3 ">\n      <link to="https://amazon-clone-indol-zeta.vercel.app/" target="blank" classname="btn border bg-dark text-warning rounded-6">View Demo Link <em class="fi fi-sr-share-square ps-2"></em>\n      <link to="https://github.com/1sisodiyaji/Amazon-Clone.git" target="blank" classname="btn border bg-dark text-warning rounded-6"> <em class="fi fi-sr-location-arrow pe-2"></em> Github Code link\n  </div>\n\n\n\n  <h6 classname="textColor">Images Were uploaded in Github :-</h6>\n  <h6 classname="text-light my-lg-4 my-2">Thank you For Reading These Projects You can Also Check Out These ..</h6>',
+        additionalDescriptions: `
+          <h6 class="fw-bold">Tech Stack</h6>
+          <ul>
+            <li>HTML: Used for page structure and content.</li>
+            <li>CSS: Used for design and styling.</li>
+            <li>JavaScript: Implemented for interactive features and user interface enhancements.</li>
+          </ul>
+         <h6 class="text-decoration-underline">Getting Started:</h6>
+              <small>You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+              </samll>
+              <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <p class = " "> But My personal Suggestion will be check the images and try it by your self it will boost your confidence and clone projects are the best to start as result were shown earlier . </p> 
+             
+             </div>
+              <small class="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
+        
+              <div class= " my-2 bg-warning p-2 "> 
+              <h4> Task  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <p >We have left these Project incomplete for you as Base design is done rest all is up to you please try to make it and send Via Email : codesaarthi@gmail.com</p> 
+             
+             </div>
+         
+          `,
       },
       {
-        title: "Discord",
+        number: "02",
+        title: "Discord Clone",
         description:
-          " This project is a frontend clone of the Discord application, developed using HTML, CSS, and JavaScript. It mimics the look and feel of Discord for educational purposes   ",
-        headingDescription:
-          '<p classname="text-light">\n    This project is a frontend clone of the Discord application, developed using HTML, CSS, and JavaScript. It mimics the look and feel of Discord for educational purposes.\n</p>\n\n<h6 classname="textColor">Key Features:</h6>\n\n<ul classname="text-light">\n    <li>Modern Design: The application replicates the contemporary design of Discord for a familiar and user-friendly experience.</li>\n    <li>Visual Appeal: The clone includes key visual elements and features of Discord for an authentic representation.</li>\n    <li>Responsive Layout: The frontend clone is designed to be responsive, catering to various screen sizes and devices.</li>\n    <li>No Backend Functionality: This is a frontend-only project, focusing on the user interface without real-time functionality or server-side processing.</li>\n    \n</ul>',
+          "This project is a frontend clone of the Discord application, developed using HTML, CSS, and JavaScript. It mimics the look and feel of Discord for educational purposes.",
+        headingDescription: `
+           
+          <h6>Key Features:</h6>
+          <ul>
+            <li>Modern Design:</li>
+            <li>Visual Appeal:</li>
+            <li>Responsive Layout:</li>
+            <li>Frontend Only:</li>
+          </ul>
+        `,
         images: {
           image1:
             "https://res.cloudinary.com/dbqq41bpc/image/upload/v1719864902/codesaarthi/Projects/Clone/Discord1_ptwem1.jpg",
@@ -141,15 +818,45 @@ const ProjectData = [
           github: "https://github.com/1sisodiyaji/DIscord.git",
           deployed: "https://d-iscord-indol.vercel.app",
         },
-        additionalDescriptions:
-          ' <h6 classname="textColor">Tech Stack:</h6>\n   <ul classname="text-light">\n       <li>HTML: Used for page structure and content.</li>\n       <li>Tailwind CSS: Responsible for design and styling.</li>\n       <li>React: Implemented for interactive features and user interface enhancements.</li>\n   </ul>\n\n   <h6 classname="textColor">How to Get Started:</h6>\n\n   <ol classname="text-light">\n       <li>Clone the Repository: Clone the Discord frontend project from GitHub. <br>\n           ```bash <br>\n           https://github.com/1sisodiyaji/DIscord.git <br>\n           <link to="https://github.com/1sisodiyaji/DIscord.git" target="blank">Click Here\n       </li>\n       <li>Installation: No specific server or build process is required. Simply clone the project and open `index.html` in your local browser.\n       </li>\n       <li> Launch the Application: Navigate to the project directory and open the `index.html` file in your browser.\n       </li>\n   </ol>\n\n   <p classname="text-light">After this, you can explore the frontend structure and customize it according to your specific requirements.</p>\n   <div classname="d-flex justify-content-between my-3 ">\n       {/* Add demo and GitHub links for your Discord frontend project */}\n       <link to="https://d-iscord-indol.vercel.app/" target="blank" classname="btn border bg-dark text-warning rounded-6">View Demo Link <em class="fi fi-sr-share-square ps-2"></em>\n       <link to="https://github.com/1sisodiyaji/DIscord.git" target="blank" classname="btn border bg-dark text-warning rounded-6"> <em class="fi fi-sr-location-arrow pe-2"></em> Github Code link\n   </div>\n\n   <h6 classname="textColor">Images Uploaded on GitHub:</h6><p>\n\n   {/* Add the GitHub link to your project images */}\n   <link to="https://github.com/1sisodiyaji/DIscord.git" target="blank" classname="btn border bg-dark text-warning rounded-6">\n   View Project Images on GitHub <em class="fi fi-sr-share-square ps-2"></em>\n   \n\n   </p><h6 classname="text-light my-lg-4 my-2">Thank you for exploring this Discord frontend clone project. Check out more frontend projects below:</h6>',
+        additionalDescriptions: `
+          <h6 class="fw-bold">Tech Stack:</h6>
+          <ul>
+            <li>HTML: Used for page structure and content.</li>
+            <li>CSS: Handled by Tailwind CSS for efficient design and styling.</li>
+            <li>JavaScript: Implements interactive features and enhances user interface.</li>
+          </ul>
+          <h6 class="text-decoration-underline">Getting Started:</h6>
+           
+          <small>
+          You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+            Explore the frontend structure and customize it according to your educational or personal requirements.
+          </small>
+           <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <p class = " "> But My personal Suggestion will be check the images and try it by your self it will boost your confidence and clone projects are the best to start as result were shown earlier . </p> 
+             
+             </div>
+          <small>
+            Thank you for exploring this Discord frontend clone project. Discover more frontend projects below:
+          </small>
+        `,
       },
       {
-        title: "Razorpay",
+        number: "03",
+        title: "Razorpay Clone",
         description:
-          " This project is a frontend clone of the Razorpay payment gateway, developed using HTML,Tailwind CSS, and React. It simulates the user interface and functionality of Razorpay for educational purposes.",
-        headingDescription:
-          '<p classname="text-light">\n     This project is a frontend clone of the Razorpay payment gateway, developed using HTML,Tailwind CSS, and React. It simulates the user interface and functionality of Razorpay for educational purposes.\n </p>\n\n <h6 classname="textColor">Key Features:</h6>\n\n <ul classname="text-light">\n     <li>Modern Design: The clone replicates the modern design of Razorpay for a familiar and user-friendly experience.</li>\n     <li>Payment Gateway Simulation: The frontend clone provides a simulated experience of processing online payments.</li>\n     <li>Responsive Layout: The project is designed to be responsive, ensuring compatibility with various screen sizes and devices.</li>\n     <li>No Backend Functionality: This is a frontend-only project, focusing on the user interface without actual payment processing or server-side operations.</li>\n     \n </ul>',
+          "This project is a frontend clone of the Razorpay payment gateway, developed using HTML, Tailwind CSS, and React. It simulates the user interface and functionality..",
+        headingDescription: `
+          
+          <h6 class="my-2">Key Features:</h6>
+          <ul>
+            <li>Modern Design: </li>
+            <li>Payment Gateway Simulation: </li>
+            <li>Responsive Layout:</li>
+            <li>Frontend Only:</li>
+          </ul>
+        `,
         images: {
           image1:
             "https://res.cloudinary.com/dbqq41bpc/image/upload/v1719864673/codesaarthi/Projects/Clone/Razorpay1_hdzwco.jpg",
@@ -160,15 +867,44 @@ const ProjectData = [
           github: "https://github.com/1sisodiyaji/Razor_Pay.git",
           deployed: "https://razor-pay-chi.vercel.app",
         },
-        additionalDescriptions:
-          '<h6 classname="textColor">Tech Stack:</h6>\n<ul classname="text-light">\n    <li>HTML: Used for page structure and content.</li>\n    <li>Tailwind CSS: Responsible for design and styling.</li>\n    <li>React: Implemented for interactive features and user interface enhancements.</li>\n</ul>\n\n<h6 classname="textColor">How to Get Started:</h6>\n\n<ol classname="text-light">\n    <li>Clone the Repository: Clone the Razorpay frontend project from GitHub. <br>\n        ```bash <br>\n        https://github.com/1sisodiyaji/Razor_Pay.git <br>\n        <link to="https://github.com/1sisodiyaji/Razor_Pay.git" target="blank">Click Here\n    </li>\n    <li>Installation: No specific server or build process is required. Simply clone the project and open `index.html` in your local browser.\n    </li>\n    <li> Launch the Application: Navigate to the project directory and open the `index.html` file in your browser.\n    </li>\n</ol>\n\n<p classname="text-light">After this, you can explore the frontend structure and customize it according to your specific requirements.</p>\n<div classname="d-flex justify-content-between my-3 ">\n    {/* Add demo and GitHub links for your Razorpay frontend project */}\n    <link to="https://razor-pay-chi.vercel.app/" target="blank" classname="btn border bg-dark text-warning rounded-6">View Demo Link <em classname="fi fi-sr-share-square ps-2"></em>\n    <link to="https://github.com/1sisodiyaji/Razor_Pay.git" target="blank" classname="btn border bg-dark text-warning rounded-6"> <em classname="fi fi-sr-location-arrow pe-2"></em> Github Code link\n</div>\n\n<h6 classname="textColor">Images Uploaded on GitHub:</h6><p>\n\n{/* Add the GitHub link to your project images */}\n<link to="https://github.com/1sisodiyaji/Razor_Pay.git" target="blank" classname="btn border bg-dark text-warning rounded-6">\nView Project Images on GitHub <em classname="fi fi-sr-share-square ps-2"></em>\n\n\n</p><h6 classname="text-light my-lg-4 my-2">Thank you for exploring this Razorpay frontend clone project. Check out more frontend projects below:</h6>',
+        additionalDescriptions: `
+          <h6 class="fw-bold">Tech Stack:</h6>
+          <ul>
+            <li>HTML: Used for page structure and content.</li>
+            <li>Tailwind CSS: Responsible for design and styling.</li>
+            <li>React: Implemented for interactive features and user interface enhancements.</li>
+          </ul>
+          <h6 class="text-decoration-underline">Getting Started:</h6>
+           
+          <small>
+          You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+            Explore the frontend structure and customize it according to your educational or personal requirements.
+          </small>
+           <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <p class = " "> But My personal Suggestion will be check the images and try it by your self it will boost your confidence and clone projects are the best to start as result were shown earlier . </p> 
+             
+             </div>
+          <small>
+          <small class="my-lg-4 my-2">Thank you for exploring this Razorpay frontend clone project. Check out more frontend projects below:</small>
+        `,
       },
       {
+        number: "04",
         title: "Spotify",
         description:
-          "  This project is a frontend clone of the Spotify music streaming application, developed using React. It replicates the user interface and functionality of Spotify, providing an immersive music streaming experience.",
-        headingDescription:
-          '<p classname="text-light">\n      This project is a frontend clone of the Spotify music streaming application, developed using React. It replicates the user interface and functionality of Spotify, providing an immersive music streaming experience.\n  </p>\n\n  <h6 classname="textColor">Key Features:</h6>\n\n  <ul classname="text-light">\n      <li>Responsive Design: The frontend clone is designed to adapt to various screen sizes, providing a seamless experience across devices.</li>\n      <li>Music Playback: Users can play,and pause, mimicking the core music playback features of Spotify.</li>\n      <li>Song Management: The clone includes Songs play pause features for a personalized music library.</li>\n      <li>Search Functionality: try these one by <span classname="text-warning">you</span> Users can search for artists, albums, and songs, just like in the original Spotify application.</li>\n      \n  </ul>',
+          "This project is a frontend clone of the Spotify music streaming application, developed using Html , CSS. It replicates the user interface and functionality of Spotify, providing an immersive music streaming experience.",
+        headingDescription: `
+     
+    <h6 class="my-2">Key Features:</h6>
+    <ul>
+      <li>Responsive Design:</li>
+      <li>Music Playback:</li>
+      <li>Song Management:</li>
+      <li>Search Functionality:</li>
+    </ul>
+  `,
         images: {
           image1:
             "https://res.cloudinary.com/dbqq41bpc/image/upload/v1719864145/codesaarthi/Projects/Clone/Spotify1_ekbnqz.jpg",
@@ -179,30 +915,306 @@ const ProjectData = [
           github: "https://github.com/1sisodiyaji/Spotify-Clone.git",
           deployed: "https://spotify-clone-rho-taupe.vercel.app",
         },
-        additionalDescriptions:
-          '<h6 classname="textColor">Tech Stack:</h6>\n<ul classname="text-light">\n    <li>React: Used for building the user interface and managing the state of the application.</li>\n    <li>Styled Components: Responsible for styling and component-based design.</li>\n    <li>React Router: Implemented for navigation within the application.</li>\n</ul>\n\n<h6 classname="textColor">How to Get Started:</h6>\n\n<ol classname="text-light">\n    <li>Clone the Repository: Clone the Spotify frontend project from GitHub. <br>\n        ```bash <br>\n        https://github.com/1sisodiyaji/Spotify-Clone.git <br>\n        <link to="https://github.com/1sisodiyaji/Spotify-Clone.git" target="blank">Click Here\n    </li>\n    <li>Installation: Run `npm install` to install the project dependencies.</li>\n    <li> Launch the Application: Start the development server using `npm start` and open the app in your browser.\n    </li>\n</ol>\n\n<p classname="text-light">Explore the frontend structure, play around with the features, and customize it according to your specific requirements.</p>\n<div classname="d-flex justify-content-between my-3 ">\n    <link to="https://spotify-clone-rho-taupe.vercel.app/" target="blank" classname="btn border bg-dark text-warning rounded-6">View Demo Link\n    <link to="https://github.com/1sisodiyaji/Spotify-Clone.git" target="blank" classname="btn border bg-dark text-warning rounded-6"> Github Code link\n</div>\n\n<h6 classname="textColor">Images Uploaded on GitHub:</h6>\n<p>\n\n    <link to="https://github.com/1sisodiyaji/Spotify-Clone.git" target="blank" classname="btn border bg-dark text-warning rounded-6">\n    View Project Images on GitHub\n\n\n</p>\n<h6 classname="text-light my-lg-4 my-2">Thank you for exploring this Spotify frontend clone project. Check out more frontend projects below:</h6>',
+        additionalDescriptions: `
+    <h6 class="fw-bold">Tech Stack:</h6>
+    <ul>
+      <li>HTML: Used for building the Structure</li>
+      <li>CSS : Responsible for styling and  design.</li>
+      <li>JS: Implemented for navigation within the muisc and players.</li>
+    </ul>
+     <h6 class="text-decoration-underline">Getting Started:</h6>
+              <small>You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+              </samll>
+              <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <p class = " "> But My personal Suggestion will be check the images and try it by your self it will boost your confidence and clone projects are the best to start as result were shown earlier . </p> 
+             
+             </div> 
+        
+              <div class= " my-2 bg-warning p-2 "> 
+              <h4> Task  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <p >We have left these Project incomplete for you as Base design is done rest all is up to you please try to make it and send Via Email : codesaarthi@gmail.com</p> 
+             
+             </div>
+    <small class="my-lg-4 my-2">Thank you for exploring this Spotify frontend clone project. Check out more frontend projects below:</small>
+  `,
       },
     ],
   },
   {
+    id: "3",
     name: "HTML_CSS",
     thumbnail:
-      "https://res.cloudinary.com/dbqq41bpc/image/upload/v1719863601/codesaarthi/Projects/Clone/clone1_w5a9gw.png",
+      "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721108419/codesaarthi/Projects/HTML_CSS/htmlcss1_qiau0p.png",
     projects: [
       {
-        title: "",
-        description: "",
+        number: "01",
+        title: "Chair Page",
+        description: "Basically this is a project based on a Chair selling company with a good design and amazing color scheme of chair. Check it out!",
         headingDescription: " ",
         images: {
-          image1: " ",
-          image2: " ",
+          image1: "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721109159/codesaarthi/Projects/HTML_CSS/chairPage_iortdq.jpg",
+          image2: "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721109230/codesaarthi/Projects/HTML_CSS/Screenshot_2024-07-16_112323_nc4oe1.png",
         },
         links: {
-          github: " ",
-          deployed: " ",
+          github: "https://github.com/1sisodiyaji/Chair_page.git",
+          deployed: "https://chair-page.vercel.app",
         },
-        additionalDescriptions: " ",
+        additionalDescriptions: `
+          <h6 class='textColor'>Key Features:</h6>
+          <ul class=' '>
+            <li>Good Design: It has a simple yet effective design to start from.</li>
+            <li>High-Quality Code: Well-maintained code that is easily editable and modifiable.</li>
+            <li>Responsive Design: Works seamlessly on any device.</li>
+          </ul>
+        
+          <h6 class='textColor'>Tech Stack:</h6>
+          <ul class=' '>
+            <li>HTML: Used for page structure and content.</li>
+            <li>CSS: Used for design and styling.</li>
+          </ul>
+       <h6 class="text-decoration-underline">Getting Started:</h6>
+              <small>You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+              </samll>
+              <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <p class = " ">   My personal Suggestion will be try it by your self first it is not that much level of hard know the design concepts of color code  . </p> 
+             
+             </div> 
+        
+              
+      
+          <small class='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
+          
+        `,
       },
+      {
+        number: "02",
+        title: "Hire Me Button",
+        description: "Basically this is a project of creating a simple design of a hire me button that can be used as a component in your app. It features a basic design for a hire me button.",
+        headingDescription: " ",
+        images: {
+          image1: "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721109497/codesaarthi/Projects/HTML_CSS/HireMe_r7wzsb.jpg",
+          image2: "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721109563/codesaarthi/Projects/HTML_CSS/Screenshot_2024-07-16_112908_n4lyn6.png",
+        },
+        links: {
+          github: "https://github.com/1sisodiyaji/Hire_Me-Button.git",
+          deployed: "https://hire-me-button-dusky.vercel.app",
+        },
+        additionalDescriptions: `
+          <h6 class='my-2'>Key Features:</h6>
+          <ul>
+            <li>Good Design: </li>
+            <li>High-Quality Code: </li>
+            <li>Responsive Design: </li>
+          </ul>
+       
+          <h6 class='fw-bold'>Tech Stack:</h6>
+          <ul class=' '>
+            <li>HTML: Used for page structure and content.</li>
+            <li>CSS: Used for design and styling.</li>
+          </ul>
+      
+          <h6 class="text-decoration-underline">Getting Started:</h6>
+              <small>You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+              </samll>
+              <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <p class = " ">   My personal Suggestion will be try it by your self first it is not that much level of hard know the design concepts of center align and hover effect . You can use it as a component in your project . </p> 
+             
+             </div> 
+        
+      
+          <small class='my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..<small>
+         
+        </div>
+        `,
+      },
+      {
+        number: "03",
+        title: "Image Gallery",
+        description: "Basically this is a project which will help you in creating a gallery of images in grid mode. You can use the code as a template in your projects.",
+        headingDescription: " ",
+        images: {
+          image1: "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721109808/codesaarthi/Projects/HTML_CSS/imageGallery_yjfkiv.jpg",
+          image2: "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721109912/codesaarthi/Projects/HTML_CSS/Screenshot_2024-07-16_113456_uskmre.png",
+        },
+        links: {
+          github: "https://github.com/1sisodiyaji/Image_gallery.git",
+          deployed: "https://image-gallery-tan-rho.vercel.app",
+        },
+        additionalDescriptions: `
+          <h6 class='my-2'>Key Features:</h6>
+          <ul>
+            <li>Good Design:</li>
+            <li>High-Quality Code:</li>
+            <li>Responsive Design:</li>
+          </ul>
+      
+          <h6 class='fw-bold'>Tech Stack:</h6>
+          <ul>
+            <li>HTML: Used for page structure and content.</li>
+            <li>CSS: Used for design and styling.</li>
+          </ul>
+       <h6 class="text-decoration-underline">Getting Started:</h6>
+              <small>You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+              </samll>
+              <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <p class = " ">   My personal Suggestion will be try it is basically used hover effect and grayscale the images so if you get the hint try by yourself it will boost your journey. </p> 
+             
+             </div> 
+        
+      
+          <small class='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
+           
+        </div>
+        `,
+      },
+      {
+        number: "04",
+        title: "Product Card",
+        description: "Basically this is a project based on a Product Card of a coffee mug as an example, creating a responsive design of a coffee mug as a product.",
+        headingDescription: " ",
+        images: {
+          image1: "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721110144/codesaarthi/Projects/HTML_CSS/productCard_zjgvfi.jpg",
+          image2: "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721110227/codesaarthi/Projects/HTML_CSS/Screenshot_2024-07-16_114012_c4mrft.png",
+        },
+        links: {
+          github: "https://github.com/1sisodiyaji/Product_Card2.git",
+          deployed: "https://product-card2-ruby.vercel.app",
+        },
+        additionalDescriptions: `
+          <h6 class='my-2'>Key Features:</h6>
+          <ul>
+            <li>Good Design: </li>
+            <li>High-Quality Code:  </li>
+            <li>Responsive Design:  </li>
+          </ul>
+       
+      
+          <h6 class='fw-bold'>Tech Stack:</h6>
+          <ul  >
+            <li>HTML: Used for page structure and content.</li>
+            <li>CSS: Used for design and styling.</li>
+          </ul>
+      
+            <h6 class="text-decoration-underline">Getting Started:</h6>
+              <small>You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+              </samll>
+              <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <p class = " ">   My personal Suggestion will be try it is nothing but a product page okay you can use it as practise or add these code in your projects and treat it as component </p> 
+             
+             </div> 
+      
+          <small class='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
+           
+        </div>
+        `,
+      },
+      {
+        number: "05",
+        title: "Recipe Website",
+        description: "Basically this is a project based on a restaurant website. It's an incomplete design, serving as a skeleton from which you can develop further designs and fork this website.",
+        headingDescription: " ",
+        images: {
+          image1: "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721110715/codesaarthi/Projects/HTML_CSS/Screenshot_2024-07-16_114814_vmfbpg.png",
+          image2: "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721111482/codesaarthi/Projects/HTML_CSS/Screenshot_2024-07-16_120056_gqoblg.png",
+        },
+        links: {
+          github: "https://github.com/1sisodiyaji/Recipe_Website.git",
+          deployed: "https://recipe-website-eosin.vercel.app",
+        },
+        additionalDescriptions: `
+          <h6 class='my-2'>Key Features:</h6>
+          <ul class=' '>
+            <li>Good Design: </li>
+            <li>High-Quality Code: </li>
+            <li>Responsive Design:</li>
+          </ul>
+       
+      
+          <h6 class='fw-bold'>Tech Stack:</h6>
+          <ul class=' '>
+            <li>HTML: Used for page structure and content.</li>
+            <li>CSS: Used for design and styling.</li>
+          </ul>
+      
+           
+            <h6 class="text-decoration-underline">Getting Started:</h6>
+              <small>You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+              </samll>
+              <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <p class = " ">   My personal Suggestion will be try it by yourself it is an restarunt a single page of recipe so you can try it and create much more beautiful pages as taking base code it as. </p> 
+             
+             </div> 
+      
+          <small class='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
+           
+        </div>
+        `,
+      },
+      {
+        number: "06",
+        title: "Shopping last page - (Frontend)",
+        description: "Basically This project is the design of the last page for a shopping website using only HTML and CSS. As the last page of Product an Perfume Product.",
+        headingDescription: " ",
+        images: {
+          image1: "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721111610/codesaarthi/Projects/HTML_CSS/shopping_last_page_ltfqkb.jpg",
+          image2: "https://res.cloudinary.com/dbqq41bpc/image/upload/v1721111610/codesaarthi/Projects/HTML_CSS/shopping_last_page_ltfqkb.jpg",
+        },
+        links: {
+          github: "https://github.com/1sisodiyaji/Shopping_Last_Page.git",
+          deployed: "https://shopping-last-page.vercel.app/",
+        },
+        additionalDescriptions: `
+          <h6  class='my-2'>Key Features:</h6>
+          <ul  class=' '>
+            <li>Good Design: </li>
+            <li>High-Quality Code:</li>
+            <li>Responsive Design:</li>
+          </ul>
+       
+      
+          <h6  class='fw-bold'>Tech Stack:</h6>
+          <ul  class=' '>
+            <li>HTML: Used for page structure and content.</li>
+            <li>CSS: Used for design and styling.</li>
+          </ul>
+      
+            <h6 class="text-decoration-underline">Getting Started:</h6>
+              <small>You can go through the Github link and clone it and start working .
+                  After this, you can customize it according to your requirements.
+              </samll>
+              <div class= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <p class = " ">   My personal Suggestion will be try it by yourself it is an perfume last page so this one is basic. </p> 
+             </div> 
+           
+             <div class= " my-2 bg-warning p-2 "> 
+              <h4> Task  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <p>This one is base as last coffee  page where  i have shared the best deisgn but these one is for you to customise and send us via Email : codesaarthi@gmail.com</p> 
+             </div> 
+
+      
+          <small  class='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
+          
+        </div>
+        `,
+      }
+      
+      
+      
+      
+      
     ],
   },
 ];
