@@ -83,7 +83,7 @@ const BlogList = () => {
       <>
       <ToastContainer/>
        { blogs.map((blog) => (
-          <div key={blog._id} className="  m-1 my-3 shadow-lg border border-dark rounded-4">
+          <div key={blog._id} className="  m-1 my-3 shadow-lg borderColor rounded-4">
             <Link to = {`/blog/${blog._id}`}> <h4 className=" iconColor ps-2 pt-2 heading">{blog.title}</h4> </Link>
             
             <img

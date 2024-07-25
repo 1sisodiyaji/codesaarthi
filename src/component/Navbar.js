@@ -278,6 +278,7 @@ useEffect(() => {
         className="navbar-brand text-center ms-4"
         to="/" 
       >
+        <img src= "img/logo.jpg" style={{width: '35px' , borderRadius: '50%'}} alt="logo" loading="lazy"/>
         <h1 style={{ fontSize: "24px" }} className="mb-0 ms-2">
           Codesaarthi
         </h1>

@@ -58,7 +58,7 @@ body {
       }
 
       .borderColor{
-        border : 1px solid black;
+        border : 1px solid rgb(93, 89, 89) !important;
       }
 }
 
@@ -71,7 +71,7 @@ body.dark-theme {
   overflow-x: hidden;
 
   .borderColor{
-    border : '1px solid white';
+    border : 0.6px solid rgb(79, 73, 73) !important;
   }
 
   .navbar{
