@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function Protected(props) {
     const {Component}=props;
     const navigate=useNavigate();
     useEffect(()=>{
-    let token= sessionStorage.getItem('token');
+    let token= Cookies.get('token'); 
     if(!token){
         navigate('/login');
 

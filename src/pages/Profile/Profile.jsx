@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
 
 const Profile = () => {
-  const [user, setUser] = useState(null); 
+  const [user, setUser] = useState(null);
   const [editing, setEditing] = useState(false);
   const navigate = useNavigate();
   const [image, setImage] = useState(null);
@@ -82,22 +82,21 @@ const Profile = () => {
   };
 
   useEffect(() => {
-
     const fetchUserData = async () => {
-      const token = sessionStorage.getItem("token"); 
+      const token = Cookies.get('token');
       try {
         const response = await axios.post(
-          `${config.BASE_URL}/api/user`, 
+          `${config.BASE_URL}/api/user`,
           {},
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          );
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
-        if (response.data.status === "success") { 
-          setUser(response.data.user);  
+        if (response.data.status === "success") {
+          setUser(response.data.user);
         } else {
           toast.error("Failed to fetch user information!", { theme: "dark" });
         }
@@ -107,17 +106,22 @@ const Profile = () => {
       } finally {
       }
     };
-   
-    
+    fetchUserData();
+  }, []);
 
+  useEffect(() => {
     const fetchBlogs = async () => {
-      try { 
-        const id = user._id; 
+      try {
+        const id = user._id;
+        if (!id) {
+          toast.warn("Your have not posted any blog", { theme: "dark" });
+          return;
+        }
         const response = await axios.post(
           `${config.BASE_URL}/article/getbyidAuthor/${id}`
         );
         if (response.data) {
-          toast.success("Blogs fetched by you", { theme: "dark" });
+          toast.success("Blogs written by you", { theme: "dark" });
           setBlogs(response.data);
         } else {
           toast.error("Error fetching blogs ,  No Blogs Found.!", {
@@ -129,33 +133,30 @@ const Profile = () => {
       }
     };
 
-
-    fetchUserData();
     fetchBlogs();
-  
-  },[]);
+  }, [user]);
 
   if (loading) {
-    return  <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
-    <div className="card" aria-hidden="true" style={{width: '350px'}}>
-  <div className="text-center">
-    <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721031578/loader_bhnpfb.gif" style={{height: '125px', width: '115px'}} className="card-img-top" alt="..." />
-</div>
-  <div className="card-body">
-    <h5 className="card-title placeholder-glow">
-      <span className="placeholder col-6"></span>
-    </h5>
-    <p className="card-text placeholder-glow">
-      <span className="placeholder col-7"></span>
-      <span className="placeholder col-4"></span>
-      <span className="placeholder col-4"></span>
-      <span className="placeholder col-6"></span>
-      <span className="placeholder col-8"></span>
-    </p>
-    <a href='/' className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"> loading</a>
-  </div>
-</div>
-  </div>
+    return <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
+      <div className="card" aria-hidden="true" style={{ width: '350px' }}>
+        <div className="text-center">
+          <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721031578/loader_bhnpfb.gif" style={{ height: '125px', width: '115px' }} className="card-img-top" alt="..." />
+        </div>
+        <div className="card-body">
+          <h5 className="card-title placeholder-glow">
+            <span className="placeholder col-6"></span>
+          </h5>
+          <p className="card-text placeholder-glow">
+            <span className="placeholder col-7"></span>
+            <span className="placeholder col-4"></span>
+            <span className="placeholder col-4"></span>
+            <span className="placeholder col-6"></span>
+            <span className="placeholder col-8"></span>
+          </p>
+          <a href='/' className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"> loading</a>
+        </div>
+      </div>
+    </div>
   }
 
   const logout = async () => {
@@ -163,7 +164,6 @@ const Profile = () => {
       const response = await axios.post(`${config.BASE_URL}/api/logout`);
 
       if (response.status === 200) {
-        sessionStorage.removeItem("token");
         Cookies.remove("token");
         window.location.href = "/";
       } else {
@@ -233,7 +233,7 @@ const Profile = () => {
         <meta
           property="og:image"
           content={
-           user &&  user.image
+            user && user.image
               ? user.image
               : "https://res.cloudinary.com/ducw7orvn/image/upload/v1720990203/logo_zdeshk.png"
           }
@@ -420,11 +420,10 @@ const Profile = () => {
                           alt={blog.title}
                           title={blog.title}
                           loading="lazy"
-                          className="img-fluid cardImageHeight  mb-3"
+                          className="img-fluid imageHeight  mb-3"
                         />
                         <figcaption>{blog.description}</figcaption>
                       </figure>
-                      <div dangerouslySetInnerHTML={{ __html: blog.content }} />
                       <hr />
                       <div className="row">
                         <div className="col-6 text-start">

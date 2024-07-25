@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CanvasJSReact from '@canvasjs/react-charts';
 import { Helmet } from "react-helmet";
+import Cookies from 'js-cookie';
 
 const Admin = () => {
   const [courses, setCourses] = useState([]);
@@ -20,7 +21,7 @@ const Admin = () => {
   const [monthlyFeedbackData, setMonthlyFeedbackData] = useState([]);
   useEffect(() => {
     const fetchUserData = async () => {
-      const token = sessionStorage.getItem("token");
+      const token =  Cookies.get('token'); 
       try {
         const response = await axios.post(
           `${config.BASE_URL}/Admin/user`,
@@ -262,7 +263,7 @@ const Admin = () => {
           <div className="container-fluid py-5 design" style={{ minHeight: "100vh" }}>
             <div className="row">
               <div className="col-lg-6 col-md-6 col-12">
-                <div className="card p-3 ">
+                <div className=" p-3 card">
                   <div className=" d-flex justify-content-between align-items-center ">
                     <h3>Total Number of Users</h3>
                     <h3 className="px-4 py-2 border bg-black text-success rounded-6"><i class="fi fi-rr-circle-user"></i> {totalUser}</h3>

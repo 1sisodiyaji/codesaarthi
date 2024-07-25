@@ -120,8 +120,7 @@ const SignUp = () => {
         const saveUserDataResponse = await axios.post(
           `${config.BASE_URL}/api/saveuserData`, formDataEncoded);
 
-        if (saveUserDataResponse.data.status === "success") {
-          sessionStorage.setItem("token", saveUserDataResponse.data.token);
+        if (saveUserDataResponse.data.status === "success") { 
           Cookies.set("token", saveUserDataResponse.data.token, { expires: 30 });
           setLoading(false);
          window.location.href = "/";
@@ -183,8 +182,7 @@ const SignUp = () => {
     });
       
       if (response.status === 200) { 
-        toast.success("User Verified Welcome to Codesaarthi !", { theme: "dark" }); 
-        sessionStorage.setItem("token", token);
+        toast.success("User Verified Welcome to Codesaarthi !", { theme: "dark" });  
         Cookies.set("token",token, { expires: 30 });
         setLoading(false);
         window.location.href = "/";

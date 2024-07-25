@@ -10,17 +10,16 @@ const CreateCourse = () => {
   const [imagePreview, setImagePreview] = useState(null);
   const [thumbnailImage, setThumbnailImage] = useState(null);
   const [loading, setLoading] = useState(false);
-  const editor = useRef(null);
-  const [content, setContent] = useState("");
+  const editor = useRef(null); 
   const navigate = useNavigate();
   const [admin, setAdmin] = useState(false);
 
   useEffect(() => {
     const fetchUserData = async () => {
-      const token = localStorage.getItem("token");
+      const token = sessionStorage.getItem("token");
       try {
         const response = await axios.post(
-          `${config.BASE_URL}/api/user`,
+          `${config.BASE_URL}/Admin/user`,
           {},
           {
             headers: {
@@ -29,10 +28,8 @@ const CreateCourse = () => {
           }
         );
 
-        if (response.data.status === "success") {
-          if (response.data.user.email === "637golusingh@gmail.com") {
+        if (response.data.status === "success") { 
             setAdmin(true);
-          }
         } else {
           toast.error("Failed to fetch user information!", { theme: "dark" });
         }
@@ -49,7 +46,7 @@ const CreateCourse = () => {
     title: "",
     description: "",
     thumbnailImage: null,
-    topics: [{ title: "", details: "", image: null, imagePreview: null, tags: "" }],
+    topics: [{ title: "", details: "", image: null, imagePreview: null, headpoints: "" }],
   });
 
   const handleInputChange = (e) => {
@@ -93,7 +90,7 @@ const CreateCourse = () => {
       ...course,
       topics: [
         ...course.topics,
-        { title: "", details: "", image: null, imagePreview: null, tags: "" },
+        { title: "", details: "", image: null, imagePreview: null, headpoints: "" },
       ],
     });
   };
@@ -106,24 +103,19 @@ const CreateCourse = () => {
       const formData = new FormData();
       formData.append("title", course.title);
       formData.append("description", course.description);
-      formData.append("thumbnailImage ", thumbnailImage);
-      formData.append(
-        "topics",
-        JSON.stringify(
-          course.topics.map((topic) => ({
-            title: topic.title,
-            details: topic.details,
-            tags: topic.tags,
-          }))
-        )
-      );
-
-      course.topics.forEach((topic) => {
+      formData.append("thumbnailImage", thumbnailImage);
+      formData.append("author", 'Codesaarthi');
+      
+      // Append each topic's data to formData
+      course.topics.forEach((topic, index) => {
+        formData.append(`topics[${index}][title]`, topic.title);
+        formData.append(`topics[${index}][details]`, topic.details);
+        formData.append(`topics[${index}][headpoints]`, topic.headpoints);
         if (topic.image) {
-          formData.append("images", topic.image);
+          formData.append(`topics[${index}][image]`, topic.image);
         }
       });
-      console.log(formData);
+
       const response = await axios.post(
         `${config.BASE_URL}/Admin/Createcourses`,
         formData,
@@ -133,7 +125,8 @@ const CreateCourse = () => {
           },
         }
       );
-      if (response.data.status === "success") {
+
+      if (response.status === 201) {
         setLoading(false);
         toast.success("Course Created successfully", { theme: "dark" });
         navigate("/Admin");
@@ -151,6 +144,19 @@ const CreateCourse = () => {
     }
   };
 
+  const handleTagKeyDown = (e, index) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const value = e.target.value.trim();
+      if (value) {
+        const topics = [...course.topics];
+        topics[index].headpoints += value + ", ";
+        setCourse({ ...course, topics });
+        e.target.value = "";
+      }
+    }
+  };
+
   return (
     <>
       <ToastContainer />
@@ -158,7 +164,7 @@ const CreateCourse = () => {
         <div className="container-fluid">
           <div className="container">
             <h1 className="text-center py-2">Create a New Course</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} encType="multipart/form-data">
               <div className="form-group my-2">
                 <label>Course Title</label>
                 <input
@@ -184,109 +190,104 @@ const CreateCourse = () => {
               </div>
 
               <div className="form-group my-2">
-                <label>Course Thumbnail</label>
+                <label>Course Thumbnail Image</label>
                 <input
                   type="file"
-                  accept="image/*"
+                  className="form-control-file"
                   onChange={handleThumbnailImageChange}
-                  style={{ display: "none" }}
-                  id="thumbnailInput"
+                  required
                 />
-                <label htmlFor="thumbnailInput">
-                  <i
-                    className="fi fi-rr-graphic-style text-warning mx-2"
-                    style={{ cursor: "pointer" }}
-                  ></i>
-                </label>
+                {imagePreview && (
+                  <div className="mt-2">
+                    <img
+                      src={imagePreview}
+                      alt="Preview"
+                      className="img-fluid"
+                      style={{ maxWidth: "200px", maxHeight: "200px" }}
+                    />
+                  </div>
+                )}
               </div>
-              {imagePreview && (
-                <div className="mb-3">
-                  <img
-                    src={imagePreview}
-                    alt="Thumbnail"
-                    style={{ maxHeight: "300px" }}
-                    className="img-fluid"
-                  />
-                </div>
-              )}
 
               {course.topics.map((topic, index) => (
-                <div key={index} className="form-group my-2">
-                  <label>Topic Title</label>
-                  <input
-                    type="text"
-                    className="w-100 form-control"
-                    name="title"
-                    value={topic.title}
-                    onChange={(e) => handleTopicChange(index, e)}
-                    required
-                  />
-                  <label>Topic Details</label>
-                  <JoditEditor
-                    ref={editor}
-                    value={topic.details}
-                    tabIndex={1}
-                    onBlur={(newContent) => {
-                      const topics = [...course.topics];
-                      topics[index].details = newContent;
-                      setCourse({ ...course, topics });
-                    }}
-                    onChange={(newContent) => {}}
-                  />
-                  <label htmlFor={`tags-${index}`}>Headpoints (Tags)</label>
-                  <input
-                    type="text"
-                    className="w-100 form-control"
-                    id={`tags-${index}`}
-                    value={topic.tags}
-                    onChange={(e) => handleTopicChange(index, e)}
-                    name="tags"
-                    placeholder="Enter tags separated by commas"
-                  />
-                  <label className="my-2">Topic Image</label>
-                  <input
-                    type="file"
-                    className="form-control"
-                    name="image"
-                    style={{ display: "none" }}
-                    id={`topicImage${index}`}
-                    onChange={(e) => handleTopicChange(index, e)}
-                  />
-                  <label htmlFor={`topicImage${index}`}>
-                    <i
-                      className="fi fi-rr-graphic-style text-warning mx-2"
-                      style={{ cursor: "pointer" }}
-                    ></i>
-                  </label>
+                <div key={index} className="border rounded p-2 my-2">
+                  <h5>Topic {index + 1}</h5>
+                  <div className="form-group">
+                    <label>Title</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="title"
+                      value={topic.title}
+                      onChange={(e) => handleTopicChange(index, e)}
+                      required
+                    />
+                  </div>
 
-                  {topic.imagePreview && (
-                    <div className="mb-3">
-                      <img
-                        src={topic.imagePreview}
-                        alt={`Topic ${index}`}
-                        style={{ maxHeight: "200px" }}
-                        className="img-fluid"
-                      />
-                    </div>
-                  )}
+                  <div className="form-group">
+                    <label>Details</label>
+                    <textarea
+                      className="form-control"
+                      name="details"
+                      value={topic.details}
+                      onChange={(e) => handleTopicChange(index, e)}
+                      required
+                      placeholder="Write topic details"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label>Topic Image</label>
+                    <input
+                      type="file"
+                      className="form-control-file"
+                      name="image"
+                      onChange={(e) => handleTopicChange(index, e)}
+                    />
+                    {topic.imagePreview && (
+                      <div className="mt-2">
+                        <img
+                          src={topic.imagePreview}
+                          alt="Preview"
+                          className="img-fluid"
+                          style={{ maxWidth: "200px", maxHeight: "200px" }}
+                        />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="form-group">
+                    <label>Heading Points</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="headpoints"
+                      value={topic.headpoints}
+                      onChange={(e) => handleTopicChange(index, e)}
+                      placeholder="Enter heading points separated by commas"
+                      onKeyDown={(e) => handleTagKeyDown(e, index)}
+                    />
+                  </div>
                 </div>
               ))}
-              <div className="row py-2">
+
+              <div className="form-group row my-2">
                 <div className="col-6">
                   <button
                     type="button"
-                    className="btn btn-warning text-capitalize"
+                    className="btn btn-outline-warning"
                     onClick={addTopic}
                   >
                     Add Topic
                   </button>
                 </div>
-                <div className="col-6 text-end">
+                <div className="col-6 text-right">
                   <button
                     type="submit"
-                    className="btn btn-primary text-capitalize"
+                    className="btn btn-primary"
+                    disabled={loading}
                   >
-                    {loading ? "Creating..." : "Create Course"}
+                    {loading ? "Loading..." : "Create Course"}
                   </button>
                 </div>
               </div>
@@ -294,8 +295,9 @@ const CreateCourse = () => {
           </div>
         </div>
       ) : (
-        <div className="vh-100 bg-dark text-danger d-flex justify-content-center align-items-center">
-          <h6>Access Blocked by admin</h6>
+        <div className="text-center">
+          <h1>Access Denied</h1>
+          <p>You do not have the necessary permissions to view this page.</p>
         </div>
       )}
     </>

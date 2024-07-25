@@ -352,7 +352,7 @@ const Content = () => {
               </div>
               <>
                 {blogs.map((blog) => (
-                  <div className="border rounded-6 mb-1" key={blog._id}>
+                  <div className="border rounded-6 mb-2" key={blog._id}>
                     <div className="row g-0">
                       <div className="col-3 d-flex justify-content-center align-items-center">
 
@@ -365,7 +365,7 @@ const Content = () => {
                       </div>
                       <div className="col-9">
                         <div className="card-body">
-                         <Link to = {`/blog/${blog._id}`} >  <small style={{ fontSize: '0.6rem' }}>{truncateText(blog.title, 35)}</small> </Link>
+                         <Link to = {`/blog/${blog._id}`} className="iconColor" >  <small style={{ fontSize: '0.6rem' }}>{truncateText(blog.title, 35)}</small> </Link>
 
                         </div>
                       </div>

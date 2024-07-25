@@ -9,7 +9,7 @@
 body {
   width: 100%;
   background-color: #eae7e7 !important;
-  color: #000000 !important;
+  color: #0c0c0c !important;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   font-family: Exo;
@@ -56,6 +56,10 @@ body {
         border-radius: 5px !important;
         color: black;
       }
+
+      .borderColor{
+        border : 1px solid black;
+      }
 }
 
 /* Dark mode styles */
@@ -65,6 +69,10 @@ body.dark-theme {
   color: white !important;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+
+  .borderColor{
+    border : '1px solid white';
+  }
 
   .navbar{
     background-color: #1e1e1e !important; 
@@ -226,7 +234,7 @@ body::-webkit-scrollbar {
 }
 
 .highlight , strong{
- color: #3393df !important;
+ color: #d67505 !important;
 font-weight: bold !important;
 }
 

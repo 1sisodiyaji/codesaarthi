@@ -214,35 +214,29 @@ const Jobs = () => {
           <div>
             {jobs.map((job) => (
               <div key={job.id} className="g-0">
-                <div
-                  className="rounded-6 p-lg-3 p-2 card"
+                <div  className="rounded-6 p-lg-3 p-2 shadow-lg"
                   style={{ marginBottom: "20px", padding: "10px" }}
                 >
                   <div className="row g-0">
                     <div className="col-6 text-start">
                       <small>
-                        <strong>Company : </strong> {job.company.display_name}
+                        Company :  {job.company.display_name}
                       </small>
                     </div>
                     <div className="col-6 text-end">
                       <small>
-                        <strong>Category : </strong> {job.category.label}
+                        Category : {job.category.label}
                       </small>
                     </div>
                   </div>
                   <hr />
-                  <h4 className="text-warning">{job.title}</h4>
-                  <small>
-                    <strong>Salary : </strong> {job.salary_min} -{" "}
-                    {job.salary_max}
-                  </small>
-                  <small>
-                    <strong>Contract : </strong> {job.contract_type}
-                  </small>
-                  <small>
-                    <strong>Experience : </strong> {job.experience}
-                  </small>
-
+                  <h4>{job.title}</h4>
+                  <small>  Salary :  {job.salary_min} - {job.salary_max} </small>
+                  <br/>
+                  <small> Contract : {job.contract_type} </small>
+                  <br/>
+                  <small> Experience : {job.experience} </small>
+                  <br/>
                   <small
                     dangerouslySetInnerHTML={{ __html: job.description }}
                   />

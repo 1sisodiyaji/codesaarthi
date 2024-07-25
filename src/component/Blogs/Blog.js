@@ -129,7 +129,7 @@ const Blog = () => {
         <meta property="og:type" content="Education-Website" />
         <link rel="icon" type="image/png" href={blog.image} sizes="32x32" />
       </Helmet>
-      <div className="container-fluid design py-4 " style={{ minHeight: "100vh" }}>
+      <div className="container design py-4 " style={{ minHeight: "100vh" }}>
         <div className="row">
           <div className="col-lg-8 col-12">
           <div className=" shadow-6">
@@ -177,7 +177,7 @@ const Blog = () => {
           </div>
          
                 {nextblog.map((blog) => (
-                  <div className="border rounded-6 mb-2" key={blog._id}>
+                  <div className="border rounded-6 mb-2 shadow-lg" key={blog._id}>
                     <div className="row g-0 p-2">
                       <div className="col-3 d-flex justify-content-center align-items-center">
 
@@ -190,7 +190,7 @@ const Blog = () => {
                       </div>
                       <div className="col-9">
                         <div className="card-body">
-                          <Link to = {`/blog/${blog._id}`}> <small>{blog.title}</small></Link>
+                          <Link to = {`/blog/${blog._id}`} className="iconColor" > <small>{blog.title}</small></Link>
 
                         </div>
                       </div>

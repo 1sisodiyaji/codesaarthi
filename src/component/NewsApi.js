@@ -170,19 +170,19 @@ const NewsApi = () => {
       <div>
         {Array.isArray(currentBatch) && currentBatch.length > 0 ? (
           currentBatch.map((article, index) => (
-            <div key={index} className='card p-2 my-2' style={{ backgroundColor: '#262626', border: '1px solid #1E1E1E' }}>
-              <Link to={article.url} target='_blank'>
-                <h6 className='text-capitalize text-warning'>{article.title}</h6>
+            <div key={index} className='p-2 my-2 shadow-lg rounded-4'>
+              <Link to={`/news/${article._id}`}>
+                <h5 className='text-capitalize iconColor'>{article.title}</h5>
               </Link>
               <div className="row">
                 <div className="col-6 text-start">
-                  <small className='text-muted'>By <span className='text-decoration-underline'>{article.author}</span></small>
+                  <small className='text-muted'>Author :-  <span className='text-decoration-underline'>{article.author}</span></small>
                 </div>
                 <div className="col-6 text-end">
-                  
+                  <small>Posted By : - {article.source.name}</small>
                 </div>
               </div>
-              <small className='text-light'>{article.description}</small>
+              <small>{article.description}</small>
               <div 
                 className=' text-decoration-underline  text-start text-capitalize' 
                 style={{ cursor: 'pointer' }} 
@@ -191,23 +191,23 @@ const NewsApi = () => {
                 {visibleContent[index] ? 'Read Less' : 'Read More'}
               </div>
               {visibleContent[index] && (
-                <div className='text-light'>
+                <div>
                   <small>{article.content}</small>
                 </div>
               )}
               <div className='text-center'>
-                <img src={article.urlToImage ? article.urlToImage : 'https://codesaarthi.com/img/logo1.jpg'} className='img-fluid' alt={article.title}  title = {article.title} loading='lazy'/>
+                <img src={article.urlToImage ? article.urlToImage : 'https://codesaarthi.com/img/logo1.jpg'} className='img-fluid imageHeight' alt={article.title}  title = {article.title} loading='lazy'/>
               </div>
 
               
               <div className="row my-3">
-                <div className="col-6 text-light d-flex">
+                <div className="col-6  d-flex">
                   <div onClick={() => toggleShareOptions(index)} style={{ cursor: 'pointer' }}>
                     <i className="fi fi-sr-share px-3 heading1 text-success"></i>
                   </div>
                 </div>
-                <div className="col-6 text-end text-light pe-2">
-                  <small className='text-secondary'>{formatTime(article.publishedAt)} . {formatDate(article.publishedAt)}</small>
+                <div className="col-6 text-end pe-2">
+                  <small>{formatTime(article.publishedAt)} . {formatDate(article.publishedAt)}</small>
                 </div>
               </div>
               {showShareOptions[index] && (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { Link } from 'react-router-dom';
 import "../App.css";
 import { Helmet } from "react-helmet";
@@ -6,11 +6,19 @@ import NewsApi from "../component/NewsApi";
 import Profile from "./Profile/Profile";
 import Jobs from "../component/Jobs";
 import Blogs from "../component/Blogs";
+import GetIdFromToken from "../config/getIdfromToken";
 
-const Home = () => {
-  const token = sessionStorage.getItem("token");
-
+const Home = () => { 
+  const [id, setId] = useState(null); 
   const [content, setContent] = useState('news');
+
+  useEffect(() => {
+    async function fetchId() {
+      const id = await GetIdFromToken();
+      setId(id);
+    }
+    fetchId();
+  }, []);
 
   const renderContent = () => {
     switch (content) {
@@ -68,7 +76,7 @@ const Home = () => {
         className="container-fluid design w-100"
         style={{ minHeight: '100vh' }}
       >
-        {token ? (
+        {id ? (
           <>
             <div className="container-fluid g-0">
               <div className="row g-6">

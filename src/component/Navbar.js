@@ -36,7 +36,7 @@ export const Navbar = () => {
   }, [location.pathname]);
  
   useEffect(() => {
-    const token = sessionStorage.getItem("token"); 
+    const token = Cookies.get('token'); 
     const fetchUserData = async () => {
       if (token) {
         try {
@@ -51,6 +51,10 @@ export const Navbar = () => {
           );
           if (response.data.status === "success") {
             setUser(response.data.user); 
+            const isAdmin = response.data.user.isAdmin;
+            if (isAdmin) {
+              setAdmin(true); 
+            }
           }  
         } catch (error) {
           console.error("Error fetching user information:", error);
@@ -58,22 +62,6 @@ export const Navbar = () => {
       }
     };
 
-    const GetAdminDetails = async (req, res) => {
-      const response = await axios.post(
-        `${config.BASE_URL}/Admin/user`,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      if (response.status === 200) {
-        setAdmin(true);
-      }
-    };
-
-    GetAdminDetails(); 
     fetchUserData();
   },[]);
 
@@ -131,7 +119,7 @@ useEffect(() => {
             type="button"
             onClick={toggleSidebar}
           >
-            <i className="fi fi-br-bars-staggered "></i>
+            <i className="fi fi-br-bars-staggered iconColor"></i>
           </button>
 
           </div>

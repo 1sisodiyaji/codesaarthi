@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useLocation, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import config from "../config/config";
-
 import SignUp from "../pages/Auth/SignUp";
 import Login from "../pages/Auth/Login";
 import RecoverPassword from "../pages/Auth/RecoverPassword";
@@ -37,10 +36,11 @@ import ProjectDetails from "../pages/Projects/ProjectDetails";
 import SingleDetailingProject from "../pages/Projects/SingleDetailingProject";
 import Protected from "../config/Protected";
 import AdminProtected from "../config/AdminProtected";
+import SingleNews from "../component/SingleNews";
 
 const Routess = () => {
   const [shouldScrollToTop, setShouldScrollToTop] = useState(false);
-  const [admin, setAdmin] = useState(null);
+  const [admin, setAdmin] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -71,34 +71,16 @@ const Routess = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const token = sessionStorage.getItem("token");
-    if (token) {
-      const getAdminDetails = async () => {
-        try {
-          const response = await axios.post(
-            `${config.BASE_URL}/Admin/user`,
-            {},
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          );
-          if (response.status === 200) {
-            setAdmin(true);
-          } else {
-            setAdmin(false);
-          }
-        } catch (error) {
-          console.error("Error fetching admin details:", error);
-          setAdmin(false);
-        }
-      };
-      getAdminDetails();
-    } else {
-      setAdmin(false);
+
+  async function adminChecker () {
+    const isAdmin = AdminProtected();
+    if(isAdmin){
+      console.log(isAdmin);
+      setAdmin(true);
     }
+  }
+  useEffect(() => {
+  adminChecker();
   }, []);
 
   return (
@@ -127,16 +109,17 @@ const Routess = () => {
         <Route path="/add-blog" element={<Protected Component={BlogForm} />} />
         <Route path="/edit-blog/:id" element={<Protected Component={UpdateBlogs} />} />
         <Route path="/news" element={<NewsApi />} />
+        <Route path="/news/:id" element={<SingleNews />} />
         <Route path="/jobs" element={<Jobs />} />
-        {admin !== null && admin &&(
-          <>
+
+         
             <Route path="/Admin" element={<AdminProtected Component={Admin} />} />
             <Route path="/Admin/create-course" element={<AdminProtected Component={CreateCourse} />} />
             <Route path="/Admin/update/:title" element={<AdminProtected Component={UpdateCourse} />} />
             <Route path="/Admin/create-Roadmap" element={<AdminProtected Component={CreateRoadmap} />} />
             <Route path="/Admin/updateRoadmap/:id" element={<AdminProtected Component={UpdateRoadmap} />} />
-          </>
-        )}
+          
+
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
       <Footer onFooterClick={handleFooterClick} />

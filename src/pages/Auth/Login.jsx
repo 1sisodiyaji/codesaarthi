@@ -54,8 +54,7 @@ const Login = () => {
           const response = await axios.post(`${config.BASE_URL}/api/signin`,formDataEncoded); 
           console.log(response); 
           if (response.data.status === "success") {
-            toast.success("Login Successfully!", { theme: "dark" });
-            sessionStorage.setItem("token", response.data.token);
+            toast.success("Login Successfully!", { theme: "dark" }); 
             Cookies.set("token", response.data.token, { expires: 30 });
             setLoading(false);
             window.location.href = "/" ;
@@ -97,8 +96,7 @@ const Login = () => {
           const saveUserDataResponse = await axios.post(
             `${config.BASE_URL}/api/saveuserData`,formDataEncoded);
             
-        if (saveUserDataResponse.data.status === "success") {
-          sessionStorage.setItem("token", saveUserDataResponse.data.token);
+        if (saveUserDataResponse.data.status === "success") { 
           Cookies.set("token", saveUserDataResponse.data.token, { expires: 30 });
           setLoading(false);
           window.location.href = "/" ;
