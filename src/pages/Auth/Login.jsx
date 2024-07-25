@@ -152,6 +152,7 @@ const Login = () => {
       <div
         className="container-fluid m-0 p-0 g-0 d-flex justify-content-center align-items-center position-relative design"
         style={{  minHeight: "100vh"}} >
+        <div className="row w-100 g-0">
         <div className="col-lg-5 col-12 d-flex justify-content-center align-items-center">
           <div
             className="container-fluid  m-lg-0 p-lg-0"
@@ -159,7 +160,7 @@ const Login = () => {
           >
             <form>
               <div className=" text-center">
-                <img src="../img/logo.png" width={95} alt="" />
+                <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721941402/logo_dnkgj9.jpg" width={95} alt=""  style={{borderRadius: '50%'}}/>
                 <h3 className="pt-3" style={{ color: "#703BF7" }}>
                   {" "}
                   Login
@@ -270,6 +271,7 @@ const Login = () => {
                       className="btn  bg-light w-100 "
                       onClick={login}
                     >
+                      
                       <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720990440/search_1_cw9o1p.png" height={26} alt="" />
                       <span className="text-capitalize ms-2 ">
                         Sign In With Google
@@ -292,13 +294,14 @@ const Login = () => {
 
         <div className=" col-lg-7 d-lg-block d-none d-flex justify-content-center align-items-center">
           
-          <img
-            src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720990074/login1_h8i72j.png"
+          <img 
+            src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721941459/test_deyelf.jpg"  
             className="img-fluid w-100"
             alt="login page"
             loading="lazy"
             title="login image"
           />
+        </div>
         </div>
       </div>
     </>

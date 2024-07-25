@@ -266,7 +266,7 @@ const Admin = () => {
                 <div className=" p-3 card">
                   <div className=" d-flex justify-content-between align-items-center ">
                     <h3>Total Number of Users</h3>
-                    <h3 className="px-4 py-2 border bg-black text-success rounded-6"><i class="fi fi-rr-circle-user"></i> {totalUser}</h3>
+                    <h3 className="px-4 py-2 border bg-black text-success rounded-6"><i className="fi fi-rr-circle-user"></i> {totalUser}</h3>
                   </div>
                   <div className="w-100">
                     <CanvasJSChart options={userChartOptions} />
@@ -277,7 +277,7 @@ const Admin = () => {
                 <div className="card p-3">
                   <div className="d-flex justify-content-between align-items-center">
                     <h3>Total Number of Feedbacks </h3>
-                    <h3 className="py-2 px-4 border bg-black text-warning rounded-6"> <i class="fi fi-sr-feedback pe-2"></i>{feedback}</h3>
+                    <h3 className="py-2 px-4 border bg-black text-warning rounded-6"> <i className="fi fi-sr-feedback pe-2"></i>{feedback}</h3>
                   </div>
                   <CanvasJSChart options={feedbackChartOptions} />
                 </div>

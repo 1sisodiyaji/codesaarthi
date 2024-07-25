@@ -284,7 +284,10 @@ const SignUp = () => {
               >
                 <form onSubmit={handleSubmit}>
                   <div className="text-center">
-                    <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720990203/logo_zdeshk.png" width={95} alt="Logo" />
+                    <img 
+                     src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721941402/logo_dnkgj9.jpg"
+                     style={{borderRadius: '50%'}}
+                     width={95} alt="Logo" />
                     <h3 className="pt-3">
                       Create Account
                     </h3>
@@ -434,8 +437,8 @@ const SignUp = () => {
               </div>
             </div>
             <div className="col-lg-7 d-lg-block d-none d-flex justify-content-center align-items-center">
-              <img
-                src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720990507/login4_inj0uy.png"
+              <img 
+                src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721941368/test2_dspiw3.jpg"
                 className="img-fluid w-100"
                 alt="Login Page"
               />
