@@ -113,10 +113,7 @@ const Profile = () => {
     const fetchBlogs = async () => {
       try {
         const id = user._id;
-        if (!id) {
-          toast.warn("Your have not posted any blog", { theme: "dark" });
-          return;
-        }
+        
         const response = await axios.post(
           `${config.BASE_URL}/article/getbyidAuthor/${id}`
         );

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import config from "../config/config";
 import SignUp from "../pages/Auth/SignUp";
 import Login from "../pages/Auth/Login";
 import RecoverPassword from "../pages/Auth/RecoverPassword";
@@ -40,7 +38,6 @@ import SingleNews from "../component/SingleNews";
 
 const Routess = () => {
   const [shouldScrollToTop, setShouldScrollToTop] = useState(false);
-  const [admin, setAdmin] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -69,18 +66,6 @@ const Routess = () => {
       window.removeEventListener("online", checkInternetConnection);
       window.removeEventListener("offline", checkInternetConnection);
     };
-  }, []);
-
-
-  async function adminChecker () {
-    const isAdmin = AdminProtected();
-    if(isAdmin){
-      console.log(isAdmin);
-      setAdmin(true);
-    }
-  }
-  useEffect(() => {
-  adminChecker();
   }, []);
 
   return (
@@ -112,13 +97,13 @@ const Routess = () => {
         <Route path="/news/:id" element={<SingleNews />} />
         <Route path="/jobs" element={<Jobs />} />
 
-         
-            <Route path="/Admin" element={<AdminProtected Component={Admin} />} />
-            <Route path="/Admin/create-course" element={<AdminProtected Component={CreateCourse} />} />
-            <Route path="/Admin/update/:title" element={<AdminProtected Component={UpdateCourse} />} />
-            <Route path="/Admin/create-Roadmap" element={<AdminProtected Component={CreateRoadmap} />} />
-            <Route path="/Admin/updateRoadmap/:id" element={<AdminProtected Component={UpdateRoadmap} />} />
-          
+
+        <Route path="/Admin" element={<AdminProtected Component={Admin} />} />
+        <Route path="/Admin/create-course" element={<AdminProtected Component={CreateCourse} />} />
+        <Route path="/Admin/update/:title" element={<AdminProtected Component={UpdateCourse} />} />
+        <Route path="/Admin/create-Roadmap" element={<AdminProtected Component={CreateRoadmap} />} />
+        <Route path="/Admin/updateRoadmap/:id" element={<AdminProtected Component={UpdateRoadmap} />} />
+
 
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
