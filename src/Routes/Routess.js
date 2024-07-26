@@ -35,6 +35,9 @@ import SingleDetailingProject from "../pages/Projects/SingleDetailingProject";
 import Protected from "../config/Protected";
 import AdminProtected from "../config/AdminProtected";
 import SingleNews from "../component/SingleNews";
+import QuestionList from "../component/Questions/QuestionList";
+import QuestionDetail from "../component/Questions/QuestionDetail";
+import CreateQuestion from "../component/Questions/CreateQuestion";
 
 const Routess = () => {
   const [shouldScrollToTop, setShouldScrollToTop] = useState(false);
@@ -96,6 +99,9 @@ const Routess = () => {
         <Route path="/news" element={<NewsApi />} />
         <Route path="/news/:id" element={<SingleNews />} />
         <Route path="/jobs" element={<Jobs />} />
+        <Route path="/Questions" element={<QuestionList />} />
+        <Route path="/Questions/:id" element={<QuestionDetail />} />
+        <Route path="/Ask-Questions" element={<CreateQuestion />} />
 
 
         <Route path="/Admin" element={<AdminProtected Component={Admin} />} />

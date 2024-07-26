@@ -101,7 +101,7 @@ useEffect(() => {
         <div className="container-fluid">
           <Link className="navbar-brand text-center text-decoration-none" to="/">
             <img
-              src="../img/logo.png"
+              src="../img/logo.jpg"
               height="25"
               title="codesaarthi"
               alt="Codesaarthi  Logo"
@@ -267,14 +267,9 @@ useEffect(() => {
       {/* <!-- Navbar For big screen--> */}
       <nav
          className= "navbar navbar-expand-lg sticky sticky-top p-0 d-lg-block d-md-block d-none  shadow-6"
-        style={{ zIndex: "100000!important" }}
       >
-        <div
-          className="container-fluid "
-          style={{
-            zIndex: "1000!important"
-          }}
-        ><Link
+        <div  className="container-fluid " >
+          <Link
         className="navbar-brand text-center ms-4"
         to="/" 
       >
@@ -366,8 +361,7 @@ useEffect(() => {
               <>
                 <div className="d-flex align-items-center">
                   <div
-                    className="nav-item "
-                    style={{ zIndex: "9999" }}
+                    className="nav-item " 
                   >
                     <button className="btn btn-floating">
                       {user && user.image ? (

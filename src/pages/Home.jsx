@@ -7,6 +7,7 @@ import Profile from "./Profile/Profile";
 import Jobs from "../component/Jobs";
 import Blogs from "../component/Blogs";
 import GetIdFromToken from "../config/getIdfromToken";
+import Question from "../component/Questions/Question";
 
 const Home = () => { 
   const [id, setId] = useState(null); 
@@ -30,7 +31,8 @@ const Home = () => {
         return <Blogs />;
       case 'news':
         return <NewsApi/>;
-        
+      case 'Questions':
+        return <Question/>;  
       default:
         return <Blogs />;
     }
@@ -98,6 +100,7 @@ const Home = () => {
                   <div className="card   text-start sticky-top" style={{ top: '70px' }}>
                     <div className="p-2">
                       <p onClick={() => setContent('news')} style={{ cursor: 'pointer' }}>News</p>
+                      <p onClick={() => setContent('Questions')} style={{ cursor: 'pointer' }}>Ask-Questions</p>
                       <p onClick={() => setContent('profile')} style={{ cursor: 'pointer' }}>My Account</p>
                     </div>
                   </div>

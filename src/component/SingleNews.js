@@ -170,10 +170,7 @@ const SingleNews = () => {
                   <div className="row g-0 p-2">
                     <div className="col-3 d-flex justify-content-center align-items-center">
                       <img
-                        src={
-                          news.urlToImage ||
-                          "https://codesaarthi.com/img/logo.png"
-                        }
+                        src={  news.urlToImage ? news.urlToImage :   "https://codesaarthi.com/img/logo.jpg"}
                         alt="Author"
                         style={{ width: "55px", height: "55px" }}
                         className="img-fluid rounded-circle"

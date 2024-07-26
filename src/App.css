@@ -65,13 +65,16 @@ body {
 /* Dark mode styles */
 body.dark-theme {
   width: 100%;
-  background-color: #1e1e1e !important;
+  background-color: #3c3a3a !important;
   color: white !important;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 
   .borderColor{
     border : 0.6px solid rgb(79, 73, 73) !important;
+  }
+  .backgroundColor{
+    background-color: #252121 !important;
   }
 
   .navbar{
