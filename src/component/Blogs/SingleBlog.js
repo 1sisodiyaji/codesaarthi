@@ -169,7 +169,7 @@ const Blog = () => {
           <div className=" shadow-6">
             <h4 className="p-1 text-decoration-underline">{blog.title}</h4>
             <div className="row my-1">
-              <div className="col-6"> <small className="ps-2">  Posted by: {blog.idAuthor ? blog.idAuthor.name : "Anonymous"} </small></div>
+              <div className="col-6"> <small className="ps-2">  Posted by: <Link to = {`/profile/${blog.idAuthor.username}`} className="text-decoration-underline iconColor" >  {blog.idAuthor ? blog.idAuthor.name : "Anonymous"}</Link> </small></div>
               <div className="col-6 text-end">
               <div className="dropdown me-2 ">
                     <button className="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">

@@ -18,6 +18,7 @@ const BlogList = () => {
         const response = await axios.post(
           `${config.BASE_URL}/article/getArticleData`
         );
+        console.log(response);
         setBlogs(response.data);
         setLoading(false);
       } catch (error) {
@@ -114,11 +115,11 @@ const BlogList = () => {
     <>
       <ToastContainer />
       {blogs.map((blog) => {
-        const questionUrl = `${window.location.origin}/blog/${blog._id}`;
+        const questionUrl = `${window.location.origin}/blog/${blog.slug}`;
         return (
           <div key={blog._id} className="  m-1 my-3 shadow-lg borderColor rounded-4">
             <Link to={`/blog/${blog.slug}`}> <h4 className=" iconColor ps-2 pt-2 heading">{blog.title}</h4> </Link>
-            <small className="ps-2">Posted by: {blog.idAuthor ? blog.name : "Anonymous"}</small>
+            <small className="ps-2">Posted by: <Link to = {`/profile/${blog.idAuthor.username}`} className="text-decoration-underline iconColor" >{blog.idAuthor ? blog.name : "Anonymous"}</Link></small>
             <img
               src={blog.image}
               alt={blog.title}

@@ -150,7 +150,6 @@ const Admin = () => {
   };
 
   const handleDeleteRoadmap = async (id) => {
-    console.log("enetered");
     try {
       setLoading(true);
       const response = await axios.delete(

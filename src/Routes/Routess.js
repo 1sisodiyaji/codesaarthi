@@ -40,6 +40,8 @@ import QuestionList from "../component/Questions/QuestionList";
 import QuestionDetail from "../component/Questions/QuestionDetail";
 import CreateQuestion from "../component/Questions/CreateQuestion";
 import NewGig from "../Admin/CreateGig";
+import ProfileSingle from "../pages/Profile/ProfileSingle";
+import Gigs from "../pages/Home/Gigs";
 
 const Routess = () => {
   const [shouldScrollToTop, setShouldScrollToTop] = useState(false);
@@ -85,6 +87,7 @@ const Routess = () => {
         <Route path="/privacy_policy" element={<PrivacyPolicy />} />
         <Route path="/terms_conditions" element={<TermsCondition />} />
         <Route path="/cookies" element={<Cookie />} />
+        <Route path="/profile/:username" element={<ProfileSingle />} />
         <Route path="/profile" element={<Protected Component={Profile} />} />
         <Route path="/theory" element={<Theory />} />
         <Route path="/theory/:title" element={<Content />} />
@@ -104,6 +107,7 @@ const Routess = () => {
         <Route path="/Questions" element={<QuestionList />} />
         <Route path="/Questions/:slug" element={<QuestionDetail />} />
         <Route path="/Ask-Questions" element={<CreateQuestion />} />
+        <Route path="/Gigs" element={<Gigs/>} />
 
 
         <Route path="/Admin" element={<AdminProtected Component={Admin} />} />

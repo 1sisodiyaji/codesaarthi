@@ -12,6 +12,7 @@ function QuestionList() {
     const fetchQuestions = async () => {
       try {
         const response = await axios.get(`${config.BASE_URL}/article/questions`);
+        console.log(response);
         setQuestions(response.data);
       } catch (error) {
         console.error('Error fetching questions:', error);
@@ -55,7 +56,7 @@ function QuestionList() {
       <ToastContainer />
       <div>
         {questions.map((question) => {
-          const questionUrl = `${window.location.origin}/Questions/${question._id}`;
+          const questionUrl = `${window.location.origin}/Questions/${question.slug}`;
           return (
             <div key={question._id} className='shadow-lg borderColor rounded-4 p-3 m-1 my-2'>
               <div className="row">
@@ -72,7 +73,7 @@ function QuestionList() {
               <p>{question.body}</p>
               <div className="row">
                 <div className="col-6">
-                  <Link to={`/profile/${question.user._id}`} className='iconColor'>
+                  <Link to={`/profile/${question.user.username}`} className='iconColor'>
                     Asked By: <span className='text-decoration-underline'>{question.user.name}</span>
                   </Link>
                 </div>

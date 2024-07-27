@@ -88,9 +88,9 @@ const Home = () => {
                 <div className="col-lg-3 col-0 d-lg-block d-none pt-2">
                   <div className="card   text-end sticky-top" style={{ top: '70px' }}>
                     <div className="p-2">
-                      <p onClick={() => setContent('jobs')} style={{ cursor: 'pointer' }}> Jobs <i class="fi fi-sr-briefcase"></i></p>
-                      <p onClick={() => setContent('blogs')} style={{ cursor: 'pointer' }}> Blogs <i class="fi fi-sr-blog-text"></i> </p>
-                      <p onClick={() => setContent('Gigs')} style={{ cursor: 'pointer' }}> Gigs <i class="fi fi-sr-user-headset"></i> </p>
+                      <p onClick={() => setContent('jobs')} style={{ cursor: 'pointer' }}> Jobs <i className="fi fi-sr-briefcase"></i></p>
+                      <p onClick={() => setContent('blogs')} style={{ cursor: 'pointer' }}> Blogs <i className="fi fi-sr-blog-text"></i> </p>
+                      <p onClick={() => setContent('Gigs')} style={{ cursor: 'pointer' }}> Gigs <i className="fi fi-sr-user-headset"></i> </p>
 
                     </div>
                   </div>
@@ -104,8 +104,8 @@ const Home = () => {
                   <div className="card   text-start sticky-top" style={{ top: '70px' }}>
                     <div className="p-2">
                       <p onClick={() => setContent('news')} style={{ cursor: 'pointer' }}><i className="fi fi-rr-newspaper-open"></i> News </p>
-                      <p onClick={() => setContent('Questions')} style={{ cursor: 'pointer' }}> <i class="fi fi-sr-interrogation"></i> Ask-Questions</p>
-                      <p onClick={() => setContent('profile')} style={{ cursor: 'pointer' }}> <i class="fi fi-br-portrait"></i> My Account</p>
+                      <p onClick={() => setContent('Questions')} style={{ cursor: 'pointer' }}> <i className="fi fi-sr-interrogation"></i> Ask-Questions</p>
+                      <p onClick={() => setContent('profile')} style={{ cursor: 'pointer' }}> <i className="fi fi-br-portrait"></i> My Account</p>
                     </div>
                   </div>
                 </div>

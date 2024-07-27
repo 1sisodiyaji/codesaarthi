@@ -29,7 +29,7 @@ const gigs = [
 
 const Gigs = () => {
   return (
-    <div className="container" style={{minHeight: '100vh'}}>
+    <div className="container design g-0 py-3" style={{minHeight: '100vh'}}>
       <h4 className='my-2 '>Our Gigs</h4>
       <div className="row d-flex justify-content-center">
         {gigs.map((gig, index) => (

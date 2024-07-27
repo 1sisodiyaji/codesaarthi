@@ -239,6 +239,30 @@ useEffect(() => {
               </Link>
             </li>
 
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${
+                  isNavLinkActive("/Gigs") ? "selected" : ""
+                }`} 
+                to="/Gigs"
+              >
+               <i className="fi fi-sr-user-headset pe-2"></i>
+                Gigs
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${
+                  isNavLinkActive("/Questions") ? "selected" : ""
+                }`} 
+                to="/Questions"
+              >
+               <i className="fi fi-sr-interrogation pe-2"></i>
+                Ask-freely
+              </Link>
+            </li>
+
             {admin && (
                <Link
                className={`nav-link ${
@@ -246,7 +270,7 @@ useEffect(() => {
                }`} 
                to="/Admin"
              >
-               <i className="fi fi-ss-admin-alt"></i>
+               <i className="fi fi-ss-admin-alt pe-2"></i>
                Admin
              </Link>
             )}

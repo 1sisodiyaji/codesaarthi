@@ -162,7 +162,7 @@ function QuestionDetail() {
                     </div>
                   </div> 
                   <p className='p-2'>{question.body}</p>
-                  <p className='p-2'>Asked By: <Link to={`/profile/${ question.user && question.user._id}`} className='iconColor text-decoration-underline'>{question.user && question.user.name}</Link></p>
+                  <p className='p-2'>Asked By: <Link to={`/profile/${ question.user && question.user.username}`} className='iconColor text-decoration-underline'>{question.user && question.user.name}</Link></p>
                   <hr />
                   <div className="row p-1">
                     <div className="col-6 d-flex">

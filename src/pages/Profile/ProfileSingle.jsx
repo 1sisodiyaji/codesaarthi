@@ -1,18 +1,17 @@
-import React, { useState, useEffect, useMemo } from "react";
-import axios from "axios";
+import React, { useEffect, useState , useMemo } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';  
 import { Helmet } from "react-helmet";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import config from "../../config/config";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import Graph from "../../component/Graph";
 
-const Profile = () => {
-  const [user, setUser] = useState(null);
-  const [editing, setEditing] = useState(false);
-  const navigate = useNavigate();
-  const [image, setImage] = useState(null);
+const ProfileSingle = () => {
+  const { username } = useParams();  
+  const [user, setUser] = useState(null); 
   const [question, setQuestion] = useState([]);
   const [answer, setAnswer] = useState([]);
   const [blogs, setBlogs] = useState([]);
@@ -20,23 +19,7 @@ const Profile = () => {
   const [articleData, setArticleData] = useState([]);
   const [questionData, setQuestionData] = useState([]);
   const [answerData, setAnswerData] = useState([]);
-  const [blogsShow, setBlogsShow] = useState(false);
-  const [questionShow, setQuestionShow] = useState(false);
-  const [answershow, setAnswershow] = useState(false);
-  const [imagePreview, setImagePreview] = useState(
-    user
-      ? user.image
-      : "https://res.cloudinary.com/ducw7orvn/image/upload/v1721024136/codesaarthi/article-1721024134471.png"
-  );
-  const [formData, setFormData] = useState({
-    name: user?.name || "",
-    institute: user?.institute || "",
-    location: user?.location || "",
-    dateOfBirth: user?.dateOfBirth || "",
-    contact: user?.contact || "",
-    socialMediaLinks: user?.socialMediaLinks || "",
-  });
-
+ 
   const months = useMemo(
     () => [
       "Jan",
@@ -141,92 +124,34 @@ const Profile = () => {
     ],
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    setImage(file);
-    setImagePreview(URL.createObjectURL(file));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const id = user._id;
-    try {
-      setLoading(true);
-      const data = new FormData();
-      if (image) data.append("image", image);
-      data.append("_id", id);
-      data.append("name", formData.name);
-      data.append("institute", formData.institute);
-      data.append("location", formData.location);
-      data.append("dateOfBirth", formData.dateOfBirth);
-      data.append("contact", formData.contact);
-      data.append("socialMediaLinks", formData.socialMediaLinks);
-      const response = await axios.post(
-        `${config.BASE_URL}/api/updateProfile`,
-        data,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-
-      if (response.status === 200) {
-        toast.success("Profile updated successfully!", { theme: "dark" });
-        setEditing(false);
-        setLoading(false);
-        navigate("/profile");
-      } else {
-        toast.error("Profile update failed!", { theme: "dark" });
-        console.log("Failed to update profile:", response);
-        setLoading(false);
-      }
-    } catch (error) {
-      console.error("Error updating profile:", error);
-      toast.error("Error updating profile!", { theme: "dark" });
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    const token = Cookies.get("token");
+    
 
-    const fetchUserData = async () => {
-      try {
-        const response = await axios.post(
-          `${config.BASE_URL}/api/user`,
-          {},
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
+    const fetchUserByName = async () => {
+        setLoading(true);
+        try {
+          const response = await axios.get(`${config.BASE_URL}/api/userbyName/${username}`);
+       
+          if (response.status === 200) {
+            setUser(response.data); 
+            setLoading(false);
+            return response.data._id;
+          } else {
+            setLoading(false);
+            toast.error("Failed to fetch user data", { theme: "dark" });
           }
-        );
-
-        if (response.data.status === "success") {
-          setUser(response.data.user);
-          return response.data.user._id; // Return the user ID for further use
-        } else {
-          toast.error("Failed to fetch user information!", { theme: "dark" });
-          return null;
+        } catch (error) {
+            setLoading(false);
+          toast.error("Error fetching user data", { theme: "dark" });
+          console.error("Error fetching user data:", error);
         }
-      } catch (error) {
-        toast.error("Error fetching user information!", { theme: "dark" });
-        console.error("Error fetching user information:", error);
-        return null;
-      }
-    };
+      };
+   
 
     const fetchData = async () => {
-      const userId = await fetchUserData(); // Wait for user data to be fetched
+      const userId = await fetchUserByName();
 
-      if (userId) {
-        // Fetch other data only if userId is successfully fetched
+      if (userId) { 
         try {
           await Promise.all([
             fetchBlogs(userId),
@@ -261,10 +186,11 @@ const Profile = () => {
     };
 
     const fetchQuestions = async (userId) => {
-      try {
-        const response = await axios.post(
+      try { 
+        const response = await axios.get(
           `${config.BASE_URL}/article/getQuestionsByidAuthor/${userId}`
         );
+       console.log(response);
         if (response.data) {
           toast.success("Questions asked by you", { theme: "dark" });
           setQuestion(response.data);
@@ -329,9 +255,9 @@ const Profile = () => {
       }
     };
 
-    fetchUserData();
+    fetchUserByName();
     fetchData();
-  }, []);
+  }, [username]);
 
   if (loading) {
     return (
@@ -370,57 +296,6 @@ const Profile = () => {
     );
   }
 
-  const logout = async () => {
-    try {
-      const response = await axios.post(`${config.BASE_URL}/api/logout`);
-
-      if (response.status === 200) {
-        Cookies.remove("token");
-        window.location.href = "/";
-      } else {
-        console.log("Logout failed");
-      }
-    } catch (error) {
-      console.error("Logout error:", error);
-    }
-  };
-
-  const editingMode = () => {
-    setEditing(true);
-  };
-
-  const deleteArticle = async (id) => {
-    try {
-      const response = await axios.delete(
-        `${config.BASE_URL}/article/delete/${id}`
-      );
-      if (response.status === 200) {
-        toast.success("Article deleted successfully!", { theme: "dark" });
-        setBlogs(blogs.filter((blog) => blog._id !== id));
-      } else {
-        toast.error("Failed to delete article!", { theme: "dark" });
-      }
-    } catch (error) {
-      console.error("Error deleting article:", error);
-    }
-  };
-
-  const deleteUser = async (id) => {
-    try {
-      const response = await axios.delete(
-        `${config.BASE_URL}/api/delete/${id}`
-      );
-      if (response.status === 200) {
-        toast.success("User deleted successfully!", { theme: "dark" });
-        navigate("/login");
-      } else {
-        toast.error("Failed to delete user!", { theme: "dark" });
-      }
-    } catch (error) {
-      console.error("Error deleting user:", error);
-    }
-  };
-
   const handleCopy = (url) => {
     navigator.clipboard
       .writeText(url)
@@ -439,7 +314,6 @@ const Profile = () => {
     )}`;
     window.open(linkedinUrl, "_blank");
   };
-
   const upvote = async (id) => {
     const token = Cookies.get("token");
     try {
@@ -458,136 +332,41 @@ const Profile = () => {
       console.error("Error upvoting the question:", error);
     }
   };
-  const handleshowBlogs = () => {
-    setBlogsShow(!blogsShow);
-  }
-  const handleShowQuestions = () => {
-    setQuestionShow(!questionShow);
-  }
+ 
 
-  const handleAnswerShow = () => {
-    setAnswershow(!answershow);
-  }
   return (
-    <>
+   <>
+   
       <ToastContainer />
-      <Helmet>
-        <meta
-          name="keywords"
-          content="Profile , Codesaarthi Account , Account authentication , Profile searcher in codesaarthi"
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://codesaarthi.com/profile" />
-        <title>Profile | Codesaarthi</title>
+      {user && ( <Helmet>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="CodeSaarthi" content="Codesaarthi" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href={`https://codesaarthi.com/profile/${user.username}`} />
+                <meta name="description" content="Be a Apart Of Codesaarthi and Join our mission to provide quality coding education." />
+                <title>{user.name} | Codesaarthi</title>
+                <meta property="og:title" content={`${user.name} | Codesaarthi`} />
+                <meta property="og:description" content="Be a Apart Of Codesaarthi and Join  our mission to provide quality coding education." />
+                <meta property="og:image" content={user.image} />
+                <meta property="og:url" content={`https://codesaarthi.com/profile/${user.username}`} />
+                <meta property="og:type" content="Education-Website" />
+                <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
+      )}
+      
       <div className="container mt-4">
         {user && (
           <div className="row">
             <div className="col-md-4">
               <img
-                src={imagePreview}
+                src={user.image}
                 alt="Profile"
                 className="img-fluid rounded-circle"
                 style={{ width: "200px", height: "200px", objectFit: "cover" }}
               />
-              {editing && (
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageChange}
-                />
-              )}
+              
             </div>
             <div className="col-md-8">
-              {editing ? (
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-3">
-                    <label htmlFor="name" className="form-label">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="form-control"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="institute" className="form-label">
-                      Institute
-                    </label>
-                    <input
-                      type="text"
-                      id="institute"
-                      name="institute"
-                      className="form-control"
-                      value={formData.institute}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="location" className="form-label">
-                      Location
-                    </label>
-                    <input
-                      type="text"
-                      id="location"
-                      name="location"
-                      className="form-control"
-                      value={formData.location}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="dateOfBirth" className="form-label">
-                      Date of Birth
-                    </label>
-                    <input
-                      type="date"
-                      id="dateOfBirth"
-                      name="dateOfBirth"
-                      className="form-control"
-                      value={formData.dateOfBirth}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="contact" className="form-label">
-                      Contact
-                    </label>
-                    <input
-                      type="text"
-                      id="contact"
-                      name="contact"
-                      className="form-control"
-                      value={formData.contact}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="socialMediaLinks" className="form-label">
-                      Social Media Links
-                    </label>
-                    <input
-                      type="text"
-                      id="socialMediaLinks"
-                      name="socialMediaLinks"
-                      className="form-control"
-                      value={formData.socialMediaLinks}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                    disabled={loading}
-                  >
-                    {loading ? "Updating..." : "Update Profile"}
-                  </button>
-                </form>
-              ) : (
                 <div>
                   <h3>{user.name}</h3>
                   <p>
@@ -604,27 +383,8 @@ const Profile = () => {
                   </p>
                   <p>
                     <strong>Social Media Links:</strong> {user.socialMediaLinks}
-                  </p>
-                  <button
-                    className="btn rounded-8 mx-2 text-capitalize"
-                    onClick={editingMode}
-                  >
-                    Edit Profile <i className="fi fi-sr-pen-clip"></i>
-                  </button>
-                  <button
-                    className="btn rounded-8 mx-2 text-capitalize"
-                    onClick={() => deleteUser(user._id)}
-                  >
-                    Delete Account <i className="fi fi-sr-trash-xmark"></i>
-                  </button>
-                  <button
-                    className="btn rounded-8 mx-2 text-capitalize"
-                    onClick={logout}
-                  >
-                    Logout <i className="fi fi-br-sign-out-alt"></i>
-                  </button>
-                </div>
-              )}
+                  </p> 
+                </div> 
             </div>
           </div>
         )}
@@ -643,12 +403,9 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="row my-2">
-          <div className="col-11"> <h6>Blogs Posted By {user && user.name} <span class="badge badge-dark">{blogs.length}</span> </h6></div>
-          <div className="col-1"><i onClick={handleshowBlogs} class={`${blogsShow ? 'fi fi-sr-eye text-success bg-dark' : 'i fi-sr-eye-crossed text-light bg-primary' } px-2 py-1 rounded-4`} style={{cursor: 'pointer'}}></i></div>
-        </div>
-
-        {blogsShow && (
+         <h6>Blogs Posted By {user && user.name} <span className="badge badge-dark">{blogs.length}</span> </h6></div>
+         
+ 
           <div className="my-2">
             {blogs.length > 0 ? (
               <div className="row">
@@ -690,42 +447,19 @@ const Profile = () => {
                         </small>
                       </div>
                     </div>
-                    <div className="row">
-                      <div className="col-6 text-start">
-                        <Link
-                          to={`/edit-blog/${blog._id}`}
-                          className="text-light"
-                        >
-                          <button className="btn bg-warning text-capitalize ">
-                            Update <i className="fi fi-sr-pen-clip ps-2"></i>
-                          </button>
-                        </Link>
-                      </div>
-                      <div className="col-6 text-end">
-                        <div
-                          className="btn bg-danger text-capitalize"
-                          onClick={() => deleteArticle(blog._id)}
-                        >
-                          Delete <i className="fi fi-ss-trash-xmark ps-2"></i>
-                        </div>
-                      </div>
-                    </div>
+                    
                   </div>
                 ))}
               </div>
             ) : (
               <p>You have not posted any blogs.</p>
             )}
-          </div>
-        )}
+          </div> 
 
-        <div className="row my-2">
-          <div className="col-11"> <h6>Questions Asked By {user && user.name} <span class="badge badge-dark">{question.length}</span> </h6></div>
-          <div className="col-1"><i onClick={handleShowQuestions} class={`${questionShow ? 'fi fi-sr-eye text-success bg-dark' : 'i fi-sr-eye-crossed text-light bg-primary' } px-2 py-1 rounded-4`} style={{cursor: 'pointer'}}></i></div>
-        </div>
-        {questionShow && (
+          <h6>Questions Asked By {user && user.name} <span className="badge badge-dark">{question.length}</span> </h6>
+            
           <div className="mt-4">
-            <h4>Your Questions</h4>
+            <h4> Questions</h4>
             {question.length > 0 ? (
               <>
                 <div className="row">
@@ -847,17 +581,12 @@ const Profile = () => {
             ) : (
               <p>You have not asked any questions.</p>
             )}
-          </div>
-        )}
+          </div> 
 
-
-        <div className="row my-2">
-          <div className="col-11"> <h6>Answer Contributed By {user && user.name} <span class="badge badge-dark">{answer.length}</span> </h6></div>
-          <div className="col-1"> <i onClick={handleAnswerShow} class={`${answershow ? 'fi fi-sr-eye text-success bg-dark' : 'i fi-sr-eye-crossed text-light bg-primary' } px-2 py-1 rounded-4`} style={{cursor: 'pointer'}}></i></div>
-        </div>
-        {answershow && (
+ <h6>Answer Contributed By {user && user.name} <span className="badge badge-dark">{answer.length}</span> </h6>
+  
           <div className="mt-4">
-            <h4>Your Answers</h4>
+            <h4> Answers</h4>
             {answer.length > 0 ? (
               <>
                 <div className="row">
@@ -1007,10 +736,11 @@ const Profile = () => {
               <p>You have not answered any questions.</p>
             )}
           </div>
-        )}
-      </div>
-    </>
+  
+          </>
   );
 };
 
-export default Profile;
+export default ProfileSingle; 
+ 
+
