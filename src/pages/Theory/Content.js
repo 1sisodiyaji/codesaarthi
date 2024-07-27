@@ -189,7 +189,7 @@ const Content = () => {
           </button>
         </div>
         <div className="row g-0 border border-dark rounded-8">
-          <div  className="col-lg-3 col-0 p-lg-2 d-lg-block d-none"
+         {course &&  <div  className="col-lg-3 col-0 p-lg-2 d-lg-block d-none"
             style={{ borderRight: "1px solid #262626" }}
           >
             <div className="d-flex justify-content-center py-2">
@@ -235,6 +235,7 @@ const Content = () => {
                 </div>
               ))}
           </div>
+}
           {isSidebarOpen && (
             <div className="d-lg-none d-block">
               <div className="container-fluid g-0 d-lg-none d-block">

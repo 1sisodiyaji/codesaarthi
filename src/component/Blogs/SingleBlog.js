@@ -5,22 +5,22 @@ import { Link, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Helmet } from "react-helmet";
+import Cookies from 'js-cookie';
 
 const Blog = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const[ nextblog , setNextblog] = useState([]);
-
   useEffect(() => {
     const fetchBlog = async () => {
       setLoading(true);
       try {
         const response = await axios.post(
-          `${config.BASE_URL}/article/getbyid/${id}`
-        );
-        setBlog(response.data);
+          `${config.BASE_URL}/article/getbyslug/${slug}`
+        ); 
+        setBlog(response.data[0]);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching blog:", error);
@@ -51,7 +51,7 @@ const Blog = () => {
     }
     fetchBlogs()
     fetchBlog();
-  }, [id]);
+  }, [slug]);
 
   if (loading) {
     return (
@@ -77,7 +77,7 @@ const Blog = () => {
               <span className="placeholder col-8"></span>
             </p>
             <a href="/"
-              className="btn btn-secondary disabled placeholder col-6"
+              className="btn btn-secondary disabled placeholder col-12 text-capitalize"
               aria-disabled="true"
             > Getting Blogs For you</a>
           </div>
@@ -105,6 +105,40 @@ const Blog = () => {
       </div>
     );
   }
+
+  const upvoteBlogs = async (id) => {
+    const token = Cookies.get('token');
+    try {
+      const response = await axios.post(
+        `${config.BASE_URL}/article/article/votes/${id}`,
+        {},
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      setBlog((prevBlog) => ({
+        ...prevBlog,
+        votes: response.data.votes,
+      }));
+    } catch (error) {
+      console.error('Error upvoting the answer:', error);
+    }
+  };
+  const handleCopy = (url) => {
+    navigator.clipboard.writeText(url)
+      .then(() => toast.success("Link Copied Successfully"))
+      .catch(err => console.error('Failed to copy: ', err));
+  };
+
+  const handleShareWhatsApp = (url) => {
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const handleShareLinkedIn = (url) => {
+    const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+    window.open(linkedinUrl, '_blank');
+  };
+
+  const blogUrl = `${window.location.origin}/blog/${slug}`;
 
   return (
     <>
@@ -134,6 +168,21 @@ const Blog = () => {
           <div className="col-lg-8 col-12">
           <div className=" shadow-6">
             <h4 className="p-1 text-decoration-underline">{blog.title}</h4>
+            <div className="row my-1">
+              <div className="col-6"> <small className="ps-2">  Posted by: {blog.idAuthor ? blog.idAuthor.name : "Anonymous"} </small></div>
+              <div className="col-6 text-end">
+              <div className="dropdown me-2 ">
+                    <button className="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i className="fi fi-ss-share"></i>
+                    </button>
+                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <li><button className="dropdown-item" onClick={() => handleCopy(blogUrl)}>Copy Link</button></li>
+                      <li><button className="dropdown-item" onClick={() => handleShareWhatsApp(blogUrl)}>Share on WhatsApp</button></li>
+                      <li><button className="dropdown-item" onClick={() => handleShareLinkedIn(blogUrl)}>Share on LinkedIn</button></li>
+                    </ul>
+                  </div>
+               </div>
+            </div>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src={blog.image}
@@ -149,9 +198,9 @@ const Blog = () => {
             
             <div className="row p-2">
               <div className="col-6 text-start">
-                <small>
-                  Posted by: {blog.idAuthor ? blog.idAuthor.name : "Anonymous"}
-                </small>
+              <div onClick={() => upvoteBlogs(blog._id)}>
+                    <p className="btn btn-sm rounded-8 text-capitalize">  {blog.votes} <i className="fi fi-rs-social-network"></i> UpVote </p>
+                  </div>
               </div>
               <div className="col-6 text-end">
                 <small>
@@ -190,7 +239,7 @@ const Blog = () => {
                       </div>
                       <div className="col-9">
                         <div className="card-body">
-                          <Link to = {`/blog/${blog._id}`} className="iconColor" > <small>{blog.title}</small></Link>
+                          <Link to = {`/blog/${blog.slug}`} className="iconColor" > <small>{blog.title}</small></Link>
 
                         </div>
                       </div>

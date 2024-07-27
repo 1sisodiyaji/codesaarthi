@@ -1,13 +1,14 @@
 import React, { useState , useEffect } from "react";
 import { Link } from 'react-router-dom';
-import "../App.css";
+import "../../App.css";
 import { Helmet } from "react-helmet";
-import NewsApi from "../component/NewsApi";
-import Profile from "./Profile/Profile";
-import Jobs from "../component/Jobs";
-import Blogs from "../component/Blogs";
-import GetIdFromToken from "../config/getIdfromToken";
-import Question from "../component/Questions/Question";
+import NewsApi from "./NewsApi";
+import Profile from "../Profile/Profile";
+import Jobs from "./Jobs";
+import Blogs from "./Blogs";
+import GetIdFromToken from "../../config/getIdfromToken";
+import Question from "./Question";
+import Gigs from "./Gigs";
 
 const Home = () => { 
   const [id, setId] = useState(null); 
@@ -32,7 +33,9 @@ const Home = () => {
       case 'news':
         return <NewsApi/>;
       case 'Questions':
-        return <Question/>;  
+        return <Question/>; 
+      case 'Gigs':
+        return <Gigs/>; 
       default:
         return <Blogs />;
     }
@@ -85,8 +88,9 @@ const Home = () => {
                 <div className="col-lg-3 col-0 d-lg-block d-none pt-2">
                   <div className="card   text-end sticky-top" style={{ top: '70px' }}>
                     <div className="p-2">
-                      <p onClick={() => setContent('jobs')} style={{ cursor: 'pointer' }}>Jobs</p>
-                      <p onClick={() => setContent('blogs')} style={{ cursor: 'pointer' }}>Blogs</p>
+                      <p onClick={() => setContent('jobs')} style={{ cursor: 'pointer' }}> Jobs <i class="fi fi-sr-briefcase"></i></p>
+                      <p onClick={() => setContent('blogs')} style={{ cursor: 'pointer' }}> Blogs <i class="fi fi-sr-blog-text"></i> </p>
+                      <p onClick={() => setContent('Gigs')} style={{ cursor: 'pointer' }}> Gigs <i class="fi fi-sr-user-headset"></i> </p>
 
                     </div>
                   </div>
@@ -99,9 +103,9 @@ const Home = () => {
                 <div className="col-lg-3 col-0 d-lg-block d-none pt-2">
                   <div className="card   text-start sticky-top" style={{ top: '70px' }}>
                     <div className="p-2">
-                      <p onClick={() => setContent('news')} style={{ cursor: 'pointer' }}>News</p>
-                      <p onClick={() => setContent('Questions')} style={{ cursor: 'pointer' }}>Ask-Questions</p>
-                      <p onClick={() => setContent('profile')} style={{ cursor: 'pointer' }}>My Account</p>
+                      <p onClick={() => setContent('news')} style={{ cursor: 'pointer' }}><i className="fi fi-rr-newspaper-open"></i> News </p>
+                      <p onClick={() => setContent('Questions')} style={{ cursor: 'pointer' }}> <i class="fi fi-sr-interrogation"></i> Ask-Questions</p>
+                      <p onClick={() => setContent('profile')} style={{ cursor: 'pointer' }}> <i class="fi fi-br-portrait"></i> My Account</p>
                     </div>
                   </div>
                 </div>

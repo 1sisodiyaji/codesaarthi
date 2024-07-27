@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import BlogForm from './Blogs/BlogForm'
-import BlogList from './Blogs/BlogList';
+import BlogForm from '../../component/Blogs/BlogForm'
+import BlogList from '../../component/Blogs/BlogList';
 import { Helmet } from "react-helmet";
 
 const Blogs = () => {

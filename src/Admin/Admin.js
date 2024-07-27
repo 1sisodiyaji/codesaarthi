@@ -310,6 +310,13 @@ const Admin = () => {
                   </div>
                 </div>
               </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <Link to="/Admin/CreateGig">
+                  <div className="card my-3 p-4 text-center">
+                    <i className="fi fi-sr-add"></i> Create Your Gigs
+                  </div>
+                </Link>
+              </div>
 
               <div className="col-lg-3 col-md-6 col-12">
                 <Link to="/Admin/create-course">

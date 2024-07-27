@@ -4,7 +4,7 @@ import axios from 'axios';
 import { FacebookShareButton, WhatsappShareButton, FacebookIcon, WhatsappIcon } from 'react-share';
 import { ToastContainer, Bounce, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Config from '../config/config';
+import Config from '../../config/config';
 import { Helmet } from "react-helmet";
 
 const NewsApi = () => {
@@ -171,12 +171,12 @@ const NewsApi = () => {
         {Array.isArray(currentBatch) && currentBatch.length > 0 ? (
           currentBatch.map((article, index) => (
             <div key={index} className='p-2 my-2 shadow-lg rounded-4'>
-              <Link to={`/news/${article._id}`}>
+              <Link to={`/news/${article.slug}`}>
                 <h5 className='text-capitalize iconColor'>{article.title}</h5>
               </Link>
               <div className="row">
                 <div className="col-6 text-start">
-                  <small className='text-muted'>Author :-  <span className='text-decoration-underline'>{article.author}</span></small>
+                  <small>Author :-  <span className='text-decoration-underline'>{article.author}</span></small>
                 </div>
                 <div className="col-6 text-end">
                   <small>Posted By : - {article.source.name}</small>

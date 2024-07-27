@@ -67,6 +67,7 @@ const AboutUs = () => {
 
     return (
         <>
+        <ToastContainer/>
             <Helmet>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="CodeSaarthi" content="Codesaarthi" />
@@ -103,14 +104,14 @@ const AboutUs = () => {
                             <div className="card p-4 h-100"  style={{ boxShadow: '5px 5px 20px black' }}>
                                 <div className="d-flex justify-content-end">
                                 </div>
-                                <strong><h1 className="heading" style={{ fontWeight: 'bolder' }}>Our <span style={{ color: '#703BF7' }} >Mission</span></h1></strong>
+                                <h1 className="heading" style={{ fontWeight: 'bolder' , color: '#ffe164' }}>Our Mission</h1>
                                 <h3 className=" heading2">we are on a mission to make the world of coding and computer science accessible to everyone. Whether you're a student navigating through DSA problems, a professional seeking to enhance your knowledge of OS, DBMS, CN, or any other theory papers in computer science, we've got you covered..</h3>
                             </div>
                         </div>
 
                         <div className="col-lg-4 col-12 g-0 my-2  rounded-6 tilt-effect2 "  >
                             <div className="card p-4 ms-lg-2 h-100"  style={{ boxShadow: '5px 5px 20px black' }} >
-                                <strong><h1 className=" heading" style={{ fontWeight: 'bolder' }}>Our <span style={{ color: '#703BF7' }}>Vision</span></h1></strong>
+                                 <h1 className=" heading" style={{ fontWeight: 'bolder', color: '#ffe164' }}>Our Vision </h1> 
                                 <h3 className=" heading2">We aspire to revolutionize the educational landscape, making learning accessible and free for all. As the student who have faith to learn they can grow here and each and every student could get learning free . our motive is to make it easy and available for all freely . We will help you atmost we can ....</h3>
                             </div>
 
@@ -122,7 +123,7 @@ const AboutUs = () => {
                 </div>
 
                 <div className="container-fluid  text-light my-lg-4 py-lg-4 my-3 py-3">
-                    <ToastContainer/>
+                    
                     <div className="row flex-md-row flex-column-reverse g-0 ">
                         <div className=" col-lg-2 col-0"></div>
                         <div className="col-lg-4 col-12   py-lg-5 py-3 px-lg-3 px-3 card shadow-5-soft tilt-effect " style={{
@@ -199,73 +200,6 @@ const AboutUs = () => {
                     </div>
 
                 </div >
-
-                <div className="container py-lg-3">
-                    <div className="row g-0">
-                        <div className="col-lg-3 col-12"></div>
-                        <div className="col-lg-6 col-12 g-0">
-                            <div className="card p-5 d-lg-block d-md-block d-none" style={{ backgroundColor: '#262626', boxShadow: '15px 15px 40px black' }} >
-                                <div className="row">
-                                    <div className="col-3" style={{ borderRadius: '50%' }}>
-                                        <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720996731/ProfilePic_dqulox.png" className='img-fluid' alt="Profile Pic " style={{ borderRadius: '50%' }} />
-                                    </div>
-                                    <div className="col-9">
-                                        <h4 className='text-warning'> Golu Singh
-                                            (Software Developer) </h4>
-                                        <p className='text-light'>Mern Stack Developer   </p>
-                                        <small className='text-success'>Helping students to learn things easily . Actually i want to help them with the things which I learnt the hard way and make the learning easier for them.</small> <br />
-                                        <Link to="https://www.linkedin.com/in/golu-singh/" target='blank' className='text-light'> <span><i className="fi fi-brands-linkedin text-warning pe-1"></i></span>Linkedin</Link> <span className='text-warning'>|</span>|
-
-                                        <Link to="https://github.com/1sisodiyaji/" target='blank' className='text-light'> <span><i className="fi fi-brands-github text-warning pe-2"></i></span>Github </Link><span className='text-warning'>|</span>| 
-                                        
-                                        <Link to="https://www.instagram.com/golu_singh_sisodiya/" target='blank' className='text-light' > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
-
-                                        <div className="row my-2">
-                                            <div className=" col-lg-6 col-md-6 col-12 text-end">
-                                                <Link to="mailto:637golusingh@gmail.com" className="btn text-capitalize ">Contact me <i className="fi fi-sr-envelope ps-2"></i></Link>
-                                            </div>
-
-                                            <div className=" col-lg-6  col-md-6 col-12 text-end">
-                                                <button type='submit' onClick={handlesendData} className='btn   text-capitalize'> Whatsapp <i className="fi fi-brands-whatsapp  mx-2"></i> </button>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="card p-3 d-lg-none d-md-none d-block" style={{ backgroundColor: '#000435', boxShadow: '15px 15px 40px black' }} >
-                                <div className="row">
-                                    <div className="col-3" style={{ borderRadius: '50%' }}>
-                                        <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720996731/ProfilePic_dqulox.png" className='img-fluid' alt="Profile Pic  " style={{ borderRadius: '50%' }} />
-                                    </div>
-                                    <div className="col-9">
-                                        <h6 className='text-warning'> Golu Singh
-                                            (Software Developer) </h6>
-                                        <p className='text-light'>Mern Stack Developer</p>
-                                    </div>
-                                </div>
-                                <small className='text-success'>helping Students to learn things easily  , Actually i want to help them as the things i get hard to learn that things  i want to make them easier .</small> <br />
-                                <Link to="https://www.linkedin.com/in/golu-singh/" target='blank' className='text-light'> <span ><i className="fi fi-brands-linkedin text-warning pe-1"></i></span>Linkedin</Link> <span className='text-warning'>|</span>|
-                                <Link to="https://github.com/1sisodiyaji/" target='blank' className='text-light'> <span><i className="fi fi-brands-github text-warning pe-2"></i></span>Github </Link><span className='text-warning'>|</span>| 
-                                <Link to="https://www.instagram.com/golu_singh_sisodiya/" target='blank' className='text-light' > <span><i className="fi fi-brands-instagram text-warning pe-2"></i></span>Instagram</Link>
-
-                                <div className="row my-2">
-                                    <div className=" col-6 text-end">
-                                        <Link to="mailto:637golusingh@gmail.com" className="btn  text-capitalize ">Contact me <i className="fi fi-sr-envelope   ps-2"></i></Link>
-                                    </div>
-
-                                    <div className=" col-6 text-end">
-                                        <button type='submit' onClick={handlesendData} className='btn   text-capitalize'> Whatsapp <i className="fi fi-brands-whatsapp   mx-2"></i> </button>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className="col-lg-3 col-12"></div>
-                    </div>
-                </div>
             </div>
         </>
     )

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import config from "../config/config";
+import config from "../../config/config";
 import axios from "axios";
 import { Helmet } from "react-helmet";
 
 const SingleNews = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const [newsItem, setNewsItem] = useState([]);
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,9 +15,9 @@ const SingleNews = () => {
     const fetchNewsItem = async () => {
       try {
         const response = await axios.get(
-          `${config.BASE_URL}/article/getNewsById/${id}`
+          `${config.BASE_URL}/article/getNewsById/${slug}`
         );
-        setNewsItem(response.data);
+        setNewsItem(response.data[0]);
       } catch (error) {
         setError(error);
       } finally {
@@ -25,7 +25,7 @@ const SingleNews = () => {
       }
     };
     fetchNewsItem();
-  }, [id]);
+  }, [slug]);
 
   async function fetchNews() {
     const response = await axios.get(
@@ -35,7 +35,7 @@ const SingleNews = () => {
   }
   useEffect(() => {
     fetchNews();
-  }, [id]);
+  }, [slug]);
 
   if (loading) {
     return<div className="vh-100 text-warning d-flex justify-content-center align-items-center">
@@ -178,7 +178,7 @@ const SingleNews = () => {
                     </div>
                     <div className="col-9">
                       <div className="card-body">
-                        <Link to={`/news/${news._id}`}>
+                        <Link to={`/news/${news.slug}`}>
                           {" "}
                           <small className="iconColor">{news.title}</small>
                         </Link>

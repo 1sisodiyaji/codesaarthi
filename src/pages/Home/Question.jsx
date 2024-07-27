@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import CreateQuestion from './CreateQuestion';
-import QuestionList from './QuestionList';
+import React, { useEffect, useState } from 'react';
+import CreateQuestion from '../../component/Questions/CreateQuestion';
+import QuestionList from '../../component/Questions/QuestionList';
 import { Helmet } from "react-helmet";
 
 const Question = () => {
@@ -9,6 +9,9 @@ const Question = () => {
   const handleToggleCreateQuestion = () => {
     setIsCreating(!isCreating);
   };
+  useEffect(()=> {
+    window.scrollTo(0, 0);
+  })
 
   return (
     <>
@@ -25,9 +28,9 @@ const Question = () => {
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
 </Helmet>
-
+<div className="container-fluid design g-0 py-lg-5 py-3" style={{minHeight: '100vh'}}>
       <button 
-        className="btn btn-block  my-3" 
+        className="btn btn-sm w-100 text-capitalize  my-3" 
         onClick={handleToggleCreateQuestion}
       >
         {isCreating ? 'Cancel' : 'Ask Your Question'}
@@ -35,6 +38,7 @@ const Question = () => {
       
       {isCreating && <CreateQuestion />}
       <QuestionList />
+      </div>
     </>
   );
 };

@@ -101,7 +101,8 @@ useEffect(() => {
         <div className="container-fluid">
           <Link className="navbar-brand text-center text-decoration-none" to="/">
             <img
-              src="../img/logo.jpg"
+              src="../img/logo.png"
+              style={{borderRadius: '50%'}}
               height="25"
               title="codesaarthi"
               alt="Codesaarthi  Logo"
@@ -273,7 +274,7 @@ useEffect(() => {
         className="navbar-brand text-center ms-4"
         to="/" 
       >
-        <img src= "img/logo.jpg" style={{width: '35px' , borderRadius: '50%'}} alt="logo" loading="lazy"/>
+        <img src= "img/logo.png" style={{width: '35px' , borderRadius: '50%'}} alt="logo" loading="lazy"/>
         <h1 style={{ fontSize: "24px" }} className="mb-0 ms-2">
           Codesaarthi
         </h1>

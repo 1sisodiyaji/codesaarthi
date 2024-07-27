@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Routes, Route } from "react-router-dom";
+
 import SignUp from "../pages/Auth/SignUp";
 import Login from "../pages/Auth/Login";
 import RecoverPassword from "../pages/Auth/RecoverPassword";
-import Home from "../pages/Home";
 import AboutUs from "../pages/AboutUs";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsCondition from "../pages/TermsAndConditions";
@@ -16,12 +16,13 @@ import { Footer } from "../component/Footer";
 import Problems from "../pages/Problems/Problems";
 import Roadmap from "../pages/Roadmap/Roadmap";
 import Profile from "../pages/Profile/Profile";
-import { Navbar2 } from "../component/Navbar2";
-import NewsApi from "../component/NewsApi";
-import Blogs from "../component/Blogs";
-import Jobs from "../component/Jobs";
+import { Navbar2 } from "../component/Navbar2"; 
+import Home from "../pages/Home/Home";
+import NewsApi from "../pages/Home/NewsApi";
+import Jobs from "../pages/Home/Jobs";
 import UpdateBlogs from "../component/Blogs/UpdateBlog";
-import Blog from "../component/Blogs/Blog";
+import Blogs from "../pages/Home/Blogs";
+import Blog from "../component/Blogs/SingleBlog";
 import CreateCourse from "../Admin/CreateCourse";
 import Content from "../pages/Theory/Content";
 import UpdateCourse from "../Admin/UpdateCourse";
@@ -34,10 +35,11 @@ import ProjectDetails from "../pages/Projects/ProjectDetails";
 import SingleDetailingProject from "../pages/Projects/SingleDetailingProject";
 import Protected from "../config/Protected";
 import AdminProtected from "../config/AdminProtected";
-import SingleNews from "../component/SingleNews";
+import SingleNews from "../component/News/SingleNews";
 import QuestionList from "../component/Questions/QuestionList";
 import QuestionDetail from "../component/Questions/QuestionDetail";
 import CreateQuestion from "../component/Questions/CreateQuestion";
+import NewGig from "../Admin/CreateGig";
 
 const Routess = () => {
   const [shouldScrollToTop, setShouldScrollToTop] = useState(false);
@@ -93,14 +95,14 @@ const Routess = () => {
         <Route path="/Projects/:name" element={<ProjectDetails />} />
         <Route path="/Projects/:name/:title" element={<SingleDetailingProject />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/blog/:id" element={<Blog />} />
+        <Route path="/blog/:slug" element={<Blog />} />
         <Route path="/add-blog" element={<Protected Component={BlogForm} />} />
         <Route path="/edit-blog/:id" element={<Protected Component={UpdateBlogs} />} />
         <Route path="/news" element={<NewsApi />} />
-        <Route path="/news/:id" element={<SingleNews />} />
+        <Route path="/news/:slug" element={<SingleNews />} />
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/Questions" element={<QuestionList />} />
-        <Route path="/Questions/:id" element={<QuestionDetail />} />
+        <Route path="/Questions/:slug" element={<QuestionDetail />} />
         <Route path="/Ask-Questions" element={<CreateQuestion />} />
 
 
@@ -109,6 +111,7 @@ const Routess = () => {
         <Route path="/Admin/update/:title" element={<AdminProtected Component={UpdateCourse} />} />
         <Route path="/Admin/create-Roadmap" element={<AdminProtected Component={CreateRoadmap} />} />
         <Route path="/Admin/updateRoadmap/:id" element={<AdminProtected Component={UpdateRoadmap} />} />
+        <Route path="/Admin/CreateGig" element={<AdminProtected Component={NewGig} />} />
 
 
         <Route path="/*" element={<ErrorPage />} />

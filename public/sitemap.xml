@@ -1,477 +1,1062 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
-        <loc>https://codesaarthi.com/blogs/669649de2f3c11efe6dd8957</loc>
+        <loc>https://codesaarthi.com/blogs/Exploring-Next.js:-Beyond-Basic-React</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/blogs/66964dc42f3c11efe6dd89d3</loc>
+        <loc>https://codesaarthi.com/blogs/What-are-the-Key-Differences-Between-React-and-Angular-in-Terms-of-Architecture-and-Data-Binding?</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/blogs/66964edc2f3c11efe6dd89fa</loc>
+        <loc>https://codesaarthi.com/blogs/How-Does-the-Component-Based-Structure-of-React-Differ-from-Angular%E2%80%99s%20MVC-Architecture?</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/blogs/66964fcb2f3c11efe6dd8a11</loc>
+        <loc>https://codesaarthi.com/blogs/What-Are-the-Main-Advantages-of-Using-Next.js-Over-Vanilla-JavaScript-for-Server-Side-Rendering?</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/blogs/6696506f2f3c11efe6dd8a1f</loc>
+        <loc>https://codesaarthi.com/blogs/In-What-Scenarios-Would-You-Choose-Vue.js-Over-React-for-a-Project?</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/blogs/669651172f3c11efe6dd8a38</loc>
+        <loc>https://codesaarthi.com/blogs/How-Does-State-Management-in-React-(Using%20Hooks%20and%20Context)-Compare-to-State-Management-in-Vue.js-(Using%20Vuex)?</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/blogs/669652b278bdb5b70a5b2f71</loc>
+        <loc>https://codesaarthi.com/blogs/What-Are-the-Primary-Benefits-of-Using-Angular-for-Enterprise-Level-Applications-Compared-to-Using-React?</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/blogs/6696533d78bdb5b70a5b2fa0</loc>
+        <loc>https://codesaarthi.com/blogs/How-Does-the-Performance-of-a-Next.js-Application-Compare-to-a-Traditional-Server-Rendered-Web-App?</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/blogs/669653b778bdb5b70a5b2fba</loc>
+        <loc>https://codesaarthi.com/blogs/Pros-and-Cons-of-Using-Vanilla-JavaScript-vs.-React-for-Small-Scale-Projects</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/blogs/6696542a78bdb5b70a5b3045</loc>
+        <loc>https://codesaarthi.com/blogs/Comparing-Development-Experience:-Vue.js-vs.-Angular</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/blogs/6696546d78bdb5b70a5b3061</loc>
+        <loc>https://codesaarthi.com/blogs/What-are-the-SEO-benefits-of-using-Next.js-over-single-page-applications-built-with-React?</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/blogs/669654c178bdb5b70a5b307f</loc>
+        <loc>https://codesaarthi.com/blogs/How-does-TypeScript-integration-in-Angular-compare-to-TypeScript-usage-in-React-applications?</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e67e</loc>
+        <loc>https://codesaarthi.com/news/amazon-prime-day-apple-deals-on-airpods-macbooks-ipads-and-more-that-are-still-available-today</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e66f</loc>
+        <loc>https://codesaarthi.com/news/apple-maps-is-now-available-on-the-web-in-beta</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e66e</loc>
+        <loc>https://codesaarthi.com/news/the-tinypod-transforms-your-old-apple-watch-into-an-ipod-like-minimalist-phone</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e667</loc>
+        <loc>https://codesaarthi.com/news/the-morning-after-ai-models-from-apple-nvidia-and-more-were-reportedly-trained-on-youtube-videos</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e67d</loc>
+        <loc>https://codesaarthi.com/news/removed</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e684</loc>
+        <loc>https://codesaarthi.com/news/maxs-shareplay-feature-for-ios-is-now-available-to-all-ad-free-subscribers</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e689</loc>
+        <loc>https://codesaarthi.com/news/whatsapp-hits-100-million-monthly-active-us-users</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e695</loc>
+        <loc>https://codesaarthi.com/news/amazon-prime-day-2024-tech-deals-you-can-still-get-today</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6a1</loc>
+        <loc>https://codesaarthi.com/news/the-morning-after-the-age-of-the-retro-cd-player-is-here</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6b7</loc>
+        <loc>https://codesaarthi.com/news/samsung-galaxy-buds-3-and-galaxy-buds-3-pro-review-airpods-clones-that-actually-deliver</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e668</loc>
+        <loc>https://codesaarthi.com/news/removed</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e672</loc>
+        <loc>https://codesaarthi.com/news/removed</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e67b</loc>
+        <loc>https://codesaarthi.com/news/apples-m3-imac-is-down-to-a-record-low-price</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6be</loc>
+        <loc>https://codesaarthi.com/news/the-morning-after-openai-reveals-its-ai-powered-search-engine-searchgpt</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e694</loc>
+        <loc>https://codesaarthi.com/news/crowdstrike-blames-bug-that-caused-worldwide-outage-on-faulty-testing-software</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6a5</loc>
+        <loc>https://codesaarthi.com/news/nba-tv-rights-go-to-espn-nbc-and-amazon-as-tnt-is-rejected</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6bc</loc>
+        <loc>https://codesaarthi.com/news/removed</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e671</loc>
+        <loc>https://codesaarthi.com/news/removed</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e688</loc>
+        <loc>https://codesaarthi.com/news/the-time-is-right-for-a-folding-iphone</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e697</loc>
+        <loc>https://codesaarthi.com/news/the-fitbit-charge-6-is-a-deal-at-just-dollar100-right-now</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e69f</loc>
+        <loc>https://codesaarthi.com/news/samsung-galaxy-watch-ultra-review-blood-sugar-index-and-navigation-features</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6af</loc>
+        <loc>https://codesaarthi.com/news/the-best-daw-software-recommended-by-wireds-resident-musicians-2024</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6ba</loc>
+        <loc>https://codesaarthi.com/news/dyson-has-new-headphones-that-dont-cover-your-mouth-this-time</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6c1</loc>
+        <loc>https://codesaarthi.com/news/its-not-too-late-to-buy-the-oura-ring-on-sale</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e68a</loc>
+        <loc>https://codesaarthi.com/news/the-top-9-prime-day-apple-deals-on-our-favorite-gadgets-2024</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e692</loc>
+        <loc>https://codesaarthi.com/news/samsung-coupon-and-promo-codes-july-2024</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6a3</loc>
+        <loc>https://codesaarthi.com/news/missed-out-on-prime-day-these-155-deals-are-still-going-strong-2024</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6ac</loc>
+        <loc>https://codesaarthi.com/news/ladies-and-gentlemen-the-weeknd-on-apple-vision-pro</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6ad</loc>
+        <loc>https://codesaarthi.com/news/apples-airtags-are-on-sale-for-dollar2399-a-pop-matching-their-all-time-low</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6b6</loc>
+        <loc>https://codesaarthi.com/news/the-newest-roomba-can-wash-its-own-mop-and-will-work-with-matter</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6bd</loc>
+        <loc>https://codesaarthi.com/news/inside-the-78-minutes-that-took-down-millions-of-windows-machines</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6c0</loc>
+        <loc>https://codesaarthi.com/news/spotify-ceo-confirms-a-deluxe-version-with-hi-fi-audio-is-coming-soon</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6c9</loc>
+        <loc>https://codesaarthi.com/news/we-may-finally-see-a-foldable-iphone-in-2026</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e676</loc>
+        <loc>https://codesaarthi.com/news/time-bandits-whimsical-reboot-is-fun-but-a-little-too-familiar</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e68d</loc>
+        <loc>https://codesaarthi.com/news/apple-ios-18-public-beta-makes-customizing-the-home-screen-just-like-android</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e68f</loc>
+        <loc>https://codesaarthi.com/news/we-could-get-the-iphone-se-4-early-next-year</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e69a</loc>
+        <loc>https://codesaarthi.com/news/sos-emergency-services-on-ios-18-are-about-to-get-video-calling</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e69b</loc>
+        <loc>https://codesaarthi.com/news/kevin-feige-says-marvels-new-blade-movie-has-to-be-r-rated</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6b3</loc>
+        <loc>https://codesaarthi.com/news/samsung-galaxy-watch-ultra-review-when-you-want-a-watch-thats-always-in-your-face</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6b9</loc>
+        <loc>https://codesaarthi.com/news/the-new-roomba-has-evolved-past-needing-humans</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6c5</loc>
+        <loc>https://codesaarthi.com/news/google-play-store-finally-raises-its-app-standards-apps-have-to-actually-work</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e691</loc>
+        <loc>https://codesaarthi.com/news/here-are-the-best-times-to-upgrade-your-phone</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e696</loc>
+        <loc>https://codesaarthi.com/news/meta-reportedly-unhappy-with-how-much-money-its-vr-division-burns</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6a7</loc>
+        <loc>https://codesaarthi.com/news/new-pricey-spotify-premium-tier-offers-higher-quality-tracks</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6c4</loc>
+        <loc>https://codesaarthi.com/news/10-things-were-sad-wont-be-at-comic-con-this-year</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6c8</loc>
+        <loc>https://codesaarthi.com/news/how-to-watch-the-2024-summer-olympics-opening-ceremony</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e681</loc>
+        <loc>https://codesaarthi.com/news/the-rings-of-power-adds-another-doomed-ring-maker</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e698</loc>
+        <loc>https://codesaarthi.com/news/the-worst-deals-of-prime-day-2024</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6a2</loc>
+        <loc>https://codesaarthi.com/news/elon-musk-claims-he-is-training-the-worlds-most-powerful-ai-by-every-metric</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6b5</loc>
+        <loc>https://codesaarthi.com/news/illegal-drug-found-in-diamond-shruumz-candies-linked-to-severe-illnesses</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6c2</loc>
+        <loc>https://codesaarthi.com/news/the-battle-for-your-next-dollar-will-be-fought-with-software</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e68c</loc>
+        <loc>https://codesaarthi.com/news/amazon-boasts-record-prime-day-sales-fueled-by-electronics-and-back-to-school-shopping</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e693</loc>
+        <loc>https://codesaarthi.com/news/hurry-and-grab-this-fantastic-smart-ring-before-prime-day-ends-and-no-its-not-the-galaxy-ring-or-oura-ring</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e69e</loc>
+        <loc>https://codesaarthi.com/news/samsung-cant-ship-the-galaxy-ring-fast-enough-shows-how-theyre-in</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6a9</loc>
+        <loc>https://codesaarthi.com/news/i-love-this-prime-day-deal-on-great-wired-earbuds-for-regular-people</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6b1</loc>
+        <loc>https://codesaarthi.com/news/googles-pixel-satellite-sos-is-useful-and-it-might-just-cost-you-to-keep-it</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e66c</loc>
+        <loc>https://codesaarthi.com/news/i-miss-the-old-days-of-smartphones</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e685</loc>
+        <loc>https://codesaarthi.com/news/ask-jerry-why-does-google-push-out-updates-and-new-features-so-slowly</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e699</loc>
+        <loc>https://codesaarthi.com/news/samsung-galaxy-buds-3-pro-review-more-than-just-airpods-pro-look-alikes</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6a0</loc>
+        <loc>https://codesaarthi.com/news/samsung-galaxy-watch-ultra-vs-oneplus-watch-2-which-should-you-buy</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6c3</loc>
+        <loc>https://codesaarthi.com/news/samsung-galaxy-watch-7-review-just-needs-a-pinch-of-pizazz</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6c6</loc>
+        <loc>https://codesaarthi.com/news/tinypod-turns-your-apple-watch-into-an-ipod</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e68e</loc>
+        <loc>https://codesaarthi.com/news/kuo-expectation-that-apple-intelligence-will-drive-iphone-16-sales-may-be-too-optimistic</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e690</loc>
+        <loc>https://codesaarthi.com/news/septa-rolling-out-apple-pay-with-express-mode-in-philadelphia-area</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6a8</loc>
+        <loc>https://codesaarthi.com/news/apple-reportedly-working-on-foldable-iphone-with-similar-design-as-samsungs-galaxy-z-flip</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6aa</loc>
+        <loc>https://codesaarthi.com/news/apple-lowers-iphone-prices-and-eyes-ipad-assembly-in-india</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6ab</loc>
+        <loc>https://codesaarthi.com/news/apple-vision-pro-gains-new-lake-vrangla-environment</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6bb</loc>
+        <loc>https://codesaarthi.com/news/kuo-iphone-se-4-and-ultra-thin-iphone-17-to-use-apples-own-5g-chip</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6bf</loc>
+        <loc>https://codesaarthi.com/news/apple-releases-safari-technology-preview-199-with-bug-fixes-and-performance-improvements</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e674</loc>
+        <loc>https://codesaarthi.com/news/apple-pencil-pro-drops-to-dollar10999-on-amazon-alongside-record-low-prices-for-m4-ipad-pro</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6b4</loc>
+        <loc>https://codesaarthi.com/news/apples-privacy-team-does-deep-dive-into-ios-18-privacy-features</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6ca</loc>
+        <loc>https://codesaarthi.com/news/top-stories-ios-18-public-beta-homepod-mini-in-new-midnight-color-and-more</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e68b</loc>
+        <loc>https://codesaarthi.com/news/apple-releases-second-watchos-11-public-beta-with-vitals-app-and-more</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6b8</loc>
+        <loc>https://codesaarthi.com/news/kuo-apple-delays-change-aimed-at-saving-space-inside-future-iphones</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6c7</loc>
+        <loc>https://codesaarthi.com/news/rivian-ceo-explains-why-apple-carplay-wont-come-to-its-vehicles</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6a4</loc>
+        <loc>https://codesaarthi.com/news/apple-seeds-ios-176-and-ipados-176-release-candidates-to-developers</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e673</loc>
+        <loc>https://codesaarthi.com/news/new-meta-patent-blatantly-mimics-apples-eyesight-feature</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e69d</loc>
+        <loc>https://codesaarthi.com/news/microsoft-blames-european-commission-for-major-worldwide-outage</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e69c</loc>
+        <loc>https://codesaarthi.com/news/iphone-se-4-rumored-to-use-same-rear-chassis-as-iphone-16</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6a6</loc>
+        <loc>https://codesaarthi.com/news/apples-expansion-in-india-set-to-accelerate-thanks-to-duty-reductions</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6ae</loc>
+        <loc>https://codesaarthi.com/news/best-apple-deals-of-the-week-airpods-pro-and-max-get-new-low-prices-plus-big-discounts-on-ipads-and-macbooks</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6b0</loc>
+        <loc>https://codesaarthi.com/news/icloud-private-relay-experiencing-outage</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://codesaarthi.com/news/669aafe61d8d79d97e91e6b2</loc>
+        <loc>https://codesaarthi.com/news/amazon-introduces-big-savings-on-popular-accessories-from-anker-eufy-and-jackery</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/airpods-3-airpods-pro-2-and-airpods-max-are-still-on-sale-at-their-ultra-low-prime-day-prices-today</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/iphone-se-4-production-will-reportedly-begin-ramping-up-in-october</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/crowdstrike-says-global-it-outage-limited-to-windows-pcs-but-mac-and-linux-hosts-not-affected</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/samsungs-black-friday-in-july-sale-features-lowest-ever-prices-on-popular-monitors-and-more</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apple-dont-screw-up-the-iphone-flip</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/last-minute-prime-day-deal-apples-airpods-pro-2-at-just-dollar169-a-record-low</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apples-leather-link-watch-band-is-just-dollar25-at-woot-for-a-limited-time</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apple-watch-x-everything-we-know-about-apples-next-smartwatch</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/times-running-out-to-bag-apple-airpods-pro-2-for-just-dollar169-as-prime-day-winds-down</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/post-prime-day-apple-deals-grab-airpods-macbooks-and-ipads-while-you-can</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-og-apple-watch-ultra-is-well-under-dollar500-at-woot-for-prime-day</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/presumed-innocent-release-schedule-when-the-finale-drops-on-apple-tv-plus</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apples-big-m3-macbook-air-discounts-from-prime-day-are-still-here-for-now</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/meta-follows-in-apples-footsteps-by-restricting-ai-releases-in-eu-countries</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/airpods-max-are-even-cheaper-than-prime-day-right-now-but-theres-a-catch</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/final-hours-to-grab-a-level-smart-lock-with-over-dollar100-off</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/ios-18-beta-safaris-find-on-page-search-function-has-a-new-home</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/amazon-prime-day-apple-deals-on-airpods-macbooks-ipads-and-more-that-are-still-available-today</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apple-maps-is-now-available-on-the-web-in-beta</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-tinypod-transforms-your-old-apple-watch-into-an-ipod-like-minimalist-phone</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-morning-after-ai-models-from-apple-nvidia-and-more-were-reportedly-trained-on-youtube-videos</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/removed</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/maxs-shareplay-feature-for-ios-is-now-available-to-all-ad-free-subscribers</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/whatsapp-hits-100-million-monthly-active-us-users</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/amazon-prime-day-2024-tech-deals-you-can-still-get-today</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-morning-after-the-age-of-the-retro-cd-player-is-here</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/samsung-galaxy-buds-3-and-galaxy-buds-3-pro-review-airpods-clones-that-actually-deliver</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/removed</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/removed</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apples-m3-imac-is-down-to-a-record-low-price</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-morning-after-openai-reveals-its-ai-powered-search-engine-searchgpt</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/crowdstrike-blames-bug-that-caused-worldwide-outage-on-faulty-testing-software</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/nba-tv-rights-go-to-espn-nbc-and-amazon-as-tnt-is-rejected</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/removed</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/removed</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-time-is-right-for-a-folding-iphone</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-fitbit-charge-6-is-a-deal-at-just-dollar100-right-now</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/samsung-galaxy-watch-ultra-review-blood-sugar-index-and-navigation-features</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-best-daw-software-recommended-by-wireds-resident-musicians-2024</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/dyson-has-new-headphones-that-dont-cover-your-mouth-this-time</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/its-not-too-late-to-buy-the-oura-ring-on-sale</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-top-9-prime-day-apple-deals-on-our-favorite-gadgets-2024</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/samsung-coupon-and-promo-codes-july-2024</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/missed-out-on-prime-day-these-155-deals-are-still-going-strong-2024</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/ladies-and-gentlemen-the-weeknd-on-apple-vision-pro</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apples-airtags-are-on-sale-for-dollar2399-a-pop-matching-their-all-time-low</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-newest-roomba-can-wash-its-own-mop-and-will-work-with-matter</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/inside-the-78-minutes-that-took-down-millions-of-windows-machines</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/spotify-ceo-confirms-a-deluxe-version-with-hi-fi-audio-is-coming-soon</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/we-may-finally-see-a-foldable-iphone-in-2026</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/time-bandits-whimsical-reboot-is-fun-but-a-little-too-familiar</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apple-ios-18-public-beta-makes-customizing-the-home-screen-just-like-android</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/we-could-get-the-iphone-se-4-early-next-year</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/fortnite-returning-to-iphones-after-four-year-long-legal-battle</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/sos-emergency-services-on-ios-18-are-about-to-get-video-calling</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/kevin-feige-says-marvels-new-blade-movie-has-to-be-r-rated</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/samsung-galaxy-watch-ultra-review-when-you-want-a-watch-thats-always-in-your-face</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-new-roomba-has-evolved-past-needing-humans</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/google-play-store-finally-raises-its-app-standards-apps-have-to-actually-work</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/here-are-the-best-times-to-upgrade-your-phone</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/meta-reportedly-unhappy-with-how-much-money-its-vr-division-burns</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/new-pricey-spotify-premium-tier-offers-higher-quality-tracks</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/10-things-were-sad-wont-be-at-comic-con-this-year</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/how-to-watch-the-2024-summer-olympics-opening-ceremony</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-rings-of-power-adds-another-doomed-ring-maker</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-worst-deals-of-prime-day-2024</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/elon-musk-claims-he-is-training-the-worlds-most-powerful-ai-by-every-metric</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/illegal-drug-found-in-diamond-shruumz-candies-linked-to-severe-illnesses</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-battle-for-your-next-dollar-will-be-fought-with-software</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/amazon-boasts-record-prime-day-sales-fueled-by-electronics-and-back-to-school-shopping</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/hurry-and-grab-this-fantastic-smart-ring-before-prime-day-ends-and-no-its-not-the-galaxy-ring-or-oura-ring</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/samsung-cant-ship-the-galaxy-ring-fast-enough-shows-how-theyre-in</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/i-love-this-prime-day-deal-on-great-wired-earbuds-for-regular-people</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/googles-pixel-satellite-sos-is-useful-and-it-might-just-cost-you-to-keep-it</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/i-miss-the-old-days-of-smartphones</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/ask-jerry-why-does-google-push-out-updates-and-new-features-so-slowly</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/samsung-galaxy-buds-3-pro-review-more-than-just-airpods-pro-look-alikes</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/samsung-galaxy-watch-ultra-vs-oneplus-watch-2-which-should-you-buy</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/samsung-galaxy-watch-7-review-just-needs-a-pinch-of-pizazz</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/tinypod-turns-your-apple-watch-into-an-ipod</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/kuo-expectation-that-apple-intelligence-will-drive-iphone-16-sales-may-be-too-optimistic</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/septa-rolling-out-apple-pay-with-express-mode-in-philadelphia-area</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apple-reportedly-working-on-foldable-iphone-with-similar-design-as-samsungs-galaxy-z-flip</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apple-lowers-iphone-prices-and-eyes-ipad-assembly-in-india</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apple-vision-pro-gains-new-lake-vrangla-environment</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/kuo-iphone-se-4-and-ultra-thin-iphone-17-to-use-apples-own-5g-chip</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apple-releases-safari-technology-preview-199-with-bug-fixes-and-performance-improvements</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apple-pencil-pro-drops-to-dollar10999-on-amazon-alongside-record-low-prices-for-m4-ipad-pro</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apples-privacy-team-does-deep-dive-into-ios-18-privacy-features</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/top-stories-ios-18-public-beta-homepod-mini-in-new-midnight-color-and-more</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apple-releases-second-watchos-11-public-beta-with-vitals-app-and-more</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/kuo-apple-delays-change-aimed-at-saving-space-inside-future-iphones</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/rivian-ceo-explains-why-apple-carplay-wont-come-to-its-vehicles</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apple-seeds-ios-176-and-ipados-176-release-candidates-to-developers</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/new-meta-patent-blatantly-mimics-apples-eyesight-feature</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/microsoft-blames-european-commission-for-major-worldwide-outage</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/iphone-se-4-rumored-to-use-same-rear-chassis-as-iphone-16</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apples-expansion-in-india-set-to-accelerate-thanks-to-duty-reductions</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/best-apple-deals-of-the-week-airpods-pro-and-max-get-new-low-prices-plus-big-discounts-on-ipads-and-macbooks</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/icloud-private-relay-experiencing-outage</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/amazon-introduces-big-savings-on-popular-accessories-from-anker-eufy-and-jackery</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/airpods-3-airpods-pro-2-and-airpods-max-are-still-on-sale-at-their-ultra-low-prime-day-prices-today</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/iphone-se-4-production-will-reportedly-begin-ramping-up-in-october</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/crowdstrike-says-global-it-outage-limited-to-windows-pcs-but-mac-and-linux-hosts-not-affected</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/samsungs-black-friday-in-july-sale-features-lowest-ever-prices-on-popular-monitors-and-more</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apple-dont-screw-up-the-iphone-flip</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/last-minute-prime-day-deal-apples-airpods-pro-2-at-just-dollar169-a-record-low</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apples-leather-link-watch-band-is-just-dollar25-at-woot-for-a-limited-time</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apple-watch-x-everything-we-know-about-apples-next-smartwatch</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/times-running-out-to-bag-apple-airpods-pro-2-for-just-dollar169-as-prime-day-winds-down</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/post-prime-day-apple-deals-grab-airpods-macbooks-and-ipads-while-you-can</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/the-og-apple-watch-ultra-is-well-under-dollar500-at-woot-for-prime-day</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/presumed-innocent-release-schedule-when-the-finale-drops-on-apple-tv-plus</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/apples-big-m3-macbook-air-discounts-from-prime-day-are-still-here-for-now</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/meta-follows-in-apples-footsteps-by-restricting-ai-releases-in-eu-countries</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/airpods-max-are-even-cheaper-than-prime-day-right-now-but-theres-a-catch</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://codesaarthi.com/news/final-hours-to-grab-a-level-smart-lock-with-over-dollar100-off</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>

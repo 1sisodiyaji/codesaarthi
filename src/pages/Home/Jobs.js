@@ -204,10 +204,10 @@ const Jobs = () => {
                   <span className="placeholder col-8"></span>
                 </p>
                 <a href="/"
-                  className="btn btn-secondary disabled placeholder col-6"
+                  className="btn btn-secondary disabled placeholder col-12 text-capitalize"
                   aria-disabled="true"
                 >Getting job list</a>
-              </div>
+              </div>  
             </div>
           </div>
         ) : (
