@@ -54,7 +54,7 @@ function CreateQuestion() {
 
   return (
     <> 
-      <div className="container-fluid design py-lg-4">
+      <div className="container-fluid design ">
         <div className="card p-3">
           <h5>Ask Your Question</h5>
           <input

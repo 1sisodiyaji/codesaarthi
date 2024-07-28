@@ -7,6 +7,7 @@ import config from "../../config/config";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import Graph from "../../component/Graph";
+import Modal from "../../component/Modal";
 
 const Profile = () => {
   const [user, setUser] = useState(null);
@@ -645,7 +646,7 @@ const Profile = () => {
 
         <div className="row my-2">
           <div className="col-11"> <h6>Blogs Posted By {user && user.name} <span class="badge badge-dark">{blogs.length}</span> </h6></div>
-          <div className="col-1"><i onClick={handleshowBlogs} class={`${blogsShow ? 'fi fi-sr-eye text-success bg-dark' : 'i fi-sr-eye-crossed text-light bg-primary' } px-2 py-1 rounded-4`} style={{cursor: 'pointer'}}></i></div>
+          <div className="col-1"><i onClick={handleshowBlogs} class={`${blogsShow ? 'fi fi-sr-eye text-success bg-dark' : 'i fi-sr-eye-crossed text-light bg-primary'} px-2 py-1 rounded-4`} style={{ cursor: 'pointer' }}></i></div>
         </div>
 
         {blogsShow && (
@@ -721,17 +722,17 @@ const Profile = () => {
 
         <div className="row my-2">
           <div className="col-11"> <h6>Questions Asked By {user && user.name} <span class="badge badge-dark">{question.length}</span> </h6></div>
-          <div className="col-1"><i onClick={handleShowQuestions} class={`${questionShow ? 'fi fi-sr-eye text-success bg-dark' : 'i fi-sr-eye-crossed text-light bg-primary' } px-2 py-1 rounded-4`} style={{cursor: 'pointer'}}></i></div>
+          <div className="col-1"><i onClick={handleShowQuestions} class={`${questionShow ? 'fi fi-sr-eye text-success bg-dark' : 'i fi-sr-eye-crossed text-light bg-primary'} px-2 py-1 rounded-4`} style={{ cursor: 'pointer' }}></i></div>
         </div>
         {questionShow && (
           <div className="mt-4">
-            <h4>Your Questions</h4>
+            <h6>Your Questions</h6>
             {question.length > 0 ? (
               <>
                 <div className="row">
                   {question &&
                     question.map((question) => {
-                      const questionUrl = `${window.location.origin}/Questions/${question._id}`;
+                      const questionUrl = `${window.location.origin}/Questions/${question.slug}`;
                       return (
                         <div
                           key={question._id}
@@ -740,11 +741,11 @@ const Profile = () => {
                           <div className="row">
                             <div className="col-10">
                               <Link
-                                to={`/Questions/${question._id}`}
-                                className="iconColor"
+                                to={`/Questions/${question.slug}`}
+                                className="iconColor text-decoration-underline"
                                 style={{ cursor: "pointer" }}
                               >
-                                <h2>{question.title} ?</h2>
+                                <h6>{question.title} ?</h6>
                               </Link>
                             </div>
                             <div className="col-2 text-end">
@@ -756,7 +757,7 @@ const Profile = () => {
                           <div className="row">
                             <div className="col-6">
                               <Link
-                                to={`/profile/${question.user._id}`}
+                                to={`/profile/${question.user.username}`}
                                 className="iconColor"
                               >
                                 Asked By:{" "}
@@ -838,6 +839,32 @@ const Profile = () => {
                                 </div>
                               </div>
                             </div>
+                            <div className="row">
+                              <div className="col-6 text-start">
+                              <Modal
+                               id="modal1" 
+                                btnName = "Edit"
+                                Design = "btn  text-capitalize bg-warning"
+                                title="Edit Your Question"
+                                body="."
+                                saveButtonLabel="Update "
+                                closeButtonLabel="Cancel"
+                              /> 
+                                </div>
+
+                              <div className="col-6 text-end">  
+                               <Modal
+                               id="modal2" 
+                                btnName = "Delete 🗑️"
+                                Design = "btn btn-sm rounded-8 text-capitalize bg-danger"
+                                title="Delete Your Question"
+                                body="."
+                                saveButtonLabel="Delete "
+                                closeButtonLabel="Cancel"
+                              /> 
+                              </div>
+
+                            </div>
                           </div>
                         </div>
                       );
@@ -853,7 +880,7 @@ const Profile = () => {
 
         <div className="row my-2">
           <div className="col-11"> <h6>Answer Contributed By {user && user.name} <span class="badge badge-dark">{answer.length}</span> </h6></div>
-          <div className="col-1"> <i onClick={handleAnswerShow} class={`${answershow ? 'fi fi-sr-eye text-success bg-dark' : 'i fi-sr-eye-crossed text-light bg-primary' } px-2 py-1 rounded-4`} style={{cursor: 'pointer'}}></i></div>
+          <div className="col-1"> <i onClick={handleAnswerShow} class={`${answershow ? 'fi fi-sr-eye text-success bg-dark' : 'i fi-sr-eye-crossed text-light bg-primary'} px-2 py-1 rounded-4`} style={{ cursor: 'pointer' }}></i></div>
         </div>
         {answershow && (
           <div className="mt-4">

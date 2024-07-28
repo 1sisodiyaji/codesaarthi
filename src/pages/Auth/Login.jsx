@@ -7,6 +7,7 @@ import config from "../../config/config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Cookies from 'js-cookie';
+import Modal from "../../component/Modal";
 
 const Login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -288,6 +289,15 @@ const Login = () => {
                   </Link>
                 </p>
               </div>
+              <Modal
+                               id="modal1" 
+                                btnName = "Edit"
+                                Design = "btn  text-capitalize bg-warning"
+                                title="Edit Your Question"
+                                body="."
+                                saveButtonLabel="Update "
+                                closeButtonLabel="Cancel"
+                              /> 
             </form>
           </div>
         </div>

@@ -21,8 +21,9 @@ function QuestionDetail() {
       try {
         const response = await axios.get(`${config.BASE_URL}/article/questions/${slug}`);
         if (response.status === 200) {
+          console.log(response);
           setQuestion(response.data[0]); 
-          setAnswers(response.data.answers);
+          setAnswers(response.data[0].answers);
         } else {
           console.error("Failed to fetch question");
         }
@@ -32,7 +33,7 @@ function QuestionDetail() {
     };
 
     fetchQuestion();
-  }, [slug, config.BASE_URL]);
+  }, [slug]);
 
   useEffect(() => {
     const fetchNewQuestions = async () => {
@@ -114,6 +115,12 @@ function QuestionDetail() {
       console.error('Error upvoting the answer:', error);
     }
   };
+
+  const truncateText = (text, length) => {
+    const maxLength = length;
+    return text.length > maxLength ? `${text.slice(0, maxLength)}...` : text;
+  };
+  
   return (
     <>
       <ToastContainer />
@@ -138,14 +145,14 @@ function QuestionDetail() {
         <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
       </Helmet>
       <div className="container design g-0" style={{ minHeight: '100vh' }}>
-        <div className="row">
-          <div className="col-lg-8 col-12 my-2">
+        <div className="row m-1">
+          <div className="col-lg-8 col-12 my-2 g-0">
             {question && (
               <div className='py-lg-4 py-3'>
                 <div className="borderColor backgroundColor rounded-4 shadow-lg">
-                  <div className="row">
+                  <div className="row g-0">
                     <div className="col-10"> 
-                    <h4 className='text-capitalize p-2'>{question.title} ?</h4>
+                    <h6 className='text-capitalize p-2'>{question.title} ?</h6>
                     </div>
                     <div className="col-2 text-end">
                     <div className="dropdown pe-2 pt-1">
@@ -164,7 +171,7 @@ function QuestionDetail() {
                   <p className='p-2'>{question.body}</p>
                   <p className='p-2'>Asked By: <Link to={`/profile/${ question.user && question.user.username}`} className='iconColor text-decoration-underline'>{question.user && question.user.name}</Link></p>
                   <hr />
-                  <div className="row p-1">
+                  <div className="row p-1 g-0">
                     <div className="col-6 d-flex">
                     <div onClick={() => upvote(question._id)}>
                     <p className="btn btn-sm rounded-8 text-capitalize">  {question.votes} <i className="fi fi-rs-social-network"></i> UpVote </p>
@@ -187,8 +194,7 @@ function QuestionDetail() {
                 <div className='my-3'>
                   {answers && answers.map(answer => (
                     <div key={answer._id} className='rounded-4 border border-success shadow-lg my-2'>
-                      <p className='ps-2'>{answer.body}</p>
-
+                      <p className='p-2' dangerouslySetInnerHTML={{ __html: answer.body }} />
                       <hr />
                       <div className="row">
                         <div className="col-6">
@@ -207,7 +213,7 @@ function QuestionDetail() {
                           })}</p>
                         </div>
                       </div>
-                      <div className="row p-1">
+                      <div className="row p-1 w-100">
                         <div className="col-6">
                           <div onClick={() => upvoteAnswer(answer._id)}>
                             <p className="btn btn-sm rounded-8 text-capitalize">  {answer.votes} <i className="fi fi-rs-social-network"></i> UpVote </p>
@@ -260,7 +266,7 @@ function QuestionDetail() {
     <div className="row g-0 p-2">
       <div className="col-3 d-flex justify-content-center align-items-center">
         <img
-          src={question.image || "https://codesaarthi.com/img/logo.jpg"}
+          src="https://codesaarthi.com/img/logo.png"
           alt="Author"
           style={{ width: '55px', height: '55px' }}
           className="img-fluid rounded-circle"
@@ -269,18 +275,18 @@ function QuestionDetail() {
       <div className="col-9">
         <div className="card-body">
           <Link to={`/Questions/${question.slug}`} className="iconColor">
-            <small className='text-decoration-underline'>{question.title}</small>
+            <small className='text-decoration-underline'> {`${truncateText(question.title, 80)}`}</small>
           </Link>
           <br />
-          <small className='p-2'>{question.body}</small>
+          <small className='p-2 text-sm'> {`${truncateText(question.body, 38)}`}</small>
         </div>
       </div>
     </div>
-    <div className="text-center">
+    <div className="text-center w-100">
       <small className='p-2'>
-        Asked By: 
+        Asked By : 
         {question.user ? (
-          <Link to={`/profile/${question.user._id}`} className='iconColor text-decoration-underline'>
+          <Link to={`/profile/${question.user._id}`} className='iconColor text-decoration-underline ps-1'>
             {question.user.name}
           </Link>
         ) : (

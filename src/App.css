@@ -287,3 +287,17 @@ font-weight: bold !important;
   width: 100%;
 }
 
+.tags-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.tags-container::-webkit-scrollbar {
+  height: 8px; /* Adjust the height as needed */
+}
+
+.tags-container::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 4px;
+}
