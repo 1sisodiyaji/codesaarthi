@@ -178,7 +178,7 @@ function QuestionList() {
                     </Link>
                     <ul>
                       {question.tags.length > 0 ? question.tags.map((tag, index) => (
-                        <li key={index} className='badge badge-dark m-2 text-capitalize'>{tag}</li>
+                        <li key={index} className='badge badge-dark  text-capitalize'>{tag}</li>
                       )) :
                       <p>No tags used</p>
                       }

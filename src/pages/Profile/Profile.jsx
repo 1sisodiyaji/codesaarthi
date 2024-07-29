@@ -4,26 +4,24 @@ import { Helmet } from "react-helmet";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import config from "../../config/config";
-import { Link, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import Graph from "../../component/Graph";
-import Modal from "../../component/Modal";
+import GetUserData from "../../config/GetUserData";
+import QuestionAskedByAuthor from "../../component/Questions/QuestionAskedByAuthor";
+import BlogsByAuthor from "../../component/Blogs/getBlogsByAuthor";
+import AnswerByAuthor from "../../component/Questions/AnswerGivenByUser";
 
 const Profile = () => {
   const [user, setUser] = useState(null);
+  const [userId, setUserId] = useState(null);
   const [editing, setEditing] = useState(false);
   const navigate = useNavigate();
   const [image, setImage] = useState(null);
-  const [question, setQuestion] = useState([]);
-  const [answer, setAnswer] = useState([]);
-  const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [articleData, setArticleData] = useState([]);
   const [questionData, setQuestionData] = useState([]);
   const [answerData, setAnswerData] = useState([]);
-  const [blogsShow, setBlogsShow] = useState(false);
-  const [questionShow, setQuestionShow] = useState(false);
-  const [answershow, setAnswershow] = useState(false);
   const [imagePreview, setImagePreview] = useState(
     user
       ? user.image
@@ -195,44 +193,23 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    const token = Cookies.get("token");
-
     const fetchUserData = async () => {
       try {
-        const response = await axios.post(
-          `${config.BASE_URL}/api/user`,
-          {},
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-
-        if (response.data.status === "success") {
-          setUser(response.data.user);
-          return response.data.user._id; // Return the user ID for further use
-        } else {
-          toast.error("Failed to fetch user information!", { theme: "dark" });
-          return null;
-        }
+        const usersdata = await GetUserData();
+        setUser(usersdata);
+        setUserId(usersdata._id);
+        return usersdata._id;
       } catch (error) {
         toast.error("Error fetching user information!", { theme: "dark" });
         console.error("Error fetching user information:", error);
         return null;
       }
     };
-
     const fetchData = async () => {
-      const userId = await fetchUserData(); // Wait for user data to be fetched
-
+      const userId = await fetchUserData();
       if (userId) {
-        // Fetch other data only if userId is successfully fetched
         try {
           await Promise.all([
-            fetchBlogs(userId),
-            fetchQuestions(userId),
-            fetchAnswers(userId),
             MonthlyArticles(userId),
             MonthlyQuestions(userId),
             MonthlyAnswers(userId),
@@ -240,60 +217,6 @@ const Profile = () => {
         } catch (error) {
           console.error("Error fetching data:", error);
         }
-      }
-    };
-
-    const fetchBlogs = async (userId) => {
-      try {
-        const response = await axios.post(
-          `${config.BASE_URL}/article/getbyidAuthor/${userId}`
-        );
-        if (response.data) {
-          toast.success("Blogs written by you", { theme: "dark" });
-          setBlogs(response.data);
-        } else {
-          toast.error("Error fetching blogs, no blogs found!", {
-            theme: "dark",
-          });
-        }
-      } catch (error) {
-        toast.warn("You have not posted any blogs", { theme: "dark" });
-      }
-    };
-
-    const fetchQuestions = async (userId) => {
-      try {
-        const response = await axios.post(
-          `${config.BASE_URL}/article/getQuestionsByidAuthor/${userId}`
-        );
-        if (response.data) {
-          toast.success("Questions asked by you", { theme: "dark" });
-          setQuestion(response.data);
-        } else {
-          toast.error("Error fetching questions, no questions found!", {
-            theme: "dark",
-          });
-        }
-      } catch (error) {
-        toast.warn("You have not asked any questions", { theme: "dark" });
-      }
-    };
-
-    const fetchAnswers = async (userId) => {
-      try {
-        const response = await axios.post(
-          `${config.BASE_URL}/article/getAnswerByAuthorId/${userId}`
-        );
-        if (response.data) {
-          toast.success("Answers given by you", { theme: "dark" });
-          setAnswer(response.data);
-        } else {
-          toast.error("Error fetching answers, no answers found!", {
-            theme: "dark",
-          });
-        }
-      } catch (error) {
-        toast.warn("You have not answered any questions", { theme: "dark" });
       }
     };
 
@@ -370,7 +293,6 @@ const Profile = () => {
       </div>
     );
   }
-
   const logout = async () => {
     try {
       const response = await axios.post(`${config.BASE_URL}/api/logout`);
@@ -385,27 +307,9 @@ const Profile = () => {
       console.error("Logout error:", error);
     }
   };
-
   const editingMode = () => {
     setEditing(true);
   };
-
-  const deleteArticle = async (id) => {
-    try {
-      const response = await axios.delete(
-        `${config.BASE_URL}/article/delete/${id}`
-      );
-      if (response.status === 200) {
-        toast.success("Article deleted successfully!", { theme: "dark" });
-        setBlogs(blogs.filter((blog) => blog._id !== id));
-      } else {
-        toast.error("Failed to delete article!", { theme: "dark" });
-      }
-    } catch (error) {
-      console.error("Error deleting article:", error);
-    }
-  };
-
   const deleteUser = async (id) => {
     try {
       const response = await axios.delete(
@@ -421,54 +325,7 @@ const Profile = () => {
       console.error("Error deleting user:", error);
     }
   };
-
-  const handleCopy = (url) => {
-    navigator.clipboard
-      .writeText(url)
-      .then(() => toast.success("Link Copied Successfully"))
-      .catch((err) => console.error("Failed to copy: ", err));
-  };
-  const handleShareWhatsApp = (url) => {
-    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
-      url
-    )}`;
-    window.open(whatsappUrl, "_blank");
-  };
-  const handleShareLinkedIn = (url) => {
-    const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-      url
-    )}`;
-    window.open(linkedinUrl, "_blank");
-  };
-
-  const upvote = async (id) => {
-    const token = Cookies.get("token");
-    try {
-      const response = await axios.post(
-        `${config.BASE_URL}/article/questions/votes/${id}`,
-        {},
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-      console.log(response);
-      setQuestion(
-        question.map((q) =>
-          q._id === id ? { ...q, votes: response.data.votes } : q
-        )
-      );
-    } catch (error) {
-      console.error("Error upvoting the question:", error);
-    }
-  };
-  const handleshowBlogs = () => {
-    setBlogsShow(!blogsShow);
-  }
-  const handleShowQuestions = () => {
-    setQuestionShow(!questionShow);
-  }
-
-  const handleAnswerShow = () => {
-    setAnswershow(!answershow);
-  }
+ 
   return (
     <>
       <ToastContainer />
@@ -644,397 +501,19 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="row my-2">
-          <div className="col-11"> <h6>Blogs Posted By {user && user.name} <span class="badge badge-dark">{blogs.length}</span> </h6></div>
-          <div className="col-1"><i onClick={handleshowBlogs} class={`${blogsShow ? 'fi fi-sr-eye text-success bg-dark' : 'i fi-sr-eye-crossed text-light bg-primary'} px-2 py-1 rounded-4`} style={{ cursor: 'pointer' }}></i></div>
+        <div className="mt-4">  
+          <BlogsByAuthor userId={userId} />
         </div>
 
-        {blogsShow && (
-          <div className="my-2">
-            {blogs.length > 0 ? (
-              <div className="row">
-                {blogs.map((blog) => (
-                  <div
-                    key={blog._id}
-                    className="card bg-black my-2 shadow-6 p-3 col-lg-6"
-                  >
-                    <Link to={`/blog/${blog._id}`}>
-                      <h4 className="text-warning">{blog.title}</h4>
-                    </Link>
-                    <figure className="text-center">
-                      <img
-                        src={blog.image}
-                        alt={blog.title}
-                        title={blog.title}
-                        loading="lazy"
-                        className="img-fluid imageHeight  mb-3"
-                      />
-                      <figcaption>{blog.description}</figcaption>
-                    </figure>
-                    <hr />
-                    <div className="row">
-                      <div className="col-6 text-start">
-                        <small>
-                          Posted by: {blog.idAuthor ? blog.name : "Anonymous"}
-                        </small>
-                      </div>
-                      <div className="col-6 text-end">
-                        <small>
-                          {new Date(blog.date).toLocaleString("en-US", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                            hour: "numeric",
-                            minute: "numeric",
-                            hour12: true,
-                          })}
-                        </small>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-6 text-start">
-                        <Link
-                          to={`/edit-blog/${blog._id}`}
-                          className="text-light"
-                        >
-                          <button className="btn bg-warning text-capitalize ">
-                            Update <i className="fi fi-sr-pen-clip ps-2"></i>
-                          </button>
-                        </Link>
-                      </div>
-                      <div className="col-6 text-end">
-                        <div
-                          className="btn bg-danger text-capitalize"
-                          onClick={() => deleteArticle(blog._id)}
-                        >
-                          Delete <i className="fi fi-ss-trash-xmark ps-2"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p>You have not posted any blogs.</p>
-            )}
-          </div>
-        )}
-
-        <div className="row my-2">
-          <div className="col-11"> <h6>Questions Asked By {user && user.name} <span class="badge badge-dark">{question.length}</span> </h6></div>
-          <div className="col-1"><i onClick={handleShowQuestions} class={`${questionShow ? 'fi fi-sr-eye text-success bg-dark' : 'i fi-sr-eye-crossed text-light bg-primary'} px-2 py-1 rounded-4`} style={{ cursor: 'pointer' }}></i></div>
+        <div className="mt-4">
+          <h6>Your Questions</h6>
+          <QuestionAskedByAuthor userId={userId} />
         </div>
-        {questionShow && (
-          <div className="mt-4">
-            <h6>Your Questions</h6>
-            {question.length > 0 ? (
-              <>
-                <div className="row">
-                  {question &&
-                    question.map((question) => {
-                      const questionUrl = `${window.location.origin}/Questions/${question.slug}`;
-                      return (
-                        <div
-                          key={question._id}
-                          className="shadow-lg borderColor rounded-4 p-3  my-2 col-lg-6"
-                        >
-                          <div className="row">
-                            <div className="col-10">
-                              <Link
-                                to={`/Questions/${question.slug}`}
-                                className="iconColor text-decoration-underline"
-                                style={{ cursor: "pointer" }}
-                              >
-                                <h6>{question.title} ?</h6>
-                              </Link>
-                            </div>
-                            <div className="col-2 text-end">
-                              {/* <i className="fi fi-sr-circle-ellipsis"></i> */}
-                            </div>
-                          </div>
-
-                          <p>{question.body}</p>
-                          <div className="row">
-                            <div className="col-6">
-                              <Link
-                                to={`/profile/${question.user.username}`}
-                                className="iconColor"
-                              >
-                                Asked By:{" "}
-                                <span className="text-decoration-underline">
-                                  {question.user.name}
-                                </span>
-                              </Link>
-                            </div>
-                            <div className="col-6 text-end">
-                              <p className="pe-2">
-                                {new Date(question.createdAt).toLocaleString(
-                                  "en-US",
-                                  {
-                                    year: "numeric",
-                                    month: "long",
-                                    day: "numeric",
-                                    hour: "numeric",
-                                    minute: "numeric",
-                                    hour12: true,
-                                  }
-                                )}
-                              </p>
-                            </div>
-                            <div className="row">
-                              <div className="col-6">
-                                <div onClick={() => upvote(question._id)}>
-                                  <p className="btn btn-sm rounded-8 text-capitalize">
-                                    {" "}
-                                    {question.votes}{" "}
-                                    <i className="fi fi-rs-social-network"></i>{" "}
-                                    UpVote{" "}
-                                  </p>
-                                </div>
-                              </div>
-                              <div className="col-6 text-end">
-                                <div className="dropdown">
-                                  <button
-                                    className="btn btn-sm dropdown-toggle"
-                                    type="button"
-                                    id="dropdownMenuButton"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                                  >
-                                    <i className="fi fi-ss-share"></i>
-                                  </button>
-                                  <ul
-                                    className="dropdown-menu"
-                                    aria-labelledby="dropdownMenuButton"
-                                  >
-                                    <li>
-                                      <button
-                                        className="dropdown-item"
-                                        onClick={() => handleCopy(questionUrl)}
-                                      >
-                                        Copy Link
-                                      </button>
-                                    </li>
-                                    <li>
-                                      <button
-                                        className="dropdown-item"
-                                        onClick={() =>
-                                          handleShareWhatsApp(questionUrl)
-                                        }
-                                      >
-                                        Share on WhatsApp
-                                      </button>
-                                    </li>
-                                    <li>
-                                      <button
-                                        className="dropdown-item"
-                                        onClick={() =>
-                                          handleShareLinkedIn(questionUrl)
-                                        }
-                                      >
-                                        Share on LinkedIn
-                                      </button>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="row">
-                              <div className="col-6 text-start">
-                              <Modal
-                               id="modal1" 
-                                btnName = "Edit"
-                                Design = "btn  text-capitalize bg-warning"
-                                title="Edit Your Question"
-                                body="."
-                                saveButtonLabel="Update "
-                                closeButtonLabel="Cancel"
-                              /> 
-                                </div>
-
-                              <div className="col-6 text-end">  
-                               <Modal
-                               id="modal2" 
-                                btnName = "Delete 🗑️"
-                                Design = "btn btn-sm rounded-8 text-capitalize bg-danger"
-                                title="Delete Your Question"
-                                body="."
-                                saveButtonLabel="Delete "
-                                closeButtonLabel="Cancel"
-                              /> 
-                              </div>
-
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                </div>
-              </>
-            ) : (
-              <p>You have not asked any questions.</p>
-            )}
-          </div>
-        )}
-
-
-        <div className="row my-2">
-          <div className="col-11"> <h6>Answer Contributed By {user && user.name} <span class="badge badge-dark">{answer.length}</span> </h6></div>
-          <div className="col-1"> <i onClick={handleAnswerShow} class={`${answershow ? 'fi fi-sr-eye text-success bg-dark' : 'i fi-sr-eye-crossed text-light bg-primary'} px-2 py-1 rounded-4`} style={{ cursor: 'pointer' }}></i></div>
+        <div className="mt-4">
+          <h6>Your Contribution on answers :- </h6>
+          <AnswerByAuthor userId={userId} />
         </div>
-        {answershow && (
-          <div className="mt-4">
-            <h4>Your Answers</h4>
-            {answer.length > 0 ? (
-              <>
-                <div className="row">
-                  {answer &&
-                    answer.map((a) => {
-                      const questionUrl = `${window.location.origin}/Questions/${a.question.slug}`;
-                      return (
-                        <div
-                          key={a._id}
-                          className="shadow-lg borderColor rounded-4 p-3 my-2 col-lg-6"
-                        >
-                          <div className="row">
-                            <div className="col-10">
-                              <Link
-                                to={`/Questions/${a.question._id}`}
-                                className="iconColor"
-                                style={{ cursor: "pointer" }}
-                              >
-                                <h2>{a.question.title} ?</h2>
-                              </Link>
-                            </div>
-                            <div className="col-2 text-end">
-                              {/* <i className="fi fi-sr-circle-ellipsis"></i> */}
-                            </div>
-                          </div>
-
-                          <p>{a.body}</p>
-                          <div className="row">
-                            <div className="col-6">
-                              <Link
-                                to={`/profile/${a.question.user._id}`}
-                                className="iconColor"
-                              >
-                                Asked By:{" "}
-                                <span className="text-decoration-underline">
-                                  {a.question.user.name}
-                                </span>
-                              </Link>
-                            </div>
-                            <div className="col-6 text-end">
-                              <small className="pe-2">
-                                {new Date(a.question.createdAt).toLocaleString(
-                                  "en-US",
-                                  {
-                                    year: "numeric",
-                                    month: "long",
-                                    day: "numeric",
-                                    hour: "numeric",
-                                    minute: "numeric",
-                                    hour12: true,
-                                  }
-                                )}
-                              </small>
-                            </div>
-                          </div>
-
-                          <div className="row">
-                            <div className="col-6">
-                              <Link
-                                to={`/profile/${a.question.user._id}`}
-                                className="iconColor"
-                              >
-                                Answered By:{" "}
-                                <span className="text-decoration-underline">
-                                  {a.user.name}
-                                </span>
-                              </Link>
-                            </div>
-                            <div className="col-6 text-end">
-                              <small className="pe-2">
-                                {new Date(a.createdAt).toLocaleString("en-US", {
-                                  year: "numeric",
-                                  month: "long",
-                                  day: "numeric",
-                                  hour: "numeric",
-                                  minute: "numeric",
-                                  hour12: true,
-                                })}
-                              </small>
-                            </div>
-                          </div>
-
-                          <div className="row">
-                            <div className="col-6">
-                              <div>
-                                <p className="btn btn-sm rounded-8 text-capitalize">
-                                  {" "}
-                                  {a.votes}{" "}
-                                  <i className="fi fi-rs-social-network"></i>{" "}
-                                  UpVote{" "}
-                                </p>
-                              </div>
-                            </div>
-                            <div className="col-6 text-end">
-                              <div className="dropdown">
-                                <button
-                                  className="btn btn-sm dropdown-toggle"
-                                  type="button"
-                                  id="dropdownMenuButton"
-                                  data-bs-toggle="dropdown"
-                                  aria-expanded="false"
-                                >
-                                  <i className="fi fi-ss-share"></i>
-                                </button>
-                                <ul
-                                  className="dropdown-menu"
-                                  aria-labelledby="dropdownMenuButton"
-                                >
-                                  <li>
-                                    <button
-                                      className="dropdown-item"
-                                      onClick={() => handleCopy(questionUrl)}
-                                    >
-                                      Copy Link
-                                    </button>
-                                  </li>
-                                  <li>
-                                    <button
-                                      className="dropdown-item"
-                                      onClick={() =>
-                                        handleShareWhatsApp(questionUrl)
-                                      }
-                                    >
-                                      Share on WhatsApp
-                                    </button>
-                                  </li>
-                                  <li>
-                                    <button
-                                      className="dropdown-item"
-                                      onClick={() =>
-                                        handleShareLinkedIn(questionUrl)
-                                      }
-                                    >
-                                      Share on LinkedIn
-                                    </button>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                </div>
-              </>
-            ) : (
-              <p>You have not answered any questions.</p>
-            )}
-          </div>
-        )}
+        
       </div>
     </>
   );
