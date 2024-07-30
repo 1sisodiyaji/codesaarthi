@@ -7,7 +7,7 @@ import CourseData from "../../data/Course";
 
 const Content = () => {
   const { title } = useParams();
-  const [course, setCourse] = useState(null);
+  const [course, setCourse] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [selectedTopic, setSelectedTopic] = useState(0);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -19,7 +19,7 @@ const Content = () => {
   useEffect(() => { 
  
     const foundCourse = CourseData.find((item) => item.title === title);
-    if (foundCourse) {
+    if (foundCourse) { 
       setCourse(foundCourse);
     } 
 
@@ -189,53 +189,54 @@ const Content = () => {
           </button>
         </div>
         <div className="row g-0 border border-dark rounded-8">
-         {course &&  <div  className="col-lg-3 col-0 p-lg-2 d-lg-block d-none"
-            style={{ borderRight: "1px solid #262626" }}
-          >
-            <div className="d-flex justify-content-center py-2">
-              <img
-                src={course.thumbnailImage}
-                className="img-fluid"
-                alt="course thumbnail"
-              />
-            </div>
-            <h2 className="text-center pb-3 text-primary">
-              {course.title.toUpperCase()}
-            </h2>
-            <div className="progress mb-3" style={{ height: "15px" }}>
-              <div
-                className="progress-bar bg-success"
-                role="progressbar"
-                style={{ width: `${progress}%` }}
-                aria-valuenow={progress}
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                {Math.round(progress)}%
-              </div>
-            </div>
-            {course.topics &&
-              course.topics.map((topic, index) => (
-                <div
-                  key={topic._id}
-                  onClick={() => handleTopicClick(index)}
-                  style={{
-                    cursor: "pointer",
-                    textDecoration:
-                      selectedTopic === index ? "underline" : "none",
-                  }}
-                >
-                  <p
-                    className="text-capitalize topic-item"
-                    style={{ color: selectedTopic === index ? "#6D39F7" : "" }}
-                  >
-                    <i className="fi fi-ss-book-alt pe-1"></i> {topic.title}
-                  </p>
-                  <hr />
-                </div>
-              ))}
-          </div>
-}
+        {Array.isArray(course)  && course.map((course) => (
+  <div key={course._id} className="col-lg-3 col-0 p-lg-2 d-lg-block d-none"
+       style={{ borderRight: "1px solid #262626" }}
+  >
+    <div className="d-flex justify-content-center py-2">
+      <img
+        src={course.thumbnailImage}
+        className="img-fluid"
+        alt="course thumbnail"
+      />
+    </div>
+    <h2 className="text-center pb-3 text-primary">
+      {course.title.toUpperCase()}
+    </h2>
+    <div className="progress mb-3" style={{ height: "15px" }}>
+      <div
+        className="progress-bar bg-success"
+        role="progressbar"
+        style={{ width: `${progress}%` }}
+        aria-valuenow={progress}
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        {Math.round(progress)}%
+      </div>
+    </div>
+    {course.topics && course.topics.map((topic, index) => (
+      <div
+        key={topic._id}
+        onClick={() => handleTopicClick(index)}
+        style={{
+          cursor: "pointer",
+          textDecoration: selectedTopic === index ? "underline" : "none",
+        }}
+      >
+        <p
+          className="text-capitalize topic-item"
+          style={{ color: selectedTopic === index ? "#6D39F7" : "" }}
+        >
+          <i className="fi fi-ss-book-alt pe-1"></i> {topic.title}
+        </p>
+        <hr />
+      </div>
+    ))}
+  </div>
+))}
+
+
           {isSidebarOpen && (
             <div className="d-lg-none d-block">
               <div className="container-fluid g-0 d-lg-none d-block">

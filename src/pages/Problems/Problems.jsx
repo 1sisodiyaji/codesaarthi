@@ -30,7 +30,7 @@ const Problems = () => {
                 <p className="card-text"> Practise Basic Questions to clear concepts
                 </p>
 
-                <Link to= "/Problems/ArrayProblems" ><button type="button" className="btn  text-light tilt-effect2 text-capitalize" style={{backgroundColor:'purple'}}>Start Solving <i class="fi fi-sr-square-terminal text-light ps-2"></i></button></Link>
+                <Link to= "/Problems/ArrayProblems" ><button type="button" className="btn  text-light tilt-effect2 text-capitalize" style={{backgroundColor:'purple'}}>Start Solving <i className="fi fi-sr-square-terminal text-light ps-2"></i></button></Link>
               </div>
             </div>
           </div>

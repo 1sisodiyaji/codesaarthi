@@ -162,7 +162,7 @@ const AboutUs = () => {
                                             style={{ color: '#FFE164' }}
                                             id="Email"
                                             value={email}
-                                            required email
+                                            required 
                                             onChange={(e) => setEmail(e.target.value)}
                                         />
                                     </div>

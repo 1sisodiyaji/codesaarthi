@@ -40,32 +40,40 @@ const Theory = () => {
         <div className="container">
           <div className="row g-6">
             <>
-              { courses && courses.map(course => (
-                <div key={course._id} className="col-lg-4 col-12 my-2">
-                  <div className="card rounded-8 p-lg-4 p-4">
-                    <div className="text-center">
-                      <img src={course.thumbnailImage} className="img-fluid courseImage text-light" loading="lazy" title={course.title} alt={course.title} />
-                    </div>
-                    <div className="text-end text-success text-decoration-underline">
-                      <small>Free Course </small>
-                    </div>
-                    <h5 className="card-title text-light text-center my-2">{course.title}</h5>
-                    <small className=" text-capitalize my-1">{course.description}</small>
-                    <div className="row my-2">
-                      <div className="col-6">
-                        <div className="btn btn-sm rounded-8 text-capitalize">
-                          Add to Read <i className="fi fi-sr-add ps-1"></i>
-                        </div>
-                      </div>
-                      <div className="col-6 text-end">
-                        <Link to={`/theory/${course.title}`}>
-                          <div className="btn btn-sm rounded-8 text-capitalize tilt-effect">Start Reading <i className="fi fi-ss-book-open-reader ps-1"></i></div>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+            {Array.isArray(courses) && courses.map(course => (
+        <div key={course.id} className="col-lg-4 col-12 my-2">
+          <div className="card rounded-8 p-lg-4 p-4">
+            <div className="text-center">
+              <img 
+                src={course.thumbnailImage} 
+                className="img-fluid courseImage text-light" 
+                loading="lazy" 
+                title={course.title} 
+                alt={course.title} 
+              />
+            </div>
+            <div className="text-end text-success text-decoration-underline">
+              <small>Free Course</small>
+            </div>
+            <h5 className="card-title text-light text-center my-2">{course.title}</h5>
+            <small className="text-capitalize my-1">{course.description}</small>
+            <div className="row my-2">
+              <div className="col-6">
+                <div className="btn btn-sm rounded-8 text-capitalize">
+                  Add to Read <i className="fi fi-sr-add ps-1"></i>
                 </div>
-              ))}
+              </div>
+              <div className="col-6 text-end">
+                <Link to={`/theory/${course.title}`}>
+                  <div className="btn btn-sm rounded-8 text-capitalize tilt-effect">
+                    Start Reading <i className="fi fi-ss-book-open-reader ps-1"></i>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
             </>
           </div>
         </div>
