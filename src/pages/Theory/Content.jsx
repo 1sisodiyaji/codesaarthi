@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet";
 import config from "../../config/config";
-import CourseData from "../../data/Course"; 
+import CourseData from "../../data/Course";
+import Loading from "../../component/Loading";
+import TimeConverter from "../../config/TimeConverter";
+import SideCard from "../../component/SideCard";
 
 const Content = () => {
   const { title } = useParams();
@@ -16,32 +19,27 @@ const Content = () => {
     return storedCount ? JSON.parse(storedCount) : 1;
   });
 
-  useEffect(() => { 
- 
+  useEffect(() => {
     const foundCourse = CourseData.find((item) => item.title === title);
-    if (foundCourse) { 
+    if (foundCourse) {
       setCourse(foundCourse);
-    } 
+    }
 
     const fetchBlogs = async () => {
       try {
         const response = await axios.post(`${config.BASE_URL}/article/getArticleData`);
         const formattedBlogs = response.data.map((blog) => ({
           ...blog,
-          formattedDate: new Date(blog.date).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          }),
+          formattedDate: <TimeConverter date={blog.date} />
         }));
         const sortedBlogs = formattedBlogs.sort((a, b) => new Date(a.date) - new Date(b.date));
         setBlogs(sortedBlogs.slice(0, 5));
       } catch (error) {
         console.error("Error fetching blogs:", error);
       }
-    }
+    };
 
-    fetchBlogs(); 
+    fetchBlogs();
   }, [title]);
 
   useEffect(() => {
@@ -95,44 +93,8 @@ const Content = () => {
   };
 
   if (!course) {
-    return (
-      <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
-        <div className="card" aria-hidden="true" style={{ width: "350px" }}>
-          <div className="text-center">
-            <img
-              src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721031578/loader_bhnpfb.gif"
-              style={{ height: "125px", width: "115px" }}
-              className="card-img-top"
-              alt="Loading..."
-            />
-          </div>
-          <div className="card-body">
-            <h5 className="card-title placeholder-glow">
-              <span className="placeholder col-6"></span>
-            </h5>
-            <p className="card-text placeholder-glow">
-              <span className="placeholder col-7"></span>
-              <span className="placeholder col-4"></span>
-              <span className="placeholder col-4"></span>
-              <span className="placeholder col-6"></span>
-              <span className="placeholder col-8"></span>
-            </p>
-            <a  href="/"
-              className="btn btn-secondary disabled placeholder col-6"
-              aria-disabled="true"
-            >loading</a>
-          </div>
-        </div>
-      </div>
-    );
+    return <Loading message="Fetching Course Details" />;
   }
-
-  const truncateText = (text, maxLength) => {
-    if (text.length > maxLength) {
-      return text.substring(0, maxLength) + "...";
-    }
-    return text;
-  };
 
   return (
     <>
@@ -142,14 +104,8 @@ const Content = () => {
           content="React js , learn react js from scratch , version 19 react details , new updates on react , react structure."
         />
         <meta name="robots" content="index, follow" />
-        <link
-          rel="canonical"
-          href={`https://codesaarthi.com/theory/${title}`}
-        />
-        <meta
-          name="description"
-          content={course.description}
-        />
+        <link rel="canonical" href={`https://codesaarthi.com/theory/${title}`} />
+        <meta name="description" content={course.description} />
         <title>
           {course.topics && course.topics[selectedTopic]
             ? `${course.topics[selectedTopic].title} | Codesaarthi`
@@ -178,7 +134,7 @@ const Content = () => {
         />
       </Helmet>
 
-      <div className="container-fluid design ">
+      <div className="container-fluid design">
         <div className="d-lg-none d-block d-flex justify-content-end pt-2">
           <button
             onClick={toggleSidebar}
@@ -189,53 +145,51 @@ const Content = () => {
           </button>
         </div>
         <div className="row g-0 border border-dark rounded-8">
-        {Array.isArray(course)  && course.map((course) => (
-  <div key={course._id} className="col-lg-3 col-0 p-lg-2 d-lg-block d-none"
-       style={{ borderRight: "1px solid #262626" }}
-  >
-    <div className="d-flex justify-content-center py-2">
-      <img
-        src={course.thumbnailImage}
-        className="img-fluid"
-        alt="course thumbnail"
-      />
-    </div>
-    <h2 className="text-center pb-3 text-primary">
-      {course.title.toUpperCase()}
-    </h2>
-    <div className="progress mb-3" style={{ height: "15px" }}>
-      <div
-        className="progress-bar bg-success"
-        role="progressbar"
-        style={{ width: `${progress}%` }}
-        aria-valuenow={progress}
-        aria-valuemin="0"
-        aria-valuemax="100"
-      >
-        {Math.round(progress)}%
-      </div>
-    </div>
-    {course.topics && course.topics.map((topic, index) => (
-      <div
-        key={topic._id}
-        onClick={() => handleTopicClick(index)}
-        style={{
-          cursor: "pointer",
-          textDecoration: selectedTopic === index ? "underline" : "none",
-        }}
-      >
-        <p
-          className="text-capitalize topic-item"
-          style={{ color: selectedTopic === index ? "#6D39F7" : "" }}
-        >
-          <i className="fi fi-ss-book-alt pe-1"></i> {topic.title}
-        </p>
-        <hr />
-      </div>
-    ))}
-  </div>
-))}
-
+          <div
+            className="col-lg-3 col-0 p-lg-2 d-lg-block d-none"
+            style={{ borderRight: "1px solid #262626" }}
+          >
+            <div className="d-flex justify-content-center py-2">
+              <img
+                src={course.thumbnailImage}
+                className="img-fluid"
+                alt="course thumbnail"
+              />
+            </div>
+            <h2 className="text-center pb-3 text-primary">
+              {  course.title}
+            </h2>
+            <div className="progress mb-3" style={{ height: "15px" }}>
+              <div
+                className="progress-bar bg-success"
+                role="progressbar"
+                style={{ width: `${progress}%` }}
+                aria-valuenow={progress}
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                {Math.round(progress)}%
+              </div>
+            </div>
+            {course.topics && course.topics.map((topic, index) => (
+              <div
+                key={topic._id}
+                onClick={() => handleTopicClick(index)}
+                style={{
+                  cursor: "pointer",
+                  textDecoration: selectedTopic === index ? "underline" : "none",
+                }}
+              >
+                <p
+                  className="text-capitalize topic-item"
+                  style={{ color: selectedTopic === index ? "#6D39F7" : "" }}
+                >
+                  <i className="fi fi-ss-book-alt pe-1"></i> {topic.title}
+                </p>
+                <hr />
+              </div>
+            ))}
+          </div>
 
           {isSidebarOpen && (
             <div className="d-lg-none d-block">
@@ -245,35 +199,32 @@ const Content = () => {
                   className={`sidebar3 ${isSidebarOpen ? "show" : ""
                     } d-lg-none d-md-none d-sm-block`}
                 >
-                  {course.topics &&
-                    course.topics.map((topic, index) => (
-                      <div
-                        key={topic._id}
-                        onClick={() => handleTopicClick(index)}
+                  {course.topics.map((topic, index) => (
+                    <div
+                      key={topic._id}
+                      onClick={() => handleTopicClick(index)}
+                      style={{
+                        cursor: "pointer",
+                        textDecoration: selectedTopic === index ? "underline" : "none",
+                        color: selectedTopic === index ? "#FFE164" : "none",
+                      }}
+                    >
+                      <p
+                        className="text-capitalize topic-item"
                         style={{
-                          cursor: "pointer",
-                          textDecoration:
-                            selectedTopic === index ? "underline" : "none",
-                          color: selectedTopic === index ? "#FFE164" : "none",
+                          color: selectedTopic === index ? "#6D39F7" : "#FFE164",
                         }}
                       >
-                        <p
-                          className="text-capitalize topic-item"
-                          style={{
-                            color:
-                              selectedTopic === index ? "#6D39F7" : "#FFE164",
-                          }}
-                        >
-                          <i className="fi fi-ss-book-alt pe-1"></i>{" "}
-                          {topic.title}
-                        </p>
-                        <hr />
-                      </div>
-                    ))}
+                        <i className="fi fi-ss-book-alt pe-1"></i> {topic.title}
+                      </p>
+                      <hr />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           )}
+
           <div className="col-lg-7 col-12">
             {course.topics && course.topics[selectedTopic] && (
               <div className="p-lg-3 p-2">
@@ -291,7 +242,7 @@ const Content = () => {
                   </div>
                 )}
                 <div
-                  className=" p-2"
+                  className="p-2"
                   dangerouslySetInnerHTML={{
                     __html: course.topics[selectedTopic].description,
                   }}
@@ -307,7 +258,7 @@ const Content = () => {
                   </div>
                   <div className="col-6 text-end">
                     <div
-                      className="btn  text-capitalize"
+                      className="btn text-capitalize"
                       onClick={goToNextTopic}
                     >
                       Next <i className="fi fi-rr-angle-small-right"></i>
@@ -319,7 +270,7 @@ const Content = () => {
           </div>
 
           <div className="col-lg-2 col-12">
-            <div style={{ position: 'fixed', width: '240px'}}>
+            <div style={{ position: "fixed", width: "240px" }}>
               <div className="p-1">
                 {course.topics &&
                   course.topics.map((topic, index) => (
@@ -328,22 +279,19 @@ const Content = () => {
                       style={{ cursor: "pointer" }}
                       onClick={() => setSelectedTopic(index)}
                     >
-                      {selectedTopic === index && (
-                        <>
-                          {topic.headingPoints &&
-                            topic.headingPoints.map((headingPoint, idx) => (
-                              <div key={`${topic._id}-${idx}`}>
-                                <small
-                                  className="text-capitalize topic-item"
-                                  style={{ fontSize: "0.7rem" }}
-                                >
-                                  <i className="fi fi-ss-book-alt pe-1"></i>{" "}
-                                  <a href={`#${headingPoint}`}> {headingPoint} </a>
-                                </small>
-                              </div>
-                            ))}
-                        </>
-                      )}
+                      {selectedTopic === index &&
+                        topic.headingPoints &&
+                        topic.headingPoints.map((headingPoint, idx) => (
+                          <div key={`${topic._id}-${idx}`}>
+                            <small
+                              className="text-capitalize topic-item"
+                              style={{ fontSize: "0.7rem" }}
+                            >
+                              <i className="fi fi-ss-book-alt pe-1"></i>{" "}
+                              <a href={`#${headingPoint}`}> {headingPoint} </a>
+                            </small>
+                          </div>
+                        ))}
                     </div>
                   ))}
               </div>
@@ -352,31 +300,17 @@ const Content = () => {
                 <i className="fi fi-sr-add"></i>
                 Save Your Notes
               </div>
-              <>
-                {blogs.map((blog) => (
-                  <div className="border rounded-6 mb-2" key={blog._id}>
-                    <div className="row g-0">
-                      <div className="col-3 d-flex justify-content-center align-items-center">
-
-                        <img
-                          src={blog.image || "https://res.cloudinary.com/ducw7orvn/image/upload/v1721024136/codesaarthi/article-1721024134471.png"}
-                          alt="Author"
-                          style={{ width: '35px' }}
-                          className="img-fluid rounded-circle"
-                        />
-                      </div>
-                      <div className="col-9">
-                        <div className="card-body">
-                         <Link to = {`/blog/${blog._id}`} className="iconColor" >  <small style={{ fontSize: '0.6rem' }}>{truncateText(blog.title, 35)}</small> </Link>
-
-                        </div>
-                      </div>
-                    </div>
-                    <small className="text-muted text-center ps-2" style={{ fontSize: '0.6rem' }}>By {blog.name} | {blog.formattedDate}</small>
-
-                  </div>
+              {blogs &&
+                blogs.map((blog) => ( 
+                    <SideCard
+                      id = {blog._id}
+                      image={blog.image}
+                      link={`/blog/${blog._id}`}
+                      title={blog.title}
+                      name={blog.name}
+                      formattedDate={blog.formattedDate}
+                    /> 
                 ))}
-              </>
             </div>
           </div>
         </div>
@@ -386,4 +320,3 @@ const Content = () => {
 };
 
 export default Content;
-

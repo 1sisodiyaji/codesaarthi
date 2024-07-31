@@ -1,3 +1,5 @@
+@import "~@flaticon/flaticon-uicons/css/all/all";
+ 
  * {
   margin: 0;
   padding: 0;
@@ -261,11 +263,6 @@ font-weight: bold !important;
   color: #6D39F7 !important;
 }
 
-.cardImageHeight{
-  height: 480px !important;
-  width: 100% !important;
-}
-
 /* .sharebutton  */
 .share-options {
   display: flex;
@@ -301,3 +298,34 @@ font-weight: bold !important;
   background-color: darkgrey;
   border-radius: 4px;
 }
+
+.animated-border {
+  position: relative; 
+  border: 1px solid transparent;
+  animation: borderMove 4s infinite linear;
+}
+
+@keyframes borderMove {
+  0% {
+    border-color: red;
+    box-shadow: 0 0 0 0 red;
+  }
+  25% {
+    border-color: blue;
+    box-shadow: 5px 5px 5px blue;
+  }
+  50% {
+    border-color: green;
+    box-shadow: -5px 5px 5px green;
+  }
+  75% {
+    border-color: yellow;
+    box-shadow: 5px -5px 5px yellow;
+  }
+  100% {
+    border-color: red;
+    box-shadow: 0 0 0 0 red;
+  }
+}
+
+

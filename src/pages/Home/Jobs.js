@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loading from "../../component/Loading";
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -182,35 +183,8 @@ const Jobs = () => {
         </div>
 
         {loading ? (
-          <div className="vh-100 text-warning d-flex justify-content-center align-items-center">
-            <div className="card" aria-hidden="true" style={{ width: "350px" }}>
-              <div className="text-center">
-                <img
-                  src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721031578/loader_bhnpfb.gif"
-                  style={{ height: "125px", width: "115px" }}
-                  className="card-img-top"
-                  alt="..."
-                />
-              </div>
-              <div className="card-body">
-                <h5 className="card-title placeholder-glow">
-                  <span className="placeholder col-6"></span>
-                </h5>
-                <p className="card-text placeholder-glow">
-                  <span className="placeholder col-7"></span>
-                  <span className="placeholder col-4"></span>
-                  <span className="placeholder col-4"></span>
-                  <span className="placeholder col-6"></span>
-                  <span className="placeholder col-8"></span>
-                </p>
-                <a href="/"
-                  className="btn btn-secondary disabled placeholder col-12 text-capitalize"
-                  aria-disabled="true"
-                >Getting job list</a>
-              </div>  
-            </div>
-          </div>
-        ) : (
+         <Loading message= "Fetching Your Job List .."/>
+        ) : ( 
           <div>
             {jobs.map((job) => (
               <div key={job.id} className="g-0">

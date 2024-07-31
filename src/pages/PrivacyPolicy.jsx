@@ -1,21 +1,41 @@
 import React from "react";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 const PrivacyPolicy = () => {
   return (
     <>
-    <Helmet>
-  <meta name="keywords" content="Privacy Policy, Data Privacy, User Privacy, Legal Information" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://codesaarthi.com/privacy_policy" />
-  <meta name="description" content="Read and understand our privacy policy to learn how we collect, use, and protect your personal information. We are committed to safeguarding your privacy and ensuring the security of your data." />
-  <title>Privacy Policy | Codesaarthi</title>
-  <meta property="og:title" content="Privacy Policy | Codesaarthi" />
-  <meta property="og:description" content="Read and understand our privacy policy to learn how we collect, use, and protect your personal information. We are committed to safeguarding your privacy and ensuring the security of your data." />
-  <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
-  <meta property="og:url" content="https://codesaarthi.com/privacy_policy" />
-  <meta property="og:type" content="Legal-Website" />
-  <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
-</Helmet>
+      <Helmet>
+        <meta
+          name="keywords"
+          content="Privacy Policy, Data Privacy, User Privacy, Legal Information"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://codesaarthi.com/privacy_policy" />
+        <meta
+          name="description"
+          content="Read and understand our privacy policy to learn how we collect, use, and protect your personal information. We are committed to safeguarding your privacy and ensuring the security of your data."
+        />
+        <title>Privacy Policy | Codesaarthi</title>
+        <meta property="og:title" content="Privacy Policy | Codesaarthi" />
+        <meta
+          property="og:description"
+          content="Read and understand our privacy policy to learn how we collect, use, and protect your personal information. We are committed to safeguarding your privacy and ensuring the security of your data."
+        />
+        <meta
+          property="og:image"
+          content="https://codesaarthi.com/img/logo.png"
+        />
+        <meta
+          property="og:url"
+          content="https://codesaarthi.com/privacy_policy"
+        />
+        <meta property="og:type" content="Legal-Website" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://codesaarthi.com/img/favicon.ico"
+          sizes="32x32"
+        />
+      </Helmet>
 
       <div style={{ minHeight: "100vh" }}>
         <div
@@ -32,7 +52,8 @@ const PrivacyPolicy = () => {
                   Privacy Policy
                 </h1>
                 <small className="fw-lighter" style={{ color: "#79b4e2" }}>
-                  Last Updated: 18<sup style={{ color: "#79b4e2" }}>th</sup> feb, 2024
+                  Last Updated: 18<sup style={{ color: "#79b4e2" }}>th</sup>{" "}
+                  feb, 2024
                 </small>
               </div>
             </div>
@@ -42,21 +63,21 @@ const PrivacyPolicy = () => {
           <div className="row">
             <div className="col-12">
               <p>
-                codesaarthi intention behind publishing this Privacy Policy
-                is to ensure that we are compliant to the privacy and data
-                security requirements. Herein, codesaarthi would like to
-                provide detailed information regarding the data we collect,
-                process and the controls we have implemented to safeguard the
-                information provided to us by users.
+                codesaarthi intention behind publishing this Privacy Policy is
+                to ensure that we are compliant to the privacy and data security
+                requirements. Herein, codesaarthi would like to provide detailed
+                information regarding the data we collect, process and the
+                controls we have implemented to safeguard the information
+                provided to us by users.
               </p>
               <p>
                 Respecting your time and with the goal of providing you with the
                 quickest possible access to the relevant passages of the privacy
                 statement, we offer you the following summary. The summary does
                 not replace or supersede the detailed explanations in the
-                codesaarthi Privacy Statement so in case of doubt, please
-                always refer to the relevant passage in the actual full
-                statement below:
+                codesaarthi Privacy Statement so in case of doubt, please always
+                refer to the relevant passage in the actual full statement
+                below:
               </p>
 
               <h6>Summary</h6>
@@ -85,15 +106,15 @@ const PrivacyPolicy = () => {
               <h6>Who collects and processes your personal data?</h6>
               <p>
                 codesaarthi does, in the form of the respective legal entity
-                codesaarthi , India. The codesaarthi
-                Privacy Statement describes in detail which processing
-                activities of which codesaarthi entity apply.
+                codesaarthi , India. The codesaarthi Privacy Statement describes
+                in detail which processing activities of which codesaarthi
+                entity apply.
               </p>
 
               <h6>What personal data does codesaarthi collect?</h6>
               <p>
-                codesaarthi may collect various types of personal data about
-                you when conducting its business, including:
+                codesaarthi may collect various types of personal data about you
+                when conducting its business, including:
               </p>
               <ul>
                 <li>Personal contact data,</li>
@@ -110,9 +131,7 @@ const PrivacyPolicy = () => {
                 <li>Application-related personal data,</li>
               </ul>
 
-              <h6>
-                For what purposes does codesaarthi collect personal data?
-              </h6>
+              <h6>For what purposes does codesaarthi collect personal data?</h6>
               <p>codesaarthi processes your personal data to:</p>
               <p>
                 pursue its business relationships with you, including ensuring
@@ -163,14 +182,14 @@ const PrivacyPolicy = () => {
               </h6>
               <p>
                 When conducting business and operating our various web presences
-                and other communication channels, codesaarthi processes
-                personal data of the people it interacts with, including
-                customers, partners, suppliers, vendors, candidates, and any
-                other people with whom we interact.
+                and other communication channels, codesaarthi processes personal
+                data of the people it interacts with, including customers,
+                partners, suppliers, vendors, candidates, and any other people
+                with whom we interact.
               </p>
               <p>
-                In any of these cases, codesaarthi may process personal data
-                for one or more of the following business purposes:
+                In any of these cases, codesaarthi may process personal data for
+                one or more of the following business purposes:
               </p>
 
               <h5>
@@ -192,14 +211,14 @@ const PrivacyPolicy = () => {
                 and events, non-marketing related newsletters, white papers,
                 tutorials, trainings, as well as other offerings like contests,
                 quizes or sweepstakes. When you purchase or intend to purchase
-                products or services from codesaarthi, codesaarthi will use
-                your personal data for this purpose. More specifically,
-                codesaarthi may use your personal data to confirm your opening
-                of an account, manage the contract execution, send you
-                disclosures as may be required by law, notice of payments, and
-                other information about our products and services. codesaarthi
-                may respond to related inquiries, provide you with necessary
-                support and process your feedback.
+                products or services from codesaarthi, codesaarthi will use your
+                personal data for this purpose. More specifically, codesaarthi
+                may use your personal data to confirm your opening of an
+                account, manage the contract execution, send you disclosures as
+                may be required by law, notice of payments, and other
+                information about our products and services. codesaarthi may
+                respond to related inquiries, provide you with necessary support
+                and process your feedback.
               </p>
               <p>
                 In the context of your use of our products or services,
@@ -208,16 +227,16 @@ const PrivacyPolicy = () => {
                 user’s, or a customer’s question or complaint or to investigate
                 suspicious transactions. In case of telephone calls or chat
                 sessions, codesaarthi may record such calls or chat sessions to
-                improve the quality of codesaarthi services after informing
-                you accordingly during that call and, subject to applicable law,
+                improve the quality of codesaarthi services after informing you
+                accordingly during that call and, subject to applicable law,
                 receiving your prior consent before the recording begins.
               </p>
 
               <p>
                 Customer Satisfaction - Within an existing business relationship
-                between you and codesaarthi, codesaarthi processes your
-                personal data to help us understand how satisfied you are with
-                the functionality and quality of our products and services, to
+                between you and codesaarthi, codesaarthi processes your personal
+                data to help us understand how satisfied you are with the
+                functionality and quality of our products and services, to
                 provide you with relevant information on our latest product
                 announcements, software updates or upgrades, events, special
                 offers, and other information about codesaarthi software and
@@ -255,10 +274,10 @@ const PrivacyPolicy = () => {
                 and prosecuting those responsible for such kind of activity.
               </p>
               <p>
-                If necessary, codesaarthi uses personal data to prevent
-                criminal activities such as any form of cybercrime, the illegal
-                use of our products and services or fraud, to assert our rights
-                or defend codesaarthi against legal claims.
+                If necessary, codesaarthi uses personal data to prevent criminal
+                activities such as any form of cybercrime, the illegal use of
+                our products and services or fraud, to assert our rights or
+                defend codesaarthi against legal claims.
               </p>
 
               <p>
@@ -284,18 +303,18 @@ const PrivacyPolicy = () => {
 
               <h5>Creating user profiles</h5>
               <p>
-                Certain web offerings linked to codesaarthi websites,
-                including forums, blogs, and networks, require you to register
-                and create a user profile. Through the user profile you can
-                share personal information about you with other users, such as
-                your name, photo, social media accounts, postal or email
-                address, telephone number, personal interests, skills, and basic
-                information about your company. The user profiles serve to
-                personalize the interactions between the users and to allow
-                codesaarthi to foster the collaboration and quality of
-                communication through such offerings. The profile settings of
-                the relevant web offering allow you to determine which
-                information you want to share.
+                Certain web offerings linked to codesaarthi websites, including
+                forums, blogs, and networks, require you to register and create
+                a user profile. Through the user profile you can share personal
+                information about you with other users, such as your name,
+                photo, social media accounts, postal or email address, telephone
+                number, personal interests, skills, and basic information about
+                your company. The user profiles serve to personalize the
+                interactions between the users and to allow codesaarthi to
+                foster the collaboration and quality of communication through
+                such offerings. The profile settings of the relevant web
+                offering allow you to determine which information you want to
+                share.
               </p>
 
               <h5>Identity service</h5>
@@ -304,21 +323,21 @@ const PrivacyPolicy = () => {
                 codesaarthi, but it also allows you to access other web
                 offerings of codesaarthi. It is your choice whether or not to
                 use any of these additional web offerings. If you do,
-                codesaarthi will make your personal data available to such
-                other web offerings to provide you with initial access. Kindly
-                note that without your consent for codesaarthi to create such
-                user profiles, codesaarthi will not be able to offer such
-                services to you where your consent is a statutory requirement
-                that codesaarthi can provide these services to you.
+                codesaarthi will make your personal data available to such other
+                web offerings to provide you with initial access. Kindly note
+                that without your consent for codesaarthi to create such user
+                profiles, codesaarthi will not be able to offer such services to
+                you where your consent is a statutory requirement that
+                codesaarthi can provide these services to you.
               </p>
 
               <h5>Event profiling</h5>
               <p>
                 If you register for an event, seminar, or webinar of
-                codesaarthi, codesaarthi may share basic participant
-                information (your name, company, and email address) with other
-                participants of the same event, seminar, or webinar to promote
-                the interaction between the participants and to stimulate the
+                codesaarthi, codesaarthi may share basic participant information
+                (your name, company, and email address) with other participants
+                of the same event, seminar, or webinar to promote the
+                interaction between the participants and to stimulate the
                 communication and the exchange of ideas.
               </p>
 
@@ -337,9 +356,7 @@ const PrivacyPolicy = () => {
                 codesaarthi processes personal data about the users of
                 codesaarthi websites and other web offerings using cookies or
                 similar technologies for the purposes set out in{" "}
-                <a href="cookie_policy.html">
-                  codesaarthi Cookie Statement.
-                </a>
+                <a href="cookie_policy.html">codesaarthi Cookie Statement.</a>
               </p>
 
               <h5>To search for talent</h5>
@@ -347,12 +364,11 @@ const PrivacyPolicy = () => {
                 codesaarthi is collecting and processing personal data of
                 qualified individuals and people interested in our career
                 opportunities from various sources. Job applicants and
-                candidates are asked to apply via the codesaarthi Career
-                Portal, regardless of whether this is done initiatively or in
-                response to an advertised posting. codesaarthi collects
-                personal data by means of the Career Portal for the purposes of
-                carrying out the application procedures and selecting
-                applicants.{" "}
+                candidates are asked to apply via the codesaarthi Career Portal,
+                regardless of whether this is done initiatively or in response
+                to an advertised posting. codesaarthi collects personal data by
+                means of the Career Portal for the purposes of carrying out the
+                application procedures and selecting applicants.{" "}
               </p>
 
               <h5>To offer codesaarthi products and services</h5>
@@ -366,29 +382,29 @@ const PrivacyPolicy = () => {
 
               <h5>Request feedback, questionnaires and surveys</h5>
               <p>
-                To the extent allowed by applicable law, codesaarthi may
-                contact you for feedback regarding the improvement of the
-                relevant material, product, or service. codesaarthi may also
-                invite you to participate in questionnaires and surveys. These
-                will generally be designed so you can participate without having
-                to provide information that identifies you as a participant. If
-                you nonetheless provide your personal data, codesaarthi will
-                use it for the purpose stated in the questionnaire or survey or
-                to improve its products and services.
+                To the extent allowed by applicable law, codesaarthi may contact
+                you for feedback regarding the improvement of the relevant
+                material, product, or service. codesaarthi may also invite you
+                to participate in questionnaires and surveys. These will
+                generally be designed so you can participate without having to
+                provide information that identifies you as a participant. If you
+                nonetheless provide your personal data, codesaarthi will use it
+                for the purpose stated in the questionnaire or survey or to
+                improve its products and services.
               </p>
 
               <h5>To keep you up to date</h5>
               <p>
                 Within an existing business relationship between you and
-                codesaarthi, codesaarthi processes your personal data to
-                inform you about codesaarthi products or services which are
-                similar or related to products and services you have already
-                purchased or used. codesaarthi will inform you by email or
-                phone about such news only as far as it is allowed by law, or if
-                codesaarthi has collected such information in the context of
-                the business relationship. You are entitled to object to
-                codesaarthi use for this purpose at any time by selecting the
-                opt-out option at the bottom of each marketing related approach.
+                codesaarthi, codesaarthi processes your personal data to inform
+                you about codesaarthi products or services which are similar or
+                related to products and services you have already purchased or
+                used. codesaarthi will inform you by email or phone about such
+                news only as far as it is allowed by law, or if codesaarthi has
+                collected such information in the context of the business
+                relationship. You are entitled to object to codesaarthi use for
+                this purpose at any time by selecting the opt-out option at the
+                bottom of each marketing related approach.
               </p>
 
               <h5>Personalized Content</h5>
@@ -396,20 +412,20 @@ const PrivacyPolicy = () => {
                 codesaarthi processes information about your interactions with
                 codesaarthi across its business areas and its offerings (your
                 prior and current use of codesaarthi products or services, your
-                participation in and use of codesaarthi web offerings,
-                events, white papers, free trials or newsletters) to provide you
-                with the requested products and services and to improve our
-                personal communications with you. This data may also be used to
-                efficiently operate codesaarthi business, which also
-                includes: the automation and aggregation of data to support
-                various analytic and statistical efforts, performance and
-                predictive analytics and exploratory data science to support
-                your customer journey and to fulfill such requests. To the
-                extent permitted by law, codesaarthi may combine and use such
-                information in an aggregated manner to help us understand your
-                interests and business demands, develop our business insight and
-                marketing strategies, and to create, develop, deliver, and
-                improve our personalized communications with you.
+                participation in and use of codesaarthi web offerings, events,
+                white papers, free trials or newsletters) to provide you with
+                the requested products and services and to improve our personal
+                communications with you. This data may also be used to
+                efficiently operate codesaarthi business, which also includes:
+                the automation and aggregation of data to support various
+                analytic and statistical efforts, performance and predictive
+                analytics and exploratory data science to support your customer
+                journey and to fulfill such requests. To the extent permitted by
+                law, codesaarthi may combine and use such information in an
+                aggregated manner to help us understand your interests and
+                business demands, develop our business insight and marketing
+                strategies, and to create, develop, deliver, and improve our
+                personalized communications with you.
               </p>
 
               <h5>What personal data does codesaarthi process?</h5>
@@ -476,8 +492,8 @@ const PrivacyPolicy = () => {
                 including its sessions, polls, surveys, or other interactions
                 between codesaarthi and/or its participants. Depending on the
                 event and subject to a respective notification of the
-                participants, codesaarthi may collect audio and video
-                recordings of the event or session.
+                participants, codesaarthi may collect audio and video recordings
+                of the event or session.
               </p>
 
               <h6>
@@ -487,9 +503,8 @@ const PrivacyPolicy = () => {
               <p>
                 codesaarthi generally aims to collect personal data directly
                 from the data subjects. If you or applicable law allows
-                codesaarthi to do so, codesaarthi may obtain personal data
-                also from third party sources. These third-party sources may
-                include:
+                codesaarthi to do so, codesaarthi may obtain personal data also
+                from third party sources. These third-party sources may include:
               </p>
               <ul>
                 <li>
@@ -530,15 +545,14 @@ const PrivacyPolicy = () => {
               <ul>
                 <li>To make products and services requested by you.</li>
                 <li>
-                  For codesaarthi to comply with statutory obligations to
-                  retain personal data, resulting inter alia e.g. from
-                  applicable export, finance, tax or commercial laws.
+                  For codesaarthi to comply with statutory obligations to retain
+                  personal data, resulting inter alia e.g. from applicable
+                  export, finance, tax or commercial laws.
                 </li>
                 <li>
-                  To fulfill codesaarthi legitimate business purposes as
-                  further described in this privacy statement, unless you object
-                  to codesaarthi use of your personal data for these
-                  purposes;
+                  To fulfill codesaarthi legitimate business purposes as further
+                  described in this privacy statement, unless you object to
+                  codesaarthi use of your personal data for these purposes;
                 </li>
                 <li>
                   until you revoke a consent you previously granted to
@@ -633,8 +647,8 @@ const PrivacyPolicy = () => {
                 marketing, you have the right to object to such a use of your
                 personal data at any time. When you object to codesaarthi's
                 processing of your personal data for direct marketing purposes,
-                codesaarthi will immediately cease to process your personal
-                data for such purposes. In all other cases, codesaarthi will
+                codesaarthi will immediately cease to process your personal data
+                for such purposes. In all other cases, codesaarthi will
                 carefully review your objection and cease further use of the
                 relevant information, subject to codesaarthi compelling
                 legitimate grounds for continued use of the information, which
@@ -684,8 +698,8 @@ const PrivacyPolicy = () => {
               </p>
 
               <h2>
-                How will codesaarthi verify requests to exercise data
-                protection rights?
+                How will codesaarthi verify requests to exercise data protection
+                rights?
               </h2>
               <p>
                 codesaarthi will take steps to ensure it verifies your identity
@@ -699,21 +713,21 @@ const PrivacyPolicy = () => {
                 codesaarthi.
               </p>
               <p>
-                codesaarthi will decline to process requests that are
-                manifestly unfounded, excessive, fraudulent, represented by
-                third parties without duly representing respective authority or
-                are otherwise not required by local law.
+                codesaarthi will decline to process requests that are manifestly
+                unfounded, excessive, fraudulent, represented by third parties
+                without duly representing respective authority or are otherwise
+                not required by local law.
               </p>
               <p>Email should come from the registered email ID.</p>
 
               <h4>
-                Can I use codesaarthi products and services if I am a minor
-                or child?
+                Can I use codesaarthi products and services if I am a minor or
+                child?
               </h4>
               <p>
                 Persons under the age of 13 and persons who do not have full
-                legal capacity are not permitted to use the Website.
-                codesaarthi asks them not to provide their personal data.
+                legal capacity are not permitted to use the Website. codesaarthi
+                asks them not to provide their personal data.
               </p>
               <p>
                 Our Service does not address anyone under the age of 13.We do
@@ -751,23 +765,23 @@ const PrivacyPolicy = () => {
                 purposes set out above based on the following legal permissions:
               </p>
               <h6>
-                General remark regarding codesaarthi processing of personal
-                data based on your prior consent
+                General remark regarding codesaarthi processing of personal data
+                based on your prior consent
               </h6>
               <p>
                 codesaarthi may process your personal data for the specific
                 processing purposes based on your prior consent.
               </p>
               <h6>
-                General remark regarding codesaarthi processing of personal
-                data based on legitimate business interest
+                General remark regarding codesaarthi processing of personal data
+                based on legitimate business interest
               </h6>
 
               <p>
                 Where we refer to GDPR Article 6.1 (f) and consequently
-                codesaarthi legitimate business interest as our legal
-                permission to process your personal data, codesaarthi is
-                pursuing its legitimate business interests
+                codesaarthi legitimate business interest as our legal permission
+                to process your personal data, codesaarthi is pursuing its
+                legitimate business interests
               </p>
               <ul>
                 <li>
@@ -780,8 +794,8 @@ const PrivacyPolicy = () => {
                   partners, and shareholders
                 </li>
                 <li>
-                  to operate sustainable business relationships with
-                  codesaarthi customers and partners including you
+                  to operate sustainable business relationships with codesaarthi
+                  customers and partners including you
                 </li>
                 <li>
                   serve you with the best possible user experience when using
@@ -902,8 +916,8 @@ const PrivacyPolicy = () => {
                 establish or preserve a legal claim or defense, to prevent fraud
                 or other illegal activities, including attacks on our
                 information technology systems (legitimate interest to
-                efficiently perform or manage codesaarthi business operation
-                and assert or defend itself against legal claims)
+                efficiently perform or manage codesaarthi business operation and
+                assert or defend itself against legal claims)
               </p>
               <p>
                 GDPR Article 6.1 (a) if it is necessary that we ask you for your
@@ -917,8 +931,8 @@ const PrivacyPolicy = () => {
               <p>
                 When tracking and evaluating the usage behavior of users of our
                 web services by means of cookies or similar technologies,
-                codesaarthi is processing your personal data on the basis of
-                the following legal permissions:
+                codesaarthi is processing your personal data on the basis of the
+                following legal permissions:
               </p>
               <li>
                 GDPR Article 6.1 (a) if it is necessary that we ask you for your
@@ -988,9 +1002,9 @@ const PrivacyPolicy = () => {
               <h6>Offering codesaarthi products and services</h6>
 
               <li>
-                When engaging in marketing activities, codesaarthi is
-                processing your personal data on the basis of the following
-                legal permissions:
+                When engaging in marketing activities, codesaarthi is processing
+                your personal data on the basis of the following legal
+                permissions:
               </li>
 
               <li>
@@ -1002,34 +1016,34 @@ const PrivacyPolicy = () => {
                 GDPR Article 6.1 (f) if necessary to fulfill (pre-)contractual
                 obligations with the company or other legal body you represent
                 as a customer contact (legitimate interest to efficiently
-                perform or manage codesaarthi business operation), to
-                maintain our business relationships with you, to ensure your
-                satisfaction as a user or customer contact, to map the relevant
-                group internal structures and bundle relevant business
-                activities at central sources within codesaarthi to operate
-                them uniformly and to provide you with information about other
-                codesaarthi products and services as indicated by your interest
-                or demand, which may also comprise the combination about you
-                from different sources (profiling) (legitimate interest to
-                maintain and operate intelligent and sustainable business
-                processes in a group structure optimized for the division of
-                labor and in the best interest of our employees, customers,
-                partners, and shareholders and to operate sustainable business
-                relationship with codesaarthi customers and partners).
-                codesaarthi may provide you with this information to your
-                postal address to pursue our legitimate interest to address
-                customers, prospects and targets for the purpose of advertising
-                our products and services, to your email address for the purpose
-                of direct marketing of similar products or services provided
-                that we (i) received your email address in connection with the
-                purchase of our products or services, (ii) you did not object to
-                the use of your email address for direct advertising and (iii)
-                we inform you in every approach that you may object to our use
-                of your email address for marketing purposes at any time, and by
-                other electronic means (e.g., telephone, MMS) to the extent
-                permitted under applicable law, generally either explicit or
-                presumed consent, or equivalent legal permissions under other
-                relevant national laws, when applicable.
+                perform or manage codesaarthi business operation), to maintain
+                our business relationships with you, to ensure your satisfaction
+                as a user or customer contact, to map the relevant group
+                internal structures and bundle relevant business activities at
+                central sources within codesaarthi to operate them uniformly and
+                to provide you with information about other codesaarthi products
+                and services as indicated by your interest or demand, which may
+                also comprise the combination about you from different sources
+                (profiling) (legitimate interest to maintain and operate
+                intelligent and sustainable business processes in a group
+                structure optimized for the division of labor and in the best
+                interest of our employees, customers, partners, and shareholders
+                and to operate sustainable business relationship with
+                codesaarthi customers and partners). codesaarthi may provide you
+                with this information to your postal address to pursue our
+                legitimate interest to address customers, prospects and targets
+                for the purpose of advertising our products and services, to
+                your email address for the purpose of direct marketing of
+                similar products or services provided that we (i) received your
+                email address in connection with the purchase of our products or
+                services, (ii) you did not object to the use of your email
+                address for direct advertising and (iii) we inform you in every
+                approach that you may object to our use of your email address
+                for marketing purposes at any time, and by other electronic
+                means (e.g., telephone, MMS) to the extent permitted under
+                applicable law, generally either explicit or presumed consent,
+                or equivalent legal permissions under other relevant national
+                laws, when applicable.
               </li>
             </div>
           </div>

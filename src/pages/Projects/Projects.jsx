@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
-import ProjectData from '../../data/ProjectsData';
-
+import ProjectData from '../../data/ProjectsData'; 
+import Card from "../../component/Card";
+ 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => { 
     if (Array.isArray(ProjectData)) {
-      setProjects(ProjectData);
+      setProjects(ProjectData); 
     } else {
       console.error("ProjectData is not an array");
     }
@@ -35,32 +35,7 @@ const Projects = () => {
           <div className="row py-5 g-6">
             {projects.length > 0 ? projects.map((project, index) => (
               <div key={index} className="col-lg-4 my-2 col-12">
-                <div className="card p-3" style={{minHeight: '16vh'}}>
-                  <div
-                    className="bg-image hover-overlay ripple"
-                    data-mdb-ripple-color="light"
-                  >
-                    <div className="row">
-                      <div className="col-4 d-flex">
-                        <img src={project.thumbnail} className="img-fluid" alt={project.name} />
-                      </div>
-                      <div className="col-8 align-self-center">
-                        <div>
-                          <h5 className="card-title text-capitalize">
-                            {project.name}
-                          </h5>
-                        </div>
-                        <div>
-                          <Link to={`/Projects/${project.name}`}>
-                            <div className="btn text-capitalize">
-                              Check it Out <i className="fi fi-rs-workflow-setting-alt"></i>
-                            </div>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <Card image = {project && project.thumbnail} title={project.name} details = {project.description} icon2 = "fi fi-sr-workflow-setting-alt"  button2 = "Check it Out" link={`/Projects/${project.name} `} button1 = "add to read" icon1 = "fi fi-sr-add" />
               </div>
             )) : (
               <p>No projects available</p>

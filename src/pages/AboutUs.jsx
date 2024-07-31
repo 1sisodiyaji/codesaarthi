@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
-import config from "../config/config";
+import { Helmet } from 'react-helmet'; 
+import config from "../config/config"; 
 
 const AboutUs = () => {
     const [name, setName] = useState('');
@@ -57,14 +56,7 @@ const AboutUs = () => {
             }
         }
     };
-
-    const handlesendData = async () => {
-        const whatsappNumber = '6371790702';
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappURL, '_blank');
-    };
-
-
+ 
     return (
         <>
         <ToastContainer/>
@@ -100,7 +92,7 @@ const AboutUs = () => {
                         <div className="col-lg-2 col-md-0 col-sm-0 d-flex align-self-end justify-content-end d-lg-block d-none">
                             <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720994988/Rectangle3_pgla2x.png" className='img-fluid pt-5 mt-5 gt-5' alt="mission " />
                         </div>
-                        <div className="col-lg-4 col-12 g-0 my-2 rounded-6 tilt-effect2 ">
+                        <div className="col-lg-4 col-12 g-0 my-2 rounded-6 tilt-effect2 "> 
                             <div className="card p-4 h-100"  style={{ boxShadow: '5px 5px 20px black' }}>
                                 <div className="d-flex justify-content-end">
                                 </div>

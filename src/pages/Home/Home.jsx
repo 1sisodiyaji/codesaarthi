@@ -181,8 +181,7 @@ const Home = () => {
                 <img src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720994988/Rectangle3_pgla2x.png" className="img-fluid" alt="" />
               </div>
             </div>
-
-            {/* cards Desing  */}
+ 
             <div className="container">
               <div className="row">
                 <div className="col-lg-4 col-12 my-2">

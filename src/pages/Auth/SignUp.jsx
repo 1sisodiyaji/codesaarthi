@@ -47,6 +47,8 @@ const SignUp = () => {
       });
       return;
     }
+     
+    document.getElementById("checkname").style.display = "block";
 
     if (!email) {
       toast.warn("Please enter your email", { theme: "dark" });
@@ -57,6 +59,8 @@ const SignUp = () => {
       toast.warn("Please enter a valid email", { theme: "dark" });
       return;
     }
+    
+    document.getElementById("checkemail").style.display = "block";
 
     if (!password) {
       toast.warn("Please enter your password to create an account", {
@@ -64,6 +68,8 @@ const SignUp = () => {
       });
       return;
     }
+
+    document.getElementById("checkpass").style.display = "block";
 
     try {
       setLoading(true);
@@ -84,11 +90,10 @@ const SignUp = () => {
         setLoading(false);
       }
     } catch (error) {
-      console.error("Error registering user:", error);
-      if (error.response && error.response.status === 500) {
+      if (error.response && error.response.status === 400) {
         toast.error("User with this email already exists", { theme: "dark" });
       } else {
-        toast.error("Error creating account. Please try again later.", {
+        toast.error(error.data.message, {
           theme: "dark",
         });
       }
@@ -310,8 +315,8 @@ const SignUp = () => {
                         />
                         <i
                           id="checkname"
-                          style={{ color: "#703BF7", display: "none" }}
-                          className="fi fi-ss-check-circle text-center ms-1"
+                          style={{ color: "#79b4e2", display: "none" }}
+                          className="fi fi-ss-check-circle text-center ms-2 mt-2"
                         ></i>
                       </div>
                     </div>
@@ -332,8 +337,8 @@ const SignUp = () => {
                       />
                       <i
                         id="checkemail"
-                        style={{ color: "#703BF7", display: "none" }}
-                        className="fi fi-ss-check-circle text-center ms-1"
+                        style={{ color: "#79b4e2", display: "none" }}
+                        className="fi fi-ss-check-circle text-center ms-2 mt-2"
                       ></i>
                     </div>
                   </div>
@@ -355,13 +360,13 @@ const SignUp = () => {
                         id="passwordViewer"
                         onClick={togglePasswordVisibility}
                         className={`fi ${isPasswordVisible ? "fi-ss-eye" : "fi-ss-eye-crossed"
-                          } position-absolute top-50 end-0 pe-2 pt-2 translate-middle-y`}
+                          } mt-2 ms-2 `}
                         style={{ color: "#703BF7", cursor: "pointer" }}
                       ></i>
                       <i
                         id="checkpass"
-                        style={{ color: "#703BF7", display: "none" }}
-                        className="fi fi-ss-check-circle text-center ms-1"
+                        style={{ color: "#79b4e2", display: "none" }}
+                        className="fi fi-ss-check-circle text-center ms-2 mt-2"
                       ></i>
                     </div>
                   </div>
