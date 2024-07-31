@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 import config from "../../config/config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Cookies from "js-cookie";
+import Cookies from "js-cookie"; 
 
 const Login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -57,7 +57,7 @@ const Login = () => {
           );
           if (response.data.status === "success") {
             toast.success("Login Successfully!", { theme: "dark" });
-            Cookies.set("token", response.data.token, { expires: 30 });
+            Cookies.set("token", response.data.token, { expires: 30 }); 
             setLoading(false);
             window.location.href = "/";
           } else {
@@ -106,9 +106,7 @@ const Login = () => {
         );
 
         if (saveUserDataResponse.data.status === "success") {
-          Cookies.set("token", saveUserDataResponse.data.token, {
-            expires: 30,
-          });
+          Cookies.set("token", saveUserDataResponse.data.token, {expires: 30, });
           setLoading(false);
           window.location.href = "/";
         } else {
@@ -329,4 +327,6 @@ const Login = () => {
     </>
   );
 };
+
+ 
 export default Login;

@@ -5,24 +5,29 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
-import Modal from "../Modal"; 
+import Modal from "../Modal";
 import TimeConverter from "../../config/TimeConverter";
-import {handleCopyText , handleShareWhatsApp , handleShareLinkedIn} from "../../config/Share";
-import GetUserData from "../../config/GetUserData";
+import { handleCopyText, handleShareWhatsApp, handleShareLinkedIn } from "../../config/Share";
+import { useSelector, useDispatch } from 'react-redux';
+import { loginSuccess } from "../../store/actions/userAction";
+import getIdFromToken from "../../config/getIdfromToken";
 
-export default function QuestionAskedByAuthor({userId}){ 
-  const [question, setQuestion] = useState([]); 
+const QuestionAskedByAuthor = () => {
+  const [questions, setQuestions] = useState([]);
   const [questionShow, setQuestionShow] = useState(false);
-  const [user,setUser] = useState(null);
- 
-  const fetchQuestions = async () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.user);
+  const userId = user ? user._id : null;
+
+  const fetchQuestions = async (userId) => {
+    if (!userId) return; // Guard clause
     try {
       const response = await axios.post(
         `${config.BASE_URL}/article/getQuestionsByidAuthor/${userId}`
       );
       if (response.data) {
         toast.success("Questions asked by you", { theme: "dark" });
-        setQuestion(response.data);
+        setQuestions(response.data);
       } else {
         toast.error("Error fetching questions, no questions found!", {
           theme: "dark",
@@ -40,9 +45,9 @@ export default function QuestionAskedByAuthor({userId}){
         `${config.BASE_URL}/article/questions/votes/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
-      ); 
-      setQuestion(
-        question.map((q) =>
+      );
+      setQuestions(
+        questions.map((q) =>
           q._id === id ? { ...q, votes: response.data.votes } : q
         )
       );
@@ -52,30 +57,52 @@ export default function QuestionAskedByAuthor({userId}){
   };
 
   useEffect(() => {
-    const userdata = GetUserData();
-    setUser(userdata);
-    fetchQuestions();
-  },[]);
+    const fetchUserData = async () => {
+      const user = await getIdFromToken();
+      if (user) {
+        dispatch(loginSuccess(user));
+      }
+    };
+    fetchUserData();
+    if (userId) {
+      fetchQuestions(userId);
+    }
+  }, [dispatch, userId]);
 
   const handleShowQuestions = () => {
-    setQuestionShow(!questionShow);
-  }
+    setQuestionShow(prev => !prev);
+  };
 
   return (
     <>
       <ToastContainer />
       <div className="row my-2 g-0">
-          <div className="col-11"> <h6>Questions Asked By {user && user.name} <span class="badge badge-dark">{question.length}</span> </h6></div>
-          <div className="col-1"><i onClick={handleShowQuestions} class={`${questionShow ? 'fi fi-sr-eye text-success bg-dark' : 'i fi-sr-eye-crossed text-light bg-primary'} px-2 py-1 rounded-4`} style={{ cursor: 'pointer' }}></i></div>
-        </div> 
-      <div className="row">
-        {question &&
-          question.map((question) => {
+        <div className="col-11">
+          <h6>
+            Questions Asked By {user && user.name}{" "}
+            <span className="badge badge-dark">{questions.length}</span>{" "}
+          </h6>
+        </div>
+        <div className="col-1">
+          <i
+            onClick={handleShowQuestions}
+            className={`${
+              questionShow
+                ? "fi fi-sr-eye text-success bg-dark"
+                : "i fi-sr-eye-crossed text-light bg-primary"
+            } px-2 py-1 rounded-4`}
+            style={{ cursor: "pointer" }}
+          ></i>
+        </div>
+      </div>
+      {questionShow && (
+        <div className="row">
+          {questions.map((question) => {
             const questionUrl = `${window.location.origin}/Questions/${question.slug}`;
             return (
               <div
                 key={question._id}
-                className="shadow-lg borderColor rounded-4 p-3  my-2 col-lg-6"
+                className="shadow-lg borderColor rounded-4 p-3 my-2 col-lg-6"
               >
                 <div className="row">
                   <div className="col-12">
@@ -103,7 +130,7 @@ export default function QuestionAskedByAuthor({userId}){
                     </Link>
                   </div>
                   <div className="col-6 text-end">
-                    <p className="pe-2"><TimeConverter date={question.createdAt} /></p>
+                    <div className="pe-2"><TimeConverter date={question.createdAt} /></div>
                   </div>
                   <div className="row">
                     <div className="col-6">
@@ -166,7 +193,7 @@ export default function QuestionAskedByAuthor({userId}){
                     </div>
 
                     <div className="col-6 text-end">
-                      <Modal
+                      {/* <Modal
                         id="modal2"
                         btnName="Delete 🗑️"
                         Design="btn btn-sm rounded-4 text-capitalize bg-danger"
@@ -174,15 +201,17 @@ export default function QuestionAskedByAuthor({userId}){
                         body="."
                         saveButtonLabel="Delete "
                         closeButtonLabel="Cancel"
-                      />
+                      /> */}
                     </div>
                   </div>
                 </div>
               </div>
             );
           })}
-      </div>
+        </div>
+      )}
     </>
   );
 };
- 
+
+export default QuestionAskedByAuthor;

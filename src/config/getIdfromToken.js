@@ -2,29 +2,32 @@ import Cookies from 'js-cookie';
 import axios from 'axios';
 import config from './config';
 
-async function GetIdFromToken (){
-
-        const token =  Cookies.get('token');  
-        if (token) {
-          try {
-            const response = await axios.post(
-              `${config.BASE_URL}/api/user`,
-              {},
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-              }
-            );
-            if (response.data.status === "success") { 
-              return response.data.user._id;
-            } else {
-              console.log("Failed to fetch user information");
-            }
-          } catch (error) {
-            console.error("Error fetching user information:", error);
-          }
+const getIdFromToken = async () => {
+  const token = Cookies.get('token');
+  if (token) {
+    try {
+      const response = await axios.post(
+        `${config.BASE_URL}/api/user`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
-}
+      );
+      if (response.data.status === "success") { 
+        const user = response.data.user;
+        return user;
+      } else {
+        console.log("Failed to fetch user information");
+        return null;
+      }
+    } catch (error) {
+      console.error("Error fetching user information:", error);
+      return null;
+    }
+  }
+  return null;
+};
 
-export default GetIdFromToken;
+export default getIdFromToken;

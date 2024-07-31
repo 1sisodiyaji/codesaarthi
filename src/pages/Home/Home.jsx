@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import "../../App.css";
 import { Helmet } from "react-helmet";
@@ -6,21 +6,15 @@ import NewsApi from "./NewsApi";
 import Profile from "../Profile/Profile";
 import Jobs from "./Jobs";
 import Blogs from "./Blogs";
-import GetIdFromToken from "../../config/getIdfromToken";
 import Question from "./Question";
 import Gigs from "./Gigs";
+import { useSelector } from 'react-redux'; 
 
 const Home = () => { 
-  const [id, setId] = useState(null); 
-  const [content, setContent] = useState('news');
-
-  useEffect(() => {
-    async function fetchId() {
-      const id = await GetIdFromToken();
-      setId(id);
-    }
-    fetchId();
-  }, []);
+  const [content, setContent] = useState('news'); 
+  const user = useSelector((state) => state.user.user);
+  const id = user && user._id; 
+  
 
   const renderContent = () => {
     switch (content) {
@@ -461,5 +455,5 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;
+ 
+export default Home

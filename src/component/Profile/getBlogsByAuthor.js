@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import config from "../../config/config";
-import axios from "axios"; 
+import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import GetUserData from "../../config/GetUserData";
 import { Link } from "react-router-dom";
 import TimeConverter from "../../config/TimeConverter";
+import { useDispatch, useSelector } from 'react-redux';
+import { loginSuccess } from "../../store/actions/userAction";
+import getIdFromToken from "../../config/getIdfromToken";
 
-export default function BlogsByAuthor({ userId }) {
+const BlogsByAuthor = () => {
     const [blogs, setBlogs] = useState([]);
-    const [user, setUser] = useState(null);
-
     const [blogsShow, setBlogsShow] = useState(false);
-
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.user.user); // Access user data from Redux store
+    const userId = user ? user._id : null;
 
     const fetchBlogs = async (userId) => {
         try {
@@ -32,12 +34,9 @@ export default function BlogsByAuthor({ userId }) {
         }
     };
 
-
     const deleteArticle = async (id) => {
         try {
-            const response = await axios.delete(
-                `${config.BASE_URL}/article/delete/${id}`
-            );
+            const response = await axios.delete(`${config.BASE_URL}/article/delete/${id}`);
             if (response.status === 200) {
                 toast.success("Article deleted successfully!", { theme: "dark" });
                 setBlogs(blogs.filter((blog) => blog._id !== id));
@@ -48,32 +47,40 @@ export default function BlogsByAuthor({ userId }) {
             console.error("Error deleting article:", error);
         }
     };
+
     const handleshowBlogs = () => {
         setBlogsShow(!blogsShow);
     };
+
     useEffect(() => {
-        const userdata = GetUserData();
-        setUser(userdata);
-        fetchBlogs(userId);
-    }, [userId]);
+        const fetchUserData = async () => {
+            const user = await getIdFromToken();
+            if (user) {
+                dispatch(loginSuccess(user));
+            }
+        };
+        fetchUserData();
+        if (userId) {
+            fetchBlogs(userId);
+        }
+    }, [dispatch, userId]);
 
     return (
         <>
             <ToastContainer />
             <div className="row my-2 g-0">
                 <div className="col-11">
-                    {" "}
                     <h6>
                         Blogs Posted By {user && user.name}{" "}
-                        <span class="badge badge-dark">{blogs.length}</span>{" "}
+                        <span className="badge badge-dark">{blogs.length}</span>{" "}
                     </h6>
                 </div>
                 <div className="col-1">
                     <i
                         onClick={handleshowBlogs}
-                        class={`${blogsShow
-                                ? "fi fi-sr-eye text-success bg-dark"
-                                : "i fi-sr-eye-crossed text-light bg-primary"
+                        className={`${blogsShow
+                            ? "fi fi-sr-eye text-success bg-dark"
+                            : "i fi-sr-eye-crossed text-light bg-primary"
                             } px-2 py-1 rounded-4`}
                         style={{ cursor: "pointer" }}
                     ></i>
@@ -98,7 +105,7 @@ export default function BlogsByAuthor({ userId }) {
                                             alt={blog.title}
                                             title={blog.title}
                                             loading="lazy"
-                                            className="img-fluid imageHeight  mb-3"
+                                            className="img-fluid imageHeight mb-3"
                                         />
                                         <figcaption>{blog.description}</figcaption>
                                     </figure>
@@ -111,7 +118,7 @@ export default function BlogsByAuthor({ userId }) {
                                         </div>
                                         <div className="col-6 text-end">
                                             <small>
-                                               <TimeConverter date={blog.date} />
+                                                <TimeConverter date={blog.date} />
                                             </small>
                                         </div>
                                     </div>
@@ -144,5 +151,7 @@ export default function BlogsByAuthor({ userId }) {
                 </div>
             )}
         </>
-    )
-}
+    );
+};
+
+export default BlogsByAuthor;
