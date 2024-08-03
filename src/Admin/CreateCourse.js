@@ -5,6 +5,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
+import WidgetCloudinary from "../component/WidgetCloudinary";
+import Cookies from 'js-cookie';
 
 const CreateCourse = () => {
   const [imagePreview, setImagePreview] = useState(null);
@@ -28,34 +30,27 @@ const CreateCourse = () => {
   };
 
   const handleTopicChange = (index, e) => {
-    const { name, value, files } = e.target;
+    const { name, value } = e.target;
     const topics = [...course.topics];
-    if (files) {
-      topics[index][name] = files[0];
-      topics[index].imagePreview = URL.createObjectURL(files[0]);
+    if (name === "image") {
+      topics[index].image = value;
+      topics[index].imagePreview = URL.createObjectURL(value);
     } else {
       topics[index][name] = value;
     }
     setCourse({ ...course, topics });
   };
 
-  const handleThumbnailImageChange = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+  const handleThumbnailImageUpload = (info) => {
+    setThumbnailImage(info.secure_url);
+    setImagePreview(info.secure_url);
+  };
 
-    const allowedTypes = ["image/jpeg", "image/png", "image/jpg", "image/webp", "image/svg+xml"];
-    if (!allowedTypes.includes(file.type)) {
-      alert("Only JPEG, PNG, JPG, WebP, and SVG formats are allowed.");
-      return;
-    }
-
-    if (file.size > 2 * 1024 * 1024) {
-      alert("File size should be less than 2MB.");
-      return;
-    }
-
-    setThumbnailImage(file);
-    setImagePreview(URL.createObjectURL(file));
+  const handleTopicImageUpload = (index, info) => {
+    const topics = [...course.topics];
+    topics[index].image = info.secure_url;
+    topics[index].imagePreview = info.secure_url;
+    setCourse({ ...course, topics });
   };
 
   const handleShowTopicsForm = () => {
@@ -87,50 +82,50 @@ const CreateCourse = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
     try {
+      // Prepare form data
       const formData = new FormData();
       formData.append("title", course.title);
       formData.append("description", course.description);
-      formData.append("thumbnailImage", thumbnailImage);
+      formData.append("thumbnailImage", thumbnailImage); // Ensure this is a URL string
       formData.append("author", 'Codesaarthi');
-
+  
       course.topics.forEach((topic, index) => {
         formData.append(`topics[${index}][title]`, topic.title);
         formData.append(`topics[${index}][details]`, topic.details);
-        formData.append(`topics[${index}][headpoints]`, JSON.stringify(topic.headpoints)); // Convert array to JSON string
+        formData.append(`topics[${index}][headpoints]`, JSON.stringify(topic.headpoints)); // Array of headpoints
         if (topic.image) {
-          formData.append(`topics[${index}][image]`, topic.image);
+          formData.append(`topics[${index}][image]`, topic.image); // This should be a URL string
         }
       });
-
+  
+      // Fetch token for authorization
+      const token = Cookies.get('Codesaarthi-token');
       const response = await axios.post(
         `${config.BASE_URL}/Admin/Createcourses`,
         formData,
         {
-          headers: {
-            "Content-Type": "multipart/form-data",
+          headers: { 
+            "Authorization": `Bearer ${token}`
           },
         }
       );
-
+  
       if (response.status === 201) {
         setLoading(false);
         toast.success("Course Created successfully", { theme: "dark" });
         navigate("/Admin");
       } else {
         setLoading(false);
-        toast.error("Course Creation Failed: " + response.data.message, {
-          theme: "dark",
-        });
+        toast.error("Course Creation Failed: " + response.data.message, { theme: "dark" });
       }
     } catch (error) {
       setLoading(false);
-      toast.error("Error Creating Course. Please try again later.", {
-        theme: "dark",
-      });
+      toast.error("Error Creating Course. Please try again later.", { theme: "dark" });
     }
   };
+  
 
   const handleHeadpointChange = (e, index) => {
     if (e.key === "Enter") {
@@ -151,10 +146,10 @@ const CreateCourse = () => {
       <ToastContainer />
       {admin ? (
         <div className="container-fluid">
-          <div className="container">
+          <div className="container" style={{minHeight: '100vh'}}>
             <h1 className="text-center py-2">Create a New Course</h1>
             {!showTopicsForm ? (
-              <form onSubmit={(e) => e.preventDefault()} encType="multipart/form-data">
+              <form onSubmit={(e) => e.preventDefault()}>
                 <div className="form-group my-2">
                   <label>Course Title</label>
                   <input
@@ -178,24 +173,15 @@ const CreateCourse = () => {
                     placeholder="Write a short description"
                   />
                 </div>
+                <WidgetCloudinary
+                  cloudName="ducw7orvn"
+                  uploadPreset="codesaarthi"
+                  onSuccess={handleThumbnailImageUpload}
+                  buttonText="Upload Thumbnail Image"
+                />
 
                 <div className="form-group my-2">
                   <label>Course Thumbnail Image</label>
-                  <input
-                    type="file"
-                    accept="image/jpeg, image/png, image/jpg, image/webp, image/svg+xml"
-                    className="form-control-file"
-                    onChange={handleThumbnailImageChange}
-                    style={{ display: "none" }}
-                    id="thumbnailImageInput"
-                  />
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    onClick={() => document.getElementById("thumbnailImageInput").click()}
-                  >
-                    <i className="fas fa-camera"></i> Upload Thumbnail Image
-                  </button>
                   {imagePreview && (
                     <div className="mt-2">
                       <img
@@ -211,7 +197,7 @@ const CreateCourse = () => {
                 <div className="form-group my-2">
                   <button
                     type="button"
-                    className="btn btn-secondary"
+                    className="btn bg-warning text-capitalize"
                     onClick={handleShowTopicsForm}
                   >
                     Continue to Add Topics
@@ -219,7 +205,7 @@ const CreateCourse = () => {
                 </div>
               </form>
             ) : (
-              <form onSubmit={handleSubmit} encType="multipart/form-data">
+              <form onSubmit={handleSubmit}>
                 {course.topics.map((topic, index) => (
                   <div key={index} className="border rounded p-2 my-2">
                     <h5>Topic {index + 1}</h5>
@@ -248,13 +234,16 @@ const CreateCourse = () => {
                     </div>
 
                     <div className="form-group">
-                      <label>Topic Image</label>
-                      <input
-                        type="file"
-                        className="form-control-file"
-                        name="image"
-                        onChange={(e) => handleTopicChange(index, e)}
-                      />
+                      {course.topics.map((topic, index) => (
+                        <WidgetCloudinary
+                          key={index}
+                          cloudName="ducw7orvn"
+                          uploadPreset="codesaarthi"
+                          onSuccess={(info) => handleTopicImageUpload(index, info)}
+                          buttonText={`Upload Image for Topic ${index + 1}`}
+                        />
+                      ))}
+                      <label>Topic Image</label> <br/>
                       {topic.imagePreview && (
                         <div className="mt-2">
                           <img
@@ -302,7 +291,7 @@ const CreateCourse = () => {
                       className="btn btn-primary"
                       disabled={loading}
                     >
-                      {loading ? "Loading..." : "Create Course"}
+                      {loading ? "Creating..." : "Create Course"}
                     </button>
                   </div>
                 </div>
@@ -311,10 +300,7 @@ const CreateCourse = () => {
           </div>
         </div>
       ) : (
-        <div className="text-center">
-          <h1>Access Denied</h1>
-          <p>You do not have the necessary permissions to view this page.</p>
-        </div>
+        <h2 className="text-center">Access Denied</h2>
       )}
     </>
   );
