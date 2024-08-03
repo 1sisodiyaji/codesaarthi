@@ -3,7 +3,7 @@ import React from 'react';
 
 const TimeConverter = ({ date }) => {
   return (
-    <p className="pe-2">
+    <small className="pe-2">
       {new Date(date).toLocaleString("en-US", {
         year: "numeric",
         month: "long",
@@ -12,7 +12,7 @@ const TimeConverter = ({ date }) => {
         minute: "numeric",
         hour12: true,
       })}
-    </p>
+    </small>
   );
 };
 

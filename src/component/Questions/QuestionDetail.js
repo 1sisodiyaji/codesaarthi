@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef ,useMemo } from 'react';
 import axios from 'axios';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import config from '../../config/config';
@@ -6,22 +6,31 @@ import Cookies from 'js-cookie';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet";
+import { handleCopyText, handleShareLinkedIn, handleShareWhatsApp } from '../../config/Share';
+import TruncateText from '../../config/TruncateText';
+import TimeConverter from '../../config/TimeConverter';
+import JoditEditor from "jodit-react";
 
 function QuestionDetail() {
-  const { slug } = useParams(); 
-  const [question, setQuestion] = useState(null);
+  const { slug } = useParams();
+  const [question, setQuestion] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [newAnswer, setNewAnswer] = useState('');
+  const [uniqueTags, setUniqueTags] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [newQuestions , setNewQuestions] = useState([]);
+  const [newQuestions, setNewQuestions] = useState([]);
   const navigate = useNavigate();
-
-  useEffect(() => {
+  const editor = useRef(null); 
+  const editorConfig  = useMemo(() => ({
+    readonly: false,  
+    placeholder: 'Your answer',
+  }), []);
+  useEffect(() => { 
     const fetchQuestion = async () => {
       try {
         const response = await axios.get(`${config.BASE_URL}/article/questions/${slug}`);
-        if (response.status === 200) {
-          console.log(response);
+        if (response.status === 200) { 
+          setUniqueTags(response.data[0].tags); 
           setQuestion(response.data[0]); 
           setAnswers(response.data[0].answers);
         } else {
@@ -33,7 +42,7 @@ function QuestionDetail() {
     };
 
     fetchQuestion();
-  }, [slug]);
+  }, [slug , answers]); 
 
   useEffect(() => {
     const fetchNewQuestions = async () => {
@@ -49,47 +58,34 @@ function QuestionDetail() {
 
   const questionUrl = `${window.location.origin}/Questions/${slug}`;
 
-  const handleAnswerSubmit = async () => {
+  const handleAnswerSubmit = async (id) => {
     try {
       setLoading(true);
-      const token = Cookies.get('token');
+      const token = Cookies.get('Codesaarthi-token');
       const response = await axios.post(
         `${config.BASE_URL}/article/answers`,
-        { body: newAnswer, questionId: question._id },
+        { body: newAnswer, questionId: id },
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }
       );
+      toast.success("Answers given by you", { theme: "dark" });
       setLoading(false);
       setAnswers([...answers, response.data]);
       setNewAnswer('');
-      navigate(`/Questions/${question._id}`);
+      navigate(`/Questions/${response.data.question.slug}`);
     } catch (error) {
+      toast.error("Please Try again later", { theme: "dark" });
       setLoading(false);
       console.error('Error submitting answer:', error);
     }
   };
 
-  const handleCopy = (url) => {
-    navigator.clipboard.writeText(url)
-      .then(() => toast.success("Link Copied Successfully"))
-      .catch(err => console.error('Failed to copy: ', err));
-  };
-
-  const handleShareWhatsApp = (url) => {
-    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url)}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
-  const handleShareLinkedIn = (url) => {
-    const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
-    window.open(linkedinUrl, '_blank');
-  };
 
   const upvote = async (id) => {
-    const token = Cookies.get('token');
+    const token = Cookies.get('Codesaarthi-token');
     try {
       const response = await axios.post(
         `${config.BASE_URL}/article/questions/votes/${id}`,
@@ -103,7 +99,7 @@ function QuestionDetail() {
   };
 
   const upvoteAnswer = async (id) => {
-    const token = Cookies.get('token');
+    const token = Cookies.get('Codesaarthi-token');
     try {
       const response = await axios.post(
         `${config.BASE_URL}/article/answer/votes/${id}`,
@@ -114,11 +110,6 @@ function QuestionDetail() {
     } catch (error) {
       console.error('Error upvoting the answer:', error);
     }
-  };
-
-  const truncateText = (text, length) => {
-    const maxLength = length;
-    return text.length > maxLength ? `${text.slice(0, maxLength)}...` : text;
   };
   
   return (
@@ -151,42 +142,50 @@ function QuestionDetail() {
               <div className='py-lg-4 py-3'>
                 <div className="borderColor backgroundColor rounded-4 shadow-lg">
                   <div className="row g-0">
-                    <div className="col-10"> 
-                    <h6 className='text-capitalize p-2'>{question.title} ?</h6>
+                    <div className="col-10">
+                      <h6 className='text-capitalize p-2'>{question.title} ?</h6>
                     </div>
                     <div className="col-2 text-end">
-                    <div className="dropdown pe-2 pt-1">
-                      <button className="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i className="fi fi-ss-share"></i>
-                      </button>
-                      <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><button className="dropdown-item" onClick={() => handleCopy(questionUrl)}>Copy Link</button></li>
-                        <li><button className="dropdown-item" onClick={() => handleShareWhatsApp(questionUrl)}>Share on WhatsApp</button></li>
-                        <li><button className="dropdown-item" onClick={() => handleShareLinkedIn(questionUrl)}>Share on LinkedIn</button></li>
-                      </ul>
-                    </div>
+                      <div className="dropdown pe-2 pt-1">
+                        <button className="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i className="fi fi-ss-share"></i>
+                        </button>
+                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><button className="dropdown-item" onClick={() => handleCopyText(questionUrl)}>Copy Link</button></li>
+                          <li><button className="dropdown-item" onClick={() => handleShareWhatsApp(questionUrl)}>Share on WhatsApp</button></li>
+                          <li><button className="dropdown-item" onClick={() => handleShareLinkedIn(questionUrl)}>Share on LinkedIn</button></li>
+                        </ul>
+                      </div>
 
                     </div>
-                  </div> 
+                  </div>
                   <p className='p-2'>{question.body}</p>
-                  <p className='p-2'>Asked By: <Link to={`/profile/${ question.user && question.user.username}`} className='iconColor text-decoration-underline'>{question.user && question.user.name}</Link></p>
+                  <div className='row'>
+                    <div className='col-6'> <p className='p-2'>Asked By: <Link to={`/profile/${question.user && question.user.username}`} className='iconColor text-decoration-underline'>{question.user && question.user.name}</Link></p>   </div>
+                    <div className='col-6 text-end pe-3'>
+                    <div>
+                    {uniqueTags.length > 0 ? (
+                        uniqueTags.map((tag, index) => (
+                          <div key={index} className='badge badge-dark text-capitalize'>
+                            {tag}
+                          </div>
+                        ))
+                      ) : (
+                        <p>No tags used</p>
+                      )}
+                    </div>  
+                    </div>
+                  </div>
                   <hr />
                   <div className="row p-1 g-0">
                     <div className="col-6 d-flex">
-                    <div onClick={() => upvote(question._id)}>
-                    <p className="btn btn-sm rounded-8 text-capitalize">  {question.votes} <i className="fi fi-rs-social-network"></i> UpVote </p>
-                     </div>
-                      
+                      <div onClick={() => upvote(question._id)}>
+                        <p className="btn btn-sm rounded-8 text-capitalize">  {question.votes} <i className="fi fi-rs-social-network"></i> UpVote </p>
+                      </div>
+
                     </div>
                     <div className="col-6 text-end">
-                      <p className='pe-2'>{new Date(question.createdAt).toLocaleString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                        hour: "numeric",
-                        minute: "numeric",
-                        hour12: true,
-                      })}</p>
+                      <p className='pe-2'>  <TimeConverter date = {question.createdAt}/> </p>
                     </div>
                   </div>
 
@@ -198,19 +197,12 @@ function QuestionDetail() {
                       <hr />
                       <div className="row">
                         <div className="col-6">
-                          <Link to={`/profile/${answer.user && answer.user._id}`} className='iconColor'>
+                          <Link to={`/profile/${answer.user && answer.user.username}`} className='iconColor'>
                             <p className='ps-2'>Answered By: <span className='text-decoration-underline'>{answer.user && answer.user.name}</span></p>
                           </Link>
                         </div>
                         <div className="col-6 text-end">
-                          <p className='pe-2'>{new Date(answer.updatedAt).toLocaleString("en-US", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                            hour: "numeric",
-                            minute: "numeric",
-                            hour12: true,
-                          })}</p>
+                          <p className='pe-2'>  <TimeConverter date = {answer.updatedAt}/>   </p>
                         </div>
                       </div>
                       <div className="row p-1 w-100">
@@ -226,7 +218,7 @@ function QuestionDetail() {
                               <i className="fi fi-ss-share"></i>
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <li><button className="dropdown-item" onClick={() => handleCopy(questionUrl)}>Copy Link</button></li>
+                              <li><button className="dropdown-item" onClick={() => handleCopyText(questionUrl)}>Copy Link</button></li>
                               <li><button className="dropdown-item" onClick={() => handleShareWhatsApp(questionUrl)}>Share on WhatsApp</button></li>
                               <li><button className="dropdown-item" onClick={() => handleShareLinkedIn(questionUrl)}>Share on LinkedIn</button></li>
                             </ul>
@@ -235,78 +227,76 @@ function QuestionDetail() {
                       </div>
                     </div>
                   ))}
-                  <textarea
-                    value={newAnswer}
-                    onChange={(e) => setNewAnswer(e.target.value)}
-                    placeholder="Your answer"
-                    rows={4}
-                    className='w-100 my-3'
-                  ></textarea>
+                  <JoditEditor
+                      ref={editor}
+                      value={newAnswer}
+                      config={editorConfig }
+                      tabIndex={1}  
+                      onBlur={newContent => setNewAnswer(newContent)}  
+                      onChange={newContent => {}}
+                      className='w-100 my-3'
+                    />
                   {loading ?
                     <button className="btn text-capitalize" type="button" disabled>
                       <span className="sr-only">Adding Your Views...</span>
                       <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     </button>
                     :
-                    <button className='btn text-capitalize' onClick={handleAnswerSubmit}>Submit Answer</button>
+                    <button className='btn text-capitalize' onClick={() => handleAnswerSubmit(question._id)}>Submit Answer</button>
                   }
                 </div>
               </div>
             )}
           </div>
           <div className="col-lg-4 col-12">
-          <>
-          <div className="row my-2">
-            <div className="col-6"> <p>Read More Questions</p></div>
-            <div className="col-6"><Link to = "/Ask-Questions"><button className="btn btn-sm text-capitalize"><i className="fi fi-sr-add"></i> Ask Your Own Queries ..</button> </Link></div>
-          </div>
-         
-          {newQuestions.map((question) => (
-  <div className="border rounded-6 mb-2 shadow-lg" key={question._id}>
-    <div className="row g-0 p-2">
-      <div className="col-3 d-flex justify-content-center align-items-center">
-        <img
-          src="https://codesaarthi.com/img/logo.png"
-          alt="Author"
-          style={{ width: '55px', height: '55px' }}
-          className="img-fluid rounded-circle"
-        />
-      </div>
-      <div className="col-9">
-        <div className="card-body">
-          <Link to={`/Questions/${question.slug}`} className="iconColor">
-            <small className='text-decoration-underline'> {`${truncateText(question.title, 80)}`}</small>
-          </Link>
-          <br />
-          <small className='p-2 text-sm'> {`${truncateText(question.body, 38)}`}</small>
-        </div>
-      </div>
-    </div>
-    <div className="text-center w-100">
-      <small className='p-2'>
-        Asked By : 
-        {question.user ? (
-          <Link to={`/profile/${question.user._id}`} className='iconColor text-decoration-underline ps-1'>
-            {question.user.name}
-          </Link>
-        ) : (
-          <span>Unknown</span>
-        )} 
-         <span> | </span>
-        {new Date(question.createdAt).toLocaleString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-          hour: "numeric",
-          minute: "numeric",
-          hour12: true,
-        })}
-      </small>
-    </div>
-  </div>
-))}
+            <>
+              <div className="row my-2">
+                <div className="col-6"> <p>Read More Questions</p></div>
+                <div className="col-6"><Link to="/Ask-Questions"><button className="btn btn-sm text-capitalize"><i className="fi fi-sr-add"></i> Ask Your Own Queries ..</button> </Link></div>
+              </div>
 
-              </>
+              {newQuestions && newQuestions.map((question) => (
+                <div className="border rounded-6 mb-2 shadow-lg" key={question._id}>
+                  <div className="row g-0 p-2">
+                    <div className="col-3 d-flex justify-content-center align-items-center">
+                      <img
+                        src="https://codesaarthi.com/img/logo.png"
+                        alt="Author"
+                        style={{ width: '55px', height: '55px' }}
+                        className="img-fluid rounded-circle"
+                      />
+                    </div>
+                    <div className="col-9">
+                      <div className="card-body">
+                        <Link to={`/Questions/${question.slug}`} className="iconColor">
+                          <div className='text-decoration-underline'>
+                            {TruncateText(question.title, 50)}
+                          </div>
+                        </Link> 
+                        <small className='text-sm'>
+                          {TruncateText(question.body, 38)}
+                        </small> 
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-center w-100">
+                    <small>
+                      Asked By :
+                      {question.user ? (
+                        <Link to={`/profile/${question.user.username}`} className='iconColor text-decoration-underline ps-1'>
+                          {question.user.name}
+                        </Link>
+                      ) : (
+                        <span>Unknown</span>
+                      )}
+                      <span> | </span> 
+                      <TimeConverter date = {question.createdAt}/>
+                    </small>
+                  </div>
+                </div>
+              ))}
+
+            </>
           </div>
         </div>
       </div>

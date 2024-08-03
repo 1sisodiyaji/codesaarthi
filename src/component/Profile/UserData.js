@@ -15,12 +15,19 @@ const UserData = () => {
     const [loading, setLoading] = useState(false);
     const [imagePreview, setImagePreview] = useState(user ? user.image : "https://res.cloudinary.com/ducw7orvn/image/upload/v1721024136/codesaarthi/article-1721024134471.png");
 
-    const initializeSocialMediaLinks = (links) => {
-        // If no links, initialize with one empty string
-        return Array.isArray(links) && links.length > 0 
-            ? JSON.parse(links[0]) 
-            : [""];
+    const initializeSocialMediaLinks = (links) => {  
+        if (Array.isArray(links) && links.length > 0) {
+            try { 
+                const parsedLinks = JSON.parse(links[0]); 
+                return Array.isArray(parsedLinks) ? parsedLinks : [""];
+            } catch (error) {
+                console.error("Error parsing links:", error); 
+                return [""];
+            }
+        } 
+        return [""];
     };
+    
 
     const [formData, setFormData] = useState({
         name: user?.name || "",
@@ -278,7 +285,7 @@ const UserData = () => {
                                             <div 
                                                 onClick={() => removeSocialMediaLink(index)}
                                             >
-                                                <i class="fi fi-sr-trash btn btn-sm bg-danger text-light"></i>
+                                                <i className="fi fi-sr-trash btn btn-sm bg-danger text-light"></i>
                                             </div>
                                         </div>
                                     ))}
@@ -294,7 +301,7 @@ const UserData = () => {
                                 <div className='row g-0'>
                                         <div className='col-6'>
                                         <button type="submit" className="btn bg-success rounded-4 text-capitalize">
-                                   {loading ? 'updatingYour profile ...' : 'Update'} <i class="fi fi-ss-check-circle"></i>
+                                   {loading ? 'updatingYour profile ...' : 'Update'} <i className="fi fi-ss-check-circle"></i>
                                 </button>
                                         </div>
                                         <div className='col-6 text-end'>
@@ -318,14 +325,14 @@ const UserData = () => {
                                         <Link key={index} to ={user.socialMediaLinks[index]} target='blank' className='mx-2 iconColor'> <i className={`fi fi-brands-${name.toLowerCase()}`} style={{fontSize: '2rem'}}></i> </Link>
                                     ))}
                                 </div>
-                                <button className="btn bg-warning mx-2 text-capitalize  btn-sm  rounded-8 " onClick={editingMode}>
-                                    Edit Profile <i class="fi fi-sr-pen-clip"></i>
+                                <button className="btn bg-warning m-2 text-capitalize  btn-sm  rounded-8 " onClick={editingMode}>
+                                    Edit Profile <i className="fi fi-sr-pen-clip"></i>
                                 </button>
-                                <button className="btn bg-danger mx-2 text-capitalize  btn-sm  rounded-8 " onClick={() => deleteUser(user._id)}>
-                                    Delete Account <i class="fi fi-sr-trash-xmark"></i>
+                                <button className="btn bg-danger m-2 text-capitalize  btn-sm  rounded-8 " onClick={() => deleteUser(user._id)}>
+                                    Delete Account <i className="fi fi-sr-trash-xmark"></i>
                                 </button>
-                                <button className="btn btn-secondary mx-2 text-capitalize  btn-sm  rounded-8" onClick={logout}>
-                                    Logout <i class="fi fi-br-sign-out-alt"></i>
+                                <button className="btn btn-secondary m-2 text-capitalize  btn-sm  rounded-8" onClick={logout}>
+                                    Logout <i className="fi fi-br-sign-out-alt"></i>
                                 </button>
                             </div>
                         )}

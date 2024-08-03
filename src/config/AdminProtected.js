@@ -6,7 +6,7 @@ import config from './config';
 
 function AdminProtected({ Component }) { // Destructure the Component prop here
     const navigate = useNavigate();
-    const token = Cookies.get('token');
+    const token = Cookies.get('Codesaarthi-token');
 
     useEffect(() => {
         if (token === null || !token) {

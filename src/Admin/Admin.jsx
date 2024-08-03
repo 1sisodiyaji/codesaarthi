@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import config from "../config/config";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import CanvasJSReact from '@canvasjs/react-charts';
+import "react-toastify/dist/ReactToastify.css"; 
 import { Helmet } from "react-helmet";
 import Cookies from 'js-cookie';
+import { Chart } from "react-google-charts";
 
 const Admin = () => {
   const [courses, setCourses] = useState([]);
@@ -16,12 +16,11 @@ const Admin = () => {
   const [roadmaps, setRoadmaps] = useState([]);
   const [totalUser, setTotalUser] = useState(0);
   const [feedback, setFeedback] = useState(0);
-  const [monthlyUserData, setMonthlyUserData] = useState([]);
-  const CanvasJSChart = CanvasJSReact.CanvasJSChart;
+  const [monthlyUserData, setMonthlyUserData] = useState([]); 
   const [monthlyFeedbackData, setMonthlyFeedbackData] = useState([]);
   useEffect(() => {
     const fetchUserData = async () => {
-      const token =  Cookies.get('token'); 
+      const token =  Cookies.get('Codesaarthi-token'); 
       try {
         const response = await axios.post(
           `${config.BASE_URL}/Admin/user`,
@@ -268,7 +267,18 @@ const Admin = () => {
                     <h3 className="px-4 py-2 border bg-black text-success rounded-6"><i className="fi fi-rr-circle-user"></i> {totalUser}</h3>
                   </div>
                   <div className="w-100">
-                    <CanvasJSChart options={userChartOptions} />
+                  <Chart
+chartType="AreaChart"
+width="100%"
+height="400px"
+data={userChartOptions}
+options={{
+  title: "Monthly Users",
+  hAxis: { title: "Month" },
+  vAxis: { title: "Users" },
+  theme: "dark",
+}}
+/>
                   </div>
                 </div>
               </div>
@@ -277,8 +287,19 @@ const Admin = () => {
                   <div className="d-flex justify-content-between align-items-center">
                     <h3>Total Number of Feedbacks </h3>
                     <h3 className="py-2 px-4 border bg-black text-warning rounded-6"> <i className="fi fi-sr-feedback pe-2"></i>{feedback}</h3>
-                  </div>
-                  <CanvasJSChart options={feedbackChartOptions} />
+                  </div> 
+                  <Chart
+chartType="AreaChart"
+width="100%"
+height="400px"
+data={feedbackChartOptions}
+options={{
+  title: "Monthly Feedbacks",
+  hAxis: { title: "Month" },
+  vAxis: { title: "Feedback" },
+  theme: "dark",
+}}
+/>
                 </div>
               </div>
             </div>

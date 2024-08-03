@@ -299,33 +299,7 @@ font-weight: bold !important;
   border-radius: 4px;
 }
 
-.animated-border {
-  position: relative; 
-  border: 1px solid transparent;
-  animation: borderMove 4s infinite linear;
-}
+ 
 
-@keyframes borderMove {
-  0% {
-    border-color: red;
-    box-shadow: 0 0 0 0 red;
-  }
-  25% {
-    border-color: blue;
-    box-shadow: 5px 5px 5px blue;
-  }
-  50% {
-    border-color: green;
-    box-shadow: -5px 5px 5px green;
-  }
-  75% {
-    border-color: yellow;
-    box-shadow: 5px -5px 5px yellow;
-  }
-  100% {
-    border-color: red;
-    box-shadow: 0 0 0 0 red;
-  }
-}
 
 

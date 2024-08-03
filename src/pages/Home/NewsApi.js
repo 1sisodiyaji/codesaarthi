@@ -178,7 +178,7 @@ const NewsApi = () => {
                 </div>
               )}
               <div className='text-center'>
-                <img src={article.urlToImage ? article.urlToImage : 'https://codesaarthi.com/img/logo1.jpg'} className='img-fluid imageHeight' alt={article.title}  title = {article.title} loading='lazy'/>
+                <img src={article.urlToImage ? article.urlToImage : 'https://codesaarthi.com/img/logo1.jpg'} className='img-fluid imageHeight ' alt={article.title}  title = {article.title} loading='lazy'/>
               </div>
 
               

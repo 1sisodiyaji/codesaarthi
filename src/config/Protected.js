@@ -6,7 +6,7 @@ function Protected(props) {
     const {Component}=props;
     const navigate=useNavigate();
     useEffect(()=>{
-    let token= Cookies.get('token'); 
+    let token= Cookies.get('Codesaarthi-token'); 
     if(!token){
         navigate('/login');
 

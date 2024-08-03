@@ -57,7 +57,7 @@ const Login = () => {
           );
           if (response.data.status === "success") {
             toast.success("Login Successfully!", { theme: "dark" });
-            Cookies.set("token", response.data.token, { expires: 30 }); 
+            Cookies.set("Codesaarthi-token", response.data.token, { expires: 30 }); 
             setLoading(false);
             window.location.href = "/";
           } else {
@@ -106,7 +106,7 @@ const Login = () => {
         );
 
         if (saveUserDataResponse.data.status === "success") {
-          Cookies.set("token", saveUserDataResponse.data.token, {expires: 30, });
+          Cookies.set("Codesaarthi-token", saveUserDataResponse.data.token, {expires: 30, });
           setLoading(false);
           window.location.href = "/";
         } else {
@@ -254,7 +254,7 @@ const Login = () => {
                     >
                       Welcome to CodeSaarthi ...
                       <span
-                        class="spinner-border spinner-border-sm"
+                        className="spinner-border spinner-border-sm"
                         role="status"
                         aria-hidden="true"
                       ></span>

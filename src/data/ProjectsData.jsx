@@ -15,7 +15,7 @@ const ProjectData = [
               <small>
                   This project is a simple assignment page created using basic HTML tags.
               </small>
-              <p class= "text-decoration-underline" >Key Features:</p>
+              <p className= "text-decoration-underline" >Key Features:</p>
               <ul>
                   <li>Utilizes HTML tags to practice fundamental HTML coding.</li>
               </ul>
@@ -152,16 +152,16 @@ const ProjectData = [
               <ul>
                   <li>HTML: For page structure and content.</li>
               </ul>
-              <h6 class="text-decoration-underline">Getting Started:</h6>
+              <h6 className="text-decoration-underline">Getting Started:</h6>
               <small>You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
               </samll>
-              <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <h6 class = " "> But My personal Suggestion will be check the images and try it by your self if not then go with the code mention it here . </h6> 
              
              </div>
-              <small class="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
+              <small className="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
           </div>
           `,
       },
@@ -284,16 +284,16 @@ const ProjectData = [
           <li>HTML For Page Structure and basic layout .</li>
         </ul>
     
-       <h6 class="text-decoration-underline">Getting Started:</h6>
+       <h6 className="text-decoration-underline">Getting Started:</h6>
               <small>You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
               </samll>
-              <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <h6 class = " "> But My personal Suggestion will be check the images and try it by your self if not then go with the code mention it here . </h6> 
              
              </div>
-              <small class="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
+              <small className="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
         
      
       `,
@@ -308,7 +308,7 @@ const ProjectData = [
     <small>
         This project is a simple design-based project focused on creating a product page and bookmarks using HTML.
     </small>
-    <p class= "my-2" >Key Features:</p>
+    <p className= "my-2" >Key Features:</p>
     <ul>
         <li>Utilizes HTML tags to practice fundamental HTML coding.</li>
         <li>Involves creating bookmarks and list tags.</li>
@@ -451,21 +451,21 @@ const ProjectData = [
 `,
 
         additionalDescriptions: `
-         <h6 class="fw-bold">Tech Stack:</h6>
+         <h6 className="fw-bold">Tech Stack:</h6>
     <ul>
         <li>HTML: For structuring the page and its content.</li>
     </ul>
  
-    <h6 class="text-decoration-underline">Getting Started:</h6>
+    <h6 className="text-decoration-underline">Getting Started:</h6>
               <small>You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
               </samll>
-              <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <h6 class = " "> But My personal Suggestion will be check the images and try it by your self if not then go with the code mention it here . </h6> 
              
              </div>
-              <small class="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
+              <small className="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
         
          `,
       },
@@ -577,16 +577,16 @@ const ProjectData = [
           <li>HTML: Page structure and layout.</li>
         </ul>
     
-        <h6 class="text-decoration-underline">Getting Started:</h6>
+        <h6 className="text-decoration-underline">Getting Started:</h6>
               <small>You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
               </samll>
-              <div class= " my-2 bg-success p-2"> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-success p-2"> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <h6> But My personal Suggestion will be check the images and try it by your self if not then go with the code mention it here . </h6> 
              
              </div>
-              <small class="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
+              <small className="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
         
           `,
       },
@@ -660,7 +660,7 @@ const ProjectData = [
     </div>
     <div>
         <h2>HTML Code:</h2>
-        <div class="container border rounded-8 p-3  ">
+        <div className="container border rounded-8 p-3  ">
             <pre><code>
 <!DOCTYPE html>
 <html lang="en">
@@ -718,16 +718,16 @@ const ProjectData = [
                 <li>HTML: Page structure and layout.</li>
             </ul>
 
-             <h6 class="text-decoration-underline">Getting Started:</h6>
+             <h6 className="text-decoration-underline">Getting Started:</h6>
               <small>You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
               </samll>
-              <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <h6 class = " "> But My personal Suggestion will be check the images and try it by your self if not then go with the code mention it here . </h6> 
              
              </div>
-              <small class="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
+              <small className="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
         
           `,
       },
@@ -748,7 +748,7 @@ const ProjectData = [
           <small>
             This project is a frontend clone of Amazon, created using HTML, CSS, and JavaScript. It aims to provide users with an experience similar to an online shopping website.
           </small>
-          <p class="mt-2">Key Features:</p>
+          <p className="mt-2">Key Features:</p>
           <ul>
             <li>Good Design</li>
             <li>High-Quality Images:</li>
@@ -768,25 +768,25 @@ const ProjectData = [
           deployed: "https://amazon-clone-indol-zeta.vercel.app",
         },
         additionalDescriptions: `
-          <h6 class="fw-bold">Tech Stack</h6>
+          <h6 className="fw-bold">Tech Stack</h6>
           <ul>
             <li>HTML: Used for page structure and content.</li>
             <li>CSS: Used for design and styling.</li>
             <li>JavaScript: Implemented for interactive features and user interface enhancements.</li>
           </ul>
-         <h6 class="text-decoration-underline">Getting Started:</h6>
+         <h6 className="text-decoration-underline">Getting Started:</h6>
               <small>You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
               </samll>
-              <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <p class = " "> But My personal Suggestion will be check the images and try it by your self it will boost your confidence and clone projects are the best to start as result were shown earlier . </p> 
              
              </div>
-              <small class="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
+              <small className="my-lg-4 my-2">Thank you for exploring these projects. You can also discover more here.</small>
         
-              <div class= " my-2 bg-warning p-2 "> 
-              <h4> Task  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-warning p-2 "> 
+              <h4> Task  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <p >We have left these Project incomplete for you as Base design is done rest all is up to you please try to make it and send Via Email : codesaarthi@gmail.com</p> 
              
              </div>
@@ -819,21 +819,21 @@ const ProjectData = [
           deployed: "https://d-iscord-indol.vercel.app",
         },
         additionalDescriptions: `
-          <h6 class="fw-bold">Tech Stack:</h6>
+          <h6 className="fw-bold">Tech Stack:</h6>
           <ul>
             <li>HTML: Used for page structure and content.</li>
             <li>CSS: Handled by Tailwind CSS for efficient design and styling.</li>
             <li>JavaScript: Implements interactive features and enhances user interface.</li>
           </ul>
-          <h6 class="text-decoration-underline">Getting Started:</h6>
+          <h6 className="text-decoration-underline">Getting Started:</h6>
            
           <small>
           You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
             Explore the frontend structure and customize it according to your educational or personal requirements.
           </small>
-           <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+           <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <p class = " "> But My personal Suggestion will be check the images and try it by your self it will boost your confidence and clone projects are the best to start as result were shown earlier . </p> 
              
              </div>
@@ -849,7 +849,7 @@ const ProjectData = [
           "This project is a frontend clone of the Razorpay payment gateway, developed using HTML, Tailwind CSS, and React. It simulates the user interface and functionality..",
         headingDescription: `
           
-          <h6 class="my-2">Key Features:</h6>
+          <h6 className="my-2">Key Features:</h6>
           <ul>
             <li>Modern Design: </li>
             <li>Payment Gateway Simulation: </li>
@@ -868,26 +868,26 @@ const ProjectData = [
           deployed: "https://razor-pay-chi.vercel.app",
         },
         additionalDescriptions: `
-          <h6 class="fw-bold">Tech Stack:</h6>
+          <h6 className="fw-bold">Tech Stack:</h6>
           <ul>
             <li>HTML: Used for page structure and content.</li>
             <li>Tailwind CSS: Responsible for design and styling.</li>
             <li>React: Implemented for interactive features and user interface enhancements.</li>
           </ul>
-          <h6 class="text-decoration-underline">Getting Started:</h6>
+          <h6 className="text-decoration-underline">Getting Started:</h6>
            
           <small>
           You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
             Explore the frontend structure and customize it according to your educational or personal requirements.
           </small>
-           <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+           <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <p class = " "> But My personal Suggestion will be check the images and try it by your self it will boost your confidence and clone projects are the best to start as result were shown earlier . </p> 
              
              </div>
           <small>
-          <small class="my-lg-4 my-2">Thank you for exploring this Razorpay frontend clone project. Check out more frontend projects below:</small>
+          <small className="my-lg-4 my-2">Thank you for exploring this Razorpay frontend clone project. Check out more frontend projects below:</small>
         `,
       },
       {
@@ -897,7 +897,7 @@ const ProjectData = [
           "This project is a frontend clone of the Spotify music streaming application, developed using Html , CSS. It replicates the user interface and functionality of Spotify, providing an immersive music streaming experience.",
         headingDescription: `
      
-    <h6 class="my-2">Key Features:</h6>
+    <h6 className="my-2">Key Features:</h6>
     <ul>
       <li>Responsive Design:</li>
       <li>Music Playback:</li>
@@ -916,28 +916,28 @@ const ProjectData = [
           deployed: "https://spotify-clone-rho-taupe.vercel.app",
         },
         additionalDescriptions: `
-    <h6 class="fw-bold">Tech Stack:</h6>
+    <h6 className="fw-bold">Tech Stack:</h6>
     <ul>
       <li>HTML: Used for building the Structure</li>
       <li>CSS : Responsible for styling and  design.</li>
       <li>JS: Implemented for navigation within the muisc and players.</li>
     </ul>
-     <h6 class="text-decoration-underline">Getting Started:</h6>
+     <h6 className="text-decoration-underline">Getting Started:</h6>
               <small>You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
               </samll>
-              <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <p class = " "> But My personal Suggestion will be check the images and try it by your self it will boost your confidence and clone projects are the best to start as result were shown earlier . </p> 
              
              </div> 
         
-              <div class= " my-2 bg-warning p-2 "> 
-              <h4> Task  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-warning p-2 "> 
+              <h4> Task  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <p >We have left these Project incomplete for you as Base design is done rest all is up to you please try to make it and send Via Email : codesaarthi@gmail.com</p> 
              
              </div>
-    <small class="my-lg-4 my-2">Thank you for exploring this Spotify frontend clone project. Check out more frontend projects below:</small>
+    <small className="my-lg-4 my-2">Thank you for exploring this Spotify frontend clone project. Check out more frontend projects below:</small>
   `,
       },
     ],
@@ -962,31 +962,31 @@ const ProjectData = [
           deployed: "https://chair-page.vercel.app",
         },
         additionalDescriptions: `
-          <h6 class='textColor'>Key Features:</h6>
-          <ul class=' '>
+          <h6 className='textColor'>Key Features:</h6>
+          <ul className=' '>
             <li>Good Design: It has a simple yet effective design to start from.</li>
             <li>High-Quality Code: Well-maintained code that is easily editable and modifiable.</li>
             <li>Responsive Design: Works seamlessly on any device.</li>
           </ul>
         
-          <h6 class='textColor'>Tech Stack:</h6>
-          <ul class=' '>
+          <h6 className='textColor'>Tech Stack:</h6>
+          <ul className=' '>
             <li>HTML: Used for page structure and content.</li>
             <li>CSS: Used for design and styling.</li>
           </ul>
-       <h6 class="text-decoration-underline">Getting Started:</h6>
+       <h6 className="text-decoration-underline">Getting Started:</h6>
               <small>You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
               </samll>
-              <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <p class = " ">   My personal Suggestion will be try it by your self first it is not that much level of hard know the design concepts of color code  . </p> 
              
              </div> 
         
               
       
-          <small class='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
+          <small className='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
           
         `,
       },
@@ -1004,31 +1004,31 @@ const ProjectData = [
           deployed: "https://hire-me-button-dusky.vercel.app",
         },
         additionalDescriptions: `
-          <h6 class='my-2'>Key Features:</h6>
+          <h6 className='my-2'>Key Features:</h6>
           <ul>
             <li>Good Design: </li>
             <li>High-Quality Code: </li>
             <li>Responsive Design: </li>
           </ul>
        
-          <h6 class='fw-bold'>Tech Stack:</h6>
-          <ul class=' '>
+          <h6 className='fw-bold'>Tech Stack:</h6>
+          <ul className=' '>
             <li>HTML: Used for page structure and content.</li>
             <li>CSS: Used for design and styling.</li>
           </ul>
       
-          <h6 class="text-decoration-underline">Getting Started:</h6>
+          <h6 className="text-decoration-underline">Getting Started:</h6>
               <small>You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
               </samll>
-              <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <p class = " ">   My personal Suggestion will be try it by your self first it is not that much level of hard know the design concepts of center align and hover effect . You can use it as a component in your project . </p> 
              
              </div> 
         
       
-          <small class='my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..<small>
+          <small className='my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..<small>
          
         </div>
         `,
@@ -1047,30 +1047,30 @@ const ProjectData = [
           deployed: "https://image-gallery-tan-rho.vercel.app",
         },
         additionalDescriptions: `
-          <h6 class='my-2'>Key Features:</h6>
+          <h6 className='my-2'>Key Features:</h6>
           <ul>
             <li>Good Design:</li>
             <li>High-Quality Code:</li>
             <li>Responsive Design:</li>
           </ul>
       
-          <h6 class='fw-bold'>Tech Stack:</h6>
+          <h6 className='fw-bold'>Tech Stack:</h6>
           <ul>
             <li>HTML: Used for page structure and content.</li>
             <li>CSS: Used for design and styling.</li>
           </ul>
-       <h6 class="text-decoration-underline">Getting Started:</h6>
+       <h6 className="text-decoration-underline">Getting Started:</h6>
               <small>You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
               </samll>
-              <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <p class = " ">   My personal Suggestion will be try it is basically used hover effect and grayscale the images so if you get the hint try by yourself it will boost your journey. </p> 
              
              </div> 
         
       
-          <small class='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
+          <small className='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
            
         </div>
         `,
@@ -1089,7 +1089,7 @@ const ProjectData = [
           deployed: "https://product-card2-ruby.vercel.app",
         },
         additionalDescriptions: `
-          <h6 class='my-2'>Key Features:</h6>
+          <h6 className='my-2'>Key Features:</h6>
           <ul>
             <li>Good Design: </li>
             <li>High-Quality Code:  </li>
@@ -1097,23 +1097,23 @@ const ProjectData = [
           </ul>
        
       
-          <h6 class='fw-bold'>Tech Stack:</h6>
+          <h6 className='fw-bold'>Tech Stack:</h6>
           <ul  >
             <li>HTML: Used for page structure and content.</li>
             <li>CSS: Used for design and styling.</li>
           </ul>
       
-            <h6 class="text-decoration-underline">Getting Started:</h6>
+            <h6 className="text-decoration-underline">Getting Started:</h6>
               <small>You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
               </samll>
-              <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <p class = " ">   My personal Suggestion will be try it is nothing but a product page okay you can use it as practise or add these code in your projects and treat it as component </p> 
              
              </div> 
       
-          <small class='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
+          <small className='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
            
         </div>
         `,
@@ -1132,32 +1132,32 @@ const ProjectData = [
           deployed: "https://recipe-website-eosin.vercel.app",
         },
         additionalDescriptions: `
-          <h6 class='my-2'>Key Features:</h6>
-          <ul class=' '>
+          <h6 className='my-2'>Key Features:</h6>
+          <ul className=' '>
             <li>Good Design: </li>
             <li>High-Quality Code: </li>
             <li>Responsive Design:</li>
           </ul>
        
       
-          <h6 class='fw-bold'>Tech Stack:</h6>
-          <ul class=' '>
+          <h6 className='fw-bold'>Tech Stack:</h6>
+          <ul className=' '>
             <li>HTML: Used for page structure and content.</li>
             <li>CSS: Used for design and styling.</li>
           </ul>
       
            
-            <h6 class="text-decoration-underline">Getting Started:</h6>
+            <h6 className="text-decoration-underline">Getting Started:</h6>
               <small>You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
               </samll>
-              <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <p class = " ">   My personal Suggestion will be try it by yourself it is an restarunt a single page of recipe so you can try it and create much more beautiful pages as taking base code it as. </p> 
              
              </div> 
       
-          <small class='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
+          <small className='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
            
         </div>
         `,
@@ -1176,36 +1176,36 @@ const ProjectData = [
           deployed: "https://shopping-last-page.vercel.app/",
         },
         additionalDescriptions: `
-          <h6  class='my-2'>Key Features:</h6>
-          <ul  class=' '>
+          <h6  className='my-2'>Key Features:</h6>
+          <ul  className=' '>
             <li>Good Design: </li>
             <li>High-Quality Code:</li>
             <li>Responsive Design:</li>
           </ul>
        
       
-          <h6  class='fw-bold'>Tech Stack:</h6>
-          <ul  class=' '>
+          <h6  className='fw-bold'>Tech Stack:</h6>
+          <ul  className=' '>
             <li>HTML: Used for page structure and content.</li>
             <li>CSS: Used for design and styling.</li>
           </ul>
       
-            <h6 class="text-decoration-underline">Getting Started:</h6>
+            <h6 className="text-decoration-underline">Getting Started:</h6>
               <small>You can go through the Github link and clone it and start working .
                   After this, you can customize it according to your requirements.
               </samll>
-              <div class= " my-2 bg-success p-2 "> 
-              <h4> Tips  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+              <div className= " my-2 bg-success p-2 "> 
+              <h4> Tips  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <p class = " ">   My personal Suggestion will be try it by yourself it is an perfume last page so this one is basic. </p> 
              </div> 
            
-             <div class= " my-2 bg-warning p-2 "> 
-              <h4> Task  <i class="fi fi-rr-lightbulb-on "></i> </h4>
+             <div className= " my-2 bg-warning p-2 "> 
+              <h4> Task  <i className="fi fi-rr-lightbulb-on "></i> </h4>
               <p>This one is base as last coffee  page where  i have shared the best deisgn but these one is for you to customise and send us via Email : codesaarthi@gmail.com</p> 
              </div> 
 
       
-          <small  class='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
+          <small  className='  my-lg-4 my-2'>Thank you For Reading These Projects You can Also Check Out These ..</small>
           
         </div>
         `,

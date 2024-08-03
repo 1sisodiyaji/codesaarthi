@@ -1,10 +1,15 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import config from '../../config/config';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
+import { handleCopyText, handleShareLinkedIn, handleShareWhatsApp } from '../../config/Share';
+import TimeConverter from '../../config/TimeConverter';
+
+import JoditEditor from "jodit-react";
+import TruncateText from '../../config/TruncateText';
 
 function QuestionList() {
   const [questions, setQuestions] = useState([]);
@@ -13,18 +18,22 @@ function QuestionList() {
   const [loading, setLoading] = useState(false);
   const [uniqueTags, setUniqueTags] = useState([]);
   const [hasMore, setHasMore] = useState(true);
-  const [page, setPage] = useState(1);
+  const [showYourAnswer , setShowYourAnswer] = useState({});
+  const [page, setPage] = useState(1); 
   const loadMoreRef = useRef(null);
   const navigate = useNavigate();
-
+  const editor = useRef(null);
+  const editorConfig = useMemo(() => ({
+    readonly: false,
+    placeholder: 'Your answer',
+  }), []);
   const fetchQuestions = useCallback(async (pageNum = 1) => {
     try {
       setLoading(true);
       const response = await axios.get(`${config.BASE_URL}/article/questions?page=${pageNum}`);
-      
       const { questions, tags } = response.data.data;
       setUniqueTags(tags);
-
+      
       const questionsWithTags = questions.map(question => {
         const tagsString = Array.isArray(question.tags) ? question.tags.join(', ') : '';
         return {
@@ -88,24 +97,8 @@ function QuestionList() {
     }
   };
 
-  const handleCopy = (url) => {
-    navigator.clipboard.writeText(url)
-      .then(() => toast.success("Link Copied Successfully"))
-      .catch(err => console.error('Failed to copy: ', err));
-  };
-
-  const handleShareWhatsApp = (url) => {
-    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url)}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
-  const handleShareLinkedIn = (url) => {
-    const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
-    window.open(linkedinUrl, '_blank');
-  };
-
   const upvote = async (id) => {
-    const token = Cookies.get('token');
+    const token = Cookies.get('Codesaarthi-token');
     try {
       const response = await axios.post(
         `${config.BASE_URL}/article/questions/votes/${id}`,
@@ -118,29 +111,37 @@ function QuestionList() {
     }
   };
 
-  const handleAnswerSubmit = async () => {
+  const handleAnswerSubmit = async (id) => {
+    if (!id) {
+      toast.error("Question not found", { theme: "dark" });
+      return;
+    }
     try {
       setLoading(true);
-      const token = Cookies.get('token');
+      const token = Cookies.get('Codesaarthi-token');
       const response = await axios.post(
         `${config.BASE_URL}/article/answers`,
-        { body: newAnswer, questionId: questions._id },
+        { body: newAnswer, questionId: id },
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }
       );
+      toast.success("Answers given by you", { theme: "dark" });
       setLoading(false);
       setAnswers([...answers, response.data]);
       setNewAnswer('');
-      navigate(`/Questions/${questions._id}`);
+      navigate(`/Questions/${response.data.question.slug}`);
     } catch (error) {
+      toast.error("Failed to Answer", { theme: "dark" });
       setLoading(false);
       console.error('Error submitting answer:', error);
     }
   };
-
+  const showYourAnswerForm = (id) => {
+    setShowYourAnswer(prevState => ({ ...prevState, [id]: !prevState[id] }));
+  }
   return (
     <div>
       <ToastContainer />
@@ -161,78 +162,73 @@ function QuestionList() {
           questions.map((question) => {
             const questionUrl = `${window.location.origin}/Questions/${question.slug}`;
             return (
-              <div key={question._id} className='shadow-lg borderColor rounded-4 p-3 m-1 my-2'>
-                <div className="row">
-                  <div className="col-12">
-                    <Link to={`/Questions/${question.slug}`} className='iconColor text-decoration-underline' style={{ cursor: 'pointer' }}>
-                      <p>{question.title} </p>
-                    </Link>
-                  </div>
-                </div>
-
+              <div key={question._id} className='shadow-lg borderColor rounded-4 p-2 my-2'>
+                <Link to={`/Questions/${question.slug}`} className='iconColor text-start text-decoration-underline' style={{ cursor: 'pointer' }}>
+                  <p> {TruncateText(question.title, 90)} </p>
+                </Link>
                 <small>{question.body}</small>
-                <div className="row">
+                <div className="row g-0">
                   <div className="col-6 d-flex">
                     <Link to={`/profile/${question.user.username}`} className='iconColor'>
                       <small> Asked By : <span className='text-decoration-underline'>{question.user.name}</span> </small>
                     </Link>
-                    <ul>
+                    <div>
                       {question.tags.length > 0 ? question.tags.map((tag, index) => (
-                        <li key={index} className='badge badge-dark  text-capitalize'>{tag}</li>
+                        <div key={index} className='badge badge-dark  text-capitalize ms-2'>{tag}</div>
                       )) :
-                      <p>No tags used</p>
+                        <p>No tags used</p>
                       }
-                    </ul>
+                    </div>
                   </div>
                   <div className="col-6 text-end">
-                    <small className='pe-2'>
-                      {new Date(question.createdAt).toLocaleString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                        hour: "numeric",
-                        minute: "numeric",
-                        hour12: true,
-                      })}
-                    </small>
-                  </div>
-                  <div className="row">
-                    <div className="col-6">
-                      <div onClick={() => upvote(question._id)}>
-                        <p className="btn btn-sm rounded-8 text-capitalize">  {question.votes} <i className="fi fi-rs-social-network"></i> UpVote </p>
-                      </div>
-                    </div>
-                    <div className="col-6 text-end">
-                      <div className="dropdown">
-                        <button className="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                          <i className="fi fi-ss-share"></i>
-                        </button>
-                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <li><button className="dropdown-item" onClick={() => handleCopy(questionUrl)}>Copy Link</button></li>
-                          <li><button className="dropdown-item" onClick={() => handleShareWhatsApp(questionUrl)}>Share on WhatsApp</button></li>
-                          <li><button className="dropdown-item" onClick={() => handleShareLinkedIn(questionUrl)}>Share on LinkedIn</button></li>
-                        </ul>
-                      </div>
-                    </div> 
-                    <div>
-                      <textarea
-                        value={newAnswer}
-                        onChange={(e) => setNewAnswer(e.target.value)}
-                        placeholder="Your answer"
-                        rows={4}
-                        className='w-100 my-3'
-                      ></textarea>
-                      {loading ?
-                        <button className="btn text-capitalize" type="button" disabled>
-                          <span className="sr-only">Adding Your Views...</span>
-                          <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                        </button>
-                        :
-                        <button className='btn text-capitalize' onClick={handleAnswerSubmit}>Submit Answer</button>
-                      }
+                    <div className='pe-2'>
+                      <TimeConverter date={question.createdAt} />
                     </div>
                   </div>
+
                 </div>
+                <div className="row g-0 mt-2">
+                  <div className="col-10 d-flex">
+                    <div onClick={() => upvote(question._id)}>
+                      <p className="btn btn-sm rounded-8 text-capitalize">  {question.votes} <i className="fi fi-rs-social-network"></i> UpVote </p>
+                    </div>
+                    <div><p className='text-decoration-underline   rounded-8 text-capitalize mx-2' onClick={ () => {showYourAnswerForm(question._id)}} style={{cursor: 'pointer'}} >  Contribute Your Views </p></div>
+                    <div> <p className='rounded-8 text-capitalize'>Total answer <span className='badge badge-dark  text-capitalize ms-2'> {question.answerCount}</span> </p> </div>
+                  </div>
+                  <div className="col-2 text-end">
+                    <div className="dropdown">
+                      <button className="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i className="fi fi-ss-share"></i>
+                      </button>
+                      <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><button className="dropdown-item" onClick={() => handleCopyText(questionUrl)}>Copy Link</button></li>
+                        <li><button className="dropdown-item" onClick={() => handleShareWhatsApp(questionUrl)}>Share on WhatsApp</button></li>
+                        <li><button className="dropdown-item" onClick={() => handleShareLinkedIn(questionUrl)}>Share on LinkedIn</button></li>
+                      </ul>
+                    </div>
+                  </div> 
+                </div>
+               {showYourAnswer[question._id] && 
+               <div className='w-100'>
+                  <JoditEditor
+                    ref={editor}
+                    value={newAnswer}
+                    config={editorConfig}
+                    tabIndex={1}
+                    onBlur={newContent => setNewAnswer(newContent)}
+                    onChange={newContent => { }}
+                    className='w-100 mb-2'
+                  />
+                  {loading ?
+                    <button className="btn text-capitalize" type="button" disabled>
+                      <span className="sr-only">Adding Your Views...</span>
+                      <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    </button>
+                    :
+                    <button className='btn text-capitalize' onClick={() => handleAnswerSubmit(question._id)}>Submit Answer</button>
+                  } 
+                </div>
+               }
               </div>
             );
           })

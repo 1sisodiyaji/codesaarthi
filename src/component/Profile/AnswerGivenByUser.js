@@ -7,10 +7,12 @@ import { Link } from "react-router-dom";
 import { handleCopyText, handleShareWhatsApp, handleShareLinkedIn } from "../../config/Share";
 import { useSelector } from 'react-redux'; 
 import Modal from "../Modal";
+import Cookies from 'js-cookie';
 
-const AnswerByAuthor = () => {
+const AnswerByAuthor = () => { 
   const [answer, setAnswer] = useState([]);
   const [answershow, setAnswershow] = useState(false);
+  const [answershowDetail, setAnswershowDetail] = useState({});
   const user = useSelector((state) => state.user.user);
   const userId = user ? user._id : null;
 
@@ -19,7 +21,7 @@ const AnswerByAuthor = () => {
     try { 
       const response = await axios.post(
         `${config.BASE_URL}/article/getAnswerByAuthorId/${userId}`
-      );
+      ); 
       if (response.data) {
         toast.success("Answers given by you", { theme: "dark" });
         setAnswer(response.data);
@@ -35,6 +37,44 @@ const AnswerByAuthor = () => {
 
   const handleAnswerShow = () => {
     setAnswershow(prev => !prev);
+  }; 
+
+  const handleAnswerShowDetail = (id) => {
+    setAnswershowDetail(prevState => ({ ...prevState, [id]: !prevState[id] }));
+  }
+
+  const upvoteAnswer = async (id) => {
+    const token = Cookies.get('Codesaarthi-token');
+    console.log(id);
+    try {
+      const response = await axios.post(
+        `${config.BASE_URL}/article/answer/votes/${id}`,
+        {},
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      setAnswer(answer.map(answer => answer._id === id ? { ...answer, votes: response.data.votes } : answer));
+    } catch (error) {
+      console.error('Error upvoting the answer:', error);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    const token = Cookies.get('Codesaarthi-token');
+    try {
+      const response = await axios.delete(
+        `${config.BASE_URL}/article/answer/${id}`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      if (response.data) {
+        toast.success("Answer deleted successfully", { theme: "dark" });
+        setAnswer(answer.filter(a => a._id !== id));  
+        window.location.href = "/profile";
+      } else {
+        toast.error("Error deleting answer", { theme: "dark" });
+      }
+    } catch (error) {
+      toast.error("Error deleting answer", { theme: "dark" });
+    }
   };
 
   useEffect(() => {
@@ -44,17 +84,15 @@ const AnswerByAuthor = () => {
   return (
     <>
       <ToastContainer />
-      <div className="row my-2 g-0">
+      <div className="row my-2 g-0" onClick={handleAnswerShow} style={{cursor: 'pointer'}}>
         <div className="col-11">
           <h6>
-            Answer Contributed By { user.name}
-            <span className="badge badge-dark">{answer.length}</span>
+            Answer Contributed By {user && user.name}
+            <span className="badge badge-dark ms-1">{answer.length}</span>
           </h6>
         </div>
-        <div className="col-1">
-          {" "}
-          <i
-            onClick={handleAnswerShow}
+        <div className="col-1"> 
+          <i 
             className={`${
               answershow
                 ? "fi fi-sr-eye text-success bg-dark"
@@ -81,17 +119,17 @@ const AnswerByAuthor = () => {
                           style={{ cursor: "pointer" }}
                         >
                          Q. <small className="text-decoration-underline mb-2">{a.question.title}</small>
-                        </Link> 
-
+                        </Link>  
                       </div> 
                     </div>
-  
+                    <p onClick={ () => {handleAnswerShowDetail(a._id)}} className="text-decoration-underline" style={{cursor: 'pointer'}}> Your answer</p>
+                   {answershowDetail[a._id] && <p className='p-2' dangerouslySetInnerHTML={{ __html: a.body }} /> }
+ 
                     <div className="row">
                       <div className="col-6">
                         <div>
-                          <p className="btn btn-sm rounded-8 text-capitalize"> 
-                            {a.votes}
-                            <i className="fi fi-rs-social-network"></i> UpVote{" "}
+                          <p className="btn btn-sm rounded-8 text-capitalize" onClick={() => upvoteAnswer(a._id)}> 
+                            {a.votes}  <i className="fi fi-rs-social-network ps-2"></i> upvote
                           </p>
                         </div>
                       </div>
@@ -150,13 +188,15 @@ const AnswerByAuthor = () => {
                       <div className="col-6 text-end">
                           <div >
                              <Modal
-                               id = "deleteButton"
-                               btnName = "delete"
-                               Design = "btn bg-danger btn-sm rounded-4 text-capitalize"
-                               title = "Default Title"
-                               body = "Default Body"
-                               saveButtonLabel = "Save changes"
-                               closeButtonLabel = "Close"
+                               id={`deleteButton-${a._id}`}
+                               btnName="Delete"
+                               Design="btn bg-danger btn-sm rounded-4 text-capitalize"
+                               title="Are you sure you want to delete this answer?"
+                               body="."
+                               saveButtonLabel="Delete"
+                               closeButtonLabel="Cancel"
+                               onConfirm={handleDelete}
+                               questionId={a._id}
                              />
                         </div>
                       </div>

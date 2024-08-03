@@ -3,7 +3,7 @@ import axios from 'axios';
 import config from './config';
 
 const getIdFromToken = async () => {
-  const token = Cookies.get('token');
+  const token = Cookies.get('Codesaarthi-token');
   if (token) {
     try {
       const response = await axios.post(

@@ -1,52 +1,25 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import config from "../config/config";
-import JoditEditor from "jodit-react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 const CreateCourse = () => {
   const [imagePreview, setImagePreview] = useState(null);
   const [thumbnailImage, setThumbnailImage] = useState(null);
   const [loading, setLoading] = useState(false);
-  const editor = useRef(null); 
+  const [showTopicsForm, setShowTopicsForm] = useState(false);
   const navigate = useNavigate();
   const [admin, setAdmin] = useState(false);
-
-  useEffect(() => {
-    const fetchUserData = async () => {
-      const token = sessionStorage.getItem("token");
-      try {
-        const response = await axios.post(
-          `${config.BASE_URL}/Admin/user`,
-          {},
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-
-        if (response.data.status === "success") { 
-            setAdmin(true);
-        } else {
-          toast.error("Failed to fetch user information!", { theme: "dark" });
-        }
-      } catch (error) {
-        toast.error("Error fetching user information !", { theme: "dark" });
-        console.error("Error fetching user information:", error);
-      }
-    };
-
-    fetchUserData();
-  }, []);
+  const user = useSelector((state) => state.user.user);
 
   const [course, setCourse] = useState({
     title: "",
     description: "",
     thumbnailImage: null,
-    topics: [{ title: "", details: "", image: null, imagePreview: null, headpoints: "" }],
+    topics: [{ title: "", details: "", image: null, imagePreview: null, headpoints: [] }],
   });
 
   const handleInputChange = (e) => {
@@ -85,14 +58,30 @@ const CreateCourse = () => {
     setImagePreview(URL.createObjectURL(file));
   };
 
+  const handleShowTopicsForm = () => {
+    if (course.title && course.description && thumbnailImage) {
+      setShowTopicsForm(true);
+    } else {
+      alert("Please fill out the title, description, and thumbnail image before proceeding.");
+    }
+  };
+
   const addTopic = () => {
     setCourse({
       ...course,
       topics: [
         ...course.topics,
-        { title: "", details: "", image: null, imagePreview: null, headpoints: "" },
+        { title: "", details: "", image: null, imagePreview: null, headpoints: [] },
       ],
     });
+  };
+
+  const addHeadpoint = (index, value) => {
+    const topics = [...course.topics];
+    if (value.trim() !== "") {
+      topics[index].headpoints.push(value.trim());
+      setCourse({ ...course, topics });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -105,12 +94,11 @@ const CreateCourse = () => {
       formData.append("description", course.description);
       formData.append("thumbnailImage", thumbnailImage);
       formData.append("author", 'Codesaarthi');
-      
-      // Append each topic's data to formData
+
       course.topics.forEach((topic, index) => {
         formData.append(`topics[${index}][title]`, topic.title);
         formData.append(`topics[${index}][details]`, topic.details);
-        formData.append(`topics[${index}][headpoints]`, topic.headpoints);
+        formData.append(`topics[${index}][headpoints]`, JSON.stringify(topic.headpoints)); // Convert array to JSON string
         if (topic.image) {
           formData.append(`topics[${index}][image]`, topic.image);
         }
@@ -144,18 +132,19 @@ const CreateCourse = () => {
     }
   };
 
-  const handleTagKeyDown = (e, index) => {
+  const handleHeadpointChange = (e, index) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      const value = e.target.value.trim();
-      if (value) {
-        const topics = [...course.topics];
-        topics[index].headpoints += value + ", ";
-        setCourse({ ...course, topics });
-        e.target.value = "";
-      }
+      addHeadpoint(index, e.target.value);
+      e.target.value = "";
     }
   };
+
+  useEffect(() => {
+    if (user && user.isAdmin) {
+      setAdmin(true);
+    }
+  }, [user]);
 
   return (
     <>
@@ -164,134 +153,161 @@ const CreateCourse = () => {
         <div className="container-fluid">
           <div className="container">
             <h1 className="text-center py-2">Create a New Course</h1>
-            <form onSubmit={handleSubmit} encType="multipart/form-data">
-              <div className="form-group my-2">
-                <label>Course Title</label>
-                <input
-                  type="text"
-                  className="w-100 form-control"
-                  name="title"
-                  value={course.title}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-
-              <div className="form-group my-2">
-                <label>Course Description</label>
-                <textarea
-                  className="w-100 form-control"
-                  name="description"
-                  value={course.description}
-                  onChange={handleInputChange}
-                  required
-                  placeholder="Write a short description"
-                />
-              </div>
-
-              <div className="form-group my-2">
-                <label>Course Thumbnail Image</label>
-                <input
-                  type="file"
-                  className="form-control-file"
-                  onChange={handleThumbnailImageChange}
-                  required
-                />
-                {imagePreview && (
-                  <div className="mt-2">
-                    <img
-                      src={imagePreview}
-                      alt="Preview"
-                      className="img-fluid"
-                      style={{ maxWidth: "200px", maxHeight: "200px" }}
-                    />
-                  </div>
-                )}
-              </div>
-
-              {course.topics.map((topic, index) => (
-                <div key={index} className="border rounded p-2 my-2">
-                  <h5>Topic {index + 1}</h5>
-                  <div className="form-group">
-                    <label>Title</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="title"
-                      value={topic.title}
-                      onChange={(e) => handleTopicChange(index, e)}
-                      required
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label>Details</label>
-                    <textarea
-                      className="form-control"
-                      name="details"
-                      value={topic.details}
-                      onChange={(e) => handleTopicChange(index, e)}
-                      required
-                      placeholder="Write topic details"
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label>Topic Image</label>
-                    <input
-                      type="file"
-                      className="form-control-file"
-                      name="image"
-                      onChange={(e) => handleTopicChange(index, e)}
-                    />
-                    {topic.imagePreview && (
-                      <div className="mt-2">
-                        <img
-                          src={topic.imagePreview}
-                          alt="Preview"
-                          className="img-fluid"
-                          style={{ maxWidth: "200px", maxHeight: "200px" }}
-                        />
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="form-group">
-                    <label>Heading Points</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="headpoints"
-                      value={topic.headpoints}
-                      onChange={(e) => handleTopicChange(index, e)}
-                      placeholder="Enter heading points separated by commas"
-                      onKeyDown={(e) => handleTagKeyDown(e, index)}
-                    />
-                  </div>
+            {!showTopicsForm ? (
+              <form onSubmit={(e) => e.preventDefault()} encType="multipart/form-data">
+                <div className="form-group my-2">
+                  <label>Course Title</label>
+                  <input
+                    type="text"
+                    className="w-100 form-control"
+                    name="title"
+                    value={course.title}
+                    onChange={handleInputChange}
+                    required
+                  />
                 </div>
-              ))}
 
-              <div className="form-group row my-2">
-                <div className="col-6">
+                <div className="form-group my-2">
+                  <label>Course Description</label>
+                  <textarea
+                    className="w-100 form-control"
+                    name="description"
+                    value={course.description}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="Write a short description"
+                  />
+                </div>
+
+                <div className="form-group my-2">
+                  <label>Course Thumbnail Image</label>
+                  <input
+                    type="file"
+                    accept="image/jpeg, image/png, image/jpg, image/webp, image/svg+xml"
+                    className="form-control-file"
+                    onChange={handleThumbnailImageChange}
+                    style={{ display: "none" }}
+                    id="thumbnailImageInput"
+                  />
                   <button
                     type="button"
-                    className="btn btn-outline-warning"
-                    onClick={addTopic}
-                  >
-                    Add Topic
-                  </button>
-                </div>
-                <div className="col-6 text-right">
-                  <button
-                    type="submit"
                     className="btn btn-primary"
-                    disabled={loading}
+                    onClick={() => document.getElementById("thumbnailImageInput").click()}
                   >
-                    {loading ? "Loading..." : "Create Course"}
+                    <i className="fas fa-camera"></i> Upload Thumbnail Image
+                  </button>
+                  {imagePreview && (
+                    <div className="mt-2">
+                      <img
+                        src={imagePreview}
+                        alt="Preview"
+                        className="img-fluid"
+                        style={{ maxWidth: "200px", maxHeight: "200px" }}
+                      />
+                    </div>
+                  )}
+                </div>
+
+                <div className="form-group my-2">
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    onClick={handleShowTopicsForm}
+                  >
+                    Continue to Add Topics
                   </button>
                 </div>
-              </div>
-            </form>
+              </form>
+            ) : (
+              <form onSubmit={handleSubmit} encType="multipart/form-data">
+                {course.topics.map((topic, index) => (
+                  <div key={index} className="border rounded p-2 my-2">
+                    <h5>Topic {index + 1}</h5>
+                    <div className="form-group">
+                      <label>Title</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="title"
+                        value={topic.title}
+                        onChange={(e) => handleTopicChange(index, e)}
+                        required
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <label>Details</label>
+                      <textarea
+                        className="form-control"
+                        name="details"
+                        value={topic.details}
+                        onChange={(e) => handleTopicChange(index, e)}
+                        required
+                        placeholder="Write topic details"
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <label>Topic Image</label>
+                      <input
+                        type="file"
+                        className="form-control-file"
+                        name="image"
+                        onChange={(e) => handleTopicChange(index, e)}
+                      />
+                      {topic.imagePreview && (
+                        <div className="mt-2">
+                          <img
+                            src={topic.imagePreview}
+                            alt="Preview"
+                            className="img-fluid"
+                            style={{ maxWidth: "200px", maxHeight: "200px" }}
+                          />
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="form-group">
+                      <label>Heading Points</label>
+                      <div>
+                        {topic.headpoints.map((point, i) => (
+                          <span key={i} className="badge badge-primary m-1">
+                            {point}
+                          </span>
+                        ))}
+                      </div>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter heading points and press Enter"
+                        onKeyDown={(e) => handleHeadpointChange(e, index)}
+                      />
+                    </div>
+                  </div>
+                ))}
+
+                <div className="form-group row my-2">
+                  <div className="col-6">
+                    <button
+                      type="button"
+                      className="btn btn-outline-warning"
+                      onClick={addTopic}
+                    >
+                      Add Topic
+                    </button>
+                  </div>
+                  <div className="col-6 text-right">
+                    <button
+                      type="submit"
+                      className="btn btn-primary"
+                      disabled={loading}
+                    >
+                      {loading ? "Loading..." : "Create Course"}
+                    </button>
+                  </div>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       ) : (

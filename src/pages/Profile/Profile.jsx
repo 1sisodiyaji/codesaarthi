@@ -5,6 +5,7 @@ import BlogsByAuthor from "../../component/Profile/getBlogsByAuthor";
 import AnswerByAuthor from "../../component/Profile/AnswerGivenByUser";
 import UserData from "../../component/Profile/UserData";
 import ProfileChart from "../../component/Profile/ProfileChart";
+import ErrorBoundary from "../../component/ErrorBoundary";
 
 
 const Profile = () => { 
@@ -24,9 +25,11 @@ const Profile = () => {
       <div className="container mt-4">
       <UserData/>
       <ProfileChart/>
-        {/* <div className="mt-4">
+          <div className="mt-4">
+            <ErrorBoundary>
           <BlogsByAuthor />
-        </div> */}
+          </ErrorBoundary>
+        </div>  
 
         {/* <div className="mt-4">
           <h6>Your Questions</h6>

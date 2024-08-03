@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import config from "../../config/config";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import TimeConverter from "../../config/TimeConverter";
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,7 +12,7 @@ const BlogsByAuthor = () => {
     const [blogs, setBlogs] = useState([]);
     const [blogsShow, setBlogsShow] = useState(false);
     const dispatch = useDispatch();
-    const user = useSelector((state) => state.user.user); // Access user data from Redux store
+    const user = useSelector((state) => state.user.user);  
     const userId = user ? user._id : null;
 
     const fetchBlogs = async (userId) => {
@@ -21,7 +20,7 @@ const BlogsByAuthor = () => {
             const response = await axios.post(
                 `${config.BASE_URL}/article/getbyidAuthor/${userId}`
             );
-            if (response.data) {
+            if (response.data && response.data.length > 0) {
                 toast.success("Blogs written by you", { theme: "dark" });
                 setBlogs(response.data);
             } else {
@@ -67,35 +66,32 @@ const BlogsByAuthor = () => {
 
     return (
         <>
-            <ToastContainer />
-            <div className="row my-2 g-0">
-                <div className="col-11">
-                    <h6>
-                        Blogs Posted By {user && user.name}{" "}
-                        <span className="badge badge-dark">{blogs.length}</span>{" "}
-                    </h6>
-                </div>
-                <div className="col-1">
-                    <i
-                        onClick={handleshowBlogs}
-                        className={`${blogsShow
-                            ? "fi fi-sr-eye text-success bg-dark"
-                            : "i fi-sr-eye-crossed text-light bg-primary"
-                            } px-2 py-1 rounded-4`}
-                        style={{ cursor: "pointer" }}
-                    ></i>
-                </div>
+        <ToastContainer />
+        <div className="row my-2 g-0" onClick={handleshowBlogs} style={{ cursor: 'pointer' }}>
+            <div className="col-11">
+                <h6>
+                    Blogs Posted By {user && user.name}
+                    <span className="badge badge-dark">{blogs.length}</span>
+                </h6>
             </div>
+            <div className="col-1">
+                <i
+                    className={`${blogsShow
+                        ? "fi fi-sr-eye text-success bg-dark"
+                        : "i fi-sr-eye-crossed text-light bg-primary"
+                        } px-2 py-1 rounded-4`}
+                    style={{ cursor: "pointer" }}
+                ></i>
+            </div>
+        </div>
 
-            {blogsShow && (
-                <div className="my-2">
-                    {blogs.length > 0 ? (
-                        <div className="row">
-                            {blogs.map((blog) => (
-                                <div
-                                    key={blog._id}
-                                    className="card bg-black my-2 shadow-6 p-3 col-lg-6"
-                                >
+        {blogsShow && (
+            <div className="my-2">
+                {blogs.length > 0 ? (
+                    <div className="row">
+                        {blogs.map((blog) => (
+                            <div key={blog._id} className="p-1 col-md-6 col-12">
+                                <div className="card bg-black my-2 shadow-6 p-3">
                                     <Link to={`/blog/${blog._id}`}>
                                         <h4 className="text-warning">{blog.title}</h4>
                                     </Link>
@@ -128,7 +124,7 @@ const BlogsByAuthor = () => {
                                                 to={`/edit-blog/${blog._id}`}
                                                 className="text-light"
                                             >
-                                                <button className="btn bg-warning text-capitalize ">
+                                                <button className="btn bg-warning text-capitalize">
                                                     Update <i className="fi fi-sr-pen-clip ps-2"></i>
                                                 </button>
                                             </Link>
@@ -143,15 +139,16 @@ const BlogsByAuthor = () => {
                                         </div>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
-                    ) : (
-                        <p>You have not posted any blogs.</p>
-                    )}
-                </div>
-            )}
-        </>
-    );
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <p>You have not posted any blogs.</p>
+                )}
+            </div>
+        )}
+    </>
+);
 };
 
 export default BlogsByAuthor;
