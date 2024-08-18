@@ -1,12 +1,11 @@
-import React from "react";
-import "./App.css";
-import Routess from "./Routes/Routess";
+import './App.css'; 
+import Routess from './routes/Routes';
 
 function App() {
   return (
-    <>
-    <Routess/>
-    </>
+   <>
+   <Routess/>
+   </>
   );
 }
 

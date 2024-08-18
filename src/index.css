@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~@flaticon/flaticon-uicons/css/all/all";
+
+ 
+/* Hide scrollbars for WebKit browsers */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbars for Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* For other browsers that use different methods */
+body {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+   scroll-behavior: antialiased;
+}
+
+ 
+ 
