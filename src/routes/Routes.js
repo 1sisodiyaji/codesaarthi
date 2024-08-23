@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route ,useLocation } from "react-router-dom";
 import Cookie from '../pages/others/Cookie';
 import Error404Pgae from '../pages/others/Error404Pgae';
 import PrivacyPolicy from '../pages/others/PrivacyPolicy';
@@ -19,12 +19,19 @@ import SingleBlog from '../pages/Explore/SingleBlog';
 import Login from '../pages/Auth/Login';
 import ForgotPassword from '../pages/Auth/ForgotPassword';
 import ProfilePicture from '../pages/Tools/ProfilePicture';
+import Dashboard from '../pages/Admin/Dashboard';
+import AdminLogin from '../pages/Admin/AdminLogin';
 
 const Routess = () => {
+  const location = useLocation();
+  const adminPaths = ['/Admin-Dashboard', '/Admin-Login'];
+
+  const shouldHideNavbarAndFooter = adminPaths.includes(location.pathname);
   return (
   <>
-  <Navbar/>
-  <Routes>
+  {!shouldHideNavbarAndFooter && <Navbar />}
+
+  <Routes> 
   <Route path="/" element={<Home />} />
   <Route path="/privacy_policy" element={<PrivacyPolicy />} />
   <Route path="/terms_conditions" element={<TermsAndConditions />} />
@@ -43,11 +50,29 @@ const Routess = () => {
   <Route path="/forgot-password" element={<ForgotPassword />} />
 
   <Route path="/tools/ProfilePicture" element={<ProfilePicture />} />
-
-  <Route path="/*" element={<Error404Pgae />} />
-  </Routes>
-  <Footer/>
   
+
+
+  <Route path="/Admin-Dashboard" element={<Dashboard/>}/>
+  <Route path="/Admin-Login" element={<AdminLogin/>} />
+
+
+
+  
+  <Route path="/*" element={<Error404Pgae />} />
+  </Routes> 
+
+  {!shouldHideNavbarAndFooter && <Footer />}
+
+
+ 
+ 
+ 
+
+
+
+
+
   </>
   )
 }

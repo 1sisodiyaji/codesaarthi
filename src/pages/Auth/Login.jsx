@@ -312,7 +312,7 @@ const Login = () => {
                       </p>
                     </div>
                   </form>
-                 <p className="text-black dark:text-light">Login With Admin Account<Link to = " " className="underline ms-2" >Here </Link> </p> 
+                 <p className="text-black dark:text-light">Login With Admin Account<Link to = "/Admin-Login" className="underline ms-2" >Here </Link> </p> 
                 </div> 
           </div>
           <div className="hidden md:block flex-1">

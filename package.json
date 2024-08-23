@@ -14,7 +14,8 @@
     "@tsparticles/slim": "^3.5.0",
     "axios": "^1.7.3",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.3.24",
+    "flowbite": "^2.5.1",
+    "framer-motion": "^11.3.29",
     "html2canvas": "^1.4.1",
     "jodit-react": "^4.1.2",
     "jquery": "^3.7.1",
@@ -26,7 +27,7 @@
     "react-router-dom": "^6.26.0",
     "react-scripts": "5.0.1",
     "simplex-noise": "^4.0.3",
-    "tailwind-merge": "^2.4.0",
+    "tailwind-merge": "^2.5.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
