@@ -63,7 +63,7 @@ const AdminLogin = () => {
       if (response.status === 200) {
         toast.success("Welcome to Codesaarthi!", { theme: "dark" });
         setLoading(false);
-        Cookies.set("Codesaarthi-token", response.data.token, {
+        Cookies.set("Admin-token", response.data.token, {
           expires: 30,
         });
        navigate('/Admin-Dashboard');

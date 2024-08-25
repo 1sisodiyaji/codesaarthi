@@ -21,6 +21,13 @@ import ForgotPassword from '../pages/Auth/ForgotPassword';
 import ProfilePicture from '../pages/Tools/ProfilePicture';
 import Dashboard from '../pages/Admin/Dashboard';
 import AdminLogin from '../pages/Admin/AdminLogin';
+import Theory from '../pages/Theory/Theory';
+import SingleTheory from '../pages/Theory/SingleTheory';
+import Problems from '../pages/Problems/Problems';
+import Roadmap from '../pages/Roadmap/Roadmap';
+import SingleRoadmap from '../pages/Roadmap/SingleRoadmap';
+import Project from '../pages/Projects/Project';
+import MassMailer from '../pages/Tools/MassMailer';
 
 const Routess = () => {
   const location = useLocation();
@@ -49,8 +56,16 @@ const Routess = () => {
   <Route path="/login" element={<Login />} />
   <Route path="/forgot-password" element={<ForgotPassword />} />
 
+  <Route path="/Theory" element={<Theory />} />
+  <Route path="/Theory/:slug" element={<SingleTheory />} />
+
+  <Route path="/Problems" element={<Problems />} />
+  <Route path="/Roadmap" element={<Roadmap />} />
+  <Route path="/Roadmap/:slug" element={<SingleRoadmap />} />
+  <Route path="/Project" element={<Project />} />
+
   <Route path="/tools/ProfilePicture" element={<ProfilePicture />} />
-  
+  <Route path="/tools/Mass-Mailer" element={<MassMailer />} />
 
 
   <Route path="/Admin-Dashboard" element={<Dashboard/>}/>

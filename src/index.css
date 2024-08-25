@@ -21,5 +21,19 @@ body {
    scroll-behavior: antialiased;
 }
 
+ /* button::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 1px hsl(0 0% 100% / 0.15)inset;
+  background: hsl(0 0% 10%);
+ }
  
- 
+ button::after{
+  content: "";
+  position: absolute;
+  inset: 4px;
+  filter: blur(20px);
+  box-shadow: 0 1px hsl(0 0% 100% / 0.15)inset;
+  background: radial-gradient(50% 50% at center, hsl(var(--hue) 80% 85%), hsl(var(--hue) 80% 70% ),traparent);
+ } */

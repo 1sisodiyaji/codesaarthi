@@ -35,33 +35,23 @@ const PrivacyPolicy = () => {
           href="https://codesaarthi.com/img/favicon.ico"
           sizes="32x32"
         />
-      </Helmet>
-
-      <div style={{ minHeight: "100vh" }}>
-        <div
-          className="container-fluid d-flex align-items-center justify-content-center"
-          style={{ minHeight: "30vh" }}
-        >
-          <div className="container text-center">
-            <div className="row">
-              <div className="col-12">
-                <h1
-                  className="text-capitalize ls-wider"
-                  style={{ color: "#79b4e2" }}
-                >
+      </Helmet> 
+      <div className="bg-slate-100 dark:bg-gray-950 text-black dark:text-white py-20">
+      <div  className="flex items-center justify-center   ">
+          <div className="max-w-2xl text-center">
+            <div className="h-12"> 
+                <h1  className="capitalize  " >
                   Privacy Policy
                 </h1>
-                <small className="fw-lighter" style={{ color: "#79b4e2" }}>
-                  Last Updated: 18<sup style={{ color: "#79b4e2" }}>th</sup>{" "}
+                <small className="fw-lighter" >
+                  Last Updated: 18<sup >th</sup>{" "}
                   feb, 2024
                 </small>
-              </div>
-            </div>
+              </div> 
           </div>
         </div>
-        <div className="container text-muted">
-          <div className="row">
-            <div className="col-12">
+        <div className="max-w-7xl m-auto text-muted pb-12">
+          
               <p>
                 codesaarthi intention behind publishing this Privacy Policy is
                 to ensure that we are compliant to the privacy and data security
@@ -1044,11 +1034,10 @@ const PrivacyPolicy = () => {
                 applicable law, generally either explicit or presumed consent,
                 or equivalent legal permissions under other relevant national
                 laws, when applicable.
-              </li>
-            </div>
-          </div>
-        </div>
+              </li>   
+        </div> 
       </div>
+       
     </>
   );
 };

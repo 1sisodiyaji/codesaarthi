@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import TimeConverter from "../helper/TimeConverter.js";
 import { handleCopyText, handleShareLinkedIn, handleShareWhatsApp } from "../helper/Share.js";
 
-export function Card({title,slug, image , description , content ,url , publishedAt , Author, SourceName}) {
+export function Card({title,slug, image , description , content ,url , publishedAt , Author, SourceName,type}) {
+  
   return (
     <CardContainer className="inter-var">
       <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
@@ -56,8 +57,7 @@ export function Card({title,slug, image , description , content ,url , published
         <CardItem
             translateZ={20}
             as={Link}
-            to={url}
-            target="blank"
+            to={url} 
             className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
           >
             Read More →
@@ -72,10 +72,10 @@ export function Card({title,slug, image , description , content ,url , published
                  
         
               <div tabIndex={0} role="button">Share   <i className="fi fi-sr-share"></i>
-              <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-28 space-y-4 p-4 shadow text-center">
-                <li className="cursor-pointer" onClick={() => handleCopyText(`${window.location.origin}/news/${slug}`)}>Copy</li>
-                <li className="cursor-pointer" onClick={() => handleShareWhatsApp(`${window.location.origin}/news/${slug}`)}>Whatsapp</li>
-                <li className="cursor-pointer" onClick={() => handleShareLinkedIn(`${window.location.origin}/news/${slug}`)}>Linkedin</li>
+              <ul tabIndex={0} className="dropdown-content menu bg-base-100 dark:bg-slate-400 rounded-box z-[1] w-28 space-y-4 p-4 shadow text-center">
+                <li className="cursor-pointer" onClick={() => handleCopyText(`${window.location.origin}/${type? type : 'news'}/${slug}`)}>Copy</li>
+                <li className="cursor-pointer" onClick={() => handleShareWhatsApp(`${window.location.origin}/${type? type : 'news'}/${slug}`)}>Whatsapp</li>
+                <li className="cursor-pointer" onClick={() => handleShareLinkedIn(`${window.location.origin}/${type? type : 'news'}/${slug}`)}>Linkedin</li>
               </ul>
               </div>
               </div>

@@ -33,27 +33,19 @@ const Cookie = () => {
           sizes="32x32"
         />
       </Helmet>
-      <div className="container-fluid">
-        <div
-          className="container-fluid d-flex align-items-center justify-content-center "
-          style={{ minHeight: "30vh" }}
-        >
-          <div className="container text-center">
-            <div className="row">
-              <div className="col-12">
-                <h1 style={{ color: "#79b4e2" }}>Cookie Policy</h1>
-                <small className="fw-lighter" style={{ color: "#79b4e2" }}>
-                  Last Updated: 18<sup style={{ color: "#79b4e2" }}>th</sup>{" "}
+      <div className="bg-slate-100 dark:bg-gray-950 text-black dark:text-white py-20">
+        <div  className=" flex items-center justify-center ">
+          <div className="  text-center"> 
+                <h1  >Cookie Policy</h1>
+                <small className="fw-lighter">
+                  Last Updated: 18<sup>th</sup>{" "}
                   feb, 2024
                 </small>
-              </div>
-            </div>
+               
           </div>
         </div>
         <br />
-        <div className="container text-muted">
-          <div className="row">
-            <div className="col-12">
+        <div className="max-w-7xl m-auto"> 
               <h2>Interpretation and Definitions</h2>
               <h5>Interpretation</h5>
               <p>
@@ -264,8 +256,7 @@ const Cookie = () => {
                 </ul>
               </ul>
             </div>
-          </div>
-        </div>
+           
       </div>
     </>
   );

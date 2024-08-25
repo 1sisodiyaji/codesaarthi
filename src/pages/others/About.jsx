@@ -36,7 +36,8 @@ const About = () => {
     <> 
       <div className="min-h-screen bg-slate-100 dark:bg-gray-950">
         <Slides message1={"Codesaarthi"} message2={"Your Learning Partner"} />
-        <Timeline events={events} />
+        <div className="md:max-w-4xl m-auto">  <Timeline events={events} /></div>
+      
         <Contact/>
       </div>
     </>

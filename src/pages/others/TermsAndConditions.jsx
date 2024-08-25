@@ -40,31 +40,19 @@ const TermsAndConditions = () => {
           sizes="32x32"
         />
       </Helmet>
-      <div className="conatiner-fluid">
-        <div
-          className="container-fluid d-flex align-items-center justify-content-center"
-          style={{ minHeight: "30vh" }}
-        >
-          <div className="container">
-            <div className="row text-center">
-              <div className="col-12">
+      <div className="min-h-screen py-20 bg-slate-100 dark:bg-gray-950 text-black dark:text-white">
+        <div className=" text-center"> 
                 <h1
-                  className="text-capitalize ls-wider"
-                  style={{ color: "#79b4e2" }}
+                  className="capitalize" 
                 >
                   Terms and Conditions
                 </h1>
-                <small className="fw-lighter" style={{ color: "#79b4e2" }}>
+                <small className="fw-lighter">
                   Last Updated: 18<sup>th</sup> feb, 2024
-                </small>
-              </div>
-            </div>
-          </div>
+                </small> 
         </div>
         <br />
-        <div className="container text-muted ">
-          <div className="row">
-            <div className="col-12">
+        <div className="max-w-7xl  m-auto"> 
               These terms of service ("Terms") are entered into between you and
               codesaarthi ("us," "we," or "our") for the use of our application
               in relation to our coding training tools. By accessing our
@@ -243,8 +231,7 @@ const TermsAndConditions = () => {
               </p>
               <br />
               For billing questions, contact connect@codesaarthi.com.
-            </div>
-          </div>
+            
         </div>
       </div>
     </>

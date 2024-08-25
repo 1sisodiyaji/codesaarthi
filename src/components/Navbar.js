@@ -44,87 +44,18 @@ function NavBarContent({ className }) {
         <h1 className="md:text-3xl  text-black dark:text-white"> Codesaarthi</h1>
         <Menu setActive={setActive}>
           <Link to="/" ><MenuItem setActive={setActive} active={active} item="Home"></MenuItem></Link>
-          <Link to="/about" ><MenuItem setActive={setActive} active={active} item="About"></MenuItem></Link>
-
-
-          <MenuItem setActive={setActive} active={active} item="Theory">
-            <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/web-dev">Web Development</HoveredLink>
-              <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-              <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-              <HoveredLink href="/branding">Branding</HoveredLink>
-            </div>
-          </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Problems">
-            <div className="text-sm grid grid-cols-2 gap-10 p-4">
-              <ProductItem
-                title="Algochurn"
-                href="https://algochurn.com"
-                src="https://assets.aceternity.com/demos/algochurn.webp"
-                description="Prepare for tech interviews like never before."
-              />
-              <ProductItem
-                title="Tailwind Master Kit"
-                href="https://tailwindmasterkit.com"
-                src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                description="Production ready Tailwind css components for your next project"
-              />
-              <ProductItem
-                title="Moonbeam"
-                href="https://gomoonbeam.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                description="Never write from scratch again. Go from idea to blog in minutes."
-              />
-              <ProductItem
-                title="Rogue"
-                href="https://userogue.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-              />
-            </div>
-          </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Projects">
-            <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/hobby">Hobby</HoveredLink>
-              <HoveredLink href="/individual">Individual</HoveredLink>
-              <HoveredLink href="/team">Team</HoveredLink>
-              <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-            </div>
-          </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Roadmaps">
-            <div className="text-sm grid grid-cols-2 gap-10 p-4">
-              <ProductItem
-                title="Algochurn"
-                href="https://algochurn.com"
-                src="https://assets.aceternity.com/demos/algochurn.webp"
-                description="Prepare for tech interviews like never before."
-              />
-              <ProductItem
-                title="Tailwind Master Kit"
-                href="https://tailwindmasterkit.com"
-                src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                description="Production ready Tailwind css components for your next project"
-              />
-              <ProductItem
-                title="Moonbeam"
-                href="https://gomoonbeam.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                description="Never write from scratch again. Go from idea to blog in minutes."
-              />
-              <ProductItem
-                title="Rogue"
-                href="https://userogue.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-              />
-            </div>
-          </MenuItem>
+          <Link to="/about" ><MenuItem setActive={setActive} active={active} item="About"></MenuItem></Link> 
+          <Link to="/Theory" ><MenuItem setActive={setActive} active={active} item="Theory"></MenuItem></Link>
+          <Link to="/Problems" ><MenuItem setActive={setActive} active={active} item="Problems"></MenuItem></Link>
+          <Link to="/Project" ><MenuItem setActive={setActive} active={active} item="Projects"></MenuItem></Link>
+          <Link to="/Roadmap" ><MenuItem setActive={setActive} active={active} item="Roadmaps"></MenuItem></Link>
+          
           <MenuItem setActive={setActive} active={active} item="Tools">
             <div className="text-sm grid grid-cols-2 gap-10 p-4">
               <ProductItem
                 title="Profile Picture"
                 href ="/tools/ProfilePicture"
-                src="https://assets.aceternity.com/demos/algochurn.webp"
+                src="https://res.cloudinary.com/ducw7orvn/image/upload/v1724612288/Screenshot_2024-08-16_200811_h2gcp1.png"
                 description="Prepare for tech interviews like never before."
               />
               <ProductItem
@@ -134,8 +65,8 @@ function NavBarContent({ className }) {
                 description="Production ready Tailwind css components for your next project"
               />
               <ProductItem
-                title="Moonbeam"
-                href="https://gomoonbeam.com"
+                title="Mass Mailer"
+                href="/tools/Mass-Mailer"
                 src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
                 description="Never write from scratch again. Go from idea to blog in minutes."
               />
