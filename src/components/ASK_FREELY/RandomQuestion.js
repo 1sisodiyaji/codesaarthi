@@ -29,8 +29,9 @@ const RandomQuestion = () => {
           <div className="card bg-base-100 image-full w-96 shadow-xl mb-4" key={question._id}>
             <figure>
               <img
-                src="https://codesaarthi.com/img/logo.png"
+                src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721941402/logo_dnkgj9.jpg"
                 alt="Background"
+                loading='lazy'
               />
             </figure>
             <div className="card-body">

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet";
 import config from "../../helper/config";
 import Loading from "../../components/Loading";
-import TimeConverter from "../../helper/TimeConverter";
-import { SmallCard } from "../../components/SmallCard";
+import TimeConverter from "../../helper/TimeConverter"; 
+import TruncateText from "../../helper/TruncateText";
 
 const SingleTheory = () => {
   const { slug } = useParams();
@@ -21,9 +21,8 @@ const SingleTheory = () => {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const response = await axios.get(`${config.BASE_URL}/Admin/getRoadmap/${slug}`); 
-        setCourse(response.data);
-        console.log(response.data.topics);
+        const response = await axios.get(`${config.BASE_URL}/Admin/coursesBySlug/${slug}`); 
+        setCourse(response.data[0]); 
       } catch (error) {
         console.error("Error fetching course:", error);
       }
@@ -89,7 +88,7 @@ const SingleTheory = () => {
   };
 
   if (!course) {
-    return <Loading message="Fetching Course Details" />;
+    return <Loading/>;
   }
 
   return (
@@ -130,7 +129,7 @@ const SingleTheory = () => {
         />
       </Helmet>
 
-      <div className="container mx-auto px-4 py-6">
+      <div className="min-h-screen md:py-20 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-1">
         <div className="flex justify-end lg:hidden mb-2">
           <button
             onClick={toggleSidebar}
@@ -139,22 +138,21 @@ const SingleTheory = () => {
             <i className="fi fi-br-align-justify"></i>
           </button>
         </div>
-        <div className="flex flex-wrap lg:flex-nowrap border border-gray-800 rounded-lg">
-          <div
-            className="lg:w-1/4 w-full lg:pr-2 lg:border-r lg:border-gray-800 lg:py-2 lg:block hidden"
-          >
+        <div className="flex flex-wrap lg:flex-nowrap">
+          <div  className="lg:w-1/4 w-full lg:pr-2 lg:border-r lg:border-gray-800 lg:py-2 lg:block hidden">
             <div className="flex justify-center mb-4">
               <img
-                src={course.thumbnail}
-                className="w-full max-w-xs"
+                src={course.thumbnailImage}
+                className=" max-w-xs"
                 alt="course thumbnail"
+                loading="lazy"
               />
             </div>
             <h2 className="text-center text-blue-500 text-xl font-bold mb-4">{course.title}</h2>
             <div className="relative mb-4">
               <div className="h-4 bg-gray-200 rounded">
                 <div
-                  className="bg-green-500 h-full rounded"
+                  className="bg-green-500 h-full text-xs text-white ps-2 rounded"
                   style={{ width: `${progress}%` }}
                 >
                   {Math.round(progress)}%
@@ -165,10 +163,10 @@ const SingleTheory = () => {
               <div
                 key={topic._id}
                 onClick={() => handleTopicClick(index)}
-                className={`cursor-pointer ${selectedTopic === index ? 'underline text-blue-600' : ''}`}
+                className={`cursor-pointer ${selectedTopic === index ? 'underline text-blue-600 shadow-lg' : ''}`}
               >
                 <p className="flex items-center text-lg mb-1">
-                  <i className="fi fi-ss-book-alt mr-2"></i> {topic.headline}
+                  <i className="fi fi-ss-book-alt mr-2"></i> {topic.title}
                 </p>
                 <hr className="border-gray-300" />
               </div>
@@ -176,16 +174,16 @@ const SingleTheory = () => {
           </div>
 
           {isSidebarOpen && (
-            <div className="lg:hidden fixed inset-0 bg-white z-50 overflow-y-auto">
+            <div className="lg:hidden fixed inset-0 bg-gray-100 dark:bg-gray-900  z-50 overflow-y-auto">
               <div className="p-4">
                 {course.topics.map((topic, index) => (
                   <div
                     key={topic._id}
                     onClick={() => handleTopicClick(index)}
-                    className={`cursor-pointer ${selectedTopic === index ? 'underline text-yellow-300' : 'text-yellow-300'}`}
+                    className={`cursor-pointer ${selectedTopic === index ? 'underline text-yellow-300' : ''}`}
                   >
                     <p className="flex items-center text-lg mb-1">
-                      <i className="fi fi-ss-book-alt mr-2"></i> {topic.headline}
+                      <i className="fi fi-ss-book-alt mr-2"></i> {topic.title}
                     </p>
                     <hr className="border-gray-300" />
                   </div>
@@ -198,13 +196,13 @@ const SingleTheory = () => {
             {course.topics && course.topics[selectedTopic] && (
               <div>
                 <h3 className="text-xl font-semibold text-yellow-500 mb-4">
-                  {course.topics[selectedTopic].headline}
-                </h3> 
+                  {course.topics[selectedTopic].title}
+                </h3>  
                 {course.topics[selectedTopic].image && (
                   <div className="my-4 flex justify-center">
                     <img
                       src={course.topics[selectedTopic].image}
-                      alt={course.topics[selectedTopic].headline}
+                      alt={course.topics[selectedTopic].title}
                       className="max-h-72 w-auto"
                     />
                   </div>
@@ -217,14 +215,14 @@ const SingleTheory = () => {
                 ></div>
                 <div className="flex justify-between">
                   <button
-                    className="btn bg-blue-500 text-white py-2 px-4 rounded disabled:opacity-50"
+                    className=" bg-blue-500 text-white py-2 px-4 rounded disabled:opacity-50"
                     onClick={goToPreviousTopic}
                     disabled={selectedTopic === 0}
                   >
                     <i className="fi fi-rr-angle-small-left mr-2"></i> Previous
                   </button>
                   <button
-                    className="btn bg-blue-500 text-white py-2 px-4 rounded disabled:opacity-50"
+                    className=" bg-green-500 text-white py-2 px-4 rounded disabled:opacity-50"
                     onClick={goToNextTopic}
                     disabled={selectedTopic === (course.topics.length - 1)}
                   >
@@ -246,12 +244,12 @@ const SingleTheory = () => {
                     onClick={() => setSelectedTopic(index)}
                   >
                     {selectedTopic === index &&
-                      topic.points &&
-                      topic.points.map((headingPoint, idx) => (
+                      topic.headingPoints &&
+                      topic.headingPoints.map((headingPoints, idx) => (
                         <div key={`${topic._id}-${idx}`} className="mb-2">
                           <small className="text-sm text-blue-600">
                             <i className="fi fi-ss-book-alt mr-2"></i>
-                            <a href={`#${headingPoint}`}>{headingPoint}</a>
+                            <a href={`#${headingPoints}`}>{headingPoints}</a>
                           </small>
                         </div>
                       ))}
@@ -264,17 +262,27 @@ const SingleTheory = () => {
               </div>
 
               {blogs &&
-                blogs.map((blog) => (
-                  <SmallCard
-                    key={blog._id}
-                    id={blog._id}
-                    image={blog.image}
-                    link={`/blog/${blog._id}`}
-                    title={blog.title}
-                    name={blog.name}
-                    formattedDate={blog.formattedDate}
-                  />
-                ))}
+                blogs.map((blog) => ( 
+            <div key={blog._id} className="rounded-lg bg-gray-300 dark:bg-gray-600 my-2">
+              <div className="flex items-center space-x-3">
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-16 h-16 rounded-lg"
+                />
+                <div className="flex-1 space-y-4">
+                <Link to = {`/blog/${blog.slug}`}> <small className="text-xs underline">
+                  <TruncateText text = {blog.title} maxLength={50} />
+                  </small></Link> <br/>
+                <div className="flex justify-between">
+                <small className="text-xs">{blog.name}</small>
+                <small className="text-xs"><TimeConverter date={blog.date}/></small>
+                </div>
+                </div>
+              </div>
+            </div> 
+              ))}
+
             </div>
           </div>
         </div>

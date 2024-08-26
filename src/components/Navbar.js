@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu.tsx";
+import { Menu, MenuItem, ProductItem } from "./ui/navbar-menu.tsx";
 import { cn } from "../lib/utils.ts"; 
 import { Link } from "react-router-dom";
 
@@ -142,8 +142,13 @@ function NavBarContent({ className }) {
             <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
             <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
               {/* Sidebar content here */}
-              <li><a>Sidebar Item 1</a></li>
-              <li><a>Sidebar Item 2</a></li>
+              <Link to="/" ><MenuItem setActive={setActive} active={active} item="Home"></MenuItem></Link>
+          <Link to="/about" ><MenuItem setActive={setActive} active={active} item="About"></MenuItem></Link> 
+          <Link to="/Theory" ><MenuItem setActive={setActive} active={active} item="Theory"></MenuItem></Link>
+          <Link to="/Problems" ><MenuItem setActive={setActive} active={active} item="Problems"></MenuItem></Link>
+          <Link to="/Project" ><MenuItem setActive={setActive} active={active} item="Projects"></MenuItem></Link>
+          <Link to="/Roadmap" ><MenuItem setActive={setActive} active={active} item="Roadmaps"></MenuItem></Link>
+          
             </ul>
           </div>
         </div>

@@ -1,9 +1,9 @@
- 
-import React, { useState, useEffect } from 'react';
+ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import config from '../../helper/config'; 
 import { Toaster } from 'react-hot-toast'; 
 import { Card } from '../../components/Card';
+import Loading from '../../components/Loading';
 const Roadmap = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -25,7 +25,7 @@ const Roadmap = () => {
     fetchData();
   }, []);
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading/>;
   }
 
   return (
@@ -33,7 +33,7 @@ const Roadmap = () => {
     <Toaster/>
     <div className="min-h-screen p-4 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 md:py-20">
       
-      <div className="grid grid-cols-1  lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1  lg:grid-cols-3 ">
         {data.map((item, index) => (    
              <Card key={index}  title = {item.title} 
              url={item.slug} type={'Roadmap'}
