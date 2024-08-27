@@ -26,14 +26,14 @@ const Error404Pgae = () => {
         />
         <meta
           property="og:image"
-          content="https://codesaarthi.com/img/Error404.jpg"
+          content="https://codesaarthi.com/Error404.jpg"
         />
         <meta property="og:url" content="https://codesaarthi.com/*" />
         <meta property="og:type" content="Website" />
         <link
           rel="icon"
           type="image/png"
-          href="https://codesaarthi.com/img/favicon.ico"
+          href="https://codesaarthi.com/favicon.ico"
           sizes="32x32"
         />
       </Helmet>

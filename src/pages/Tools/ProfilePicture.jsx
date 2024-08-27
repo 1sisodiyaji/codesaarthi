@@ -77,21 +77,52 @@ const ProfilePicture = () => {
     <>
       <Toaster />
       <Helmet>
-        <title>Profile Picture - Codesaarthi</title>
-        <meta name="description" content="Welcome to My Awesome Website. Discover our range of products, services, and more. Stay updated with our latest news and offerings." />
-        <meta name="keywords" content="awesome, website, products, services, news" />
-        <meta name="author" content="Your Name" />
-        <meta property="og:title" content="My Awesome Website - Home" />
-        <meta property="og:description" content="Welcome to My Awesome Website. Discover our range of products, services, and more. Stay updated with our latest news and offerings." />
-        <meta property="og:image" content="https://example.com/your-image.jpg" />
-        <meta property="og:url" content="https://example.com/home" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="My Awesome Website - Home" />
-        <meta name="twitter:description" content="Welcome to My Awesome Website. Discover our range of products, services, and more. Stay updated with our latest news and offerings." />
-        <meta name="twitter:image" content="https://example.com/your-image.jpg" />
-        <link rel="canonical" href="https://example.com/home" />
-      </Helmet>
+  <title>Profile Picture Generator - Codesaarthi</title>
+  <meta
+    name="description"
+    content="Generate unique profile pictures effortlessly with Codesaarthi's Profile Picture Generator. Customize your image based on your preferences and download it instantly."
+  />
+  <meta
+    name="keywords"
+    content="Profile Picture Generator, Custom Profile Image, Codesaarthi Tools"
+  />
+  <meta name="author" content="Codesaarthi" />
+  <meta
+    property="og:title"
+    content="Profile Picture Generator - Codesaarthi"
+  />
+  <meta
+    property="og:description"
+    content="Create and customize your profile pictures with ease using Codesaarthi's intuitive Profile Picture Generator tool."
+  />
+  <meta
+    property="og:image"
+    content="https://codesaarthi.com/logo.png"
+  />
+  <meta
+    property="og:url"
+    content="https://codesaarthi.com/tools/ProfilePicture"
+  />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="Profile Picture Generator - Codesaarthi"
+  />
+  <meta
+    name="twitter:description"
+    content="Generate unique profile pictures effortlessly with Codesaarthi's Profile Picture Generator."
+  />
+  <meta
+    name="twitter:image"
+    content="https://codesaarthi.com/logo.png"
+  />
+  <link
+    rel="canonical"
+    href="https://codesaarthi.com/tools/ProfilePicture"
+  />
+</Helmet>
+
       <div className="min-h-screen bg-slate-100 dark:bg-gray-950 flex items-center justify-center flex-col py-20">
         <section>
           <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">

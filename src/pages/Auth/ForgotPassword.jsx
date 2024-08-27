@@ -147,19 +147,19 @@ const ForgotPassword = () => {
   return (
     <>
      <Helmet>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="keywords" content="Recover password, forgot password, Notes Saver" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://noteswebapp-rust.vercel.app/recover-password" />
-  <meta name="description" content="Page to recover your password for Notes Saver. Follow simple steps to reset your password." />
-  <title>Recover Password | Notes Saver</title>
-  <meta property="og:title" content="Recover Password | Notes Saver" />
-  <meta property="og:description" content="Page to recover your password for Notes Saver. Follow simple steps to reset your password." />
-  <meta property="og:image" content="https://example.com/path-to-your-image.jpg" />
-  <meta property="og:url" content="https://noteswebapp-rust.vercel.app/recover-password" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" type="image/png" href="https://example.com/path-to-your-favicon.ico" sizes="32x32" />
-</Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="Recover password , forgot password , forgot password in codesaarthi" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://codesaarthi.com/forgot-password" />
+        <meta name="description" content="It is an page where you can change the password through recovery method . Recover you rpassword in easy steps ." />
+        <title>Forgot Password| CodeSaarthi</title>
+        <meta property="og:title" content=" Recover Password| | CodeSaarthi" />
+        <meta property="og:description" content="It is an page where you can change the password through recovery method . Recover you rpassword in easy steps ." />
+        <meta property="og:image" content="https://codesaarthi.com/logo.png" />
+        <meta property="og:url" content="https://codesaarthi.com/forgot-password" />
+        <meta property="og:type" content="Education-Website" />
+        <link rel="icon" type="image/png" href="https://codesaarthi.com/favicon.ico" sizes="32x32" />
+      </Helmet>
 
       <div className=" min-h-screen bg-slate-400 dark:bg-gray-950 text-black dark:text-white flex justify-center items-center">
         <div className="mx-auto w-80">

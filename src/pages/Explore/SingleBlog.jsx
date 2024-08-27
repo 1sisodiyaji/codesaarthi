@@ -8,6 +8,7 @@ import Cookies from 'js-cookie';
 import { SmallCard } from "../../components/SmallCard";
 import { handleCopyText, handleShareLinkedIn, handleShareWhatsApp } from "../../helper/Share";
 import TimeConverter from "../../helper/TimeConverter";
+import Loading from '../../components/Loading';
 
 const SingleBlog = () => {
   const { slug } = useParams();
@@ -57,36 +58,7 @@ const SingleBlog = () => {
   }, [slug]);
 
   if (loading) {
-    return (
-      <div className="min-h-screen text-warning flex justify-center items-center">
-        <div className="border-slate-200" aria-hidden="true" style={{ width: "350px" }}>
-          <div >
-            <img
-              src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721031578/loader_bhnpfb.gif"
-              style={{ height: "125px", width: "115px" }} 
-              alt="..."
-              className="mx-auto"
-            />
-          </div>
-          <div className="card-body">
-            <h5 className="card-title placeholder-glow">
-              <span className="placeholder col-6"></span>
-            </h5>
-            <p className="card-text placeholder-glow">
-              <span className="placeholder col-7"></span>
-              <span className="placeholder col-4"></span>
-              <span className="placeholder col-4"></span>
-              <span className="placeholder col-6"></span>
-              <span className="placeholder col-8"></span>
-            </p>
-            <a href="/"
-              className="btn btn-secondary disabled placeholder col-12 text-capitalize"
-              aria-disabled="true"
-            > Getting Blogs For you</a>
-          </div>
-        </div>
-      </div>
-    );
+    return <Loading />
   }
 
   if (error) {
@@ -101,8 +73,8 @@ const SingleBlog = () => {
 
   if (!blog) {
     return (
-      <div className="d-flex justify-content-center align-items-center vh-100">
-        <div className="alert alert-warning" role="alert">
+      <div className="min-h-screen flex justify-center items-center">
+        <div>
           Blog not found
         </div>
       </div>

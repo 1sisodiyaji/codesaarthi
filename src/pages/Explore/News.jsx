@@ -67,10 +67,10 @@ const News = () => {
         <title>News | Codesaarthi</title>
         <meta property="og:title" content="News | Codesaarthi" />
         <meta property="og:description" content="See what's going around you through our news feature, sharing valuable information with your friends." />
-        <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+        <meta property="og:image" content="https://codesaarthi.com/logo.png" />
         <meta property="og:url" content="https://codesaarthi.com/news" />
         <meta property="og:type" content="Education-Website" />
-        <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+        <link rel="icon" type="image/png" href="https://codesaarthi.com/favicon.ico" sizes="32x32" />
       </Helmet>
       <div className="bg-slate-100 dark:bg-gray-950 min-h-screen">
        {isComponentMounted && <SparkleViewDesign title="Daily Updates" />}

@@ -2,6 +2,7 @@ import React from "react";
 import Slides from "../../components/About/Slides";
 import Timeline from "../../components/About/Timeline";
 import Contact from "../../components/About/Contact";
+import {Helmet} from 'react-helmet';
 
 const About = () => {
   const events = [
@@ -34,6 +35,20 @@ const About = () => {
 
   return (
     <> 
+     <Helmet>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="CodeSaarthi" content="Codesaarthi" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href="https://codesaarthi.com/about" />
+                <meta name="description" content="Learn about Codesaarthi and our mission to provide quality coding education." />
+                <title>About us| Codesaarthi Free Learning Platform</title>
+                <meta property="og:title" content="About Us | Codesaarthi" />
+                <meta property="og:description" content="Learn about Codesaarthi and our mission to provide quality coding education." />
+                <meta property="og:image" content="https://codesaarthi.com/logo.png" />
+                <meta property="og:url" content="https://codesaarthi.com/about" />
+                <meta property="og:type" content="Education-Website" />
+                <link rel="icon" type="image/png" href="https://codesaarthi.com/favicon.ico" sizes="32x32" />
+            </Helmet>
       <div className="min-h-screen bg-slate-100 dark:bg-gray-950">
         <Slides message1={"Codesaarthi"} message2={"Your Learning Partner"} />
         <div className="md:max-w-4xl m-auto">  <Timeline events={events} /></div>

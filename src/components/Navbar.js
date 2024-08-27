@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Menu, MenuItem, ProductItem } from "./ui/navbar-menu.tsx";
-import { cn } from "../lib/utils.ts"; 
+import { cn } from "../lib/utils.ts";
 import { Link } from "react-router-dom";
-
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCurrentUser } from '../store/slices/userSlice.js';
+import { clearUser } from '../store/slices/userSlice.js';
 export function Navbar() {
   return (
     <div className="relative w-full flex items-center justify-center">
@@ -14,7 +16,11 @@ export function Navbar() {
 function NavBarContent({ className }) {
   const [active, setActive] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
-
+  const user = useSelector(selectCurrentUser);
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(clearUser());
+  };
   useEffect(() => {
     const savedDarkMode = localStorage.getItem("darkMode") === "true";
     setDarkMode(savedDarkMode);
@@ -40,21 +46,33 @@ function NavBarContent({ className }) {
 
   return (
     <>
-      <div className={cn("fixed top-10 inset-x-0 max-w-7xl mx-auto z-50 h-12 hidden lg:flex justify-between", className)}>
-        <h1 className="md:text-3xl  text-black dark:text-white"> Codesaarthi</h1>
+      <div className={cn("fixed top-10 inset-x-0 max-w-7xl mx-auto z-50 h-12 hidden md:flex justify-between", className)}>
+       
+       <Link to="/"><h1 className="md:text-3xl"> Codesaarthi</h1></Link> 
         <Menu setActive={setActive}>
-          <Link to="/" ><MenuItem setActive={setActive} active={active} item="Home"></MenuItem></Link>
-          <Link to="/about" ><MenuItem setActive={setActive} active={active} item="About"></MenuItem></Link> 
+
+          { user && user._id ? (
+              <Link to="/" >
+                <MenuItem setActive={setActive} active={active} item="Dashboard" />
+              </Link>
+            ) : (
+              <Link to="/" >
+                <MenuItem setActive={setActive} active={active} item="Home" />
+              </Link>
+            )
+          }
+
+          <Link to="/about" ><MenuItem setActive={setActive} active={active} item="About"></MenuItem></Link>
           <Link to="/Theory" ><MenuItem setActive={setActive} active={active} item="Theory"></MenuItem></Link>
           <Link to="/Problems" ><MenuItem setActive={setActive} active={active} item="Problems"></MenuItem></Link>
           <Link to="/Project" ><MenuItem setActive={setActive} active={active} item="Projects"></MenuItem></Link>
           <Link to="/Roadmap" ><MenuItem setActive={setActive} active={active} item="Roadmaps"></MenuItem></Link>
-          
+
           <MenuItem setActive={setActive} active={active} item="Tools">
             <div className="text-sm grid grid-cols-2 gap-10 p-4">
               <ProductItem
                 title="Profile Picture"
-                href ="/tools/ProfilePicture"
+                href="/tools/ProfilePicture"
                 src="https://res.cloudinary.com/ducw7orvn/image/upload/v1724612288/Screenshot_2024-08-16_200811_h2gcp1.png"
                 description="Prepare for tech interviews like never before."
               />
@@ -116,42 +134,51 @@ function NavBarContent({ className }) {
             checked={darkMode}
             onChange={toggleDarkMode}
           />
-          <Link to="/register"> 
-            <button className="btn btn-neutral rounded-xl">SignUp</button>
+          <Link to="/register">
+            {user ? (
+              <button className="btn btn-neutral rounded-xl" onClick={handleLogout}>
+                Logout
+              </button>
+            ) : (
+              <button className="btn btn-neutral rounded-xl">
+                SignUp
+              </button>
+            )}
           </Link>
+
         </div>
 
       </div>
 
-      <div className="lg:hidden w-full flex justify-between items-center">
+      <div className="md:hidden w-full flex justify-between items-center">
         <h3>Codesaarthi</h3>
         <div className="flex items-center space-x-2">
-        <input
-          type="checkbox"
-          className="toggle"
-          checked={darkMode}
-          onChange={toggleDarkMode}
-        />
-        <div className="drawer">
-          <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content">
-            {/* Page content here */}
-            <label htmlFor="my-drawer" className="btn drawer-button"><i className="fi fi-br-bars-staggered"></i></label>
+          <input
+            type="checkbox"
+            className="toggle"
+            checked={darkMode}
+            onChange={toggleDarkMode}
+          />
+
+          <div className="drawer">
+            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content">
+              {/* Page content here */}
+              <label htmlFor="my-drawer" className="btn drawer-button"><i className="fi fi-br-bars-staggered"></i></label>
+            </div>
+            <div className="drawer-side">
+              <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+              <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4"> 
+                <Link to="/" ><MenuItem setActive={setActive} active={active} item="Home"></MenuItem></Link>
+                <Link to="/about" ><MenuItem setActive={setActive} active={active} item="About"></MenuItem></Link>
+                <Link to="/Theory" ><MenuItem setActive={setActive} active={active} item="Theory"></MenuItem></Link>
+                <Link to="/Problems" ><MenuItem setActive={setActive} active={active} item="Problems"></MenuItem></Link>
+                <Link to="/Project" ><MenuItem setActive={setActive} active={active} item="Projects"></MenuItem></Link>
+                <Link to="/Roadmap" ><MenuItem setActive={setActive} active={active} item="Roadmaps"></MenuItem></Link>
+
+              </ul>
+            </div>
           </div>
-          <div className="drawer-side">
-            <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-            <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-              {/* Sidebar content here */}
-              <Link to="/" ><MenuItem setActive={setActive} active={active} item="Home"></MenuItem></Link>
-          <Link to="/about" ><MenuItem setActive={setActive} active={active} item="About"></MenuItem></Link> 
-          <Link to="/Theory" ><MenuItem setActive={setActive} active={active} item="Theory"></MenuItem></Link>
-          <Link to="/Problems" ><MenuItem setActive={setActive} active={active} item="Problems"></MenuItem></Link>
-          <Link to="/Project" ><MenuItem setActive={setActive} active={active} item="Projects"></MenuItem></Link>
-          <Link to="/Roadmap" ><MenuItem setActive={setActive} active={active} item="Roadmaps"></MenuItem></Link>
-          
-            </ul>
-          </div>
-        </div>
         </div>
       </div>
     </>

@@ -3,11 +3,15 @@ import { LampDesign } from "../../components/LampDesign.js";
 import axios from "axios";
 import { useGoogleLogin } from "@react-oauth/google";
 import toast, { Toaster } from "react-hot-toast";
-import config from "../../helper/config.js";
-import Cookies from "js-cookie";
-import { Link } from "react-router-dom";
-import {Helmet} from 'react-helmet';
+import config from "../../helper/config.js"; 
+import { Link ,useNavigate } from "react-router-dom";
+import {Helmet} from 'react-helmet'; 
+import { useDispatch } from 'react-redux';
+import { setUser } from "../../store/slices/userSlice.js";
+
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate= useNavigate();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [loading, setLoading] = useState(false);  
   const [formData, setFormData] = useState({
@@ -65,10 +69,9 @@ const Login = () => {
       if (response.data.status === "success") {
         toast.success("Welcome to Codesaarthi !", { theme: "dark" });
         setLoading(false);
-        Cookies.set("Codesaarthi-token", response.data.token, {
-          expires: 30,
-        });
-        window.location.href = "/";
+        const {userData, token} = response.data;
+        dispatch(setUser({userData,token })); 
+       navigate("/");
       } else {
         toast.error(response.data.message, { theme: "dark" });
         setLoading(false);
@@ -115,11 +118,10 @@ const Login = () => {
         );
 
         if (saveUserDataResponse.data.status === "success") {
-          Cookies.set("Codesaarthi-token", saveUserDataResponse.data.token, {
-            expires: 30,
-          });
+          const { token, user } =  saveUserDataResponse.data;
+          dispatch(setUser({user,token }));
           setLoading(false);
-          window.location.href = "/";
+          navigate("/");
         } else {
           toast.error("Error saving user data", { theme: "dark" });
           console.log(saveUserDataResponse.data.message);
@@ -147,32 +149,33 @@ const Login = () => {
     <>
       <Toaster />
       <Helmet>
-  <title>Login - Notes Saver</title>
-  <meta
-    name="description"
-    content="Login to Notes Saver to access and manage your saved notes efficiently."
-  />
-  <meta
-    name="keywords"
-    content="Notes Saver, Login, Sign In, Notes Management, Save Notes"
-  />
-  <meta name="author" content="Notes Saver Team" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  {/* Open Graph / Facebook */}
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Login - Notes Saver" />
-  <meta
-    property="og:description"
-    content="Login to Notes Saver to access and manage your saved notes efficiently."
-  />
-  <meta property="og:image" content="/logo.png" />
-  <meta
-    property="og:url"
-    content="https://noteswebapp-rust.vercel.app/login"
-  />
-  <meta property="og:site_name" content="Notes Saver" />
-</Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="CodeSaarthi" content="Codesaarthi" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://codesaarthi.com/login" />
+        <meta
+          name="description"
+          content="Lets Be a part of codesaarthi , give us  a chance to help you by explaining things in simple Words."
+        />
+        <title>Login | Codesaarthi Free Learning Platform</title>
+        <meta property="og:title" content="Sign up | Codesaarthi" />
+        <meta
+          property="og:description"
+          content="Lets Be a part of codesaarthi , give us  a chance to help you by explaining things in simple Words."
+        />
+        <meta
+          property="og:image"
+          content="https://codesaarthi.com/logo.png"
+        />
+        <meta property="og:url" content="https://codesaarthi.com/login" />
+        <meta property="og:type" content="Education-Website" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://codesaarthi.com/favicon.ico"
+          sizes="32x32"
+        />
+      </Helmet>
 
       <div className="min-h-screen bg-slate-400 dark:bg-gray-950">
         <div className="flex justify-between">

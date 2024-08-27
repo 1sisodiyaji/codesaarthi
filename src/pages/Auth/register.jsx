@@ -3,17 +3,20 @@ import { LampDesign } from "../../components/LampDesign.js";
 import axios from "axios";
 import { useGoogleLogin } from "@react-oauth/google";
 import toast, { Toaster } from "react-hot-toast";
-import config from "../../helper/config.js";
-import Cookies from "js-cookie";
-import { Link } from "react-router-dom";
+import config from "../../helper/config.js"; 
+import { Link ,useNavigate} from "react-router-dom";
 import {Helmet} from "react-helmet";
-
+import { useDispatch } from 'react-redux';
+import { setUser } from "../../store/slices/userSlice.js";
 
 const Register = () => {
+  const navigate= useNavigate();
+  const dispatch = useDispatch();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [loading, setLoading] = useState(false);
   const [verify, setVerify] = useState(false);
   const [token, setToken] = useState(null);
+  const [userData, setUserData] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -89,7 +92,9 @@ const Register = () => {
       if (response.data.status === "success") {
         toast.success("Please Verify Your Account !", { theme: "dark" });
         setLoading(false);
-        setToken(response.data.token);
+        const { token, user } =  response.data;
+        setUserData(token);
+        setToken(user);
         setVerify(true);
       } else {
         toast.error("Something Wrong Happen ..", { theme: "dark" });
@@ -136,12 +141,11 @@ const Register = () => {
           formDataEncoded
         );
 
-        if (saveUserDataResponse.data.status === "success") {
-          Cookies.set("Codesaarthi-token", saveUserDataResponse.data.token, {
-            expires: 30,
-          });
+        if (saveUserDataResponse.status === 200) { 
+          const { token, user } =  saveUserDataResponse.data;
+          dispatch(setUser({user,token }));
           setLoading(false);
-          window.location.href = "/";
+          navigate("/");
         } else {
           toast.error("Error saving user data", { theme: "dark" });
           console.log(saveUserDataResponse.data.message);
@@ -191,6 +195,7 @@ const Register = () => {
   };
 
   const verifyUser = async () => {
+
     try {
       const { email } = formData;
       const code = verificationCode.join("");
@@ -204,12 +209,12 @@ const Register = () => {
       });
 
       if (response.status === 200) {
-        toast.success("User Verified Welcome to NotesSaver !", {
+        toast.success("User Verified Welcome to Codesaarthi !", {
           theme: "dark",
         });
-        Cookies.set("Codesaarthi-token", token, { expires: 30 });
+        dispatch(setUser({userData,token })); 
         setLoading(false);
-        window.location.href = "/";
+        navigate("/");
       } else {
         console.error("Verification failed");
         toast.error("failed to Verify try again after sometime ..", {
@@ -238,20 +243,32 @@ const Register = () => {
     <>
       <Toaster />
       <Helmet>
-      <title>Register - Notes Saver</title>
-        <meta name="description" content="Register for Notes Saver to manage and save your notes efficiently." />
-        <meta name="keywords" content="Notes Saver, Register, Sign Up, Notes Management, Save Notes" />
-        <meta name="author" content="Notes Saver Team" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Register - Notes Saver" />
-        <meta property="og:description" content="Register for Notes Saver to manage and save your notes efficiently." />
-        <meta property="og:image" content="/logo.png" />
-        <meta property="og:url" content="https://noteswebapp-rust.vercel.app/register" />
-        <meta property="og:site_name" content="Notes Saver" />
-
+        <meta name="CodeSaarthi" content="Codesaarthi" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://codesaarthi.com/register" />
+        <meta
+          name="description"
+          content="Join Codesaarthi and learn with simple explanations."
+        />
+        <title>Sign up | Codesaarthi Free Learning Platform</title>
+        <meta property="og:title" content="Sign up | Codesaarthi" />
+        <meta
+          property="og:description"
+          content="Join Codesaarthi and learn with simple explanations."
+        />
+        <meta
+          property="og:image"
+          content="https://codesaarthi.com/logo.png"
+        />
+        <meta property="og:url" content="https://codesaarthi.com/register" />
+        <meta property="og:type" content="Education-Website" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://codesaarthi.com/favicon.ico"
+          sizes="32x32"
+        />
       </Helmet>
       <div className="min-h-screen bg-slate-400 dark:bg-gray-950">
         <div className="flex md:flex-row  justify-between items-center md:py-0 py-20">

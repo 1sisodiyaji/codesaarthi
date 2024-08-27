@@ -147,7 +147,7 @@ function SingleQuestion() {
         <meta property="og:description" content={question.body || ""} />
         <meta
           property="og:image"
-          content="https://codesaarthi.com/img/logo.jpg"
+          content="https://codesaarthi.com/logo.jpg"
         />
         <meta
           property="og:url"
@@ -157,7 +157,7 @@ function SingleQuestion() {
         <link
           rel="icon"
           type="image/png"
-          href="https://codesaarthi.com/img/favicon.ico"
+          href="https://codesaarthi.com/favicon.ico"
           sizes="32x32"
         />
       </Helmet>
@@ -350,7 +350,7 @@ function SingleQuestion() {
                     type= {"ask-freely"}
                     title={question.title}
                     slug={question.slug}
-                    image="https://codesaarthi.com/img/logo.png"
+                    image="https://codesaarthi.com/logo.png"
                     body={question.body}
                     Author={question.user.name}
                     createdAt={question.createdAt}

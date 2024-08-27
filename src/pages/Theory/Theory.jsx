@@ -55,14 +55,14 @@ const Theory = () => {
         />
         <meta
           property="og:image"
-          content="https://codesaarthi.com/img/logo.png"
+          content="https://codesaarthi.com/logo.png"
         />
         <meta property="og:url" content="https://codesaarthi.com/Theory" />
         <meta property="og:type" content="Education-Website" />
         <link
           rel="icon"
           type="image/png"
-          href="https://codesaarthi.com/img/favicon.ico"
+          href="https://codesaarthi.com/favicon.ico"
           sizes="32x32"
         />
       </Helmet>

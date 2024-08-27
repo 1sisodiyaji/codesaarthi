@@ -26,7 +26,7 @@ const TermsAndConditions = () => {
         />
         <meta
           property="og:image"
-          content="https://codesaarthi.com/img/logo.png"
+          content="https://codesaarthi.com/logo.png"
         />
         <meta
           property="og:url"
@@ -36,7 +36,7 @@ const TermsAndConditions = () => {
         <link
           rel="icon"
           type="image/png"
-          href="https://codesaarthi.com/img/favicon.ico"
+          href="https://codesaarthi.com/favicon.ico"
           sizes="32x32"
         />
       </Helmet>

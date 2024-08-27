@@ -2,10 +2,25 @@ import React from 'react'
 import BlogForm from '../../components/Blogs/BlogForm'
 import BlogList from '../../components/Blogs/BlogList'
 import { LampDesign } from '../../components/LampDesign'
+import { Helmet } from "react-helmet";
 
 const Blogs = () => {
     return (
         <>
+         <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="CodeSaarthi" content="Codesaarthi" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://codesaarthi.com/blogs`} />
+        <meta name="description" content="This is an opinion sharing platform where users can share their opinion at their freedom." />
+        <title>Blogs | Codesaarthi</title>
+        <meta property="og:title" content="Blogs | Codesaarthi" />
+        <meta property="og:description" content="This is an opinion sharing platform where users can share their opinion at their freedom." />
+        <meta property="og:image" content="https://codesaarthi.com/logo.png " />
+        <meta property="og:url" content={`https://codesaarthi.com/blogs`} />
+        <meta property="og:type" content="Education-Website" />
+        <link rel="icon" type="image/png" href="https://codesaarthi.com/favicon.ico" sizes="32x32" />
+      </Helmet>
             <div className="min-h-screen  bg-slate-100 dark:bg-gray-950 flex flex-col justify-center items-center">
                 <LampDesign title1={'Join The Conversation'} title2={'Share The Solutions !'} />
 
