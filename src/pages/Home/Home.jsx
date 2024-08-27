@@ -45,7 +45,7 @@ const Home = () => {
           sizes="32x32"
         />
       </Helmet>
-      <div className="bg-slate-100 dark:bg-gray-950 min-h-screen text-black dark:text-white py-5">
+      <div className="bg-slate-100 dark:bg-gray-950 min-h-screen text-black dark:text-white pt-20 pb-5">
         {user ?
         <>
         You are logged in 
