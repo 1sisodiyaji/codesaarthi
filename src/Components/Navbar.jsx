@@ -1,10 +1,11 @@
 import React from 'react';
+import Toggle from './core/Buttons/Toggle';
 
 function Navbar() {
     return (
         <>
             {/* navbar */}
-            <div className='w-full h-14 fixed border-b-2  bg-bgcolor  shadow-lg shadow-slate-400  '>
+            <div className='w-full h-14 fixed   bg-Navbgcolor'>
                 {/* Navbar 3 Items */}
                 <div className='flex justify-evenly  w-full h-full  '>
                     {/* Logo and some options */}
@@ -38,12 +39,8 @@ function Navbar() {
                             </div>
                            
                             <div className='h-full w-20 border-r pt-2 text-xl pr-8'> <h5>v1.0</h5></div>
-                            {/* dark mode button */}
-                           <div className='h-6 w-12 font-bold  text-xl pr-8 border-2 rounded-full mt-4'>
                             
-                            <div className='w-5 h-5 border-2 rounded-full bg-white hover:transform duration-75 active:translate-x-6  active:bg-textcolor'></div>
-                         
-                           </div>
+                        <Toggle/>
                             
 
                         </div>

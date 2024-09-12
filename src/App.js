@@ -1,15 +1,13 @@
 import './index.css';
-import HomePage from './Pages/HomePage';
+import Routess from './routes/Routess';
 
 function App() {
   return (
     <>
-    <HomePage/>
-   
-
+    <Routess/>
     </>
   
   );
 }
 
-export default App;
+export default App; 

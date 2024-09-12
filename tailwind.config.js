@@ -3,8 +3,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bgcolor: '#031526',
-        textcolor:'#ffE164'
+        Navbgcolor: '#031526',
+        textcolor:'#ffE164',
+        bgColor : '#0f2338'
 
       },
     },

@@ -1,12 +1,11 @@
-import React from 'react';
-import Navbar from '../Components/Navbar';
+import React from 'react'; 
 
 function HomePage() {
   return (
    <>
 
-   <div>
-    <Navbar/>
+   <div className='bg-bgColor h-screen pt-20'>
+  
    
    </div>
    </>
