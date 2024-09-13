@@ -4,7 +4,6 @@ import Toggle from './core/Buttons/Toggle';
 function Navbar() {
     return (
         <>
-            {/* navbar */}
             <div className='w-full h-14 fixed   bg-Navbgcolor'>
                 {/* Navbar 3 Items */}
                 <div className='flex justify-evenly  w-full h-full  '>
