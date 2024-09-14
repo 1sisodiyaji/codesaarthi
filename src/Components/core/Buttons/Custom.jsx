@@ -16,7 +16,155 @@ const Customssss = () => {
 
     return (
         <>
-        
+         
+         <div className="max-w-screen bg-gray-300 dark:bg-Navbgcolor flex space-x-3 overflow-x-scroll">
+    {/* Accordion */}
+    <button className="rounded shadow-lg bg-blue-200 px-2 py-1 capitalize">Accordion</button>
+
+    {/* Toggle */}
+    <button className="rounded shadow-lg bg-green-300 px-4 py-2">Toggle</button>
+
+    {/* Alert */}
+    <button className="rounded shadow-lg bg-red-400 px-4 py-2">Alert</button>
+
+    {/* Avatar */}
+    <button className="rounded shadow-lg bg-yellow-200 px-4 py-2">Avatar</button>
+
+    {/* Badge */}
+    <button className="rounded shadow-lg bg-purple-200 px-4 py-2">Badge</button>
+
+    {/* Bottom Navigation */}
+    <button className="rounded shadow-lg bg-teal-200 px-4 py-2">Bottom Navigation</button>
+
+    {/* Breadcrumbs */}
+    <button className="rounded shadow-lg bg-indigo-200 px-4 py-2">Breadcrumbs</button>
+
+    {/* Buttons */}
+    <button className="rounded shadow-lg bg-pink-300 px-4 py-2">Button</button>
+
+    {/* Card */}
+    <button className="rounded shadow-lg bg-gray-200 px-4 py-2">Card</button>
+
+    {/* Carousel */}
+    <button className="rounded shadow-lg bg-blue-300 px-4 py-2">Carousel</button>
+
+    {/* Chatbubble */}
+    <button className="rounded shadow-lg bg-green-200 px-4 py-2">Chatbubble</button>
+
+    {/* Chatbox */}
+    <button className="rounded shadow-lg bg-yellow-300 px-4 py-2">Chatbox</button>
+
+    {/* Collapse */}
+    <button className="rounded shadow-lg bg-red-300 px-4 py-2">Collapse</button>
+
+    {/* Countdown */}
+    <button className="rounded shadow-lg bg-purple-300 px-4 py-2">Countdown</button>
+
+    {/* Diff */}
+    <button className="rounded shadow-lg bg-teal-300 px-4 py-2">Diff</button>
+
+    {/* Divider */}
+    <button className="rounded shadow-lg bg-indigo-300 px-4 py-2">Divider</button>
+
+    {/* Drawer */}
+    <button className="rounded shadow-lg bg-pink-200 px-4 py-2">Drawer</button>
+
+    {/* Dropdown */}
+    <button className="rounded shadow-lg bg-gray-300 px-4 py-2">Dropdown</button>
+
+    {/* File Input */}
+    <button className="rounded shadow-lg bg-blue-400 px-4 py-2">File Input</button>
+
+    {/* Footer */}
+    <button className="rounded shadow-lg bg-green-400 px-4 py-2">Footer</button>
+
+    {/* Hero */}
+    <button className="rounded shadow-lg bg-yellow-400 px-4 py-2">Hero</button>
+
+    {/* Indicator */}
+    <button className="rounded shadow-lg bg-red-400 px-4 py-2">Indicator</button>
+
+    {/* Text Input */}
+    <button className="rounded shadow-lg bg-purple-400 px-4 py-2">Text Input</button>
+
+    {/* Join */}
+    <button className="rounded shadow-lg bg-teal-400 px-4 py-2">Join</button>
+
+    {/* KBD */}
+    <button className="rounded shadow-lg bg-indigo-400 px-4 py-2">KBD</button>
+
+    {/* Link */}
+    <button className="rounded shadow-lg bg-pink-400 px-4 py-2">Link</button>
+
+    {/* Browser Mockup */}
+    <button className="rounded shadow-lg bg-gray-400 px-4 py-2">Browser Mockup</button>
+
+    {/* Code Mockup */}
+    <button className="rounded shadow-lg bg-blue-500 px-4 py-2">Code Mockup</button>
+
+    {/* Phone Mockup */}
+    <button className="rounded shadow-lg bg-green-500 px-4 py-2">Phone Mockup</button>
+
+    {/* Window Mockup */}
+    <button className="rounded shadow-lg bg-yellow-500 px-4 py-2">Window Mockup</button>
+
+    {/* Modal */}
+    <button className="rounded shadow-lg bg-red-500 px-4 py-2">Modal</button>
+
+    {/* Pagination */}
+    <button className="rounded shadow-lg bg-purple-500 px-4 py-2">Pagination</button>
+
+    {/* Progress */}
+    <button className="rounded shadow-lg bg-teal-500 px-4 py-2">Progress</button>
+
+    {/* Radial Progress */}
+    <button className="rounded shadow-lg bg-indigo-500 px-4 py-2">Radial Progress</button>
+
+    {/* Radio */}
+    <button className="rounded shadow-lg bg-pink-500 px-4 py-2">Radio</button>
+
+    {/* Range Slider */}
+    <button className="rounded shadow-lg bg-gray-500 px-4 py-2">Range Slider</button>
+
+    {/* Skeleton */}
+    <button className="rounded shadow-lg bg-blue-600 px-4 py-2">Skeleton</button>
+
+    {/* Stack */}
+    <button className="rounded shadow-lg bg-green-600 px-4 py-2">Stack</button>
+
+    {/* Stars */}
+    <button className="rounded shadow-lg bg-yellow-600 px-4 py-2">Stars</button>
+
+    {/* Steps */}
+    <button className="rounded shadow-lg bg-red-600 px-4 py-2">Steps</button>
+
+    {/* Swap */}
+    <button className="rounded shadow-lg bg-purple-600 px-4 py-2">Swap</button>
+
+    {/* Tabs */}
+    <button className="rounded shadow-lg bg-teal-600 px-4 py-2">Tabs</button>
+
+    {/* Table */}
+    <button className="rounded shadow-lg bg-indigo-600 px-4 py-2">Table</button>
+
+    {/* Textarea */}
+    <button className="rounded shadow-lg bg-pink-600 px-4 py-2">Textarea</button>
+
+    {/* Theme Controller */}
+    <button className="rounded shadow-lg bg-gray-600 px-4 py-2">Theme Controller</button>
+
+    {/* Timeline */}
+    <button className="rounded shadow-lg bg-blue-700 px-4 py-2">Timeline</button>
+
+    {/* Toast */}
+    <button className="rounded shadow-lg bg-green-700 px-4 py-2">Toast</button>
+
+    {/* Tooltip */}
+    <button className="rounded shadow-lg bg-yellow-700 px-4 py-2">Tooltip</button>
+</div>
+
+
+
          <div className="w-[710px] h-[410px] border relative left-12 top-[110px] rotate-1 shadow-xl shadow-black rounded-lg"></div>
         <div className="flex justify-between p-8 w-full  relative -top-80">
 
