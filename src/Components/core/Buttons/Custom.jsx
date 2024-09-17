@@ -164,14 +164,14 @@ const Customssss = () => {
 </div>
 
 
-
-         <div className="w-[710px] h-[410px] border relative left-12 top-[110px] rotate-1 shadow-xl shadow-black rounded-lg"></div>
+<div className="w-[719px] h-[400px] border relative left-12 top-[110px]  shadow-xl shadow-black rounded-lg"></div>
+         
         <div className="flex justify-between p-8 w-full  relative -top-80">
 
 
             {/* Preview Section */}
            
-            <div className="w-1/2 h-[400px] border text-center pt-4 p-2 rounded-xl shadow-lg shadow-black">
+            <div className="w-1/2 h-[400px] border text-center pt-4 p-2 rounded-xl shadow-lg  shadow-black relative left-2 -top-8">
                 <h2 className="text-lg font-bold mb-4 text-textcolor">Design Preview</h2>
                 <div className="w-full h-[320px] border-2 rounded-lg relative bg-transparent shadow-inner shadow-black  ">
                     <button className="flex items-center justify-center relative  left-2 top-12  "

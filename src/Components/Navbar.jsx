@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './Text.css';
 
 function Navbar() {
     const [darkMode, setDarkMode] = useState(false);
@@ -32,7 +33,7 @@ function Navbar() {
                 <div className='flex justify-evenly items-center h-full'>
                     {/* Logo and some options */}
                     <div className='h-full text-center  font-medium text-textcolor pt-3 flex'>
-                        <div className='    text-textcolor hover:cursor-pointer'> <h1 className='text-xl font-bold flex hover:cursor-pointer '>Code <span className='text-sm mt-3 text-white font-mono'>Saarthi</span></h1></div>
+                        <div className='    text-textcolor hover:cursor-pointer'> <h1 className='text-xl font-bold flex hover:cursor-pointer Logo '>Code <span className='text-sm mt-3 text-white font-mono Logo1'>Saarthi</span></h1></div>
 
                         <div className='w-full h-full  flex  justify-evenly gap-4 '>
                             <h5 className='ml-8 hover:cursor-pointer'>Docs</h5>
@@ -68,13 +69,15 @@ function Navbar() {
                                 </select>
 
                                 <div
-                                    className='h-6 w-12 font-bold text-xl pr-8 border-2 rounded-full  cursor-pointer'
+                                    className={`h-6 w-12 font-bold text-xl pr-8 border-2 rounded-full  cursor-pointer overflow-hidden ${darkMode? 'bg-slate-400':'bg-gray-500 '} `}
                                     onClick={toggleDarkMode}
                                 >
+
+                                    <div className={`w-20 h-1  relative top-[9px] shadow-inner shadow-black ${darkMode?'':'bg-slate-400 shadow-slate-400'}`}></div>
                                     <div
-                                        className={`w-5 h-5 border-2 rounded-full bg-white transform transition-transform duration-300  ${darkMode ? 'translate-x-6 bg-yellow-400' : ''
+                                        className={`w-5 h-5 border-2 rounded-full bg-white transform transition-transform duration-300 z-10  relative -top-1 ${darkMode ? 'translate-x-6 bg-yellow-400' : 'border-yellow-500'
                                             }`}
-                                    ></div>
+                                    > <div className={`w-2 h-2  rounded-full relative top-[5px] left-[5px]  border shadow-2xl shadow-white ${darkMode?'bg-white':' bg-yellow-400'}`}></div></div>
                                 </div>
 
                                 <div className='hover:cursor-pointer'>
