@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import './Text.css';
 
 function Navbar() {
@@ -37,7 +38,7 @@ function Navbar() {
 
                         <div className='w-full h-full  flex  justify-evenly gap-4 '>
                             <h5 className='ml-8 hover:cursor-pointer'>Docs</h5>
-                            <h5 className='hover:cursor-pointer'>Components</h5>
+                         <Link to="/components">  <h5 className='hover:cursor-pointer'>Components</h5></Link> 
                             <h5 className='hover:cursor-pointer'>Icons</h5>
                             <h5 className='hover:cursor-pointer'>Themes</h5>
                             <h5 className='hover:cursor-pointer'>Blog</h5>
