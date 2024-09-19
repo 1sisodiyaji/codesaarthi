@@ -3,7 +3,7 @@ import React from 'react'
 function CodeSection() {
   return (
    <>
-   <div className='relative top-16 mt-4 p-1 left-24 w-3/4 h-[307px] bg-white shadow-inner shadow-black rounded-sm '>
+   <div className='relative top-16 mt-4 p-1 left-24 w-3/4 h-[307px] bg-white shadow-inner shadow-black rounded-sm  transition-all duration-700'>
    <div className=' w-full h-[300px] bg-black text-white  pt-4 pb-4 pl-6 pr-4 rounded-sm  shadow-md shadow-orange-500 '>
     <div className='flex justify-start gap-2 relative -top-2 -left-2'>
         <div className='bg-red-700 w-4 h-4 rounded-full shadow-inner shadow-black'></div>

@@ -1,11 +1,49 @@
-import React from 'react';
-import CodeSection from '../Components/CodeSection';
+import React, { useState } from 'react';
+import CodeSection from '../Components/Common/CodeSection';
+import { Shadow_SM_Buttons } from '../Components/core/Buttons/Buttons';
+import DropDown1 from '../Components/core/DropDown/DropDown';
+import Modal1 from '../Components/core/Modal/Modal';
 import './Docs.css';
 
 const Components = () => {
+  const [Buttons, setButtons]=useState('');
+  const [DropDown,setDropDown]=useState('');
+  const [Modal,setmodals]=useState('');
+
+  const handleButtonsItems=(Arguments)=>{
+    setDropDown('');
+    setmodals('');
+    setButtons(Arguments);
+    
+  }
+
+// drop down
+
+  const handleDropDownItems=(Arguments)=>{
+
+
+   setButtons('');
+   setmodals('');
+    setDropDown(Arguments);
+    
+  }
+
+  // modal
+
+
+  const handleModalItems=(Arguments)=>{
+    setButtons('');
+    setDropDown('');
+    setmodals(Arguments);
+
+  }
+
+
+
+
   return (
     <>
-      <div className='w-full h-[3000px] bg-[#2A4A6966]  opacity-80'>
+      <div className='w-full h-[3000px] bg-[#2A4A6966]  opacity-80 transition-all duration-700 '>
         {/* Diveded by three part first is  docs,components etc. second is components codes  and third part is add part */}
         <div className='relative top-16  left-36 flex gap-12'>
           <div className='Docs_bar w-48 h-[700px] overflow-y-auto  fixed  bg-[#031526] rounded-lg pt-2 border-t-2  border-r-2 '>
@@ -20,9 +58,9 @@ const Components = () => {
 
               <h1 className='text-xl font-bold font-mono text-slate-200 pl-5 pb-2  '>Components</h1>
               <h2 className='text-md font-bold font-mono text-slate-500 pl-6 pb-2 '>Action</h2>
-              <h3 className='text_bar text-lg font-mono font-medium text-slate-300 pl-8 hover:cursor-pointer  hover:pl-12 hover:border-l-4 hover:border-r-4 border-orange-500 rounded-lg transition-all duration-500 hover:shadow-xl shadow-orange-500 '><i>Buttons</i></h3>
-              <h3 className='text_bar text-lg font-mono font-medium text-slate-300 pl-8 hover:cursor-pointer  hover:pl-12 hover:border-l-4 hover:border-r-4 border-white rounded-lg transition-all duration-500 hover:shadow-xl shadow-white '><i>DropDown</i></h3>
-              <h3 className='text_bar text-lg font-mono font-medium text-slate-300 pl-8  hover:cursor-pointer hover:pl-12 hover:border-l-4 hover:border-r-4 border-orange-500 rounded-lg transition-all duration-500 hover:shadow-xl shadow-orange-500 '><i>Modal</i></h3>
+              <h3 className='text_bar text-lg font-mono font-medium text-slate-300 pl-8 hover:cursor-pointer  hover:pl-12 hover:border-l-4 hover:border-r-4 border-orange-500 rounded-lg transition-all duration-500 hover:shadow-xl shadow-orange-500 ' onClick={()=>handleButtonsItems('Buttons')}><i>Buttons</i></h3>
+              <h3 className='text_bar text-lg font-mono font-medium text-slate-300 pl-8 hover:cursor-pointer  hover:pl-12 hover:border-l-4 hover:border-r-4 border-white rounded-lg transition-all duration-500 hover:shadow-xl shadow-white ' onClick={()=>handleDropDownItems('DropDown')}><i>DropDown</i></h3>
+              <h3 className='text_bar text-lg font-mono font-medium text-slate-300 pl-8  hover:cursor-pointer hover:pl-12 hover:border-l-4 hover:border-r-4 border-orange-500 rounded-lg transition-all duration-500 hover:shadow-xl shadow-orange-500 ' onClick={()=>handleModalItems('Modals')}><i>Modal</i></h3>
               <h3 className='text_bar text-lg font-mono font-medium text-slate-300 pl-8  hover:cursor-pointer hover:pl-12 hover:border-l-4 hover:border-r-4 border-white rounded-lg transition-all duration-500 hover:shadow-xl shadow-white '><i>Swap</i></h3>
               <h3 className='text_bar text-lg font-mono font-medium text-slate-300 pl-8  hover:cursor-pointer hover:pl-12 hover:border-l-4 hover:border-r-4 border-orange-500 rounded-lg transition-all duration-500 hover:shadow-xl shadow-orange-500 '><i>Toggle</i></h3>
 
@@ -112,26 +150,30 @@ const Components = () => {
 
 
           </div>
-          <div className='Docs_bar w-1/2 h-[700px]  rounded-lg border-b-2 border-l-2  overflow-y-auto fixed left-[400px]  bg-transparent '>
-
+          <div className='Docs_bar w-1/2 h-[700px]  rounded-lg border-b-2 border-l-2  overflow-y-auto fixed left-[400px]  bg-transparent  transition-all duration-700'>
+                   <h1 className='text-center  pt-2 pb-2 font-extrabold text-3xl text-cyan-800 underline'>Components</h1>
             {/* components Name */}
             <div className='w-full  text-2xl font-bold font-mono text-cyan-800 pt-8 pl-8  z-10'>
 
-              <h1 className=' w-28 text-center shadow-inner shadow-black  bg-slate-500 opacity-100  rounded-tl-md rounded-bl-md'><span>Buttons</span></h1>
-
+            {Buttons &&( <h1 className=' w-28 text-center shadow-inner shadow-black  bg-slate-500 opacity-100  rounded-tl-md rounded-bl-md'><span>Buttons</span></h1>)} 
+            {DropDown &&( <h1 className=' w-28 text-center shadow-inner shadow-black  bg-slate-500 opacity-100  rounded-tl-md rounded-bl-md'><span>DropDown</span></h1>)} 
+            {Modal &&( <h1 className=' w-28 text-center shadow-inner shadow-black  bg-slate-500 opacity-100  rounded-tl-md rounded-bl-md'><span>Modal</span></h1>)} 
 
             </div>
             {/* Commponents type section */}
-            <div className=' flex w-full overflow-x-auto h-10 pl-3 pt-1 pb-1 text-cyan-700 text-2xl space-x-3 font-mono font-extrabold  bg-[#031526] mt-4 transition-all duration-700'>
-              <h1 className='hover:cursor-pointer bg-white pl-1 pr-1 rounded-md shadow-sm shadow-slate-400 transition-all duration-700 hover:scale-75'><span>Normal</span></h1>
-              <h1 className='hover:cursor-pointer bg-white pl-1 pr-1 rounded-md shadow-sm shadow-slate-400 transition-all duration-700 hover:scale-75'><span>Radio</span></h1>
-              <h1 className='hover:cursor-pointer bg-white pl-1 pr-1 rounded-md shadow-sm shadow-slate-400 transition-all duration-700 hover:scale-75'><span>Submit</span></h1>
-              <h1 className='hover:cursor-pointer bg-white pl-1 pr-1 rounded-md shadow-sm shadow-slate-400 transition-all duration-700 hover:scale-75'><span>Login</span></h1>
-              <h1 className='hover:cursor-pointer bg-white pl-1 pr-1 rounded-md shadow-sm shadow-slate-400 transition-all duration-700 hover:scale-75'><span>SignUp</span></h1>
-              <h1 className='hover:cursor-pointer bg-white pl-1 pr-1 rounded-md shadow-sm shadow-slate-400 transition-all duration-700 hover:scale-75'><span>Reset</span></h1>
-              <h1 className='hover:cursor-pointer bg-white pl-1 pr-1 rounded-md shadow-sm shadow-slate-400 transition-all duration-700 hover:scale-75'><span>Delete</span></h1>
-              <h1 className='hover:cursor-pointer bg-white pl-1 pr-1 rounded-md shadow-sm shadow-slate-400 transition-all duration-700 hover:scale-75'><span>Update</span></h1>
-              <h1 className='hover:cursor-pointer bg-white pl-1 pr-1 rounded-md shadow-sm shadow-slate-400 transition-all duration-700 hover:scale-75'><span>Button</span></h1>
+            <div className='  w-full  h-10 '>
+              {Buttons && (<div className='flex hw-full h-10 overflow-x-auto pl-3 pt-1 pb-1 text-cyan-700 text-2xl space-x-3 font-mono font-extrabold  bg-[#031526] mt-4 transition-all duration-700 '>
+                     <Shadow_SM_Buttons/>
+              </div>)}
+
+              {DropDown && (<div className='flex hw-full h-10 overflow-x-auto pl-3 pr-3 pt-1 pb-1 text-cyan-700 text-2xl space-x-3 font-mono font-extrabold  bg-[#031526] mt-4 transition-all duration-700 '>
+                     <DropDown1/>
+              </div>)}
+
+              {Modal && (<div className='flex hw-full h-10 overflow-x-auto pl-3 pr-3 pt-1 pb-1 text-cyan-700 text-2xl space-x-3 font-mono font-extrabold  bg-[#031526] mt-4 transition-all duration-700 '>
+                    <Modal1/>
+              </div>)}
+             
             </div>
 
             {/*  COde section */}
