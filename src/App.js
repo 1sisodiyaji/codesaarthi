@@ -1,13 +1,11 @@
-import './index.css';
-import Routess from './routes/Routess';
+import Routess from './routes/Routes';
 
 function App() {
   return (
-    <>
-    <Routess/>
-    </>
-  
+   <>
+   <Routess/>
+   </>
   );
 }
 
-export default App; 
+export default App;
