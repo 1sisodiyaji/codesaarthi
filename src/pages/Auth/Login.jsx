@@ -1,94 +1,82 @@
 import React, { useState } from "react";
-import { LampDesign } from "../../components/LampDesign.js";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useGoogleLogin } from "@react-oauth/google";
-import toast, { Toaster } from "react-hot-toast";
-import config from "../../helper/config.js"; 
-import { Link ,useNavigate } from "react-router-dom";
-import {Helmet} from 'react-helmet'; 
-import { useDispatch } from 'react-redux';
-import { setUser } from "../../store/slices/userSlice.js";
+import { Helmet } from "react-helmet";
+import config from "../../config/config";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Cookies from "js-cookie"; 
 
 const Login = () => {
-  const dispatch = useDispatch();
-  const navigate= useNavigate();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const [loading, setLoading] = useState(false);  
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-  }); 
+  });
 
-  const togglePasswordVisibility = () => {
+  // password view button
+  const passwordView = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
 
-  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
+  //taking input
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  //login with normal email id and paasword
+  const loginCheck = async () => {
     const { email, password } = formData;
 
-    if (!email) {
-      toast.error("Please enter your email", { theme: "dark" });
-      return;
+    function validateEmail(email) {
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
     }
 
-    if (!isValidEmail(email)) {
-      toast.error("Please enter a valid email", { theme: "dark" });
-      return;
-    }
-
-    document.getElementById("checkemail").style.display = "block";
-
-    if (!password) {
-      toast.error("Please enter your password to create an account", {
-        theme: "dark",
-      });
-      return;
-    }
-
-    document.getElementById("checkpass").style.display = "block";
-
-    try {
-      setLoading(true);
-      const formDataEncoded = new URLSearchParams(); 
-      formDataEncoded.append("email", email);
-      formDataEncoded.append("password", password);
-
-      const response = await axios.post(
-        `${config.BASE_URL}/api/signin`,
-        formDataEncoded
-      );
-
-      if (response.data.status === "success") {
-        toast.success("Welcome to Codesaarthi !", { theme: "dark" });
-        setLoading(false);
-        const {userData, token} = response.data;
-        dispatch(setUser({userData,token })); 
-       navigate("/");
+    if (email === "") {
+      toast.warn("PLease Fill the data Completely!", { theme: "dark" });
+    } else if (!validateEmail(email)) {
+      toast.warn("Please enter a valid email!", { theme: "dark" });
+    } else {
+      document.getElementById("checkemail").style.display = "block";
+      if (password === "") {
+        toast.warn("Please fill in the password!", { theme: "dark" });
       } else {
-        toast.error(response.data.message, { theme: "dark" });
-        setLoading(false);
+        try {
+          document.getElementById("checkpass").style.display = "block";
+          setLoading(true);
+          const formDataEncoded = new URLSearchParams();
+          formDataEncoded.append("email", email);
+          formDataEncoded.append("password", password);
+          const response = await axios.post(
+            `${config.BASE_URL}/api/signin`,
+            formDataEncoded
+          );
+          if (response.data.status === "success") {
+            toast.success("Login Successfully!", { theme: "dark" });
+            Cookies.set("Codesaarthi-token", response.data.token, { expires: 30 }); 
+            setLoading(false);
+            window.location.href = "/";
+          } else {
+            console.log(response.data.message);
+            toast.warn(response.data.message, { theme: "dark" });
+            setLoading(false);
+          }
+        } catch (error) {
+          console.error("Error logging user:", error);
+          toast.error("Error creating account. Please try again later.", {
+            theme: "dark",
+          });
+          setLoading(false);
+        }
       }
-    } catch (error) {
-      if (error.response && error.response.status === 400) {
-        toast.error("User with this email already exists", { theme: "dark" });
-      } else {
-        toast.error(error.data.message, {
-          theme: "dark",
-        });
-      }
-      setLoading(false);
     }
   };
 
-  // login through google function
+  // login with google
   const login = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       const accessToken = tokenResponse.access_token;
@@ -118,10 +106,9 @@ const Login = () => {
         );
 
         if (saveUserDataResponse.data.status === "success") {
-          const { token, user } =  saveUserDataResponse.data;
-          dispatch(setUser({user,token }));
+          Cookies.set("Codesaarthi-token", saveUserDataResponse.data.token, {expires: 30, });
           setLoading(false);
-          navigate("/");
+          window.location.href = "/";
         } else {
           toast.error("Error saving user data", { theme: "dark" });
           console.log(saveUserDataResponse.data.message);
@@ -144,10 +131,9 @@ const Login = () => {
     },
   });
 
- 
   return (
     <>
-      <Toaster />
+      <ToastContainer />
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="CodeSaarthi" content="Codesaarthi" />
@@ -165,161 +151,177 @@ const Login = () => {
         />
         <meta
           property="og:image"
-          content="https://codesaarthi.com/logo.png"
+          content="https://codesaarthi.com/img/logo.png"
         />
         <meta property="og:url" content="https://codesaarthi.com/login" />
         <meta property="og:type" content="Education-Website" />
         <link
           rel="icon"
           type="image/png"
-          href="https://codesaarthi.com/favicon.ico"
+          href="https://codesaarthi.com/img/favicon.ico"
           sizes="32x32"
         />
       </Helmet>
+      <div
+        className="container-fluid m-0 p-0 g-0 d-flex justify-content-center align-items-center position-relative design"
+        style={{ minHeight: "100vh" }}
+      >
+        <div className="row w-100 g-0">
+          <div className="col-lg-5 col-12 d-flex justify-content-center align-items-center">
+            <div
+              className="container-fluid  m-lg-0 p-lg-0"
+              style={{ maxWidth: "420px" }}
+            >
+              <form>
+                <div className=" text-center">
+                  <img
+                    // src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721941402/logo_dnkgj9.jpg"
+                    src="https://res.cloudinary.com/ducw7orvn/image/upload/v1722973301/logo_uh50jf.png"
+                    width={105}
+                    alt=""
+                    style={{ borderRadius: "50%" }}
+                  />
+                  <h3 className="pt-3" style={{ color: "#703BF7" }}>
+                    {" "}
+                    Login
+                  </h3>
+                  <br />
+                </div>
 
-      <div className="min-h-screen bg-slate-400 dark:bg-gray-950">
-        <div className="flex justify-between">
-          <div className="flex justify-center  items-center  pb-12 flex-1"> 
-                <div className=" space-y-4" style={{ width: "420px" }}>
-                  <form onSubmit={handleSubmit}>
-                    <div className="text-center">
-                      <img
-                        src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721941402/logo_dnkgj9.jpg"
-                         className="mx-auto rounded-full h-24"
-                        alt="Logo"
-                      />
-                      <h3 className="pt-3 text-black dark:text-white">
-                        Welcome Back !!
-                      </h3>
-                      <br />
-                    </div>
+                {/* <!-- Email input --> */}
+                <div className="mb-4">
+                  <div className="input-group w-100">
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="form-control rounded-8 py-2"
+                      placeholder="email "
+                      required
+                    />
+                    <i
+                      id="checkemail"
+                      style={{ color: "#79b4e2", display: "none" }}
+                      className="fi fi-ss-check-circle text-center ms-1 mt-2"
+                    ></i>
+                  </div>
+                </div>
 
-                    
-
-                    {/* Email input */}
-                    <div className="mb-4 flex">
-                      <input
-                        type="email"
-                        id="emailId"
-                        name="email"
-                        required
-                        value={formData.email}
-                        className=" w-full p-2 rounded-xl text-black dark:text-white bg-white dark:bg-slate-700"
-                        onChange={handleInputChange}
-                        placeholder="Email"
-                      />
-                      <i
-                        id="checkemail"
-                        style={{ color: "#79b4e2", display: "none" }}
-                        className="fi fi-ss-check-circle text-center ms-2 mt-2"
-                      ></i>
-                    </div>
-
-                    {/* Password input */}
-                    <div className="mb-4 flex">
-                      <input
-                        type={isPasswordVisible ? "text" : "password"}
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        className=" w-full p-2 rounded-xl text-black dark:text-white bg-white dark:bg-slate-700"
-                        onChange={handleInputChange}
-                        placeholder="Password"
-                        required
-                      />
-                      <i
-                        id="passwordViewer"
-                        onClick={togglePasswordVisibility}
-                        className={`fi ${
-                          isPasswordVisible ? "fi-ss-eye" : "fi-ss-eye-crossed"
-                        } mt-2 ms-2 cursor-pointer`}
-                        style={{ color: "#703BF7" }}
-                      ></i>
-                      <i
-                        id="checkpass"
-                        style={{ color: "#79b4e2", display: "none" }}
-                        className="fi fi-ss-check-circle text-center ms-2 mt-2"
-                      ></i>
-                    </div>
-                       
-                       <div className="flex items-end justify-end my-2">
-                       <Link to = "/forgot-password"><p className="text-black dark:text-stone-100">Forgot password</p> </Link> 
-                       </div>
-                        
-                    {/* Submit button */}
-                    {loading ? (
-                      <>
-                        <button
-                          type="button"
-                          className="btn btn-block mb-4 text-capitalize py-3"
-                          style={{ fontSize: "1rem" }}
-                          disabled
-                        >
-                          Welcome Back to NotesSaver ...
-                          <span className="loading loading-spinner loading-md"></span>
-                        </button>
-                      </>
-                    ) : (
-                      <button
-                        id="login_button"
-                        data-mdb-ripple-init
-                        type="button"
-                        className="btn btn-block mb-4 text-capitalize py-3 text-white"
-                        style={{ fontSize: "1rem" }}
-                        onClick={handleSubmit}
-                      >
-                        Log In 
-                        <i className="fi fi-rs-sign-out-alt ps-2 pt-2"></i>
-                      </button>
-                    )}
-
-                    <h3
-                      className="text-center mb-3 text-black dark:text-white"
+                {/* <!-- Password input --> */}
+                <div className="mb-4 position-relative">
+                  <div className="input-group w-100">
+                    <input
+                      type={isPasswordVisible ? "text" : "password"}
+                      name="password"
+                      value={formData.password}
+                      className="form-control rounded-8 py-2 w-100"
+                      onChange={handleInputChange}
+                      placeholder="Password"
+                      required
+                    />
+                    <i
+                      id="passwordViewer"
+                      onClick={passwordView}
+                      className={`fi ${
+                        isPasswordVisible ? "fi-ss-eye" : "fi-ss-eye-crossed"
+                      }   pt-2 ms-2`}
                       style={{
-                        fontWeight: "light",
-                        fontSize: "1rem",
+                        color: "#703BF7",
+                        cursor: "pointer",
                       }}
+                    ></i>
+                    <i
+                      id="checkpass"
+                      style={{ color: "#79b4e2", display: "none" }}
+                      className="fi fi-ss-check-circle text-center mt-2 ms-4"
+                    ></i>
+                  </div>
+                </div>
+
+                <div className="text-end mb-2">
+                  <Link to="/RecoverPassword" style={{ color: "#79b4e2" }}>
+                    Forgot password ?
+                  </Link>
+                </div>
+
+                {loading ? (
+                  <>
+                    <button
+                      type="button"
+                      className="btn btn-block mb-4 text-capitalize py-3"
+                      style={{ fontSize: "1rem" }}
+                      disabled
                     >
-                      - OR -
-                    </h3>
+                      Welcome to CodeSaarthi ...
+                      <span
+                        className="spinner-border spinner-border-sm"
+                        role="status"
+                        aria-hidden="true"
+                      ></span>
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    id="login_button"
+                    data-mdb-ripple-init
+                    type="button"
+                    className="btn btn-block mb-4 text-capitalize py-3"
+                    onClick={loginCheck}
+                    style={{ fontSize: "1rem" }}
+                  >
+                    Login <i className="fi fi-rs-sign-out-alt ps-2 pt-2"></i>
+                  </button>
+                )}
 
-                    {/* Google login button */}
-                    <div className="text-center mb-2">
-                      <div className="row d-flex justify-content-evenly align-items-center">
-                        <div className="col-12">
-                          <button
-                            type="button"
-                            className="btn  w-full"
-                            onClick={login}
-                          >
-                            <img
-                              src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720990440/search_1_cw9o1p.png"
-                              style={{ height: "26px" }}
-                              alt="Google Icon"
-                            />
-                            <span className="capitalize ms-2">
-                              Sign Up With Google
-                            </span>
-                          </button>
-                        </div>
-                      </div>
+                <h3
+                  className="   text-center mb-3"
+                  style={{ fontWeight: "light", fontSize: "1rem" }}
+                >
+                  {" "}
+                  -OR-{" "}
+                </h3>
+                {/* <!-- Sign  buttons --> */}
+                <div className="text-center mb-2">
+                  <div className="row d-flex justify-content-evenly align-items-center">
+                    <div className="col-12">
+                      <button
+                        type="button"
+                        className="btn  bg-light w-100 "
+                        onClick={login}
+                      >
+                        <img
+                          src="https://res.cloudinary.com/ducw7orvn/image/upload/v1720990440/search_1_cw9o1p.png"
+                          height={26}
+                          alt=""
+                        />
+                        <span className="text-capitalize ms-2 ">
+                          Sign In With Google
+                        </span>
+                      </button>
                     </div>
-
-                    <div className="text-center text-black dark:text-white">
-                      <p>
-                        Don't have an Account No worries
-                        <Link to="/register" style={{ color: "#703BF7" }}>
-                          {" "}
-                          register here
-                        </Link>
-                      </p>
-                    </div>
-                  </form>
-                 <p className="text-black dark:text-light">Login With Admin Account<Link to = "/Admin-Login" className="underline ms-2" >Here </Link> </p> 
-                </div> 
+                  </div>
+                </div>
+                <div className="text-center ">
+                  <p className=" ">
+                    New Here Please{" "}
+                    <Link to="/signup" style={{ color: "#703BF7" }}>
+                      Register !
+                    </Link>
+                  </p>
+                </div>
+              </form>
+            </div>
           </div>
-          <div className="hidden md:block flex-1">
-            <LampDesign title1={"Welcome back "} title2={"To Your Trusted Learning Platform..."} />
+
+          <div className=" col-lg-7 d-lg-block d-none d-flex justify-content-center align-items-center">
+            <img
+              src="https://res.cloudinary.com/ducw7orvn/image/upload/v1721941459/test_deyelf.jpg"
+              className="img-fluid w-100"
+              alt="login page"
+              loading="lazy"
+              title="login image"
+            />
           </div>
         </div>
       </div>
@@ -327,4 +329,5 @@ const Login = () => {
   );
 };
 
+ 
 export default Login;
