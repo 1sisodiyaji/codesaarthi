@@ -1,4 +1,3 @@
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow: /private/
-Disallow: /secret-page.html
-Disallow: /temporary-page.html
+Disallow:
