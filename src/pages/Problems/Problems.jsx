@@ -12,10 +12,10 @@ const Problems = () => {
   <title>Problems: DSA, Patterns, Arrays, Bit Manipulation | codesaarthi</title>
   <meta property="og:title" content=" Problems: DSA, Patterns, Arrays, Bit Manipulation |codesaarthi" />
   <meta property="og:description" content="Explore a collection of algorithmic problems, including DSA problems, pattern questions, array questions, and bit manipulation questions. Enhance your problem-solving skills and gain valuable insights into various topics." />
-  <meta property="og:image" content="https://codesaarthi.com/img/logo.png" />
+  <meta property="og:image" content="https://codesaarthi.com/logo.png" />
   <meta property="og:url" content="https://codesaarthi.com/Problems" />
   <meta property="og:type" content="Education-Website" />
-  <link rel="icon" type="image/png" href="https://codesaarthi.com/img/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/png" href="https://codesaarthi.com/favicon.ico" sizes="32x32" />
 </Helmet>
 
 <div className="container-fluid design">
